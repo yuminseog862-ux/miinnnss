@@ -5,9 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "minnss portfolio",
+  title: "Selected Work / Portfolio",
   description:
-    "Selected work archive for minnss. Built for public case-study publishing without exposing raw documents.",
+    "Selected work archive built for public case-study publishing without exposing raw documents.",
 };
 
 export default function RootLayout({

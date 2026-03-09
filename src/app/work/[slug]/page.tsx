@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
-import { workCaseMap, workCases } from "@/data/portfolio";
+import { workCaseMap, workCases, type WorkCase } from "@/data/portfolio";
 
 type WorkPageProps = {
   params: Promise<{
@@ -58,48 +58,281 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
         </div>
       </section>
 
-      <section className="detail-frame detail-content-grid">
-        <article className="detail-panel">
-          <p className="detail-section-eyebrow">Overview</p>
-          <div className="detail-paragraphs">
-            {project.overview.map((item) => (
-              <p key={item}>{item}</p>
-            ))}
-          </div>
-        </article>
+      {hasStructuredSections(project) ? (
+        <>
+          <section className="detail-frame detail-content-grid">
+            <article className="detail-panel">
+              <p className="detail-section-eyebrow">Overview</p>
+              <div className="detail-paragraphs">
+                {project.overview.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+            </article>
 
-        <article className="detail-panel">
-          <p className="detail-section-eyebrow">What I did</p>
-          <ul className="detail-list">
-            {project.whatIDid.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
+            <article className="detail-panel">
+              <p className="detail-section-eyebrow">What I did</p>
+              <ul className="detail-list">
+                {project.whatIDid.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          </section>
 
-        <article className="detail-panel">
-          <p className="detail-section-eyebrow">What exists</p>
-          <ul className="detail-list">
-            {project.whatExists.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
+          {project.problemSummary ? (
+            <section className="detail-frame detail-structured-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">Market / problem summary</p>
+                  <h2 className="detail-structured-title">What makes this case matter.</h2>
+                </div>
+              </div>
+              <div className="detail-statement-grid">
+                {project.problemSummary.map((item, index) => (
+                  <article key={item} className="detail-statement-card">
+                    <span className="detail-statement-index">{String(index + 1).padStart(2, "0")}</span>
+                    <p>{item}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
-        <article className="detail-panel">
-          <p className="detail-section-eyebrow">Key decisions</p>
-          <ul className="detail-list">
-            {project.keyDecisions.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </article>
-      </section>
+          {project.coreJudgments ? (
+            <section className="detail-frame detail-structured-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">Why this direction</p>
+                  <h2 className="detail-structured-title">Three judgments behind the concept.</h2>
+                </div>
+              </div>
+              <div className="detail-block-grid detail-block-grid-judgments">
+                {project.coreJudgments.map((item) => (
+                  <article key={item.title} className="detail-block-card">
+                    <p className={`eyebrow ${accentText(item.accent ?? project.accent)}`}>{item.title}</p>
+                    <p className="detail-block-body">{item.body}</p>
+                    {item.items ? (
+                      <ul className="detail-inline-list">
+                        {item.items.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {project.problemSummary || project.solutionSummary || project.flowSteps ? (
+            <section className="detail-frame detail-logic-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">Problem - solution - flow</p>
+                  <h2 className="detail-structured-title">The service logic, rebuilt for the web.</h2>
+                </div>
+              </div>
+
+              <div className="detail-logic-grid">
+                <div className="detail-logic-column">
+                  <p className="detail-logic-label">Problem</p>
+                  <div className="detail-logic-stack">
+                    {project.problemSummary?.map((item, index) => (
+                      <article key={item} className="detail-fact-card">
+                        <span className="detail-fact-number">{String(index + 1).padStart(2, "0")}</span>
+                        <p>{item}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="detail-logic-column">
+                  <p className="detail-logic-label">Solution</p>
+                  <div className="detail-logic-stack">
+                    {project.solutionSummary?.map((item) => (
+                      <article key={item.title} className="detail-block-card">
+                        <p className={`eyebrow ${accentText(item.accent ?? project.accent)}`}>{item.title}</p>
+                        <p className="detail-block-body">{item.body}</p>
+                        {item.items ? (
+                          <ul className="detail-inline-list">
+                            {item.items.map((point) => (
+                              <li key={point}>{point}</li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </article>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="detail-logic-column">
+                  <p className="detail-logic-label">{project.flowHeading ?? "Flow"}</p>
+                  <div className="detail-flow-stack">
+                    {project.flowSteps?.map((item) => (
+                      <article key={`${item.step}-${item.title}`} className="detail-flow-card">
+                        <div className="detail-flow-top">
+                          <span className="detail-flow-step">{item.step}</span>
+                          {item.meta ? <span className="detail-flow-meta">{item.meta}</span> : null}
+                        </div>
+                        <h3 className="detail-flow-title">{item.title}</h3>
+                        <p className="detail-flow-body">{item.body}</p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {project.structureOutcome ? <p className="detail-outcome-bar">{project.structureOutcome}</p> : null}
+            </section>
+          ) : null}
+
+          {project.serviceStructure ? (
+            <section className="detail-frame detail-structured-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">
+                    {project.slug === "be-moon" ? "Service structure / MVP rail" : "Service structure"}
+                  </p>
+                  <h2 className="detail-structured-title">
+                    {project.slug === "be-moon"
+                      ? "The operating rail behind the warranty logic."
+                      : "How the service is layered beyond the feed."}
+                  </h2>
+                </div>
+              </div>
+              <div className="detail-block-grid">
+                {project.serviceStructure.map((item) => (
+                  <article key={item.title} className="detail-block-card">
+                    <p className={`eyebrow ${accentText(item.accent ?? project.accent)}`}>{item.title}</p>
+                    <p className="detail-block-body">{item.body}</p>
+                    {item.items ? (
+                      <ul className="detail-inline-list">
+                        {item.items.map((point) => (
+                          <li key={point}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {project.iaGroups ? (
+            <section className="detail-frame detail-structured-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">Information architecture</p>
+                  <h2 className="detail-structured-title">The core groups that make the concept navigable.</h2>
+                </div>
+              </div>
+              <div className="detail-ia-grid">
+                {project.iaGroups.map((group) => (
+                  <article key={group.title} className="detail-ia-card">
+                    <h3 className="detail-ia-title">{group.title}</h3>
+                    <ul className="detail-inline-list">
+                      {group.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          {project.screenGuide ? (
+            <section className="detail-frame detail-structured-frame">
+              <div className="detail-structured-header">
+                <div>
+                  <p className="detail-section-eyebrow">Figma screen guide</p>
+                  <h2 className="detail-structured-title">The first four surfaces that make the concept legible.</h2>
+                </div>
+              </div>
+              <div className="detail-screen-grid">
+                {project.screenGuide.map((screen) => (
+                  <article key={screen.title} className="detail-screen-card">
+                    <h3 className="detail-screen-title">{screen.title}</h3>
+                    <p className="detail-screen-purpose">{screen.purpose}</p>
+                    <div className="case-chip-group">
+                      {screen.components.map((item) => (
+                        <span key={item} className="case-chip case-chip-soft">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="detail-screen-focus">{screen.focus}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          <section className="detail-frame detail-content-grid">
+            <article className="detail-panel">
+              <p className="detail-section-eyebrow">What exists</p>
+              <ul className="detail-list">
+                {project.whatExists.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+
+            <article className="detail-panel">
+              <p className="detail-section-eyebrow">Key decisions</p>
+              <ul className="detail-list">
+                {project.keyDecisions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          </section>
+        </>
+      ) : (
+        <section className="detail-frame detail-content-grid">
+          <article className="detail-panel">
+            <p className="detail-section-eyebrow">Overview</p>
+            <div className="detail-paragraphs">
+              {project.overview.map((item) => (
+                <p key={item}>{item}</p>
+              ))}
+            </div>
+          </article>
+
+          <article className="detail-panel">
+            <p className="detail-section-eyebrow">What I did</p>
+            <ul className="detail-list">
+              {project.whatIDid.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="detail-panel">
+            <p className="detail-section-eyebrow">What exists</p>
+            <ul className="detail-list">
+              {project.whatExists.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="detail-panel">
+            <p className="detail-section-eyebrow">Key decisions</p>
+            <ul className="detail-list">
+              {project.keyDecisions.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        </section>
+      )}
 
       <section className="detail-frame detail-gallery-frame">
         <div className="detail-gallery-header">
           <div>
-            <p className="detail-section-eyebrow">Gallery / placeholder media</p>
+            <p className="detail-section-eyebrow">Visual surfaces</p>
             <p className="detail-gallery-intro">{project.galleryIntro}</p>
           </div>
           <Link href="/" className="inline-link">
@@ -152,4 +385,16 @@ function accentText(accent: "aqua" | "orange" | "indigo") {
     case "indigo":
       return "text-indigo";
   }
+}
+
+function hasStructuredSections(project: WorkCase) {
+  return Boolean(
+    project.problemSummary ||
+      project.solutionSummary ||
+      project.flowSteps ||
+      project.serviceStructure ||
+      project.iaGroups ||
+      project.screenGuide ||
+      project.coreJudgments,
+  );
 }

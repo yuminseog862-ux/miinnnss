@@ -801,6 +801,8 @@ a {
 
 .detail-summary-panel,
 .detail-panel,
+.detail-structured-frame,
+.detail-logic-frame,
 .detail-gallery-frame,
 .detail-status-frame {
   border-radius: 1.9rem;
@@ -852,6 +854,12 @@ a {
   padding: 1.3rem;
 }
 
+.detail-structured-frame,
+.detail-logic-frame {
+  margin-top: 1rem;
+  padding: 1.3rem;
+}
+
 .detail-paragraphs {
   display: grid;
   gap: 0.9rem;
@@ -867,6 +875,169 @@ a {
   padding-left: 1.1rem;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.detail-structured-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detail-structured-title {
+  max-width: 20ch;
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.detail-statement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.detail-statement-card,
+.detail-fact-card,
+.detail-block-card,
+.detail-flow-card,
+.detail-ia-card,
+.detail-screen-card {
+  border-radius: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.detail-statement-card,
+.detail-fact-card {
+  display: grid;
+  gap: 0.85rem;
+  min-height: 11rem;
+  padding: 1rem;
+  color: var(--muted);
+  line-height: 1.82;
+}
+
+.detail-statement-index,
+.detail-fact-number,
+.detail-flow-step {
+  color: var(--quiet);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.detail-logic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detail-logic-column {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.detail-logic-label {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.detail-logic-stack,
+.detail-flow-stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.detail-block-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.detail-block-grid-judgments {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.detail-block-card,
+.detail-flow-card,
+.detail-ia-card,
+.detail-screen-card {
+  padding: 1rem;
+}
+
+.detail-block-body {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.detail-inline-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.9rem 0 0;
+  padding-left: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.94rem;
+}
+
+.detail-flow-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.detail-flow-meta {
+  color: var(--quiet);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-flow-title,
+.detail-ia-title,
+.detail-screen-title {
+  margin: 0.8rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.detail-flow-body,
+.detail-screen-purpose,
+.detail-screen-focus {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+.detail-outcome-bar {
+  margin: 1rem 0 0;
+  padding: 1rem 1.1rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(98, 216, 182, 0.18);
+  background: linear-gradient(135deg, rgba(98, 216, 182, 0.08), rgba(126, 125, 242, 0.05));
+  color: rgba(246, 242, 233, 0.9);
+  line-height: 1.8;
+}
+
+.detail-ia-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.detail-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .detail-gallery-frame,
@@ -950,17 +1121,23 @@ a {
   .detail-hero-grid,
   .detail-content-grid,
   .detail-media-grid,
-  .detail-status-grid {
+  .detail-status-grid,
+  .detail-logic-grid,
+  .detail-screen-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .flagship-stage-shell,
-  .practice-memo-grid {
+  .practice-memo-grid,
+  .detail-block-grid,
+  .detail-block-grid-judgments,
+  .detail-statement-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .selected-grid,
-  .archive-grid {
+  .archive-grid,
+  .detail-ia-grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
@@ -995,6 +1172,8 @@ a {
   .practice-panel,
   .detail-summary-panel,
   .detail-panel,
+  .detail-structured-frame,
+  .detail-logic-frame,
   .detail-gallery-frame,
   .detail-status-frame {
     border-radius: 1.45rem;
@@ -1013,8 +1192,13 @@ a {
 
   .flagship-stage-shell,
   .practice-memo-grid,
+  .detail-statement-grid,
+  .detail-block-grid,
+  .detail-block-grid-judgments,
   .detail-media-grid,
-  .detail-status-grid {
+  .detail-status-grid,
+  .detail-ia-grid,
+  .detail-screen-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 }

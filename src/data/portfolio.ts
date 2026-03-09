@@ -36,6 +36,32 @@ export type PracticeMemo = {
   value: string;
 };
 
+export type StructuredBlock = {
+  title: string;
+  body: string;
+  accent?: Accent;
+  items?: string[];
+};
+
+export type FlowStep = {
+  step: string;
+  title: string;
+  body: string;
+  meta?: string;
+};
+
+export type IaGroup = {
+  title: string;
+  items: string[];
+};
+
+export type ScreenGuideBlock = {
+  title: string;
+  purpose: string;
+  components: string[];
+  focus: string;
+};
+
 export type WorkCase = {
   slug: string;
   section: string;
@@ -57,12 +83,21 @@ export type WorkCase = {
   whatIDid: string[];
   whatExists: string[];
   keyDecisions: string[];
+  problemSummary?: string[];
+  solutionSummary?: StructuredBlock[];
+  flowHeading?: string;
+  flowSteps?: FlowStep[];
+  serviceStructure?: StructuredBlock[];
+  iaGroups?: IaGroup[];
+  screenGuide?: ScreenGuideBlock[];
+  coreJudgments?: StructuredBlock[];
+  structureOutcome?: string;
   galleryIntro: string;
   placeholderMedia: PlaceholderMedia[];
   currentStatus: string[];
 };
 
-export const siteTitle = "minnss";
+export const siteTitle = "Selected Work";
 
 export const heroContent: HeroContent = {
   eyebrow: "Selected practice / portfolio",
@@ -117,9 +152,9 @@ export const flagshipPlates: FlagshipPlate[] = [
 
 export const selectedOrder = [
   "andersson-bell",
-  "sfti-cmu",
   "ilysb",
   "be-moon",
+  "sfti-cmu",
   "ariadne-mode-moment",
 ] as const;
 
@@ -149,7 +184,7 @@ export const practiceContent = {
 };
 
 export const footerContent = {
-  line: "Portfolio frame for selected work, venture studies, and ongoing web3 practice.",
+  line: "Portfolio frame for selected work, product logic, and ongoing web3 practice.",
   meta: "English-first v1. Raw docs remain private.",
 };
 
@@ -381,16 +416,16 @@ export const workCases: WorkCase[] = [
   },
   {
     slug: "be-moon",
-    section: "Archive / Venture Studies",
-    eyebrow: "Venture thesis",
-    title: "be:moon",
+    section: "Selected Work",
+    eyebrow: "Venture-thesis product",
+    title: "BE;MOON",
     oneLiner:
-      "A fashion x web3 digital warranty thesis shaped around DPP, counterfeit risk, and service structure rather than surface branding alone.",
+      "A digital warranty rail for fashion brands, structured around DPP pressure, counterfeit trust gaps, and issuance-to-verification operations.",
     summary:
-      "be:moon is best presented as a serious venture study. The public page should not try to show full planning documents. It should show the distilled thesis, the service framing, and the design surfaces that emerged from that work.",
-    roles: ["Problem framing", "Service design", "Venture thesis", "Planning"],
-    evidence: ["Figma structure", "Service logic", "Thesis summary", "Archived study"],
-    status: "Structured study with visible surfaces",
+      "BE;MOON now reads best as a product-logic case, not a private document archive. The important part is the operating rail: purchase authentication, wallet minting, verification, and OMS state sync built as one trust layer.",
+    roles: ["Problem framing", "Service design", "Product logic", "Venture thesis"],
+    evidence: ["Problem / solution flow", "Service structure", "Figma surfaces", "MVP rail"],
+    status: "Structured product case",
     tier: "selected",
     accent: "orange",
     year: "2024",
@@ -399,26 +434,103 @@ export const workCases: WorkCase[] = [
       alt: "be:moon Figma overview showing dark mobile screens and NFT-oriented product surfaces.",
     },
     overview: [
-      "A service thesis built around digital warranty logic, DPP pressure, and trust in fashion resale and verification.",
-      "It is strongest when shown as a structured venture study rather than as a finished product claim.",
+      "BE;MOON started from a simple question: how should a fashion brand prove ownership and authenticity once regulation, resale, and post-purchase trust all start to matter at the same time?",
+      "The strongest output was not a branding layer but an MVP service rail: issuance, minting, verification, and OMS sync treated as one operating system for digital warranty.",
     ],
     whatIDid: [
-      "Framed the problem around regulation, counterfeit circulation, and brand-side operational pressure.",
-      "Mapped issuance, verification, and transaction logic into a coherent service concept.",
-      "Used planning documents to make the service thesis more concrete before implementation.",
+      "Defined the case around DPP pressure, counterfeit circulation, and the gap between internal warranty systems and external trust.",
+      "Turned that into a product rail covering purchase authentication, wallet minting, verification, ownership state, and OMS linkage.",
+      "Translated the venture thesis into service structure and interface surfaces strong enough to communicate the model publicly.",
     ],
     whatExists: [
-      "Service framing and Figma-oriented design surfaces.",
-      "Core problem-solution structure already identified.",
-      "A good foundation for a distilled public case page.",
+      "A clear one-page problem / solution / flow logic.",
+      "Figma-based product surfaces showing the warranty and verification layer.",
+      "A service structure that can be explained without exposing the original planning documents.",
     ],
     keyDecisions: [
-      "Present this as a venture study, not as a launched product.",
-      "Use only distilled structure and interface evidence, not raw planning documents.",
-      "Center the relationship between regulation, trust, and service operations.",
+      "Start from the auth rail first instead of pretending the value is benefits or community from day one.",
+      "Keep OMS state sync tightly connected to ownership so the warranty does not drift away from real product data.",
+      "Treat perks and downstream transactions as a second layer after trust and verification become stable.",
     ],
+    problemSummary: [
+      "Fashion brands are facing rising DPP pressure and higher operational complexity around traceability and post-purchase record keeping.",
+      "At the same time, counterfeit circulation weakens resale trust and makes existing internal warranty records hard to use in external verification moments.",
+      "The real gap is not visual branding. It is the missing operating rail that connects purchase, ownership, verification, and brand-side system sync.",
+    ],
+    solutionSummary: [
+      {
+        title: "Trust layer first",
+        body: "Position the product as a digital warranty SaaS that connects product identity, wallet ownership, and verification before adding broader member logic.",
+        accent: "orange",
+      },
+      {
+        title: "Issuance to verification",
+        body: "Build the first usable rail around purchase auth, minting, verification, and benefits so the service has one defensible core loop.",
+        accent: "aqua",
+      },
+      {
+        title: "Operational fit",
+        body: "Keep ownership state connected to OMS and product status so external trust does not split from internal brand operations.",
+        accent: "indigo",
+      },
+    ],
+    flowHeading: "Issuance -> Minting -> Verification",
+    flowSteps: [
+      {
+        step: "01",
+        title: "Purchase / QR or WL auth",
+        body: "The rail starts from product purchase and a brand-controlled entry point that confirms the buyer and the item.",
+        meta: "Entry surface",
+      },
+      {
+        step: "02",
+        title: "Wallet minting + 2FA",
+        body: "The warranty becomes a wallet-linked proof object through minting and additional auth rather than staying inside a private database only.",
+        meta: "Ownership proof",
+      },
+      {
+        step: "03",
+        title: "Verification / benefits",
+        body: "The user can verify ownership and unlock downstream utility, while the brand keeps the proof legible beyond the original checkout moment.",
+        meta: "Trust surface",
+      },
+      {
+        step: "04",
+        title: "OMS state sync",
+        body: "Ownership and product state are reflected back into brand systems so the digital warranty remains operationally grounded.",
+        meta: "System sync",
+      },
+    ],
+    serviceStructure: [
+      {
+        title: "Brand / OMS",
+        body: "Product records, order data, and brand-issued entry conditions begin the warranty rail.",
+        accent: "orange",
+        items: ["Product purchase data", "OMS linkage", "Brand-side issuance control"],
+      },
+      {
+        title: "BE;MOON core",
+        body: "The middle layer handles issuance SaaS, minting and verification logic, and ownership state management.",
+        accent: "aqua",
+        items: ["Issuance SaaS", "Minting / verification engine", "Status and ownership database"],
+      },
+      {
+        title: "Metadata / contract layer",
+        body: "Proof objects, metadata storage, and verification logs make the warranty portable enough to support resale trust later.",
+        accent: "indigo",
+        items: ["Metadata storage", "Smart contract layer", "Verification log"],
+      },
+      {
+        title: "Consumer / external channels",
+        body: "The proof becomes usable in verification, benefit access, and future external trust moments instead of staying locked inside one brand system.",
+        accent: "orange",
+        items: ["Consumer wallet", "Benefit check", "External trust / resale surface"],
+      },
+    ],
+    structureOutcome:
+      "The draft lands on a simple claim: digital warranty is not just a token feature. It is an operating rail for brand trust, verification, and ownership continuity.",
     galleryIntro:
-      "This case is prepared to receive structure diagrams and interface captures. The public page should show outputs derived from planning, not the documents themselves.",
+      "The supporting surfaces below stay secondary. The center of this case is the product logic, while the Figma and NFT-facing images act as proof that the service model was already translated into visible interfaces.",
     placeholderMedia: [
       {
         label: "Figma overview",
@@ -432,57 +544,239 @@ export const workCases: WorkCase[] = [
         src: "/work/bemoon-nft.png",
         alt: "be:moon NFT and Polygonscan related surface.",
       },
-      { label: "Decision summary", note: "Why the thesis mattered" },
+      { label: "Service logic note", note: "Issuance, verification, and OMS sync as one rail." },
     ],
     currentStatus: [
-      "Archived as a serious study rather than a live product.",
-      "Visual inserts will make this page much stronger once staged.",
+      "A strong draft-level case because the product logic is already web-native and legible.",
+      "Best read as a venture-thesis product system rather than a finished launch.",
     ],
   },
   {
     slug: "ariadne-mode-moment",
-    section: "Archive / Venture Studies",
-    eyebrow: "Early venture study",
+    section: "Selected Work",
+    eyebrow: "Decision-layer concept",
     title: "Ariadne / ModeMoment",
     oneLiner:
-      "A fashion community and service exploration built around style-based interaction, decision support, and the expansion of an early venture idea.",
+      "A fashion decision-layer service that reduces cart-stage hesitation through similar-taste feedback, unified storage, and lightweight social judgment.",
     summary:
-      "This case matters as an early structured study: community logic, interaction design, and the attempt to turn fashion indecision into a product system. ModeMoment is treated here as the expanded continuation of that same line of thought.",
-    roles: ["Community planning", "Interaction design", "Service framing", "Early venture study"],
-    evidence: ["Structure diagram", "Screen plan", "Interaction logic", "Archived study"],
-    status: "Archived exploration with structured framing",
+      "Ariadne matters because the structure is already specific. Instead of another fashion discovery feed, it focuses on the decision moment after recommendation, with ModeMoment positioned as the expansion of the same venture line.",
+    roles: ["Service framing", "IA planning", "Interaction design", "Venture expansion"],
+    evidence: ["Problem / solution flow", "IA block", "Service structure", "Screen guide"],
+    status: "Structured concept case",
     tier: "selected",
     accent: "indigo",
     year: "2023 - 2024",
     overview: [
-      "An early service exploration around helping people make fashion decisions through structured community interaction.",
-      "It is useful today as evidence of how I began thinking about participation, structure, and systemized user interaction.",
+      "Ariadne was built around a sharper observation than a generic fashion community pitch: the harder problem is not finding items, but choosing one final option out of several saved candidates.",
+      "ModeMoment extends the same line of thought outward as a wider venture direction, but the core public case stays centered on Ariadne's decision-layer logic.",
     ],
     whatIDid: [
-      "Defined the core premise around style-based communities and decision support.",
-      "Structured features such as voting, chat, photo sharing, saving, and reactions.",
-      "Extended the original thesis into a broader venture direction through ModeMoment.",
+      "Defined the product around cart-stage decision support instead of trend discovery.",
+      "Mapped the interaction logic for taste input, vote-based feedback, unified storage, and post-decision routing back to original sellers.",
+      "Extended the concept into ModeMoment as a broader venture path without splitting the underlying service thesis into separate products.",
     ],
     whatExists: [
-      "Core service logic and feature framing.",
-      "Documented interaction structure strong enough to turn into a public case summary.",
-      "A staged slot for diagrams and screens you plan to add.",
+      "A complete problem / solution / flow logic strong enough to explain the concept publicly.",
+      "Information architecture, service-layer mapping, and screen guidance across the key product surfaces.",
+      "A public-facing case structure that can hold future diagrams and screens without exposing raw handoff files.",
     ],
     keyDecisions: [
-      "Treat this as an early venture study, not as a polished product case.",
-      "Show the community and interaction structure, not the raw documents.",
-      "Use the page to reveal the design thinking behind later work.",
+      "Compete on the decision layer, not on checkout or inventory.",
+      "Use a multi-platform storage model as the real differentiator instead of a single-platform recommendation feature.",
+      "Keep the community useful by making every feed unit something people can judge quickly, not just scroll past.",
     ],
+    problemSummary: [
+      "The harder pain point in fashion shopping is often the final decision moment, not early discovery. People already get enough recommendations but still hesitate at the cart stage.",
+      "Users move across multiple shopping apps and brand malls, yet they cannot compare saved candidates in one place, so they rely on screenshots, DMs, or private overthinking.",
+      "Ariadne reframes that gap as a product opportunity: reduce decision cost through similar-taste feedback and a unified storage layer.",
+    ],
+    coreJudgments: [
+      {
+        title: "Decision beats discovery",
+        body: "Recommendation and ranking products already exist. The empty space is the last-mile decision moment when someone has to choose one actual item.",
+        accent: "indigo",
+      },
+      {
+        title: "Checkout stays outside",
+        body: "Ariadne should not compete with Musinsa, Zigzag, or brand malls on payment. It works best as a layer on top of those platforms.",
+        accent: "aqua",
+      },
+      {
+        title: "Storage is the moat",
+        body: "The differentiator is not a single voting feature. It is the ability to gather candidates from multiple sources and make them comparable in one decision space.",
+        accent: "orange",
+      },
+    ],
+    solutionSummary: [
+      {
+        title: "Taste segmentation",
+        body: "A short onboarding layer captures mood, favorite items, and purchase priorities so the feed can start from comparable taste profiles.",
+        accent: "indigo",
+      },
+      {
+        title: "Vote feed",
+        body: "The main unit becomes a judgment card with 2 to 5 candidates, context tags, and fast feedback from people with similar taste.",
+        accent: "aqua",
+      },
+      {
+        title: "Unified storage",
+        body: "Candidates from multiple shopping apps and brand malls are organized like a comparison-first cart instead of a passive wishlist.",
+        accent: "orange",
+      },
+      {
+        title: "Tags and reports",
+        body: "Signals from votes, tags, and saved combinations feed ranking, report views, and later recommendation logic.",
+        accent: "indigo",
+      },
+    ],
+    flowHeading: "Decision flow",
+    flowSteps: [
+      {
+        step: "01",
+        title: "External shopping app / brand mall",
+        body: "The process begins outside Ariadne, where users discover items across existing shopping platforms.",
+        meta: "Discovery stays external",
+      },
+      {
+        step: "02",
+        title: "Save / capture",
+        body: "Users bring candidates in through saves, uploads, or screenshots instead of restarting the search from zero.",
+        meta: "Candidate intake",
+      },
+      {
+        step: "03",
+        title: "Upload vote",
+        body: "A structured question is created with selected candidates and context tags so the feed can respond to a real decision moment.",
+        meta: "Question layer",
+      },
+      {
+        step: "04",
+        title: "Similar-taste response",
+        body: "Votes, comments, and saves from similar users create fast judgment input rather than open-ended discussion only.",
+        meta: "Feedback layer",
+      },
+      {
+        step: "05",
+        title: "Organize storage",
+        body: "Candidates can keep moving through folders, filters, and comparison groups as the user narrows the choice.",
+        meta: "Decision workspace",
+      },
+      {
+        step: "06",
+        title: "Purchase at original seller",
+        body: "Once the user decides, the actual checkout returns to the original shopping platform or brand mall.",
+        meta: "Checkout stays external",
+      },
+    ],
+    serviceStructure: [
+      {
+        title: "Input layer",
+        body: "Product candidates come from outside shopping apps, brand malls, user uploads, and storage imports.",
+        accent: "indigo",
+        items: ["External shopping apps", "Brand mall captures", "Screenshot / upload intake"],
+      },
+      {
+        title: "Interaction layer",
+        body: "Voting, saving, comments, tags, and feed sorting turn private indecision into a lightweight social decision process.",
+        accent: "aqua",
+        items: ["Vote cards", "Saves and comments", "Context tags", "Similar-taste feed sort"],
+      },
+      {
+        title: "Intelligence layer",
+        body: "Taste graphs, tag-driven reports, and later recommendation rules structure what the product learns from each decision.",
+        accent: "orange",
+        items: ["Taste graph", "Tag-based report", "Recommendation / reordering"],
+      },
+      {
+        title: "Business layer",
+        body: "The concept opens into taste-based ads, brand research, and point-driven revisit mechanics without changing the core decision loop.",
+        accent: "indigo",
+        items: ["Taste-based ads", "Brand research / demand sensing", "Points and revisit hooks"],
+      },
+    ],
+    iaGroups: [
+      {
+        title: "Home / Feed",
+        items: ["For You", "Similar Taste", "Vote", "Recommendation", "Small talk", "Detail / card view"],
+      },
+      {
+        title: "Compose",
+        items: ["Vote composition", "Recommendation post", "Candidate select", "Context tag input"],
+      },
+      {
+        title: "Storage",
+        items: ["Folders", "Search / filter", "Category split", "Purchase links", "Unified cart"],
+      },
+      {
+        title: "Report",
+        items: ["Tag ranking", "Situation / style ranking", "Report detail"],
+      },
+      {
+        title: "My",
+        items: ["My posts", "Unorganized items", "Points / alerts", "Folder management"],
+      },
+    ],
+    screenGuide: [
+      {
+        title: "Screen 01. Taste segmentation",
+        purpose: "Capture a user's style axis quickly after sign-up so the feed can sort around real preferences.",
+        components: [
+          "Mood chips",
+          "Favorite item cards",
+          "Purchase-priority chips",
+          "Next CTA",
+        ],
+        focus: "Fast choice matters more than visual decoration because this screen defines the recommendation baseline.",
+      },
+      {
+        title: "Screen 02. Vote feed card",
+        purpose: "Let users read one question and respond immediately inside a compact decision card.",
+        components: [
+          "Author + taste label",
+          "One-line question",
+          "2 to 3 candidate tiles",
+          "Vote / save actions",
+          "Context tags",
+        ],
+        focus: "The feed unit should feel judgeable at a glance, not like a generic social post.",
+      },
+      {
+        title: "Screen 03. Vote composition",
+        purpose: "Turn saved candidates into a structured question without making the flow feel heavy.",
+        components: [
+          "Source selector",
+          "2 to 5 candidate slots",
+          "Question input",
+          "Tag chips",
+          "Optional self-photo toggle",
+        ],
+        focus: "The sequence should stay explicit: add candidates, write the question, attach the context, then publish.",
+      },
+      {
+        title: "Screen 04. Storage",
+        purpose: "Make saved candidates behave like a comparison-first cart instead of a flat wishlist.",
+        components: [
+          "Search bar",
+          "Folder cards",
+          "Filter chips",
+          "Saved-item grid",
+          "Purchase links",
+        ],
+        focus: "Storage must read as an active decision workspace that can later expand into a unified cart.",
+      },
+    ],
+    structureOutcome:
+      "The concept lands as a decision-layer SNS: recommendation can happen elsewhere, but the actual choice becomes faster, more social, and easier to organize here.",
     galleryIntro:
-      "This page is intentionally staged for future structure diagrams and UI captures. It should read like an archived study with clear public framing.",
+      "The visual layer stays intentionally light for now. The important part is that the service logic, IA, and screen guidance are already strong enough to stand as a public concept case.",
     placeholderMedia: [
-      { label: "Structure diagram", note: "Community and interaction model" },
-      { label: "Screen snapshots", note: "Feature and flow references" },
-      { label: "Decision summary", note: "What the project tried to solve" },
+      { label: "Decision map", note: "Problem / solution / flow logic translated into the page structure." },
+      { label: "IA notes", note: "Feed, compose, storage, report, and my-page groups." },
+      { label: "Screen guide", note: "The first four surfaces that make the concept legible." },
     ],
     currentStatus: [
-      "Best positioned as an early archive case.",
-      "Will become more legible once the diagrams and screenshots are inserted.",
+      "Strong enough to sit in selected work because the service logic is already specific and transferable.",
+      "Future visuals will help, but the core case no longer depends on exposing the original files.",
     ],
   },
 ];
