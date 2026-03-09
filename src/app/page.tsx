@@ -139,19 +139,19 @@ export default function Home() {
         <motion.div {...fadeUp} className="section-heading">
           <div>
             <p className="eyebrow text-orange">Selected Cases</p>
-            <h2 className="section-title">Built work, research proof, and venture studies in one edited field.</h2>
+            <h2 className="section-title">Built work, research proof, and venture logic in one edited field.</h2>
           </div>
           <p className="section-sidecopy">
-            This selection now includes everything worth surfacing publicly beyond AHEYA: collaboration,
-            research, rapid build-and-test work, and stronger venture studies with visible structure.
+            This selection is intentionally mixed: collaboration, research, shipped interface evidence, and
+            concept cases that already have enough product logic to stand publicly without exposing raw docs.
           </p>
         </motion.div>
 
         <div className="selected-grid">
           <SelectedCaseCard project={selectedCases[0]} index={0} layout="feature" />
-          <SelectedCaseCard project={selectedCases[2]} index={1} layout="stack" />
-          <SelectedCaseCard project={selectedCases[3]} index={2} layout="feature" />
-          <SelectedCaseCard project={selectedCases[1]} index={3} layout="compact" />
+          <SelectedCaseCard project={selectedCases[1]} index={1} layout="stack" />
+          <SelectedCaseCard project={selectedCases[2]} index={2} layout="feature" />
+          <SelectedCaseCard project={selectedCases[3]} index={3} layout="compact" />
           <SelectedCaseCard project={selectedCases[4]} index={4} layout="full" />
         </div>
       </section>
