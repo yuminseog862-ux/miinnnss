@@ -136,11 +136,11 @@ export const siteTitle = "Yumin Seog";
 
 export const heroContent: HeroContent = {
   eyebrow: "Business development / AI image & video / web3 product strategy",
-  title: "I turn emerging ideas into market-ready stories, product logic, and visible output.",
+  title: "I turn early-stage ambiguity into market-ready products, stories, and proof.",
   summary:
-    "I work best where market framing, product structure, and public execution collide. My value is turning ambiguity into a sharper offer, a clearer narrative, and assets or interfaces a team can actually use in the market.",
+    "I work where market framing, product structure, and public execution collide. My value is turning ambiguity into a sharper offer, a clearer narrative, and usable visual or product output.",
   stageTitle:
-    "Cross-functional operator for early teams that need business development thinking, AI creative direction, and web3 product judgment in one person.",
+    "Cross-functional operator for early teams moving from idea to market.",
   ctas: [
     { label: "View Flagship Case", href: "#flagship", variant: "primary" },
     { label: "See Selected Proof", href: "#selected", variant: "secondary" },

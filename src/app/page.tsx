@@ -26,6 +26,8 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const flagshipCase = workCaseMap["aheya"];
+
   return (
     <main className="cinema-shell">
       <div className="cinema-orb cinema-orb-aqua" />
@@ -50,13 +52,6 @@ export default function Home() {
             <p className="eyebrow text-orange">{heroContent.eyebrow}</p>
             <h1 className="hero-title">{heroContent.title}</h1>
             <p className="hero-summary">{heroContent.summary}</p>
-            <ul className="hero-proof-list">
-              {heroContent.proofs.map((item) => (
-                <li key={item} className="hero-proof-item">
-                  {item}
-                </li>
-              ))}
-            </ul>
 
             <div className="hero-ctas">
               {heroContent.ctas.map((cta) => (
@@ -99,6 +94,20 @@ export default function Home() {
                       <span>{item.label}</span>
                       <strong>{item.value}</strong>
                     </div>
+                  ))}
+                </div>
+                <div className="hero-stage-proof-grid">
+                  {heroContent.proofs.map((item) => (
+                    <div key={item} className="hero-stage-proof">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="hero-stage-chip-row">
+                  {focusContent.lanes.map((lane) => (
+                    <span key={lane.title} className="case-chip hero-stage-chip">
+                      {lane.title}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -145,11 +154,47 @@ export default function Home() {
         </div>
 
         <div className="flagship-grid">
-          <div className="flagship-copy">
-            <p>{flagshipIntro.summary}</p>
-            <div className="flagship-status">
-              <span>{flagshipIntro.statusLabel}</span>
-              <strong>{flagshipIntro.statusValue}</strong>
+          <div className="flagship-rail">
+            <div className="flagship-copy">
+              <p>{flagshipIntro.summary}</p>
+              <div className="flagship-status">
+                <span>{flagshipIntro.statusLabel}</span>
+                <strong>{flagshipIntro.statusValue}</strong>
+              </div>
+            </div>
+
+            <div className="flagship-facts">
+              <article className="flagship-fact">
+                <p className="eyebrow text-aqua">Core ownership</p>
+                <div className="case-chip-group">
+                  {flagshipCase.roles.map((item) => (
+                    <span key={item} className="case-chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </article>
+
+              <article className="flagship-fact flagship-fact-emphasis">
+                <p className="eyebrow text-orange">Visible proof</p>
+                <div className="case-chip-group">
+                  {flagshipCase.evidence.map((item) => (
+                    <span key={item} className="case-chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+                <p className="flagship-fact-copy">{flagshipCase.currentStatus[1]}</p>
+              </article>
+
+              <article className="flagship-fact">
+                <p className="eyebrow text-indigo">Operating moves</p>
+                <ul className="flagship-bullet-list">
+                  {flagshipCase.whatIDid.slice(0, 2).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
             </div>
           </div>
 
