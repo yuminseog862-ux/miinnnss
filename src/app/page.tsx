@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, Orbit, RadioTower, ScanSearch, Sparkles } from "lucide-react";
@@ -7,13 +8,14 @@ import { ArrowDownRight, ArrowUpRight, Orbit, RadioTower, ScanSearch, Sparkles }
 import { SelectedCaseCard } from "@/components/project-card";
 import {
   focusContent,
+  flagshipFeature,
   flagshipIntro,
   flagshipPlates,
   footerContent,
   heroContent,
   practiceContent,
-  selectedCases,
   siteTitle,
+  workCaseMap,
 } from "@/data/portfolio";
 
 const fadeUp = {
@@ -154,8 +156,45 @@ export default function Home() {
           <div className="flagship-stage">
             <div className="flagship-stage-glow" />
             <div className="flagship-stage-shell">
+              <article className="flagship-feature-card">
+                <div className="flagship-feature-media">
+                  <Image
+                    src={flagshipFeature.media.src}
+                    alt={flagshipFeature.media.alt}
+                    fill
+                    sizes="(max-width: 1100px) 100vw, 60vw"
+                    className="flagship-feature-image"
+                    priority
+                  />
+                </div>
+                <div className="flagship-feature-copy">
+                  <div className="flagship-feature-top">
+                    <div className="flagship-feature-logo">
+                      <Image
+                        src={flagshipFeature.badge.src}
+                        alt={flagshipFeature.badge.alt}
+                        width={56}
+                        height={56}
+                        className="flagship-feature-logo-image"
+                      />
+                    </div>
+                    <span className="eyebrow text-aqua">{flagshipFeature.label}</span>
+                  </div>
+                  <p className="flagship-feature-title">{flagshipFeature.title}</p>
+                  <p className="flagship-feature-body">{flagshipFeature.body}</p>
+                </div>
+              </article>
               {flagshipPlates.map((plate) => (
                 <article key={plate.title} className="flagship-plate">
+                  <div className="flagship-plate-media">
+                    <Image
+                      src={plate.media.src}
+                      alt={plate.media.alt}
+                      fill
+                      sizes="(max-width: 1100px) 100vw, 30vw"
+                      className="flagship-plate-image"
+                    />
+                  </div>
                   <p className={`eyebrow ${accentClass(plate.accent)}`}>{plate.title}</p>
                   <p className="flagship-plate-copy">{plate.body}</p>
                 </article>
@@ -178,11 +217,11 @@ export default function Home() {
         </motion.div>
 
         <div className="selected-grid">
-          <SelectedCaseCard project={selectedCases[0]} index={0} layout="feature" />
-          <SelectedCaseCard project={selectedCases[1]} index={1} layout="stack" />
-          <SelectedCaseCard project={selectedCases[2]} index={2} layout="feature" />
-          <SelectedCaseCard project={selectedCases[3]} index={3} layout="compact" />
-          <SelectedCaseCard project={selectedCases[4]} index={4} layout="full" />
+          <SelectedCaseCard project={workCaseMap["andersson-bell"]} index={0} layout="feature" />
+          <SelectedCaseCard project={workCaseMap["sfti-cmu"]} index={1} layout="compact" />
+          <SelectedCaseCard project={workCaseMap["be-moon"]} index={2} layout="feature" />
+          <SelectedCaseCard project={workCaseMap["ilysb"]} index={3} layout="compact" />
+          <SelectedCaseCard project={workCaseMap["ariadne-mode-moment"]} index={4} layout="full" />
         </div>
       </section>
 
