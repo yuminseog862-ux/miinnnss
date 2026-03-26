@@ -10,11 +10,13 @@ export type HeroContent = {
   eyebrow: string;
   title: string;
   summary: string;
+  stageTitle: string;
   ctas: Array<{
     label: string;
     href: string;
     variant: "primary" | "secondary";
   }>;
+  proofs: string[];
   signals: HeroSignal[];
 };
 
@@ -22,6 +24,13 @@ export type FlagshipPlate = {
   title: string;
   body: string;
   accent: Accent;
+};
+
+export type FocusLane = {
+  title: string;
+  body: string;
+  accent: Accent;
+  points: string[];
 };
 
 export type PlaceholderMedia = {
@@ -97,58 +106,96 @@ export type WorkCase = {
   currentStatus: string[];
 };
 
-export const siteTitle = "Selected Work";
+export const siteTitle = "Yumin Seog";
 
 export const heroContent: HeroContent = {
-  eyebrow: "Selected practice / portfolio",
-  title: "AI creative, web3 product, and narrative systems.",
+  eyebrow: "Business development / AI image & video / web3 product strategy",
+  title: "I turn emerging ideas into market-ready stories, product logic, and visible output.",
   summary:
-    "I work across product framing, visual direction, structured writing, and live iteration. My strongest work starts with a messy idea, then turns it into a usable system, a clearer story, and a visible output people can actually respond to.",
+    "I work best where market framing, product structure, and public execution collide. My value is turning ambiguity into a sharper offer, a clearer narrative, and assets or interfaces a team can actually use in the market.",
+  stageTitle:
+    "Cross-functional operator for early teams that need business development thinking, AI creative direction, and web3 product judgment in one person.",
   ctas: [
-    { label: "Enter Flagship", href: "#flagship", variant: "primary" },
-    { label: "View Selected Work", href: "#selected", variant: "secondary" },
+    { label: "View Flagship Case", href: "#flagship", variant: "primary" },
+    { label: "See Selected Proof", href: "#selected", variant: "secondary" },
+  ],
+  proofs: [
+    "Operating a live web3 flagship across product, narrative, and channel surfaces",
+    "Building AI image and short-form direction for brand-facing creative work",
+    "Translating research and venture concepts into partner-readable product cases",
   ],
   signals: [
-    { label: "Current flagship", value: "AHEYA / aheyabaraya.xyz" },
-    { label: "Core work", value: "Product / Creative / Narrative / Research" },
-    { label: "Current mode", value: "Building, operating, iterating" },
+    { label: "Best fit", value: "BD / AI creative / Web3 product" },
+    { label: "Current flagship", value: "AHEYA / live web3 product" },
+    { label: "Strength", value: "Strategy -> narrative -> visual -> execution" },
   ],
 };
 
 export const flagshipIntro = {
-  eyebrow: "Flagship",
+  eyebrow: "Live flagship / web3 venture",
   title: "AHEYA",
-  oneLiner: "A participatory web3 product shaped through product design, live messaging, and ongoing iteration.",
+  oneLiner:
+    "A live web3 venture where I connect business development, product structure, founder narrative, and creative execution.",
   summary:
-    "AHEYA holds the widest range of my current work in one place: product structure, public messaging, channel logic, visual outputs, and day-to-day refinement around what makes people enter, react, and return.",
-  ctaLabel: "Open flagship detail",
+    "AHEYA is the clearest proof of how I operate inside ambiguity: define the offer, sharpen the public story, align channel logic, and keep iterating from real market response instead of staying at the concept layer.",
+  ctaLabel: "Read flagship case",
   ctaHref: "/work/aheya",
-  statusLabel: "Current phase",
-  statusValue: "Live site, active structuring, message and channel fit in progress",
+  statusLabel: "Why it matters",
+  statusValue: "Live operating proof across BD, product strategy, GTM narrative, and creative ops",
 };
 
 export const flagshipPlates: FlagshipPlate[] = [
   {
-    title: "Product",
-    body: "Core loop planning, participation logic, user movement, and support-feedback-public proof framing.",
+    title: "Business",
+    body: "Offer framing, audience logic, founder-facing narrative, and the external story needed to make the product legible.",
     accent: "aqua",
   },
   {
-    title: "Build",
-    body: "Direct involvement in the live site, feature prioritization, operational iteration, and delivery flow.",
+    title: "Product",
+    body: "Participation loop planning, user movement, feature prioritization, and iteration around what actually gets people to enter and return.",
     accent: "indigo",
   },
   {
-    title: "Narrative",
-    body: "Landing copy, guardrails, public-safe positioning, and channel-specific messaging systems.",
+    title: "GTM",
+    body: "Landing copy, guardrails, positioning, and channel-specific messaging systems built for public clarity rather than internal jargon.",
     accent: "orange",
   },
   {
     title: "Creative",
-    body: "Image and video outputs, visual atmosphere, and narrative support assets across public surfaces.",
+    body: "Image and video outputs, visual atmosphere, and support assets that keep the product story coherent across surfaces.",
     accent: "aqua",
   },
 ];
+
+export const focusContent = {
+  eyebrow: "Where I Add Value Fastest",
+  title: "Three lanes I can own for an early-stage team.",
+  summary:
+    "The through-line is translation: opportunity into story, story into product logic, and product logic into visible execution.",
+  lanes: [
+    {
+      title: "Business development",
+      body:
+        "I help shape the offer, sharpen the narrative, and make early-stage opportunities easier to pitch to partners, users, and collaborators.",
+      accent: "aqua",
+      points: ["Opportunity framing", "Partner-ready messaging", "Founder and market narrative"],
+    },
+    {
+      title: "AI image & video",
+      body:
+        "I narrow messy experiments into a repeatable visual direction, then turn feedback into a workflow that a team can actually produce against.",
+      accent: "orange",
+      points: ["Storyboard systems", "Image-to-video iteration", "Feedback-driven creative direction"],
+    },
+    {
+      title: "Web3 / blockchain",
+      body:
+        "I treat web3 as a trust and behavior design problem: participation loops, verification rails, ownership proof, and venture logic.",
+      accent: "indigo",
+      points: ["Wallet and verification flow thinking", "On-chain market sensing", "Token and proof product strategy"],
+    },
+  ] satisfies FocusLane[],
+};
 
 export const selectedOrder = [
   "andersson-bell",
@@ -159,10 +206,10 @@ export const selectedOrder = [
 ] as const;
 
 export const practiceContent = {
-  eyebrow: "Practice",
-  title: "On-chain Learning Journey",
+  eyebrow: "Web3 market mapping",
+  title: "On-chain behavior, incentives, and venture signal.",
   summary:
-    "This is the background layer under my web3 work. I learned by participating first, then turning wallet flow, incentives, and community behavior into structured product and research questions.",
+    "I do not treat web3 as trend-watching. I participate, track user movement, and turn wallet behavior, incentive design, and public narrative into product, GTM, or partnership hypotheses.",
   protocols: [
     "LayerZero",
     "zkSync",
@@ -176,42 +223,42 @@ export const practiceContent = {
     "GRVT",
   ],
   memos: [
-    { label: "Question", value: "What exactly is changing behavior here?" },
-    { label: "Evidence", value: "Wallet flow, incentive design, public signal, and friction points." },
-    { label: "Hypothesis", value: "What should happen next if the product logic is real?" },
-    { label: "Next action", value: "Condense the signal into product or narrative decisions." },
+    { label: "Behavior", value: "What exactly is changing user movement here?" },
+    { label: "Signal", value: "Wallet flow, incentive design, public proof, and friction points." },
+    { label: "Hypothesis", value: "What should happen next if this mechanic is actually strong?" },
+    { label: "Action", value: "Condense the pattern into product, BD, or narrative decisions." },
   ] satisfies PracticeMemo[],
 };
 
 export const footerContent = {
-  line: "Portfolio frame for selected work, product logic, and ongoing web3 practice.",
-  meta: "English-first v1. Raw docs remain private.",
+  line: "Portfolio for business development, AI creative systems, and web3 product strategy.",
+  meta: "English-first. Private working docs stay off the public site.",
 };
 
 export const workCases: WorkCase[] = [
   {
     slug: "aheya",
     section: "Flagship",
-    eyebrow: "AHEYA / live flagship",
+    eyebrow: "Live web3 flagship",
     title: "AHEYA",
     oneLiner:
-      "A participatory web3 product where product structure, public messaging, and creative output are developed as one system.",
+      "A live web3 venture where I connect business development, product structure, founder narrative, and creative operations.",
     summary:
-      "AHEYA is the clearest view of how I work now: framing a live product, shaping the narrative around it, operating its public surfaces, and refining how people discover, react, and stay engaged.",
-    roles: ["Product strategy", "Narrative design", "Creative direction", "Site operation"],
+      "AHEYA is the clearest proof of how I work in an early team: shape the offer, sharpen the story, operate the public surfaces, and keep learning from real behavior instead of treating strategy and execution as separate jobs.",
+    roles: ["Business development", "Product strategy", "Narrative & GTM", "Creative operations"],
     evidence: ["Live site", "Messaging system", "Channel logic", "Iteration trail"],
-    status: "Building, operating, iterating",
+    status: "Live product in operation",
     tier: "flagship",
     accent: "aqua",
     year: "2025 - present",
     overview: [
       "AHEYA is a participatory product for creator and founder momentum, designed around support, reaction, and optional public proof.",
-      "It combines product framing, messaging, visual atmosphere, and operational learning instead of treating them as separate layers.",
+      "It combines venture framing, product logic, public messaging, and creative execution into one live operating system instead of splitting them into separate teams too early.",
     ],
     whatIDid: [
       "Structured the core product loop and participation logic.",
       "Worked on public-facing copy, positioning, and messaging guardrails.",
-      "Helped shape the live site and the way the product is presented externally.",
+      "Shaped the live site and the way the product is explained externally.",
       "Built and refined narrative outputs across web and social surfaces.",
     ],
     whatExists: [
@@ -233,21 +280,21 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "Live and still being refined.",
-      "Most useful as evidence of current integrated practice across product, narrative, and creative work.",
+      "Most useful as proof that I can operate across BD, product strategy, narrative, and creative execution at once.",
     ],
   },
   {
     slug: "andersson-bell",
     section: "Selected Work",
-    eyebrow: "Creative planning",
+    eyebrow: "AI image-to-video direction",
     title: "Andersson Bell",
     oneLiner:
-      "A GenAI short-form collaboration shaped through stakeholder feedback, visual narrowing, and a more disciplined storyboard system.",
+      "A brand-facing AI visual collaboration that turned open-ended experimentation into a usable image-to-video system.",
     summary:
-      "This project shows how I work when a visual direction needs structure: brand analysis, storyboard revision, toolchain coordination, and converting feedback into the next usable production rule.",
-    roles: ["Creative planning", "Storyboard revision", "Feedback alignment"],
-    evidence: ["Report", "Storyboard", "Image pipeline", "Short-form package"],
-    status: "Completed collaboration",
+      "This project shows how I work when a creative direction needs more than taste: I read the brand, narrow the visual system, coordinate the toolchain, and turn stakeholder feedback into production rules.",
+    roles: ["AI image direction", "Storyboard system", "Feedback alignment"],
+    evidence: ["Storyboard", "Generated frames", "Toolchain workflow", "Short-form output"],
+    status: "Delivered creative collaboration",
     tier: "selected",
     accent: "orange",
     year: "2025",
@@ -257,13 +304,13 @@ export const workCases: WorkCase[] = [
     },
     overview: [
       "A collaborative short-form project built around Andersson Bell's tone and visual logic.",
-      "The strongest part of the work was narrowing the direction until the visual system became consistent enough to produce against.",
+      "The strongest part of the work was narrowing the direction until the visual system became clear enough to produce against repeatedly.",
     ],
     whatIDid: [
       "Worked through brand analysis and storyboard structure.",
       "Reframed the sequence after early approaches created tone diffusion.",
       "Connected Midjourney, Gemini, Photoshop, and Kling into a repeatable pipeline.",
-      "Helped translate real stakeholder feedback into clearer production rules.",
+      "Translated stakeholder feedback into clearer production rules.",
     ],
     whatExists: [
       "Final report and storyboard package.",
@@ -299,21 +346,21 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "Closed project with visible outputs.",
-      "Best read as a creative planning case rather than a pure asset-making case.",
+      "Best read as proof that I can direct AI visual work with structure, not just generate assets.",
     ],
   },
   {
     slug: "sfti-cmu",
     section: "Selected Work",
-    eyebrow: "Research writing",
+    eyebrow: "Research translation / English writing",
     title: "SFTI-CMU",
     oneLiner:
-      "An English conference submission that turned AI-generated emotional content into a structured research question and visual framework.",
+      "An accepted conference submission that turned AI-generated emotional content into a structured external-facing research case.",
     summary:
-      "This case is less about academic polish and more about external-facing research translation: building a usable concept, organizing references, and framing a visual clustering approach in English.",
-    roles: ["Research framing", "English writing", "Visual framework"],
-    evidence: ["Submission", "Review result", "Abstract", "Framework logic"],
-    status: "Accepted with revisions",
+      "This case is less about academic prestige and more about structured communication: building a usable concept, organizing references, and turning AI-content research into an English-language argument that could travel externally.",
+    roles: ["Research framing", "English writing", "AI content analysis", "External communication"],
+    evidence: ["Submission", "Acceptance with revisions", "Abstract", "Framework"],
+    status: "Accepted conference submission",
     tier: "selected",
     accent: "indigo",
     year: "2025",
@@ -345,21 +392,21 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "Closed research output with a concrete external result.",
-      "Best used as evidence of writing, framing, and English communication.",
+      "Best used as evidence of writing, framing, and English communication under ambiguity.",
     ],
   },
   {
     slug: "ilysb",
     section: "Selected Work",
-    eyebrow: "Solo mobile build",
+    eyebrow: "0 -> 1 mobile test",
     title: "ILYSB",
     oneLiner:
-      "A quickly built mobile experiment used to test a social premise, then stopped after early user discomfort appeared clearly.",
+      "A solo mobile experiment that proved build speed, user-testing judgment, and the willingness to stop weak ideas early.",
     summary:
-      "ILYSB belongs in selected work because it was actually built, shown, and tested. The point is not that it became a product, but that it moved from concept to interface to user signal quickly enough to make a clear decision.",
-    roles: ["Concept build", "UI direction", "Solo execution", "User testing"],
-    evidence: ["Mobile app", "Screenshots", "Early test", "Decision signal"],
-    status: "Built, tested, discontinued",
+      "ILYSB belongs here because it moved from concept to interface to user signal quickly enough to make a real product decision. The value is not that it became a business. The value is judgment under speed.",
+    roles: ["0 -> 1 product build", "UI direction", "User testing", "Fast execution"],
+    evidence: ["Working mobile app", "Screenshots", "User test", "Kill decision"],
+    status: "Built, tested, then stopped",
     tier: "selected",
     accent: "aqua",
     year: "2025",
@@ -411,21 +458,21 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "Useful as a build-and-test case, not as an ongoing product.",
-      "Should stay compact and direct in the public portfolio.",
+      "Shows that I can ship, read the signal, and make the hard call early.",
     ],
   },
   {
     slug: "be-moon",
     section: "Selected Work",
-    eyebrow: "Venture-thesis product",
+    eyebrow: "Web3 venture / trust rail",
     title: "BE;MOON",
     oneLiner:
-      "A digital warranty rail for fashion brands, structured around DPP pressure, counterfeit trust gaps, and issuance-to-verification operations.",
+      "A web3 product thesis for digital warranty, ownership verification, and post-purchase trust in fashion.",
     summary:
-      "BE;MOON now reads best as a product-logic case, not a private document archive. The important part is the operating rail: purchase authentication, wallet minting, verification, and OMS state sync built as one trust layer.",
-    roles: ["Problem framing", "Service design", "Product logic", "Venture thesis"],
-    evidence: ["Problem / solution flow", "Service structure", "Figma surfaces", "MVP rail"],
-    status: "Structured product case",
+      "BE;MOON reads best as a web3 strategy case. The important part is the operating rail: purchase authentication, wallet minting, verification, and OMS state sync built as one trust layer a brand could actually operate.",
+    roles: ["Web3 product strategy", "Service design", "Venture thesis", "Trust-system framing"],
+    evidence: ["Problem / solution logic", "MVP flow", "Figma surfaces", "Verification model"],
+    status: "Venture thesis with product architecture",
     tier: "selected",
     accent: "orange",
     year: "2024",
@@ -548,21 +595,21 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "A strong draft-level case because the product logic is already web-native and legible.",
-      "Best read as a venture-thesis product system rather than a finished launch.",
+      "Best read as proof that I can frame blockchain utility around trust and operations, not hype.",
     ],
   },
   {
     slug: "ariadne-mode-moment",
     section: "Selected Work",
-    eyebrow: "Decision-layer concept",
+    eyebrow: "Consumer venture strategy",
     title: "Ariadne / ModeMoment",
     oneLiner:
-      "A fashion decision-layer service that reduces cart-stage hesitation through similar-taste feedback, unified storage, and lightweight social judgment.",
+      "A decision-layer fashion service showing strong product strategy, IA, and monetization thinking before full build.",
     summary:
-      "Ariadne matters because the structure is already specific. Instead of another fashion discovery feed, it focuses on the decision moment after recommendation, with ModeMoment positioned as the expansion of the same venture line.",
-    roles: ["Service framing", "IA planning", "Interaction design", "Venture expansion"],
-    evidence: ["Problem / solution flow", "IA block", "Service structure", "Screen guide"],
-    status: "Structured concept case",
+      "Ariadne matters because the structure is already specific. Instead of another fashion discovery feed, it focuses on the decision moment after recommendation, with ModeMoment extending the same strategic line into a broader venture direction.",
+    roles: ["Product strategy", "Interaction design", "IA planning", "Business model thinking"],
+    evidence: ["Problem / solution flow", "IA map", "Service structure", "Screen guide"],
+    status: "Strategic concept with system depth",
     tier: "selected",
     accent: "indigo",
     year: "2023 - 2024",
@@ -776,7 +823,7 @@ export const workCases: WorkCase[] = [
     ],
     currentStatus: [
       "Strong enough to sit in selected work because the service logic is already specific and transferable.",
-      "Future visuals will help, but the core case no longer depends on exposing the original files.",
+      "Useful as proof of structured product thinking even before a full build exists.",
     ],
   },
 ];

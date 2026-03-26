@@ -6,6 +6,7 @@ import { ArrowDownRight, ArrowUpRight, Orbit, RadioTower, ScanSearch, Sparkles }
 
 import { SelectedCaseCard } from "@/components/project-card";
 import {
+  focusContent,
   flagshipIntro,
   flagshipPlates,
   footerContent,
@@ -47,6 +48,13 @@ export default function Home() {
             <p className="eyebrow text-orange">{heroContent.eyebrow}</p>
             <h1 className="hero-title">{heroContent.title}</h1>
             <p className="hero-summary">{heroContent.summary}</p>
+            <ul className="hero-proof-list">
+              {heroContent.proofs.map((item) => (
+                <li key={item} className="hero-proof-item">
+                  {item}
+                </li>
+              ))}
+            </ul>
 
             <div className="hero-ctas">
               {heroContent.ctas.map((cta) => (
@@ -79,12 +87,10 @@ export default function Home() {
               <div className="hero-stage-line hero-stage-line-indigo" />
               <div className="hero-stage-card">
                 <div className="hero-stage-top">
-                  <span className="eyebrow text-aqua">Current frame</span>
+                  <span className="eyebrow text-aqua">Hiring signal</span>
                   <Sparkles className="h-4 w-4 text-white/70" />
                 </div>
-                <p className="hero-stage-title">
-                  A curated portfolio for live products, research output, and venture studies.
-                </p>
+                <p className="hero-stage-title">{heroContent.stageTitle}</p>
                 <div className="hero-signal-list">
                   {heroContent.signals.map((item) => (
                     <div key={item.label} className="hero-signal-row">
@@ -98,6 +104,30 @@ export default function Home() {
           </motion.aside>
         </div>
       </section>
+
+      <motion.section {...fadeUp} className="page-frame focus-frame">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow text-indigo">{focusContent.eyebrow}</p>
+            <h2 className="section-title">{focusContent.title}</h2>
+          </div>
+          <p className="section-sidecopy">{focusContent.summary}</p>
+        </div>
+
+        <div className="focus-grid">
+          {focusContent.lanes.map((lane) => (
+            <article key={lane.title} className="focus-lane">
+              <p className={`eyebrow ${accentClass(lane.accent)}`}>{lane.title}</p>
+              <p className="focus-lane-body">{lane.body}</p>
+              <ul className="focus-list">
+                {lane.points.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </motion.section>
 
       <motion.section {...fadeUp} id="flagship" className="page-frame flagship-frame">
         <div className="section-heading section-heading-wide">
@@ -139,11 +169,11 @@ export default function Home() {
         <motion.div {...fadeUp} className="section-heading">
           <div>
             <p className="eyebrow text-orange">Selected Cases</p>
-            <h2 className="section-title">Built work, research proof, and venture logic in one edited field.</h2>
+            <h2 className="section-title">Selected proof across BD, AI creative, and product strategy.</h2>
           </div>
           <p className="section-sidecopy">
-            This selection is intentionally mixed: collaboration, research, shipped interface evidence, and
-            concept cases that already have enough product logic to stand publicly without exposing raw docs.
+            Each case is here because it proves something hireable: live operation, concept-to-build speed,
+            AI image and video direction, research translation, or web3 service logic.
           </p>
         </motion.div>
 

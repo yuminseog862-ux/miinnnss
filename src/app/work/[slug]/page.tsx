@@ -36,9 +36,10 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
         <div className="detail-hero-grid">
           <div>
-            <p className={`eyebrow ${accentText(project.accent)}`}>{project.section}</p>
+            <p className={`eyebrow ${accentText(project.accent)}`}>{project.eyebrow}</p>
             <h1 className="detail-title">{project.title}</h1>
             <p className="detail-oneliner">{project.oneLiner}</p>
+            <p className="detail-summary-copy">{project.summary}</p>
           </div>
 
           <aside className="detail-summary-panel">
@@ -47,12 +48,16 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
               <strong>{project.status}</strong>
             </div>
             <div className="detail-summary-row">
-              <span>Year</span>
-              <strong>{project.year}</strong>
+              <span>Best fit</span>
+              <strong>{project.roles.join(" / ")}</strong>
             </div>
             <div className="detail-summary-row">
-              <span>Roles</span>
-              <strong>{project.roles.join(" / ")}</strong>
+              <span>Proof</span>
+              <strong>{project.evidence.join(" / ")}</strong>
+            </div>
+            <div className="detail-summary-row">
+              <span>Year</span>
+              <strong>{project.year}</strong>
             </div>
           </aside>
         </div>
@@ -62,7 +67,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
         <>
           <section className="detail-frame detail-content-grid">
             <article className="detail-panel">
-              <p className="detail-section-eyebrow">Overview</p>
+              <p className="detail-section-eyebrow">Why this case</p>
               <div className="detail-paragraphs">
                 {project.overview.map((item) => (
                   <p key={item}>{item}</p>
@@ -71,7 +76,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </article>
 
             <article className="detail-panel">
-              <p className="detail-section-eyebrow">What I did</p>
+              <p className="detail-section-eyebrow">Scope I owned</p>
               <ul className="detail-list">
                 {project.whatIDid.map((item) => (
                   <li key={item}>{item}</li>
@@ -271,7 +276,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
           <section className="detail-frame detail-content-grid">
             <article className="detail-panel">
-              <p className="detail-section-eyebrow">What exists</p>
+              <p className="detail-section-eyebrow">Deliverables / proof</p>
               <ul className="detail-list">
                 {project.whatExists.map((item) => (
                   <li key={item}>{item}</li>
@@ -280,7 +285,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </article>
 
             <article className="detail-panel">
-              <p className="detail-section-eyebrow">Key decisions</p>
+              <p className="detail-section-eyebrow">What I optimized for</p>
               <ul className="detail-list">
                 {project.keyDecisions.map((item) => (
                   <li key={item}>{item}</li>
@@ -292,7 +297,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
       ) : (
         <section className="detail-frame detail-content-grid">
           <article className="detail-panel">
-            <p className="detail-section-eyebrow">Overview</p>
+            <p className="detail-section-eyebrow">Why this case</p>
             <div className="detail-paragraphs">
               {project.overview.map((item) => (
                 <p key={item}>{item}</p>
@@ -301,7 +306,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
           </article>
 
           <article className="detail-panel">
-            <p className="detail-section-eyebrow">What I did</p>
+            <p className="detail-section-eyebrow">Scope I owned</p>
             <ul className="detail-list">
               {project.whatIDid.map((item) => (
                 <li key={item}>{item}</li>
@@ -310,7 +315,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
           </article>
 
           <article className="detail-panel">
-            <p className="detail-section-eyebrow">What exists</p>
+            <p className="detail-section-eyebrow">Deliverables / proof</p>
             <ul className="detail-list">
               {project.whatExists.map((item) => (
                 <li key={item}>{item}</li>
@@ -319,7 +324,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
           </article>
 
           <article className="detail-panel">
-            <p className="detail-section-eyebrow">Key decisions</p>
+            <p className="detail-section-eyebrow">What I optimized for</p>
             <ul className="detail-list">
               {project.keyDecisions.map((item) => (
                 <li key={item}>{item}</li>
@@ -363,7 +368,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
       </section>
 
       <section className="detail-frame detail-status-frame">
-        <p className="detail-section-eyebrow">Current status</p>
+        <p className="detail-section-eyebrow">How to read this case now</p>
         <div className="detail-status-grid">
           {project.currentStatus.map((item) => (
             <div key={item} className="detail-status-item">
