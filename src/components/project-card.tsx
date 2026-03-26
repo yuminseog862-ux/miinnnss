@@ -42,6 +42,7 @@ export function SelectedCaseCard({ project, index, layout }: SelectedCaseCardPro
             fill
             sizes={layout === "full" ? "100vw" : "(max-width: 1100px) 100vw, 50vw"}
             className="selected-card-image"
+            style={{ objectFit: project.coverImage.fit ?? "cover" }}
           />
           <div className="selected-card-media-wash" />
         </div>

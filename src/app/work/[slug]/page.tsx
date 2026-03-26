@@ -23,6 +23,9 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
     notFound();
   }
 
+  const isCompactCase = project.detailDensity === "compact";
+  const displayedFlowSteps = isCompactCase ? project.flowSteps?.slice(0, 4) : project.flowSteps;
+
   return (
     <main className="detail-shell">
       <div className="detail-orb detail-orb-aqua" />
@@ -130,12 +133,14 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </section>
           ) : null}
 
-          {project.problemSummary || project.solutionSummary || project.flowSteps ? (
+          {project.problemSummary || project.solutionSummary || displayedFlowSteps ? (
             <section className="detail-frame detail-logic-frame">
               <div className="detail-structured-header">
                 <div>
                   <p className="detail-section-eyebrow">Problem - solution - flow</p>
-                  <h2 className="detail-structured-title">The service logic, rebuilt for the web.</h2>
+                  <h2 className="detail-structured-title">
+                    {isCompactCase ? "The strongest parts of the service logic, kept compact." : "The service logic, rebuilt for the web."}
+                  </h2>
                 </div>
               </div>
 
@@ -174,7 +179,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                 <div className="detail-logic-column">
                   <p className="detail-logic-label">{project.flowHeading ?? "Flow"}</p>
                   <div className="detail-flow-stack">
-                    {project.flowSteps?.map((item) => (
+                    {displayedFlowSteps?.map((item) => (
                       <article key={`${item.step}-${item.title}`} className="detail-flow-card">
                         <div className="detail-flow-top">
                           <span className="detail-flow-step">{item.step}</span>
@@ -192,7 +197,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </section>
           ) : null}
 
-          {project.serviceStructure ? (
+          {project.serviceStructure && !isCompactCase ? (
             <section className="detail-frame detail-structured-frame">
               <div className="detail-structured-header">
                 <div>
@@ -224,7 +229,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </section>
           ) : null}
 
-          {project.iaGroups ? (
+          {project.iaGroups && !isCompactCase ? (
             <section className="detail-frame detail-structured-frame">
               <div className="detail-structured-header">
                 <div>
@@ -247,7 +252,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </section>
           ) : null}
 
-          {project.screenGuide ? (
+          {project.screenGuide && !isCompactCase ? (
             <section className="detail-frame detail-structured-frame">
               <div className="detail-structured-header">
                 <div>
@@ -348,16 +353,37 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
         <div className="detail-media-grid">
           {project.placeholderMedia.map((item) => (
-            <article key={item.label} className="detail-media-card">
+            <article
+              key={item.label}
+              className={item.featured ? "detail-media-card detail-media-card-featured" : "detail-media-card"}
+            >
               {item.src ? (
-                <div className="detail-media-visual">
-                  <Image
-                    src={item.src}
-                    alt={item.alt ?? item.label}
-                    fill
-                    sizes="(max-width: 1100px) 100vw, 33vw"
-                    className="detail-media-image"
-                  />
+                <div
+                  className={
+                    item.featured ? "detail-media-visual detail-media-visual-featured" : "detail-media-visual"
+                  }
+                >
+                  {item.type === "video" ? (
+                    <video
+                      className="detail-media-video"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={item.poster}
+                    >
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.alt ?? item.label}
+                      fill
+                      sizes={item.featured ? "(max-width: 1100px) 100vw, 100vw" : "(max-width: 1100px) 100vw, 33vw"}
+                      className="detail-media-image"
+                      style={{ objectFit: item.fit ?? "contain" }}
+                      priority={item.featured}
+                    />
+                  )}
                 </div>
               ) : null}
               <p className="detail-media-label">{item.label}</p>

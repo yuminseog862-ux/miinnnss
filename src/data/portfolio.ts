@@ -6,6 +6,8 @@ export type HeroSignal = {
   value: string;
 };
 
+export type MediaFit = "cover" | "contain";
+
 export type HeroContent = {
   eyebrow: string;
   title: string;
@@ -24,6 +26,24 @@ export type FlagshipPlate = {
   title: string;
   body: string;
   accent: Accent;
+  media: {
+    src: string;
+    alt: string;
+  };
+};
+
+export type FlagshipFeature = {
+  label: string;
+  title: string;
+  body: string;
+  media: {
+    src: string;
+    alt: string;
+  };
+  badge: {
+    src: string;
+    alt: string;
+  };
 };
 
 export type FocusLane = {
@@ -38,6 +58,10 @@ export type PlaceholderMedia = {
   note: string;
   src?: string;
   alt?: string;
+  type?: "image" | "video";
+  fit?: MediaFit;
+  poster?: string;
+  featured?: boolean;
 };
 
 export type PracticeMemo = {
@@ -87,7 +111,9 @@ export type WorkCase = {
   coverImage?: {
     src: string;
     alt: string;
+    fit?: MediaFit;
   };
+  detailDensity?: "default" | "compact";
   overview: string[];
   whatIDid: string[];
   whatExists: string[];
@@ -144,26 +170,57 @@ export const flagshipIntro = {
   statusValue: "Live operating proof across BD, product strategy, GTM narrative, and creative ops",
 };
 
+export const flagshipFeature: FlagshipFeature = {
+  label: "Flagship visual system",
+  title: "AHEYA anchors the product story with one strong world, then expands into clearer entry points.",
+  body:
+    "The kumiho visual works as the emotional front door. From there, the site breaks the offer into founder, project, and trust lanes that are easier to understand and act on.",
+  media: {
+    src: "/aheya/kumiho.png",
+    alt: "AHEYA kumiho visual used as the flagship atmosphere image.",
+  },
+  badge: {
+    src: "/aheya/logo.png",
+    alt: "AHEYA app logo.",
+  },
+};
+
 export const flagshipPlates: FlagshipPlate[] = [
   {
     title: "Business",
     body: "Offer framing, audience logic, founder-facing narrative, and the external story needed to make the product legible.",
     accent: "aqua",
+    media: {
+      src: "/aheya/home-hero.png",
+      alt: "AHEYA homepage hero showing the main headline and product positioning.",
+    },
   },
   {
     title: "Product",
     body: "Participation loop planning, user movement, feature prioritization, and iteration around what actually gets people to enter and return.",
     accent: "indigo",
+    media: {
+      src: "/aheya/lane-panels.png",
+      alt: "AHEYA lane panels for founders, backers, and trust.",
+    },
   },
   {
     title: "GTM",
     body: "Landing copy, guardrails, positioning, and channel-specific messaging systems built for public clarity rather than internal jargon.",
     accent: "orange",
+    media: {
+      src: "/aheya/tiger.png",
+      alt: "AHEYA tiger creative used for narrative expansion and campaign mood.",
+    },
   },
   {
     title: "Creative",
     body: "Image and video outputs, visual atmosphere, and support assets that keep the product story coherent across surfaces.",
     accent: "aqua",
+    media: {
+      src: "/aheya/creator.png",
+      alt: "AHEYA creator-side visual used for support assets and world-building.",
+    },
   },
 ];
 
@@ -272,11 +329,41 @@ export const workCases: WorkCase[] = [
       "Build the atmosphere around the product without losing explanatory precision.",
     ],
     galleryIntro:
-      "This page prioritizes the structural parts of AHEYA first. Additional visuals can be layered in later without changing the page architecture.",
+      "AHEYA now reads best with the live surfaces and world-building shown together: the flagship art establishes the emotional entry, while the homepage captures show how the offer is translated into product and GTM structure.",
     placeholderMedia: [
-      { label: "Live site reference", note: "Current public-facing product layer" },
-      { label: "Narrative output", note: "Messaging and visual support assets" },
-      { label: "Flow framing", note: "Loop and interaction structure" },
+      {
+        label: "Flagship world image",
+        note: "Kumiho-led hero art used to anchor AHEYA's public identity.",
+        src: "/aheya/kumiho.png",
+        alt: "AHEYA kumiho hero image.",
+        featured: true,
+      },
+      {
+        label: "Homepage hero",
+        note: "Primary landing section that translates the offer into a clear external headline.",
+        src: "/aheya/home-hero.png",
+        alt: "AHEYA homepage hero screenshot.",
+        fit: "contain",
+      },
+      {
+        label: "Lane structure",
+        note: "Founder, backer, and trust lanes separated into a product-readable homepage structure.",
+        src: "/aheya/lane-panels.png",
+        alt: "AHEYA lane-panel homepage screenshot.",
+        fit: "contain",
+      },
+      {
+        label: "GTM visual",
+        note: "Tiger visual used to test narrative expansion and audience-facing campaign mood.",
+        src: "/aheya/tiger.png",
+        alt: "AHEYA tiger campaign visual.",
+      },
+      {
+        label: "Creative support image",
+        note: "A second world-building visual that extends the product atmosphere across public surfaces.",
+        src: "/aheya/creator.png",
+        alt: "AHEYA creator-side visual.",
+      },
     ],
     currentStatus: [
       "Live and still being refined.",
@@ -323,25 +410,17 @@ export const workCases: WorkCase[] = [
       "Used feedback as a structural tool, not just as aesthetic commentary.",
     ],
     galleryIntro:
-      "This case should eventually hold the storyboard, key generated frames, and a reduced version of the final visual package.",
+      "The short-form video should lead this case now. It shows the end result more clearly than stacking many stills, while still proving the image-to-video direction behind it.",
     placeholderMedia: [
       {
-        label: "Generated cover still",
-        note: "Representative still from the revised visual direction.",
-        src: "/work/andersson-bell-cover.png",
-        alt: "Andersson Bell generated crosswalk still.",
-      },
-      {
-        label: "Tooling capture",
-        note: "Process view from image-to-video iteration.",
-        src: "/work/andersson-bell-process.png",
-        alt: "Andersson Bell process screenshot from the image to video workflow.",
-      },
-      {
-        label: "Variation field",
-        note: "A screen of narrowed visual variants used to choose direction.",
-        src: "/work/andersson-bell-variants.png",
-        alt: "Andersson Bell grid of generated visual variants.",
+        label: "Final short-form output",
+        note: "Final Andersson Bell short-form video built from the narrowed visual direction and revised storyboard system.",
+        src: "/video/anderssonbell.mp4",
+        alt: "Andersson Bell short-form video.",
+        type: "video",
+        poster: "/work/andersson-bell-cover.png",
+        featured: true,
+        fit: "contain",
       },
     ],
     currentStatus: [
@@ -364,6 +443,11 @@ export const workCases: WorkCase[] = [
     tier: "selected",
     accent: "indigo",
     year: "2025",
+    coverImage: {
+      src: "/sfti/result.png",
+      alt: "SFTI-CMU accepted abstract page and conference result image.",
+      fit: "contain",
+    },
     overview: [
       "A conference submission on AI-generated emotional content strategy for niche fashion brands.",
       "The work connects research language, brand interpretation, and a visual clustering framework.",
@@ -384,11 +468,16 @@ export const workCases: WorkCase[] = [
       "Use the submission as a proof of structured writing and concept clarity.",
     ],
     galleryIntro:
-      "This page should stay text-forward with a few supporting research visuals instead of pretending to be a media-heavy design case.",
+      "The accepted abstract page is the most convincing visual proof here, so this case now shows it directly instead of implying the research through generic placeholders.",
     placeholderMedia: [
-      { label: "Submission excerpt", note: "Abstract and framing" },
-      { label: "Review result", note: "Acceptance with revisions" },
-      { label: "Framework panel", note: "Visual clustering logic" },
+      {
+        label: "Accepted abstract page",
+        note: "Conference submission page showing the abstract structure, visual framework, and acceptance result together.",
+        src: "/sfti/result.png",
+        alt: "SFTI-CMU abstract and result screenshot.",
+        fit: "contain",
+        featured: true,
+      },
     ],
     currentStatus: [
       "Closed research output with a concrete external result.",
@@ -413,6 +502,7 @@ export const workCases: WorkCase[] = [
     coverImage: {
       src: "/work/ilysb-main.png",
       alt: "ILYSB mobile interface showing the main page list view.",
+      fit: "contain",
     },
     overview: [
       "A solo-built mobile app concept developed as a direct experiment rather than a long planning exercise.",
@@ -442,18 +532,22 @@ export const workCases: WorkCase[] = [
         note: "Captured interface showing the list and action state.",
         src: "/work/ilysb-main.png",
         alt: "ILYSB mobile main page screenshot.",
+        fit: "contain",
+        featured: true,
       },
       {
         label: "Hint screen",
         note: "One of the core reveal surfaces in the app flow.",
         src: "/work/ilysb-hints.png",
         alt: "ILYSB hint screen with social clues.",
+        fit: "contain",
       },
       {
         label: "Entry screen",
         note: "Login and opening access point of the app.",
         src: "/work/ilysb-login.png",
         alt: "ILYSB entry screen with Kakao login.",
+        fit: "contain",
       },
     ],
     currentStatus: [
@@ -479,6 +573,7 @@ export const workCases: WorkCase[] = [
     coverImage: {
       src: "/work/bemoon-ui.png",
       alt: "be:moon Figma overview showing dark mobile screens and NFT-oriented product surfaces.",
+      fit: "contain",
     },
     overview: [
       "BE;MOON started from a simple question: how should a fashion brand prove ownership and authenticity once regulation, resale, and post-purchase trust all start to matter at the same time?",
@@ -584,12 +679,15 @@ export const workCases: WorkCase[] = [
         note: "Core interface surfaces and information architecture.",
         src: "/work/bemoon-ui.png",
         alt: "be:moon Figma board with multiple screens.",
+        fit: "contain",
+        featured: true,
       },
       {
         label: "NFT surface",
         note: "Verification and token-facing product evidence.",
         src: "/work/bemoon-nft.png",
         alt: "be:moon NFT and Polygonscan related surface.",
+        fit: "contain",
       },
       { label: "Service logic note", note: "Issuance, verification, and OMS sync as one rail." },
     ],
@@ -613,6 +711,7 @@ export const workCases: WorkCase[] = [
     tier: "selected",
     accent: "indigo",
     year: "2023 - 2024",
+    detailDensity: "compact",
     overview: [
       "Ariadne was built around a sharper observation than a generic fashion community pitch: the harder problem is not finding items, but choosing one final option out of several saved candidates.",
       "ModeMoment extends the same line of thought outward as a wider venture direction, but the core public case stays centered on Ariadne's decision-layer logic.",
