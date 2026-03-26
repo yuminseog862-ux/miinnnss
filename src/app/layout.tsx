@@ -5,9 +5,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Selected Work / Portfolio",
+  title: "Yumin Seog / BD x AI Creative x Web3 Portfolio",
   description:
-    "Selected work archive built for public case-study publishing without exposing raw documents.",
+    "Portfolio focused on business development, AI image and video direction, and web3 product strategy.",
 };
 
 export default function RootLayout({
