@@ -56,9 +56,9 @@ export const heroContent: HeroContent = {
 
 export const whyFitContent = {
   eyebrow: "Why This Role Fits",
-  title: "The actual work already sits where identity, mood, and implementation meet.",
+  title: "The work already sits where identity, mood, and implementation meet.",
   summary:
-    "The fit is not hypothetical. The same pattern already shows up across AHEYA, Andersson Bell, public experiments, and role-coded persona systems.",
+    "The fit is already visible across AHEYA, Andersson Bell, public experiments, and role-coded persona systems.",
   items: [
     {
       title: "Identity / world / persona",
@@ -89,9 +89,9 @@ export const whyFitContent = {
 
 export const focusContent = {
   eyebrow: "How I Work",
-  title: "Three things I try to make clear fast.",
+  title: "Three things I clarify fast.",
   summary:
-    "The through-line is not trend-chasing. I fix one emotional axis, make identity legible, and translate it into something a team can actually build against.",
+    "I fix one emotional axis, make identity legible, and translate it into something a team can actually build against.",
   lanes: [
     {
       title: "Identity",
