@@ -31,7 +31,7 @@ export type ExperimentContent = {
 export const siteTitle = "Yumin Seog";
 
 export const heroContent: HeroContent = {
-  eyebrow: "AI creative planning / character-led identity",
+  eyebrow: "AI creative planning / character identity",
   title:
     "I build character-led identity systems that make products easier to feel, understand, and remember.",
   summary:

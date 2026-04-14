@@ -40,7 +40,23 @@ const selectedLayouts = ["third", "third", "third"] as const;
 
 export default function BlueGaragePage() {
   const flagshipCase = workCaseMap["aheya"];
-  const aheyaImage = flagshipFeature.media;
+  const aheyaGallery = [
+    {
+      src: flagshipFeature.media.src,
+      alt: flagshipFeature.media.alt,
+      label: "Character front door",
+    },
+    {
+      src: flagshipPlates[0].media.src,
+      alt: flagshipPlates[0].media.alt,
+      label: "Product rail",
+    },
+    {
+      src: flagshipPlates[3].media.src,
+      alt: flagshipPlates[3].media.alt,
+      label: "Trust surface",
+    },
+  ];
 
   return (
     <main className="cinema-shell bluegarage-shell">
@@ -63,7 +79,7 @@ export default function BlueGaragePage() {
 
         <div className="hero-grid">
           <motion.section {...fadeUp} className="hero-copy">
-            <p className="eyebrow text-orange">{heroContent.eyebrow}</p>
+            <p className="eyebrow text-aqua hero-eyebrow-tight">{heroContent.eyebrow}</p>
             <p className="hero-kicker">{heroContent.stageTitle}</p>
             <h1 className="hero-title">{heroContent.title}</h1>
             <p className="hero-summary">{heroContent.summary}</p>
@@ -133,7 +149,7 @@ export default function BlueGaragePage() {
         <div className="role-fit-grid">
           {whyFitContent.items.map((item) => (
             <article key={item.title} className="role-fit-card">
-              <p className={`eyebrow ${accentClass(item.accent)}`}>{item.title}</p>
+              <p className="eyebrow text-aqua">{item.title}</p>
               <p className="role-fit-proof">{item.proof}</p>
             </article>
           ))}
@@ -143,7 +159,7 @@ export default function BlueGaragePage() {
       <motion.section {...fadeUp} className="page-frame focus-frame">
         <div className="section-heading">
           <div>
-            <p className="eyebrow text-indigo">{focusContent.eyebrow}</p>
+            <p className="eyebrow text-aqua">{focusContent.eyebrow}</p>
             <h2 className="section-title">{focusContent.title}</h2>
           </div>
           <p className="section-sidecopy">{focusContent.summary}</p>
@@ -152,7 +168,7 @@ export default function BlueGaragePage() {
         <div className="focus-grid">
           {focusContent.lanes.map((lane) => (
             <article key={lane.title} className="focus-lane">
-              <p className={`eyebrow ${accentClass(lane.accent)}`}>{lane.title}</p>
+              <p className="eyebrow text-aqua">{lane.title}</p>
               <p className="focus-lane-body">{lane.body}</p>
               <div className="case-chip-group focus-chip-group">
                 {lane.points.map((item) => (
@@ -180,19 +196,8 @@ export default function BlueGaragePage() {
         </div>
 
         <div className="flagship-compact-grid">
-          <article className="flagship-feature-card flagship-feature-card-compact">
-            <div className="flagship-feature-media">
-              <Image
-                src={aheyaImage.src}
-                alt={aheyaImage.alt}
-                fill
-                sizes="(max-width: 1100px) 100vw, 52vw"
-                className="flagship-feature-image"
-                style={{ objectFit: aheyaImage.fit ?? "cover" }}
-                priority
-              />
-            </div>
-            <div className="flagship-feature-copy">
+          <div className="flagship-rail">
+            <div className="flagship-copy flagship-copy-hero">
               <div className="flagship-feature-top">
                 <div className="flagship-feature-logo">
                   <Image
@@ -207,9 +212,7 @@ export default function BlueGaragePage() {
               </div>
               <p className="flagship-feature-title">{flagshipFeature.title}</p>
             </div>
-          </article>
 
-          <div className="flagship-rail">
             <div className="flagship-copy flagship-copy-compact">
               <p>{flagshipIntro.summary}</p>
             </div>
@@ -244,10 +247,29 @@ export default function BlueGaragePage() {
             </div>
           </div>
 
+          <div className="flagship-visual-row">
+            {aheyaGallery.map((item, index) => (
+              <article key={item.label} className="flagship-visual-card">
+                <div className="flagship-visual-media">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 1100px) 100vw, 33vw"
+                    className="flagship-plate-image"
+                    style={{ objectFit: index === 0 ? "cover" : "contain" }}
+                    priority={index === 0}
+                  />
+                </div>
+                <p className="flagship-visual-label">{item.label}</p>
+              </article>
+            ))}
+          </div>
+
           <div className="flagship-plate-strip">
             {flagshipPlates.map((plate) => (
               <article key={plate.title} className="flagship-plate-compact">
-                <p className={`eyebrow ${accentClass(plate.accent)}`}>{plate.title}</p>
+                <p className="eyebrow text-aqua">{plate.title}</p>
                 <p className="flagship-plate-copy">{plate.body}</p>
               </article>
             ))}
