@@ -16,15 +16,14 @@ import { ArchiveCaseCard, SelectedCaseCard } from "@/components/project-card";
 import {
   archiveCases,
   experimentsContent,
+  fitMethodContent,
   flagshipFeature,
   flagshipIntro,
   flagshipPlates,
-  focusContent,
   footerContent,
   heroContent,
   selectedCases,
   siteTitle,
-  whyFitContent,
   workCaseMap,
 } from "@/data/portfolio.bluegarage";
 
@@ -40,21 +39,38 @@ const selectedLayouts = ["third", "third", "third"] as const;
 
 export default function BlueGaragePage() {
   const flagshipCase = workCaseMap["aheya"];
-  const aheyaGallery = [
+  const heroTitleLines = [
+    "I build character-led identity systems that",
+    "make products easier to feel, understand, and remember.",
+  ];
+  const heroSignalCards = heroContent.signals.map((item, index) => ({
+    ...item,
+    proof: heroContent.proofs[index] ?? "",
+  }));
+  const aheyaCards = [
     {
       src: flagshipFeature.media.src,
       alt: flagshipFeature.media.alt,
       label: "Character front door",
+      title: "One emotional front door.",
+      body: "Kumiho holds entry and recall so the product face can stay clearer.",
+      fit: flagshipFeature.media.fit ?? "cover",
     },
     {
       src: flagshipPlates[0].media.src,
       alt: flagshipPlates[0].media.alt,
-      label: "Product rail",
+      label: flagshipPlates[0].title,
+      title: "Support and signal read fast.",
+      body: "The rail spells out support, feedback, and public proof on first view.",
+      fit: flagshipPlates[0].media.fit ?? "cover",
     },
     {
       src: flagshipPlates[3].media.src,
       alt: flagshipPlates[3].media.alt,
       label: "Trust surface",
+      title: "Trust gets its own face.",
+      body: "Transfer logic and trust surfaces stay separate instead of hiding inside brand mood.",
+      fit: flagshipPlates[3].media.fit ?? "cover",
     },
   ];
 
@@ -81,7 +97,13 @@ export default function BlueGaragePage() {
           <motion.section {...fadeUp} className="hero-copy">
             <p className="eyebrow text-aqua hero-eyebrow-tight">{heroContent.eyebrow}</p>
             <p className="hero-kicker">{heroContent.stageTitle}</p>
-            <h1 className="hero-title">{heroContent.title}</h1>
+            <h1 className="hero-title">
+              {heroTitleLines.map((line) => (
+                <span key={line} className="hero-title-line">
+                  {line}
+                </span>
+              ))}
+            </h1>
             <p className="hero-summary">{heroContent.summary}</p>
 
             <div className="hero-ctas">
@@ -119,61 +141,36 @@ export default function BlueGaragePage() {
           </div>
 
           <div className="hero-signal-band-grid">
-            {heroContent.signals.map((item) => (
+            {heroSignalCards.map((item) => (
               <article key={item.label} className="hero-signal-band-card">
                 <span>{item.label}</span>
                 <strong>{item.value}</strong>
+                <p>{item.proof}</p>
               </article>
-            ))}
-          </div>
-
-          <div className="hero-proof-strip">
-            {heroContent.proofs.map((item) => (
-              <div key={item} className="hero-proof-pill">
-                {item}
-              </div>
             ))}
           </div>
         </motion.section>
       </section>
 
-      <motion.section {...fadeUp} className="page-frame role-fit-frame">
+      <motion.section {...fadeUp} className="page-frame fit-method-frame">
         <div className="section-heading">
           <div>
-            <p className="eyebrow text-aqua">{whyFitContent.eyebrow}</p>
-            <h2 className="section-title">{whyFitContent.title}</h2>
+            <p className="eyebrow text-aqua">{fitMethodContent.eyebrow}</p>
+            <h2 className="section-title">{fitMethodContent.title}</h2>
           </div>
-          <p className="section-sidecopy">{whyFitContent.summary}</p>
+          <p className="section-sidecopy">{fitMethodContent.summary}</p>
         </div>
 
-        <div className="role-fit-grid">
-          {whyFitContent.items.map((item) => (
-            <article key={item.title} className="role-fit-card">
+        <div className="fit-method-grid">
+          {fitMethodContent.cards.map((item) => (
+            <article key={item.title} className="fit-method-card">
               <p className="eyebrow text-aqua">{item.title}</p>
-              <p className="role-fit-proof">{item.proof}</p>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} className="page-frame focus-frame">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow text-aqua">{focusContent.eyebrow}</p>
-            <h2 className="section-title">{focusContent.title}</h2>
-          </div>
-          <p className="section-sidecopy">{focusContent.summary}</p>
-        </div>
-
-        <div className="focus-grid">
-          {focusContent.lanes.map((lane) => (
-            <article key={lane.title} className="focus-lane">
-              <p className="eyebrow text-aqua">{lane.title}</p>
-              <p className="focus-lane-body">{lane.body}</p>
-              <div className="case-chip-group focus-chip-group">
-                {lane.points.map((item) => (
-                  <span key={item} className="case-chip case-chip-soft">
-                    {item}
+              <p className="fit-method-proof">{item.proof}</p>
+              <p className="fit-method-body">{item.body}</p>
+              <div className="case-chip-group fit-method-chip-group">
+                {item.points.map((point) => (
+                  <span key={point} className="case-chip case-chip-soft">
+                    {point}
                   </span>
                 ))}
               </div>
@@ -195,85 +192,57 @@ export default function BlueGaragePage() {
           </Link>
         </div>
 
-        <div className="flagship-compact-grid">
-          <div className="flagship-rail">
-            <div className="flagship-copy flagship-copy-hero">
-              <div className="flagship-feature-top">
-                <div className="flagship-feature-logo">
-                  <Image
-                    src={flagshipFeature.badge.src}
-                    alt={flagshipFeature.badge.alt}
-                    width={56}
-                    height={56}
-                    className="flagship-feature-logo-image"
-                  />
-                </div>
-                <span className="eyebrow text-aqua">{flagshipFeature.label}</span>
+        <div className="flagship-showcase-grid">
+          {aheyaCards.map((item, index) => (
+            <article key={item.label} className="flagship-showcase-card">
+              <div className="flagship-showcase-media">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 33vw"
+                  className="flagship-showcase-image"
+                  style={{ objectFit: item.fit }}
+                  priority={index === 0}
+                />
               </div>
-              <p className="flagship-feature-title">{flagshipFeature.title}</p>
+
+              <div className="flagship-showcase-copy">
+                <p className="eyebrow text-aqua">{item.label}</p>
+                <p className="flagship-showcase-title">{item.title}</p>
+                <p className="flagship-showcase-body">{item.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="flagship-inline-grid flagship-inline-grid-wide">
+          <article className="flagship-inline-card flagship-inline-card-emphasis">
+            <span>{flagshipIntro.statusLabel}</span>
+            <strong>{flagshipIntro.statusValue}</strong>
+          </article>
+
+          <article className="flagship-inline-card">
+            <span>Core ownership</span>
+            <div className="case-chip-group">
+              {flagshipCase.roles.map((item) => (
+                <span key={item} className="case-chip">
+                  {item}
+                </span>
+              ))}
             </div>
+          </article>
 
-            <div className="flagship-copy flagship-copy-compact">
-              <p>{flagshipIntro.summary}</p>
+          <article className="flagship-inline-card">
+            <span>Visible proof</span>
+            <div className="case-chip-group">
+              {flagshipCase.evidence.map((item) => (
+                <span key={item} className="case-chip case-chip-soft">
+                  {item}
+                </span>
+              ))}
             </div>
-
-            <div className="flagship-inline-grid">
-              <article className="flagship-inline-card flagship-inline-card-emphasis">
-                <span>{flagshipIntro.statusLabel}</span>
-                <strong>{flagshipIntro.statusValue}</strong>
-              </article>
-
-              <article className="flagship-inline-card">
-                <span>Core ownership</span>
-                <div className="case-chip-group">
-                  {flagshipCase.roles.map((item) => (
-                    <span key={item} className="case-chip">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-
-              <article className="flagship-inline-card">
-                <span>Visible proof</span>
-                <div className="case-chip-group">
-                  {flagshipCase.evidence.map((item) => (
-                    <span key={item} className="case-chip case-chip-soft">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div className="flagship-visual-row">
-            {aheyaGallery.map((item, index) => (
-              <article key={item.label} className="flagship-visual-card">
-                <div className="flagship-visual-media">
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 1100px) 100vw, 33vw"
-                    className="flagship-plate-image"
-                    style={{ objectFit: index === 0 ? "cover" : "contain" }}
-                    priority={index === 0}
-                  />
-                </div>
-                <p className="flagship-visual-label">{item.label}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="flagship-plate-strip">
-            {flagshipPlates.map((plate) => (
-              <article key={plate.title} className="flagship-plate-compact">
-                <p className="eyebrow text-aqua">{plate.title}</p>
-                <p className="flagship-plate-copy">{plate.body}</p>
-              </article>
-            ))}
-          </div>
+          </article>
         </div>
       </motion.section>
 
@@ -366,15 +335,4 @@ export default function BlueGaragePage() {
       </footer>
     </main>
   );
-}
-
-function accentClass(accent: "aqua" | "orange" | "indigo") {
-  switch (accent) {
-    case "aqua":
-      return "text-aqua";
-    case "orange":
-      return "text-orange";
-    case "indigo":
-      return "text-indigo";
-  }
 }

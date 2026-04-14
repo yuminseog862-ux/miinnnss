@@ -28,6 +28,13 @@ export type ExperimentContent = {
   memos: ExperimentMemo[];
 };
 
+export type FitMethodCard = {
+  title: string;
+  proof: string;
+  body: string;
+  points: string[];
+};
+
 export const siteTitle = "Yumin Seog";
 
 export const heroContent: HeroContent = {
@@ -112,6 +119,33 @@ export const focusContent = {
       points: ["Public-facing language", "Feedback into production rules", "Creative x product x engineering"],
     },
   ] satisfies FocusLane[],
+};
+
+export const fitMethodContent = {
+  eyebrow: "Why This Role Fits",
+  title: "Why the fit is direct.",
+  summary:
+    "Proof and working model should read together here.",
+  cards: [
+    {
+      title: "Identity / world / persona",
+      proof: "AHEYA character system + persona experiments",
+      body: "I lock one emotional axis first, then build relation, recall, and trust around it.",
+      points: ["Identity framing", "Persona logic", "Motif and recall"],
+    },
+    {
+      title: "Visual concept / emotional transfer",
+      proof: "Andersson Bell + public experiments",
+      body: "I iterate references until the mood reads immediately, not just until the image feels novel.",
+      points: ["Mood selection", "Reference iteration", "Keep vs kill"],
+    },
+    {
+      title: "Public-facing build / handoff",
+      proof: "AHEYA + Relay-informed product work",
+      body: "I translate direction into copy, surfaces, and rules that survive product and engineering handoff.",
+      points: ["Public-facing language", "Trust surfaces", "Creative x product x engineering"],
+    },
+  ] satisfies FitMethodCard[],
 };
 
 export const flagshipIntro = {
