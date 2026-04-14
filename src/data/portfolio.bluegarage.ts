@@ -31,13 +31,13 @@ export type ExperimentContent = {
 export const siteTitle = "Yumin Seog";
 
 export const heroContent: HeroContent = {
-  eyebrow: "AI creative planning / character identity / public-facing systems",
+  eyebrow: "AI creative planning / character-led identity",
   title:
-    "I build character-led identity systems that make products and stories easier to feel, understand, and remember.",
+    "I build character-led identity systems that make products easier to feel, understand, and remember.",
   summary:
-    "I start from one emotional axis, then translate it into character, world, copy, and visual direction. My value is making identity emotionally legible across product, web, and public channels.",
+    "I start from one emotional axis, then translate it into character, world, copy, and visual direction across product, web, and public channels.",
   stageTitle:
-    "Planner for AI-native characters, emotional worlds, and buildable creative systems.",
+    "AI-native characters, emotional worlds, and buildable creative systems.",
   ctas: [
     { label: "View Flagship System", href: "#flagship", variant: "primary" },
     { label: "See Selected Proof", href: "#selected", variant: "secondary" },
@@ -56,32 +56,32 @@ export const heroContent: HeroContent = {
 
 export const whyFitContent = {
   eyebrow: "Why This Role Fits",
-  title: "The work already sits where identity, mood, and implementation meet.",
+  title: "Why the fit is direct.",
   summary:
-    "The fit is already visible across AHEYA, Andersson Bell, public experiments, and role-coded persona systems.",
+    "The same pattern already shows up across AHEYA, Andersson Bell, public experiments, and persona systems.",
   items: [
     {
       title: "Identity / world / persona",
       proof: "AHEYA character system + persona experiments",
-      body: "I build one emotional axis first, then separate entry, memory, and trust into distinct faces and motifs.",
+      body: "One emotional axis, then clearer entry, memory, and trust faces.",
       accent: "aqua",
     },
     {
       title: "Visual concept / references",
       proof: "Andersson Bell",
-      body: "I turn moodboards, references, and stakeholder feedback into production-ready visual direction instead of leaving them as loose inspiration.",
+      body: "Moodboards and references get translated into production-ready direction.",
       accent: "orange",
     },
     {
       title: "Internet / public readability",
       proof: "Public experiments across X and trust surfaces",
-      body: "I care about what gets read fast, remembered after the scroll, and strong enough to carry a public-facing system.",
+      body: "I care about what gets read fast and remembered after the scroll.",
       accent: "indigo",
     },
     {
       title: "Creative x engineering handoff",
       proof: "AHEYA + Relay-informed product work",
-      body: "I try to make creative direction buildable by translating mood into copy, interface structure, and handoff-ready rules.",
+      body: "Creative direction gets translated into copy, interface structure, and handoff rules.",
       accent: "aqua",
     },
   ] satisfies WhyFitItem[],
@@ -89,25 +89,25 @@ export const whyFitContent = {
 
 export const focusContent = {
   eyebrow: "How I Work",
-  title: "Three things I clarify fast.",
+  title: "How I work.",
   summary:
-    "I fix one emotional axis, make identity legible, and translate it into something a team can actually build against.",
+    "One emotional axis, clear identity, buildable output.",
   lanes: [
     {
       title: "Identity",
-      body: "I fix one emotional axis first, then build character, world, and symbolic consistency around it.",
+      body: "I fix one emotional axis first and build consistency around it.",
       accent: "aqua",
       points: ["Identity framing", "Persona and relation logic", "Motif and recall"],
     },
     {
       title: "Emotional transfer",
-      body: "I care less about visual novelty than whether the audience can immediately feel and remember the intended mood.",
+      body: "I care less about novelty than whether the mood is felt immediately.",
       accent: "orange",
       points: ["Mood selection", "Prompt/reference iteration", "Keep vs kill decisions"],
     },
     {
       title: "Cross-functional build",
-      body: "I translate creative direction into copy, product surfaces, and handoff-ready rules that teams can build against.",
+      body: "I translate direction into copy, surfaces, and handoff-ready rules.",
       accent: "indigo",
       points: ["Public-facing language", "Feedback into production rules", "Creative x product x engineering"],
     },
@@ -118,21 +118,21 @@ export const flagshipIntro = {
   eyebrow: "Live system / product + identity",
   title: "AHEYA",
   oneLiner:
-    "A live product where core rail, trust, and character are designed together as one public-facing identity system.",
+    "A live product where core rail, trust, and character work as one identity system.",
   summary:
-    "AHEYA is where I tested how a complex offer becomes emotionally legible. Product copy defines the action, trust surfaces define credibility, and character creates memory and entry.",
+    "AHEYA is where I tested how a complex offer becomes emotionally legible through product copy, trust surfaces, and character-led memory.",
   ctaLabel: "Read flagship case",
   ctaHref: "/bluegarage/work/aheya",
   statusLabel: "Why it matters",
   statusValue:
-    "Live proof that I can align product language, trust structure, and character-led identity in one system.",
+    "Live proof of product language, trust structure, and character-led identity working together.",
 };
 
 export const flagshipFeature: FlagshipFeature = {
   label: "Flagship visual system",
-  title: "AHEYA uses one strong emotional front door, then separates product, memory, and trust into clearer faces.",
+  title: "One emotional front door, then clearer product and trust faces.",
   body:
-    "Kumiho works as the emotional entry point. The identity system is there to make the offer easier to feel and remember, not to decorate the product after the fact.",
+    "Kumiho works as the entry point. The identity system is there to improve legibility and recall, not to decorate the product after the fact.",
   media: {
     src: "/aheya/kumiho.png",
     alt: "AHEYA kumiho visual used as the emotional front door.",

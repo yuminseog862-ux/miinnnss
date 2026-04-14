@@ -111,16 +111,11 @@ export function ArchiveCaseCard({ project, index, hrefBase = "/work" }: ArchiveC
       <p className="archive-card-summary">{project.oneLiner}</p>
 
       <div className="archive-card-column">
-        <p className="archive-card-label">What exists now</p>
-        <p className="archive-card-text">{project.whatExists[0]}</p>
-      </div>
-
-      <div className="archive-card-column">
-        <p className="archive-card-label">What will be added</p>
+        <p className="archive-card-label">Signals</p>
         <div className="case-chip-group">
-          {project.placeholderMedia.map((item) => (
-            <span key={item.label} className="case-chip archive-chip">
-              {item.label}
+          {project.evidence.slice(0, 3).map((item) => (
+            <span key={item} className="case-chip archive-chip">
+              {item}
             </span>
           ))}
         </div>

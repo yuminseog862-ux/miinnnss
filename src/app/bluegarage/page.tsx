@@ -40,6 +40,7 @@ const selectedLayouts = ["third", "third", "third"] as const;
 
 export default function BlueGaragePage() {
   const flagshipCase = workCaseMap["aheya"];
+  const aheyaImage = flagshipFeature.media;
 
   return (
     <main className="cinema-shell bluegarage-shell">
@@ -63,6 +64,7 @@ export default function BlueGaragePage() {
         <div className="hero-grid">
           <motion.section {...fadeUp} className="hero-copy">
             <p className="eyebrow text-orange">{heroContent.eyebrow}</p>
+            <p className="hero-kicker">{heroContent.stageTitle}</p>
             <h1 className="hero-title">{heroContent.title}</h1>
             <p className="hero-summary">{heroContent.summary}</p>
 
@@ -83,50 +85,40 @@ export default function BlueGaragePage() {
               ))}
             </div>
           </motion.section>
-
-          <motion.aside
-            initial={{ opacity: 0, scale: 0.96, y: 18 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="hero-stage"
-          >
-            <div className="hero-stage-frame">
-              <div className="hero-stage-line hero-stage-line-aqua" />
-              <div className="hero-stage-line hero-stage-line-orange" />
-              <div className="hero-stage-line hero-stage-line-indigo" />
-              <div className="hero-stage-card">
-                <div className="hero-stage-top">
-                  <span className="eyebrow text-aqua">Hiring signal</span>
-                  <Sparkles className="h-4 w-4 text-white/70" />
-                </div>
-                <p className="hero-stage-title">{heroContent.stageTitle}</p>
-                <div className="hero-signal-list">
-                  {heroContent.signals.map((item) => (
-                    <div key={item.label} className="hero-signal-row">
-                      <span>{item.label}</span>
-                      <strong>{item.value}</strong>
-                    </div>
-                  ))}
-                </div>
-                <div className="hero-stage-proof-grid">
-                  {heroContent.proofs.map((item) => (
-                    <div key={item} className="hero-stage-proof">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                <div className="hero-stage-chip-row">
-                  {focusContent.lanes.map((lane) => (
-                    <span key={lane.title} className="case-chip hero-stage-chip">
-                      {lane.title}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.aside>
         </div>
+
+        <motion.section
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="hero-signal-band"
+        >
+          <div className="hero-signal-band-header">
+            <div>
+              <p className="eyebrow text-aqua">Hiring signal</p>
+              <p className="hero-signal-band-title">{heroContent.stageTitle}</p>
+            </div>
+            <Sparkles className="h-4 w-4 text-white/60" />
+          </div>
+
+          <div className="hero-signal-band-grid">
+            {heroContent.signals.map((item) => (
+              <article key={item.label} className="hero-signal-band-card">
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </article>
+            ))}
+          </div>
+
+          <div className="hero-proof-strip">
+            {heroContent.proofs.map((item) => (
+              <div key={item} className="hero-proof-pill">
+                {item}
+              </div>
+            ))}
+          </div>
+        </motion.section>
       </section>
 
       <motion.section {...fadeUp} className="page-frame role-fit-frame">
@@ -143,7 +135,6 @@ export default function BlueGaragePage() {
             <article key={item.title} className="role-fit-card">
               <p className={`eyebrow ${accentClass(item.accent)}`}>{item.title}</p>
               <p className="role-fit-proof">{item.proof}</p>
-              <p className="role-fit-body">{item.body}</p>
             </article>
           ))}
         </div>
@@ -163,11 +154,13 @@ export default function BlueGaragePage() {
             <article key={lane.title} className="focus-lane">
               <p className={`eyebrow ${accentClass(lane.accent)}`}>{lane.title}</p>
               <p className="focus-lane-body">{lane.body}</p>
-              <ul className="focus-list">
+              <div className="case-chip-group focus-chip-group">
                 {lane.points.map((item) => (
-                  <li key={item}>{item}</li>
+                  <span key={item} className="case-chip case-chip-soft">
+                    {item}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </article>
           ))}
         </div>
@@ -186,19 +179,49 @@ export default function BlueGaragePage() {
           </Link>
         </div>
 
-        <div className="flagship-grid">
-          <div className="flagship-rail">
-            <div className="flagship-copy">
-              <p>{flagshipIntro.summary}</p>
-              <div className="flagship-status">
-                <span>{flagshipIntro.statusLabel}</span>
-                <strong>{flagshipIntro.statusValue}</strong>
+        <div className="flagship-compact-grid">
+          <article className="flagship-feature-card flagship-feature-card-compact">
+            <div className="flagship-feature-media">
+              <Image
+                src={aheyaImage.src}
+                alt={aheyaImage.alt}
+                fill
+                sizes="(max-width: 1100px) 100vw, 52vw"
+                className="flagship-feature-image"
+                style={{ objectFit: aheyaImage.fit ?? "cover" }}
+                priority
+              />
+            </div>
+            <div className="flagship-feature-copy">
+              <div className="flagship-feature-top">
+                <div className="flagship-feature-logo">
+                  <Image
+                    src={flagshipFeature.badge.src}
+                    alt={flagshipFeature.badge.alt}
+                    width={56}
+                    height={56}
+                    className="flagship-feature-logo-image"
+                  />
+                </div>
+                <span className="eyebrow text-aqua">{flagshipFeature.label}</span>
               </div>
+              <p className="flagship-feature-title">{flagshipFeature.title}</p>
+            </div>
+          </article>
+
+          <div className="flagship-rail">
+            <div className="flagship-copy flagship-copy-compact">
+              <p>{flagshipIntro.summary}</p>
             </div>
 
-            <div className="flagship-facts">
-              <article className="flagship-fact">
-                <p className="eyebrow text-aqua">Core ownership</p>
+            <div className="flagship-inline-grid">
+              <article className="flagship-inline-card flagship-inline-card-emphasis">
+                <span>{flagshipIntro.statusLabel}</span>
+                <strong>{flagshipIntro.statusValue}</strong>
+              </article>
+
+              <article className="flagship-inline-card">
+                <span>Core ownership</span>
                 <div className="case-chip-group">
                   {flagshipCase.roles.map((item) => (
                     <span key={item} className="case-chip">
@@ -208,78 +231,26 @@ export default function BlueGaragePage() {
                 </div>
               </article>
 
-              <article className="flagship-fact flagship-fact-emphasis">
-                <p className="eyebrow text-orange">Visible proof</p>
+              <article className="flagship-inline-card">
+                <span>Visible proof</span>
                 <div className="case-chip-group">
                   {flagshipCase.evidence.map((item) => (
-                    <span key={item} className="case-chip">
+                    <span key={item} className="case-chip case-chip-soft">
                       {item}
                     </span>
                   ))}
                 </div>
-                <p className="flagship-fact-copy">{flagshipCase.currentStatus[1]}</p>
-              </article>
-
-              <article className="flagship-fact">
-                <p className="eyebrow text-indigo">Operating moves</p>
-                <ul className="flagship-bullet-list">
-                  {flagshipCase.whatIDid.slice(0, 2).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
               </article>
             </div>
           </div>
 
-          <div className="flagship-stage">
-            <div className="flagship-stage-glow" />
-            <div className="flagship-stage-shell">
-              <article className="flagship-feature-card">
-                <div className="flagship-feature-media">
-                  <Image
-                    src={flagshipFeature.media.src}
-                    alt={flagshipFeature.media.alt}
-                    fill
-                    sizes="(max-width: 1100px) 100vw, 60vw"
-                    className="flagship-feature-image"
-                    style={{ objectFit: flagshipFeature.media.fit ?? "cover" }}
-                    priority
-                  />
-                </div>
-                <div className="flagship-feature-copy">
-                  <div className="flagship-feature-top">
-                    <div className="flagship-feature-logo">
-                      <Image
-                        src={flagshipFeature.badge.src}
-                        alt={flagshipFeature.badge.alt}
-                        width={56}
-                        height={56}
-                        className="flagship-feature-logo-image"
-                      />
-                    </div>
-                    <span className="eyebrow text-aqua">{flagshipFeature.label}</span>
-                  </div>
-                  <p className="flagship-feature-title">{flagshipFeature.title}</p>
-                  <p className="flagship-feature-body">{flagshipFeature.body}</p>
-                </div>
+          <div className="flagship-plate-strip">
+            {flagshipPlates.map((plate) => (
+              <article key={plate.title} className="flagship-plate-compact">
+                <p className={`eyebrow ${accentClass(plate.accent)}`}>{plate.title}</p>
+                <p className="flagship-plate-copy">{plate.body}</p>
               </article>
-              {flagshipPlates.map((plate) => (
-                <article key={plate.title} className="flagship-plate">
-                  <div className="flagship-plate-media">
-                    <Image
-                      src={plate.media.src}
-                      alt={plate.media.alt}
-                      fill
-                      sizes="(max-width: 1100px) 100vw, 30vw"
-                      className="flagship-plate-image"
-                      style={{ objectFit: plate.media.fit ?? "cover" }}
-                    />
-                  </div>
-                  <p className={`eyebrow ${accentClass(plate.accent)}`}>{plate.title}</p>
-                  <p className="flagship-plate-copy">{plate.body}</p>
-                </article>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </motion.section>
