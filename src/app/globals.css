@@ -747,6 +747,11 @@ a {
   gap: 1rem;
 }
 
+.selected-grid-thirds,
+.archive-grid-thirds {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .selected-card {
   position: relative;
   display: flex;
@@ -876,6 +881,10 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.archive-grid-thirds > * {
+  grid-column: span 4 / span 4;
 }
 
 .archive-card {
@@ -1405,6 +1414,63 @@ a {
   line-height: 1.8;
 }
 
+.bluegarage-shell .hero-grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 30rem);
+}
+
+.bluegarage-shell .hero-title {
+  max-width: 15.5ch;
+  font-size: clamp(2.2rem, 4.6vw, 3.95rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.bluegarage-shell .hero-summary {
+  max-width: 31rem;
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.bluegarage-shell .section-title {
+  font-size: clamp(1.9rem, 3.4vw, 3.05rem);
+}
+
+.bluegarage-shell .flagship-title {
+  font-size: clamp(2.9rem, 6vw, 4.85rem);
+}
+
+.bluegarage-shell .section-sidecopy {
+  max-width: 24rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.bluegarage-shell .selected-card,
+.bluegarage-shell .archive-card {
+  min-height: 20rem;
+}
+
+.bluegarage-shell .selected-card-title {
+  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+}
+
+.bluegarage-shell .archive-card-title {
+  font-size: clamp(1.5rem, 2.1vw, 2rem);
+}
+
+.bluegarage-shell .selected-card-oneliner,
+.bluegarage-shell .archive-card-summary {
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.bluegarage-shell .flagship-feature-media,
+.bluegarage-shell .flagship-plate-media {
+  background:
+    radial-gradient(circle at top, rgba(98, 216, 182, 0.06), transparent 52%),
+    rgba(6, 8, 13, 0.82);
+}
+
 @media (max-width: 1100px) {
   .hero-grid,
   .flagship-grid,
@@ -1433,6 +1499,10 @@ a {
   .archive-grid,
   .detail-ia-grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .archive-grid-thirds > * {
+    grid-column: auto;
   }
 
   .flagship-facts {

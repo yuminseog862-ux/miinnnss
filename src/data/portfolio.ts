@@ -29,6 +29,7 @@ export type FlagshipPlate = {
   media: {
     src: string;
     alt: string;
+    fit?: MediaFit;
   };
 };
 
@@ -39,6 +40,7 @@ export type FlagshipFeature = {
   media: {
     src: string;
     alt: string;
+    fit?: MediaFit;
   };
   badge: {
     src: string;

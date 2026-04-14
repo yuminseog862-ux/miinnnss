@@ -136,6 +136,7 @@ export const flagshipFeature: FlagshipFeature = {
   media: {
     src: "/aheya/kumiho.png",
     alt: "AHEYA kumiho visual used as the emotional front door.",
+    fit: "contain",
   },
   badge: {
     src: "/aheya/logo.png",
@@ -151,6 +152,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     media: {
       src: "/aheya/home-hero.png",
       alt: "AHEYA homepage hero showing the core offer and rail.",
+      fit: "contain",
     },
   },
   {
@@ -160,6 +162,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     media: {
       src: "/aheya/creator.png",
       alt: "AHEYA supporting identity visual used across public-facing surfaces.",
+      fit: "contain",
     },
   },
   {
@@ -169,6 +172,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     media: {
       src: "/aheya/kumiho.png",
       alt: "AHEYA kumiho identity visual.",
+      fit: "contain",
     },
   },
   {
@@ -178,6 +182,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     media: {
       src: "/aheya/lane-panels.png",
       alt: "AHEYA homepage structure showing separated trust and support lanes.",
+      fit: "contain",
     },
   },
 ];

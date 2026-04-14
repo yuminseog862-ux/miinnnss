@@ -36,13 +36,13 @@ const fadeUp = {
 };
 
 const experimentIcons = [Orbit, RadioTower, ScanSearch] as const;
-const selectedLayouts = ["feature", "compact", "full"] as const;
+const selectedLayouts = ["third", "third", "third"] as const;
 
 export default function BlueGaragePage() {
   const flagshipCase = workCaseMap["aheya"];
 
   return (
-    <main className="cinema-shell">
+    <main className="cinema-shell bluegarage-shell">
       <div className="cinema-orb cinema-orb-aqua" />
       <div className="cinema-orb cinema-orb-indigo" />
       <div className="cinema-orb cinema-orb-orange" />
@@ -242,6 +242,7 @@ export default function BlueGaragePage() {
                     fill
                     sizes="(max-width: 1100px) 100vw, 60vw"
                     className="flagship-feature-image"
+                    style={{ objectFit: flagshipFeature.media.fit ?? "cover" }}
                     priority
                   />
                 </div>
@@ -271,6 +272,7 @@ export default function BlueGaragePage() {
                       fill
                       sizes="(max-width: 1100px) 100vw, 30vw"
                       className="flagship-plate-image"
+                      style={{ objectFit: plate.media.fit ?? "cover" }}
                     />
                   </div>
                   <p className={`eyebrow ${accentClass(plate.accent)}`}>{plate.title}</p>
@@ -286,15 +288,14 @@ export default function BlueGaragePage() {
         <motion.div {...fadeUp} className="section-heading">
           <div>
             <p className="eyebrow text-orange">Selected Proof</p>
-            <h2 className="section-title">The three cases that make the Blue Garage fit legible fastest.</h2>
+            <h2 className="section-title">The clearest Blue Garage-fit cases.</h2>
           </div>
           <p className="section-sidecopy">
-            Andersson Bell proves brand-facing execution. Persona as Interface is the differentiated identity case.
-            SFTI-CMU shows that I can structure emotion and identity into public-facing language.
+            Three proofs only: brand-facing execution, identity-system differentiation, and public-facing structure.
           </p>
         </motion.div>
 
-        <div className="selected-grid">
+        <div className="selected-grid selected-grid-thirds">
           {selectedCases.map((project, index) => (
             <SelectedCaseCard
               key={project.slug}
@@ -311,15 +312,14 @@ export default function BlueGaragePage() {
         <motion.div {...fadeUp} className="section-heading">
           <div>
             <p className="eyebrow text-indigo">Earlier Systems</p>
-            <h2 className="section-title">Relevant supporting cases, kept below the main read.</h2>
+            <h2 className="section-title">Supporting cases kept below the main read.</h2>
           </div>
           <p className="section-sidecopy">
-            These still matter, but they should follow the flagship and the role-fit cases instead of competing with
-            them on first view.
+            Still relevant, but they should follow the flagship and role-fit read instead of competing with it.
           </p>
         </motion.div>
 
-        <div className="archive-grid">
+        <div className="archive-grid archive-grid-thirds">
           {archiveCases.map((project, index) => (
             <ArchiveCaseCard key={project.slug} project={project} index={index} hrefBase="/bluegarage/work" />
           ))}

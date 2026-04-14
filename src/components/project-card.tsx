@@ -10,7 +10,7 @@ import type { WorkCase } from "@/data/portfolio";
 type SelectedCaseCardProps = {
   project: WorkCase;
   index: number;
-  layout: "feature" | "stack" | "compact" | "full";
+  layout: "feature" | "stack" | "compact" | "full" | "third";
   hrefBase?: string;
 };
 
@@ -25,6 +25,7 @@ const layoutClassMap = {
   stack: "lg:col-span-5 lg:min-h-[31rem]",
   compact: "lg:col-span-5",
   full: "lg:col-span-12 lg:min-h-[20rem]",
+  third: "lg:col-span-4 lg:min-h-[24rem]",
 } as const;
 
 export function SelectedCaseCard({

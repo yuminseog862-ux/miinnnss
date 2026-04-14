@@ -45,7 +45,7 @@ export default async function BlueGarageWorkDetailPage({ params }: WorkPageProps
   const displayedFlowSteps = isCompactCase ? project.flowSteps?.slice(0, 4) : project.flowSteps;
 
   return (
-    <main className="detail-shell">
+    <main className="detail-shell bluegarage-shell">
       <div className="detail-orb detail-orb-aqua" />
       <div className="detail-orb detail-orb-indigo" />
 
