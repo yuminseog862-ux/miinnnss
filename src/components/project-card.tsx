@@ -11,11 +11,13 @@ type SelectedCaseCardProps = {
   project: WorkCase;
   index: number;
   layout: "feature" | "stack" | "compact" | "full";
+  hrefBase?: string;
 };
 
 type ArchiveCaseCardProps = {
   project: WorkCase;
   index: number;
+  hrefBase?: string;
 };
 
 const layoutClassMap = {
@@ -25,7 +27,12 @@ const layoutClassMap = {
   full: "lg:col-span-12 lg:min-h-[20rem]",
 } as const;
 
-export function SelectedCaseCard({ project, index, layout }: SelectedCaseCardProps) {
+export function SelectedCaseCard({
+  project,
+  index,
+  layout,
+  hrefBase = "/work",
+}: SelectedCaseCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -77,7 +84,7 @@ export function SelectedCaseCard({ project, index, layout }: SelectedCaseCardPro
 
       <div className="selected-card-bottom">
         <span>{project.status}</span>
-        <Link href={`/work/${project.slug}`} className="inline-link">
+        <Link href={`${hrefBase}/${project.slug}`} className="inline-link">
           View case
           <ArrowUpRight className="h-4 w-4" />
         </Link>
@@ -86,7 +93,7 @@ export function SelectedCaseCard({ project, index, layout }: SelectedCaseCardPro
   );
 }
 
-export function ArchiveCaseCard({ project, index }: ArchiveCaseCardProps) {
+export function ArchiveCaseCard({ project, index, hrefBase = "/work" }: ArchiveCaseCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -118,7 +125,7 @@ export function ArchiveCaseCard({ project, index }: ArchiveCaseCardProps) {
         </div>
       </div>
 
-      <Link href={`/work/${project.slug}`} className="inline-link archive-link">
+      <Link href={`${hrefBase}/${project.slug}`} className="inline-link archive-link">
         Open archive case
         <ArrowUpRight className="h-4 w-4" />
       </Link>

@@ -439,6 +439,7 @@ a {
   line-height: 1.8;
 }
 
+.role-fit-frame,
 .flagship-frame,
 .focus-frame,
 .selected-frame,
@@ -446,6 +447,41 @@ a {
 .practice-frame,
 .footer-frame {
   padding-top: 3rem;
+}
+
+.role-fit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.role-fit-card {
+  display: grid;
+  align-content: start;
+  gap: 0.95rem;
+  min-height: 15rem;
+  padding: 1.2rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 16, 0.68);
+  box-shadow: var(--shadow-deep);
+}
+
+.role-fit-proof {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.34;
+  letter-spacing: -0.03em;
+  color: white;
+}
+
+.role-fit-body {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.76;
 }
 
 .focus-grid {
@@ -1385,6 +1421,7 @@ a {
   }
 
   .flagship-stage-shell,
+  .role-fit-grid,
   .practice-memo-grid,
   .detail-block-grid,
   .detail-block-grid-judgments,
@@ -1457,6 +1494,7 @@ a {
   }
 
   .hero-stage-proof-grid,
+  .role-fit-grid,
   .flagship-facts,
   .flagship-stage-shell,
   .practice-memo-grid,
