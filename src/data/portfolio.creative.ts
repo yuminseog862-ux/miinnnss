@@ -156,7 +156,7 @@ export const flagshipIntro = {
   summary:
     "AHEYA is where I tested how a complex offer becomes emotionally legible through product copy, trust surfaces, and character-led memory.",
   ctaLabel: "Read flagship case",
-  ctaHref: "/bluegarage/work/aheya",
+  ctaHref: "/creative/work/aheya",
   statusLabel: "Why it matters",
   statusValue:
     "Live proof of product language, trust structure, and character-led identity working together.",
