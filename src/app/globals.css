@@ -883,8 +883,8 @@ a {
   gap: 1rem;
 }
 
-.archive-grid-thirds > * {
-  grid-column: span 4 / span 4;
+.archive-grid.archive-grid-thirds {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .archive-card {
@@ -1415,107 +1415,288 @@ a {
 }
 
 .bluegarage-shell .hero-grid {
-  grid-template-columns: minmax(0, 1.15fr) minmax(21rem, 30rem);
+  grid-template-columns: minmax(0, 1fr);
+  min-height: auto;
+  gap: 0.9rem;
+  padding: 0.6rem 0 0.9rem;
+}
+
+.bluegarage-shell .hero-copy {
+  max-width: 58rem;
+}
+
+.bluegarage-shell .hero-kicker {
+  max-width: 34rem;
+  margin: 0.9rem 0 0;
+  color: rgba(246, 242, 233, 0.84);
+  font-size: 1rem;
+  line-height: 1.55;
 }
 
 .bluegarage-shell .hero-title {
-  max-width: 15.5ch;
-  font-size: clamp(2.2rem, 4.6vw, 3.95rem);
+  max-width: 18.5ch;
+  font-size: clamp(2.35rem, 5vw, 4.15rem);
   line-height: 0.98;
   letter-spacing: -0.055em;
 }
 
 .bluegarage-shell .hero-summary {
-  max-width: 31rem;
+  max-width: 36rem;
   font-size: 0.92rem;
-  line-height: 1.72;
-}
-
-.bluegarage-shell .section-title {
-  font-size: clamp(1.9rem, 3.4vw, 3.05rem);
-}
-
-.bluegarage-shell .role-fit-frame .section-title,
-.bluegarage-shell .focus-frame .section-title {
-  font-size: clamp(1.55rem, 2.5vw, 2.3rem);
-  line-height: 1.02;
-}
-
-.bluegarage-shell .flagship-title {
-  font-size: clamp(2.9rem, 6vw, 4.85rem);
-}
-
-.bluegarage-shell .section-sidecopy {
-  max-width: 24rem;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-.bluegarage-shell .role-fit-frame .section-sidecopy,
-.bluegarage-shell .focus-frame .section-sidecopy {
-  max-width: 21rem;
-  font-size: 0.86rem;
-  line-height: 1.62;
-}
-
-.bluegarage-shell .role-fit-grid {
-  gap: 0.85rem;
-}
-
-.bluegarage-shell .role-fit-card {
-  min-height: 12.5rem;
-  padding: 1rem;
-  gap: 0.7rem;
-}
-
-.bluegarage-shell .role-fit-proof {
-  font-size: 0.96rem;
-  line-height: 1.28;
-}
-
-.bluegarage-shell .role-fit-body {
-  font-size: 0.86rem;
-  line-height: 1.62;
-}
-
-.bluegarage-shell .focus-grid {
-  gap: 0.85rem;
-}
-
-.bluegarage-shell .focus-lane {
-  min-height: 15rem;
-  padding-top: 1rem;
-  gap: 0.75rem;
-}
-
-.bluegarage-shell .focus-lane-body {
-  font-size: 0.88rem;
   line-height: 1.68;
 }
 
-.bluegarage-shell .focus-list {
-  gap: 0.45rem;
+.bluegarage-shell .hero-signal-band {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.05rem;
+  border-radius: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 16, 0.7);
+  box-shadow: var(--shadow-deep);
+}
+
+.bluegarage-shell .hero-signal-band-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bluegarage-shell .hero-signal-band-title {
+  margin: 0.45rem 0 0;
+  max-width: 36rem;
+  color: rgba(246, 242, 233, 0.9);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.bluegarage-shell .hero-signal-band-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.bluegarage-shell .hero-signal-band-card,
+.bluegarage-shell .hero-proof-pill {
+  border-radius: 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.bluegarage-shell .hero-signal-band-card {
+  display: grid;
+  gap: 0.38rem;
+  padding: 0.9rem;
+}
+
+.bluegarage-shell .hero-signal-band-card span,
+.bluegarage-shell .flagship-inline-card span {
+  color: var(--quiet);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bluegarage-shell .hero-signal-band-card strong {
+  color: white;
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.bluegarage-shell .hero-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.bluegarage-shell .hero-proof-pill {
+  padding: 0.85rem 0.9rem;
+  color: rgba(246, 242, 233, 0.78);
   font-size: 0.84rem;
   line-height: 1.55;
 }
 
+.bluegarage-shell .section-title {
+  font-size: clamp(1.75rem, 3vw, 2.7rem);
+}
+
+.bluegarage-shell .role-fit-frame .section-title,
+.bluegarage-shell .focus-frame .section-title {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.02;
+}
+
+.bluegarage-shell .flagship-title {
+  font-size: clamp(2.4rem, 4.8vw, 3.9rem);
+}
+
+.bluegarage-shell .section-sidecopy {
+  max-width: 21rem;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.bluegarage-shell .role-fit-frame .section-sidecopy,
+.bluegarage-shell .focus-frame .section-sidecopy {
+  max-width: 17rem;
+}
+
+.bluegarage-shell .role-fit-frame,
+.bluegarage-shell .focus-frame,
+.bluegarage-shell .flagship-frame,
+.bluegarage-shell .selected-frame,
+.bluegarage-shell .archive-frame {
+  padding-top: 2.15rem;
+}
+
+.bluegarage-shell .role-fit-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.bluegarage-shell .role-fit-card {
+  min-height: auto;
+  padding: 0.95rem;
+  gap: 0.45rem;
+}
+
+.bluegarage-shell .role-fit-proof {
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.bluegarage-shell .focus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.bluegarage-shell .focus-lane {
+  min-height: auto;
+  padding: 1rem;
+  gap: 0.7rem;
+  border-top: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.4rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 16, 0.64);
+}
+
+.bluegarage-shell .focus-lane-body {
+  font-size: 0.88rem;
+  line-height: 1.62;
+}
+
+.bluegarage-shell .focus-chip-group {
+  gap: 0.4rem;
+}
+
+.bluegarage-shell .flagship-compact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 24rem);
+  gap: 1rem;
+  align-items: start;
+}
+
+.bluegarage-shell .flagship-feature-card-compact {
+  min-height: 28rem;
+}
+
+.bluegarage-shell .flagship-rail {
+  gap: 0.85rem;
+}
+
+.bluegarage-shell .flagship-copy-compact {
+  padding: 1.1rem;
+  font-size: 0.92rem;
+  line-height: 1.68;
+}
+
+.bluegarage-shell .flagship-inline-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.bluegarage-shell .flagship-inline-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.95rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 16, 0.64);
+}
+
+.bluegarage-shell .flagship-inline-card strong {
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.bluegarage-shell .flagship-inline-card-emphasis {
+  background:
+    radial-gradient(circle at top right, rgba(244, 122, 61, 0.09), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018)),
+    rgba(8, 10, 16, 0.68);
+}
+
+.bluegarage-shell .flagship-plate-strip {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.bluegarage-shell .flagship-plate-compact {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0.95rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.bluegarage-shell .flagship-plate-compact .flagship-plate-copy {
+  margin-top: 0;
+  font-size: 0.85rem;
+  line-height: 1.58;
+}
+
 .bluegarage-shell .selected-card,
 .bluegarage-shell .archive-card {
-  min-height: 20rem;
+  min-height: 18rem;
 }
 
 .bluegarage-shell .selected-card-title {
-  font-size: clamp(1.55rem, 2.2vw, 2.15rem);
+  font-size: clamp(1.45rem, 2vw, 1.95rem);
 }
 
 .bluegarage-shell .archive-card-title {
-  font-size: clamp(1.5rem, 2.1vw, 2rem);
+  font-size: clamp(1.35rem, 1.9vw, 1.75rem);
 }
 
 .bluegarage-shell .selected-card-oneliner,
 .bluegarage-shell .archive-card-summary {
-  font-size: 0.93rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.bluegarage-shell .archive-card-summary,
+.bluegarage-shell .archive-card-status,
+.bluegarage-shell .archive-link {
+  margin-top: 0;
+}
+
+.bluegarage-shell .archive-card-text,
+.bluegarage-shell .archive-card-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .bluegarage-shell .flagship-feature-media,
@@ -1555,12 +1736,18 @@ a {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
-  .archive-grid-thirds > * {
-    grid-column: auto;
-  }
-
   .flagship-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bluegarage-shell .hero-signal-band-grid,
+  .bluegarage-shell .hero-proof-strip,
+  .bluegarage-shell .role-fit-grid,
+  .bluegarage-shell .focus-grid,
+  .bluegarage-shell .flagship-compact-grid,
+  .bluegarage-shell .flagship-plate-strip,
+  .archive-grid.archive-grid-thirds {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
