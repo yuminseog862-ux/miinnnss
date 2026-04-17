@@ -64,6 +64,10 @@ export type PlaceholderMedia = {
   fit?: MediaFit;
   poster?: string;
   featured?: boolean;
+  displaySize?: "default" | "compact";
+  href?: string;
+  hrefLabel?: string;
+  stat?: string;
 };
 
 export type PracticeMemo = {
@@ -423,6 +427,7 @@ export const workCases: WorkCase[] = [
         poster: "/work/andersson-bell-cover.png",
         featured: true,
         fit: "contain",
+        displaySize: "compact",
       },
     ],
     currentStatus: [
