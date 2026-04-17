@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
+import { DetailMediaGallery } from "@/components/detail-media-gallery";
 import type { WorkCase } from "@/data/portfolio";
 import { workCaseMap, workCases } from "@/data/portfolio.creative";
 
@@ -365,46 +365,7 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
           </Link>
         </div>
 
-        <div className="detail-media-grid">
-          {project.placeholderMedia.map((item) => (
-            <article
-              key={item.label}
-              className={item.featured ? "detail-media-card detail-media-card-featured" : "detail-media-card"}
-            >
-              {item.src ? (
-                <div
-                  className={
-                    item.featured ? "detail-media-visual detail-media-visual-featured" : "detail-media-visual"
-                  }
-                >
-                  {item.type === "video" ? (
-                    <video
-                      className="detail-media-video"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      poster={item.poster}
-                    >
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  ) : (
-                    <Image
-                      src={item.src}
-                      alt={item.alt ?? item.label}
-                      fill
-                      sizes={item.featured ? "(max-width: 1100px) 100vw, 100vw" : "(max-width: 1100px) 100vw, 33vw"}
-                      className="detail-media-image"
-                      style={{ objectFit: item.fit ?? "contain" }}
-                      priority={item.featured}
-                    />
-                  )}
-                </div>
-              ) : null}
-              <p className="detail-media-label">{item.label}</p>
-              <p className="detail-media-note">{item.note}</p>
-            </article>
-          ))}
-        </div>
+        <DetailMediaGallery items={project.placeholderMedia} />
       </section>
 
       <section className="detail-frame detail-status-frame">

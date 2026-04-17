@@ -12,9 +12,9 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import { ArchiveCaseCard, SelectedCaseCard } from "@/components/project-card";
+import { SelectedCaseCard } from "@/components/project-card";
+import type { Accent, MediaFit } from "@/data/portfolio";
 import {
-  archiveCases,
   experimentsContent,
   fitMethodContent,
   flagshipFeature,
@@ -47,13 +47,22 @@ export default function CreativePage() {
     ...item,
     proof: heroContent.proofs[index] ?? "",
   }));
-  const aheyaCards = [
+  const aheyaCards: Array<{
+    src: string;
+    alt: string;
+    label: string;
+    title: string;
+    body: string;
+    accent: Accent;
+    fit: MediaFit;
+  }> = [
     {
       src: flagshipFeature.media.src,
       alt: flagshipFeature.media.alt,
       label: "Character front door",
       title: "One emotional front door.",
       body: "Kumiho holds entry and recall so the product face can stay clearer.",
+      accent: "aqua",
       fit: flagshipFeature.media.fit ?? "cover",
     },
     {
@@ -62,15 +71,17 @@ export default function CreativePage() {
       label: flagshipPlates[0].title,
       title: "Support and signal read fast.",
       body: "The rail spells out support, feedback, and public proof on first view.",
+      accent: "orange",
       fit: flagshipPlates[0].media.fit ?? "cover",
     },
     {
-      src: flagshipPlates[3].media.src,
-      alt: flagshipPlates[3].media.alt,
-      label: "Trust surface",
-      title: "Trust gets its own face.",
-      body: "Transfer logic and trust surfaces stay separate instead of hiding inside brand mood.",
-      fit: flagshipPlates[3].media.fit ?? "cover",
+      src: "/aheya/tiger.png",
+      alt: "AHEYA symbolic motif variation used for public-facing identity tests.",
+      label: "Public experiment direction",
+      title: "Motif and recall get tested in public.",
+      body: "Character variations and symbolic motifs extend the system beyond the main surface and show what reads faster on public-facing channels.",
+      accent: "indigo",
+      fit: "cover",
     },
   ];
 
@@ -163,8 +174,8 @@ export default function CreativePage() {
 
         <div className="fit-method-grid">
           {fitMethodContent.cards.map((item) => (
-            <article key={item.title} className="fit-method-card">
-              <p className="eyebrow text-aqua">{item.title}</p>
+            <article key={item.title} className="fit-method-card" data-accent={item.accent}>
+              <p className={`eyebrow ${accentTextClass(item.accent)}`}>{item.title}</p>
               <p className="fit-method-proof">{item.proof}</p>
               <p className="fit-method-body">{item.body}</p>
               <div className="case-chip-group fit-method-chip-group">
@@ -194,7 +205,7 @@ export default function CreativePage() {
 
         <div className="flagship-showcase-grid">
           {aheyaCards.map((item, index) => (
-            <article key={item.label} className="flagship-showcase-card">
+            <article key={item.label} className="flagship-showcase-card" data-accent={item.accent}>
               <div className="flagship-showcase-media">
                 <Image
                   src={item.src}
@@ -208,7 +219,7 @@ export default function CreativePage() {
               </div>
 
               <div className="flagship-showcase-copy">
-                <p className="eyebrow text-aqua">{item.label}</p>
+                <p className={`eyebrow ${accentTextClass(item.accent)}`}>{item.label}</p>
                 <p className="flagship-showcase-title">{item.title}</p>
                 <p className="flagship-showcase-body">{item.body}</p>
               </div>
@@ -270,24 +281,6 @@ export default function CreativePage() {
         </div>
       </section>
 
-      <section className="page-frame archive-frame">
-        <motion.div {...fadeUp} className="section-heading">
-          <div>
-            <p className="eyebrow text-indigo">Earlier Systems</p>
-            <h2 className="section-title">Supporting cases kept below the main read.</h2>
-          </div>
-          <p className="section-sidecopy">
-            Still relevant, but they should follow the flagship and role-fit read instead of competing with it.
-          </p>
-        </motion.div>
-
-        <div className="archive-grid archive-grid-thirds">
-          {archiveCases.map((project, index) => (
-            <ArchiveCaseCard key={project.slug} project={project} index={index} hrefBase="/creative/work" />
-          ))}
-        </div>
-      </section>
-
       <motion.section {...fadeUp} id="experiments" className="page-frame practice-frame">
         <div className="practice-intro">
           <p className="eyebrow text-aqua">{experimentsContent.eyebrow}</p>
@@ -335,4 +328,15 @@ export default function CreativePage() {
       </footer>
     </main>
   );
+}
+
+function accentTextClass(accent: Accent) {
+  switch (accent) {
+    case "aqua":
+      return "text-aqua";
+    case "orange":
+      return "text-orange";
+    case "indigo":
+      return "text-indigo";
+  }
 }
