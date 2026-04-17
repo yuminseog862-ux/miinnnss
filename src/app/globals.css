@@ -1356,6 +1356,10 @@ a {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.detail-media-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .detail-media-card,
 .detail-status-item {
   border-radius: 1.35rem;
@@ -1364,8 +1368,17 @@ a {
 }
 
 .detail-media-card {
+  display: flex;
+  flex-direction: column;
   min-height: 10rem;
   padding: 1rem;
+}
+
+.detail-media-card-linkonly {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 12rem;
 }
 
 .detail-media-trigger {
@@ -1435,6 +1448,7 @@ a {
 }
 
 .detail-media-note {
+  flex: 1 1 auto;
   margin-top: 0.8rem;
   color: var(--muted);
   line-height: 1.7;
@@ -1445,7 +1459,8 @@ a {
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
-  margin-top: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
 }
 
 .detail-media-stat {
@@ -1907,6 +1922,10 @@ a {
   .archive-grid.archive-grid-thirds {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  .detail-media-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -1979,6 +1998,10 @@ a {
 
   .detail-media-card-featured {
     grid-column: auto;
+  }
+
+  .detail-media-grid-4 {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .bluegarage-shell .hero-title-line {

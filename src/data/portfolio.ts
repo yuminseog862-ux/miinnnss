@@ -70,6 +70,14 @@ export type PlaceholderMedia = {
   stat?: string;
 };
 
+export type DetailMediaSection = {
+  eyebrow: string;
+  title: string;
+  summary: string;
+  items: PlaceholderMedia[];
+  columns?: 3 | 4;
+};
+
 export type PracticeMemo = {
   label: string;
   value: string;
@@ -119,6 +127,8 @@ export type WorkCase = {
     alt: string;
     fit?: MediaFit;
   };
+  galleryColumns?: 3 | 4;
+  detailMediaSections?: DetailMediaSection[];
   detailDensity?: "default" | "compact";
   overview: string[];
   whatIDid: string[];
