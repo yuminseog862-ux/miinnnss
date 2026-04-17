@@ -7,9 +7,10 @@ import type { PlaceholderMedia } from "@/data/portfolio";
 
 type DetailMediaGalleryProps = {
   items: PlaceholderMedia[];
+  columns?: 3 | 4;
 };
 
-export function DetailMediaGallery({ items }: DetailMediaGalleryProps) {
+export function DetailMediaGallery({ items, columns = 3 }: DetailMediaGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -41,9 +42,10 @@ export function DetailMediaGallery({ items }: DetailMediaGalleryProps) {
 
   return (
     <>
-      <div className="detail-media-grid">
+      <div className={columns === 4 ? "detail-media-grid detail-media-grid-4" : "detail-media-grid"}>
         {items.map((item, index) => {
           const isFeaturedCard = Boolean(item.featured && item.displaySize !== "compact");
+          const hasVisual = Boolean(item.src);
           const mediaClassName = [
             isFeaturedCard ? "detail-media-visual detail-media-visual-featured" : "detail-media-visual",
             item.type === "video" ? "detail-media-visual-video" : "",
@@ -55,7 +57,12 @@ export function DetailMediaGallery({ items }: DetailMediaGalleryProps) {
           return (
             <article
               key={item.label}
-              className={isFeaturedCard ? "detail-media-card detail-media-card-featured" : "detail-media-card"}
+              className={[
+                isFeaturedCard ? "detail-media-card detail-media-card-featured" : "detail-media-card",
+                hasVisual ? "" : "detail-media-card-linkonly",
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
               {item.src ? (
                 item.type === "video" ? (

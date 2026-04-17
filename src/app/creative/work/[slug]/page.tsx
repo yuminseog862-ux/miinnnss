@@ -365,8 +365,20 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
           </Link>
         </div>
 
-        <DetailMediaGallery items={project.placeholderMedia} />
+        <DetailMediaGallery items={project.placeholderMedia} columns={project.galleryColumns} />
       </section>
+
+      {project.detailMediaSections?.map((section) => (
+        <section key={section.title} className="detail-frame detail-gallery-frame">
+          <div>
+            <p className="detail-section-eyebrow">{section.eyebrow}</p>
+            <h2 className="detail-structured-title">{section.title}</h2>
+            <p className="detail-gallery-intro">{section.summary}</p>
+          </div>
+
+          <DetailMediaGallery items={section.items} columns={section.columns} />
+        </section>
+      ))}
 
       <section className="detail-frame detail-status-frame">
         <p className="detail-section-eyebrow">How to read this case now</p>
