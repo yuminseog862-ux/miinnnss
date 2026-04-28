@@ -3,31 +3,9 @@ import type {
   DetailMediaSection,
   FlagshipFeature,
   FlagshipPlate,
-  FocusLane,
   HeroContent,
   WorkCase,
 } from "@/data/portfolio";
-
-export type WhyFitItem = {
-  title: string;
-  proof: string;
-  body: string;
-  accent: Accent;
-};
-
-export type ExperimentMemo = {
-  title: string;
-  body: string;
-};
-
-export type ExperimentContent = {
-  eyebrow: string;
-  title: string;
-  summary: string;
-  process: string[];
-  chips: string[];
-  memos: ExperimentMemo[];
-};
 
 export type FitMethodCard = {
   title: string;
@@ -37,584 +15,918 @@ export type FitMethodCard = {
   accent: Accent;
 };
 
-export const siteTitle = "Yumin Seog";
+export const siteTitle = "minnns creative planning";
 
 export const heroContent: HeroContent = {
-  eyebrow: "AI creative planning / character identity",
-  title:
-    "I build character-led identity systems that make products easier to feel, understand, and remember.",
+  eyebrow: "AI Artist / Creative Planning",
+  title: "캐릭터와 세계관을 더 빠르게 읽히는\n구조로 설계합니다.",
   summary:
-    "I start from one emotional axis, then translate it into character, world, copy, and visual direction across product, web, and public channels.",
-  stageTitle:
-    "AI-native characters, emotional worlds, and buildable creative systems.",
+    "저는 정체성과 감정을 캐릭터, 상징, 비주얼 콘셉트로 번역하고, 그것이 공개 채널과 결과물까지 자연스럽게 이어지도록 기획해왔습니다. 브랜드 협업형 AI 숏폼, 세계관 기반 서비스 마케팅, 영문 초록과 포스터 구조화 경험을 통해 캐릭터·비주얼·서사를 하나의 인상 구조로 연결하는 일에 집중해왔습니다.",
+  stageTitle: "정체성과 감정을 캐릭터·비주얼·서사로 번역하는 AI 크리에이티브 기획자",
   ctas: [
-    { label: "View Flagship System", href: "#flagship", variant: "primary" },
-    { label: "See Selected Proof", href: "#selected", variant: "secondary" },
+    { label: "대표 작업 보기", href: "#flagship", variant: "primary" },
+    { label: "전체 포트폴리오 보기", href: "#selected", variant: "secondary" },
   ],
   proofs: [
-    "Brand-facing AI visual collaboration with real stakeholder feedback",
-    "Live product where copy, trust, and character work as one system",
-    "Public experiments turning character and world motifs into first-signal attention",
+    "브랜드 협업형 AI 비주얼 작업에서 실무 피드백을 반영한 경험",
+    "서비스 유입을 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 경험",
+    "영문 초록과 포스터로 브랜드 해석을 외부 문서화한 경험",
   ],
-  signals: [
-    { label: "Best fit", value: "AI Artist / Creative Planning" },
-    { label: "Current flagship", value: "AHEYA / product + character system" },
-    { label: "Strength", value: "emotion -> identity -> visual -> implementation" },
-  ],
-};
-
-export const whyFitContent = {
-  eyebrow: "Why This Role Fits",
-  title: "Why the fit is direct.",
-  summary:
-    "The same pattern already shows up across AHEYA, Andersson Bell, public experiments, and persona systems.",
-  items: [
-    {
-      title: "Identity / world / persona",
-      proof: "AHEYA character system + persona experiments",
-      body: "One emotional axis, then clearer entry, memory, and trust faces.",
-      accent: "aqua",
-    },
-    {
-      title: "Visual concept / references",
-      proof: "Andersson Bell",
-      body: "Moodboards and references get translated into production-ready direction.",
-      accent: "orange",
-    },
-    {
-      title: "Internet / public readability",
-      proof: "Public experiments across X and trust surfaces",
-      body: "I care about what gets read fast and remembered after the scroll.",
-      accent: "indigo",
-    },
-    {
-      title: "Creative x engineering handoff",
-      proof: "AHEYA + Relay-informed product work",
-      body: "Creative direction gets translated into copy, interface structure, and handoff rules.",
-      accent: "aqua",
-    },
-  ] satisfies WhyFitItem[],
-};
-
-export const focusContent = {
-  eyebrow: "How I Work",
-  title: "How I work.",
-  summary:
-    "One emotional axis, clear identity, buildable output.",
-  lanes: [
-    {
-      title: "Identity",
-      body: "I fix one emotional axis first and build consistency around it.",
-      accent: "aqua",
-      points: ["Identity framing", "Persona and relation logic", "Motif and recall"],
-    },
-    {
-      title: "Emotional transfer",
-      body: "I care less about novelty than whether the mood is felt immediately.",
-      accent: "orange",
-      points: ["Mood selection", "Prompt/reference iteration", "Keep vs kill decisions"],
-    },
-    {
-      title: "Cross-functional build",
-      body: "I translate direction into copy, surfaces, and handoff-ready rules.",
-      accent: "indigo",
-      points: ["Public-facing language", "Feedback into production rules", "Creative x product x engineering"],
-    },
-  ] satisfies FocusLane[],
+  signals: [],
 };
 
 export const fitMethodContent = {
-  eyebrow: "Why This Role Fits",
-  title: "Why the fit is direct.",
-  summary:
-    "Proof and working model should read together here.",
+  eyebrow: "Core Axes",
+  title: "작업을 구성하는 네 가지 축",
+  summary: "지금까지 반복해온 작업을 네 방향으로 정리했습니다.",
   cards: [
     {
-      title: "Identity / world / persona",
-      proof: "AHEYA character system + persona experiments",
-      body: "I lock one emotional axis first, then build relation, recall, and trust around it.",
-      points: ["Identity framing", "Persona logic", "Motif and recall"],
+      title: "Identity / Worldbuilding",
+      proof: "AHEYA",
+      body:
+        "브랜드와 서비스가 처음 보는 사람에게 어떻게 읽히는지부터 정리하고, 캐릭터와 세계관을 통해 그 인상이 더 오래 남도록 설계합니다.",
+      points: ["정체성 해석", "세계관 구조화", "상징 모티프 연결"],
       accent: "aqua",
     },
     {
-      title: "Visual concept / emotional transfer",
-      proof: "Andersson Bell + public experiments",
-      body: "I iterate references until the mood reads immediately, not just until the image feels novel.",
-      points: ["Mood selection", "Reference iteration", "Keep vs kill"],
+      title: "Character / Persona Planning",
+      proof: "Persona / Agent System",
+      body: "캐릭터를 단순한 외형이 아니라 성격, 관계, 말투, 감정선까지 포함한 구조로 보고 기획합니다.",
+      points: ["캐릭터 설정", "관계성 설계", "페르소나 방향"],
       accent: "orange",
     },
     {
-      title: "Public-facing build / handoff",
-      proof: "AHEYA + Relay-informed product work",
-      body: "I translate direction into copy, surfaces, and rules that survive product and engineering handoff.",
-      points: ["Public-facing language", "Trust surfaces", "Creative x product x engineering"],
+      title: "Visual Concept / Moodboard",
+      proof: "Andersson Bell",
+      body:
+        "무드보드와 레퍼런스 리서치를 바탕으로 비주얼 콘셉트를 좁히고, AI 이미지·영상 실험을 통해 결과물 방향을 구체화합니다.",
+      points: ["무드보드", "레퍼런스 리서치", "이미지·영상 실험"],
+      accent: "indigo",
+    },
+    {
+      title: "English Writing / Research Framing",
+      proof: "SFTI-CMU",
+      body: "브랜드 해석과 아이디어를 영어 문서와 포스터 구조로 정리해 외부 제출 가능한 형태로 만드는 경험이 있습니다.",
+      points: ["영문 초록 작성", "포스터 구조화", "외부 제출 문서"],
       accent: "indigo",
     },
   ] satisfies FitMethodCard[],
 };
 
 export const flagshipIntro = {
-  eyebrow: "Live system / product + identity",
+  eyebrow: "Product / Identity / Character Planning",
   title: "AHEYA",
   oneLiner:
-    "A live product where core rail, trust, and character work as one identity system.",
+    "참여형 Web3 서비스의 초기 유입을 만들기 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 프로젝트",
   summary:
-    "AHEYA is where I tested how a complex offer becomes emotionally legible through product copy, trust surfaces, and character-led memory.",
-  ctaLabel: "Read flagship case",
+    "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다. 서비스 소개만으로는 반응을 얻기 어려운 상황에서, 캐릭터들과 세계관을 활용한 공개 채널 콘텐츠를 통해 유입과 관심을 만들기 위한 실험을 함께 진행했습니다.",
+  ctaLabel: "상세 보기",
   ctaHref: "/creative/work/aheya",
-  statusLabel: "Why it matters",
-  statusValue:
-    "Live proof that product language, trust structure, character identity, and public experiments can work as one system.",
+  statusLabel: "핵심 증거",
+  statusValue: "서비스 운영 / 세계관 시리즈 / 공개 채널 실험 / 캐릭터 관계 구조",
 };
 
 export const flagshipFeature: FlagshipFeature = {
-  label: "Flagship visual system",
-  title: "One emotional front door, then clearer product and trust faces.",
+  label: "대표 캐릭터 이미지",
+  title: "첫인상을 만드는 메인 캐릭터",
   body:
-    "Kumiho works as the entry point. The identity system is there to improve legibility and recall, not to decorate the product after the fact.",
+    "메인 캐릭터는 서비스 설명만으로 부족한 첫인상을 보완하며, AHEYA가 어떤 분위기의 프로젝트인지 먼저 읽히게 만듭니다.",
   media: {
-    src: "/appendix/bluegarage/kumiho_main.PNG",
+    src: "/appendix/bluegarage/kumiho_main.webp",
     alt: "AHEYA kumiho main visual used as the emotional front door.",
     fit: "contain",
   },
   badge: {
-    src: "/aheya/logo.png",
+    src: "/aheya/logo.webp",
     alt: "AHEYA app logo.",
   },
 };
 
 export const flagshipPlates: FlagshipPlate[] = [
   {
-    title: "Core rail",
-    body: "Open a live app, support it from your wallet, then leave one clear signal through Good or Improve.",
+    title: "서비스 화면",
+    body: "홈 화면은 참여형 Web3 서비스의 핵심 제안과 첫 참여 동선을 함께 보여줍니다.",
     accent: "aqua",
     media: {
-      src: "/aheya/home-hero.png",
+      src: "/aheya/home-hero.webp",
       alt: "AHEYA homepage hero showing the core offer and rail.",
       fit: "contain",
     },
   },
   {
-    title: "Public language",
-    body: "The copy keeps the offer readable on first view: support, signal, optional public proof, and visible trust.",
+    title: "공개 채널 문구",
+    body: "서비스를 바로 설명하기 어려운 구간을 보완하기 위해, 공개 채널용 문구와 캐릭터 포스팅 구조를 함께 다듬었습니다.",
     accent: "orange",
     media: {
-      src: "/aheya/creator.png",
+      src: "/aheya/creator.webp",
       alt: "AHEYA supporting identity visual used across public-facing surfaces.",
       fit: "contain",
     },
   },
   {
-    title: "Character system",
-    body: "Kumiho and related motifs separate emotional entry and memory into clearer faces instead of one vague brand layer.",
+    title: "캐릭터 구조",
+    body: "메인 캐릭터와 연결 캐릭터를 함께 두어, 서비스 설명을 세계관과 관계성으로 확장할 수 있게 했습니다.",
     accent: "indigo",
     media: {
-      src: "/aheya/kumiho.png",
+      src: "/aheya/kumiho.webp",
       alt: "AHEYA kumiho identity visual.",
       fit: "contain",
     },
   },
   {
-    title: "Trust layer",
-    body: "Non-custodial structure, direct transfer logic, and public trust surfaces keep the system credible.",
+    title: "신뢰 구조",
+    body: "서비스 이해를 돕는 화면과 신뢰를 설명하는 화면을 분리해, 첫인상과 정보 전달이 섞이지 않도록 했습니다.",
     accent: "aqua",
     media: {
-      src: "/aheya/lane-panels.png",
+      src: "/aheya/lane-panels.webp",
       alt: "AHEYA homepage structure showing separated trust and support lanes.",
       fit: "contain",
     },
   },
 ];
 
-export const experimentsContent: ExperimentContent = {
-  eyebrow: "Public experiments",
-  title: "Character-led tests across X, trust surfaces, and AI persona interfaces.",
-  summary:
-    "I use public-facing surfaces to test what gets read and remembered quickly: emotional entry points, trust faces, and role-coded personas.",
-  process: ["Anchor", "Signal", "Iterate"],
-  chips: ["Kumiho", "Yeon", "Halo", "Trust API", "Relay", "Persona cast"],
-  memos: [
-    {
-      title: "Entry",
-      body: "What makes a first-time viewer feel a clear mood immediately?",
-    },
-    {
-      title: "Recall",
-      body: "Which face or motif stays in memory after the scroll?",
-    },
-    {
-      title: "Trust",
-      body: "How should credibility feel different from attraction?",
-    },
-    {
-      title: "Handoff",
-      body: "How does persona remain useful when work moves from idea to execution?",
-    },
-  ],
-};
-
 export const footerContent = {
-  line: "Portfolio for character-led identity systems, emotional clarity, and buildable AI creative planning.",
-  meta: "English public surfaces are part of the work. Private working docs stay off the public site.",
+  line: "Creative portfolio. 캐릭터, 세계관, 비주얼 콘셉트, 영문 문서화를 한 구조 안에서 보여줍니다.",
+  meta: "",
 };
 
 export const workCases: WorkCase[] = [
   {
     slug: "aheya",
     section: "Flagship",
-    eyebrow: "Live system / product + identity",
+    eyebrow: "Product / Identity / Character Planning",
     title: "AHEYA",
     oneLiner:
-      "A participatory web3 service that turns buried ideas into first reactions, then makes on-chain action more meaningful through a readable product and identity system shaped by character identity, symbolic motifs, and public short-form experiments.",
+      "참여형 Web3 크라우드펀딩 플랫폼의 초기 유입을 만들기 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 프로젝트",
     summary:
-      "AHEYA began as a product problem, then evolved into a legibility problem. I worked on core rail clarity, public-facing language, trust surfaces, and character-led identity so the system could be felt, understood, and remembered faster by first-time viewers. The clearest proof now is the live product surface, the recurring character system around it, and the public-facing experiments used to adjust direction.",
-    roles: ["Product framing", "Public-facing copy", "Trust structure", "Character system"],
-    evidence: ["Live product surface", "Recurring character system", "Public-facing experiments"],
-    status: "Live product + identity system + public experiments",
+      "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다. 서비스 소개만으로는 반응을 얻기 어려운 상황에서, 캐릭터들과 세계관을 활용한 공개 채널 콘텐츠를 통해 유입과 관심을 만들기 위한 실험을 함께 진행했습니다.",
+    roles: ["서비스 기획", "캐릭터 세계관", "공개 채널 콘텐츠", "표현 방향 조정"],
+    evidence: ["서비스 화면", "세계관 시리즈", "공개 채널 실험", "캐릭터 관계 구조"],
+    status: "진행 중인 서비스 / 콘텐츠 실험",
     tier: "flagship",
     accent: "aqua",
     year: "2025 - present",
+    externalLinks: [
+      {
+        label: "AHEYA Site",
+        href: "https://aheyabaraya.xyz/",
+        kind: "site",
+        accent: "aqua",
+      },
+      {
+        label: "AHEYA Trust API",
+        href: "https://aheyabaraya.xyz/trust/whitelist",
+        kind: "trust",
+        accent: "orange",
+      },
+      {
+        label: "X Account",
+        href: "https://x.com/minnns_aheya",
+        kind: "x",
+        accent: "indigo",
+      },
+      {
+        label: "GitHub Evidence",
+        href: "https://github.com/aheyabaraya/aheya-public-evidence",
+        kind: "github",
+        accent: "aqua",
+      },
+    ],
+    detailLeadLayout: "grid",
+    detailLeadSection: {
+      eyebrow: "메인 캐릭터와 연결 캐릭터",
+      title: "관계·감정·상징이 드러나는 K / Becca / Aurora / Yeon",
+      summary:
+        "메인 캐릭터와 그와 연결된 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 먼저 보여주는 구성입니다.",
+    },
+    coverImage: {
+      src: "/appendix/bluegarage/aheya/k.webp",
+      alt: "AHEYA Baraya K character visual.",
+      fit: "cover",
+    },
+    detailHeroProof: {
+      label: "AHEYA Baraya K",
+      note: "메인 캐릭터와 연결 캐릭터 구조의 중심으로, 서비스 설명보다 먼저 세계관의 결을 읽히게 하는 대표 이미지입니다.",
+      src: "/appendix/bluegarage/aheya/k.webp",
+      alt: "AHEYA Baraya K character visual.",
+    },
+    detailHeroHighlights: [
+      {
+        title: "Why this happened",
+        body: "초기 업로더와 참여자 유입이 약한 문제를 보완하기 위해, 단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠가 더 관심을 끈다고 판단했습니다.",
+        accent: "orange",
+        items: ["초기 업로더와 참여자 유입이 약한 문제", "단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠"],
+      },
+      {
+        title: "What I did",
+        body: "12지 및 그리스 신화 등을 하나의 세계관 축으로 설정하고, 메인 캐릭터와 연결 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 X에 기획·포스팅했습니다.",
+        accent: "indigo",
+        items: [
+          "단순히 예쁜 이미지 업로드가 아니라 서비스에 대한 관심과 유입을 만들기 위한 목적",
+          "X 같은 빠른 스크롤 환경에서 어떤 훅과 감정선이 더 먼저 읽히는지 확인하고 표현 방향 조정",
+        ],
+      },
+      {
+        title: "What this proves",
+        body: "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도이자, 캐릭터와 세계관을 마케팅 자산으로 활용하고 디지털 공개 채널에서 더 빨리 읽히는 훅을 조정한 경험입니다.",
+        accent: "aqua",
+        items: [
+          "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도",
+          "캐릭터와 세계관을 마케팅 자산으로 활용한 경험",
+          "디지털 공개 채널 반응을 보며 표현 방향을 조정한 경험",
+        ],
+      },
+    ],
+    galleryColumns: 4,
     overview: [
-      "AHEYA is a first-signal system built around support, reaction, and optional public proof.",
-      "The clearest read now comes from the live product surface, the recurring character system around it, and the public-facing experiments used to keep adjusting direction.",
+      "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다.",
+      "초기 업로더와 참여자 유입이 약한 문제를 보완하기 위해, 단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠가 더 관심을 끈다고 판단했습니다.",
     ],
     whatIDid: [
-      "Structured the core support and signal loop.",
-      "Defined and refined the public-facing copy that anchors the core rail, signal, and trust surfaces.",
-      "Built the character identity layer and symbolic motif direction used to make the service easier to enter and remember.",
-      "Turned the product face into a clearer narrative entry instead of leaving it as abstract product explanation only.",
-      "Tested how different characters, motifs, and short-form directions read on public-facing surfaces and adjusted direction accordingly.",
+      "12지 및 그리스 신화 등을 하나의 세계관 축으로 설정했습니다.",
+      "메인 캐릭터와 그와 연결된 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 X에 기획·포스팅했습니다.",
+      "단순히 예쁜 이미지 업로드가 아니라, AHEYA Baraya 세계관과 연결된 캐릭터 포스팅을 통해 서비스에 대한 관심과 유입을 만들기 위한 목적으로 진행했습니다.",
+      "공개 채널 반응을 보며 어떤 훅과 감정선이 더 잘 읽히는지 확인하고 표현 방향을 조정했습니다.",
     ],
     whatExists: [
-      "Live product surface and public-facing product layer.",
-      "Recurring character system and symbolic motif direction used for entry and recall.",
-      "Public-facing short-form and visual experiments used to test readability, motion, and memory.",
+      "서비스 한 줄 정의와 실제 서비스 화면.",
+      "메인 캐릭터와 12지 및 그리스 신화 기반 변주 이미지.",
+      "X 공개 채널 실험 이미지와 숏폼 일부.",
+      "훅과 감정선 조정을 보여주는 공개 실험 자료.",
     ],
     keyDecisions: [
-      "Fix one emotional front door instead of many weak visual directions.",
-      "Use character and symbolic motifs as memory devices, not decorative layers.",
-      "Later tests narrowed toward shorter videos built around hook, emotion, and concise story beats, because these formats read faster on public-facing surfaces.",
+      "단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠를 우선했습니다.",
+      "12지 및 그리스 신화 등을 하나의 세계관 축으로 잡고 시리즈형 콘텐츠로 확장했습니다.",
+      "공개 채널 반응을 보며 어떤 훅과 감정선이 더 잘 읽히는지 확인하고 표현 방향을 조정했습니다.",
     ],
-    galleryIntro:
-      "AHEYA reads best when product, identity, and public video surfaces are shown together: the recurring character system creates emotional entry, and the short-form experiments show how multiple characters, motifs, motion, and recall are being tested in public.",
+    galleryIntro: "",
     placeholderMedia: [
       {
-        label: "Main character system",
-        note: "Recurring main character used as the primary emotional entry for the AHEYA identity system.",
-        src: "/appendix/bluegarage/kumiho_main.PNG",
-        alt: "AHEYA kumiho main flagship image.",
-        featured: true,
-        href: "https://x.com/minnns_aheya/status/2034643089806217398?s=46",
-        hrefLabel: "Open Kumiho post",
+        label: "K",
+        note: "메인 캐릭터로, 관계·감정·상징이 드러나는 시리즈의 중심이 되는 대표 이미지입니다.",
+        src: "/appendix/bluegarage/aheya/k.webp",
+        alt: "AHEYA Baraya K character visual.",
+        fit: "cover",
+        position: "center center",
       },
       {
-        label: "Live product surface",
-        note: "Homepage surface where the core rail turns support, signal, and participation into a faster first read.",
-        src: "/aheya/home-hero.png",
-        alt: "AHEYA homepage hero screenshot.",
+        label: "Becca",
+        note: "메인 캐릭터와 연결된 인물 축을 넓혀 관계성과 감정선을 확장하는 연결 캐릭터입니다.",
+        src: "/appendix/bluegarage/aheya/becca.webp",
+        alt: "AHEYA Becca character image.",
+        fit: "cover",
+        position: "center center",
+      },
+      {
+        label: "Aurora",
+        note: "단순 소개형 포스팅보다 세계관과 감정선이 드러나는 콘텐츠 방향을 보여주는 확장 캐릭터입니다.",
+        src: "/appendix/bluegarage/aheya/aurora.webp",
+        alt: "AHEYA Aurora character image.",
+        fit: "cover",
+        position: "center center",
+      },
+      {
+        label: "Yeon",
+        note: "보다 차갑고 신뢰 중심인 분위기를 더해 세계관을 바깥으로 밀어주는 보조 캐릭터입니다.",
+        src: "/appendix/bluegarage/aheya/aheya_trust_yean.webp",
+        alt: "AHEYA trust Yean character still image.",
         fit: "contain",
-      },
-      {
-        label: "Trust and lane structure",
-        note: "Separated lanes that help product action and credibility read as different faces.",
-        src: "/aheya/lane-panels.png",
-        alt: "AHEYA lane-panel screenshot.",
-        fit: "contain",
-      },
-      {
-        label: "12 Zodiac variation",
-        note: "A zodiac-linked motif variation used to test whether the world can expand beyond the main character while staying legible.",
-        src: "/appendix/bluegarage/12zodiac_1.PNG",
-        alt: "AHEYA zodiac variation capture.",
-        href: "https://x.com/minnns_aheya/status/2035270290650144788?s=46",
-        hrefLabel: "Open Zodiac post",
-      },
-      {
-        label: "Angels short-form experiment",
-        note: "One of the public short-form runs used to test a softer symbolic frame and faster first-signal readability.",
-        src: "/appendix/bluegarage/angels_vid.MP4",
-        alt: "AHEYA angels short-form experiment.",
-        type: "video",
-        poster: "/appendix/bluegarage/angels_0.PNG",
-        displaySize: "compact",
-        href: "https://x.com/minnns_aheya/status/2043030774342128006?s=46",
-        hrefLabel: "Open Angels post",
-        stat: "2w video view",
-      },
-      {
-        label: "Yeon / Trust API experiment",
-        note: "A colder trust-facing persona experiment used to test how a secondary character can carry trust and system-facing mood.",
-        src: "/appendix/bluegarage/yeon_trust_api_vid.MP4",
-        alt: "AHEYA Yeon trust API experiment.",
-        type: "video",
-        displaySize: "compact",
-        href: "https://x.com/minnns_aheya/status/2037465808524460467?s=46",
-        hrefLabel: "Open Yeon post",
-        stat: "2w video view",
+        position: "center center",
       },
     ],
+    detailMediaSections: [
+      {
+        eyebrow: "실제 서비스 화면",
+        title: "왜 캐릭터 세계관을 시도했는지 실제 서비스 surface와 함께 보여주는 두 장",
+        summary:
+          "서비스 소개만으로는 반응을 얻기 어려운 상황에서, 실제 서비스 화면과 캐릭터를 함께 보면 왜 이 실험이 필요했는지가 더 직접적으로 읽힙니다.",
+        columns: 2,
+        layout: "grid",
+        items: [
+          {
+            label: "K x 서비스 메인",
+            note: "파란 구미호 메인 이미지를 통해 AHEYA의 첫 인상 축과 세계관 톤을 먼저 보여주는 카드입니다.",
+            src: "/appendix/bluegarage/kumiho_main.webp",
+            alt: "AHEYA kumiho main visual.",
+            fit: "contain",
+            position: "center 24%",
+            href: "https://aheyabaraya.xyz/",
+            hrefLabel: "AHEYA Site 보기",
+          },
+          {
+            label: "Yeon x 구조 분리",
+            note: "Yeon 축과 연결된 trust API 이미지를 통해 차갑고 신뢰 중심인 surface 인상을 보여주는 카드입니다.",
+            src: "/appendix/bluegarage/aheya/yeon-trust-api.webp",
+            alt: "AHEYA Yeon trust API image.",
+            fit: "contain",
+            position: "center center",
+            href: "https://aheyabaraya.xyz/trust/whitelist",
+            hrefLabel: "Trust API 보기",
+          },
+        ],
+      },
+      {
+        eyebrow: "서비스 인상 보조",
+        title: "공개 채널 이미지와 service surface 사이를 잇는 motion surface",
+        summary:
+          "정적 캐릭터 카드만으로는 부족한 감정선을 보완하기 위해, 서비스 인상 옆에서 움직임과 재질감을 더하는 자료를 따로 배치했습니다.",
+        columns: 3,
+        layout: "grid",
+        items: [
+          {
+            label: "AHEYA 서비스 연결 영상",
+            note: "AHEYA 전체 톤과 service surface 인상이 한 덩어리로 읽히도록 연결한 보조 motion surface입니다.",
+            src: "/appendix/bluegarage/aheya_vid.MP4",
+            alt: "AHEYA service motion surface experiment.",
+            type: "video",
+            poster: "/appendix/bluegarage/aheya/aheya-motion-poster.webp",
+            autoPlay: true,
+            muted: true,
+            loop: true,
+            showControls: false,
+            displaySize: "compact",
+          },
+          {
+            label: "Kumiho 서비스 연결 영상",
+            note: "AHEYA의 초기 인상 축이 실제 서비스 맥락 옆에서 어떻게 이어지는지 보여주는 보조 motion surface입니다.",
+            src: "/appendix/bluegarage/kumiho_vid.MP4",
+            alt: "AHEYA kumiho short-form experiment.",
+            type: "video",
+            poster: "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
+            autoPlay: true,
+            muted: true,
+            loop: true,
+            showControls: false,
+            displaySize: "compact",
+            href: "https://x.com/minnns_aheya/status/2034643089806217398?s=46",
+            hrefLabel: "Kumiho 포스트 보기",
+          },
+          {
+            label: "Mouse 서비스 연결 영상",
+            note: "Mouse 캐릭터의 더 가볍고 민첩한 인상이 서비스 인상 옆에서 어떻게 읽히는지 보여주는 보조 motion surface입니다.",
+            src: "/appendix/bluegarage/mouse_vid.MP4",
+            alt: "AHEYA mouse short-form experiment.",
+            type: "video",
+            poster: "/appendix/bluegarage/aheya/mouse-motion-poster.webp",
+            autoPlay: true,
+            muted: true,
+            loop: true,
+            showControls: false,
+            displaySize: "compact",
+          },
+        ],
+      },
+      {
+        eyebrow: "반응 데이터 비교",
+        title: "조정 전 / 후 반응 변화 비교",
+        summary: "",
+        columns: 2,
+        layout: "grid",
+        items: [
+          {
+            label: "조정 전",
+            note: "세계관 톤은 있었지만 감정, 훅, 캐릭터 개성이 약했던 초기 방향입니다. Views 1.1K / Watch Time 8.2h / Completion 16.5%",
+            stackedMediaDirection: "row",
+            stackedMedia: [
+              {
+                src: "/appendix/bluegarage/aheya/dog.webp",
+                alt: "AHEYA dog initial character direction from March.",
+                fit: "contain",
+                position: "center center",
+                aspectRatio: "3 / 4",
+                scale: 0.9,
+              },
+              {
+                src: "/appendix/bluegarage/aheya/312330.webp",
+                alt: "AHEYA before snapshot image 312330.",
+                fit: "contain",
+                position: "center center",
+                aspectRatio: "5 / 4",
+                scale: 0.9,
+              },
+            ],
+            stat: "조정 전",
+          },
+          {
+            label: "조정 후",
+            note: "감정, 훅, 캐릭터 개성을 더 직접적으로 읽히게 조정한 이후 방향입니다. Views 2.1K / Watch Time 18.3h / Completion 28.3%",
+            stackedMediaDirection: "row",
+            stackedMedia: [
+              {
+                src: "/appendix/bluegarage/horus_img.webp",
+                alt: "AHEYA Horus character image.",
+                fit: "contain",
+                position: "center center",
+                aspectRatio: "3 / 4",
+                scale: 0.9,
+              },
+              {
+                src: "/appendix/bluegarage/aheya/331418.webp",
+                alt: "AHEYA after snapshot image 331418.",
+                fit: "contain",
+                position: "center center",
+                aspectRatio: "5 / 4",
+                scale: 0.9,
+              },
+            ],
+            stat: "조정 후",
+          },
+        ],
+      },
+      {
+        eyebrow: "공개 채널 실험",
+        title: "12지 및 그리스 신화와의 연결을 실험한 공개 채널 확장",
+        summary:
+          "X 같은 빠른 스크롤 환경에서 어떤 상징, 감정선, 캐릭터 축이 먼저 읽히는지 직접 보기 위해 12지 및 그리스 신화 계열 변주를 공개 채널에 올리고, 반응에 따라 표현 방향을 조정한 흔적입니다.",
+        columns: 4,
+        layout: "grid",
+        items: [
+          {
+            label: "Zeus 공개 채널 실험",
+            note: "Zeus 축의 더 직접적이고 강한 상징성이 공개 채널에서 어떻게 첫 훅으로 읽히는지 보기 위한 실험입니다.",
+            src: "/appendix/bluegarage/zeus_vid.MP4",
+            alt: "AHEYA Zeus public-channel experiment.",
+            type: "video",
+            poster: "/appendix/bluegarage/zeus_img.webp",
+            displaySize: "compact",
+          },
+          {
+            label: "Hephaestus",
+            note: "무거운 재질감과 제작자적 분위기가 얼마나 빠르게 읽히는지 본 공개 채널 실험입니다.",
+            src: "/appendix/bluegarage/hephaestus_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/hepaitos_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+            href: "https://x.com/minnns_aheya/status/2043014685545631843?s=46",
+            hrefLabel: "Hephaestus 포스트 보기",
+          },
+          {
+            label: "Horus",
+            note: "보다 선명한 상징성과 첫인상을 확인하기 위한 이집트 계열 변주입니다.",
+            src: "/appendix/bluegarage/horus_vid_1_5x.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/horus_img.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+          },
+          {
+            label: "Ares",
+            note: "강한 에너지와 sharper한 움직임이 첫인상에 어떤 차이를 만드는지 본 변주입니다.",
+            src: "/appendix/bluegarage/ares_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/ares_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+            href: "https://x.com/minnns_aheya/status/2042937122060222498?s=46",
+            hrefLabel: "Ares 포스트 보기",
+          },
+          {
+            label: "Artemis",
+            note: "보다 날렵하고 사냥감 같은 긴장감을 공개 채널에서 어떻게 읽는지 보기 위한 변주입니다.",
+            src: "/appendix/bluegarage/artemis_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/artemis_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+          },
+          {
+            label: "Dionysus",
+            note: "보다 관능적이고 몽환적인 분위기가 첫인상 훅으로 얼마나 작동하는지 본 실험입니다.",
+            src: "/appendix/bluegarage/dionysus_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/dionysus_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+          },
+          {
+            label: "Athena",
+            note: "차갑고 지적인 권위를 더한 변주가 공개 채널에서 어떻게 인지되는지 확인한 실험입니다.",
+            src: "/appendix/bluegarage/athena_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/athena_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+          },
+          {
+            label: "Ra",
+            note: "태양성과 상징 밀도를 더한 이집트 계열 변주가 어떤 강도로 읽히는지 확인한 실험입니다.",
+            src: "/appendix/bluegarage/ra_vid.MP4",
+            type: "video",
+            poster: "/appendix/bluegarage/ra_vid_data.webp",
+            posterMode: "after-end",
+            displaySize: "compact",
+          },
+        ],
+      },
+    ] satisfies DetailMediaSection[],
+    hideAppendixSlide: true,
     currentStatus: [
-      "Live and still being refined.",
-      "Best read as a case where live product structure, recurring character identity, and public experiments are being aligned into one readable system.",
+      "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도",
+      "캐릭터와 세계관을 마케팅 자산으로 활용한 경험",
+      "X 같은 디지털 공개 채널에서 어떤 훅과 상징이 먼저 읽히는지 실험하고 조정한 경험",
     ],
   },
   {
     slug: "andersson-bell",
     section: "Selected Work",
-    eyebrow: "Visual concept / AI direction",
+    eyebrow: "Brand short-form / Visual Concept",
     title: "Andersson Bell",
     oneLiner:
-      "A brand-facing AI visual collaboration where I helped structure short-form concept direction, hook design, and prompt-based visual iteration into a clearer brand-fit system.",
+      "생성형 AI 기반 브랜드 숏폼을 기획·제작하며, 실무 피드백을 바탕으로 브랜드 톤에 맞는 방향으로 좁혀간 산학협력 프로젝트",
     summary:
-      "This project shows how I work when visual direction needs more than novelty. I helped shape the short-form concept, narrowed the mood through stakeholder feedback, and turned open-ended experimentation into a clearer brand-fit direction built around hook, motif, and readable scene structure.",
+      "이 프로젝트는 단순히 예쁜 AI 이미지를 만드는 작업이 아니라, Andersson Bell의 톤과 장면 흐름에 맞는 방향을 찾고 그것을 반복 가능한 스토리보드와 이미지·영상 흐름으로 정리하는 과정이었습니다.",
     roles: [
-      "Short-form concept structuring",
-      "Hook / motif design",
-      "Prompt-based visual generation",
-      "Feedback-informed convergence",
+      "콘셉트 기획",
+      "훅 / 모티프 설계",
+      "프롬프트 설계",
+      "실무 피드백 반영",
     ],
-    evidence: ["Storyboard structure", "Process board", "Prompt variants", "Short-form output"],
-    status: "Delivered brand collaboration",
+    evidence: ["무드보드", "레퍼런스 보드", "스토리보드", "최종 숏폼"],
+    status: "산학협력 프로젝트 / 숏폼 완료",
     tier: "selected",
     accent: "orange",
     year: "2025",
+    externalLinks: [
+      {
+        label: "Instagram Reel",
+        href: "https://www.instagram.com/reel/DRvZIP1EosJ/?igsh=c3Z3ZzFxN25zN205",
+        kind: "instagram",
+        accent: "orange",
+      },
+    ],
+    detailLeadLayout: "stack",
+    detailHeroHighlightsPosition: "lead",
+    detailLeadSection: {
+      eyebrow: "최종 숏폼",
+      title: "브랜드 톤과 장면 흐름이 약 15초 숏폼으로 수렴된 결과",
+      summary:
+        "브랜드 톤에 맞는 방향만 남기고 정리한 최종 숏폼입니다.",
+    },
     coverImage: {
-      src: "/work/andersson-bell-cover.png",
+      src: "/work/andersson-bell-cover.webp",
       alt: "A generated Andersson Bell visual showing a stylized crosswalk and product atmosphere.",
     },
+    detailHeroProof: {
+      label: "최종 숏폼 메인 컷",
+      note: "강아지와 쇼핑백을 든 인물이 함께 보이는 메인 컷으로, 브랜드 톤과 장면 흐름이 가장 직관적으로 읽히는 이미지입니다.",
+      src: "/work/andersson-bell-cover.webp",
+      alt: "Andersson Bell main image with dog and shopping bag.",
+    },
+    detailHeroHighlights: [
+      {
+        title: "What I did",
+        body: "기획과 프롬프트 설계를 맡아 훅, 모티프, 장면 흐름을 정리했습니다.",
+        accent: "aqua",
+        items: [
+          "3인 팀 내 기획·프롬프트 설계 담당",
+          "브랜드 리서치 기반 훅·모티프 정리",
+          "이미지-영상 제작 흐름 구축",
+        ],
+      },
+      {
+        title: "What changed",
+        body: "분산되던 톤을 고정 앵글 중심 흐름으로 좁혀 브랜드 무드를 선명하게 만들었습니다.",
+        accent: "indigo",
+        items: [
+          "분산된 톤 정리",
+          "고정 앵글 중심 재구성",
+          "브랜드 무드 선명화",
+        ],
+      },
+      {
+        title: "Result",
+        body: "약 15초 브랜드 숏폼으로 최종 수렴했습니다.",
+        accent: "orange",
+        items: ["15초 숏폼 완성", "실무형 피드백 루프 경험"],
+      },
+    ],
     overview: [
-      "A collaborative short-form project built around Andersson Bell's tone and brand-fit visual direction.",
-      "The final direction converged toward Mutated Mundane / everyday reinterpretation, where hook, motif, and readable scene structure mattered more than image novelty alone.",
+      "브랜드 톤에 맞는 훅과 장면 흐름을 찾고, 그것을 반복 가능한 스토리보드와 이미지·영상 구조로 정리해간 프로젝트였습니다.",
+      "초기에는 톤이 분산되는 시도도 있었지만, 실무 피드백을 반영해 브랜드 무드가 더 선명하게 읽히는 방향으로 좁혀갔습니다.",
     ],
     whatIDid: [
-      "Helped frame the short-form concept around readable hook and motif instead of image novelty alone.",
-      "Worked on storyboard structure, scene rhythm, and prompt-based image generation for the selected direction.",
-      "Contributed to brand-fit visual iteration through Midjourney, Gemini Image, Kling, and related generation workflows.",
-      "Adjusted the direction through stakeholder feedback, especially when earlier approaches created tone diffusion.",
+      "팀 3인 중 주요 기획·프롬프트 설계 담당으로 참여했습니다.",
+      "브랜드 리서치와 실무진 협업을 바탕으로 초기 훅, 모티프, 장면 구조를 기획했습니다.",
+      "무드보드와 레퍼런스 리서치를 바탕으로 이미지·영상 프롬프트 방향을 정리했습니다.",
+      "Midjourney, Nano Banana, Kling, Photoshop 등을 활용해 이미지 시안-동작 보정-영상화 흐름을 구축했습니다.",
     ],
     whatExists: [
-      "Storyboard structure and direction notes for the selected route.",
-      "Prompt-based image generation variants and process boards.",
-      "Final short-form output reflecting the converged brand-fit direction.",
+      "프로세스 보드와 레퍼런스 정리 자료.",
+      "장면 흐름과 스토리보드 방향을 보여주는 시안.",
+      "최종 숏폼과 비주얼 시안 비교 자료.",
     ],
     keyDecisions: [
-      "Prioritize readable hook and motif over prettier but weaker AI imagery.",
-      "Drop directions early when they diffuse tone or slow brand readability.",
-      "Use feedback to converge toward Mutated Mundane / everyday reinterpretation instead of treating iteration as endless exploration.",
+      "예쁜 이미지보다 브랜드 톤에 맞는 훅과 모티프를 우선했습니다.",
+      "톤이 분산되는 시도는 빠르게 정리하고, 읽히는 장면 흐름만 남겼습니다.",
+      "실무 피드백을 기준으로 방향을 선택·폐기·수정하는 루프를 경험했습니다.",
     ],
     galleryIntro:
-      "The final short-form output should lead this case, but the stills matter too: they show how hook, motif, and prompt-based direction were narrowed into a clearer brand-fit system.",
+      "무드보드, 레퍼런스 보드, 스토리보드, before / after 비교, 최종 숏폼이 어떤 순서로 좁혀졌는지 읽히도록 정리했습니다.",
     placeholderMedia: [
       {
-        label: "Final short-form output",
-        note: "Final Andersson Bell short-form video built from the converged concept direction and revised storyboard structure.",
+        label: "최종 숏폼",
+        note: "브랜드 톤과 장면 흐름에 맞는 방향으로 수렴된 최종 숏폼입니다.",
         src: "/video/anderssonbell.mp4",
         alt: "Andersson Bell short-form video.",
         type: "video",
-        poster: "/work/andersson-bell-cover.png",
-        featured: true,
+        poster: "/work/andersson-bell-cover.webp",
         fit: "contain",
         displaySize: "compact",
       },
-      {
-        label: "Process board",
-        note: "Direction board showing how the short-form concept was structured around hook, motif, and readable scene flow.",
-        src: "/work/andersson-bell-process.png",
-        alt: "Andersson Bell process board.",
-        fit: "contain",
-      },
-      {
-        label: "Prompt variant set",
-        note: "Generated visual variants used to narrow the brand-fit direction through comparison and feedback.",
-        src: "/work/andersson-bell-variants.png",
-        alt: "Andersson Bell prompt variants.",
-        fit: "contain",
-      },
     ],
+    detailMediaSections: [
+      {
+        eyebrow: "작업 흐름",
+      title: "무드보드와 레퍼런스 정리부터 Kling 제작과 결과물까지 이어진 순서",
+        summary:
+          "무드보드, 레퍼런스 보드, 스토리보드, before / after 비교, 최종 숏폼이 어떤 순서로 좁혀졌는지 한 줄 흐름으로 확인할 수 있도록 정리했습니다.",
+        layout: "stack",
+        items: [
+          {
+            label: "1-4. 컨셉 / 무드 / 리서치",
+            note: "브랜드 리서치와 실무진 협업을 바탕으로 초기 훅, 모티프, 장면 구조를 기획하고, 무드보드와 레퍼런스 리서치로 방향을 정리한 단계입니다.",
+            src: "/appendix/bluegarage/adsb/stage-direction-wide.webp",
+            alt: "ADSB concept, mood, and research collage.",
+            fit: "cover",
+          },
+          {
+            label: "5-7. 수정 전 시안 3개",
+            note: "초기에는 톤이 분산되는 시도도 있었지만, 어떤 장면이 Andersson Bell의 톤에 더 가까운지 비교하며 방향을 좁혀간 단계입니다.",
+            src: "/appendix/bluegarage/adsb/stage-drafts.webp",
+            alt: "ADSB draft comparison collage.",
+            fit: "contain",
+          },
+          {
+            label: "8-9. Kling 제작 / 결과 프레임",
+            note: "선별한 시안을 Kling, Photoshop 등으로 영상화하며 고정 앵글 중심의 장면 흐름으로 재구성하고, 결과 프레임과 함께 최종 수렴 지점을 보여주는 단계입니다.",
+            src: "/appendix/bluegarage/adsb/stage-production.webp",
+            alt: "ADSB production and final frame collage.",
+            fit: "contain",
+          },
+        ],
+      },
+    ] satisfies DetailMediaSection[],
+    hideAppendixSlide: true,
     currentStatus: [
-      "Closed project with visible outputs.",
-      "The strongest takeaway was that \"pretty AI\" is not enough. What matters is whether the brand reads faster, whether the first seconds hold attention, and whether weak visual approaches can be dropped early enough to protect tone.",
+      "약 15초 분량의 브랜드 숏폼을 완성한 산학협력 프로젝트",
+      "방향을 선택·폐기·수정하는 실무형 피드백 루프를 경험한 케이스",
     ],
   },
   {
     slug: "persona-systems",
     section: "Selected Work",
-    eyebrow: "Persona / identity system",
-    title: "Persona as Interface",
-    oneLiner: "A character-led system built across AHEYA, trust surfaces, and role-coded AI personas.",
+    eyebrow: "Persona / Agent System",
+    title: "Persona / Agent System",
+    oneLiner: "AI agent별 역할, 성격, 말투, 관계성을 내부적으로 설계하고 운영한 페르소나 구조 실험",
     summary:
-      "This case shows how I use persona not as fiction for its own sake, but as an interface that makes products, trust, and collaboration easier to read and remember.",
-    roles: ["Identity framing", "Character system", "Public experiments", "Role-coded collaboration"],
-    evidence: ["Character front door", "Motif tests", "Trust face", "Persona tooling"],
-    status: "Ongoing identity system",
+      "이 실험에서는 AI agent를 단순한 기능 도구가 아니라, 각기 다른 역할과 말투, 성격을 가진 협업 대상으로 설정해 사용했습니다. 이를 통해 페르소나 설계가 상호작용의 분위기와 인식에 어떤 차이를 만드는지 내부적으로 확인했습니다.",
+    roles: ["agent cast", "역할 분리", "성격 / 말투", "관계성"],
+    evidence: ["persona surface", "AHEYA 연결 캐릭터", "역할 차이", "운영 구조"],
+    status: "보조 케이스 / 내부 실험",
     tier: "selected",
     accent: "indigo",
     year: "2025 - present",
+    detailLeadLayout: "stack",
+    detailLeadSection: {
+      eyebrow: "OpenClaw / AHEYA Baraya",
+      title: "업무 관계 / 에이전트들 간의 관계 / K · Becca · Aurora를 함께 보는 메인 자료",
+      summary:
+        "실제 chatting 영상을 두 구간으로 나누고, K / Becca / Aurora 이미지를 함께 둬 역할 / 성격 / 말투 / 관계 구조 차이가 어떤 캐릭터 인상으로 읽히는지 한 번에 보이게 정리했습니다.",
+    },
+    detailHeroProof: {
+      label: "OpenClaw x K",
+      note: "대표 agent 화면과 AHEYA Baraya K를 같이 묶어, 역할과 말투의 차이가 어떤 캐릭터 인상과 맞닿는지 먼저 보여주는 페어 이미지입니다.",
+      src: "/appendix/bluegarage/persona/openclaw-k-pair.webp",
+      alt: "OpenClaw and AHEYA K paired persona image.",
+      fit: "contain",
+    },
+    detailHeroHighlights: [
+      {
+        title: "What to show",
+        body: "agent cast overview와 역할 / 성격 / 말투 / 관계성 차이, OpenClaw 사용 화면, 왜 이렇게 나눴는지에 대한 짧은 설명만 보여줍니다.",
+        accent: "aqua",
+        items: ["agent cast overview", "역할 / 성격 / 말투 / 관계성 차이", "OpenClaw 사용 화면"],
+      },
+      {
+        title: "Why it matters",
+        body: "성격, 말투, 감정 구조, 관계성을 실제 대화와 인상 차이로 연결해본 보조 증거입니다.",
+        accent: "orange",
+        items: ["보조 케이스", "역할 / 말투 / 관계 구조"],
+      },
+      {
+        title: "주의",
+        body: "내부 운영 문서 전체는 공개하지 않고, 공개 가능한 수준의 화면과 역할표, 사용 방식만 요약합니다.",
+        accent: "indigo",
+        items: ["내부 운영 문서 전체 공개 금지", "공개 가능한 수준으로만 요약"],
+      },
+    ],
     coverImage: {
-      src: "/appendix/bluegarage/horus_img.PNG",
-      alt: "Horus image used to differentiate the Greek and Egyptian persona-system case from the AHEYA flagship.",
+      src: "/appendix/bluegarage/persona/openclaw-k-pair.webp",
+      alt: "OpenClaw and AHEYA K paired persona image.",
+      fit: "contain",
     },
     overview: [
-      "Characters are used here as legibility structures, not decorative wrappers.",
-      "The system separates emotional entry, trust, recall, and role clarity into distinct faces and motifs.",
+      "이 실험에서는 AI agent를 단순한 기능 도구가 아니라, 각기 다른 역할과 말투, 성격을 가진 협업 대상으로 설정해 사용했습니다.",
+      "이를 통해 페르소나 설계가 상호작용의 분위기와 인식에 어떤 차이를 만드는지 내부적으로 확인했습니다.",
     ],
     whatIDid: [
-      "Positioned Kumiho as the flagship emotional front door for AHEYA.",
-      "Separated trust and evaluation into a different face and surface instead of forcing one all-purpose brand mask.",
-      "Used mythic and halo-like motif tests on public surfaces to see what gets read and remembered faster.",
-      "Used Greek and Egyptian deity-coded variants to test how role, symbolic hierarchy, and recall change across public-facing surfaces.",
-      "Assigned face, tone, and function to role-coded AI personas for clearer collaboration interfaces.",
+      "agent별 역할과 담당 범위를 구분해 사용했습니다.",
+      "성격, 말투, 분위기 차이를 반영해 각 페르소나의 인상을 분명히 나눴습니다.",
+      "AHEYA Baraya 캐릭터와 연결해 어떤 agent가 어떤 인상 구조로 읽히는지 묶어보았습니다.",
+      "협업 상황에서 각 페르소나가 어떤 분위기와 역할을 만드는지 관찰하고 정리했습니다.",
     ],
     whatExists: [
-      "Flagship emotional front door inside AHEYA.",
-      "Supporting identity assets used for recall and public experiments.",
-      "Greek and Egyptian persona experiments used to test how different myth-coded roles shift entry, trust, and symbolic memory.",
-      "Role-coded persona logic that can carry trust, collaboration, and public memory as separate jobs.",
+      "OpenClaw agent 화면과 캐릭터를 함께 보여주는 페어 이미지.",
+      "AHEYA 내부 화면과 연결된 캐릭터 이미지.",
+      "역할과 말투 차이를 보여주는 운영 화면 일부.",
+      "내부 운영에서 정리한 역할과 말투 차이에 대한 보조 기준.",
     ],
     keyDecisions: [
-      "Keep one strong emotional anchor instead of many unrelated visual experiments.",
-      "Use mythic and symbolic motifs because they create faster emotional recall for first-time viewers.",
-      "Treat Greek and Egyptian figure sets as role-coded recall systems instead of one-off decorative references.",
-      "Treat persona as interface and memory structure, not as standalone fiction.",
+      "AI agent를 기능 도구가 아니라 협업 대상으로 다뤘습니다.",
+      "역할, 성격, 말투 차이를 분명히 나눠 인상 차이를 만들었습니다.",
+      "공개 가능한 화면과 연결 캐릭터만 노출하고 내부 운영 문서는 감췄습니다.",
+      "페르소나 설계를 실제 상호작용 인상과 연결 캐릭터 이미지로 읽히게 했습니다.",
     ],
-    galleryColumns: 4,
     galleryIntro:
-      "This page should first show how persona is grounded inside AHEYA itself: entry character, supporting face, product-linked surface, and trust-facing structure.",
+      "OpenClaw chatting을 업무 관계와 에이전트들 간의 관계 두 구간으로 나누고, K / Becca / Aurora를 함께 둬 각 agent의 역할 / 말투 / 관계 구조 차이가 어떤 캐릭터 인상으로 연결되는지 바로 읽히게 정리했습니다.",
     placeholderMedia: [
       {
-        label: "Primary persona surface",
-        note: "Horus works here as the watchful persona-facing image that widens the system beyond the flagship entry character.",
-        src: "/appendix/bluegarage/horus_img.PNG",
-        alt: "Horus persona image used as the primary persona surface.",
+        label: "업무 관계",
+        note: "실제 업무 맥락에서 각 agent가 어떤 역할로 반응하고 판단을 돕는지 빠르게 훑어볼 수 있도록 2배속으로 정리한 첫 번째 chatting 구간입니다.",
+        src: "/appendix/bluegarage/persona/openclaw-chat-work-2x.mp4",
+        alt: "OpenClaw work-relationship clip showing agent role differences.",
+        type: "video",
+        poster: "/appendix/bluegarage/persona/openclaw-chat-work-poster.webp",
+        showControls: true,
+        copyMedia: {
+          src: "/appendix/bluegarage/aheya/k.webp",
+          alt: "AHEYA K character image.",
+          fit: "contain",
+          position: "center center",
+        },
       },
       {
-        label: "Flagship entry character",
-        note: "Kumiho still anchors the main emotional front door inside AHEYA.",
-        src: "/appendix/bluegarage/kumiho_main.PNG",
-        alt: "AHEYA kumiho flagship image.",
-        href: "https://x.com/minnns_aheya/status/2034643089806217398?s=46",
-        hrefLabel: "Open Kumiho post",
+        label: "에이전트들 간의 관계",
+        note: "agent들이 서로를 어떤 역할과 감정선으로 인지하는지 빠르게 확인할 수 있도록 2배속으로 정리한 두 번째 chatting 구간입니다.",
+        src: "/appendix/bluegarage/persona/openclaw-chat-relationship-2x.mp4",
+        alt: "OpenClaw inter-agent relationship clip.",
+        type: "video",
+        poster: "/appendix/bluegarage/persona/openclaw-chat-relationship-poster.webp",
+        showControls: true,
+        copyMedia: {
+          src: "/appendix/bluegarage/aheya/becca.webp",
+          alt: "AHEYA Becca character image.",
+          fit: "contain",
+          position: "center center",
+        },
       },
       {
-        label: "Product-linked persona surface",
-        note: "Homepage structure showing that the identity layer still has to support a readable first product entry.",
-        src: "/aheya/home-hero.png",
-        alt: "AHEYA homepage hero screenshot.",
+        label: "Aurora",
+        note: "같은 역할 구조가 더 부드럽고 몽환적인 인상으로도 읽힐 수 있음을 보여주는 연결 캐릭터입니다.",
+        hideText: true,
+        src: "/appendix/bluegarage/aheya/aurora.webp",
+        alt: "AHEYA Aurora character image.",
         fit: "contain",
-      },
-      {
-        label: "Trust-facing structure",
-        note: "Lane separation that keeps credibility distinct from attraction, memory, and the more expressive persona surfaces.",
-        src: "/aheya/lane-panels.png",
-        alt: "AHEYA lane-panel screenshot.",
-        fit: "contain",
+        position: "center center",
       },
     ],
-    detailMediaSections: [
-      {
-        eyebrow: "Public experiments",
-        title: "Character-led tests across X, trust surfaces, and AI persona interfaces.",
-        summary:
-          "These four public runs read best side by side: they make the role-coded experiment set feel intentional instead of scattered across separate links.",
-        columns: 4,
-        items: [
-          {
-            label: "Hephaestus",
-            note: "Maker-facing Greek variation used to test a forged-material mood and heavier role-coded recall.",
-            src: "/appendix/bluegarage/hephaestus_vid.MP4",
-            type: "video",
-            displaySize: "compact",
-            href: "https://x.com/minnns_aheya/status/2043014685545631843?s=46",
-            hrefLabel: "Open Hephaestus post",
-          },
-          {
-            label: "Horus",
-            note: "Watchful Egyptian variation used to test clearer symbolic authority and higher legibility at first glance.",
-            src: "/appendix/bluegarage/horus_vid.MP4",
-            type: "video",
-            poster: "/appendix/bluegarage/horus_img.PNG",
-            displaySize: "compact",
-          },
-          {
-            label: "Ares",
-            note: "Aggression-coded Greek variation used to see how harder motion and sharper energy change first read.",
-            src: "/appendix/bluegarage/ares_vid.MP4",
-            type: "video",
-            displaySize: "compact",
-            href: "https://x.com/minnns_aheya/status/2042937122060222498?s=46",
-            hrefLabel: "Open Ares post",
-          },
-          {
-            label: "Glass study",
-            note: "A material-driven test that sits next to the deity set as a texture and atmosphere study.",
-            src: "/appendix/bluegarage/glass_vid.MP4",
-            type: "video",
-            displaySize: "compact",
-            href: "https://x.com/minnns_aheya/status/2043894960064475419?s=46",
-            hrefLabel: "Open Glass post",
-          },
-        ],
-      },
-    ] satisfies DetailMediaSection[],
+    detailMediaSections: [] satisfies DetailMediaSection[],
+    hideAppendixSlide: true,
     currentStatus: [
-      "Most useful as a differentiation case when read next to AHEYA.",
-      "Shows persona as interface, not fiction for its own sake.",
+      "성격, 말투, 감정 구조, 관계성을 실제 상호작용으로 연결해본 보조 증거",
+      "내부 운영 문서 전체는 공개하지 않고 공개 가능한 수준으로만 요약한 케이스",
     ],
   },
   {
     slug: "sfti-cmu",
     section: "Selected Work",
-    eyebrow: "Research translation / English writing",
+    eyebrow: "Research / English Writing",
     title: "SFTI-CMU",
     oneLiner:
-      "An accepted conference submission that turned AI-generated emotional content into a structured external-facing research case.",
+      "브랜드를 정체성·상징·감정 구조의 관점에서 해석해 영문 초록과 포스터 형식으로 구조화한 연구·발표 프로젝트",
     summary:
-      "This case is less about academic prestige and more about structured communication: building a usable concept, organizing references, and turning AI-content research into an English-language argument that could travel externally.",
-    roles: ["Research framing", "English writing", "Identity analysis", "External communication"],
-    evidence: ["Submission", "Acceptance with revisions", "Abstract", "Framework"],
-    status: "Accepted conference submission",
+      "이 프로젝트는 패션 브랜드를 정체성·상징·감정 구조의 관점에서 해석하고, 이를 비주얼 클러스터링 프레임으로 정리해 영어 문서와 포스터 형식으로 만든 작업입니다.",
+    roles: ["영문 초록 작성", "브랜드 해석", "포스터 구조화", "외부 제출"],
+    evidence: ["abstract", "review form", "poster", "framework"],
+    status: "Accept with revisions",
     tier: "selected",
     accent: "aqua",
     year: "2025",
+    detailLeadLayout: "carousel",
+    detailLeadSection: {
+      eyebrow: "대표 자료",
+      title: "Revision 포함 / 1-5 문서 흐름",
+      summary:
+        "핵심 문서를 끊김 없이 넘겨보며 전체 흐름을 확인하는 구성입니다.",
+    },
+    detailHeroProof: {
+      label: "Review form",
+      note: "영문 초록이 Accept with revisions 평가를 받은 결과 화면입니다.",
+      src: "/appendix/bluegarage/sfti/result.webp",
+      alt: "SFTI-CMU result image.",
+      fit: "contain",
+    },
+    detailHeroHighlights: [
+      {
+        title: "What I did",
+        body: "‘AI-Generated Emotional Content Strategy for Niche Fashion Brands: Toward Identity-Based Visual Clustering’ 주제로 영문 초록을 작성하고 제출했습니다.",
+        accent: "aqua",
+        items: [
+          "브랜드를 정체성, 상징, 감정 구조의 관점에서 해석",
+          "신화·상징 모티프를 연결한 비주얼 클러스터링 프레임으로 구조화",
+          "영문 포스터·발표 자료 형식으로 확장",
+        ],
+      },
+      {
+        title: "Result",
+        body: "영문 초록은 Accept with revisions 평가를 받았고, 현장 발표는 지도교수가 진행했습니다.",
+        accent: "indigo",
+        items: ["Accept with revisions", "현장 발표는 지도교수가 진행"],
+      },
+      {
+        title: "Why it matters",
+        body: "이 작업은 단순한 연구 경험보다도, 추상적인 브랜드 해석을 영어 문서와 시각 구조로 외부 전달 가능한 형태로 바꿔본 경험이라는 점에서 의미가 있습니다.",
+        accent: "orange",
+        items: ["abstract", "review form", "poster", "framework diagram"],
+      },
+    ],
+    galleryColumns: 3,
     coverImage: {
-      src: "/sfti/result.png",
-      alt: "SFTI-CMU accepted abstract page and conference result image.",
+      src: "/appendix/bluegarage/sfti/sfti_1.webp",
+      alt: "SFTI-CMU screenshot one showing the split abstract layout.",
       fit: "contain",
     },
     overview: [
-      "A conference submission on AI-generated emotional content strategy for niche fashion brands.",
-      "The work connects research language, identity interpretation, and a visual clustering framework.",
+      "패션 브랜드를 정체성·상징·감정 구조의 관점에서 해석하고, 이를 비주얼 클러스터링 프레임으로 정리한 작업입니다.",
+      "단순한 연구 경험이라기보다, 추상적인 브랜드 해석을 영어 문서와 시각 구조로 외부 전달 가능한 형태로 바꿔본 경험에 가깝습니다.",
     ],
     whatIDid: [
-      "Defined the research question and overall framing.",
-      "Built the abstract and external-facing English document.",
-      "Organized the idea into a visual clustering approach tied to identity and narrative.",
+      "‘AI-Generated Emotional Content Strategy for Niche Fashion Brands: Toward Identity-Based Visual Clustering’ 주제로 영문 초록을 작성하고 제출했습니다.",
+      "브랜드를 정체성, 상징, 감정 구조의 관점에서 해석했습니다.",
+      "신화·상징 모티프를 연결한 비주얼 클러스터링 프레임으로 구조화했습니다.",
+      "영문 포스터와 발표 자료 형식으로 확장했습니다.",
     ],
     whatExists: [
-      "Submission-ready English abstract and framing.",
-      "Review form with acceptance and revision request.",
-      "Clear evidence of research-to-communication translation.",
+      "영문 초록과 포스터 형식으로 정리된 결과물.",
+      "Accept with revisions가 표기된 review form.",
+      "브랜드 해석과 visual clustering framework.",
     ],
     keyDecisions: [
-      "Frame the project around identity-based visual clustering instead of a vague AI trend theme.",
-      "Keep the research output legible to external readers rather than overly academic.",
-      "Use the submission as a proof of structured writing and concept clarity.",
+      "브랜드 해석을 identity-based visual clustering이라는 구조로 잡았습니다.",
+      "연구 결과를 과도하게 학술적으로 쓰기보다 외부 전달 가능한 문장으로 정리했습니다.",
+      "영문 작성과 구조화 능력을 보여주는 증거로 사용했습니다.",
     ],
-    galleryIntro:
-      "The accepted abstract page is the most convincing visual proof here, so this case shows it directly instead of implying the research through generic placeholders.",
+    galleryIntro: "",
     placeholderMedia: [
       {
-        label: "Accepted abstract page",
-        note: "Conference submission page showing the abstract structure, visual framework, and acceptance result together.",
-        src: "/sfti/result.png",
-        alt: "SFTI-CMU abstract and result screenshot.",
+        label: "Revision",
+        note: "revision / redline / final draft",
+        src: "/appendix/bluegarage/sfti/sfti-revision.webp",
+        alt: "SFTI-CMU revision page screenshot.",
         fit: "contain",
-        featured: true,
+      },
+      {
+        label: "Abstract / 1",
+        note: "abstract / problem framing",
+        src: "/appendix/bluegarage/sfti/sfti_1.webp",
+        alt: "SFTI-CMU screenshot one.",
+        fit: "contain",
+      },
+      {
+        label: "2",
+        note: "resource limits / symbolic content",
+        src: "/appendix/bluegarage/sfti/sfti_2.webp",
+        alt: "SFTI-CMU screenshot two.",
+        fit: "contain",
+      },
+      {
+        label: "3",
+        note: "solution model / framework",
+        src: "/appendix/bluegarage/sfti/sfti_3.webp",
+        alt: "SFTI-CMU screenshot three.",
+        fit: "contain",
+      },
+      {
+        label: "4",
+        note: "symbol mapping / brand reading",
+        src: "/appendix/bluegarage/sfti/sfti_4.webp",
+        alt: "SFTI-CMU screenshot four.",
+        fit: "contain",
+      },
+      {
+        label: "5",
+        note: "poster layout / presentation",
+        src: "/appendix/bluegarage/sfti/sfti_5.webp",
+        alt: "SFTI-CMU screenshot five.",
+        fit: "contain",
       },
     ],
+    detailMediaSections: [] satisfies DetailMediaSection[],
+    hideAppendixSlide: true,
     currentStatus: [
-      "Closed research output with a concrete external result.",
-      "Best used as evidence of writing, framing, and English communication under ambiguity.",
+      "영문 초록은 Accept with revisions 평가를 받았고, 현장 발표는 지도교수가 진행했습니다.",
+      "추상적인 브랜드 해석을 영어 문서와 시각 구조로 외부 전달 가능한 형태로 바꿔본 경험입니다.",
     ],
   },
   {
@@ -734,7 +1046,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Figma overview",
         note: "Core interface surfaces and information architecture.",
-        src: "/work/bemoon-ui.png",
+        src: "/work/bemoon-ui.webp",
         alt: "BE;MOON Figma board with multiple screens.",
         fit: "contain",
         featured: true,
@@ -742,7 +1054,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Verification surface",
         note: "Verification-oriented product evidence and portable proof exploration.",
-        src: "/work/bemoon-nft.png",
+        src: "/work/bemoon-nft.webp",
         alt: "BE;MOON verification and proof surface.",
         fit: "contain",
       },
@@ -793,7 +1105,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Main page UI",
         note: "Captured interface showing the list and action state.",
-        src: "/work/ilysb-main.png",
+        src: "/work/ilysb-main.webp",
         alt: "ILYSB mobile main page screenshot.",
         fit: "contain",
         featured: true,
@@ -801,14 +1113,14 @@ export const workCases: WorkCase[] = [
       {
         label: "Hint screen",
         note: "One of the core reveal surfaces in the app flow.",
-        src: "/work/ilysb-hints.png",
+        src: "/work/ilysb-hints.webp",
         alt: "ILYSB hint screen with social clues.",
         fit: "contain",
       },
       {
         label: "Entry screen",
         note: "Login and opening access point of the app.",
-        src: "/work/ilysb-login.png",
+        src: "/work/ilysb-login.webp",
         alt: "ILYSB entry screen with Kakao login.",
         fit: "contain",
       },
@@ -1033,6 +1345,13 @@ export const workCases: WorkCase[] = [
 ];
 
 export const workCaseMap = Object.fromEntries(workCases.map((item) => [item.slug, item])) as Record<string, WorkCase>;
+
+workCaseMap.adsb = {
+  ...workCaseMap["andersson-bell"],
+  slug: "adsb",
+  eyebrow: "ADSB / Brand short-form / Visual Concept",
+  title: "ADSB / Andersson Bell",
+};
 
 const selectedOrder = ["andersson-bell", "persona-systems", "sfti-cmu"] as const;
 const archiveOrder = ["be-moon", "ilysb", "ariadne-mode-moment"] as const;
