@@ -3,26 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowDownRight,
-  ArrowUpRight,
-  Orbit,
-  RadioTower,
-  ScanSearch,
-  Sparkles,
-} from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
-import { SelectedCaseCard } from "@/components/project-card";
-import type { Accent, MediaFit } from "@/data/portfolio";
+import { ProjectLinkRail } from "@/components/project-link-rail";
+import type { Accent, MediaFit, WorkCase } from "@/data/portfolio";
 import {
-  experimentsContent,
   fitMethodContent,
-  flagshipFeature,
-  flagshipIntro,
-  flagshipPlates,
   footerContent,
   heroContent,
-  selectedCases,
   siteTitle,
   workCaseMap,
 } from "@/data/portfolio.creative";
@@ -34,56 +22,60 @@ const fadeUp = {
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
 
-const experimentIcons = [Orbit, RadioTower, ScanSearch] as const;
-const selectedLayouts = ["third", "third", "third"] as const;
+const defaultPreviewMedia = {
+  src: "/appendix/bluegarage/aheya/tiger-zodiac.webp",
+  alt: "AHEYA tiger zodiac visual used as the strongest public-facing entry image.",
+  fit: "cover" as MediaFit,
+};
 
 export default function CreativePage() {
+  const adsbCase = workCaseMap["andersson-bell"];
   const flagshipCase = workCaseMap["aheya"];
-  const heroTitleLines = [
-    "I build character-led identity systems that",
-    "make products easier to feel, understand, and remember.",
-  ];
-  const heroSignalCards = heroContent.signals.map((item, index) => ({
-    ...item,
-    proof: heroContent.proofs[index] ?? "",
-  }));
-  const aheyaCards: Array<{
-    src: string;
-    alt: string;
-    label: string;
-    title: string;
-    body: string;
-    accent: Accent;
-    fit: MediaFit;
-  }> = [
+  const sftiCase = workCaseMap["sfti-cmu"];
+  const personaCase = workCaseMap["persona-systems"];
+  const heroTitleLines = heroContent.title.split("\n");
+  const featuredProofs = [adsbCase, flagshipCase, sftiCase];
+  const heroPosterMedia = defaultPreviewMedia;
+  const personaSupportBody =
+    "AI agent별 역할, 성격, 말투, 관계성을 내부적으로 설계하고 운영한 페르소나 구조 실험";
+  const aheyaMotionMedia =
+    flagshipCase.detailMediaSections
+      ?.find((section) => section.eyebrow === "서비스 인상 보조")
+      ?.items.find((item) => item.label.includes("Kumiho"));
+  const aheyaTigerMedia = {
+    label: "Tiger 공개 채널 실험",
+    note: "Tiger 계열 캐릭터가 X 같은 빠른 스크롤 환경에서 어떤 첫인상 훅으로 읽히는지 확인한 실험입니다.",
+    src: "/appendix/bluegarage/aheya/tiger_vid.MP4",
+    alt: "AHEYA Tiger public-channel experiment.",
+    type: "video" as const,
+    poster: "/appendix/bluegarage/aheya/tiger-zodiac.webp",
+  };
+  const aheyaPreviewMedia = [aheyaMotionMedia, aheyaTigerMedia].filter(
+    (item): item is NonNullable<typeof item> => Boolean(item),
+  );
+  const personaShots = [
     {
-      src: flagshipFeature.media.src,
-      alt: flagshipFeature.media.alt,
-      label: "Character front door",
-      title: "One emotional front door.",
-      body: "Kumiho holds entry and recall so the product face can stay clearer.",
-      accent: "aqua",
-      fit: flagshipFeature.media.fit ?? "cover",
+      label: "K",
+      src: "/appendix/bluegarage/aheya/k.webp",
+      alt: "AHEYA K character image.",
+      fit: "contain" as MediaFit,
     },
     {
-      src: flagshipPlates[0].media.src,
-      alt: flagshipPlates[0].media.alt,
-      label: flagshipPlates[0].title,
-      title: "Support and signal read fast.",
-      body: "The rail spells out support, feedback, and public proof on first view.",
-      accent: "orange",
-      fit: flagshipPlates[0].media.fit ?? "cover",
+      label: "Becca",
+      src: "/appendix/bluegarage/aheya/becca.webp",
+      alt: "AHEYA Becca character image.",
+      fit: "contain" as MediaFit,
     },
     {
-      src: "/aheya/tiger.png",
-      alt: "AHEYA symbolic motif variation used for public-facing identity tests.",
-      label: "Public experiment direction",
-      title: "Motif and recall get tested in public.",
-      body: "Character variations and symbolic motifs extend the system beyond the main surface and show what reads faster on public-facing channels.",
-      accent: "indigo",
-      fit: "cover",
+      label: "Aurora",
+      src: "/appendix/bluegarage/aheya/aurora.webp",
+      alt: "AHEYA Aurora character image.",
+      fit: "contain" as MediaFit,
     },
   ];
+  const personaMainShots = personaShots.slice(1);
+  const sftiPreviewMedia =
+    sftiCase.placeholderMedia.find((item) => item.src?.includes("sfti_4")) ?? sftiCase.placeholderMedia[0];
 
   return (
     <main className="cinema-shell bluegarage-shell">
@@ -98,14 +90,14 @@ export default function CreativePage() {
             <span>{siteTitle}</span>
           </Link>
           <nav className="topnav">
-            <a href="#flagship">Flagship</a>
-            <a href="#selected">Selected</a>
-            <a href="#experiments">Experiments</a>
+            <a href="#flagship">대표 작업</a>
+            <a href="#selected">상세 작업</a>
+            <a href="#experiments">보조 증거</a>
           </nav>
         </header>
 
-        <div className="hero-grid">
-          <motion.section {...fadeUp} className="hero-copy">
+        <div className="bluegarage-hero-poster">
+          <motion.section {...fadeUp} className="hero-copy bluegarage-hero-copy">
             <p className="eyebrow text-aqua hero-eyebrow-tight">{heroContent.eyebrow}</p>
             <p className="hero-kicker">{heroContent.stageTitle}</p>
             <h1 className="hero-title">
@@ -133,34 +125,45 @@ export default function CreativePage() {
                 </a>
               ))}
             </div>
-          </motion.section>
-        </div>
 
-        <motion.section
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-          className="hero-signal-band"
-        >
-          <div className="hero-signal-band-header">
-            <div>
-              <p className="eyebrow text-aqua">Hiring signal</p>
-              <p className="hero-signal-band-title">{heroContent.stageTitle}</p>
+            <div className="bluegarage-hero-proof-row">
+              {heroContent.proofs.map((proof) => (
+                <span key={proof} className="case-chip case-chip-soft">
+                  {proof}
+                </span>
+              ))}
             </div>
-            <Sparkles className="h-4 w-4 text-white/60" />
-          </div>
+          </motion.section>
 
-          <div className="hero-signal-band-grid">
-            {heroSignalCards.map((item) => (
-              <article key={item.label} className="hero-signal-band-card">
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-                <p>{item.proof}</p>
-              </article>
-            ))}
-          </div>
-        </motion.section>
+          <motion.aside
+            initial={{ opacity: 0, scale: 0.98, y: 24 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.62, ease: "easeOut" }}
+            className="bluegarage-poster-stage"
+          >
+            <div className="bluegarage-poster-media-shell">
+              <div className="bluegarage-poster-media">
+                <Image
+                  src={heroPosterMedia.src}
+                  alt={heroPosterMedia.alt}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 48vw"
+                  className="bluegarage-poster-image"
+                  style={{ objectFit: heroPosterMedia.fit }}
+                  priority
+                />
+              </div>
+              <div className="bluegarage-poster-overlay" />
+            </div>
+            <div className="bluegarage-poster-caption">
+              <p className="eyebrow text-aqua">AHEYA / 공개 채널 실험</p>
+              <p className="bluegarage-poster-caption-text">
+                서비스 소개만으로는 반응을 얻기 어려운 상황에서, X 같은 스크롤 환경에서 세계관과 관계성이 먼저 읽히게 한 공개 채널 엔트리 이미지.
+              </p>
+            </div>
+          </motion.aside>
+        </div>
       </section>
 
       <motion.section {...fadeUp} className="page-frame fit-method-frame">
@@ -169,7 +172,6 @@ export default function CreativePage() {
             <p className="eyebrow text-aqua">{fitMethodContent.eyebrow}</p>
             <h2 className="section-title">{fitMethodContent.title}</h2>
           </div>
-          <p className="section-sidecopy">{fitMethodContent.summary}</p>
         </div>
 
         <div className="fit-method-grid">
@@ -190,141 +192,272 @@ export default function CreativePage() {
         </div>
       </motion.section>
 
+      <motion.section {...fadeUp} id="selected" className="page-frame selected-frame bluegarage-proof-frame">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow text-orange">대표 증거 3개</p>
+            <h2 className="section-title">Andersson Bell / AHEYA / SFTI-CMU</h2>
+          </div>
+        </div>
+
+        <div className="bluegarage-proof-wall">
+          {featuredProofs.map((project, index) => {
+            const preview = resolvePreviewMedia(project);
+
+            return (
+              <motion.article
+                key={project.slug}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.52, delay: index * 0.08, ease: "easeOut" }}
+                className="bluegarage-proof-card"
+              >
+                <Link href={`/creative/work/${project.slug}`} className="bluegarage-proof-link">
+                  <div className="bluegarage-proof-media">
+                    <Image
+                      src={preview.src}
+                      alt={preview.alt}
+                      fill
+                      sizes="(max-width: 1100px) 100vw, 33vw"
+                      className="bluegarage-proof-image"
+                      style={{ objectFit: preview.fit }}
+                    />
+                    <div className="bluegarage-proof-wash" />
+                  </div>
+                  <div className="bluegarage-proof-copy">
+                    <div className="bluegarage-proof-topline">
+                      <span className={`eyebrow ${accentTextClass(project.accent)}`}>{project.eyebrow}</span>
+                      <span className="case-year">{project.year}</span>
+                    </div>
+                    <h3 className="bluegarage-proof-title">{project.title}</h3>
+                    <p className="bluegarage-proof-oneliner">{project.oneLiner}</p>
+                    <div className="case-chip-group">
+                      {project.evidence.slice(0, 4).map((item) => (
+                        <span key={item} className="case-chip case-chip-soft">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="bluegarage-proof-bottom">
+                      <span>{project.status}</span>
+                      <span className="inline-link">
+                        상세 보기
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.article>
+            );
+          })}
+        </div>
+      </motion.section>
+
       <motion.section {...fadeUp} id="flagship" className="page-frame flagship-frame">
         <div className="section-heading section-heading-wide">
           <div>
-            <p className="eyebrow text-aqua">{flagshipIntro.eyebrow}</p>
-            <h2 className="section-title flagship-title">{flagshipIntro.title}</h2>
-            <p className="section-oneliner">{flagshipIntro.oneLiner}</p>
+            <p className="eyebrow text-aqua">대표 작업</p>
+            <h2 className="section-title">ADSB / AHEYA / SFTI</h2>
           </div>
-          <Link href={flagshipIntro.ctaHref} className="inline-link">
-            {flagshipIntro.ctaLabel}
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
         </div>
 
-        <div className="flagship-showcase-grid">
-          {aheyaCards.map((item, index) => (
-            <article key={item.label} className="flagship-showcase-card" data-accent={item.accent}>
-              <div className="flagship-showcase-media">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 1100px) 100vw, 33vw"
-                  className="flagship-showcase-image"
-                  style={{ objectFit: item.fit }}
-                  priority={index === 0}
-                />
+        <div className="bluegarage-preview-stack">
+          <article className="bluegarage-preview-row">
+            <div className="bluegarage-preview-media">
+              <video
+                className="bluegarage-preview-video"
+                playsInline
+                muted
+                loop
+                autoPlay
+                preload="metadata"
+                poster={adsbCase.placeholderMedia[0]?.poster}
+                controls
+              >
+                <source src={adsbCase.placeholderMedia[0]?.src} type="video/mp4" />
+              </video>
+            </div>
+            <div className="bluegarage-preview-copy">
+              <div className="bluegarage-preview-topline">
+                <span className="eyebrow text-orange">{adsbCase.eyebrow}</span>
+                <span className="case-year">{adsbCase.year}</span>
               </div>
-
-              <div className="flagship-showcase-copy">
-                <p className={`eyebrow ${accentTextClass(item.accent)}`}>{item.label}</p>
-                <p className="flagship-showcase-title">{item.title}</p>
-                <p className="flagship-showcase-body">{item.body}</p>
+              <h3 className="bluegarage-preview-title">{adsbCase.title}</h3>
+              <p className="bluegarage-preview-summary">{adsbCase.oneLiner}</p>
+              <div className="case-chip-group">
+                {adsbCase.evidence.map((item) => (
+                  <span key={item} className="case-chip case-chip-soft">
+                    {item}
+                  </span>
+                ))}
               </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="flagship-inline-grid flagship-inline-grid-wide">
-          <article className="flagship-inline-card flagship-inline-card-emphasis">
-            <span>{flagshipIntro.statusLabel}</span>
-            <strong>{flagshipIntro.statusValue}</strong>
-          </article>
-
-          <article className="flagship-inline-card">
-            <span>Core ownership</span>
-            <div className="case-chip-group">
-              {flagshipCase.roles.map((item) => (
-                <span key={item} className="case-chip">
-                  {item}
-                </span>
-              ))}
+              <ul className="bluegarage-preview-list">
+                {adsbCase.currentStatus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              {adsbCase.externalLinks?.length ? (
+                <ProjectLinkRail links={adsbCase.externalLinks} className="bluegarage-preview-links" />
+              ) : null}
+              <Link href="/creative/work/andersson-bell" className="inline-link">
+                상세 보기
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </article>
 
-          <article className="flagship-inline-card">
-            <span>Visible proof</span>
+          <article className="bluegarage-preview-row">
+            <div className="bluegarage-preview-grid">
+              {aheyaPreviewMedia.map((item) => (
+                <div key={item.label} className="bluegarage-preview-grid-item">
+                  {item.type === "video" && item.src ? (
+                    <video
+                      className="bluegarage-preview-video"
+                      playsInline
+                      muted
+                      loop
+                      autoPlay
+                      preload="metadata"
+                      poster={item.poster}
+                    >
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <div className="bluegarage-preview-copy">
+              <div className="bluegarage-preview-topline">
+                <span className="eyebrow text-aqua">{flagshipCase.eyebrow}</span>
+                <span className="case-year">{flagshipCase.year}</span>
+              </div>
+              <h3 className="bluegarage-preview-title">{flagshipCase.title}</h3>
+              <p className="bluegarage-preview-summary">{flagshipCase.oneLiner}</p>
+              <div className="case-chip-group">
+                {flagshipCase.evidence.map((item) => (
+                  <span key={item} className="case-chip case-chip-soft">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <ul className="bluegarage-preview-list">
+                {flagshipCase.currentStatus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              {flagshipCase.externalLinks?.length ? (
+                <ProjectLinkRail links={flagshipCase.externalLinks} className="bluegarage-preview-links" />
+              ) : null}
+              <Link href="/creative/work/aheya" className="inline-link">
+                상세 보기
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </article>
+
+          <article className="bluegarage-preview-row">
+            <div className="bluegarage-preview-media bluegarage-preview-media-doc">
+              <Image
+                src={sftiPreviewMedia?.src ?? heroPosterMedia.src}
+                alt={sftiPreviewMedia?.alt ?? sftiCase.title}
+                fill
+                sizes="(max-width: 1100px) 100vw, 52vw"
+                className="bluegarage-preview-image"
+                style={{ objectFit: sftiPreviewMedia?.fit ?? "contain" }}
+              />
+            </div>
+            <div className="bluegarage-preview-copy">
+              <div className="bluegarage-preview-topline">
+                <span className="eyebrow text-aqua">{sftiCase.eyebrow}</span>
+                <span className="case-year">{sftiCase.year}</span>
+              </div>
+              <h3 className="bluegarage-preview-title">{sftiCase.title}</h3>
+              <p className="bluegarage-preview-summary">{sftiCase.oneLiner}</p>
+              <div className="case-chip-group">
+                {sftiCase.evidence.map((item) => (
+                  <span key={item} className="case-chip case-chip-soft">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <ul className="bluegarage-preview-list">
+                {sftiCase.currentStatus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <Link href="/creative/work/sfti-cmu" className="inline-link">
+                상세 보기
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </article>
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="experiments" className="page-frame practice-frame">
+        <div className="bluegarage-support-grid">
+          <div className="practice-intro">
+            <p className="eyebrow text-indigo">보조 증거</p>
+            <h2 className="section-title">{personaCase.title}</h2>
+            <p className="practice-summary">{personaCase.summary}</p>
             <div className="case-chip-group">
-              {flagshipCase.evidence.map((item) => (
+              {personaCase.evidence.map((item) => (
                 <span key={item} className="case-chip case-chip-soft">
                   {item}
                 </span>
               ))}
             </div>
-          </article>
-        </div>
-      </motion.section>
-
-      <section id="selected" className="page-frame selected-frame">
-        <motion.div {...fadeUp} className="section-heading">
-          <div>
-            <p className="eyebrow text-orange">Selected Proof</p>
-            <h2 className="section-title">The clearest fit cases.</h2>
-          </div>
-          <p className="section-sidecopy">
-            Three proofs only: brand-facing execution, identity-system differentiation, and public-facing structure.
-          </p>
-        </motion.div>
-
-        <div className="selected-grid selected-grid-thirds">
-          {selectedCases.map((project, index) => (
-            <SelectedCaseCard
-              key={project.slug}
-              project={project}
-              index={index}
-              layout={selectedLayouts[index]}
-              hrefBase="/creative/work"
-            />
-          ))}
-        </div>
-      </section>
-
-      <motion.section {...fadeUp} id="experiments" className="page-frame practice-frame">
-        <div className="practice-intro">
-          <p className="eyebrow text-aqua">{experimentsContent.eyebrow}</p>
-          <h2 className="section-title">{experimentsContent.title}</h2>
-          <p className="practice-summary">{experimentsContent.summary}</p>
-        </div>
-
-        <div className="practice-panel">
-          <div className="practice-panel-top">
-            <div className="practice-track">
-              {experimentsContent.process.map((item, index) => {
-                const Icon = experimentIcons[index] ?? Sparkles;
-
-                return (
-                  <span key={item} className="track-node">
-                    <Icon className="h-4 w-4" />
-                    {item}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="practice-protocols">
-              {experimentsContent.chips.map((item) => (
-                <span key={item} className="case-chip practice-chip">
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
 
-          <div className="practice-memo-grid">
-            {experimentsContent.memos.map((item) => (
-              <div key={item.title} className="practice-memo">
-                <p className="practice-memo-label">{item.title}</p>
-                <p className="practice-memo-value">{item.body}</p>
+          <Link
+            href="/creative/work/persona-systems"
+            className="bluegarage-support-link bluegarage-support-link-text-only"
+          >
+            <div className="bluegarage-support-copy">
+              <p className="eyebrow text-indigo">보조 케이스</p>
+              <h3 className="bluegarage-support-title">{personaCase.title}</h3>
+              <p className="bluegarage-support-body">{personaSupportBody}</p>
+              <span className="inline-link">
+                상세 보기
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </div>
+          </Link>
+        </div>
+
+        <div
+          className={[
+            "bluegarage-support-shot-grid",
+            personaMainShots.length === 2 ? "bluegarage-support-shot-grid-two" : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
+          {personaMainShots.map((item, index) => (
+            <article key={item.label} className="bluegarage-support-shot">
+              <div className="bluegarage-support-shot-media">
+                <Image
+                  src={item.src}
+                  alt={item.alt ?? item.label}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 33vw"
+                  className="bluegarage-support-shot-image"
+                  style={{ objectFit: item.fit ?? "cover" }}
+                />
               </div>
-            ))}
-          </div>
+              <div className="bluegarage-support-shot-copy">
+                <p className="eyebrow text-indigo">OpenClaw 0{index + 1}</p>
+                <p className="bluegarage-support-shot-title">{item.label}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </motion.section>
 
       <footer className="page-frame footer-frame">
         <p>{footerContent.line}</p>
-        <span>{footerContent.meta}</span>
+        {footerContent.meta ? <span>{footerContent.meta}</span> : null}
       </footer>
     </main>
   );
@@ -339,4 +472,30 @@ function accentTextClass(accent: Accent) {
     case "indigo":
       return "text-indigo";
   }
+}
+
+function resolvePreviewMedia(project: WorkCase) {
+  if (project.coverImage) {
+    return {
+      src: project.coverImage.src,
+      alt: project.coverImage.alt,
+      fit: project.coverImage.fit ?? "cover",
+    } satisfies { src: string; alt: string; fit: MediaFit };
+  }
+
+  const fallbackItem = project.placeholderMedia.find((item) => item.type !== "video" && item.src);
+
+  if (fallbackItem?.src) {
+    return {
+      src: fallbackItem.src,
+      alt: fallbackItem.alt ?? project.title,
+      fit: fallbackItem.fit ?? "cover",
+    } satisfies { src: string; alt: string; fit: MediaFit };
+  }
+
+  return {
+    src: defaultPreviewMedia.src,
+    alt: defaultPreviewMedia.alt,
+    fit: defaultPreviewMedia.fit,
+  } satisfies { src: string; alt: string; fit: MediaFit };
 }

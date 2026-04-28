@@ -7,6 +7,14 @@ export type HeroSignal = {
 };
 
 export type MediaFit = "cover" | "contain";
+export type DetailMediaLayout = "grid" | "stack" | "carousel" | "comparison";
+
+export type ProjectExternalLink = {
+  label: string;
+  href: string;
+  kind: "site" | "trust" | "x" | "instagram" | "github";
+  accent?: Accent;
+};
 
 export type HeroContent = {
   eyebrow: string;
@@ -58,11 +66,44 @@ export type FocusLane = {
 export type PlaceholderMedia = {
   label: string;
   note: string;
+  hideText?: boolean;
+  gridSpan?: 2 | 4;
+  embedType?: "x";
+  embedUrl?: string;
+  embedText?: string;
   src?: string;
   alt?: string;
+  position?: string;
+  stackedMediaDirection?: "row" | "column";
+  stackedMedia?: Array<{
+    src: string;
+    alt: string;
+    fit?: MediaFit;
+    position?: string;
+    aspectRatio?: string;
+    insetPadding?: string;
+    scale?: number;
+  }>;
+  copyMedia?: {
+    src: string;
+    alt: string;
+    fit?: MediaFit;
+    position?: string;
+  };
+  copyHighlights?: Array<{
+    title: string;
+    body: string;
+    accent?: Accent;
+    items?: string[];
+  }>;
   type?: "image" | "video";
   fit?: MediaFit;
   poster?: string;
+  posterMode?: "default" | "after-end";
+  autoPlay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+  showControls?: boolean;
   featured?: boolean;
   displaySize?: "default" | "compact";
   href?: string;
@@ -75,7 +116,20 @@ export type DetailMediaSection = {
   title: string;
   summary: string;
   items: PlaceholderMedia[];
-  columns?: 3 | 4;
+  afterword?: Array<{
+    title: string;
+    body: string;
+    accent?: Accent;
+    items?: string[];
+  }>;
+  columns?: 2 | 3 | 4 | 5;
+  layout?: DetailMediaLayout;
+};
+
+export type LeadMediaSection = {
+  eyebrow: string;
+  title: string;
+  summary: string;
 };
 
 export type PracticeMemo = {
@@ -127,9 +181,17 @@ export type WorkCase = {
     alt: string;
     fit?: MediaFit;
   };
+  externalLinks?: ProjectExternalLink[];
+  detailLeadLayout?: DetailMediaLayout;
+  detailLeadSection?: LeadMediaSection;
+  hideLeadStageLabel?: boolean;
+  detailHeroHighlights?: StructuredBlock[];
+  detailHeroHighlightsPosition?: "cover" | "lead";
+  detailHeroProof?: PlaceholderMedia;
   galleryColumns?: 3 | 4;
   detailMediaSections?: DetailMediaSection[];
   detailDensity?: "default" | "compact";
+  hideAppendixSlide?: boolean;
   overview: string[];
   whatIDid: string[];
   whatExists: string[];
@@ -148,7 +210,7 @@ export type WorkCase = {
   currentStatus: string[];
 };
 
-export const siteTitle = "Yumin Seog";
+export const siteTitle = "minnns creative planning";
 
 export const heroContent: HeroContent = {
   eyebrow: "Business development / AI image & video / web3 product strategy",
@@ -192,11 +254,11 @@ export const flagshipFeature: FlagshipFeature = {
   body:
     "The kumiho visual works as the emotional front door. From there, the site breaks the offer into founder, project, and trust lanes that are easier to understand and act on.",
   media: {
-    src: "/aheya/kumiho.png",
+    src: "/aheya/kumiho.webp",
     alt: "AHEYA kumiho visual used as the flagship atmosphere image.",
   },
   badge: {
-    src: "/aheya/logo.png",
+    src: "/aheya/logo.webp",
     alt: "AHEYA app logo.",
   },
 };
@@ -207,7 +269,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     body: "Offer framing, audience logic, founder-facing narrative, and the external story needed to make the product legible.",
     accent: "aqua",
     media: {
-      src: "/aheya/home-hero.png",
+      src: "/aheya/home-hero.webp",
       alt: "AHEYA homepage hero showing the main headline and product positioning.",
     },
   },
@@ -216,7 +278,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     body: "Participation loop planning, user movement, feature prioritization, and iteration around what actually gets people to enter and return.",
     accent: "indigo",
     media: {
-      src: "/aheya/lane-panels.png",
+      src: "/aheya/lane-panels.webp",
       alt: "AHEYA lane panels for founders, backers, and trust.",
     },
   },
@@ -225,7 +287,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     body: "Landing copy, guardrails, positioning, and channel-specific messaging systems built for public clarity rather than internal jargon.",
     accent: "orange",
     media: {
-      src: "/aheya/tiger.png",
+      src: "/aheya/tiger.webp",
       alt: "AHEYA tiger creative used for narrative expansion and campaign mood.",
     },
   },
@@ -234,7 +296,7 @@ export const flagshipPlates: FlagshipPlate[] = [
     body: "Image and video outputs, visual atmosphere, and support assets that keep the product story coherent across surfaces.",
     accent: "aqua",
     media: {
-      src: "/aheya/creator.png",
+      src: "/aheya/creator.webp",
       alt: "AHEYA creator-side visual used for support assets and world-building.",
     },
   },
@@ -350,34 +412,34 @@ export const workCases: WorkCase[] = [
       {
         label: "Flagship world image",
         note: "Kumiho-led hero art used to anchor AHEYA's public identity.",
-        src: "/aheya/kumiho.png",
+        src: "/aheya/kumiho.webp",
         alt: "AHEYA kumiho hero image.",
         featured: true,
       },
       {
         label: "Homepage hero",
         note: "Primary landing section that translates the offer into a clear external headline.",
-        src: "/aheya/home-hero.png",
+        src: "/aheya/home-hero.webp",
         alt: "AHEYA homepage hero screenshot.",
         fit: "contain",
       },
       {
         label: "Lane structure",
         note: "Founder, backer, and trust lanes separated into a product-readable homepage structure.",
-        src: "/aheya/lane-panels.png",
+        src: "/aheya/lane-panels.webp",
         alt: "AHEYA lane-panel homepage screenshot.",
         fit: "contain",
       },
       {
         label: "GTM visual",
         note: "Tiger visual used to test narrative expansion and audience-facing campaign mood.",
-        src: "/aheya/tiger.png",
+        src: "/aheya/tiger.webp",
         alt: "AHEYA tiger campaign visual.",
       },
       {
         label: "Creative support image",
         note: "A second world-building visual that extends the product atmosphere across public surfaces.",
-        src: "/aheya/creator.png",
+        src: "/aheya/creator.webp",
         alt: "AHEYA creator-side visual.",
       },
     ],
@@ -402,7 +464,7 @@ export const workCases: WorkCase[] = [
     accent: "orange",
     year: "2025",
     coverImage: {
-      src: "/work/andersson-bell-cover.png",
+      src: "/work/andersson-bell-cover.webp",
       alt: "A generated Andersson Bell visual showing a crosswalk scene and surreal product cue.",
     },
     overview: [
@@ -434,7 +496,7 @@ export const workCases: WorkCase[] = [
         src: "/video/anderssonbell.mp4",
         alt: "Andersson Bell short-form video.",
         type: "video",
-        poster: "/work/andersson-bell-cover.png",
+        poster: "/work/andersson-bell-cover.webp",
         featured: true,
         fit: "contain",
         displaySize: "compact",
@@ -461,7 +523,7 @@ export const workCases: WorkCase[] = [
     accent: "indigo",
     year: "2025",
     coverImage: {
-      src: "/sfti/result.png",
+      src: "/appendix/bluegarage/sfti/result.webp",
       alt: "SFTI-CMU accepted abstract page and conference result image.",
       fit: "contain",
     },
@@ -490,7 +552,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Accepted abstract page",
         note: "Conference submission page showing the abstract structure, visual framework, and acceptance result together.",
-        src: "/sfti/result.png",
+        src: "/appendix/bluegarage/sfti/result.webp",
         alt: "SFTI-CMU abstract and result screenshot.",
         fit: "contain",
         featured: true,
@@ -517,7 +579,7 @@ export const workCases: WorkCase[] = [
     accent: "aqua",
     year: "2025",
     coverImage: {
-      src: "/work/ilysb-main.png",
+      src: "/work/ilysb-main.webp",
       alt: "ILYSB mobile interface showing the main page list view.",
       fit: "contain",
     },
@@ -547,7 +609,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Main page UI",
         note: "Captured interface showing the list and action state.",
-        src: "/work/ilysb-main.png",
+        src: "/work/ilysb-main.webp",
         alt: "ILYSB mobile main page screenshot.",
         fit: "contain",
         featured: true,
@@ -555,14 +617,14 @@ export const workCases: WorkCase[] = [
       {
         label: "Hint screen",
         note: "One of the core reveal surfaces in the app flow.",
-        src: "/work/ilysb-hints.png",
+        src: "/work/ilysb-hints.webp",
         alt: "ILYSB hint screen with social clues.",
         fit: "contain",
       },
       {
         label: "Entry screen",
         note: "Login and opening access point of the app.",
-        src: "/work/ilysb-login.png",
+        src: "/work/ilysb-login.webp",
         alt: "ILYSB entry screen with Kakao login.",
         fit: "contain",
       },
@@ -588,7 +650,7 @@ export const workCases: WorkCase[] = [
     accent: "orange",
     year: "2024",
     coverImage: {
-      src: "/work/bemoon-ui.png",
+      src: "/work/bemoon-ui.webp",
       alt: "be:moon Figma overview showing dark mobile screens and NFT-oriented product surfaces.",
       fit: "contain",
     },
@@ -694,7 +756,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Figma overview",
         note: "Core interface surfaces and information architecture.",
-        src: "/work/bemoon-ui.png",
+        src: "/work/bemoon-ui.webp",
         alt: "be:moon Figma board with multiple screens.",
         fit: "contain",
         featured: true,
@@ -702,7 +764,7 @@ export const workCases: WorkCase[] = [
       {
         label: "NFT surface",
         note: "Verification and token-facing product evidence.",
-        src: "/work/bemoon-nft.png",
+        src: "/work/bemoon-nft.webp",
         alt: "be:moon NFT and Polygonscan related surface.",
         fit: "contain",
       },

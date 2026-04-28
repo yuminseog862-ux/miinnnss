@@ -10,7 +10,7 @@ import type { WorkCase } from "@/data/portfolio";
 type SelectedCaseCardProps = {
   project: WorkCase;
   index: number;
-  layout: "feature" | "stack" | "compact" | "full" | "third";
+  layout: "feature" | "stack" | "compact" | "full" | "third" | "half";
   hrefBase?: string;
 };
 
@@ -25,6 +25,7 @@ const layoutClassMap = {
   stack: "lg:col-span-5 lg:min-h-[31rem]",
   compact: "lg:col-span-5",
   full: "lg:col-span-12 lg:min-h-[20rem]",
+  half: "lg:col-span-6 lg:min-h-[23rem]",
   third: "lg:col-span-4 lg:min-h-[24rem]",
 } as const;
 
@@ -68,15 +69,8 @@ export function SelectedCaseCard({
 
       <div className="selected-card-meta">
         <div className="case-chip-group">
-          {project.roles.map((item) => (
+          {project.evidence.slice(0, 2).map((item) => (
             <span key={item} className="case-chip">
-              {item}
-            </span>
-          ))}
-        </div>
-        <div className="case-chip-group">
-          {project.evidence.map((item) => (
-            <span key={item} className="case-chip case-chip-soft">
               {item}
             </span>
           ))}
@@ -86,7 +80,7 @@ export function SelectedCaseCard({
       <div className="selected-card-bottom">
         <span>{project.status}</span>
         <Link href={`${hrefBase}/${project.slug}`} className="inline-link">
-          View case
+          상세 보기
           <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
@@ -111,9 +105,9 @@ export function ArchiveCaseCard({ project, index, hrefBase = "/work" }: ArchiveC
       <p className="archive-card-summary">{project.oneLiner}</p>
 
       <div className="archive-card-column">
-        <p className="archive-card-label">Signals</p>
+        <p className="archive-card-label">보는 포인트</p>
         <div className="case-chip-group">
-          {project.evidence.slice(0, 3).map((item) => (
+          {project.evidence.slice(0, 2).map((item) => (
             <span key={item} className="case-chip archive-chip">
               {item}
             </span>
@@ -122,7 +116,7 @@ export function ArchiveCaseCard({ project, index, hrefBase = "/work" }: ArchiveC
       </div>
 
       <Link href={`${hrefBase}/${project.slug}`} className="inline-link archive-link">
-        Open archive case
+        아카이브 보기
         <ArrowUpRight className="h-4 w-4" />
       </Link>
     </motion.article>
