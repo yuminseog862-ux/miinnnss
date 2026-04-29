@@ -77,9 +77,9 @@ export const flagshipIntro = {
   eyebrow: "Product / Identity / Character Planning",
   title: "AHEYA",
   oneLiner:
-    "참여형 Web3 서비스의 초기 유입을 만들기 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 프로젝트",
+    "AHEYABARAYA의 초기 유입을 만들기 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 프로젝트",
   summary:
-    "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다. 서비스 소개만으로는 반응을 얻기 어려운 상황에서, 캐릭터들과 세계관을 활용한 공개 채널 콘텐츠를 통해 유입과 관심을 만들기 위한 실험을 함께 진행했습니다.",
+    "AHEYABARAYA는 초기 프로젝트 홍보와 참여 유도를 돕기 위해 실험 중인 Web3 서비스·콘텐츠 구조입니다. 서비스 소개만으로는 반응을 얻기 어려운 상황에서, 캐릭터들과 세계관을 활용한 공개 채널 콘텐츠를 통해 유입과 관심을 만들기 위한 실험을 함께 진행했습니다.",
   ctaLabel: "상세 보기",
   ctaHref: "/creative/work/aheya",
   statusLabel: "핵심 증거",
@@ -105,7 +105,7 @@ export const flagshipFeature: FlagshipFeature = {
 export const flagshipPlates: FlagshipPlate[] = [
   {
     title: "서비스 화면",
-    body: "홈 화면은 참여형 Web3 서비스의 핵심 제안과 첫 참여 동선을 함께 보여줍니다.",
+    body: "홈 화면은 AHEYABARAYA의 핵심 제안과 첫 참여 동선을 함께 보여줍니다.",
     accent: "aqua",
     media: {
       src: "/aheya/home-hero.webp",
@@ -154,15 +154,15 @@ export const workCases: WorkCase[] = [
   {
     slug: "aheya",
     section: "Flagship",
-    eyebrow: "Product / Identity / Character Planning",
-    title: "AHEYA",
+    eyebrow: "Creative Hook System / AHEYABARAYA",
+    title: "AHEYABARAYA Creative Hook System",
     oneLiner:
-      "참여형 Web3 크라우드펀딩 플랫폼의 초기 유입을 만들기 위해 캐릭터 세계관과 공개 채널 콘텐츠를 함께 기획한 프로젝트",
+      "브랜드의 첫인상을 캐릭터, 장면, 짧은 문장으로 압축해 X 카피와 숏폼 후보의 진입점으로 설계한 프로젝트",
     summary:
-      "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다. 서비스 소개만으로는 반응을 얻기 어려운 상황에서, 캐릭터들과 세계관을 활용한 공개 채널 콘텐츠를 통해 유입과 관심을 만들기 위한 실험을 함께 진행했습니다.",
-    roles: ["서비스 기획", "캐릭터 세계관", "공개 채널 콘텐츠", "표현 방향 조정"],
-    evidence: ["서비스 화면", "세계관 시리즈", "공개 채널 실험", "캐릭터 관계 구조"],
-    status: "진행 중인 서비스 / 콘텐츠 실험",
+      "AHEYABARAYA는 AI/크립토 빌더와 Web3 커뮤니티 유저가 복잡한 제품 설명을 지나치지 않도록, 캐릭터와 영상을 X 카피의 시각적 진입점으로 사용한 콘텐츠 실험입니다. 이미지와 영상은 문제 공감 자체를 만드는 장치가 아니라, 피드에서 먼저 멈추게 한 뒤 문제 정의와 카피를 읽게 만드는 역할로 설계했습니다.",
+    roles: ["광고 훅 기획", "캐릭터 세계관", "X 카피 구조", "AI 이미지/숏폼 후보", "표현 방향 조정"],
+    evidence: ["타깃/목적 정의", "구미호 대표 훅", "캐릭터 시스템", "X 카피 진입점", "학습/다음 브리프"],
+    status: "진행 중인 브랜드 채널 / 콘텐츠 기획 실험",
     tier: "flagship",
     accent: "aqua",
     year: "2025 - present",
@@ -181,7 +181,7 @@ export const workCases: WorkCase[] = [
       },
       {
         label: "X Account",
-        href: "https://x.com/minnns_aheya",
+        href: "https://x.com/aheya_baraya?s=21",
         kind: "x",
         accent: "indigo",
       },
@@ -194,76 +194,94 @@ export const workCases: WorkCase[] = [
     ],
     detailLeadLayout: "grid",
     detailLeadSection: {
-      eyebrow: "메인 캐릭터와 연결 캐릭터",
-      title: "관계·감정·상징이 드러나는 K / Becca / Aurora / Yeon",
+      eyebrow: "대표 훅과 캐릭터 시스템",
+      title: "구미호를 대표 훅으로 세우고, K / Becca / Aurora / Yeon으로 확장",
       summary:
-        "메인 캐릭터와 그와 연결된 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 먼저 보여주는 구성입니다.",
+        "구미호는 한눈에 남는 대표 훅으로, 다른 캐릭터들은 세계관·관계·감정선을 확장하는 광고 소재 후보군으로 정리했습니다.",
     },
     coverImage: {
-      src: "/appendix/bluegarage/aheya/k.webp",
-      alt: "AHEYA Baraya K character visual.",
-      fit: "cover",
+      src: "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
+      alt: "AHEYABARAYA blue Kumiho character hook.",
+      fit: "contain",
     },
     detailHeroProof: {
-      label: "AHEYA Baraya K",
-      note: "메인 캐릭터와 연결 캐릭터 구조의 중심으로, 서비스 설명보다 먼저 세계관의 결을 읽히게 하는 대표 이미지입니다.",
-      src: "/appendix/bluegarage/aheya/k.webp",
-      alt: "AHEYA Baraya K character visual.",
+      label: "Blue Kumiho",
+      note: "신화성, 한국적 상징, AI-native한 푸른 에너지를 한눈에 압축한 대표 시각 훅입니다.",
+      src: "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
+      alt: "AHEYABARAYA blue Kumiho character hook.",
+      fit: "contain",
     },
+    detailHeroSummaryLines: [
+      "AHEYABARAYA / AI 빌더, Web3 유저, 에이전트·AI 툴 관심자를 위한 브랜드 채널 실험",
+      "타깃과 광고 목적을 먼저 잡고, 캐릭터·장면·짧은 문장을 X 카피와 숏폼 후보의 진입점으로 전환",
+      "시각 훅은 주목을 만들고, 문제 인식은 카피와 CTA에서 만들어져야 한다는 학습으로 정리",
+    ],
     detailHeroHighlights: [
       {
-        title: "Why this happened",
-        body: "초기 업로더와 참여자 유입이 약한 문제를 보완하기 위해, 단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠가 더 관심을 끈다고 판단했습니다.",
+        title: "Target / Objective",
+        body: "AI/크립토 빌더, 초기 제품 창업자, Web3 커뮤니티 유저, 에이전트·AI 툴 관심자가 X 피드에서 멈추고 문제 인식을 담은 카피까지 읽도록 만드는 것이 목적이었습니다.",
         accent: "orange",
-        items: ["초기 업로더와 참여자 유입이 약한 문제", "단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠"],
+        items: ["제품은 만들었지만 첫 유저 반응을 얻기 어려움", "피드백이 얕고 브랜드 첫인상이 약함", "Web3 설명이 복잡해 빠르게 지나침"],
       },
       {
-        title: "What I did",
-        body: "12지 및 그리스 신화 등을 하나의 세계관 축으로 설정하고, 메인 캐릭터와 연결 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 X에 기획·포스팅했습니다.",
+        title: "Creative Decision",
+        body: "구미호를 대표 훅으로 세운 뒤, K / Becca / Aurora / Yeon 등 캐릭터 자산을 확장했습니다. 대표 훅은 기억되는 첫인상, 확장 캐릭터는 세계관과 감정선의 후보군입니다.",
         accent: "indigo",
         items: [
-          "단순히 예쁜 이미지 업로드가 아니라 서비스에 대한 관심과 유입을 만들기 위한 목적",
-          "X 같은 빠른 스크롤 환경에서 어떤 훅과 감정선이 더 먼저 읽히는지 확인하고 표현 방향 조정",
+          "신화성, 한국적 상징, AI-native한 푸른 에너지",
+          "해외 타깃에게도 낯설지만 이해 가능한 선명한 첫인상",
+          "이미지와 영상은 카피를 읽게 하는 시각적 진입점",
         ],
       },
       {
-        title: "What this proves",
-        body: "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도이자, 캐릭터와 세계관을 마케팅 자산으로 활용하고 디지털 공개 채널에서 더 빨리 읽히는 훅을 조정한 경험입니다.",
+        title: "Learning",
+        body: "구미호와 영상은 시각 훅으로 가능성이 있었지만, 반응은 제품 문제 공감보다 AI 이미지/영상 제작 관심층에 가까웠습니다. 그래서 주목 장치와 문제 인식 장치를 분리했습니다.",
         accent: "aqua",
         items: [
-          "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도",
-          "캐릭터와 세계관을 마케팅 자산으로 활용한 경험",
-          "디지털 공개 채널 반응을 보며 표현 방향을 조정한 경험",
+          "시각 훅: 피드에서 멈추게 하는 첫 장면",
+          "카피 장치: 타깃 문제를 직접 건드리는 짧은 문장",
+          "다음 브리프: 캐릭터 훅은 유지하고 문제 카피를 더 선명하게 테스트",
         ],
       },
     ],
     galleryColumns: 4,
     overview: [
-      "AHEYA는 창업자와 창작자의 초기 프로젝트 홍보와 참여 유도를 돕는 참여형 Web3 서비스입니다.",
-      "초기 업로더와 참여자 유입이 약한 문제를 보완하기 위해, 단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠가 더 관심을 끈다고 판단했습니다.",
+      "AHEYABARAYA는 AI/크립토 빌더와 Web3 커뮤니티 유저가 복잡한 제품 설명을 지나치지 않도록, 캐릭터와 영상을 X 카피의 시각적 진입점으로 사용한 콘텐츠 실험입니다.",
+      "이미지나 영상 자체가 문제 공감을 만든다고 보지 않았습니다. 먼저 멈추게 만드는 시각 훅과, 타깃 문제를 읽게 만드는 카피 장치를 분리해 설계했습니다.",
     ],
     whatIDid: [
-      "12지 및 그리스 신화 등을 하나의 세계관 축으로 설정했습니다.",
-      "메인 캐릭터와 그와 연결된 캐릭터들의 관계·감정·상징이 드러나는 시리즈형 콘텐츠를 X에 기획·포스팅했습니다.",
-      "단순히 예쁜 이미지 업로드가 아니라, AHEYA Baraya 세계관과 연결된 캐릭터 포스팅을 통해 서비스에 대한 관심과 유입을 만들기 위한 목적으로 진행했습니다.",
-      "공개 채널 반응을 보며 어떤 훅과 감정선이 더 잘 읽히는지 확인하고 표현 방향을 조정했습니다.",
+      "AI/크립토 빌더, 초기 제품 창업자, Web3 커뮤니티 유저, 에이전트·AI 툴 관심자를 1차 타깃으로 잡았습니다.",
+      "제품을 만들었지만 첫 유저 반응을 얻기 어렵고, 피드백이 얕고, 브랜드 첫인상이 약한 문제를 X 카피의 출발점으로 잡았습니다.",
+      "구미호를 대표 시각 훅으로 세우고, K / Becca / Aurora / Yeon 등 캐릭터 자산을 세계관과 감정선의 후보군으로 확장했습니다.",
+      "이미지와 영상은 문제 공감 자체가 아니라, X 피드에서 멈추고 카피를 읽게 만드는 진입점으로 사용했습니다.",
+      "관찰한 반응을 보고 시각 훅과 문제 메시지 정합성을 분리해 다음 소재 브리프를 다시 잡았습니다.",
     ],
     whatExists: [
-      "서비스 한 줄 정의와 실제 서비스 화면.",
-      "메인 캐릭터와 12지 및 그리스 신화 기반 변주 이미지.",
-      "X 공개 채널 실험 이미지와 숏폼 일부.",
-      "훅과 감정선 조정을 보여주는 공개 실험 자료.",
+      "AHEYABARAYA 공개 페이지와 브랜드 채널.",
+      "구미호, K, Tiger, Becca, Aurora, Yeon 등 캐릭터 기반 시각 훅 자산.",
+      "X 카피와 함께 붙일 이미지/영상 후보.",
+      "문제 훅, 캐릭터 훅, 피드백 훅, 유틸리티 훅으로 나눈 소재 후보 구조.",
+      "시각 훅과 문제 메시지 정합성을 분리한 다음 브리프.",
     ],
     keyDecisions: [
-      "단순 소개형 포스팅보다 세계관과 관계성이 드러나는 콘텐츠를 우선했습니다.",
-      "12지 및 그리스 신화 등을 하나의 세계관 축으로 잡고 시리즈형 콘텐츠로 확장했습니다.",
-      "공개 채널 반응을 보며 어떤 훅과 감정선이 더 잘 읽히는지 확인하고 표현 방향을 조정했습니다.",
+      "기능 설명보다 타깃 문제를 먼저 건드리는 X 훅을 우선했습니다.",
+      "대표 훅은 구미호 하나로 강하게 세우고, 나머지 캐릭터는 확장 시스템으로 배치했습니다.",
+      "이미지/영상은 시각적 진입점, 카피는 문제 인식 장치로 분리했습니다.",
+      "반응이 AI 이미지/영상 제작 관심층으로 기운 지점을 숨기지 않고, 다음 테스트에서 문제 카피를 더 직접적으로 좁히는 판단으로 정리했습니다.",
     ],
     galleryIntro: "",
     placeholderMedia: [
       {
+        label: "Kumiho",
+        note: "신비감, 강렬함, 푸른 에너지, 한국적 상징을 한 장면으로 압축한 대표 시각 훅입니다.",
+        src: "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
+        alt: "AHEYABARAYA blue Kumiho character hook.",
+        fit: "contain",
+        position: "center center",
+      },
+      {
         label: "K",
-        note: "메인 캐릭터로, 관계·감정·상징이 드러나는 시리즈의 중심이 되는 대표 이미지입니다.",
+        note: "대표 훅 이후 브랜드의 얼굴과 성격을 더 구체적으로 읽히게 하는 캐릭터 자산입니다.",
         src: "/appendix/bluegarage/aheya/k.webp",
         alt: "AHEYA Baraya K character visual.",
         fit: "cover",
@@ -271,7 +289,7 @@ export const workCases: WorkCase[] = [
       },
       {
         label: "Becca",
-        note: "메인 캐릭터와 연결된 인물 축을 넓혀 관계성과 감정선을 확장하는 연결 캐릭터입니다.",
+        note: "관계성과 감정선을 확장해 캐릭터 시스템이 단일 이미지에서 끝나지 않게 만드는 연결 캐릭터입니다.",
         src: "/appendix/bluegarage/aheya/becca.webp",
         alt: "AHEYA Becca character image.",
         fit: "cover",
@@ -279,7 +297,7 @@ export const workCases: WorkCase[] = [
       },
       {
         label: "Aurora",
-        note: "단순 소개형 포스팅보다 세계관과 감정선이 드러나는 콘텐츠 방향을 보여주는 확장 캐릭터입니다.",
+        note: "세계관의 톤과 AI-native한 분위기를 더 강하게 밀어주는 확장 캐릭터입니다.",
         src: "/appendix/bluegarage/aheya/aurora.webp",
         alt: "AHEYA Aurora character image.",
         fit: "cover",
@@ -287,8 +305,8 @@ export const workCases: WorkCase[] = [
       },
       {
         label: "Yeon",
-        note: "보다 차갑고 신뢰 중심인 분위기를 더해 세계관을 바깥으로 밀어주는 보조 캐릭터입니다.",
-        src: "/appendix/bluegarage/aheya/aheya_trust_yean.webp",
+        note: "trust lane과 연결되는 차갑고 신뢰 중심의 분위기를 담당하는 캐릭터입니다.",
+        src: "/appendix/bluegarage/aheya/yeon-trust-api.webp",
         alt: "AHEYA trust Yean character still image.",
         fit: "contain",
         position: "center center",
@@ -296,28 +314,64 @@ export const workCases: WorkCase[] = [
     ],
     detailMediaSections: [
       {
-        eyebrow: "실제 서비스 화면",
-        title: "서비스 화면과 캐릭터 세계관을 함께 보여주는 대표 자료",
+        eyebrow: "기획 의도",
+        title: "타깃과 광고 목적을 먼저 잡고 시각 훅과 카피 장치를 분리",
         summary:
-          "서비스 소개만으로는 반응을 얻기 어려운 상황에서, 실제 서비스 화면과 캐릭터를 함께 보면 왜 이 실험이 필요했는지가 더 직접적으로 읽힙니다.",
-        columns: 2,
+          "이 실험은 AI 이미지 제작 자체가 아니라, X 피드에서 멈추게 한 뒤 문제 카피를 읽게 만드는 광고 소재 후보 구조를 잡는 작업이었습니다.",
+        columns: 4,
         layout: "grid",
         items: [
           {
-            label: "K x 서비스 메인",
-            note: "파란 구미호 메인 이미지를 통해 AHEYA의 첫 인상 축과 세계관 톤을 먼저 보여주는 카드입니다.",
-            src: "/appendix/bluegarage/kumiho_main.webp",
-            alt: "AHEYA kumiho main visual.",
-            fit: "contain",
-            position: "center 24%",
-            href: "https://aheyabaraya.xyz/",
-            hrefLabel: "AHEYA Site 보기",
+            label: "Target",
+            note: "AI/크립토 빌더, 초기 제품 창업자, Web3 커뮤니티 유저, 에이전트·AI 툴 관심자를 1차 타깃으로 잡았습니다.",
           },
           {
-            label: "Yeon x 구조 분리",
-            note: "Yeon 축과 연결된 trust API 이미지를 통해 차갑고 신뢰 중심인 surface 인상을 보여주는 카드입니다.",
-            src: "/appendix/bluegarage/aheya/yeon-trust-api.webp",
-            alt: "AHEYA Yeon trust API image.",
+            label: "Problem",
+            note: "제품은 만들었지만 첫 유저 반응을 얻기 어렵고, 피드백이 얕고, 브랜드 첫인상이 약하며, Web3 설명이 복잡하다고 봤습니다.",
+          },
+          {
+            label: "Visual Hook",
+            note: "구미호와 캐릭터 영상은 문제 공감 자체가 아니라, X 피드에서 멈추고 카피를 읽게 만드는 첫 장면입니다.",
+          },
+          {
+            label: "Copy Layer",
+            note: "공감은 이미지가 아니라 'Building got faster. Marketing didn’t.' 같은 짧은 문제 문장과 CTA에서 만들어져야 한다고 판단했습니다.",
+          },
+        ],
+      },
+      {
+        eyebrow: "서비스 화면과 카피 진입점",
+        title: "제품 설명을 앞세우기보다 캐릭터와 한 문장으로 진입하게 한 화면",
+        summary:
+          "복잡한 Web3/AI-native 제품 설명을 길게 제시하기보다, 캐릭터 첫인상과 짧은 문제 카피를 먼저 보여주는 방향으로 정리했습니다.",
+        columns: 3,
+        layout: "grid",
+        items: [
+          {
+            label: "AHEYABARAYA intro surface",
+            note: "제품이 무엇인지 길게 설명하기 전에, 첫 화면에서 대상과 문제 분위기를 빠르게 읽히게 한 소개 화면입니다.",
+            src: "/aheya/aheyabaraya-homepage-2026-04-28.png",
+            alt: "AHEYABARAYA homepage intro surface.",
+            fit: "contain",
+            position: "center center",
+            href: "https://aheyabaraya.xyz/",
+            hrefLabel: "AHEYABARAYA Site 보기",
+          },
+          {
+            label: "K x home copy",
+            note: "캐릭터와 홈 카피를 함께 두어 시각 훅이 카피를 읽게 하는 진입점으로 작동하도록 만든 페어입니다.",
+            src: "/aheyabaraya/evidence/k-home-pair.webp",
+            alt: "AHEYABARAYA K character and home copy pair.",
+            fit: "contain",
+            position: "center center",
+            href: "https://aheyabaraya.xyz/",
+            hrefLabel: "Site 보기",
+          },
+          {
+            label: "Yeon x trust lane",
+            note: "세계관의 감정 훅과 신뢰 구조가 분리되어 읽히도록, Yeon을 trust lane의 시각 자산으로 사용했습니다.",
+            src: "/aheyabaraya/evidence/yeon-lane-pair.webp",
+            alt: "AHEYABARAYA Yeon trust lane pair.",
             fit: "contain",
             position: "center center",
             href: "https://aheyabaraya.xyz/trust/whitelist",
@@ -326,16 +380,16 @@ export const workCases: WorkCase[] = [
         ],
       },
       {
-        eyebrow: "서비스 인상 보조",
-        title: "공개 채널 이미지와 service surface 사이를 잇는 motion surface",
+        eyebrow: "Visual Hook Assets",
+        title: "정지 이미지에서 끝내지 않고 X 피드용 숏폼 후보로 확장",
         summary:
-          "정적 캐릭터 카드만으로는 부족한 감정선을 보완하기 위해, 서비스 인상 옆에서 움직임과 재질감을 더하는 자료를 따로 배치했습니다.",
+          "정지 이미지는 빠르게 지나칠 수 있지만, 영상은 장면과 움직임까지 함께 설계할 수 있습니다. 첫 1-3초에 신비감과 호기심을 만들 수 있는지 보기 위해 숏폼 후보로 확장했습니다.",
         columns: 3,
         layout: "grid",
         items: [
           {
-            label: "AHEYA 서비스 연결 영상",
-            note: "AHEYA 전체 톤과 service surface 인상이 한 덩어리로 읽히도록 연결한 보조 motion surface입니다.",
+            label: "AHEYABARAYA motion surface",
+            note: "브랜드의 신비로운 첫인상과 서비스 톤이 일관된 인상으로 읽히도록 만든 영상 후보입니다.",
             src: "/appendix/bluegarage/aheya_vid.MP4",
             alt: "AHEYA service motion surface experiment.",
             type: "video",
@@ -347,8 +401,8 @@ export const workCases: WorkCase[] = [
             displaySize: "compact",
           },
           {
-            label: "Kumiho 서비스 연결 영상",
-            note: "AHEYA의 초기 인상 축이 실제 서비스 맥락 옆에서 어떻게 이어지는지 보여주는 보조 motion surface입니다.",
+            label: "Kumiho motion hook",
+            note: "구미호를 대표 훅으로 선택한 이유를 직접적으로 보여주는 영상 후보입니다. 익숙한 신화적 상징을 AI-native한 푸른 에너지로 전환했습니다.",
             src: "/appendix/bluegarage/kumiho_vid.MP4",
             alt: "AHEYA kumiho short-form experiment.",
             type: "video",
@@ -362,12 +416,12 @@ export const workCases: WorkCase[] = [
             hrefLabel: "Kumiho 포스트 보기",
           },
           {
-            label: "Mouse 서비스 연결 영상",
-            note: "Mouse 캐릭터의 더 가볍고 민첩한 인상이 서비스 인상 옆에서 어떻게 읽히는지 보여주는 보조 motion surface입니다.",
-            src: "/appendix/bluegarage/mouse_vid.MP4",
-            alt: "AHEYA mouse short-form experiment.",
+            label: "Tiger short-form hook",
+            note: "구미호 외에도 강한 동물 상징과 움직임이 X 피드에서 첫 장면으로 읽히는지 보기 위한 확장 후보입니다.",
+            src: "/appendix/bluegarage/aheya/tiger_vid.MP4",
+            alt: "AHEYABARAYA tiger short-form experiment.",
             type: "video",
-            poster: "/appendix/bluegarage/aheya/mouse-motion-poster.webp",
+            poster: "/appendix/bluegarage/aheya/tiger-zodiac.webp",
             autoPlay: true,
             muted: true,
             loop: true,
@@ -377,73 +431,64 @@ export const workCases: WorkCase[] = [
         ],
       },
       {
-        eyebrow: "반응 데이터 비교",
-        title: "조정 전 / 후 반응 변화 비교",
-        summary: "",
-        columns: 2,
+        eyebrow: "Hook Variants",
+        title: "문제 훅, 캐릭터 훅, 피드백 훅, 유틸리티 훅으로 소재 후보를 분리",
+        summary:
+          "AHEYABARAYA의 메시지를 하나의 설명문으로 처리하지 않고, 타깃이 피드에서 멈추고 읽을 수 있는 훅 단위로 나눴습니다.",
+        columns: 4,
         layout: "grid",
         items: [
           {
-            label: "조정 전",
-            note: "세계관 톤은 있었지만 감정, 훅, 캐릭터 개성이 약했던 초기 방향입니다. Views 1.1K / Watch Time 8.2h / Completion 16.5%",
-            stackedMediaDirection: "row",
-            stackedMedia: [
-              {
-                src: "/appendix/bluegarage/aheya/dog.webp",
-                alt: "AHEYA dog initial character direction from March.",
-                fit: "contain",
-                position: "center center",
-                aspectRatio: "3 / 4",
-                scale: 0.9,
-              },
-              {
-                src: "/appendix/bluegarage/aheya/312330.webp",
-                alt: "AHEYA before snapshot image 312330.",
-                fit: "contain",
-                position: "center center",
-                aspectRatio: "5 / 4",
-                scale: 0.9,
-              },
-            ],
-            stat: "조정 전",
+            label: "Problem Hook",
+            note: "Building got faster. Marketing didn’t. AI로 제품 제작은 빨라졌지만 첫 유저 반응과 마케팅은 여전히 막힌다는 문제에서 나온 카피입니다.",
           },
           {
-            label: "조정 후",
-            note: "감정, 훅, 캐릭터 개성을 더 직접적으로 읽히게 조정한 이후 방향입니다. Views 2.1K / Watch Time 18.3h / Completion 28.3%",
-            stackedMediaDirection: "row",
-            stackedMedia: [
-              {
-                src: "/appendix/bluegarage/horus_img.webp",
-                alt: "AHEYA Horus character image.",
-                fit: "contain",
-                position: "center center",
-                aspectRatio: "3 / 4",
-                scale: 0.9,
-              },
-              {
-                src: "/appendix/bluegarage/aheya/331418.webp",
-                alt: "AHEYA after snapshot image 331418.",
-                fit: "contain",
-                position: "center center",
-                aspectRatio: "5 / 4",
-                scale: 0.9,
-              },
-            ],
-            stat: "조정 후",
+            label: "Character Hook",
+            note: "Kumiho / Tiger scene. 기능 설명보다 먼저 기억나는 얼굴과 장면을 세워 X 피드에서 멈추게 하는 훅입니다.",
+          },
+          {
+            label: "Feedback Hook",
+            note: "polite feedback haze. 첫 유저 반응은 있는데 피드백이 얕아 다음 배포에 쓰기 어렵다는 문제를 제기하는 훅입니다.",
+          },
+          {
+            label: "Utility Hook",
+            note: "real utility on-chain. Web3 설명을 보상/퀘스트가 아니라 실제 사용과 참여 메시지로 좁혀보려는 훅입니다.",
+          },
+        ],
+      },
+      {
+        eyebrow: "Learning / Next Brief",
+        title: "시각 훅은 가능성이 있었지만 문제 메시지는 더 선명하게 좁혀야 함",
+        summary:
+          "시각적으로 완성도 높은 AI 이미지/영상에 대한 반응과 AHEYABARAYA 문제에 대한 공감은 다릅니다. 이 차이를 인정하고 다음 테스트를 더 좁히는 것이 핵심 학습입니다.",
+        columns: 3,
+        layout: "grid",
+        items: [
+          {
+            label: "Observed",
+            note: "구미호와 영상은 피드에서 멈추게 하는 시각 훅으로 가능성이 있었지만, 반응은 제품 문제 공감보다 AI 이미지/영상 제작 관심층에 가까웠습니다.",
+          },
+          {
+            label: "Decision",
+            note: "캐릭터는 주목 장치, 카피는 문제 인식 장치로 분리했습니다. 완성도 높은 이미지가 곧 좋은 광고 메시지는 아니라고 판단했습니다.",
+          },
+          {
+            label: "Next Creative Brief",
+            note: "캐릭터 훅은 유지하되 AI/크립토 빌더의 첫 유저·피드백 문제를 더 직접적으로 건드리는 카피와 CTA를 함께 테스트해야 합니다.",
           },
         ],
       },
       {
         eyebrow: "공개 채널 실험",
-        title: "12지 및 그리스 신화와의 연결을 실험한 공개 채널 확장",
+        title: "세계관, 캐릭터, 감정, 첫 훅을 확장한 공개 채널 후보군",
         summary:
-          "X 같은 빠른 스크롤 환경에서 어떤 상징, 감정선, 캐릭터 축이 먼저 읽히는지 직접 보기 위해 12지 및 그리스 신화 계열 변주를 공개 채널에 올리고, 반응에 따라 표현 방향을 조정한 흔적입니다.",
+          "구미호 이후 여러 캐릭터를 만든 이유는 세계관 확장을 보여주기 위해서만이 아니라, 어떤 상징과 감정선이 첫 훅 후보가 될 수 있는지 보기 위해서였습니다.",
         columns: 4,
         layout: "grid",
         items: [
           {
             label: "Zeus 공개 채널 실험",
-            note: "Zeus 축의 더 직접적이고 강한 상징성이 공개 채널에서 어떻게 첫 훅으로 읽히는지 보기 위한 실험입니다.",
+            note: "Zeus 모티프의 직접적이고 강한 상징성이 공개 채널에서 어떻게 첫 훅으로 읽히는지 보기 위한 실험입니다.",
             src: "/appendix/bluegarage/zeus_vid.MP4",
             alt: "AHEYA Zeus public-channel experiment.",
             type: "video",
@@ -472,7 +517,7 @@ export const workCases: WorkCase[] = [
           },
           {
             label: "Ares",
-            note: "강한 에너지와 sharper한 움직임이 첫인상에 어떤 차이를 만드는지 본 변주입니다.",
+            note: "강한 에너지와 더 날카로운 움직임이 첫인상에 어떤 차이를 만드는지 본 변주입니다.",
             src: "/appendix/bluegarage/ares_vid.MP4",
             type: "video",
             poster: "/appendix/bluegarage/ares_data.webp",
@@ -483,7 +528,7 @@ export const workCases: WorkCase[] = [
           },
           {
             label: "Artemis",
-            note: "보다 날렵하고 사냥감 같은 긴장감을 공개 채널에서 어떻게 읽는지 보기 위한 변주입니다.",
+            note: "보다 날렵하고 긴장감 있는 분위기가 공개 채널에서 어떻게 읽히는지 보기 위한 변주입니다.",
             src: "/appendix/bluegarage/artemis_vid.MP4",
             type: "video",
             poster: "/appendix/bluegarage/artemis_data.webp",
@@ -492,7 +537,7 @@ export const workCases: WorkCase[] = [
           },
           {
             label: "Dionysus",
-            note: "보다 관능적이고 몽환적인 분위기가 첫인상 훅으로 얼마나 작동하는지 본 실험입니다.",
+            note: "보다 몽환적이고 강한 분위기가 첫인상 훅으로 얼마나 작동하는지 본 실험입니다.",
             src: "/appendix/bluegarage/dionysus_vid.MP4",
             type: "video",
             poster: "/appendix/bluegarage/dionysus_data.webp",
@@ -510,7 +555,7 @@ export const workCases: WorkCase[] = [
           },
           {
             label: "Ra",
-            note: "태양성과 상징 밀도를 더한 이집트 계열 변주가 어떤 강도로 읽히는지 확인한 실험입니다.",
+            note: "태양성과 상징 밀도를 더한 이집트 계열 변주가 얼마나 선명하게 읽히는지 확인한 실험입니다.",
             src: "/appendix/bluegarage/ra_vid.MP4",
             type: "video",
             poster: "/appendix/bluegarage/ra_vid_data.webp",
@@ -522,9 +567,9 @@ export const workCases: WorkCase[] = [
     ] satisfies DetailMediaSection[],
     hideAppendixSlide: true,
     currentStatus: [
-      "서비스 유입 문제를 콘텐츠 구조로 풀어보려 한 시도",
-      "캐릭터와 세계관을 마케팅 자산으로 활용한 경험",
-      "X 같은 디지털 공개 채널에서 어떤 훅과 상징이 먼저 읽히는지 실험하고 조정한 경험",
+      "광고 목적과 타깃을 먼저 잡고 캐릭터/장면/짧은 문장으로 전환한 케이스",
+      "이미지와 영상은 X 카피를 읽게 하는 시각적 진입점으로 사용",
+      "시각 훅과 문제 메시지 정합성을 분리해 다음 소재 브리프를 잡은 학습",
     ],
   },
   {
@@ -535,7 +580,7 @@ export const workCases: WorkCase[] = [
     oneLiner:
       "생성형 AI 기반 브랜드 숏폼을 기획·제작하며, 실무 피드백을 바탕으로 브랜드 톤에 맞는 방향으로 좁혀간 산학협력 프로젝트",
     summary:
-      "이 프로젝트는 단순히 예쁜 AI 이미지를 만드는 작업이 아니라, Andersson Bell의 톤과 장면 흐름에 맞는 방향을 찾고 그것을 반복 가능한 스토리보드와 이미지·영상 흐름으로 정리하는 과정이었습니다.",
+      "이 프로젝트는 AI 이미지를 만드는 데서 끝나지 않고, Andersson Bell의 톤과 장면 흐름에 맞는 방향을 찾고 이를 광고 자산 후보로 읽히는 고정 앵글 숏폼 흐름으로 정리한 과정이었습니다.",
     roles: [
       "콘셉트 기획",
       "훅 / 모티프 설계",
@@ -586,29 +631,29 @@ export const workCases: WorkCase[] = [
       },
       {
         title: "What changed",
-        body: "분산되던 톤을 고정 앵글 중심 흐름으로 좁혀 브랜드 무드를 선명하게 만들었습니다.",
+        body: "콜라주 중심의 방향은 시선이 분산되고 감정 흐름이 약해 완성도가 낮게 읽힐 수 있다고 판단했습니다. 그래서 고정 앵글 중심 15초 흐름으로 좁혀 브랜드 무드를 선명하게 만들었습니다.",
         accent: "indigo",
         items: [
-          "분산된 톤 정리",
-          "고정 앵글 중심 재구성",
-          "브랜드 무드 선명화",
+          "콜라주식 시선 분산 정리",
+          "고정 앵글 중심 15초 흐름",
+          "한 장면의 감정과 브랜드 무드 유지",
         ],
       },
       {
-        title: "Result",
-        body: "약 15초 브랜드 숏폼으로 최종 수렴했습니다.",
+        title: "Ad Asset Logic",
+        body: "여러 장면을 빠르게 나열하는 것보다, 첫 1-3초에 장면과 감정이 읽히고 끝까지 같은 무드가 유지되는 쪽을 숏폼 광고 후보로 판단했습니다.",
         accent: "orange",
-        items: ["15초 숏폼 완성", "실무형 피드백 루프 경험"],
+        items: ["첫 1-3초 장면 훅", "감정 흐름 유지", "피드백 기반 수정"],
       },
     ],
     overview: [
       "브랜드 톤에 맞는 훅과 장면 흐름을 찾고, 그것을 반복 가능한 스토리보드와 이미지·영상 구조로 정리해간 프로젝트였습니다.",
-      "초기에는 톤이 분산되는 시도도 있었지만, 실무 피드백을 반영해 브랜드 무드가 더 선명하게 읽히는 방향으로 좁혀갔습니다.",
+      "초기에는 콜라주 중심의 방향도 시도했지만, 완성도가 낮게 읽히고 감정 흐름이 약하다는 피드백을 반영해 고정 앵글 15초 흐름으로 좁혀갔습니다.",
     ],
     whatIDid: [
       "3인 팀 프로젝트에서 브랜드 숏폼의 주요 기획 및 이미지·영상 프롬프트 설계 담당",
       "브랜드 리서치와 실무진 피드백을 바탕으로 초기 훅, 모티프, 장면 구조, 무드보드 방향성 기획",
-      "분산된 시각 방향을 정리하고, 고정 앵글 중심의 스토리보드와 컷 시퀀스로 재구성해 약 15초 분량의 숏폼 완성",
+      "분산된 시각 방향과 콜라주식 장면 구성을 정리하고, 고정 앵글 중심의 스토리보드와 컷 시퀀스로 재구성해 약 15초 분량의 숏폼 완성",
       "Midjourney, Nano Banana, Kling, Photoshop을 활용해 이미지 시안 제작, 동작 보정, 영상화 진행",
     ],
     whatExists: [
@@ -617,8 +662,9 @@ export const workCases: WorkCase[] = [
       "최종 숏폼과 비주얼 시안 비교 자료.",
     ],
     keyDecisions: [
-      "예쁜 이미지보다 브랜드 톤에 맞는 훅과 모티프를 우선했습니다.",
-      "톤이 분산되는 시도는 빠르게 정리하고, 읽히는 장면 흐름만 남겼습니다.",
+      "이미지의 장식성보다 브랜드 톤에 맞는 훅과 모티프를 우선했습니다.",
+      "콜라주식 귀여움은 시선 분산과 낮은 완성도로 읽힐 수 있어 정리했습니다.",
+      "첫 1-3초에 장면과 감정이 읽히고 끝까지 같은 무드가 유지되는 고정 앵글 흐름만 남겼습니다.",
       "실무 피드백을 기준으로 방향을 선택·폐기·수정하는 루프를 경험했습니다.",
     ],
     galleryIntro:
@@ -638,7 +684,7 @@ export const workCases: WorkCase[] = [
     detailMediaSections: [
       {
         eyebrow: "작업 흐름",
-      title: "무드보드와 레퍼런스 정리부터 Kling 제작과 결과물까지 이어진 순서",
+        title: "무드보드와 레퍼런스 정리부터 Kling 제작과 결과물까지 이어진 순서",
         summary:
           "무드보드, 레퍼런스 보드, 스토리보드, before / after 비교, 최종 숏폼이 어떤 순서로 좁혀졌는지 한 줄 흐름으로 확인할 수 있도록 정리했습니다.",
         layout: "stack",
@@ -652,17 +698,39 @@ export const workCases: WorkCase[] = [
           },
           {
             label: "5-7. 수정 전 시안 3개",
-            note: "초기에는 톤이 분산되는 시도도 있었지만, 어떤 장면이 Andersson Bell의 톤에 더 가까운지 비교하며 방향을 좁혀간 단계입니다.",
+            note: "초기에는 콜라주식 시도도 있었지만, 완성도가 낮게 읽히고 감정 흐름이 약해 어떤 장면이 Andersson Bell의 톤에 더 가까운지 다시 비교하며 방향을 좁혀간 단계입니다.",
             src: "/appendix/bluegarage/adsb/stage-drafts.webp",
             alt: "ADSB draft comparison collage.",
             fit: "contain",
           },
           {
             label: "8-9. Kling 제작 / 결과 프레임",
-            note: "선별한 시안을 Kling, Photoshop 등으로 영상화하며 고정 앵글 중심의 장면 흐름으로 재구성하고, 결과 프레임과 함께 최종 수렴 지점을 보여주는 단계입니다.",
+            note: "선별한 시안을 Kling, Photoshop 등으로 영상화하며 고정 앵글 중심의 15초 장면 흐름으로 재구성하고, 첫 1-3초 훅과 감정 유지가 가능한 최종 수렴 지점을 보여주는 단계입니다.",
             src: "/appendix/bluegarage/adsb/stage-production.webp",
             alt: "ADSB production and final frame collage.",
             fit: "contain",
+          },
+        ],
+      },
+      {
+        eyebrow: "GIGR 관점 제작 판단",
+        title: "왜 고정 앵글과 15초 흐름으로 좁혔는가",
+        summary:
+          "AI 결과물을 많이 나열하는 것보다 광고 소재 후보로 읽히는 장면 구조가 중요하다고 봤습니다.",
+        columns: 3,
+        layout: "grid",
+        items: [
+          {
+            label: "Initial Problem",
+            note: "초기 콜라주 방향은 개별 장면은 있었지만 재미, 감정, 브랜드 무드가 한 방향으로 유지되지 않았습니다.",
+          },
+          {
+            label: "Creative Choice",
+            note: "고정 앵글을 유지하면 첫 장면, 인물, 제품 무드, 이동감을 한 흐름으로 읽히게 만들 수 있다고 판단했습니다.",
+          },
+          {
+            label: "Short-form Logic",
+            note: "첫 1-3초에서 장면 훅을 만들고, 15초 안에서 같은 감정선이 유지되도록 하는 쪽이 광고 소재 후보에 더 가깝다고 봤습니다.",
           },
         ],
       },
@@ -671,7 +739,7 @@ export const workCases: WorkCase[] = [
     currentStatus: [
       "3인 팀 프로젝트에서 브랜드 숏폼의 주요 기획 및 이미지·영상 프롬프트 설계 담당",
       "브랜드 리서치와 실무진 피드백을 바탕으로 초기 훅, 모티프, 장면 구조, 무드보드 방향성 기획",
-      "분산된 시각 방향을 정리하고, 고정 앵글 중심의 스토리보드와 컷 시퀀스로 재구성해 약 15초 분량의 숏폼 완성",
+      "콜라주식 시선 분산을 정리하고, 고정 앵글 중심의 스토리보드와 컷 시퀀스로 재구성해 약 15초 분량의 숏폼 완성",
       "Midjourney, Nano Banana, Kling, Photoshop을 활용해 이미지 시안 제작, 동작 보정, 영상화 진행",
     ],
   },

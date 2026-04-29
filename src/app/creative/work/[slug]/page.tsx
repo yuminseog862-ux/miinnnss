@@ -119,6 +119,10 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
   );
   const hasAppendixSlide = Boolean(hasProcessSlide || project.currentStatus.length);
   const shouldShowAppendixSlide = !project.hideAppendixSlide && hasAppendixSlide;
+  const isGigrProofCase = project.slug === "aheya" || project.slug === "andersson-bell" || project.slug === "adsb";
+  const brandHref = isGigrProofCase ? "/gigr" : "/creative";
+  const brandLabel = isGigrProofCase ? "GIGR / AI Content Creator Portfolio" : siteTitle;
+  const detailKicker = isGigrProofCase ? `GIGR proof / ${project.year}` : `${project.section} / ${project.year}`;
 
   return (
     <main className={`detail-shell bluegarage-shell detail-shell-${project.slug}`}>
@@ -126,9 +130,9 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
       <div className="detail-orb detail-orb-indigo" />
 
       <header className="detail-frame topbar detail-topbar">
-        <Link href="/creative" className="brand-lockup">
+        <Link href={brandHref} className="brand-lockup">
           <span className="brand-dot" />
-          <span>{siteTitle}</span>
+          <span>{brandLabel}</span>
         </Link>
         <nav className="topnav">
           <a href="#cover">개요</a>
@@ -139,9 +143,7 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
 
       <section id="cover" className="detail-frame detail-slide detail-slide-cover">
         <div className="detail-slide-topline">
-          <span className="detail-slide-kicker">
-            {project.section} / {project.year}
-          </span>
+          <span className="detail-slide-kicker">{detailKicker}</span>
           <span className={`detail-slide-index ${accentText(project.accent)}`}>개요</span>
         </div>
 
@@ -149,8 +151,18 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
           <div className="detail-mockup-copy">
             <p className={`eyebrow ${accentText(project.accent)}`}>{project.eyebrow}</p>
             <h1 className="detail-title">{project.title}</h1>
-            <p className="detail-oneliner">{project.oneLiner}</p>
-            <p className="detail-summary-copy">{project.summary}</p>
+            {project.detailHeroSummaryLines?.length ? (
+              <ul className="detail-hero-summary-list">
+                {project.detailHeroSummaryLines.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            ) : (
+              <>
+                <p className="detail-oneliner">{project.oneLiner}</p>
+                <p className="detail-summary-copy">{project.summary}</p>
+              </>
+            )}
             {project.externalLinks?.length ? (
               <ProjectLinkRail links={project.externalLinks} className="detail-project-links" />
             ) : null}
@@ -214,6 +226,7 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
                 <div>
                   <div>
                     <p className="detail-section-eyebrow">{leadMediaSection.eyebrow}</p>
+                    <h2 className="detail-structured-title">{leadMediaSection.title}</h2>
                     {leadMediaSection.summary ? <p className="detail-gallery-intro">{leadMediaSection.summary}</p> : null}
                   </div>
                 </div>
@@ -230,6 +243,7 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
               <section key={section.title} className="detail-slide-subpanel">
                 <div>
                   <p className="detail-section-eyebrow">{section.eyebrow}</p>
+                  <h2 className="detail-structured-title">{section.title}</h2>
                   {section.summary ? <p className="detail-gallery-intro">{section.summary}</p> : null}
                 </div>
 

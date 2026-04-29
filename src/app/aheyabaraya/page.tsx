@@ -7,6 +7,7 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   BarChart3,
+  Code2,
   FileText,
   GitBranch,
   Megaphone,
@@ -16,8 +17,12 @@ import {
 
 import {
   collaborationEvidenceVisuals,
+  collaborationWorkflowRows,
   creativeAnalyticsImages,
   dataEvidenceVisuals,
+  productEvidenceMedia,
+  referenceDerivationRows,
+  sqlPythonEvidencePreviews,
 } from "@/data/aheyabaraya.evidence";
 
 const fadeUp = {
@@ -28,402 +33,305 @@ const fadeUp = {
 };
 
 const roleChips = [
-  "Web3 UX Flow",
-  "Wallet Interaction",
-  "UI Copy",
-  "Product Structuring",
-  "AI-assisted Workflow",
-  "Frontend Planning",
+  "Vibe Coding",
+  "Next.js product surface",
+  "Wallet / transaction flow",
+  "Smart contract integration",
+  "X marketing content",
+  "Grok visual assets",
+  "SQL / Python evidence",
 ] as const;
 
 const heroProofs = [
-  { label: "Prototype", value: "wallet support + transaction state" },
-  { label: "Flow", value: "Good / Improve feedback loop" },
-  { label: "Evidence", value: "KPI boundary + report logic" },
-  { label: "Creative", value: "visual mood + X-native hook" },
+  { label: "Planning", value: "GPT로 문제정의와 skeleton 설계" },
+  { label: "Build", value: "Codex로 제품 흐름 구현" },
+  { label: "Content", value: "Grok으로 X visual asset 제작" },
+  { label: "Evidence", value: "SQL/Python으로 판단 근거 정리" },
 ] as const;
 
-const summaryCards = [
+const recruiterScanCards = [
   {
     label: "01",
-    title: "Core Flow",
+    title: "Vibe coding to product",
     body:
-      "Open idea → Wallet support → Good / Improve → Optional proof. 사용자가 아이디어를 열어보고, 지갑으로 support하고, 짧은 feedback을 남기는 핵심 흐름을 설계했습니다.",
+      "아이디어 문서에서 끝내지 않고, wallet support, transaction state, feedback, dashboard까지 실제 화면과 흐름으로 구현했습니다.",
   },
   {
     label: "02",
-    title: "Web3 UX",
+    title: "Web3 interaction surface",
     body:
-      "Wallet, signature, transaction state, on-chain verification. 복잡한 Web3 단계를 사용자가 이해할 수 있는 상태와 안내 문구로 나누었습니다.",
+      "지갑 연결, 서명, 온체인 확인, EVM/Solana 기록, support verification을 사용자가 읽을 수 있는 상태로 나눴습니다.",
   },
   {
     label: "03",
-    title: "Evidence",
+    title: "Marketing content loop",
     body:
-      "Decision trace, KPI boundary, SQL/Python report logic. 제품 행동과 성과 주장을 분리하고, 다음 검증에 필요한 evidence structure를 설계했습니다.",
+      "X 채널에서 문제 훅, visual entry point, 캐릭터 자산을 반복하며 메시지와 콘텐츠 반응을 분리해 읽었습니다.",
   },
   {
     label: "04",
-    title: "Creative System",
+    title: "Evidence discipline",
     body:
-      "Visual mood, character, X-native content, AI-assisted assets. 제품의 무드와 채널 진입점을 AI-assisted creative workflow로 확장했습니다.",
+      "KPI, referral readiness, decision trace를 성과 주장으로 쓰지 않고 다음 판단을 위한 검토 가능한 evidence로 정리했습니다.",
   },
 ] as const;
 
-const problemBullets = [
+const problemCards = [
   {
-    title: "무엇을 여는가",
-    body: "사용자가 먼저 live idea, demo, docs, GitHub, test link를 확인할 수 있어야 합니다.",
+    title: "AI makes building faster",
+    body:
+      "GPT와 Codex로 제품 skeleton과 구현 속도는 빨라졌지만, 만든 제품이 첫 사용 이유와 첫 반응을 얻는 문제는 그대로 남았습니다.",
   },
   {
-    title: "무엇을 보내는가",
-    body: "support는 결제나 투자가 아니라, 사용자가 자신의 지갑에서 직접 보내는 wallet-to-wallet action입니다.",
+    title: "First signal is still hard",
+    body:
+      "초기 Web3 프로젝트는 큰 커뮤니티보다 먼저 작은 support, 짧은 feedback, 재사용 가능한 proof가 필요하다고 봤습니다.",
   },
   {
-    title: "지금 어떤 상태인가",
-    body: "transaction은 pending, confirmed, verified처럼 단계별 상태를 명확히 보여줘야 합니다.",
+    title: "Wallet actions need readable states",
+    body:
+      "사용자에게 지갑 연결, 서명, 트랜잭션, verified 상태는 기술 단계가 아니라 다음 행동을 알려주는 제품 상태여야 했습니다.",
   },
   {
-    title: "다음에 무엇을 할 수 있는가",
-    body: "support 이후 Good / Improve feedback으로 이어지고, 더 말하고 싶을 때만 optional proof로 확장됩니다.",
+    title: "Content must explain before it sells",
+    body:
+      "X 콘텐츠는 유입 성과를 증명하기보다, 낯선 제품을 멈춰 보게 만들고 어떤 문제를 다루는지 먼저 읽히게 해야 했습니다.",
   },
 ] as const;
 
-const productDecisionCards = [
+const toolchainCards = [
   {
-    label: "01",
-    title: "Support is not payment",
+    tool: "GPT",
+    title: "기획과 skeleton",
     body:
-      "support는 투자, 구매, 수익권이 아니라 creator address로 직접 전송되는 non-custodial wallet action으로 표현했습니다.",
+      "문제정의, user flow, UI copy 초안, evidence 구조를 빠르게 잡고 제품 판단의 출발점을 만들었습니다.",
   },
   {
-    label: "02",
-    title: "Feedback is not a long review",
+    tool: "Codex",
+    title: "구현과 정리",
     body:
-      "초기 signal은 긴 리뷰보다 Good / Improve 선택이 더 빠르게 남습니다. 사용자는 한 번의 선택으로 제품에 대한 첫 신호를 남길 수 있습니다.",
+      "Next.js 화면, support flow, verification 상태, report output, 포트폴리오 evidence page까지 구현과 정리를 맡겼습니다.",
   },
   {
-    label: "03",
-    title: "Public proof is optional",
+    tool: "Grok",
+    title: "X 콘텐츠 자산",
     body:
-      "X / Threads 공유는 core feedback과 분리했습니다. 외부 공유는 더 말하고 싶은 사용자를 위한 optional surface로만 둡니다.",
+      "캐릭터 이미지, visual mood, short-form hook에 쓸 자산을 만들고 X에서 읽히는 visual entry point로 테스트했습니다.",
   },
   {
-    label: "04",
-    title: "Dashboard is state memory",
+    tool: "SQL / Python",
+    title: "검토 가능한 evidence",
     body:
-      "dashboard는 단순 통계 화면이 아니라 support, feedback, proof, review state를 다음 판단에 재사용하기 위한 상태 패널입니다.",
+      "decision log, KPI snapshot, referral readiness를 CSV/brief/협업툴 output으로 바꿔 판단 근거를 검토 가능하게 만들었습니다.",
   },
 ] as const;
 
-const coreFlowSteps = [
+const productSurfaceCards = [
+  {
+    label: "Creator",
+    title: "Creator apply / project profile",
+    body:
+      "창작자·빌더가 아이디어, demo, docs, GitHub, test link를 보여줄 수 있는 project profile surface를 준비했습니다.",
+    kpi: ["apply state", "profile completeness", "review queue"],
+  },
+  {
+    label: "Launch",
+    title: "Idea / project launch surface",
+    body:
+      "사용자가 support 전에 무엇을 열어볼 수 있는지 먼저 보도록 live idea, update note, evidence link 구조를 정리했습니다.",
+    kpi: ["project readiness", "live link", "evidence link"],
+  },
+  {
+    label: "Support",
+    title: "Wallet-to-wallet support",
+    body:
+      "support는 결제나 투자로 보이지 않게, 사용자 지갑에서 creator address로 직접 보내는 non-custodial action으로 표현했습니다.",
+    kpi: ["support receipt", "transaction state", "verification state"],
+  },
+  {
+    label: "Feedback",
+    title: "Good / Improve signal",
+    body:
+      "긴 리뷰 대신 Good / Improve와 짧은 note로 첫 신호를 남기고, public proof는 별도 선택 surface로 분리했습니다.",
+    kpi: ["feedback completion", "proof status", "review status"],
+  },
+  {
+    label: "Dashboard",
+    title: "State memory for next decision",
+    body:
+      "creator가 support, feedback, proof, review state를 다시 확인하고 다음 업데이트 판단에 재사용할 수 있는 dashboard로 정리했습니다.",
+    kpi: ["admin queue", "dashboard refresh", "next action"],
+  },
+  {
+    label: "Referral",
+    title: "Measurement readiness",
+    body:
+      "ref code와 UTM campaign label은 성과 계산이 아니라 향후 attribution event가 들어왔을 때 join할 수 있는 준비도로만 다뤘습니다.",
+    kpi: ["ref link", "bind state", "campaign label"],
+  },
+] as const;
+
+const buildProofCards = [
+  {
+    title: "EVM funding registry",
+    body:
+      "idea registration, creator/operator approval, funding record event를 다루는 EVM contract surface를 구현했습니다.",
+    proof: "AheyaEvmFundingRegistryRecord.sol",
+  },
+  {
+    title: "Solana funding program",
+    body:
+      "register idea, native support, attested funding record 흐름을 Anchor program으로 구성했습니다.",
+    proof: "Solana funding program",
+  },
+  {
+    title: "Support verification routes",
+    body:
+      "wallet action 이후 pending, confirmed, verified 상태를 UI와 admin/reporting evidence에서 분리해 읽을 수 있게 만들었습니다.",
+    proof: "support / verify / dashboard routes",
+  },
+] as const;
+
+const interactionSteps = [
   {
     step: "01",
-    label: "Open the idea",
-    title: "무엇을 먼저 확인할 수 있는지 보여준다",
-    body:
-      "사용자는 먼저 live app, demo, docs, GitHub, test link를 확인합니다. AHEYABARAYA는 support 이전에 무엇을 열어볼 수 있는지 먼저 보여줍니다.",
+    label: "Open project",
+    title: "먼저 무엇을 열어볼 수 있는지 보여준다",
+    body: "live app, demo, docs, GitHub, test link를 support 이전에 확인하도록 project surface를 정리했습니다.",
     accent: "aqua" as const,
   },
   {
     step: "02",
     label: "Connect wallet",
-    title: "support를 시작하기 위한 onboarding step",
-    body:
-      "지갑 연결은 별도 기술 절차가 아니라 support를 시작하기 위한 준비 단계로 정리했습니다. 연결 상태, 계정 상태, fallback을 분리해 막히는 지점을 줄였습니다.",
+    title: "지갑 연결을 onboarding step으로 처리",
+    body: "wallet connection은 기술 절차가 아니라 support를 시작하기 위한 준비 상태로 보이게 만들었습니다.",
     accent: "orange" as const,
   },
   {
     step: "03",
     label: "Send support",
-    title: "wallet-to-wallet direct support",
-    body:
-      "사용자가 자신의 지갑에서 creator address로 직접 support를 보냅니다. UI copy는 wallet-to-wallet, non-custodial, direct support 의미를 명확히 유지합니다.",
+    title: "direct support 의미를 유지",
+    body: "사용자 지갑에서 creator address로 직접 보내는 wallet-to-wallet 흐름으로 copy와 상태를 분리했습니다.",
     accent: "indigo" as const,
   },
   {
     step: "04",
-    label: "Track transaction state",
-    title: "pending / confirmed / verified를 분리",
-    body:
-      "transaction 이후에는 pending, confirmed, verified 상태를 분리해 보여줍니다. 사용자는 전송됨, 확인 중, 참여 기록 반영됨을 단계별로 이해할 수 있습니다.",
+    label: "Verify state",
+    title: "pending / confirmed / verified",
+    body: "트랜잭션이 제출된 뒤 사용자가 기다려야 하는 상태와 다음 행동이 열리는 상태를 분리했습니다.",
     accent: "aqua" as const,
   },
   {
     step: "05",
-    label: "Leave Good / Improve",
-    title: "support 이후 짧은 feedback unlock",
-    body:
-      "support가 verified된 뒤 Good / Improve feedback이 열립니다. 긴 설명 없이도 유지할 점과 개선할 점을 빠르게 남길 수 있습니다.",
+    label: "Leave signal",
+    title: "Good / Improve로 첫 피드백을 남긴다",
+    body: "support 이후 긴 리뷰가 아니라 짧은 Good / Improve feedback을 남기는 흐름으로 낮은 진입 장벽을 만들었습니다.",
     accent: "orange" as const,
   },
   {
     step: "06",
-    label: "Optional proof",
-    title: "public proof는 선택 surface",
-    body:
-      "사용자가 더 말하고 싶다면 X / Threads에 public proof를 남길 수 있습니다. 이 단계는 core feedback과 분리된 선택 surface입니다.",
+    label: "Reuse proof",
+    title: "공개 proof는 선택으로 분리",
+    body: "X 공유는 필수 조건이 아니라 더 말하고 싶은 사용자가 선택하는 public proof surface로만 두었습니다.",
     accent: "indigo" as const,
   },
+] as const;
+
+const trustLayerCards = [
   {
-    step: "07",
-    label: "Reuse the signal",
-    title: "support와 feedback을 다음 판단에 재사용",
+    title: "Resolve target",
     body:
-      "creator는 support와 feedback을 dashboard에서 확인하고, 다음 업데이트, post, pitch, product decision에 재사용할 수 있습니다.",
-    accent: "aqua" as const,
+      "평가 가능한 공개 대상인지 먼저 확인하고, private route나 내부 운영 로그를 공개 평가와 섞지 않도록 분리했습니다.",
+  },
+  {
+    title: "Review output",
+    body:
+      "외부 작업 결과를 good, improve, risk flag, reason, evidence link로 나누어 다음 판단에 재사용할 수 있게 했습니다.",
+  },
+  {
+    title: "Public-safe record",
+    body:
+      "Trust layer는 support/feedback core flow와 분리하고, 공개 가능한 평가 요약과 근거만 남기는 레이어로 설계했습니다.",
   },
 ] as const;
 
-const uxTranslationRows = [
+const creativeSignalRows = [
   {
-    from: "Wallet connection",
-    to: "Start support from your wallet",
-    body: "지갑 연결을 기술 인증이 아니라 support를 시작하기 위한 준비 단계로 표현했습니다.",
+    label: "Channel",
+    value: "X only",
+    body: "TikTok/Instagram은 아직 테스트 중이라 제출본에서는 제외하고, X 포스트와 visual asset만 evidence로 사용했습니다.",
   },
   {
-    from: "Signature / acknowledgement",
-    to: "You approve this action from your own wallet",
-    body: "서명은 플랫폼이 대신 처리하는 것이 아니라 사용자가 직접 승인하는 행동임을 명확히 했습니다.",
+    label: "Before",
+    value: "1.1K views / 8.2h watch / 16.5% completion",
+    body: "초기에는 세계관 톤은 있었지만 감정, 훅, 캐릭터 개성이 약하게 읽히는 baseline으로 봤습니다.",
   },
   {
-    from: "Transaction pending",
-    to: "Transaction submitted. Waiting for confirmation.",
-    body: "사용자가 전송 이후 불안해하지 않도록 pending 상태를 별도 단계로 표시했습니다.",
+    label: "After",
+    value: "2.1K views / 18.3h watch / 28.3% completion",
+    body: "2주 단위 비교에서 visual hook과 message iteration 이후 completion 지표가 크게 개선된 신호로 읽었습니다.",
   },
   {
-    from: "On-chain verification",
-    to: "Support confirmed. Feedback is now available.",
-    body: "검증 완료 후 다음 행동이 바로 보이도록 feedback unlock과 연결했습니다.",
-  },
-  {
-    from: "Creator address",
-    to: "Your wallet sends directly to the creator address.",
-    body: "수신 주소는 축약 표시, copy action, registry check 안내를 통해 신뢰 경계를 보완했습니다.",
-  },
-  {
-    from: "Season XP",
-    to: "Participation memory, not cash value.",
-    body: "XP는 보상이나 수익이 아니라 참여 기록과 시즌 상태 레이어로 설명했습니다.",
+    label: "Boundary",
+    value: "not product conversion proof",
+    body: "이 수치는 제품 유입이나 전환 증거가 아니라 X에서 hook과 visual entry point를 조정한 근거입니다.",
   },
 ] as const;
 
-const copyExamples = [
-  { label: "Before support", copy: "Support this idea from your wallet." },
-  { label: "Address check", copy: "Your wallet sends directly to the creator address." },
-  { label: "Transaction submitted", copy: "Transaction submitted. Waiting for confirmation." },
-  { label: "Confirmed", copy: "Support confirmed. You can now leave feedback." },
-  { label: "Feedback", copy: "What signal would you leave? Good or Improve." },
-  { label: "Optional share", copy: "Want to say more? Share your proof on X or Threads." },
-  { label: "XP notice", copy: "Season XP records participation. It has no cash value." },
-  { label: "Fallback", copy: "If sharing does not open automatically, copy the text and post manually." },
-] as const;
-
-const moodCards = [
+const evidenceLogicCards = [
   {
-    title: "Supportive",
-    body: "support는 결제 버튼처럼 보이기보다 아이디어에 작은 씨앗을 심는 행동처럼 느껴져야 합니다.",
-  },
-  {
-    title: "Clear",
+    title: "What I can claim",
     body:
-      "transaction, verification, feedback 상태는 과장된 그래픽보다 짧은 문장과 명확한 step state로 보여주는 것이 중요했습니다.",
+      "제품 flow, code surface, smart contract support record, X content iteration, KPI/reporting 설계를 만들었다고 말할 수 있습니다.",
   },
   {
-    title: "Lightweight",
-    body: "초기 사용자가 긴 리뷰를 쓰지 않아도 Good / Improve 선택으로 충분히 참여할 수 있게 설계했습니다.",
-  },
-  {
-    title: "Reusable",
+    title: "What I should not claim",
     body:
-      "creator가 받은 signal은 단발성 반응이 아니라 다음 업데이트와 proof asset으로 재사용될 수 있어야 합니다.",
-  },
-] as const;
-
-const workflowCards = [
-  {
-    title: "Product Structuring",
-    body: "사용자 역할, support state, feedback unlock, dashboard state를 flow 단위로 정리했습니다.",
+      "실제 growth, activation, retention, paid efficiency, social-to-product causality는 데이터가 없으므로 주장하지 않습니다.",
   },
   {
-    title: "UI Copy Iteration",
-    body: "Web3 기능을 사용자 행동 언어로 바꾸기 위해 copy를 짧고 상태 중심으로 재작성했습니다.",
-  },
-  {
-    title: "Creative Direction",
-    body: "AHEYABARAYA의 캐릭터, 무드, visual hook을 제품 메시지와 연결했습니다.",
-  },
-  {
-    title: "Evidence Packaging",
+    title: "What data is needed next",
     body:
-      "decision trace, KPI boundary, SQL/Python report logic을 포트폴리오에서 검토 가능한 evidence로 묶었습니다.",
-  },
-] as const;
-
-const evidenceCards = [
-  {
-    title: "Decision Trace",
-    body: "이전 상태, 결정한 내용, 현재 상태, 남은 validation gap을 한 줄로 정리했습니다.",
-  },
-  {
-    title: "KPI Boundary",
-    body: "support, feedback, referral, backup, dashboard snapshot을 서로 다른 evidence type으로 분리했습니다.",
-  },
-  {
-    title: "SQL / Python Report Logic",
-    body:
-      "흩어진 decision log와 KPI snapshot을 reviewable table과 report output으로 바꾸는 구조를 설계했습니다.",
-  },
-  {
-    title: "Collaboration Output",
-    body:
-      "Notion, Google Sheets, Docs, Excel, Slack digest용 output을 각각 다른 검토 목적에 맞게 정리했습니다.",
-  },
-] as const;
-
-const decisionPackets = [
-  {
-    title: "Support and feedback should not be merged.",
-    decision:
-      "Support는 verified state까지의 운영 상태로 보고, Feedback은 Good / Improve와 proof queue로 따로 봅니다.",
-    kpi: ["support receipt state", "feedback completion", "proof review status"],
-    next:
-      "support 이후 feedback completion history가 쌓이면 제품 개선 우선순위 판단으로 확장할 수 있습니다.",
-  },
-  {
-    title: "Public proof should stay optional.",
-    decision: "X / Threads proof는 core feedback과 분리된 optional surface로 둡니다.",
-    kpi: ["proof status", "review status", "share fallback state"],
-    next: "실제 proof submission history가 생기면 어떤 메시지가 public proof로 이어지는지 분석할 수 있습니다.",
-  },
-  {
-    title: "Referral is readiness, not performance.",
-    decision:
-      "ref code, UTM, campaign label은 현재 성과가 아니라 향후 attribution join key 준비도로만 설명합니다.",
-    kpi: ["referral link ready", "bind ready", "campaign label bridge"],
-    next: "visit, login, bind, support event가 붙은 뒤에만 attribution 분석이 가능합니다.",
-  },
-  {
-    title: "Trust should be a separate layer.",
-    decision:
-      "Trust는 core support flow와 섞지 않고, 외부 작업 결과를 public-safe evaluation record로 남기는 별도 layer로 둡니다.",
-    kpi: ["eligible target", "review completeness", "public-safe summary"],
-    next: "공개 가능한 evaluation history가 쌓이면 agent quality comparison과 trust memory로 확장할 수 있습니다.",
-  },
-] as const;
-
-const trustCards = [
-  {
-    title: "Resolve",
-    body: "평가 가능한 대상인지 먼저 확인합니다. private route가 아니라 public-safe evaluation 범위만 사용합니다.",
-  },
-  {
-    title: "Review",
-    body: "Good / Improve / Risk 수준으로 판단을 제한하고, verdict, reason, risk flag, evidence link를 분리합니다.",
-  },
-  {
-    title: "Publish Boundary",
-    body:
-      "내부 운영 로그와 공개 가능한 평가 기록을 분리합니다. public trust record는 외부 독자가 이해할 수 있는 요약과 evidence만 포함합니다.",
-  },
-] as const;
-
-const gtmRules = [
-  {
-    title: "Use support, not investment.",
-    body:
-      "support는 수익권이나 투자 행위가 아니라 아이디어에 대한 wallet-based participation으로 설명합니다.",
-  },
-  {
-    title: "Use feedback, not engagement farming.",
-    body: "Good / Improve는 외부 좋아요, 리포스트, 조회수와 분리된 제품 신호입니다.",
-  },
-  {
-    title: "Use optional proof, not required sharing.",
-    body: "X / Threads 공유는 선택입니다. 참여 조건이나 보상 조건으로 연결하지 않습니다.",
-  },
-  {
-    title: "Use Season XP as status, not money.",
-    body: "Season XP는 cash value가 없는 participation memory입니다.",
-  },
-] as const;
-
-const creativeSections = [
-  {
-    title: "AHEYABARAYA Visual Identity",
-    body:
-      "제품의 핵심 메시지인 support, signal, proof를 더 부드럽게 전달하기 위해 캐릭터와 visual mood를 함께 설계했습니다. 목표는 Web3 제품을 차갑고 기술적인 화면으로만 보이게 하는 것이 아니라, 작은 support가 아이디어의 다음 단계로 이어지는 느낌을 만드는 것이었습니다.",
-  },
-  {
-    title: "Character and Worldbuilding",
-    body:
-      "AHEYABARAYA의 캐릭터는 단순 장식이 아니라 제품의 감정적 진입점을 만드는 장치로 사용했습니다. supporter가 아이디어를 발견하고, 작은 씨앗을 심고, Good / Improve signal을 남기는 흐름을 더 쉽게 상상할 수 있도록 visual narrative를 구성했습니다.",
-  },
-  {
-    title: "X-native Hook",
-    body:
-      "빠른 피드 환경에서는 긴 제품 설명보다 한 문장 hook과 visual entry point가 먼저 작동합니다. AHEYABARAYA의 메시지를 problem hook → support flow → feedback / proof explanation 순서로 나누고, 각 포스트가 어떤 행동으로 이어져야 하는지 기준을 만들었습니다.",
-  },
-  {
-    title: "Message Iteration",
-    body:
-      "초기 메시지는 기능 설명 중심이었지만, 이후에는 “building got faster, first signal is still hard”라는 문제 hook을 앞으로 당겼습니다. 제품을 크게 보이게 만드는 것보다 사용자가 왜 지금 이 흐름을 써야 하는지 먼저 이해하게 만드는 방향으로 copy를 조정했습니다.",
-  },
-  {
-    title: "Visual Entry Point",
-    body:
-      "이미지와 short-form asset은 product activation metric으로 직접 해석하지 않았습니다. 어떤 visual mood와 hook이 사용자를 멈춰 보게 하는지, 그리고 제품 설명으로 넘어가기 전 어떤 감정적 진입점을 만드는지 확인하는 자료로 활용했습니다.",
+      "visit, login, referral bind, support, feedback completion, proof submission event가 붙은 뒤에야 attribution 분석으로 넘어갑니다.",
   },
 ] as const;
 
 const roleReadingCards = [
   {
-    role: "For AI Vibe Coder",
-    body: "wallet UX, transaction state, interaction flow, UI copy, visual mood, AI-assisted workflow를 봐주세요.",
-  },
-  {
-    role: "For Product",
-    body: "problem framing, user flow, support / feedback separation, dashboard state, PRD-style decision structure를 봐주세요.",
-  },
-  {
-    role: "For Marketing",
+    role: "For Vibe Coder",
     body:
-      "GTM message translation, public-safe wording, X-native hook, creative experiment, channel signal interpretation을 봐주세요.",
+      "GPT로 흐름을 잡고 Codex로 product surface를 구현한 방식, wallet/transaction/smart contract evidence, 빠른 product build-to-ship 능력을 봐주세요.",
   },
   {
-    role: "For AI Service Planning",
+    role: "For Marketing Content",
     body:
-      "feedback signal design, data collection boundary, dashboard state, policy wording, reusable evidence structure를 봐주세요.",
+      "Web3 기능을 X-native hook, visual entry point, public-safe wording, message iteration으로 바꾼 과정을 봐주세요.",
   },
 ] as const;
 
 const capabilityCards = [
   {
-    title: "UX Flow",
-    body: "wallet, support, transaction, feedback, proof를 하나의 흐름으로 정리하는 능력",
+    title: "Tool-assisted build",
+    body: "기획, 구현, 콘텐츠, evidence packaging을 각 도구의 장점에 맞게 연결",
   },
   {
-    title: "UI Copy",
-    body: "복잡한 Web3 개념을 짧고 안전한 사용자 언어로 바꾸는 능력",
+    title: "Web3 product flow",
+    body: "wallet support, transaction state, feedback, proof, dashboard를 하나의 흐름으로 정리",
   },
   {
-    title: "Product Structuring",
-    body: "support, feedback, proof, dashboard, trust layer를 분리해 설계하는 능력",
+    title: "Marketing content",
+    body: "X에서 문제 훅, 캐릭터 자산, visual entry point를 조정하며 message signal 확인",
   },
   {
-    title: "Evidence Design",
-    body: "KPI와 decision trace를 성과 과장이 아니라 다음 검증 기준으로 정리하는 능력",
-  },
-  {
-    title: "Creative Direction",
-    body: "제품 메시지를 visual mood, character, X-native hook으로 확장하는 능력",
+    title: "Evidence system",
+    body: "KPI/SQL/Python output을 성과 과장이 아니라 다음 검증 기준으로 사용",
   },
 ] as const;
 
 const creativeImages = [
   "/appendix/bluegarage/aheya/dog.webp",
-  "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
-  "/appendix/bluegarage/aheya/tiger-zodiac.webp",
+  "/appendix/bluegarage/aheya/312330.webp",
+  "/appendix/bluegarage/aheya/331418.webp",
 ] as const;
 
 export default function AheyabarayaEvidencePage() {
@@ -436,27 +344,25 @@ export default function AheyabarayaEvidencePage() {
             <span>minnns / selected work</span>
           </Link>
           <nav className="topnav integrated-nav">
-            <a href="#work">Work</a>
-            <a href="#hero">AHEYABARAYA</a>
-            <a href="#ux-prototype">UX Prototype</a>
+            <a href="#problem">Problem</a>
+            <a href="#build">Build</a>
+            <a href="#marketing">Marketing</a>
             <a href="#evidence">Evidence</a>
-            <a href="#creative">Creative</a>
-            <a href="#research">Research</a>
-            <a href="#contact">Contact</a>
+            <a href="#roles">Fit</a>
           </nav>
         </header>
 
         <div className="integrated-hero-grid">
           <motion.section {...fadeUp} className="integrated-hero-copy">
-            <p className="eyebrow text-aqua">AHEYABARAYA</p>
-            <h1>AI-assisted Web3 UX Prototype</h1>
+            <p className="eyebrow text-aqua">GPT + Codex + Grok Web3 Build-to-Market Case</p>
+            <h1>AHEYABARAYA</h1>
             <p>
-              지갑 기반 support, transaction state, Good / Improve feedback을 사용자가 이해하기 쉬운
-              interaction flow로 설계한 Web3 UX prototype입니다.
+              GPT로 제품 skeleton과 판단 기준을 잡고, Codex로 wallet support와 transaction flow를 구현하고,
+              Grok으로 X용 visual/content asset을 만든 Web3 제품·콘텐츠 케이스입니다.
             </p>
             <p>
-              Web3 기능을 복잡한 기술 설명이 아니라, 사용자가 무엇을 해야 하고 지금 어떤 상태인지 바로
-              이해할 수 있는 화면 구조, UI copy, interaction flow로 바꾸는 데 집중했습니다.
+              핵심은 “AI로 빠르게 만들었다”가 아니라, 만든 제품을 어떤 문제에서 시작했고, 어떤 기능으로 좁혔고,
+              어떤 콘텐츠와 evidence로 검토 가능하게 정리했는지 보여주는 것입니다.
             </p>
             <div className="integrated-output-list">
               {roleChips.map((chip) => (
@@ -464,16 +370,16 @@ export default function AheyabarayaEvidencePage() {
               ))}
             </div>
             <div className="hero-ctas">
-              <a href="#ux-prototype" className="cta-primary">
-                Interaction Flow 보기
+              <a href="#build" className="cta-primary">
+                Build flow 보기
                 <ArrowDownRight className="h-4 w-4" />
               </a>
-              <a href="#evidence" className="cta-secondary">
-                Evidence System 보기
+              <a href="#marketing" className="cta-secondary">
+                Marketing signal 보기
                 <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a href="#creative" className="cta-secondary">
-                Creative Appendix 보기
+              <a href="#evidence" className="cta-secondary">
+                Evidence 보기
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
@@ -508,26 +414,21 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </section>
 
-      <motion.section {...fadeUp} id="work" className="page-frame integrated-section">
+      <motion.section {...fadeUp} id="scan" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-aqua">What I built and structured</p>
-            <h2>Web3 support와 feedback을 하나의 UX flow로 정리</h2>
+            <p className="eyebrow text-aqua">Recruiter scan</p>
+            <h2>30초 안에 보여줘야 하는 것</h2>
           </div>
           <p>
-            AHEYABARAYA는 초기 아이디어가 첫 support, 명확한 feedback, 재사용 가능한 proof를 얻도록
-            돕는 Web3 support + feedback system입니다.
+            이 페이지는 PM 일반론보다 Vibe Coding과 Marketing Content 역할이 보는 증거에 맞췄습니다. 구현,
+            Web3 flow, 콘텐츠 반복, evidence discipline을 한 흐름으로 읽게 만드는 것이 목표입니다.
           </p>
         </div>
-        <p className="integrated-section-lead">
-          저는 이 프로젝트에서 지갑 연결, support transaction, feedback unlock, optional proof,
-          dashboard state를 하나의 사용자 흐름으로 정리하고, 각 단계가 사용자에게 부담스럽지 않게 보이도록
-          UX copy와 interaction structure를 설계했습니다.
-        </p>
         <div className="integrated-output-summary-grid">
-          {summaryCards.map((item) => (
+          {recruiterScanCards.map((item) => (
             <article key={item.title} className="integrated-output-summary-card">
-              <BarChart3 className="h-5 w-5" />
+              <ShieldCheck className="h-5 w-5" />
               <span>{item.label}</span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
@@ -539,22 +440,18 @@ export default function AheyabarayaEvidencePage() {
       <motion.section {...fadeUp} id="problem" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-orange">Problem</p>
-            <h2>Web3 products often make users think too much before they act.</h2>
+            <p className="eyebrow text-orange">Problem definition</p>
+            <h2>Building got faster. First signal did not.</h2>
           </div>
           <p>
-            지갑 연결, 서명, 트랜잭션, 가스비, confirmation, verification 같은 단계는 Web3 제품에서는
-            필수적이지만, 일반 사용자에게는 어렵고 불안하게 느껴질 수 있습니다.
+            AHEYABARAYA는 “Web3 기능을 많이 붙인 서비스”가 아니라, 빠르게 만들어진 초기 제품이 첫 support,
+            짧은 feedback, 재사용 가능한 proof를 얻는 문제에서 시작했습니다.
           </p>
         </div>
-        <p className="integrated-section-lead">
-          AHEYABARAYA의 문제는 단순히 support 기능을 만드는 것이 아니었습니다. 핵심은 사용자가 무엇을
-          열고, 무엇을 보내고, 지금 어떤 상태이며, 다음에 무엇을 할 수 있는지 쉽게 이해하게 만드는 것이었습니다.
-        </p>
         <div className="integrated-claim-grid">
-          {problemBullets.map((item) => (
+          {problemCards.map((item) => (
             <article key={item.title} className="integrated-claim-card">
-              <ShieldCheck className="h-5 w-5" />
+              <Sparkles className="h-5 w-5" />
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -562,25 +459,61 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="product-decision" className="page-frame integrated-section">
+      <motion.section {...fadeUp} id="research" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-indigo">Product Decision</p>
-            <h2>Make Web3 actions feel like a simple product flow.</h2>
+            <p className="eyebrow text-aqua">Research to judgment</p>
+            <h2>레퍼런스에서 제품 판단으로</h2>
           </div>
           <p>
-            AHEYABARAYA를 generic crowdfunding product로 보여주기보다, 사용자가 실제로 열어보고,
-            support하고, feedback을 남기는 first-signal loop로 정리했습니다.
+            리서치는 “많이 찾아봤다”가 아니라, 어떤 패턴을 보고 AHEYABARAYA의 기능·메시지·evidence 구조로
+            바꾸었는지를 보여주는 용도로만 배치했습니다.
           </p>
         </div>
-        <p className="integrated-section-lead">
-          핵심 판단은 Web3 기능을 많이 보여주는 것이 아니라, 사용자가 해야 할 행동을 적게 느끼게 만드는 것이었습니다.
-        </p>
+        <div className="integrated-reference-grid">
+          {referenceDerivationRows.slice(0, 5).map((row) => (
+            <article key={row.reference} className="integrated-reference-card">
+              <span>{row.reference}</span>
+              <h3>{row.pattern}</h3>
+              <dl>
+                <div>
+                  <dt>Checked</dt>
+                  <dd>{row.checked}</dd>
+                </div>
+                <div>
+                  <dt>Product / GTM judgment</dt>
+                  <dd>{row.implication}</dd>
+                </div>
+                <div>
+                  <dt>AHEYABARAYA output</dt>
+                  <dd>{row.output}</dd>
+                </div>
+                <div>
+                  <dt>Boundary</dt>
+                  <dd>{row.boundary}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="toolchain" className="page-frame integrated-section">
+        <div className="integrated-section-head integrated-section-head-wide">
+          <div>
+            <p className="eyebrow text-indigo">AI toolchain</p>
+            <h2>AI 도구별 역할 분리</h2>
+          </div>
+          <p>
+            포트폴리오에서 중요한 부분은 사용한 도구 이름보다, 어떤 도구를 어떤 산출물에 배치했고 그 결과물이
+            제품·콘텐츠·evidence 흐름에 어떻게 들어갔는지입니다.
+          </p>
+        </div>
         <div className="integrated-output-summary-grid">
-          {productDecisionCards.map((item) => (
-            <article key={item.title} className="integrated-output-summary-card">
-              <GitBranch className="h-5 w-5" />
-              <span>{item.label}</span>
+          {toolchainCards.map((item) => (
+            <article key={item.tool} className="integrated-output-summary-card">
+              <Code2 className="h-5 w-5" />
+              <span>{item.tool}</span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -588,17 +521,95 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="ux-prototype" className="page-frame crossangle-workflow-panel aheyabaraya-workflow-panel">
-        <div className="crossangle-workflow-head">
-          <p className="eyebrow text-aqua">Core Interaction Flow</p>
-          <h2>From live idea to reusable proof</h2>
+      <motion.section {...fadeUp} id="build" className="page-frame integrated-section">
+        <div className="integrated-section-head integrated-section-head-wide">
+          <div>
+            <p className="eyebrow text-aqua">Build proof</p>
+            <h2>문서가 아니라 제품으로 구현</h2>
+          </div>
           <p>
-            AHEYABARAYA의 핵심 UX는 사용자가 많은 설명을 읽지 않아도 현재 단계와 다음 행동을 이해할 수 있도록
-            설계했습니다.
+            핵심 flow는 기획 문서에 머물지 않고, 공개 가능한 제품 화면, creator/funder flow 영상, contract와
+            verification 구조로 연결됩니다.
+          </p>
+        </div>
+        <div className="integrated-product-media-grid">
+          {productEvidenceMedia.map((item) => (
+            <article key={item.src} className="integrated-product-media-card">
+              <div className="integrated-product-media">
+                {item.type === "video" ? (
+                  <video src={item.src} controls muted playsInline preload="metadata" />
+                ) : (
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 1100px) 100vw, 30vw"
+                    style={{ objectFit: "contain" }}
+                  />
+                )}
+              </div>
+              <div>
+                <span>{item.title}</span>
+                <p>{item.caption}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="integrated-output-summary-grid integrated-evidence-visual-grid-spaced">
+          {buildProofCards.map((item) => (
+            <article key={item.title} className="integrated-output-summary-card">
+              <GitBranch className="h-5 w-5" />
+              <span>{item.proof}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="product-surface" className="page-frame crossangle-workflow-panel aheyabaraya-workflow-panel">
+        <div className="crossangle-workflow-head">
+          <p className="eyebrow text-orange">Product surface</p>
+          <h2>Creator와 supporter 흐름을 함께 설계</h2>
+          <p>
+            Supporter 기능만 보여주면 제품이 반쪽으로 읽힙니다. 이 케이스에서는 creator apply, project launch,
+            support, feedback, dashboard, referral readiness까지 같은 제품 표면으로 정리했습니다.
           </p>
         </div>
         <div className="crossangle-workflow-grid">
-          {coreFlowSteps.map((item) => (
+          {productSurfaceCards.map((item, index) => (
+            <article
+              key={item.title}
+              className="crossangle-workflow-card"
+              data-accent={index % 3 === 0 ? "aqua" : index % 3 === 1 ? "orange" : "indigo"}
+            >
+              <div className="crossangle-workflow-topline">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item.label}</strong>
+              </div>
+              <h3>{item.title}</h3>
+              <p className="integrated-card-body">{item.body}</p>
+              <div className="integrated-output-list">
+                {item.kpi.map((kpi) => (
+                  <span key={kpi}>{kpi}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="flow" className="page-frame crossangle-workflow-panel aheyabaraya-workflow-panel">
+        <div className="crossangle-workflow-head">
+          <p className="eyebrow text-aqua">Interaction flow</p>
+          <h2>Open project → support → feedback → proof</h2>
+          <p>
+            Vibe Coding 역할에서 봐야 할 핵심은 기술을 많이 나열한 것이 아니라, 사용자가 다음 상태를 이해하도록
+            화면과 flow를 코드로 옮긴 방식입니다.
+          </p>
+        </div>
+        <div className="crossangle-workflow-grid">
+          {interactionSteps.map((item) => (
             <article key={item.step} className="crossangle-workflow-card" data-accent={item.accent}>
               <div className="crossangle-workflow-topline">
                 <span>{item.step}</span>
@@ -611,115 +622,21 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="ux-translation" className="page-frame integrated-section">
+      <motion.section {...fadeUp} id="trust-layer" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-orange">Web3 UX Translation</p>
-            <h2>Turning wallet complexity into user-readable states</h2>
+            <p className="eyebrow text-indigo">Separate advanced layer</p>
+            <h2>Trust는 core support flow와 분리</h2>
           </div>
           <p>
-            가장 중요한 UX 과제는 Web3 요소를 숨기는 것이 아니라, 사용자가 이해할 수 있는 행동과 상태로
-            바꾸는 것이었습니다.
+            Trust layer는 support 기능에 끼워 넣지 않고, 외부 작업 결과를 public-safe evaluation record로 남기는
+            별도 surface로 정리했습니다.
           </p>
         </div>
-        <div className="integrated-decision-packet-grid">
-          {uxTranslationRows.map((item) => (
-            <article key={item.from} className="integrated-decision-packet-card">
-              <div className="integrated-preview-card-head">
-                <FileText className="h-5 w-5" />
-                <div>
-                  <span>{item.from}</span>
-                  <h3>{item.to}</h3>
-                </div>
-              </div>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="copy-system" className="page-frame integrated-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-aqua">UI Copy System</p>
-            <h2>Short, state-based, non-financial</h2>
-          </div>
-          <p>
-            AHEYABARAYA의 UI copy는 Web3 전문어를 줄이고, 사용자가 지금 해야 할 행동과 현재 상태를 이해하는 데
-            집중했습니다.
-          </p>
-        </div>
-        <div className="integrated-data-flow-map">
-          {copyExamples.map((item) => (
-            <article key={item.label} className="integrated-data-flow-step">
-              <div className="integrated-data-flow-step-head">
-                <Sparkles className="h-5 w-5" />
-                <span>{item.label}</span>
-              </div>
-              <h3>{item.copy}</h3>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="visual-mood" className="page-frame integrated-section integrated-creative-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-orange">Visual Mood & Interaction Direction</p>
-            <h2>Make the product feel supportive, not financial.</h2>
-          </div>
-          <p>
-            AHEYABARAYA의 시각 방향은 Web3 금융 제품처럼 차갑게 보이는 것이 아니라, 작은 support와
-            feedback이 아이디어의 다음 단계로 이어지는 느낌을 만드는 데 집중했습니다.
-          </p>
-        </div>
-        <div className="integrated-creative-grid">
-          <div className="integrated-output-summary-grid">
-            {moodCards.map((item) => (
-              <article key={item.title} className="integrated-output-summary-card">
-                <Sparkles className="h-5 w-5" />
-                <span>mood</span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="integrated-creative-media-grid">
-            {creativeImages.map((src) => (
-              <div key={src} className="integrated-creative-media">
-                <Image
-                  src={src}
-                  alt="AHEYABARAYA visual mood asset."
-                  fill
-                  sizes="(max-width: 1100px) 33vw, 14vw"
-                  loading="eager"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="workflow" className="page-frame integrated-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-indigo">Implementation / AI-assisted Workflow</p>
-            <h2>Fast prototype thinking with product constraints</h2>
-          </div>
-          <p>
-            단순히 화면을 예쁘게 구성하는 것보다, 제품 흐름, 정책 경계, 상태 설계, copy, visual mood를 함께
-            정리하는 데 집중했습니다.
-          </p>
-        </div>
-        <p className="integrated-section-lead">
-          AI tools were used as workflow accelerators: 아이디어 정리, UI copy iteration, visual direction,
-          report structuring, prototype content packaging을 빠르게 반복했습니다.
-        </p>
-        <div className="integrated-output-summary-grid">
-          {workflowCards.map((item) => (
-            <article key={item.title} className="integrated-output-summary-card">
-              <BarChart3 className="h-5 w-5" />
-              <span>workflow</span>
+        <div className="integrated-claim-grid">
+          {trustLayerCards.map((item) => (
+            <article key={item.title} className="integrated-claim-card">
+              <ShieldCheck className="h-5 w-5" />
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -727,22 +644,81 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="evidence" className="page-frame integrated-section">
+      <motion.section {...fadeUp} id="marketing" className="page-frame integrated-section integrated-creative-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-aqua">Evidence System</p>
-            <h2>From product decisions to reviewable evidence</h2>
+            <p className="eyebrow text-orange">Marketing content</p>
+            <h2>X-native hook으로 제품을 읽히게 만들기</h2>
           </div>
           <p>
-            AHEYABARAYA는 단순한 아이디어 소개가 아니라, 초기 제품에서 어떤 판단을 왜 내렸고 다음 검증에 어떤
-            데이터가 필요한지 남기는 evidence case로도 정리했습니다.
+            이 섹션은 제품 성과를 주장하기 위한 것이 아니라, 낯선 Web3 제품을 X에서 어떻게 설명하고 어떤 visual
+            hook으로 멈춰 보게 만들었는지 보여주는 evidence입니다.
           </p>
         </div>
         <div className="integrated-output-summary-grid">
-          {evidenceCards.map((item) => (
+          {creativeSignalRows.map((item) => (
+            <article key={item.label} className="integrated-output-summary-card">
+              <Megaphone className="h-5 w-5" />
+              <span>{item.label}</span>
+              <h3>{item.value}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="integrated-analytics-grid integrated-evidence-visual-grid-spaced">
+          {creativeAnalyticsImages.map((item) => (
+            <article key={item.src} className="integrated-analytics-card">
+              <div className="integrated-analytics-media">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 42vw"
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
+              <span>{item.title}</span>
+              <p>{item.caption}</p>
+            </article>
+          ))}
+        </div>
+        <div className="integrated-creative-media-grid integrated-evidence-visual-grid-spaced">
+          {creativeImages.map((src) => (
+            <div key={src} className="integrated-creative-media">
+              <Image
+                src={src}
+                alt="AHEYABARAYA X creative visual asset."
+                fill
+                sizes="(max-width: 1100px) 33vw, 28vw"
+                loading="eager"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="integrated-evidence-link-row">
+          <Link href="/creative/work/aheya" className="inline-link">
+            creative detail 보기
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="evidence" className="page-frame integrated-section">
+        <div className="integrated-section-head integrated-section-head-wide">
+          <div>
+            <p className="eyebrow text-aqua">KPI / SQL / Python evidence</p>
+            <h2>KPI를 판단 근거로 정리</h2>
+          </div>
+          <p>
+            실제 유저 데이터가 부족한 상태에서 KPI를 “성과”처럼 말하지 않았습니다. 대신 어떤 판단을 했고,
+            어떤 데이터가 있어야 다음 단계로 넘어갈 수 있는지 report output으로 분리했습니다.
+          </p>
+        </div>
+        <div className="integrated-output-summary-grid">
+          {evidenceLogicCards.map((item) => (
             <article key={item.title} className="integrated-output-summary-card">
               <BarChart3 className="h-5 w-5" />
-              <span>evidence</span>
+              <span>interpretation rule</span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -752,7 +728,13 @@ export default function AheyabarayaEvidencePage() {
           {dataEvidenceVisuals.map((item) => (
             <article key={item.src} className="integrated-evidence-visual-card">
               <div className="integrated-evidence-visual-media">
-                <Image src={item.src} alt={item.title} fill sizes="(max-width: 1100px) 100vw, 42vw" />
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 42vw"
+                  style={{ objectFit: "contain" }}
+                />
               </div>
               <div>
                 <span>{item.title}</span>
@@ -763,155 +745,97 @@ export default function AheyabarayaEvidencePage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="decision-packets" className="page-frame integrated-section">
+      <motion.section {...fadeUp} id="reports" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-indigo">Decision Packet Preview</p>
-            <h2>product decision → KPI / guardrail → next data</h2>
+            <p className="eyebrow text-indigo">Report preview</p>
+            <h2>output이 답하는 질문</h2>
           </div>
-          <p>대표 판단을 product decision, KPI / guardrail, next data 순서로 정리했습니다.</p>
+          <p>
+            채용 담당자가 CSV 파일을 직접 열어보지 않아도, 어떤 input을 어떤 판단 질문으로 바꿨는지 바로 읽히도록
+            representative rows만 페이지에 렌더링했습니다.
+          </p>
         </div>
-        <div className="integrated-decision-packet-grid">
-          {decisionPackets.map((item) => (
-            <article key={item.title} className="integrated-decision-packet-card">
+        <div className="integrated-preview-grid">
+          {sqlPythonEvidencePreviews.map((preview) => (
+            <article key={preview.title} className="integrated-preview-card">
               <div className="integrated-preview-card-head">
-                <GitBranch className="h-5 w-5" />
+                <FileText className="h-5 w-5" />
                 <div>
-                  <span>Decision packet</span>
-                  <h3>{item.title}</h3>
+                  <span>{preview.source}</span>
+                  <h3>{preview.title}</h3>
+                  <p>{preview.description}</p>
                 </div>
               </div>
-              <dl>
-                <div><dt>Decision</dt><dd>{item.decision}</dd></div>
-                <div>
-                  <dt>KPI / Guardrail</dt>
-                  <dd>{item.kpi.join(" / ")}</dd>
-                </div>
-                <div><dt>Next Data</dt><dd>{item.next}</dd></div>
-              </dl>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="trust-layer" className="page-frame integrated-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-orange">Advanced Layer</p>
-            <h2>Trust Evaluation Layer</h2>
-          </div>
-          <p>
-            AHEYABARAYA의 Trust layer는 core support flow와 분리했습니다. creator apply, support, feedback과
-            섞지 않고, 외부 작업 결과나 agent output을 평가 가능한 기록으로 바꾸는 별도 layer로 설계했습니다.
-          </p>
-        </div>
-        <div className="integrated-claim-grid">
-          {trustCards.map((item) => (
-            <article key={item.title} className="integrated-claim-card">
-              <ShieldCheck className="h-5 w-5" />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="research" className="page-frame integrated-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-aqua">GTM Translation</p>
-            <h2>From technical product logic to public-safe messaging</h2>
-          </div>
-          <p>
-            Web3 제품은 기능보다 먼저 오해를 줄이는 메시지 구조가 필요했습니다. support, feedback, proof,
-            XP를 각각 다른 의미로 정리해 사용자가 제품을 투자나 reward farming으로 읽지 않도록 조정했습니다.
-          </p>
-        </div>
-        <div className="integrated-output-summary-grid">
-          {gtmRules.map((item) => (
-            <article key={item.title} className="integrated-output-summary-card">
-              <Megaphone className="h-5 w-5" />
-              <span>GTM rule</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section {...fadeUp} id="creative" className="page-frame integrated-section integrated-creative-section">
-        <div className="integrated-section-head integrated-section-head-wide">
-          <div>
-            <p className="eyebrow text-orange">Creative Appendix</p>
-            <h2>AI-assisted creative and channel experiments</h2>
-          </div>
-          <p>
-            제품 흐름을 외부 채널에서 더 쉽게 이해시키기 위해 캐릭터, visual mood, short-form hook,
-            X-native copy, 이미지/영상 asset을 함께 실험했습니다.
-          </p>
-        </div>
-        <p className="integrated-section-lead">
-          이 섹션은 제품의 핵심 기능을 설명하기보다, 사용자가 처음 멈춰 보고 분위기를 이해하고 다음 행동으로
-          이동할 수 있는 visual entry point를 만드는 데 초점을 둡니다.
-        </p>
-        <div className="integrated-creative-grid">
-          <div className="integrated-creative-copy">
-            <div className="integrated-creative-signal-list">
-              {creativeSections.map((item) => (
-                <article key={item.title}>
-                  <span>{item.title}</span>
-                  <p>{item.body}</p>
-                </article>
-              ))}
-            </div>
-            <div className="integrated-analytics-grid">
-              {creativeAnalyticsImages.map((item) => (
-                <article key={item.src} className="integrated-analytics-card">
-                  <div className="integrated-analytics-media">
-                    <Image src={item.src} alt={item.title} fill sizes="(max-width: 1100px) 100vw, 32vw" />
-                  </div>
-                  <span>{item.title}</span>
-                  <p>{item.caption}</p>
-                </article>
-              ))}
-            </div>
-            <Link href="/creative/work/aheya" className="inline-link">
-              creative evidence 보기
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="integrated-creative-media-grid">
-            {creativeImages.map((src) => (
-              <div key={src} className="integrated-creative-media">
-                <Image
-                  src={src}
-                  alt="AHEYABARAYA creative appendix asset."
-                  fill
-                  sizes="(max-width: 1100px) 33vw, 14vw"
-                  loading="eager"
-                />
+              <div className="integrated-table-wrap">
+                <table className="integrated-preview-table">
+                  <thead>
+                    <tr>
+                      {preview.columns.map((column) => (
+                        <th key={column}>{column}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {preview.rows.slice(0, 2).map((row) => (
+                      <tr key={row.join("-")}>
+                        {row.map((cell, index) => (
+                          <td key={`${cell}-${index}`}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
       </motion.section>
 
       <motion.section {...fadeUp} id="collaboration" className="page-frame integrated-section">
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
-            <p className="eyebrow text-aqua">Collaboration Output</p>
-            <h2>Evidence를 협업툴별 검토 단위로 정리</h2>
+            <p className="eyebrow text-aqua">Collaboration output</p>
+            <h2>도구별 검토 단위로 변환</h2>
           </div>
           <p>
-            Notion, Google Sheets, Docs, Excel, Slack digest용 output은 실제 성과 주장이 아니라, 같은 판단
-            자료를 각 도구의 검토 방식에 맞춰 재구성하는 예시입니다.
+            Notion, Google Sheets, Google Docs, Excel/CSV, Slack digest는 실무 성과 주장이 아니라, 같은 판단
+            자료를 협업툴별로 읽기 좋게 정리하는 구조를 보여주는 산출물입니다.
           </p>
         </div>
-        <div className="integrated-collab-proof-grid">
+        <div className="integrated-collab-grid">
+          {collaborationWorkflowRows.map((item) => (
+            <article key={item.tool} className="integrated-collab-card">
+              <span>{item.tool}</span>
+              <h3>{item.object}</h3>
+              <dl>
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>{item.purpose}</dd>
+                </div>
+                <div>
+                  <dt>Output</dt>
+                  <dd>{item.output}</dd>
+                </div>
+                <div>
+                  <dt>Boundary</dt>
+                  <dd>{item.boundary}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+        <div className="integrated-collab-proof-grid integrated-evidence-visual-grid-spaced">
           {collaborationEvidenceVisuals.map((item) => (
             <a key={item.title} href={item.href} target="_blank" rel="noreferrer" className="integrated-collab-proof-card">
               <div className="integrated-collab-proof-media">
-                <Image src={item.src} alt={item.title} fill sizes="(max-width: 1100px) 100vw, 42vw" />
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 42vw"
+                  style={{ objectFit: "contain" }}
+                />
               </div>
               <div>
                 <span>{item.title}</span>
@@ -926,11 +850,11 @@ export default function AheyabarayaEvidencePage() {
         <div className="integrated-section-head integrated-section-head-wide">
           <div>
             <p className="eyebrow text-indigo">How to read this case</p>
-            <h2>이 케이스는 사업 성과가 아니라 구조화 역량을 보여준다</h2>
+            <h2>두 역할에 맞춰 읽기</h2>
           </div>
           <p>
-            초기 Web3 제품에서 문제정의, 사용자 흐름, interaction design, UI copy, KPI boundary, GTM message를
-            어떻게 하나의 검토 가능한 포트폴리오 case로 구조화했는지 보여주는 자료입니다.
+            이 케이스는 사업 성과를 크게 보이게 만드는 자료가 아닙니다. 초기 Web3 제품을 빠르게 만들고, 콘텐츠로
+            설명하고, evidence로 검토 가능하게 만든 과정을 보여주는 제출본입니다.
           </p>
         </div>
         <div className="integrated-role-grid">
@@ -950,14 +874,14 @@ export default function AheyabarayaEvidencePage() {
         <Sparkles className="h-5 w-5" />
         <div>
           <p className="eyebrow text-orange">What this case proves</p>
-          <h2>복잡한 Web3 제품 구조를 사용자 중심 UX flow로 바꾸는 능력</h2>
+          <h2>GPT/Codex/Grok build와 Web3 marketing content를 한 제품 케이스로 묶는 능력</h2>
           <p>
-            AHEYABARAYA를 통해 복잡한 Web3 제품 구조를 사용자가 이해할 수 있는 UX flow와 UI copy로 바꾸고,
-            그 뒤의 제품 판단을 KPI / evidence / creative output으로 정리했습니다.
+            AHEYABARAYA를 통해 문제정의, 공식 문서 기반 리서치, 제품 구현, X 콘텐츠 반복, KPI/SQL/Python evidence,
+            협업툴 output을 하나의 검토 가능한 포트폴리오 흐름으로 정리했습니다.
           </p>
           <p>
-            핵심은 단순히 아이디어를 설명하는 것이 아니라, 사용자가 어떤 행동을 해야 하는지, 제품은 어떤 상태를
-            보여줘야 하는지, 다음 검증에는 어떤 데이터가 필요한지를 구조화하는 것이었습니다.
+            다만 실제 제품 growth나 acquisition 성과는 주장하지 않습니다. 이 페이지가 보여주는 것은 빠른 제품 구현,
+            Web3 flow 설계, 콘텐츠 메시지 전환, 그리고 과장하지 않는 evidence 관리입니다.
           </p>
           <div className="integrated-collab-grid">
             {capabilityCards.map((item) => (
@@ -968,9 +892,18 @@ export default function AheyabarayaEvidencePage() {
             ))}
           </div>
           <div className="integrated-boundary-links">
-            <Link href="/creative/work/aheya" className="inline-link">Creative appendix <ArrowUpRight className="h-4 w-4" /></Link>
-            <Link href="/pm" className="inline-link">PM front door <ArrowUpRight className="h-4 w-4" /></Link>
-            <Link href="/crossangle" className="inline-link">Web3 front door <ArrowUpRight className="h-4 w-4" /></Link>
+            <a href="https://aheyabaraya.xyz" target="_blank" rel="noreferrer" className="inline-link">
+              Live product
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+            <Link href="/creative/work/aheya" className="inline-link">
+              Creative detail
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <a href="https://x.com/minnns_aheya" target="_blank" rel="noreferrer" className="inline-link">
+              X channel
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
         <Sparkles className="h-5 w-5 integrated-boundary-spark" />

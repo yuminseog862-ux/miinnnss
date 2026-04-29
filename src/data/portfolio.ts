@@ -187,6 +187,7 @@ export type WorkCase = {
   hideLeadStageLabel?: boolean;
   detailHeroHighlights?: StructuredBlock[];
   detailHeroHighlightsPosition?: "cover" | "lead";
+  detailHeroSummaryLines?: string[];
   detailHeroProof?: PlaceholderMedia;
   galleryColumns?: 3 | 4;
   detailMediaSections?: DetailMediaSection[];
