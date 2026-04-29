@@ -648,7 +648,7 @@ export const workCases: WorkCase[] = [
             note: "브랜드 리서치와 실무진 협업을 바탕으로 초기 훅, 모티프, 장면 구조를 기획하고, 무드보드와 레퍼런스 리서치로 방향을 정리한 단계입니다.",
             src: "/appendix/bluegarage/adsb/stage-direction-wide.webp",
             alt: "ADSB concept, mood, and research collage.",
-            fit: "cover",
+            fit: "contain",
           },
           {
             label: "5-7. 수정 전 시안 3개",
