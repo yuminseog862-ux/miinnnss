@@ -54,43 +54,24 @@ const coreAxes = [
   },
 ];
 
-const roleFitCards = [
+const recruiterFitRows = [
   {
-    title: "Ad Hook Planning",
-    body:
-      "타깃이 먼저 멈추는 장면과 문장을 정하고, 기능 설명보다 문제 인식과 첫 시선을 먼저 설계합니다.",
-    proof: "target / message / first hook",
+    need: "광고 목적 콘텐츠 기획",
+    proof: "AHEYABARAYA에서 타깃, 문제 메시지, 첫 시각 훅을 분리했습니다.",
+    output: "X 포스트 후보 / 캐릭터 훅 / 짧은 CTA 카피",
+    href: "#planning",
   },
   {
-    title: "AI Short-form Production",
-    body:
-      "세계관, 캐릭터, 감정선을 이미지와 숏폼 후보로 바꿔 광고 소재 관점에서 검토할 수 있게 만듭니다.",
-    proof: "character / emotion / video asset",
+    need: "AI 숏폼 제작",
+    proof: "Andersson Bell 무드를 고정 앵글 15초 광고 흐름으로 좁혔습니다.",
+    output: "브랜드 리서치 / 스토리보드 / AI 이미지 / Kling 영상",
+    href: "#adsb",
   },
   {
-    title: "Creative Workflow Loop",
-    body:
-      "단발성 제작에 그치지 않고, 후보 생성과 관찰 신호를 다음 훅과 프롬프트 수정으로 연결합니다.",
-    proof: "daily candidates / learning loop",
-  },
-];
-
-const creativeLayers = [
-  {
-    label: "Worldbuilding",
-    text: "제품을 기능 설명에만 의존하지 않고, 기억되는 세계관과 분위기로 먼저 읽히게 합니다.",
-  },
-  {
-    label: "Character",
-    text: "대표 캐릭터를 브랜드의 얼굴이자 피드에서 멈추게 하는 첫인상 자산으로 씁니다.",
-  },
-  {
-    label: "Emotion",
-    text: "신비감, 강렬함, 호기심처럼 첫 1-3초에 전달될 감정을 장면과 영상 흐름으로 설계합니다.",
-  },
-  {
-    label: "First Hook",
-    text: "시각 훅은 주목을 만들고, 짧은 카피는 타깃의 문제 인식으로 이어지게 분리합니다.",
+    need: "제작 워크플로우 효율화",
+    proof: "Hermes/Aurora 구조를 광고 소재 후보 생성 루프로 정리했습니다.",
+    output: "Brief → Asset → Review → Learning 운영 구조",
+    href: "#loop",
   },
 ];
 
@@ -154,7 +135,7 @@ const planningSignals = [
 
 const aheyaPageSurfaces = [
   {
-    label: "Live App Surface",
+    label: "AHEYA page",
     body: "홈 화면의 큰 문장과 캐릭터 이미지를 함께 보여줘, 캐릭터가 단순 이미지가 아니라 제품 첫인상으로 읽히게 했습니다.",
   },
   {
@@ -251,6 +232,17 @@ const adsbDecisionCards = [
   },
 ];
 
+const caseReadout = [
+  {
+    label: "What HR should see",
+    body: "캐릭터를 많이 만든 것이 아니라, 광고 훅으로 쓸 수 있는 시각 자산과 문제 카피를 분리해 판단했습니다.",
+  },
+  {
+    label: "Why it matters",
+    body: "GIGR 업무에서 필요한 것은 결과물 나열보다 타깃이 멈추는 이유와 다음 소재로 이어지는 판단입니다.",
+  },
+];
+
 export default function GigrPage() {
   return (
     <main className="cinema-shell gigr-shell">
@@ -273,13 +265,29 @@ export default function GigrPage() {
         <div className="gigr-hero">
           <motion.div {...fadeUp} className="gigr-hero-copy">
             <h1 className="gigr-hero-title">
-              브랜드 첫인상을 캐릭터와 장면으로 압축해 X 포스트와 숏폼 광고 자산으로 만듭니다.
+              광고 훅을 기획하고 AI 숏폼 후보로 바꾸는 제작자입니다.
             </h1>
             <p className="gigr-hero-summary">
-              타깃과 광고 목적을 먼저 잡고, 빠른 피드에서 멈추게 할 캐릭터, 시각 장면, 첫 1-3초
-              훅과 짧은 카피로 바꿉니다. 이 후보를 AI 숏폼 자산으로 만들고 관찰한 신호를 다음
-              브리프로 되돌립니다.
+              세계관과 캐릭터를 만드는 데서 끝내지 않고, 타깃이 멈추는 장면, 짧은 카피, 15초 영상 흐름,
+              다음 제작 브리프까지 연결합니다.
             </p>
+            <div className="gigr-hero-brief">
+              <article>
+                <span>01</span>
+                <strong>Ad Hook</strong>
+                <p>타깃 문제와 첫 장면을 먼저 정합니다.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <strong>AI Short-form</strong>
+                <p>이미지와 영상 후보를 광고 소재처럼 판단합니다.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <strong>Learning Loop</strong>
+                <p>관찰 신호를 다음 카피와 프롬프트로 되돌립니다.</p>
+              </article>
+            </div>
             <div className="hero-ctas">
               <a href="#aheya" className="cta-primary">
                 대표 케이스 보기
@@ -324,10 +332,10 @@ export default function GigrPage() {
       </section>
 
       <motion.section {...fadeUp} id="role" className="page-frame gigr-section gigr-role-section">
-        <div className="gigr-role-head">
+        <div className="gigr-recruiter-head">
           <div>
-            <p className="eyebrow text-aqua">Role Fit for GIGR</p>
-            <h2 className="section-title">세계관과 캐릭터를 광고 훅, 숏폼 자산, 제작 루프로 전환합니다</h2>
+            <p className="eyebrow text-aqua">Recruiter View</p>
+            <h2 className="section-title">GIGR 업무와 바로 연결되는 증거만 먼저 보입니다</h2>
           </div>
           <p>
             기존 작업에서 다뤄온 세계관, 캐릭터, 감정, 첫 훅 설계를 GIGR의 업무인 광고 목적
@@ -336,41 +344,26 @@ export default function GigrPage() {
           </p>
         </div>
 
-        <div className="gigr-role-grid">
-          {roleFitCards.map((card) => (
-            <article key={card.title} className="gigr-role-card">
-              <p>{card.proof}</p>
-              <h3>{card.title}</h3>
-              <span>{card.body}</span>
-            </article>
-          ))}
-        </div>
-
-        <article className="gigr-applied-loop-card">
-          <div>
-            <p className="eyebrow text-indigo">Applied Loop</p>
-            <h3>이 방식은 광고 소재 후보 생성 루프로 연결됩니다.</h3>
-          </div>
-          <div>
-            <p>
-              타깃과 광고 목적을 먼저 정하고, 첫 1-3초 훅·카피·AI 숏폼 후보를 빠르게 만든 뒤,
-              관찰 신호를 다음 소재 기획으로 되돌리는 구조입니다.
-            </p>
-            <div className="gigr-applied-steps">
-              <span>Target</span>
-              <span>1-3s Hook</span>
-              <span>Copy</span>
-              <span>AI Short-form Candidate</span>
-              <span>Next Creative Brief</span>
-            </div>
-          </div>
-        </article>
-
-        <div className="gigr-creative-layer">
-          {creativeLayers.map((layer) => (
-            <article key={layer.label}>
-              <strong>{layer.label}</strong>
-              <span>{layer.text}</span>
+        <div className="gigr-fit-table" aria-label="GIGR role fit evidence">
+          {recruiterFitRows.map((row, index) => (
+            <article key={row.need} className="gigr-fit-row">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <small>GIGR에서 필요한 일</small>
+                <strong>{row.need}</strong>
+              </div>
+              <div>
+                <small>이 포트폴리오의 증거</small>
+                <p>{row.proof}</p>
+              </div>
+              <div>
+                <small>확인 가능한 산출물</small>
+                <p>{row.output}</p>
+              </div>
+              <a href={row.href} aria-label={`${row.need} evidence section`}>
+                보기
+                <ArrowDownRight className="h-4 w-4" />
+              </a>
             </article>
           ))}
         </div>
@@ -380,7 +373,7 @@ export default function GigrPage() {
         <div className="section-heading">
           <div>
             <p className="eyebrow text-aqua">What I Do</p>
-            <h2 className="section-title">광고 소재로 읽히게 만드는 네 가지 축</h2>
+            <h2 className="section-title">작업 방식은 네 단계로 읽힙니다</h2>
           </div>
         </div>
 
@@ -413,12 +406,11 @@ export default function GigrPage() {
         <div className="gigr-planning-head">
           <div>
             <p className="eyebrow text-orange">Planning & Signal</p>
-            <h2 className="section-title">시각 훅은 주목을 만들고, 카피는 문제 공감을 만든다는 학습</h2>
+            <h2 className="section-title">AHEYABARAYA에서 얻은 제작 판단</h2>
           </div>
           <p>
-            AHEYABARAYA의 이미지와 영상은 문제를 직접 설명하는 자산이 아니라, X 피드에서 먼저
-            멈추게 만든 뒤 문제 정의와 카피를 읽게 하기 위한 진입점이었습니다. 반응을 보며 캐릭터 자산의
-            역할과 문제 메시지의 역할을 분리해 다시 정리했습니다.
+            채용자가 봐야 할 핵심은 캐릭터 수가 아니라 판단입니다. 캐릭터는 주목 장치로, 카피는 문제
+            인식 장치로 분리했고 그 결과 다음 소재 브리프가 더 명확해졌습니다.
           </p>
         </div>
 
@@ -474,13 +466,22 @@ export default function GigrPage() {
         <div className="gigr-case-head">
           <div>
             <p className="eyebrow text-aqua">Flagship Case</p>
-            <h2 className="section-title">AHEYABARAYA Creative Hook System</h2>
+            <h2 className="section-title">AHEYABARAYA는 캐릭터를 광고 훅으로 검토한 케이스입니다</h2>
           </div>
           <p>
             별도 브랜딩 채널에서 캐릭터와 영상을 X 카피의 진입점으로 사용했습니다. 이미지와 영상은
             문제 공감 자체를 만드는 장치가 아니라, 피드에서 먼저 멈추게 한 뒤 문제 정의와 카피를
             읽게 만드는 시각적 진입점이었습니다.
           </p>
+        </div>
+
+        <div className="gigr-case-readout">
+          {caseReadout.map((item) => (
+            <article key={item.label}>
+              <strong>{item.label}</strong>
+              <span>{item.body}</span>
+            </article>
+          ))}
         </div>
 
         <div className="gigr-aheya-grid">
@@ -584,6 +585,16 @@ export default function GigrPage() {
       </motion.section>
 
       <motion.section {...fadeUp} id="adsb" className="page-frame gigr-section">
+        <div className="gigr-case-head gigr-adsb-head">
+          <div>
+            <p className="eyebrow text-orange">External Brand Case</p>
+            <h2 className="section-title">Andersson Bell은 AI 숏폼 방향을 수렴한 케이스입니다</h2>
+          </div>
+          <p>
+            이 섹션은 결과 영상보다 의사결정을 먼저 보여줍니다. 콜라주식 장면 나열에서 고정 앵글
+            15초 흐름으로 좁힌 이유가 GIGR의 광고 소재 판단과 연결됩니다.
+          </p>
+        </div>
         <div className="gigr-adsb-row">
           <div className="gigr-adsb-video">
             <video playsInline muted loop autoPlay controls preload="metadata" poster="/work/andersson-bell-cover.webp">
@@ -592,8 +603,6 @@ export default function GigrPage() {
           </div>
 
           <div className="gigr-adsb-copy">
-            <p className="eyebrow text-orange">External Brand Case</p>
-            <h2 className="section-title">Andersson Bell AI Short-form</h2>
             <p className="gigr-section-copy">
               브랜드 무드와 대표 장면을 AI 숏폼 광고 흐름으로 수렴시킨 케이스입니다. 처음에는
               콜라주 중심의 방향을 시도했지만, 피드백 이후 완성도가 낮게 읽히는 지점과 시선 분산을
