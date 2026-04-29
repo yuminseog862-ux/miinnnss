@@ -20,7 +20,7 @@ export const siteTitle = "minnns / Xangle GTM 지원 포트폴리오";
 
 export const heroTitleLines = [
   "Web3 리서치를 GTM 산출물로 전환한",
-  "AHEYABARAYA 기반 Xangle GTM 케이스.",
+  "AHEYABARAYA 케이스.",
 ] as const;
 
 export const heroContent: HeroContent = {
@@ -191,9 +191,9 @@ export const gtmWorkflowContent = {
       label: "Publish / Operate",
       title: "발행한 것",
       body:
-        "AHEYABARAYA 잔여 자산 소비 흐름 소개 구조\nX 포스트 5개와 포스팅 목적\nX/숏폼용 이미지·영상 콘텐츠\n보상형 CTA를 피한 가치 중심 업데이트 기준",
+        "AHEYABARAYA 잔여 자산 소비 흐름 서비스 및 소개 구조\nX 포스트 5개와 포스팅 목적\nX/숏폼용 이미지·영상 콘텐츠",
       proof: "산출물 → 프로젝트 노트, X 훅, 이미지·영상 자산",
-      output: "운영 → 리서치 판단을 채널 업데이트 단위로 전환",
+      output: "운영 → 리서치 판단을 적용한 서비스를 채널 업데이트 단위로 전환",
       accent: "indigo" as const,
     },
   ],
@@ -479,7 +479,7 @@ export const additionalCreativeLinks = [
 
 export const adsbSupportingProof = {
   eyebrow: "Supporting Proof",
-  title: "핵심은 AHEYABARAYA, 보조 증거는 숏폼 기획과 리서치 writing",
+  title: "보조 증거 : 숏폼 기획 및 리서치 writing",
   summary:
     "CrossAngle GTM의 핵심 증거는 AHEYABARAYA입니다. ADSB와 SFTI-CMU는 하단 보조 증거로만 두어, 리서치와 브랜드 해석을 짧은 콘텐츠·읽히는 문서 구조로 바꾸는 역량을 보완합니다.",
   label: "ADSB / Andersson Bell",
@@ -655,11 +655,11 @@ export const xPostingLinks = [
     testPurpose:
       "• 추가 공개 포스트를 원문 기준으로 함께 확인",
     sourceBasis:
-      "• 실제 공개 링크 기준\n• 메인 요약에서는 제외하고 상세 증거로만 배치",
+      "• 실제 공개 링크 기준\n• 메인 X 포스팅 5개 구성에 포함",
     note:
       "• 추가 공개 포스트 원문 확인용 항목",
     accent: "indigo" as const,
-    featuredOnMain: false,
+    featuredOnMain: true,
   },
   {
     label: "X 포스트 03",
@@ -803,7 +803,7 @@ export const mainEvidenceContent = {
   },
   content: {
     eyebrow: "X Posting / Video Content",
-    title: "대표 X 포스트 4개와 영상 콘텐츠",
+    title: "대표 X 포스트 5개와 영상 콘텐츠",
     summary:
       "원문이 확인되는 X 포스트 중 이미지·링크·프로젝트 메시지가 붙은 포스트를 우선 배치하고, AHEYABARAYA를 설명하기 위해 만든 영상 자산을 함께 보여줍니다.",
     posts: xPostingLinks.filter((post) => post.featuredOnMain).map((post) => ({
@@ -1041,10 +1041,16 @@ const aheya = adaptCase(baseAheya, {
         },
         {
           label: "Core rail / Dust mode",
-          note: "• 지갑에 남은 소액 native gas token·project token을 제품·서비스 소비와 소액 후원으로 연결\n• Good/Improve 피드백까지 남겨 초기 반응을 reusable proof로 전환",
-          src: "/aheya/home-hero.webp",
+          note: "• 지갑에 남은 소액 native gas token·project token을 효용성 있는 제품·서비스 소비와 소액 후원으로 연결\n• Good/Improve 피드백까지 남겨 초기 반응을 reusable proof로 전환",
+          src: "/aheya/corerail-support-vid.mp4",
           alt: "AHEYABARAYA Dust mode and wallet support entry surface.",
+          type: "video",
+          poster: "/aheya/home-hero.webp",
           fit: "contain",
+          autoPlay: true,
+          muted: true,
+          loop: true,
+          showControls: false,
           copyHighlights: [
             {
               title: "Solution",

@@ -2514,7 +2514,7 @@ a {
 }
 
 .crossangle-main-x-embed-grid .detail-media-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1rem;
   align-items: start;
   margin-top: 0;
@@ -2535,7 +2535,30 @@ a {
 }
 
 .crossangle-main-x-embed-grid .detail-media-x-iframe {
-  height: clamp(34rem, 45vw, 42rem);
+  height: clamp(42rem, 55vw, 52rem);
+}
+
+.crossangle-hero-live-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.crossangle-hero-live-link:hover .bluegarage-poster-image {
+  transform: scale(1.01);
+}
+
+.crossangle-aheya-creative-proof,
+#shortform-proof {
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.crossangle-aheya-creative-summary {
+  max-width: 62rem;
+  margin: -0.35rem 0 1.05rem;
+  color: var(--muted);
+  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  line-height: 1.72;
 }
 
 .crossangle-x-post-card {
@@ -4231,6 +4254,7 @@ a {
   margin: 0.85rem 0 0;
   color: var(--muted);
   line-height: 1.8;
+  white-space: pre-line;
 }
 
 .detail-inline-list {
@@ -4721,6 +4745,10 @@ a {
   border-radius: 1rem;
 }
 
+.detail-media-link-trigger {
+  cursor: pointer;
+}
+
 .detail-media-stack-list {
   display: grid;
   gap: 1rem;
@@ -4828,6 +4856,7 @@ a {
   color: var(--muted);
   max-width: 34rem;
   line-height: 1.72;
+  white-space: pre-line;
 }
 
 .detail-media-row-copy-support {
@@ -4925,6 +4954,7 @@ a {
   color: rgba(246, 242, 233, 0.88);
   font-size: 0.82rem;
   line-height: 1.45;
+  white-space: pre-line;
 }
 
 .detail-media-row-highlight-list {
@@ -5041,6 +5071,7 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+  white-space: pre-line;
 }
 
 .detail-media-comparison {
@@ -5130,11 +5161,22 @@ a {
   margin: 0;
   color: var(--muted);
   line-height: 1.56;
+  white-space: pre-line;
 }
 
 .detail-shell-andersson-bell .detail-mockup-hero {
   grid-template-columns: minmax(0, 1fr) minmax(14rem, 17rem);
   gap: 1rem;
+}
+
+.detail-shell-adsb .detail-media-stack-list .detail-media-row:first-child .detail-media-row-visual {
+  aspect-ratio: 16 / 9;
+  min-height: clamp(16rem, 30vw, 24rem);
+  padding: 0.35rem;
+}
+
+.detail-shell-adsb .detail-media-stack-list .detail-media-row:first-child .detail-media-image {
+  object-fit: contain !important;
 }
 
 .detail-shell-andersson-bell .detail-cover-side {
@@ -5623,6 +5665,7 @@ a {
   margin-top: 0.8rem;
   color: var(--muted);
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .detail-media-card-compact-strip .detail-media-label {
@@ -9341,11 +9384,39 @@ a {
   margin-top: clamp(2rem, 4vw, 4rem);
 }
 
+.aheyabaraya-workflow-panel .crossangle-workflow-card {
+  grid-template-rows: auto auto auto;
+  min-height: 18.5rem;
+}
+
+.aheyabaraya-workflow-panel .crossangle-workflow-grid {
+  align-items: stretch;
+}
+
 .aheyabaraya-workflow-panel .crossangle-workflow-head h2,
 .aheyabaraya-feature-panel .crossangle-workflow-head h2,
 .aheyabaraya-trust-panel .crossangle-workflow-head h2 {
   max-width: 15ch;
   letter-spacing: 0;
+}
+
+.integrated-section-lead {
+  max-width: 62rem;
+  margin: -0.1rem 0 1.35rem;
+  color: rgba(246, 242, 233, 0.82);
+  font-size: clamp(1rem, 1.32vw, 1.16rem);
+  line-height: 1.75;
+}
+
+.integrated-card-body {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.integrated-evidence-visual-grid-spaced {
+  margin-top: 1.15rem;
 }
 
 .aheyabaraya-feature-panel .crossangle-workflow-card {

@@ -7,6 +7,7 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 import { DetailMediaGallery } from "@/components/detail-media-gallery";
 import type { Accent } from "@/data/portfolio";
+import { workCaseMap as creativeWorkCaseMap } from "@/data/portfolio.creative";
 import {
   adsbSupportingProof,
   footerContent,
@@ -36,6 +37,7 @@ export default function CrossanglePage() {
   const problemSolutionGroups = detailProblemGroups.slice(2, 4);
   const hasDetailProblemGroups = problemResearchGroups.length > 0 && problemSolutionGroups.length > 0;
   const projectPackageSection = flagshipCase.detailMediaSections?.[0];
+  const aheyaCreativeSection = creativeWorkCaseMap["aheya"]?.detailMediaSections?.[0];
   const heroPoster = flagshipCase.coverImage ?? {
     src: "/aheya/home-hero.webp",
     alt: "AHEYA homepage hero screenshot.",
@@ -118,7 +120,13 @@ export default function CrossanglePage() {
             transition={{ duration: 0.62, ease: "easeOut" }}
             className="bluegarage-poster-stage tainai-hero-poster-stage"
           >
-            <div className="bluegarage-poster-media-shell tainai-hero-poster-shell">
+            <a
+              href="https://aheyabaraya.xyz"
+              target="_blank"
+              rel="noreferrer"
+              className="bluegarage-poster-media-shell tainai-hero-poster-shell crossangle-hero-live-link"
+              aria-label="AHEYABARAYA live site open"
+            >
               <div className="bluegarage-poster-media">
                 <Image
                   src={heroPoster.src}
@@ -131,7 +139,7 @@ export default function CrossanglePage() {
                 />
               </div>
               <div className="bluegarage-poster-overlay tainai-hero-poster-overlay" />
-            </div>
+            </a>
           </motion.aside>
         </div>
 
@@ -388,7 +396,7 @@ export default function CrossanglePage() {
 
         <div className="crossangle-main-x-embed-grid" aria-label="AHEYABARAYA X posting samples">
           <DetailMediaGallery
-            columns={4}
+            columns={5}
             items={mainEvidenceContent.content.posts.map((post) => ({
               label: `${post.label} · ${post.date}`,
               note: post.title,
@@ -418,6 +426,40 @@ export default function CrossanglePage() {
           ))}
         </div>
       </motion.section>
+
+      {aheyaCreativeSection ? (
+        <motion.section
+          {...fadeUp}
+          id="aheya-creative-proof"
+          className="page-frame crossangle-main-frame crossangle-aheya-creative-proof"
+        >
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow text-aqua">AHEYA Creative Surface</p>
+              <h2 className="section-title">{aheyaCreativeSection.title}</h2>
+            </div>
+            <Link href="/creative/work/aheya" className="inline-link">
+              AHEYA 상세 보기
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
+
+          {aheyaCreativeSection.summary ? (
+            <p className="crossangle-aheya-creative-summary">{aheyaCreativeSection.summary}</p>
+          ) : null}
+
+          <DetailMediaGallery
+            items={aheyaCreativeSection.items.map((item) => ({
+              ...item,
+              href: "https://aheyabaraya.xyz/",
+              hrefLabel: "AHEYABARAYA 이동",
+            }))}
+            columns={aheyaCreativeSection.columns ?? 2}
+            layout={aheyaCreativeSection.layout}
+            imageClickBehavior="href"
+          />
+        </motion.section>
+      ) : null}
 
       <motion.section {...fadeUp} id="shortform-proof" className="page-frame crossangle-main-frame">
         <div className="section-heading">
@@ -539,7 +581,7 @@ function getResearchField(fields: Array<{ label: string; value: string }>, label
 
 function renderResearchFieldValue(value: string) {
   const lines = value
-    .split("\n")
+    .split(/\n|(?=•\s)/)
     .map((line) => line.trim())
     .filter(Boolean);
 

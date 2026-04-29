@@ -10,6 +10,7 @@ type DetailMediaGalleryProps = {
   columns?: 2 | 3 | 4 | 5;
   layout?: "grid" | "stack" | "carousel" | "comparison";
   variant?: "default" | "compact-strip";
+  imageClickBehavior?: "lightbox" | "href";
 };
 
 declare global {
@@ -97,6 +98,7 @@ export function DetailMediaGallery({
   columns = 3,
   layout = "grid",
   variant = "default",
+  imageClickBehavior = "lightbox",
 }: DetailMediaGalleryProps) {
   const [activeMedia, setActiveMedia] = useState<PlaceholderMedia | null>(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -422,28 +424,46 @@ export function DetailMediaGallery({
         );
       }
 
+      const visual = (
+        <div className={mediaClassName}>
+          <Image
+            src={item.src}
+            alt={item.alt ?? item.label}
+            fill
+            sizes={isFeaturedCard ? "(max-width: 1100px) 100vw, 100vw" : "(max-width: 1100px) 100vw, 33vw"}
+            className="detail-media-image"
+            style={{
+              objectFit: item.fit ?? "contain",
+              objectPosition: item.position ?? "center",
+            }}
+            priority={item.featured}
+          />
+          <span className="detail-media-zoom-pill">{imageClickBehavior === "href" && item.href ? "Open" : "Expand"}</span>
+        </div>
+      );
+
+      if (imageClickBehavior === "href" && item.href) {
+        return (
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noreferrer"
+            className="detail-media-trigger detail-media-link-trigger"
+            aria-label={`${item.label} 링크 열기`}
+          >
+            {visual}
+          </a>
+        );
+      }
+
       return (
-          <button
+        <button
           type="button"
           className="detail-media-trigger"
           onClick={() => setActiveMedia(item)}
           aria-label={`Expand ${item.label}`}
         >
-          <div className={mediaClassName}>
-            <Image
-              src={item.src}
-              alt={item.alt ?? item.label}
-              fill
-              sizes={isFeaturedCard ? "(max-width: 1100px) 100vw, 100vw" : "(max-width: 1100px) 100vw, 33vw"}
-              className="detail-media-image"
-              style={{
-                objectFit: item.fit ?? "contain",
-                objectPosition: item.position ?? "center",
-              }}
-              priority={item.featured}
-            />
-            <span className="detail-media-zoom-pill">Expand</span>
-          </div>
+          {visual}
         </button>
       );
     }
