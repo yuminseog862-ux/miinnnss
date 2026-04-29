@@ -183,7 +183,7 @@ export const gtmWorkflowContent = {
       body:
         "소액 온체인 자산은 제품·서비스 소비 효용으로 이어지기보다 숨김·방치·정리 대상으로 남기 쉬움\nACP v1은 Job Offering, Job, Memo, Smart Contract Escrow, Evaluation, Completion phase를 통해 작업 흐름을 기록함\nagent의 산출물 품질·판단 이유·재사용 가능한 평가 기록은 별도 구조가 필요함",
       proof: "뽑은 판단 → 방치되는 잔여 자산의 사용 공백, ACP v1 기록과 품질 평가의 차이",
-      output: "적용 → AHEYABARAYA의 Dust mode / project information / evidence 구조",
+      output: "적용 → AHEYABARAYA의 Dust mode(소액 후원) / project information / evidence 구조",
       accent: "orange" as const,
     },
     {
@@ -215,7 +215,7 @@ export const researchInputContent = {
       judgment:
         "작업 방식은 여전히 포인트, 클레임, 거래량, 브릿지, 스테이킹, 배지, 자격 조건으로 반복됩니다. 그러나 지갑에 남은 소액 native gas token과 project token은 거래소로 보내기엔 작고, 다시 온체인에서 쓰기엔 gas·체인·용도 장벽이 있어 숨김, 방치, 정리 대상으로 남기 쉽다고 판단했습니다.",
       applied:
-        "AHEYABARAYA는 이 방치되는 자산을 Dust mode(소액 온체인 자산 소비 모드)로 재정의했습니다. EVM/Base와 Solana 지갑에 남은 소액 자산으로 제품·서비스를 써보고 후원하는 소비 흐름을 만들고, 작은 금액이 모이면 창작자·빌더에게는 첫 신호와 피드백이 되고 유저에게는 토큰을 실제로 써보는 경험이 된다고 봤습니다.",
+        "AHEYABARAYA는 이 방치되는 자산을 Dust mode(소액 후원)로 재정의했습니다. EVM/Base와 Solana 지갑에 남은 소액 자산으로 제품·서비스를 써보고 후원하는 소비 흐름을 만들고, 작은 금액이 모이면 창작자·빌더에게는 첫 신호와 피드백이 되고 유저에게는 토큰을 실제로 써보는 경험이 된다고 봤습니다.",
       accent: "aqua" as const,
     },
     {
@@ -294,7 +294,7 @@ export const gtmOutputContent = {
         "Signal: 지갑에 남은 소액 native gas token과 project token은 방치되기 쉬움",
         "Brief: 방치되는 잔여 자산을 제품·서비스 소비와 소액 후원 신호로 바꿀 수 있는가",
         "X hook: 지갑에 남은 소액 자산도 제품을 써보는 신호가 될 수 있을까",
-        "Update: Dust mode 데모 클립 + 프로젝트 한 줄 설명 + 다음 포스트 기준",
+        "Update: Dust mode(소액 후원) 데모 클립 + 프로젝트 한 줄 설명 + 다음 포스트 기준",
       ],
       accent: "orange" as const,
     },
@@ -332,10 +332,10 @@ export const gtmOutputContent = {
       "AHEYABARAYA를 외부 독자가 빠르게 이해할 수 있는 프로젝트 정보 구조로 압축한 결과입니다.",
     fields: [
       { label: "Category", value: "Web3 효용 / 창작자·빌더 초기 반응 / agent 품질 평가 케이스" },
-      { label: "One-line", value: "에어드랍·퀘스트·거래 이후 지갑에 방치되기 쉬운 소액 온체인 자산을 Dust mode(소액 자산 소비 모드)로 제품·서비스 소비·후원·피드백 흐름에 연결하는 Web3 프로젝트" },
+      { label: "One-line", value: "에어드랍·퀘스트·거래 이후 지갑에 방치되기 쉬운 소액 온체인 자산을 Dust mode(소액 후원)로 제품·서비스 소비·후원·피드백 흐름에 연결하는 Web3 프로젝트" },
       { label: "Primary users", value: "AI-native builder / 지갑 기반 참여자 / agent builder" },
       { label: "Problem", value: "만드는 속도는 빨라졌지만 첫 유저, 명확한 피드백, 다시 쓸 수 있는 증거 확보는 느림" },
-      { label: "Solution", value: "방치 자산 기반 Dust mode + 제품·서비스 사용·후원 + 좋았던 점/개선할 점 피드백 + agent 품질 평가 기록" },
+      { label: "Solution", value: "방치 자산 기반 Dust mode(소액 후원) + 제품·서비스 사용·후원 + 좋았던 점/개선할 점 피드백 + agent 품질 평가 기록" },
       { label: "Evidence", value: "문제정의 리서치 / Virtual Protocol / ACP v1 비교 관찰 / X 발행 기준" },
       { label: "Update note", value: "기능 설명보다 실제 사용 효용, 피드백, agent 품질 판단 중심으로 외부 설명을 재정렬" },
     ],
@@ -527,7 +527,7 @@ export const flagshipShowcaseCards: FlagshipShowcaseCard[] = [
     src: "/aheya/lane-panels.webp",
     alt: "AHEYABARAYA creator and founder utility structure screenshot.",
     label: "Builder utility",
-    title: "Dust mode로 방치 자산을 제품·서비스 후원에 쓰는 흐름",
+    title: "Dust mode(소액 후원)로 방치 자산을 제품·서비스 후원에 쓰는 흐름",
     body:
       "에어드랍·퀘스트·거래 뒤 지갑에 남은 소액 온체인 자산을 실제 제품·서비스 사용, 소액 후원, 좋았던 점/개선할 점 피드백으로 연결하려 했습니다.",
     fit: "contain",
@@ -736,7 +736,7 @@ export const mainEvidenceContent = {
           "Base/EVM gas fee와 ERC-20 transfer·holding record, Solana fee structure와 token account / CloseAccount, 2025년 말 에어드롭 사용자·세그먼트 자료, Galxe·Zealy 작업 흐름",
         insight:
           "에어드랍·퀘스트·거래 이후 남은 소액 native gas token과 project token은 거래소로 보내기엔 작고 다시 온체인에서 쓰기엔 애매해 방치되기 쉽다",
-        applied: "적용: 반복 작업 이후 방치되는 잔여 자산을 Dust mode의 제품·서비스 소비 -> 소액 후원 -> 피드백 구조로 전환",
+        applied: "적용: 반복 작업 이후 방치되는 잔여 자산을 Dust mode(소액 후원)의 제품·서비스 소비 -> 소액 후원 -> 피드백 구조로 전환",
         accent: "aqua" as const,
       },
       {
@@ -778,7 +778,7 @@ export const mainEvidenceContent = {
     oneLiner:
       "리서치에서 뽑은 문제를 AHEYABARAYA의 제품 구조, 프로젝트 소개, X/미디어 콘텐츠로 옮겼습니다.",
     points: [
-      "에어드랍·퀘스트·거래 이후 방치되기 쉬운 소액 온체인 자산을 Dust mode의 제품·서비스 소비·후원 흐름으로 재해석",
+      "에어드랍·퀘스트·거래 이후 방치되기 쉬운 소액 온체인 자산을 Dust mode(소액 후원)의 제품·서비스 소비·후원 흐름으로 재해석",
       "agent 작업 완료 기록 위에 구조화된 리뷰, 판단 이유, 재사용 가능한 평가 기록을 더하는 방향으로 정리",
       "문제정의와 프로젝트 구조를 X 포스팅, 짧은 훅, 이미지·영상 콘텐츠로 전환",
     ],
@@ -837,7 +837,7 @@ export const mainEvidenceContent = {
       {
         label: "Product demo",
         title: "창작자·빌더 utility demo",
-        note: "방치되기 쉬운 소액 온체인 자산의 즉각적 효용 공백을 Dust mode의 제품·서비스 소비·후원 흐름으로 옮긴 데모",
+        note: "방치되기 쉬운 소액 온체인 자산의 즉각적 효용 공백을 Dust mode(소액 후원)의 제품·서비스 소비·후원 흐름으로 옮긴 데모",
         src: "/aheya/aheya-corerail-creator.mp4",
         poster: "/aheya/home-hero.webp",
       },
@@ -856,7 +856,7 @@ const aheya = adaptCase(baseAheya, {
   summary:
     "• EVM/Base와 Solana 지갑에 남는 소액 native gas token·project token, token account / CloseAccount, ACP v1 작업 기록을 리서치\n• AHEYABARAYA의 문제정의, 프로젝트 정보면, X 포스트와 X/숏폼용 이미지·영상 자산으로 전환",
   roles: ["블록체인 리서치", "시장/사용자 문제정의", "프로젝트 정보 구조화", "X 콘텐츠 운영", "미디어 업데이트", "비교 프로토콜 리서치", "근거/가정 분리"],
-  evidence: ["EVM/Base·Solana 소액 온체인 자산 리서치", "Virtual Protocol / ACP v1 작업 기록 비교", "Dust mode 제품·서비스 소비·후원 흐름", "X 포스트 / 짧은 훅 / 이미지·영상 자산"],
+  evidence: ["EVM/Base·Solana 소액 온체인 자산 리서치", "Virtual Protocol / ACP v1 작업 기록 비교", "Dust mode(소액 후원) 제품·서비스 소비·후원 흐름", "X 포스트 / 짧은 훅 / 이미지·영상 자산"],
   status: "리서치 -> 프로젝트 구조화 -> X/미디어 운영",
   year: "2026-01 ~ 2026-04",
   externalLinks: additionalCreativeLinks,
@@ -918,9 +918,9 @@ const aheya = adaptCase(baseAheya, {
       items: ["Agent / Job Offering", "Job / Memo", "Smart Contract Escrow", "Evaluation / Completion"],
     },
     {
-      title: "방치 자산 → Dust mode",
+      title: "방치 자산 → Dust mode(소액 후원)",
       body:
-        "• 소액 온체인 자산은 지갑 안에 남지만 실제 사용 경험으로 이어지기 어려움\n• 해결 방향: Dust mode로 제품·서비스 소비, 소액 후원, Good/Improve 피드백 흐름에 연결",
+        "• 소액 온체인 자산은 지갑 안에 남지만 실제 사용 경험으로 이어지기 어려움\n• 해결 방향: Dust mode(소액 후원)로 제품·서비스 소비, 소액 후원, Good/Improve 피드백 흐름에 연결",
       accent: "aqua",
       items: ["방치 자산", "효용성", "실용성", "소액 후원 / 피드백"],
     },
@@ -936,10 +936,10 @@ const aheya = adaptCase(baseAheya, {
     eyebrow: "X / Media evidence",
     title: "프로젝트 정보 / X 발행 패키지",
     summary:
-      "• 리서치 결론을 프로젝트 소개, Dust mode, X 포스트, 시각 자산으로 나눠 정리",
+      "• 리서치 결론을 프로젝트 소개, Dust mode(소액 후원), X 포스트, 시각 자산으로 나눠 정리",
   },
   overview: [
-    "• AHEYABARAYA = 방치되기 쉬운 소액 온체인 자산을 Dust mode의 제품·서비스 소비·후원·피드백 흐름으로 재해석한 프로젝트",
+    "• AHEYABARAYA = 방치되기 쉬운 소액 온체인 자산을 Dust mode(소액 후원)의 제품·서비스 소비·후원·피드백 흐름으로 재해석한 프로젝트",
     "• agent 영역에서는 완료 기록과 품질 판단을 분리\n• 리서치를 프로젝트 정보 구조와 X/미디어 업데이트로 전환",
   ],
   whatIDid: [
@@ -951,7 +951,7 @@ const aheya = adaptCase(baseAheya, {
   ],
   whatExists: [
     "AHEYABARAYA 한 장 소개 화면과 project information surface",
-    "방치되기 쉬운 소액 온체인 자산 기반 Dust mode 제품·서비스 소비 데모와 지갑 기반 소액 후원·피드백 흐름",
+    "방치되기 쉬운 소액 온체인 자산 기반 Dust mode(소액 후원) 제품·서비스 소비 데모와 지갑 기반 소액 후원·피드백 흐름",
     "agent 품질 평가 방향과 Virtual Protocol / ACP v1 작업 기록 비교 note",
     "X 포스트 발행 기준과 보상형 CTA 회피 기준",
     "X 공개 포스트 5개와 posting purpose 정리",
@@ -979,9 +979,9 @@ const aheya = adaptCase(baseAheya, {
     {
       title: "창작자·빌더 초기 반응 흐름",
       body:
-        "• 방치되기 쉬운 소액 온체인 자산을 Dust mode로 묶음\n• 제품·서비스 소비, 소액 후원, Good/Improve 피드백 흐름으로 정의",
+        "• 방치되기 쉬운 소액 온체인 자산을 Dust mode(소액 후원)로 묶음\n• 제품·서비스 소비, 소액 후원, Good/Improve 피드백 흐름으로 정의",
       accent: "orange",
-      items: ["방치 자산", "Dust mode", "제품·서비스 소비", "소액 후원 / 피드백"],
+      items: ["방치 자산", "Dust mode(소액 후원)", "제품·서비스 소비", "소액 후원 / 피드백"],
     },
     {
       title: "agent 품질 평가",
@@ -1005,7 +1005,7 @@ const aheya = adaptCase(baseAheya, {
       title: "Wallet Utility Gap",
       body:
         "질문: • 에어드랍·퀘스트·거래 이후 지갑에 남는 소액 native gas token과 project token은 왜 실제 사용 경험으로 이어지기 어려운가. 방식: • Solana 공식 문서에서 fee structure, token account, CloseAccount 구조 확인\n• Base 공식 문서에서 L2 execution fee와 L1 security fee 구조 확인\n• EVM/Base 계열은 block explorer의 ERC-20 transfer history와 current holding 확인 방식 정리\n• 개인 지갑 샘플은 전체 시장 통계가 아니라 claim·transfer 이후 잔여 자산 관찰 근거로만 사용. 근거: • Solana transaction fee는 base fee와 priority fee로 구성되고 fee payer에게 부과됨\n• Solana token account는 CloseAccount로 닫을 수 있고 rent lamports를 destination account로 회수 가능\n• Base transaction cost는 L2 execution fee와 L1 security fee로 구성됨\n• Etherscan은 address 기준 ERC-20 transfer list와 current token holding 조회를 제공. 판단: • 소액 native gas token과 project token은 지갑 안에 남지만 다시 쓰기에는 gas, 체인, 용도 장벽이 존재\n• 거래소로 보내기에는 작고 온체인에서 다시 쓰기에도 애매해 숨김·방치·정리 대상으로 남기 쉬움\n• AHEYABARAYA에서는 이 방치되는 자산을 제품·서비스 소비, 소액 후원, 피드백 참여처럼 체감 가능한 효용성과 실용성으로 바꾸는 방향을 도출",
-      meta: "방치 자산 -> Dust mode 제품·서비스 소비·후원",
+      meta: "방치 자산 -> Dust mode(소액 후원) 제품·서비스 소비·후원",
     },
     {
       step: "02",
@@ -1020,7 +1020,7 @@ const aheya = adaptCase(baseAheya, {
   detailMediaSections: [
     {
       eyebrow: "Project package",
-      title: "프로젝트 정보 / Dust mode / Trust API",
+      title: "프로젝트 정보 / Dust mode(소액 후원) / Trust API",
       summary: "",
       columns: 3,
       layout: "grid",
@@ -1040,7 +1040,7 @@ const aheya = adaptCase(baseAheya, {
           ],
         },
         {
-          label: "Core rail / Dust mode",
+          label: "Core rail / Dust mode(소액 후원)",
           note: "• 지갑에 남은 소액 native gas token·project token을 효용성 있는 제품·서비스 소비와 소액 후원으로 연결\n• Good/Improve 피드백까지 남겨 초기 반응을 reusable proof로 전환",
           src: "/aheya/corerail-support-vid.mp4",
           alt: "AHEYABARAYA Dust mode and wallet support entry surface.",

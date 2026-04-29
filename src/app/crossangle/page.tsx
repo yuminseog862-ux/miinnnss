@@ -37,7 +37,28 @@ export default function CrossanglePage() {
   const problemSolutionGroups = detailProblemGroups.slice(2, 4);
   const hasDetailProblemGroups = problemResearchGroups.length > 0 && problemSolutionGroups.length > 0;
   const projectPackageSection = flagshipCase.detailMediaSections?.[0];
-  const aheyaCreativeSection = creativeWorkCaseMap["aheya"]?.detailMediaSections?.[0];
+  const aheyaCreativeCase = creativeWorkCaseMap["aheya"];
+  const aheyaCreativePreview =
+    aheyaCreativeCase?.coverImage ?? aheyaCreativeCase?.placeholderMedia.find((item) => item.src);
+  const aheyaCreativeLeadMediaCount = aheyaCreativeCase
+    ? aheyaCreativeCase.galleryColumns === 4
+      ? Math.min(4, aheyaCreativeCase.placeholderMedia.length)
+      : Math.min(3, aheyaCreativeCase.placeholderMedia.length)
+    : 0;
+  const aheyaCreativeLeadMediaItems = aheyaCreativeCase
+    ? aheyaCreativeCase.placeholderMedia.slice(0, aheyaCreativeLeadMediaCount).map((item, index) =>
+        index === 0 &&
+        aheyaCreativeCase.detailHeroHighlightsPosition === "lead" &&
+        aheyaCreativeCase.detailHeroHighlights?.length
+          ? {
+              ...item,
+              copyHighlights: aheyaCreativeCase.detailHeroHighlights,
+            }
+          : item,
+      )
+    : [];
+  const aheyaCreativeLeadSection = aheyaCreativeCase?.detailLeadSection;
+  const aheyaCreativeSections = aheyaCreativeCase?.detailMediaSections ?? [];
   const heroPoster = flagshipCase.coverImage ?? {
     src: "/aheya/home-hero.webp",
     alt: "AHEYA homepage hero screenshot.",
@@ -235,6 +256,7 @@ export default function CrossanglePage() {
 
       <motion.section
         {...fadeUp}
+        viewport={{ once: true, amount: 0.02 }}
         id="research-evidence"
         className="page-frame crossangle-main-frame crossangle-detail-shell detail-shell-aheya crossangle-inline-detail-shell"
       >
@@ -343,7 +365,7 @@ export default function CrossanglePage() {
                   {problemSolutionGroups.map((item, index) => (
                     <div key={item.title} className="detail-problem-aheya-solution-unit">
                       <article className="detail-block-card detail-problem-pair-card detail-problem-aheya-card detail-problem-pair-card-right">
-                        <p className="detail-problem-pair-kicker">Problem 0{index + 1}</p>
+                        <p className="detail-problem-pair-kicker">Problem & Solution 0{index + 1}</p>
                         <p className={`eyebrow ${accentText(item.accent ?? "aqua")}`}>{item.title}</p>
                         <p className="detail-block-body">{item.body}</p>
                         {item.items?.length ? (
@@ -427,16 +449,17 @@ export default function CrossanglePage() {
         </div>
       </motion.section>
 
-      {aheyaCreativeSection ? (
+      {aheyaCreativeCase ? (
         <motion.section
           {...fadeUp}
+          viewport={{ once: true, amount: 0.02 }}
           id="aheya-creative-proof"
           className="page-frame crossangle-main-frame crossangle-aheya-creative-proof"
         >
           <div className="section-heading">
             <div>
               <p className="eyebrow text-aqua">AHEYA Creative Surface</p>
-              <h2 className="section-title">{aheyaCreativeSection.title}</h2>
+              <h2 className="section-title">AHEYA 크리에이티브 / 공개 채널 콘텐츠</h2>
             </div>
             <Link href="/creative/work/aheya" className="inline-link">
               AHEYA 상세 보기
@@ -444,20 +467,77 @@ export default function CrossanglePage() {
             </Link>
           </div>
 
-          {aheyaCreativeSection.summary ? (
-            <p className="crossangle-aheya-creative-summary">{aheyaCreativeSection.summary}</p>
-          ) : null}
+          <Link href="/creative/work/aheya" className="crossangle-aheya-creative-card">
+            {aheyaCreativePreview?.src ? (
+              <div className="crossangle-aheya-creative-card-media">
+                <Image
+                  src={aheyaCreativePreview.src}
+                  alt={aheyaCreativePreview.alt ?? "AHEYA creative preview image."}
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 34vw"
+                  className="crossangle-aheya-creative-card-image"
+                  style={{ objectFit: aheyaCreativePreview.fit ?? "cover" }}
+                />
+                <div className="crossangle-aheya-creative-card-wash" />
+              </div>
+            ) : null}
+            <div className="crossangle-aheya-creative-card-copy">
+              <div className="crossangle-aheya-creative-card-topline">
+                <span className="eyebrow text-aqua">{aheyaCreativeCase.eyebrow}</span>
+                <span>{aheyaCreativeCase.year}</span>
+              </div>
+              <h3>{aheyaCreativeCase.title}</h3>
+              <p>{aheyaCreativeCase.oneLiner}</p>
+              <div className="case-chip-group">
+                {aheyaCreativeCase.evidence.slice(0, 4).map((item) => (
+                  <span key={item} className="case-chip case-chip-soft">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="crossangle-aheya-creative-card-bottom">
+                <span>{aheyaCreativeCase.status}</span>
+                <span className="inline-link">
+                  creative/work/aheya
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </div>
+            </div>
+          </Link>
 
-          <DetailMediaGallery
-            items={aheyaCreativeSection.items.map((item) => ({
-              ...item,
-              href: "https://aheyabaraya.xyz/",
-              hrefLabel: "AHEYABARAYA 이동",
-            }))}
-            columns={aheyaCreativeSection.columns ?? 2}
-            layout={aheyaCreativeSection.layout}
-            imageClickBehavior="href"
-          />
+          <div className="detail-slide-section-stack crossangle-aheya-creative-stack">
+            {aheyaCreativeLeadMediaItems.length && aheyaCreativeLeadSection ? (
+              <section className="detail-slide-subpanel">
+                <div>
+                  <p className="detail-section-eyebrow">{aheyaCreativeLeadSection.eyebrow}</p>
+                  {aheyaCreativeLeadSection.summary ? (
+                    <p className="detail-gallery-intro">{aheyaCreativeLeadSection.summary}</p>
+                  ) : null}
+                </div>
+
+                <DetailMediaGallery
+                  items={aheyaCreativeLeadMediaItems}
+                  columns={aheyaCreativeCase.galleryColumns}
+                  layout={aheyaCreativeCase.detailLeadLayout ?? "stack"}
+                />
+              </section>
+            ) : null}
+
+            {aheyaCreativeSections.map((section) => (
+              <section key={`${section.eyebrow}-${section.title}`} className="detail-slide-subpanel">
+                <div>
+                  <p className="detail-section-eyebrow">{section.eyebrow}</p>
+                  {section.summary ? <p className="detail-gallery-intro">{section.summary}</p> : null}
+                </div>
+
+                <DetailMediaGallery
+                  items={section.items}
+                  columns={section.columns}
+                  layout={section.layout ?? (section.columns ? "grid" : "stack")}
+                />
+              </section>
+            ))}
+          </div>
         </motion.section>
       ) : null}
 
