@@ -152,6 +152,17 @@ const planningSignals = [
   },
 ];
 
+const aheyaPageSurfaces = [
+  {
+    label: "Live App Surface",
+    body: "홈 화면의 큰 문장과 캐릭터 이미지를 함께 보여줘, 캐릭터가 단순 이미지가 아니라 제품 첫인상으로 읽히게 했습니다.",
+  },
+  {
+    label: "Trust Entry",
+    body: "Yeon 페이지처럼 캐릭터별 화면을 확장해 AHEYABARAYA가 여러 진입 장면을 가진 페이지 구조로 보이게 했습니다.",
+  },
+];
+
 const characterProofs = [
   {
     name: "Kumiho",
@@ -225,6 +236,21 @@ const supportProofs = [
   },
 ];
 
+const adsbDecisionCards = [
+  {
+    label: "Initial Problem",
+    body: "초기 콜라주 방향은 개별 장면은 있었지만 재미, 감정, 브랜드 무드가 한 방향으로 유지되지 않았습니다.",
+  },
+  {
+    label: "Creative Choice",
+    body: "고정 앵글을 유지하면 첫 장면, 인물, 제품 무드, 이동감을 한 흐름으로 읽게 만들 수 있다고 판단했습니다.",
+  },
+  {
+    label: "Short-form Logic",
+    body: "첫 1-3초에서 장면 훅을 만들고, 15초 안에서 같은 감정선이 유지되는 쪽이 광고 소재 후보에 더 가까웠습니다.",
+  },
+];
+
 export default function GigrPage() {
   return (
     <main className="cinema-shell gigr-shell">
@@ -247,8 +273,7 @@ export default function GigrPage() {
         <div className="gigr-hero">
           <motion.div {...fadeUp} className="gigr-hero-copy">
             <h1 className="gigr-hero-title">
-              브랜드의 첫인상을 캐릭터, 장면, 짧은 문장으로 압축해 X 포스트와 숏폼 광고 자산으로
-              만듭니다.
+              브랜드 첫인상을 캐릭터와 장면으로 압축해 X 포스트와 숏폼 광고 자산으로 만듭니다.
             </h1>
             <p className="gigr-hero-summary">
               타깃과 광고 목적을 먼저 잡고, 빠른 피드에서 멈추게 할 캐릭터, 시각 장면, 첫 1-3초
@@ -516,6 +541,15 @@ export default function GigrPage() {
               </p>
             </article>
 
+            <div className="gigr-aheya-page-proof">
+              {aheyaPageSurfaces.map((item) => (
+                <article key={item.label}>
+                  <strong>{item.label}</strong>
+                  <span>{item.body}</span>
+                </article>
+              ))}
+            </div>
+
             <div className="gigr-variant-list">
               {adVariants.map((variant) => (
                 <article key={variant.name} className="gigr-variant-card">
@@ -573,6 +607,14 @@ export default function GigrPage() {
               <span>AI image</span>
               <span>Kling video</span>
               <span>Feedback revision</span>
+            </div>
+            <div className="gigr-adsb-decision-grid">
+              {adsbDecisionCards.map((item) => (
+                <article key={item.label}>
+                  <strong>{item.label}</strong>
+                  <span>{item.body}</span>
+                </article>
+              ))}
             </div>
             <div className="gigr-adsb-proof-grid">
               <div>
