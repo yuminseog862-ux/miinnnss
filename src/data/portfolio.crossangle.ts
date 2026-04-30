@@ -1018,7 +1018,7 @@ const aheya = adaptCase(baseAheya, {
   detailMediaSections: [
     {
       eyebrow: "Project package",
-      title: "AHEYA Baraya / 참여형 Web3 crowdfunding platform",
+      title: "프로젝트 정보 / Dust mode(소액 후원) / Trust API",
       summary: "",
       columns: 3,
       layout: "grid",
