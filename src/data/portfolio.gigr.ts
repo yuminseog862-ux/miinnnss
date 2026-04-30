@@ -8,33 +8,85 @@ export type GigrCoreAxis = {
   icon: GigrIconKey;
 };
 
+export const roleSummaryPoints = [
+  "광고 목적: 타깃 가설, 첫 장면, 카피 역할을 먼저 정리",
+  "AI 제작: 기준 이미지 → 영상 후보 → 숏폼 광고 흐름으로 확장",
+  "운영 방식: 발행 반응을 다음 소재와 카피 브리프로 되돌림",
+] as const;
+
+export const planningSummaryPoints = [
+  "타깃은 확정 고객이 아니라 1차 독자 가설로 설정",
+  "캐릭터 브랜딩이 서비스 카피를 더 잘 읽히게 할 것이라고 판단",
+  "발행 후 카피보다 이미지와 영상 자체에 먼저 반응이 모임",
+  "서비스 문제 정의를 다시 보고, 콘텐츠 생산 방향을 빠르게 전환",
+] as const;
+
+export const aheyaCaseSummaryPoints = [
+  "서비스 카피와 캐릭터 영상을 함께 발행",
+  "기대한 반응: 캐릭터 브랜딩을 통해 카피까지 읽히는 흐름",
+  "실제 반응: 카피보다 이미지와 영상 자체에 먼저 관심이 모임",
+  "현재 방향: 더 많은 사람이 멈춰 볼 수 있는 캐릭터·영상 콘텐츠 제작",
+] as const;
+
+export const aheyaLearningPoints = [
+  "Initial Bet: 캐릭터 브랜딩을 붙이면 문제 문장이 더 잘 읽힐 것이라고 판단",
+  "What Happened: 반응은 카피보다 이미지와 영상 자체에 먼저 모임",
+  "Lesson: AHEYABARAYA의 서비스 문제 정의가 충분히 날카롭지 않았음",
+  "Current Direction: 더 많은 사람이 볼 수 있는 캐릭터·영상 콘텐츠를 빠르게 제작",
+] as const;
+
+export const characterExpansionPoints = [
+  "초기 구미호 영상 2개와 Yeon으로 첫인상 후보 제작",
+  "Tiger, 동물 상징, 그리스·이집트 계열로 시각 훅 확장",
+  "파란 구미호, K, Becca처럼 더 선명한 대표 자산으로 정제",
+] as const;
+
+export const adsbSummaryPoints = [
+  "콜라주식 장면 나열은 브랜드 무드와 감정선이 흩어짐",
+  "고정 앵글 15초 흐름으로 좁혀 광고 소재처럼 읽히게 조정",
+  "조명, 그림자, 접지감, 카메라 움직임이 완성도 판단 기준으로 남음",
+] as const;
+
+export const adsbExecutionPoints = [
+  "브랜드 무드와 대표 장면을 AI 숏폼 광고 흐름으로 수렴",
+  "콜라주 중심 시도는 폐기하고 고정 앵글 기반 15초 흐름 채택",
+  "개별 장면의 귀여움보다 한 장면의 감정과 브랜드 무드 유지 우선",
+  "조명·그림자·접지감·카메라 움직임을 제작 체크포인트로 정리",
+] as const;
+
+export const loopSummaryPoints = [
+  "자동 게시보다 제작 후보 자동화가 우선",
+  "입력값: 레퍼런스, 전날 관찰 신호, 제품 메시지",
+  "출력값: 이미지 후보, 영상 프롬프트, 게시 메타데이터, 다음 브리프",
+] as const;
+
 export const coreAxes = [
   {
     title: "Reference-led Hook Planning",
     proof: "Pinterest / animation / shorts",
-    body: "핀터레스트, 애니메이션, 쇼츠에서 멈추게 하는 장면을 찾고, 구도·감정·움직임을 재구성해 이미지 프롬프트와 영상 후보로 옮깁니다.",
+    body: "레퍼런스에서 멈추게 하는 장면을 찾고, 구도·감정·움직임을 다시 조립합니다.",
     points: ["reference scan", "scene hook", "image-to-video"],
     icon: "sparkles",
   },
   {
     title: "Scene & Mood Direction",
     proof: "Andersson Bell",
-    body: "브랜드 무드와 감정선을 장면, 앵글, 모션 흐름으로 압축해 숏폼 광고 흐름으로 좁혔습니다.",
+    body: "브랜드 무드를 장면, 앵글, 모션 흐름으로 좁혀 숏폼 후보로 만듭니다.",
     points: ["moodboard", "fixed-angle sequence", "15s short-form"],
     icon: "clapperboard",
   },
   {
     title: "Short Copy / X Hook",
     proof: "X posts",
-    body: "긴 제품 설명을 첫 유저 반응, 얕은 피드백, 실제 사용성 같은 짧은 문제 훅으로 바꿨습니다.",
+    body: "긴 제품 설명을 첫 유저, 피드백, 사용성 같은 짧은 문제 훅으로 바꿉니다.",
     points: ["문제 훅", "캡션 훅", "공개 채널 문안"],
     icon: "messageSquareText",
   },
   {
     title: "Learning Loop",
     proof: "observed signal",
-    body: "관찰한 반응을 성과처럼 단정하지 않고, 다음 이미지와 카피 브리프를 고르는 판단 재료로 분리했습니다.",
-    points: ["시각 훅", "메시지 정합성", "다음 브리프"],
+    body: "반응을 성과처럼 단정하지 않고, 다음 소재와 카피를 고르는 판단 재료로 봅니다.",
+    points: ["관찰 신호", "문제 재정의", "다음 브리프"],
     icon: "chartNoAxesColumnIncreasing",
   },
 ] satisfies GigrCoreAxis[];
@@ -42,7 +94,7 @@ export const coreAxes = [
 export const recruiterFitRows = [
   {
     need: "광고 목적 콘텐츠 기획",
-    proof: "레퍼런스 장면에서 훅 구조를 뽑고, AHEYABARAYA에서 타깃·문제 메시지·첫 시각 훅을 분리했습니다.",
+    proof: "레퍼런스 장면에서 훅 구조를 뽑고, AHEYABARAYA에서 타깃 가설과 카피 실패를 다시 봤습니다.",
     output: "레퍼런스 훅 / X 포스트 후보 / 캐릭터 훅 / 짧은 CTA 카피",
     href: "#planning",
   },
@@ -94,27 +146,27 @@ export const adVariants = [
 export const planningSignals = [
   {
     title: "Initial Intent",
-    body:
-      "처음에는 레퍼런스에서 멈추게 하는 장면 훅을 찾고, 초기 구미호 영상 2개와 Yeon으로 AHEYABARAYA의 첫인상 후보를 만들었습니다.",
+    body: "레퍼런스 장면 훅을 AHEYABARAYA 첫인상 후보로 옮김",
+    points: ["초기 구미호 영상 2개", "Yeon 캐릭터", "서비스 카피와 함께 발행"],
     signal: "시각 자산을 카피 진입점으로 사용",
   },
   {
     title: "Target Hypothesis",
-    body:
-      "AI/크립토 빌더, 초기 제품 창업자, Web3 커뮤니티 유저, 에이전트/AI 툴 관심자가 초기 제품과 사용자 접점의 문제를 읽도록 상정했습니다.",
+    body: "확정 타깃이 아니라 1차 독자 가설로 시작",
+    points: ["AI/크립토 빌더", "초기 제품 창업자", "Web3·AI 툴 관심층"],
     signal: "AI 빌더 / Web3 유저",
   },
   {
     title: "Observed Signal",
-    body:
-      "초기 영상과 Yeon 이후 Tiger 같은 동물 상징, 그리스 계열, 이집트 계열로 확장했습니다. 이후 파란 구미호와 K, Becca처럼 더 선명하고 세련된 대표 훅 자산으로 정제했습니다.",
+    body: "이미지와 영상 자체에 먼저 반응이 모임",
+    points: ["Tiger·동물 상징", "그리스·이집트 계열", "파란 구미호 / K / Becca로 정제"],
     signal: "시각 훅의 확장 가능성",
   },
   {
     title: "What Changed",
-    body:
-      "처음 상정한 타깃이 실제로 반응한 방향과 정의한 서비스 문제가 어긋났다는 점도 확인했습니다. 지금은 이미지 제작 관심층까지 포함해 더 넓은 관심층이 반응할 소재를 빠르게 반복하는 운영 단계로 전환했습니다.",
-    signal: "문제 메시지 정합성 재점검",
+    body: "서비스 문제 정의가 충분히 날카롭지 않았다고 판단",
+    points: ["카피보다 콘텐츠에 반응", "문제 정의 재점검", "더 많은 사람이 볼 수 있는 콘텐츠 제작"],
+    signal: "서비스 문제 정의 재점검",
   },
 ];
 
@@ -173,7 +225,7 @@ export const aheyaAmbiguitySteps = [
   {
     label: "04. Refinement",
     title: "대표 훅과 반복 운영으로 정리",
-    body: "이후 파란 구미호, K, Becca처럼 더 선명한 대표 훅 자산으로 정제하고, 더 넓은 관심층이 반응할 소재를 빠르게 반복 제작 중입니다.",
+    body: "이후 파란 구미호, K, Becca처럼 더 선명한 대표 훅 자산으로 정제하고, 지금은 더 많은 사람이 멈춰 볼 수 있는 캐릭터·영상 콘텐츠를 빠르게 제작 중입니다.",
   },
 ];
 
@@ -181,33 +233,33 @@ export const aheyaPositioningBridge = [
   {
     label: "Service Copy",
     title: "서비스 메시지에서 출발",
-    body: "처음에는 AHEYABARAYA 서비스 자체의 문제의식과 카피를 X에서 읽히게 만드는 것이 출발점이었습니다.",
+    body: "AHEYABARAYA의 문제의식과 카피를 X에서 읽히게 만드는 것이 출발점",
   },
   {
     label: "Character Branding",
     title: "낯선 서비스를 기억되는 얼굴로 확장",
-    body: "AI/Web3 제품 설명만으로는 지나치기 쉬워, 캐릭터와 세계관으로 첫인상을 더 선명하게 만들었습니다.",
+    body: "AI/Web3 제품 설명만으로는 지나치기 쉬워 캐릭터와 세계관을 붙임",
   },
   {
     label: "Short-form Signal",
-    title: "영상미와 무드에 반응이 모임",
-    body: "발행 과정에서 서비스 설명보다 캐릭터 무드, 영상미, AI 이미지·영상 제작 감각에 더 빠른 반응이 모였습니다.",
+    title: "카피보다 이미지와 영상에 먼저 반응",
+    body: "기대와 달리 문제 문장보다 이미지와 영상 자체에 관심이 먼저 모임",
   },
   {
     label: "GIGR Fit",
     title: "현재 페이지의 역할 매칭으로 정리",
-    body: "이 흐름을 광고 목적 콘텐츠 기획, AI 숏폼 제작, 제작 루프 효율화라는 GIGR JD의 세 축으로 다시 정리했습니다.",
+    body: "이 실패를 타깃 가설, 카피 실험, AI 콘텐츠 제작, 제작 루프 증거로 재정리",
   },
 ];
 
 export const aheyaPageSurfaces = [
   {
     label: "AHEYA page",
-    body: "홈 화면의 큰 문장과 캐릭터 이미지를 함께 보여줘, 캐릭터가 단순 이미지가 아니라 제품 첫인상으로 읽히게 했습니다.",
+    body: "서비스 문장과 캐릭터 이미지를 함께 배치한 제품 첫인상 화면",
   },
   {
     label: "Trust Entry",
-    body: "Yeon 페이지처럼 캐릭터별 화면을 확장해 AHEYABARAYA가 여러 진입 장면을 가진 페이지 구조로 보이게 했습니다.",
+    body: "Yeon처럼 캐릭터별 진입 화면을 확장한 신뢰/구조 화면",
   },
 ];
 
@@ -321,10 +373,10 @@ export const adsbCraftNotes = [
 export const caseReadout = [
   {
     label: "What HR should see",
-    body: "캐릭터를 많이 만든 것이 아니라, 광고 훅으로 쓸 수 있는 시각 자산과 문제 카피를 분리해 판단했습니다.",
+    body: "캐릭터를 많이 만든 것이 아니라, 서비스 카피가 먹히지 않은 이유를 보고 콘텐츠 방향을 다시 잡은 과정입니다.",
   },
   {
     label: "Why it matters",
-    body: "GIGR 업무에서 필요한 것은 결과물 나열보다 타깃이 멈추는 이유와 다음 소재로 이어지는 판단입니다.",
+    body: "GIGR 업무에서 필요한 것은 결과물 나열보다, 모호한 반응을 보고 다음 소재와 카피 방향을 바꾸는 판단입니다.",
   },
 ];
