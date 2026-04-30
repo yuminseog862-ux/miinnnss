@@ -4,6 +4,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
+  adVariants,
+  adsbCraftNotes,
+  adsbDecisionCards,
+  aheyaAmbiguitySteps,
+  aheyaOriginVideos,
+  aheyaPageSurfaces,
+  aheyaPositioningBridge,
+  caseReadout,
+  characterProofs,
+  coreAxes,
+  hermesLoop,
+  hookPlanningSteps,
+  planningSignals,
+  recruiterFitRows,
+  supportProofs,
+  type GigrIconKey,
+} from "@/data/portfolio.gigr";
+import {
   ArrowDownRight,
   ArrowUpRight,
   ChartNoAxesColumnIncreasing,
@@ -16,232 +34,19 @@ import {
   Sparkles,
 } from "lucide-react";
 
+const gigrIconMap: Record<GigrIconKey, typeof Sparkles> = {
+  sparkles: Sparkles,
+  clapperboard: Clapperboard,
+  messageSquareText: MessageSquareText,
+  chartNoAxesColumnIncreasing: ChartNoAxesColumnIncreasing,
+};
+
 const fadeUp = {
   initial: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, amount: 0.18 },
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
-
-const coreAxes = [
-  {
-    title: "Character as Hook Asset",
-    proof: "AHEYABARAYA",
-    body: "대표 캐릭터를 설정 자료에 머무르게 하지 않고, 빠른 피드에서 시선을 멈추게 하는 광고 훅 자산으로 설계했습니다.",
-    points: ["K / Becca / Aurora / Yeon", "첫 화면 주목", "피드용 소재"],
-    icon: Sparkles,
-  },
-  {
-    title: "Scene & Mood Direction",
-    proof: "Andersson Bell",
-    body: "브랜드 무드와 감정선을 장면, 앵글, 모션 흐름으로 압축해 숏폼 광고 흐름으로 좁혔습니다.",
-    points: ["moodboard", "fixed-angle sequence", "15s short-form"],
-    icon: Clapperboard,
-  },
-  {
-    title: "Short Copy / X Hook",
-    proof: "X posts",
-    body: "긴 제품 설명을 첫 유저 반응, 얕은 피드백, 실제 사용성 같은 짧은 문제 훅으로 바꿨습니다.",
-    points: ["문제 훅", "캡션 훅", "공개 채널 문안"],
-    icon: MessageSquareText,
-  },
-  {
-    title: "Learning Loop",
-    proof: "observed signal",
-    body: "관찰한 반응을 성과처럼 단정하지 않고, 다음 이미지와 카피 브리프를 고르는 판단 재료로 분리했습니다.",
-    points: ["시각 훅", "메시지 정합성", "다음 브리프"],
-    icon: ChartNoAxesColumnIncreasing,
-  },
-];
-
-const recruiterFitRows = [
-  {
-    need: "광고 목적 콘텐츠 기획",
-    proof: "AHEYABARAYA에서 타깃, 문제 메시지, 첫 시각 훅을 분리했습니다.",
-    output: "X 포스트 후보 / 캐릭터 훅 / 짧은 CTA 카피",
-    href: "#planning",
-  },
-  {
-    need: "AI 숏폼 제작",
-    proof: "Andersson Bell 무드를 고정 앵글 15초 광고 흐름으로 좁혔습니다.",
-    output: "브랜드 리서치 / 스토리보드 / AI 이미지 / Kling 영상",
-    href: "#adsb",
-  },
-  {
-    need: "제작 워크플로우 효율화",
-    proof: "Hermes/Aurora 구조를 광고 소재 후보 생성 루프로 정리했습니다.",
-    output: "Brief → Asset → Review → Learning 운영 구조",
-    href: "#loop",
-  },
-];
-
-const adVariants = [
-  {
-    name: "Problem Hook",
-    hook: "Building got faster. Marketing didn’t.",
-    asset: "AHEYABARAYA intro surface",
-    purpose: "빌더가 겪는 첫 유저 반응과 피드백 문제를 기능 설명보다 먼저 제시",
-    signal: "메시지 선명도",
-  },
-  {
-    name: "Character Hook",
-    hook: "Kumiho / Tiger scene",
-    asset: "motion poster + character still",
-    purpose: "빠른 X 피드에서 시선을 멈추게 하는 첫 장면 설계",
-    signal: "시각 훅",
-  },
-  {
-    name: "Feedback Hook",
-    hook: "polite feedback haze",
-    asset: "lane panel + demo/proof narrative",
-    purpose: "피상적 반응보다 다음 배포로 이어지는 피드백 문제 제기",
-    signal: "문제-카피 정합성",
-  },
-  {
-    name: "Utility Hook",
-    hook: "real utility on-chain",
-    asset: "creator asset + low-friction CTA",
-    purpose: "Web3 utility를 보상형 CTA가 아닌 실제 참여 메시지로 표현",
-    signal: "타깃 적합성",
-  },
-];
-
-const planningSignals = [
-  {
-    title: "Initial Intent",
-    body:
-      "AHEYABARAYA 브랜딩 채널에서 강한 캐릭터 첫인상을 만들고, 그 시각 자산을 X 카피와 함께 배치해 타깃이 문제 정의를 읽도록 설계했습니다.",
-    signal: "시각 자산을 카피 진입점으로 사용",
-  },
-  {
-    title: "Target Hypothesis",
-    body:
-      "AI/크립토 빌더, 초기 제품 창업자, Web3 커뮤니티 유저, 에이전트/AI 툴 관심자가 초기 제품과 사용자 접점의 문제를 읽도록 상정했습니다.",
-    signal: "AI 빌더 / Web3 유저",
-  },
-  {
-    title: "Observed Signal",
-    body:
-      "구미호와 영상이 함께 쓰일 때 시각 훅으로 주목을 만들 가능성이 보였습니다. 이 관찰을 바탕으로 K, Tiger, Aurora, Becca, Yeon 등 캐릭터 자산군으로 확장했습니다.",
-    signal: "시각 훅의 확장 가능성",
-  },
-  {
-    title: "What Changed",
-    body:
-      "반응은 제품 문제 공감보다 AI 이미지/영상 제작 관심층에 더 가까웠습니다. 그래서 캐릭터는 주목 장치, 카피는 문제 인식 장치로 분리해 다시 정리했습니다.",
-    signal: "문제 메시지 정합성 재점검",
-  },
-];
-
-const aheyaPageSurfaces = [
-  {
-    label: "AHEYA page",
-    body: "홈 화면의 큰 문장과 캐릭터 이미지를 함께 보여줘, 캐릭터가 단순 이미지가 아니라 제품 첫인상으로 읽히게 했습니다.",
-  },
-  {
-    label: "Trust Entry",
-    body: "Yeon 페이지처럼 캐릭터별 화면을 확장해 AHEYABARAYA가 여러 진입 장면을 가진 페이지 구조로 보이게 했습니다.",
-  },
-];
-
-const characterProofs = [
-  {
-    name: "Kumiho",
-    role: "대표 훅",
-    src: "/appendix/bluegarage/aheya/kumiho-motion-poster.webp",
-  },
-  {
-    name: "K",
-    role: "브랜드 얼굴",
-    src: "/appendix/bluegarage/aheya/k.webp",
-  },
-  {
-    name: "Tiger",
-    role: "영상 훅 후보",
-    src: "/appendix/bluegarage/aheya/tiger-zodiac.webp",
-  },
-  {
-    name: "Aurora",
-    role: "세계관 톤",
-    src: "/appendix/bluegarage/aheya/aurora.webp",
-  },
-  {
-    name: "Becca",
-    role: "관계 확장",
-    src: "/appendix/bluegarage/aheya/becca.webp",
-  },
-  {
-    name: "Yeon",
-    role: "신뢰 화면",
-    src: "/appendix/bluegarage/aheya/yeon-trust-api.webp",
-  },
-];
-
-const hermesLoop = [
-  {
-    step: "Input",
-    body: "전날 관찰 신호, 트렌드/레퍼런스, 제품 메시지를 제작 입력값으로 모읍니다.",
-  },
-  {
-    step: "Brief",
-    body: "첫 장면 훅, 감정 훅, 메시지 키워드, 타깃 플랫폼을 브리프로 기록합니다.",
-  },
-  {
-    step: "Asset",
-    body: "이미지 프롬프트, 영상화 계획, 캡션 훅을 하나의 소재 후보로 묶습니다.",
-  },
-  {
-    step: "Review",
-    body: "빠른 실험 후보, 대표 소재 후보, 댓글 대응 후보, 보류 항목으로 분류해 제작 우선순위를 정합니다.",
-  },
-  {
-    step: "Publish Prep",
-    body: "게시 문안, 캡션, 사용 자산을 남겨 이후 관찰 로그와 다시 연결되게 합니다.",
-  },
-  {
-    step: "Learning",
-    body: "댓글, 리포스트 맥락, 저장해 둔 관찰 로그를 보고 다음 프롬프트 방향을 조정합니다.",
-  },
-];
-
-const supportProofs = [
-  {
-    title: "SFTI-CMU",
-    body: "모호한 브랜드 해석을 영어 초록과 포스터 구조로 정리한 writing / research framing 증거입니다.",
-    href: "/creative/work/sfti-cmu",
-  },
-  {
-    title: "Persona / Agent System",
-    body: "역할, 말투, 분위기 차이를 설계해 캐릭터형 상호작용 인상을 다뤄본 보조 증거입니다.",
-    href: "/creative/work/persona-systems",
-  },
-];
-
-const adsbDecisionCards = [
-  {
-    label: "Initial Problem",
-    body: "초기 콜라주 방향은 개별 장면은 있었지만 재미, 감정, 브랜드 무드가 한 방향으로 유지되지 않았습니다.",
-  },
-  {
-    label: "Creative Choice",
-    body: "고정 앵글을 유지하면 첫 장면, 인물, 제품 무드, 이동감을 한 흐름으로 읽게 만들 수 있다고 판단했습니다.",
-  },
-  {
-    label: "Short-form Logic",
-    body: "첫 1-3초에서 장면 훅을 만들고, 15초 안에서 같은 감정선이 유지되는 쪽이 광고 소재 후보에 더 가까웠습니다.",
-  },
-];
-
-const caseReadout = [
-  {
-    label: "What HR should see",
-    body: "캐릭터를 많이 만든 것이 아니라, 광고 훅으로 쓸 수 있는 시각 자산과 문제 카피를 분리해 판단했습니다.",
-  },
-  {
-    label: "Why it matters",
-    body: "GIGR 업무에서 필요한 것은 결과물 나열보다 타깃이 멈추는 이유와 다음 소재로 이어지는 판단입니다.",
-  },
-];
 
 export default function GigrPage() {
   return (
@@ -268,14 +73,14 @@ export default function GigrPage() {
               광고 훅을 기획하고 AI 숏폼 후보로 바꾸는 제작자입니다.
             </h1>
             <p className="gigr-hero-summary">
-              세계관과 캐릭터를 만드는 데서 끝내지 않고, 타깃이 멈추는 장면, 짧은 카피, 15초 영상 흐름,
-              다음 제작 브리프까지 연결합니다.
+              레퍼런스에서 멈추게 하는 장면을 찾고, 타깃이 읽을 문제 카피와 연결한 뒤 이미지와
+              AI 숏폼 후보, 다음 제작 브리프까지 이어갑니다.
             </p>
             <div className="gigr-hero-brief">
               <article>
                 <span>01</span>
-                <strong>Ad Hook</strong>
-                <p>타깃 문제와 첫 장면을 먼저 정합니다.</p>
+                <strong>Reference Hook</strong>
+                <p>멈추게 하는 장면의 구도와 감정을 찾습니다.</p>
               </article>
               <article>
                 <span>02</span>
@@ -323,8 +128,8 @@ export default function GigrPage() {
                 className="gigr-kumiho-image"
               />
               <div className="gigr-hero-caption gigr-hero-caption-overlay">
-                <strong>Blue Kumiho → one-look hook</strong>
-                <span>브랜드의 첫인상을 한 장면으로 세워 피드에서 멈추게 하는 대표 캐릭터 자산입니다.</span>
+                <strong>Blue Kumiho → cinematic intro hook</strong>
+                <span>초기 실험 이후 가장 영상미가 살아 있어 첫 인트로에 세운 대표 시각 훅입니다.</span>
               </div>
             </div>
           </motion.aside>
@@ -340,7 +145,8 @@ export default function GigrPage() {
           <p>
             기존 작업에서 다뤄온 세계관, 캐릭터, 감정, 첫 훅 설계를 GIGR의 업무인 광고 목적
             콘텐츠 기획, AI 숏폼 제작, 제작 워크플로우 효율화로 연결합니다. 핵심은 타깃과 목적을
-            먼저 정한 뒤, 시각 훅과 카피를 분리해 설계하는 것입니다.
+            먼저 정한 뒤, 레퍼런스에서 발견한 장면 훅을 이미지와 영상 후보로 재구성하고 시각 훅과
+            카피를 분리해 설계하는 것입니다.
           </p>
         </div>
 
@@ -379,7 +185,7 @@ export default function GigrPage() {
 
         <div className="gigr-axis-grid">
           {coreAxes.map((axis) => {
-            const Icon = axis.icon;
+            const Icon = gigrIconMap[axis.icon];
 
             return (
               <article key={axis.title} className="gigr-axis-card">
@@ -400,6 +206,16 @@ export default function GigrPage() {
             );
           })}
         </div>
+
+        <div className="gigr-hook-process">
+          {hookPlanningSteps.map((step) => (
+            <article key={step.label}>
+              <span>{step.label}</span>
+              <strong>{step.title}</strong>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
       </motion.section>
 
       <motion.section {...fadeUp} id="planning" className="page-frame gigr-section gigr-planning-section">
@@ -409,8 +225,9 @@ export default function GigrPage() {
             <h2 className="section-title">AHEYABARAYA에서 얻은 제작 판단</h2>
           </div>
           <p>
-            채용자가 봐야 할 핵심은 캐릭터 수가 아니라 판단입니다. 캐릭터는 주목 장치로, 카피는 문제
-            인식 장치로 분리했고 그 결과 다음 소재 브리프가 더 명확해졌습니다.
+            채용자가 봐야 할 핵심은 캐릭터 수가 아니라 모호한 상황에서 직접 가정을 세우고 바꾼
+            흐름입니다. 처음에는 초기 구미호 영상 2개와 Yeon으로 첫인상 후보를 만들었고, 이후
+            동물·그리스·이집트 계열과 정제 캐릭터를 거치며 확장 방식과 카피 방향을 다시 잡았습니다.
           </p>
         </div>
 
@@ -429,7 +246,7 @@ export default function GigrPage() {
             <div className="gigr-character-proof-head">
               <div>
                 <p className="eyebrow text-aqua">Creative Evidence</p>
-                <h3>구미호를 대표 훅으로 잡고 확장한 캐릭터 자산군</h3>
+                <h3>초기 영상에서 출발해 대표 훅으로 정제한 캐릭터 자산군</h3>
               </div>
               <Link href="/creative/work/aheya" className="inline-link">
                 전체 보기
@@ -455,8 +272,9 @@ export default function GigrPage() {
             </div>
             <p className="gigr-character-note">
               이 자산들은 문제 공감이 완성됐다는 근거가 아니라, 시각 훅이 주목을 만들 수 있다는
-              관찰을 바탕으로 광고 소재 후보군을 확장한 근거입니다. 대표 훅은 구미호, 확장은 캐릭터
-              시스템으로 분리했습니다.
+              관찰을 바탕으로 광고 소재 후보군을 확장한 근거입니다. 초기 영상과 Yeon에서 출발해
+              동물·그리스·이집트 계열을 거치고, 이후 파란 구미호와 K/Becca 같은 정제 자산으로
+              좁혔습니다.
             </p>
           </aside>
         </div>
@@ -484,6 +302,26 @@ export default function GigrPage() {
           ))}
         </div>
 
+        <div className="gigr-aheya-bridge">
+          {aheyaPositioningBridge.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="gigr-aheya-sequence-grid">
+          {aheyaAmbiguitySteps.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+
         <div className="gigr-aheya-grid">
           <div className="gigr-aheya-media-wall">
             <div className="gigr-aheya-main-media">
@@ -496,6 +334,13 @@ export default function GigrPage() {
                 loading="eager"
               />
             </div>
+            {aheyaOriginVideos.map((video) => (
+              <div key={video.label} className="gigr-aheya-small-media">
+                <video playsInline muted loop autoPlay preload="metadata" poster={video.poster}>
+                  <source src={video.src} type="video/mp4" />
+                </video>
+              </div>
+            ))}
             <div className="gigr-aheya-small-media">
               <video playsInline muted loop autoPlay preload="metadata" poster="/appendix/bluegarage/aheya/tiger-zodiac.webp">
                 <source src="/appendix/bluegarage/aheya/tiger_vid.MP4" type="video/mp4" />
@@ -524,7 +369,7 @@ export default function GigrPage() {
               <div className="gigr-learning-list">
                 <article>
                   <strong>Visual Hook</strong>
-                  <span>구미호와 영상은 빠른 피드에서 멈추게 하는 첫 장면으로 가능성이 있었습니다.</span>
+                  <span>초기 영상과 캐릭터 자산은 빠른 피드에서 멈추게 하는 첫 장면으로 가능성이 있었습니다.</span>
                 </article>
                 <article>
                   <strong>Copy Layer</strong>
@@ -536,7 +381,7 @@ export default function GigrPage() {
                 </article>
               </div>
               <p>
-                구미호와 영상은 피드에서 멈추게 하는 시각 훅으로는 가능성을 보였지만, 반응은
+                초기 영상과 캐릭터 자산은 피드에서 멈추게 하는 시각 훅으로는 가능성을 보였지만, 반응은
                 제품 문제 공감보다 AI 이미지/영상 제작 관심층에 가까웠습니다. 그래서 캐릭터는 주목
                 장치, 카피는 문제 인식 장치로 분리했습니다.
               </p>
@@ -607,7 +452,9 @@ export default function GigrPage() {
               브랜드 무드와 대표 장면을 AI 숏폼 광고 흐름으로 수렴시킨 케이스입니다. 처음에는
               콜라주 중심의 방향을 시도했지만, 피드백 이후 완성도가 낮게 읽히는 지점과 시선 분산을
               줄이기 위해 고정 앵글 기반 15초 흐름으로 좁혔습니다. 개별 장면의 귀여움보다 한 장면의 감정과
-              브랜드 무드가 끝까지 유지되는 쪽을 광고 자산 후보로 판단했습니다.
+              브랜드 무드가 끝까지 유지되는 쪽을 광고 자산 후보로 판단했습니다. 이 과정에서 조명,
+              그림자, 접지감, 카메라 움직임처럼 사소해 보이는 디테일이 AI 영상의 완성도를 크게
+              좌우한다는 제작 감각을 얻었습니다.
             </p>
             <div className="gigr-process-strip">
               <span>Brand research</span>
@@ -619,6 +466,14 @@ export default function GigrPage() {
             </div>
             <div className="gigr-adsb-decision-grid">
               {adsbDecisionCards.map((item) => (
+                <article key={item.label}>
+                  <strong>{item.label}</strong>
+                  <span>{item.body}</span>
+                </article>
+              ))}
+            </div>
+            <div className="gigr-adsb-craft-grid">
+              {adsbCraftNotes.map((item) => (
                 <article key={item.label}>
                   <strong>{item.label}</strong>
                   <span>{item.body}</span>
