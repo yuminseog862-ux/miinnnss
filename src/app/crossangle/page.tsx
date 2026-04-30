@@ -7,7 +7,6 @@ import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 import { DetailMediaGallery } from "@/components/detail-media-gallery";
 import type { Accent } from "@/data/portfolio";
-import { workCaseMap as creativeWorkCaseMap } from "@/data/portfolio.creative";
 import {
   adsbSupportingProof,
   footerContent,
@@ -18,7 +17,6 @@ import {
   mainEvidenceContent,
   siteTitle,
   sftiSupportingProof,
-  web3ProductUsageNotesContent,
   workCaseMap,
 } from "@/data/portfolio.crossangle";
 
@@ -37,9 +35,6 @@ export default function CrossanglePage() {
   const problemSolutionGroups = detailProblemGroups.slice(2, 4);
   const hasDetailProblemGroups = problemResearchGroups.length > 0 && problemSolutionGroups.length > 0;
   const projectPackageSection = flagshipCase.detailMediaSections?.[0];
-  const aheyaCreativeCase = creativeWorkCaseMap["aheya"];
-  const aheyaCreativePreview =
-    aheyaCreativeCase?.coverImage ?? aheyaCreativeCase?.placeholderMedia.find((item) => item.src);
   const heroPoster = flagshipCase.coverImage ?? {
     src: "/aheya/home-hero.webp",
     alt: "AHEYA homepage hero screenshot.",
@@ -141,43 +136,13 @@ export default function CrossanglePage() {
                 />
               </div>
               <div className="bluegarage-poster-overlay tainai-hero-poster-overlay" />
+              <span className="crossangle-live-site-badge">
+                aheyabaraya.xyz 열기
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
             </a>
           </motion.aside>
         </div>
-
-        <motion.section {...fadeUp} className="crossangle-usage-notes-panel" aria-labelledby="usage-notes-title">
-          <div className="crossangle-usage-notes-copy">
-            <p className="eyebrow text-aqua">{web3ProductUsageNotesContent.eyebrow}</p>
-            <h2 id="usage-notes-title">
-              {web3ProductUsageNotesContent.titleLines.map((line) => (
-                <span key={line} className="crossangle-usage-notes-title-line">
-                  {line}
-                </span>
-              ))}
-            </h2>
-            <p>{web3ProductUsageNotesContent.summary}</p>
-            <strong>{web3ProductUsageNotesContent.connection}</strong>
-          </div>
-
-          <div className="crossangle-usage-notes-grid" aria-label="Web3 product usage evidence thumbnails">
-            {web3ProductUsageNotesContent.cards.map((card) => (
-              <article
-                key={card.label}
-                className="crossangle-usage-note-card"
-                data-accent={card.accent}
-                aria-label={`${card.label}: ${card.body}`}
-              >
-                <div className="crossangle-usage-note-media">
-                  <Image src={card.image.src} alt={card.image.alt} fill sizes="(max-width: 900px) 50vw, 14vw" />
-                </div>
-                <div className="crossangle-usage-note-copy">
-                  <span>{card.label}</span>
-                  <small>{card.tag}</small>
-                </div>
-              </article>
-            ))}
-          </div>
-        </motion.section>
 
         <motion.section {...fadeUp} id="workflow" className="crossangle-workflow-panel">
           <div className="crossangle-workflow-head">
@@ -373,12 +338,23 @@ export default function CrossanglePage() {
 
         {projectPackageSection ? (
           <section id="project-package" className="detail-slide detail-stage detail-stage-evidence">
-            <div className="detail-stage-topline">
+            <div className="detail-stage-topline crossangle-project-profile-topline">
               <span className="detail-slide-index text-aqua">05. Project Profile</span>
             </div>
             <div className="detail-stage-copy">
               <p className="eyebrow text-aqua">{projectPackageSection.eyebrow}</p>
-              <h2 className="detail-slide-title">{projectPackageSection.title}</h2>
+              <div className="crossangle-project-title-row">
+                <h2 className="detail-slide-title">{projectPackageSection.title}</h2>
+                <a
+                  href="https://aheyabaraya.xyz"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="crossangle-section-live-link"
+                >
+                  aheyabaraya.xyz 열기
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
             <DetailMediaGallery
               items={projectPackageSection.items}
@@ -437,48 +413,6 @@ export default function CrossanglePage() {
             <h2 className="section-title">{adsbSupportingProof.title}</h2>
           </div>
         </div>
-
-        {aheyaCreativeCase ? (
-          <article
-            id="aheya-creative-proof"
-            className="crossangle-adsb-proof-card crossangle-aheya-support-card"
-          >
-            <div className="crossangle-adsb-proof-media crossangle-aheya-support-media">
-              {aheyaCreativePreview?.src ? (
-                <Image
-                  src={aheyaCreativePreview.src}
-                  alt={aheyaCreativePreview.alt ?? "AHEYA creative preview image."}
-                  width={1200}
-                  height={900}
-                  className="crossangle-aheya-support-image"
-                  sizes="(max-width: 1100px) 100vw, 46vw"
-                  style={{ objectFit: aheyaCreativePreview.fit ?? "cover" }}
-                />
-              ) : null}
-            </div>
-
-            <div className="crossangle-adsb-proof-copy">
-              <span className="crossangle-card-label">AHEYA Creative Surface</span>
-              <small className="crossangle-support-period">{aheyaCreativeCase.year}</small>
-              <h3>AHEYA 크리에이티브 / 공개 채널 콘텐츠</h3>
-              <p>
-                AHEYABARAYA의 공개 채널 유입을 위해 캐릭터 세계관과 서비스 화면을 함께 보여준 보조
-                콘텐츠 기획 사례입니다.
-              </p>
-              <ul className="crossangle-solution-list">
-                <li>서비스 화면과 캐릭터 세계관을 함께 보여주는 대표 자료 구성</li>
-                <li>X 공개 채널에서 먼저 읽힐 수 있는 이미지·영상 자산 실험</li>
-                <li>캐릭터 관계 구조와 세계관 시리즈를 콘텐츠 surface로 정리</li>
-              </ul>
-              <div className="crossangle-adsb-proof-links">
-                <Link href="/creative/work/aheya" className="inline-link">
-                  AHEYA 상세 보기
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </article>
-        ) : null}
 
         <article className="crossangle-adsb-proof-card">
           <div className="crossangle-adsb-proof-media">

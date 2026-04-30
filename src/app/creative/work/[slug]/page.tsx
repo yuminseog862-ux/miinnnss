@@ -120,8 +120,13 @@ export default async function CreativeWorkDetailPage({ params }: WorkPageProps) 
   const hasAppendixSlide = Boolean(hasProcessSlide || project.currentStatus.length);
   const shouldShowAppendixSlide = !project.hideAppendixSlide && hasAppendixSlide;
   const isGigrProofCase = project.slug === "aheya" || project.slug === "andersson-bell" || project.slug === "adsb";
-  const brandHref = isGigrProofCase ? "/gigr" : "/creative";
-  const brandLabel = isGigrProofCase ? "GIGR / AI Content Creator Portfolio" : siteTitle;
+  const isCrossangleProofCase = project.slug === "sfti-cmu";
+  const brandHref = isCrossangleProofCase ? "/crossangle" : isGigrProofCase ? "/gigr" : "/creative";
+  const brandLabel = isCrossangleProofCase
+    ? "minnns / Xangle GTM 지원 포트폴리오"
+    : isGigrProofCase
+      ? "GIGR / AI Content Creator Portfolio"
+      : siteTitle;
   const detailKicker = isGigrProofCase ? `GIGR proof / ${project.year}` : `${project.section} / ${project.year}`;
 
   return (
