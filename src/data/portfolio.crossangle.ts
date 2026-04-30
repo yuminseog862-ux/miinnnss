@@ -504,7 +504,7 @@ export const adsbSupportingProof = {
 export const sftiSupportingProof = {
   label: "SFTI-CMU",
   period: "2025.05 - 2025.06",
-  caseTitle: "브랜드 정체성과 GenAI 시각 콘텐츠를 읽히는 연구 문서로 구조화",
+  caseTitle: "브랜드 정체성과 GenAI 시각 콘텐츠 구조화",
   body:
     "브랜드 정체성과 생성형 AI 시각 콘텐츠의 관계를 주제로 연구 초안을 작성하고, 자료 조사·논지 구성·피드백 반영을 거쳐 연구 문서 구조를 정리했습니다.",
   points: [
