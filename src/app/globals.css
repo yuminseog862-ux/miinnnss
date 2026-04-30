@@ -10832,6 +10832,48 @@ a {
   line-height: 1.65;
 }
 
+.gigr-hook-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-top: 1rem;
+}
+
+.gigr-hook-process article {
+  display: grid;
+  gap: 0.42rem;
+  min-height: 10.2rem;
+  padding: 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(244, 122, 61, 0.14);
+  background:
+    linear-gradient(180deg, rgba(244, 122, 61, 0.06), rgba(255, 255, 255, 0.012)),
+    rgba(7, 9, 15, 0.66);
+}
+
+.gigr-hook-process span {
+  color: var(--orange);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.gigr-hook-process strong {
+  color: white;
+  font-size: 0.98rem;
+  line-height: 1.22;
+}
+
+.gigr-hook-process p {
+  margin: 0;
+  color: rgba(246, 242, 233, 0.66);
+  font-size: 0.82rem;
+  line-height: 1.52;
+  word-break: keep-all;
+}
+
 .gigr-planning-section {
   display: grid;
   gap: 1rem;
@@ -11052,6 +11094,90 @@ a {
   color: rgba(246, 242, 233, 0.72);
   font-size: 0.9rem;
   line-height: 1.55;
+  word-break: keep-all;
+}
+
+.gigr-aheya-bridge {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-bottom: 1rem;
+}
+
+.gigr-aheya-bridge article {
+  display: grid;
+  gap: 0.42rem;
+  min-height: 10.4rem;
+  padding: 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(244, 122, 61, 0.14);
+  background:
+    linear-gradient(180deg, rgba(244, 122, 61, 0.058), rgba(255, 255, 255, 0.012)),
+    rgba(7, 9, 15, 0.68);
+}
+
+.gigr-aheya-bridge span {
+  color: var(--orange);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.gigr-aheya-bridge strong {
+  color: white;
+  font-size: 0.98rem;
+  line-height: 1.22;
+}
+
+.gigr-aheya-bridge p {
+  margin: 0;
+  color: rgba(246, 242, 233, 0.66);
+  font-size: 0.82rem;
+  line-height: 1.52;
+  word-break: keep-all;
+}
+
+.gigr-aheya-sequence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-bottom: 1rem;
+}
+
+.gigr-aheya-sequence-grid article {
+  display: grid;
+  gap: 0.42rem;
+  min-height: 10.8rem;
+  padding: 0.95rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(98, 216, 182, 0.14);
+  background:
+    linear-gradient(180deg, rgba(98, 216, 182, 0.06), rgba(255, 255, 255, 0.014)),
+    rgba(7, 9, 15, 0.68);
+}
+
+.gigr-aheya-sequence-grid span {
+  color: var(--aqua);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.gigr-aheya-sequence-grid strong {
+  color: white;
+  font-size: 0.98rem;
+  line-height: 1.22;
+}
+
+.gigr-aheya-sequence-grid p {
+  margin: 0;
+  color: rgba(246, 242, 233, 0.66);
+  font-size: 0.82rem;
+  line-height: 1.52;
   word-break: keep-all;
 }
 
@@ -11280,6 +11406,37 @@ a {
   word-break: keep-all;
 }
 
+.gigr-adsb-craft-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.62rem;
+}
+
+.gigr-adsb-craft-grid article {
+  display: grid;
+  gap: 0.42rem;
+  padding: 0.82rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(126, 125, 242, 0.16);
+  background: rgba(126, 125, 242, 0.045);
+}
+
+.gigr-adsb-craft-grid strong {
+  color: var(--indigo);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.gigr-adsb-craft-grid span {
+  color: rgba(246, 242, 233, 0.68);
+  font-size: 0.8rem;
+  line-height: 1.48;
+  word-break: keep-all;
+}
+
 .gigr-adsb-proof-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -11468,7 +11625,13 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .gigr-axis-grid {
+  .gigr-axis-grid,
+  .gigr-hook-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gigr-aheya-bridge,
+  .gigr-aheya-sequence-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -11556,15 +11719,19 @@ a {
   }
 
   .gigr-axis-grid,
+  .gigr-hook-process,
   .gigr-case-head,
   .gigr-case-readout,
   .gigr-loop-head,
   .gigr-role-grid,
   .gigr-creative-layer,
   .gigr-hero-brief,
+  .gigr-aheya-bridge,
+  .gigr-aheya-sequence-grid,
   .gigr-planning-cards,
   .gigr-aheya-media-wall,
   .gigr-adsb-proof-grid,
+  .gigr-adsb-craft-grid,
   .gigr-loop-proof-row,
   .gigr-support-grid {
     grid-template-columns: 1fr;
