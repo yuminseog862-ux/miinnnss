@@ -5,19 +5,27 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   adVariants,
+  adsbExecutionPoints,
   adsbCraftNotes,
   adsbDecisionCards,
+  adsbSummaryPoints,
   aheyaAmbiguitySteps,
+  aheyaCaseSummaryPoints,
+  aheyaLearningPoints,
   aheyaOriginVideos,
   aheyaPageSurfaces,
   aheyaPositioningBridge,
   caseReadout,
+  characterExpansionPoints,
   characterProofs,
   coreAxes,
   hermesLoop,
   hookPlanningSteps,
+  loopSummaryPoints,
+  planningSummaryPoints,
   planningSignals,
   recruiterFitRows,
+  roleSummaryPoints,
   supportProofs,
   type GigrIconKey,
 } from "@/data/portfolio.gigr";
@@ -48,6 +56,16 @@ const fadeUp = {
   transition: { duration: 0.55, ease: "easeOut" as const },
 };
 
+function BulletList({ items, className = "" }: { items: readonly string[]; className?: string }) {
+  return (
+    <ul className={`gigr-bullet-list ${className}`}>
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
 export default function GigrPage() {
   return (
     <main className="cinema-shell gigr-shell">
@@ -62,6 +80,7 @@ export default function GigrPage() {
             <a href="#fit">작업 방식</a>
             <a href="#planning">기획 의도</a>
             <a href="#aheya">AHEYABARAYA</a>
+            <a href="#aheya-assets">소재 확장</a>
             <a href="#adsb">Andersson Bell</a>
             <a href="#loop">Hermes Loop</a>
           </nav>
@@ -136,18 +155,13 @@ export default function GigrPage() {
         </div>
       </section>
 
-      <motion.section {...fadeUp} id="role" className="page-frame gigr-section gigr-role-section">
+      <motion.section {...fadeUp} id="role" className="page-frame gigr-section gigr-role-section gigr-slide-section">
         <div className="gigr-recruiter-head">
           <div>
             <p className="eyebrow text-aqua">Recruiter View</p>
             <h2 className="section-title">GIGR 업무와 바로 연결되는 증거만 먼저 보입니다</h2>
           </div>
-          <p>
-            기존 작업에서 다뤄온 세계관, 캐릭터, 감정, 첫 훅 설계를 GIGR의 업무인 광고 목적
-            콘텐츠 기획, AI 숏폼 제작, 제작 워크플로우 효율화로 연결합니다. 핵심은 타깃과 목적을
-            먼저 정한 뒤, 레퍼런스에서 발견한 장면 훅을 이미지와 영상 후보로 재구성하고 시각 훅과
-            카피를 분리해 설계하는 것입니다.
-          </p>
+          <BulletList items={roleSummaryPoints} className="gigr-head-bullets" />
         </div>
 
         <div className="gigr-fit-table" aria-label="GIGR role fit evidence">
@@ -175,7 +189,7 @@ export default function GigrPage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="fit" className="page-frame gigr-section">
+      <motion.section {...fadeUp} id="fit" className="page-frame gigr-section gigr-slide-section">
         <div className="section-heading">
           <div>
             <p className="eyebrow text-aqua">What I Do</p>
@@ -218,17 +232,13 @@ export default function GigrPage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="planning" className="page-frame gigr-section gigr-planning-section">
+      <motion.section {...fadeUp} id="planning" className="page-frame gigr-section gigr-planning-section gigr-slide-section">
         <div className="gigr-planning-head">
           <div>
             <p className="eyebrow text-orange">Planning & Signal</p>
             <h2 className="section-title">AHEYABARAYA에서 얻은 제작 판단</h2>
           </div>
-          <p>
-            채용자가 봐야 할 핵심은 캐릭터 수가 아니라 모호한 상황에서 직접 가정을 세우고 바꾼
-            흐름입니다. 처음에는 초기 구미호 영상 2개와 Yeon으로 첫인상 후보를 만들었고, 이후
-            동물·그리스·이집트 계열과 정제 캐릭터를 거치며 확장 방식과 카피 방향을 다시 잡았습니다.
-          </p>
+          <BulletList items={planningSummaryPoints} className="gigr-head-bullets" />
         </div>
 
         <div className="gigr-planning-grid">
@@ -237,7 +247,10 @@ export default function GigrPage() {
               <article key={item.title} className="gigr-planning-card">
                 <p>{item.title}</p>
                 <h3>{item.signal}</h3>
-                <span>{item.body}</span>
+                <div>
+                  <span>{item.body}</span>
+                  <BulletList items={item.points} className="gigr-mini-bullets" />
+                </div>
               </article>
             ))}
           </div>
@@ -270,27 +283,18 @@ export default function GigrPage() {
                 </figure>
               ))}
             </div>
-            <p className="gigr-character-note">
-              이 자산들은 문제 공감이 완성됐다는 근거가 아니라, 시각 훅이 주목을 만들 수 있다는
-              관찰을 바탕으로 광고 소재 후보군을 확장한 근거입니다. 초기 영상과 Yeon에서 출발해
-              동물·그리스·이집트 계열을 거치고, 이후 파란 구미호와 K/Becca 같은 정제 자산으로
-              좁혔습니다.
-            </p>
+            <BulletList items={characterExpansionPoints} className="gigr-character-note-list" />
           </aside>
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="aheya" className="page-frame gigr-section gigr-aheya-section">
+      <motion.section {...fadeUp} id="aheya" className="page-frame gigr-section gigr-aheya-section gigr-slide-section">
         <div className="gigr-case-head">
           <div>
             <p className="eyebrow text-aqua">Flagship Case</p>
             <h2 className="section-title">AHEYABARAYA는 캐릭터를 광고 훅으로 검토한 케이스입니다</h2>
           </div>
-          <p>
-            별도 브랜딩 채널에서 캐릭터와 영상을 X 카피의 진입점으로 사용했습니다. 이미지와 영상은
-            문제 공감 자체를 만드는 장치가 아니라, 피드에서 먼저 멈추게 한 뒤 문제 정의와 카피를
-            읽게 만드는 시각적 진입점이었습니다.
-          </p>
+          <BulletList items={aheyaCaseSummaryPoints} className="gigr-head-bullets" />
         </div>
 
         <div className="gigr-case-readout">
@@ -320,6 +324,16 @@ export default function GigrPage() {
               <p>{item.body}</p>
             </article>
           ))}
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="aheya-assets" className="page-frame gigr-section gigr-aheya-section gigr-slide-section">
+        <div className="gigr-case-head">
+          <div>
+            <p className="eyebrow text-aqua">Asset Expansion</p>
+            <h2 className="section-title">반응을 보고 콘텐츠 생산 방향을 다시 잡았습니다</h2>
+          </div>
+          <BulletList items={aheyaLearningPoints} className="gigr-head-bullets" />
         </div>
 
         <div className="gigr-aheya-grid">
@@ -361,30 +375,15 @@ export default function GigrPage() {
           <div className="gigr-aheya-copy">
             <article className="gigr-signal-card">
               <p className="eyebrow text-orange">Learning Decision</p>
-              <h3>시각 훅과 문제 메시지의 정합성을 분리해 다시 정리했습니다</h3>
-              <p>
-                이미지와 영상은 문제 공감 자체를 만드는 장치가 아니라, X 피드에서 카피를 읽게 만드는
-                시각적 진입점으로 사용했습니다.
-              </p>
+              <h3>서비스 카피가 먹히지 않은 이유를 보고 콘텐츠 방향을 다시 잡았습니다</h3>
               <div className="gigr-learning-list">
-                <article>
-                  <strong>Visual Hook</strong>
-                  <span>초기 영상과 캐릭터 자산은 빠른 피드에서 멈추게 하는 첫 장면으로 가능성이 있었습니다.</span>
-                </article>
-                <article>
-                  <strong>Copy Layer</strong>
-                  <span>공감은 이미지가 아니라 타깃 문제를 직접 건드리는 짧은 문장과 CTA에서 만들어져야 했습니다.</span>
-                </article>
-                <article>
-                  <strong>Next Brief</strong>
-                  <span>다음 소재는 캐릭터 훅을 유지하되 AI/크립토 빌더의 첫 유저·피드백 문제를 더 직접적으로 테스트해야 합니다.</span>
-                </article>
+                {caseReadout.map((item) => (
+                  <article key={item.label}>
+                    <strong>{item.label}</strong>
+                    <span>{item.body}</span>
+                  </article>
+                ))}
               </div>
-              <p>
-                초기 영상과 캐릭터 자산은 피드에서 멈추게 하는 시각 훅으로는 가능성을 보였지만, 반응은
-                제품 문제 공감보다 AI 이미지/영상 제작 관심층에 가까웠습니다. 그래서 캐릭터는 주목
-                장치, 카피는 문제 인식 장치로 분리했습니다.
-              </p>
             </article>
 
             <div className="gigr-aheya-page-proof">
@@ -429,16 +428,13 @@ export default function GigrPage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="adsb" className="page-frame gigr-section">
+      <motion.section {...fadeUp} id="adsb" className="page-frame gigr-section gigr-slide-section">
         <div className="gigr-case-head gigr-adsb-head">
           <div>
             <p className="eyebrow text-orange">External Brand Case</p>
             <h2 className="section-title">Andersson Bell은 AI 숏폼 방향을 수렴한 케이스입니다</h2>
           </div>
-          <p>
-            이 섹션은 결과 영상보다 의사결정을 먼저 보여줍니다. 콜라주식 장면 나열에서 고정 앵글
-            15초 흐름으로 좁힌 이유가 GIGR의 광고 소재 판단과 연결됩니다.
-          </p>
+          <BulletList items={adsbSummaryPoints} className="gigr-head-bullets" />
         </div>
         <div className="gigr-adsb-row">
           <div className="gigr-adsb-video">
@@ -448,14 +444,7 @@ export default function GigrPage() {
           </div>
 
           <div className="gigr-adsb-copy">
-            <p className="gigr-section-copy">
-              브랜드 무드와 대표 장면을 AI 숏폼 광고 흐름으로 수렴시킨 케이스입니다. 처음에는
-              콜라주 중심의 방향을 시도했지만, 피드백 이후 완성도가 낮게 읽히는 지점과 시선 분산을
-              줄이기 위해 고정 앵글 기반 15초 흐름으로 좁혔습니다. 개별 장면의 귀여움보다 한 장면의 감정과
-              브랜드 무드가 끝까지 유지되는 쪽을 광고 자산 후보로 판단했습니다. 이 과정에서 조명,
-              그림자, 접지감, 카메라 움직임처럼 사소해 보이는 디테일이 AI 영상의 완성도를 크게
-              좌우한다는 제작 감각을 얻었습니다.
-            </p>
+            <BulletList items={adsbExecutionPoints} className="gigr-execution-bullets" />
             <div className="gigr-process-strip">
               <span>Brand research</span>
               <span>Hook / motif</span>
@@ -510,18 +499,13 @@ export default function GigrPage() {
         </div>
       </motion.section>
 
-      <motion.section {...fadeUp} id="loop" className="page-frame gigr-section">
+      <motion.section {...fadeUp} id="loop" className="page-frame gigr-section gigr-slide-section">
         <div className="gigr-loop-head">
           <div>
             <p className="eyebrow text-indigo">Operating System</p>
             <h2 className="section-title">Hermes / Aurora Creative Operating Loop</h2>
           </div>
-          <p>
-            지금은 문서, 프롬프트 큐, 관찰 로그, 게시 메타데이터를 먼저 세워둔 상태입니다. 다음 단계는
-            이 구조를 자동화 루프로 운영해 매일 광고 소재 후보를 만들고, 분류하고, 반응 신호로 다음
-            프롬프트를 고치는 것입니다. 자동 게시는 API 비용과 품질 기준을 본 뒤 승인 기반으로
-            확장하는 영역입니다.
-          </p>
+          <BulletList items={loopSummaryPoints} className="gigr-head-bullets" />
         </div>
 
         <div className="gigr-loop-grid">

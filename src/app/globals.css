@@ -10549,6 +10549,13 @@ a {
   padding-top: clamp(3rem, 5.4vw, 5.7rem);
 }
 
+.gigr-slide-section {
+  min-height: min(100svh, 58rem);
+  scroll-margin-top: 1rem;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
 .gigr-role-section {
   display: grid;
   gap: 1rem;
@@ -10577,6 +10584,76 @@ a {
   font-size: 0.98rem;
   line-height: 1.72;
   word-break: keep-all;
+}
+
+.gigr-bullet-list {
+  display: grid;
+  gap: 0.46rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gigr-bullet-list li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: rgba(246, 242, 233, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.52;
+  word-break: keep-all;
+}
+
+.gigr-bullet-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 9999px;
+  background: var(--aqua);
+  box-shadow: 0 0 0 0.22rem rgba(98, 216, 182, 0.1);
+}
+
+.gigr-head-bullets {
+  align-self: end;
+  padding: 1rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(98, 216, 182, 0.14);
+  background:
+    linear-gradient(180deg, rgba(98, 216, 182, 0.055), rgba(255, 255, 255, 0.014)),
+    rgba(7, 9, 15, 0.62);
+}
+
+.gigr-head-bullets li {
+  font-size: 0.88rem;
+}
+
+.gigr-mini-bullets {
+  gap: 0.26rem;
+  margin-top: 0.48rem;
+}
+
+.gigr-mini-bullets li {
+  padding-left: 0.82rem;
+  color: rgba(246, 242, 233, 0.58);
+  font-size: 0.74rem;
+  line-height: 1.36;
+}
+
+.gigr-mini-bullets li::before {
+  top: 0.62em;
+  width: 0.25rem;
+  height: 0.25rem;
+  background: var(--orange);
+  box-shadow: none;
+}
+
+.gigr-execution-bullets {
+  padding: 0.95rem 1rem;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(244, 122, 61, 0.14);
+  background: rgba(244, 122, 61, 0.045);
 }
 
 .gigr-fit-table {
@@ -11014,6 +11091,17 @@ a {
   font-size: 0.9rem;
   line-height: 1.62;
   word-break: keep-all;
+}
+
+.gigr-character-note-list {
+  padding: 0.92rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(98, 216, 182, 0.14);
+  background: rgba(98, 216, 182, 0.04);
+}
+
+.gigr-character-note-list li {
+  font-size: 0.82rem;
 }
 
 .gigr-aheya-page-proof {
@@ -11675,6 +11763,10 @@ a {
     min-height: auto;
   }
 
+  .gigr-slide-section {
+    min-height: auto;
+  }
+
   .gigr-hero {
     min-height: auto;
     padding-bottom: 1rem;
@@ -11812,4 +11904,40 @@ a {
 .integrated-shell .integrated-collab-card dd,
 .integrated-shell .integrated-preview-card p {
   word-break: keep-all;
+}
+
+@media print {
+  .gigr-shell {
+    background: #080a10 !important;
+  }
+
+  .gigr-topbar,
+  .hero-ctas {
+    display: none !important;
+  }
+
+  .gigr-hero-frame,
+  .gigr-slide-section {
+    min-height: 100vh;
+    padding-top: 1.2rem;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .gigr-section {
+    padding-bottom: 1.2rem;
+  }
+
+  .gigr-hero,
+  .gigr-aheya-grid,
+  .gigr-adsb-row,
+  .gigr-loop-grid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .gigr-footer {
+    break-before: page;
+    page-break-before: always;
+  }
 }
