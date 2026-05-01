@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#090D1A"/>
+  <text x="96" y="118" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="24">AHEYA / Metrics</text>
+  <text x="96" y="188" fill="#F7ECDD" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="56" font-weight="700">actual signal과 measurement plan을 분리</text>
+  <text x="98" y="238" fill="#C3A88B" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="25">지금 확인한 표면과 다음에 측정할 이벤트를 따로 둔다</text>
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="96" y="304" width="660" height="420" rx="26" fill="#121A2F" stroke="#57D6FF"/>
+    <rect x="844" y="304" width="660" height="420" rx="26" fill="#121A2F" stroke="#62D8B6"/>
+    <text x="136" y="366" fill="#57D6FF" font-size="31" font-weight="700">Actual signal</text>
+    <text x="884" y="366" fill="#62D8B6" font-size="31" font-weight="700">Measurement plan</text>
+    <text x="136" y="432" fill="#F7ECDD" font-size="25">- X public post surface</text>
+    <text x="136" y="486" fill="#F7ECDD" font-size="25">- 78 keyword matches</text>
+    <text x="136" y="540" fill="#F7ECDD" font-size="25">- strongest public post metric</text>
+    <text x="136" y="594" fill="#F7ECDD" font-size="25">- test/runtime aggregate</text>
+    <text x="136" y="648" fill="#F7ECDD" font-size="25">- Drive metadata</text>
+    <text x="884" y="432" fill="#F7ECDD" font-size="25">- visit / open</text>
+    <text x="884" y="486" fill="#F7ECDD" font-size="25">- support start</text>
+    <text x="884" y="540" fill="#F7ECDD" font-size="25">- support verified</text>
+    <text x="884" y="594" fill="#F7ECDD" font-size="25">- feedback submitted</text>
+    <text x="884" y="648" fill="#F7ECDD" font-size="25">- proof approved</text>
+  </g>
+  <rect x="96" y="762" width="1408" height="64" rx="18" fill="#0B1020" stroke="#263653"/>
+  <text x="128" y="803" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="22">Boundary: KPI/SQL is measurement design. No KPI outcome or conversion-lift claim.</text>
+</svg>

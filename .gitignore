@@ -5,3 +5,8 @@ dist
 *.log
 .DS_Store
 .vercel
+.playwright-cli/
+output/
+tmp/
+archive/unused-media/
+tsconfig.tsbuildinfo

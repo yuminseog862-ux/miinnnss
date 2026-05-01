@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#090D1A"/>
+  <text x="96" y="118" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="24">AHEYA / Problem Discovery</text>
+  <text x="96" y="188" fill="#F7ECDD" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="56" font-weight="700">Web3 참여 행동은 많지만 useful signal로 남지 않는다</text>
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="96" y="304" width="430" height="358" rx="26" fill="#121A2F" stroke="#F87171"/>
+    <rect x="1074" y="304" width="430" height="358" rx="26" fill="#121A2F" stroke="#F87171"/>
+    <rect x="586" y="350" width="428" height="266" rx="26" fill="#18233D" stroke="#62D8B6"/>
+    <text x="136" y="368" fill="#F7ECDD" font-size="33" font-weight="700">Web3 user</text>
+    <text x="1114" y="368" fill="#F7ECDD" font-size="33" font-weight="700">Early builder</text>
+    <text x="626" y="418" fill="#62D8B6" font-size="34" font-weight="700">AHEYA Core Rail</text>
+    <text x="136" y="438" fill="#AAB4D6" font-size="24">- reward action 반복</text>
+    <text x="136" y="496" fill="#AAB4D6" font-size="24">- 실제 소비 전환 약함</text>
+    <text x="136" y="554" fill="#AAB4D6" font-size="24">- signal로 재사용 어려움</text>
+    <text x="1114" y="438" fill="#AAB4D6" font-size="24">- demo ship은 빠름</text>
+    <text x="1114" y="496" fill="#AAB4D6" font-size="24">- first feedback은 느림</text>
+    <text x="1114" y="554" fill="#AAB4D6" font-size="24">- proof 축적이 어려움</text>
+    <text x="626" y="486" fill="#F7ECDD" font-size="26">support</text>
+    <text x="626" y="538" fill="#F7ECDD" font-size="26">Good / Improve</text>
+    <text x="626" y="590" fill="#F7ECDD" font-size="26">optional proof</text>
+  </g>
+  <line x1="526" y1="484" x2="586" y2="484" stroke="#AAB4D6" stroke-width="4"/>
+  <line x1="1014" y1="484" x2="1074" y2="484" stroke="#AAB4D6" stroke-width="4"/>
+  <rect x="96" y="724" width="1408" height="72" rx="18" fill="#0B1020" stroke="#263653"/>
+  <text x="128" y="770" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="22">Boundary: problem framing only. Do not claim AHEYA solved the whole market problem.</text>
+</svg>

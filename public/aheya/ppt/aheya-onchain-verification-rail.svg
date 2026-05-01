@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AHEYA Onchain Verification Rail</title>
+  <desc id="desc">Portfolio-safe diagram showing Core Rail supported by EVM/Base and Solana verification substrate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07151c"/>
+      <stop offset="0.55" stop-color="#10232a"/>
+      <stop offset="1" stop-color="#1f2b25"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#16303a"/>
+      <stop offset="1" stop-color="#0b1c22"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1330" cy="120" r="260" fill="#f2b84b" opacity="0.08"/>
+  <circle cx="120" cy="760" r="320" fill="#61d394" opacity="0.07"/>
+  <text x="92" y="104" fill="#f6ead2" font-family="Georgia, serif" font-size="54" font-weight="700">Onchain Verification Rail</text>
+  <text x="94" y="150" fill="#b9c9c4" font-family="Arial, sans-serif" font-size="22">ETH / SOL mechanics stay under Core Rail as proof infrastructure, not as a traction claim.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="220" width="1416" height="190" rx="28" fill="url(#card)" stroke="#f2b84b" stroke-opacity="0.44"/>
+    <text x="132" y="274" fill="#f6ead2" font-family="Arial, sans-serif" font-size="26" font-weight="700">Core Rail</text>
+    <text x="132" y="314" fill="#d4dfda" font-family="Arial, sans-serif" font-size="20">live idea -> support -> Good/Improve -> optional proof -> reusable signal</text>
+    <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
+      <rect x="132" y="340" width="220" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>
+      <text x="165" y="369" fill="#eaf8f6">Open live idea</text>
+      <rect x="405" y="340" width="190" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>
+      <text x="454" y="369" fill="#eaf8f6">Support</text>
+      <rect x="648" y="340" width="220" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>
+      <text x="683" y="369" fill="#eaf8f6">Good / Improve</text>
+      <rect x="921" y="340" width="210" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>
+      <text x="975" y="369" fill="#eaf8f6">Proof</text>
+      <rect x="1184" y="340" width="230" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>
+      <text x="1235" y="369" fill="#eaf8f6">Reuse signal</text>
+    </g>
+  </g>
+
+  <path d="M800 410 L800 502" stroke="#f2b84b" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <text x="842" y="468" fill="#f2b84b" font-family="Arial, sans-serif" font-size="18" font-weight="700">verification substrate</text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="520" width="450" height="242" rx="28" fill="#10262f" stroke="#5fbec4" stroke-opacity="0.55"/>
+    <text x="132" y="576" fill="#eaf8f6" font-family="Arial, sans-serif" font-size="25" font-weight="700">EVM / Base</text>
+    <text x="132" y="618" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">direct-send verify</text>
+    <text x="132" y="654" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">wallet-signed receipt context</text>
+    <text x="132" y="690" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">registry / claim wiring</text>
+    <text x="132" y="728" fill="#f2b84b" font-family="Arial, sans-serif" font-size="16">Not a conversion or demand claim</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="575" y="520" width="450" height="242" rx="28" fill="#10262f" stroke="#61d394" stroke-opacity="0.55"/>
+    <text x="615" y="576" fill="#eaf8f6" font-family="Arial, sans-serif" font-size="25" font-weight="700">Solana</text>
+    <text x="615" y="618" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">wallet connect / message sign</text>
+    <text x="615" y="654" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">wallet-signed publish receipt</text>
+    <text x="615" y="690" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">direct-send only support runtime</text>
+    <text x="615" y="728" fill="#f2b84b" font-family="Arial, sans-serif" font-size="16">Legacy program path is not current truth</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1058" y="520" width="450" height="242" rx="28" fill="#10262f" stroke="#f2b84b" stroke-opacity="0.55"/>
+    <text x="1098" y="576" fill="#eaf8f6" font-family="Arial, sans-serif" font-size="25" font-weight="700">Portfolio Boundary</text>
+    <text x="1098" y="618" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">Show implementation depth</text>
+    <text x="1098" y="654" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">Show scope control</text>
+    <text x="1098" y="690" fill="#c6d8d4" font-family="Arial, sans-serif" font-size="19">Do not claim traction</text>
+    <text x="1098" y="728" fill="#f2b84b" font-family="Arial, sans-serif" font-size="16">Chain explorer proof not attached here</text>
+  </g>
+
+  <text x="92" y="835" fill="#8ea29c" font-family="Arial, sans-serif" font-size="16">Source: product-change map, service-map, solana-support-publish, EVM contract docs, claim-audit</text>
+</svg>
