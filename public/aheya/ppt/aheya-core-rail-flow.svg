@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#090D1A"/>
+  <text x="96" y="118" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="24">AHEYA / Core Rail</text>
+  <text x="96" y="190" fill="#F7ECDD" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="58" font-weight="700">live idea를 reviewable signal로 바꾸는 흐름</text>
+  <text x="98" y="240" fill="#C3A88B" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="26">open -> support -> Good/Improve -> optional proof -> reusable signal</text>
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <rect x="108" y="356" width="232" height="148" rx="24" fill="#121A2F" stroke="#57D6FF"/>
+    <rect x="388" y="356" width="232" height="148" rx="24" fill="#121A2F" stroke="#62D8B6"/>
+    <rect x="668" y="356" width="232" height="148" rx="24" fill="#121A2F" stroke="#F4C558"/>
+    <rect x="948" y="356" width="232" height="148" rx="24" fill="#121A2F" stroke="#8B5CF6"/>
+    <rect x="1228" y="356" width="232" height="148" rx="24" fill="#121A2F" stroke="#62D8B6"/>
+    <text x="154" y="425" fill="#F7ECDD" font-size="31" font-weight="700">Open</text>
+    <text x="430" y="425" fill="#F7ECDD" font-size="31" font-weight="700">Support</text>
+    <text x="699" y="425" fill="#F7ECDD" font-size="31" font-weight="700">Good / Improve</text>
+    <text x="992" y="425" fill="#F7ECDD" font-size="31" font-weight="700">Proof</text>
+    <text x="1274" y="425" fill="#F7ECDD" font-size="31" font-weight="700">Reuse</text>
+    <text x="154" y="468" fill="#AAB4D6" font-size="22">live demo</text>
+    <text x="430" y="468" fill="#AAB4D6" font-size="22">small action</text>
+    <text x="699" y="468" fill="#AAB4D6" font-size="22">short feedback</text>
+    <text x="992" y="468" fill="#AAB4D6" font-size="22">optional public</text>
+    <text x="1274" y="468" fill="#AAB4D6" font-size="22">next update</text>
+  </g>
+  <g stroke="#AAB4D6" stroke-width="3" marker-end="url(#arrow)">
+    <line x1="344" y1="430" x2="382" y2="430"/>
+    <line x1="624" y1="430" x2="662" y2="430"/>
+    <line x1="904" y1="430" x2="942" y2="430"/>
+    <line x1="1184" y1="430" x2="1222" y2="430"/>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#AAB4D6"/></marker></defs>
+  <rect x="96" y="660" width="1408" height="96" rx="20" fill="#0B1020" stroke="#263653"/>
+  <text x="128" y="718" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="24">Boundary: flow proof only. Do not present as conversion or demand evidence.</text>
+</svg>

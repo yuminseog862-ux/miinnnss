@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Pre-January Raven Aheaya date evidence card">
+  <rect width="1600" height="900" fill="#f5efe4"/>
+  <rect x="70" y="64" width="1460" height="772" rx="36" fill="#fffaf0" stroke="#1e2a24" stroke-width="3"/>
+  <text x="110" y="132" font-family="Georgia, serif" font-size="44" fill="#1e2a24" font-weight="700">Pre-January Legacy Planning Evidence</text>
+  <text x="110" y="174" font-family="Arial, sans-serif" font-size="22" fill="#4c5b51">Raven / Aheaya Drive metadata checked on 2026-05-01</text>
+  <line x1="110" y1="216" x2="1490" y2="216" stroke="#d3c1a1" stroke-width="2"/>
+  <text x="110" y="268" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#1e2a24">Source set</text>
+  <text x="420" y="268" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#1e2a24">Drive created</text>
+  <text x="720" y="268" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#1e2a24">Source modified</text>
+  <text x="1050" y="268" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#1e2a24">Portfolio use</text>
+  <g font-family="Arial, sans-serif" font-size="22" fill="#1e2a24">
+    <rect x="102" y="298" width="1388" height="54" fill="#f0e3ca"/>
+    <text x="110" y="333">Raven 2.0 flow/spec/roadmap docs</text>
+    <text x="420" y="333">2025-12-12</text>
+    <text x="720" y="333">2025-04-30</text>
+    <text x="1050" y="333">User flow, sprint spec, tech plan</text>
+    <rect x="102" y="366" width="1388" height="54" fill="#fffaf0"/>
+    <text x="110" y="401">Raven BP / market model</text>
+    <text x="420" y="401">2025-12-12</text>
+    <text x="720" y="401">2025-07-03 / 2025-08-13</text>
+    <text x="1050" y="401">Strategy and segment model</text>
+    <rect x="102" y="434" width="1388" height="54" fill="#f0e3ca"/>
+    <text x="110" y="469">Aheaya KPI templates</text>
+    <text x="420" y="469">2025-11-12</text>
+    <text x="720" y="469">2025-11-12</text>
+    <text x="1050" y="469">Measurement design only</text>
+    <rect x="102" y="502" width="1388" height="54" fill="#fffaf0"/>
+    <text x="110" y="537">Raven pitch deck</text>
+    <text x="420" y="537">2026-02-23</text>
+    <text x="720" y="537">2025-06-13</text>
+    <text x="1050" y="537">Pre-Jan source, later upload</text>
+  </g>
+  <rect x="110" y="610" width="620" height="140" rx="24" fill="#1e2a24"/>
+  <text x="148" y="660" font-family="Georgia, serif" font-size="30" fill="#f8efd9" font-weight="700">Conclusion</text>
+  <text x="148" y="704" font-family="Arial, sans-serif" font-size="23" fill="#f8efd9">The reviewed source-modified dates are pre-Jan 2026.</text>
+  <text x="148" y="735" font-family="Arial, sans-serif" font-size="23" fill="#f8efd9">Use as planning lineage, not traction evidence.</text>
+  <rect x="780" y="610" width="670" height="140" rx="24" fill="#d8aa55"/>
+  <text x="818" y="660" font-family="Georgia, serif" font-size="30" fill="#1e2a24" font-weight="700">Caveat</text>
+  <text x="818" y="704" font-family="Arial, sans-serif" font-size="23" fill="#1e2a24">One PPT was created in Drive after January,</text>
+  <text x="818" y="735" font-family="Arial, sans-serif" font-size="23" fill="#1e2a24">but its source-modified date is 2025-06-13.</text>
+  <text x="110" y="806" font-family="Arial, sans-serif" font-size="18" fill="#667066">Portfolio-safe reconstructed card from Drive metadata. Raw IDs, permissions, and private document pages omitted.</text>
+</svg>

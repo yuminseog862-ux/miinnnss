@@ -2,7 +2,26 @@
 
 Internal-only working area for portfolio materials.
 
-- `source/`: raw source files, exports, notes, decks
-- `organize/`: cleaned company-specific writeups and selected assets
+- `projects/`: project-scoped source files, evidence, exports, notes, and decks.
+- `source/`: remaining raw source files that are not yet assigned to a project.
+- `organize/`: remaining company-specific writeups that are not yet assigned to a project.
+
+## Project Folders
+
+- `projects/aheya/`
+- `projects/ab-luna/`
+- `projects/ab-aurora/`
+- `projects/adsb/`
+- `projects/bemoon/`
+- `projects/bluegarage/`
+- `projects/crossangle/`
+- `projects/ilysb/`
+- `projects/sfti/`
+- `projects/tainai/`
+- `projects/shared/`
+
+Notes:
+- AHEYA page and character assets moved from project appendix folders into `public/aheya/page-assets/` and `public/aheya/worldbuilding/`.
+- Old BlueGarage/TainAI appendix-style source folders that were duplicated by project folders were removed after migration.
 
 Do not link this folder directly from the public website.

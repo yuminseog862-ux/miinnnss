@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#090D1A"/>
+  <text x="96" y="118" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="24">AHEYA / X content ledger</text>
+  <text x="96" y="188" fill="#F7ECDD" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="56" font-weight="700">X post는 performance가 아니라 iteration ledger</text>
+  <text x="98" y="238" fill="#C3A88B" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="25">2026-02-10 -> 2026-04-14 public copy phase</text>
+  <g font-family="Pretendard, Apple SD Gothic Neo, sans-serif">
+    <line x1="140" y1="444" x2="1458" y2="444" stroke="#33415F" stroke-width="5"/>
+    <g>
+      <circle cx="180" cy="444" r="18" fill="#57D6FF"/>
+      <rect x="110" y="500" width="240" height="140" rx="20" fill="#121A2F" stroke="#57D6FF"/>
+      <text x="136" y="552" fill="#F7ECDD" font-size="24" font-weight="700">02.10-02.13</text>
+      <text x="136" y="590" fill="#AAB4D6" font-size="20">Testnet / link CTA</text>
+    </g>
+    <g>
+      <circle cx="498" cy="444" r="18" fill="#62D8B6"/>
+      <rect x="428" y="300" width="240" height="140" rx="20" fill="#121A2F" stroke="#62D8B6"/>
+      <text x="454" y="352" fill="#F7ECDD" font-size="24" font-weight="700">02.20-02.23</text>
+      <text x="454" y="390" fill="#AAB4D6" font-size="20">AI-native first signal</text>
+    </g>
+    <g>
+      <circle cx="816" cy="444" r="18" fill="#F4C558"/>
+      <rect x="746" y="500" width="240" height="140" rx="20" fill="#121A2F" stroke="#F4C558"/>
+      <text x="772" y="552" fill="#F7ECDD" font-size="24" font-weight="700">03.11-03.20</text>
+      <text x="772" y="590" fill="#AAB4D6" font-size="20">Trust / proof language</text>
+    </g>
+    <g>
+      <circle cx="1134" cy="444" r="18" fill="#8B5CF6"/>
+      <rect x="1064" y="300" width="240" height="140" rx="20" fill="#121A2F" stroke="#8B5CF6"/>
+      <text x="1090" y="352" fill="#F7ECDD" font-size="24" font-weight="700">03.21-03.27</text>
+      <text x="1090" y="390" fill="#AAB4D6" font-size="20">Visual series</text>
+    </g>
+    <g>
+      <circle cx="1452" cy="444" r="18" fill="#62D8B6"/>
+      <rect x="1264" y="500" width="240" height="140" rx="20" fill="#121A2F" stroke="#62D8B6"/>
+      <text x="1290" y="552" fill="#F7ECDD" font-size="24" font-weight="700">04.01-04.14</text>
+      <text x="1290" y="590" fill="#AAB4D6" font-size="20">Direct support CTA</text>
+    </g>
+  </g>
+  <rect x="96" y="704" width="1408" height="72" rx="18" fill="#0B1020" stroke="#263653"/>
+  <text x="128" y="750" fill="#AAB4D6" font-family="Pretendard, Apple SD Gothic Neo, sans-serif" font-size="23">Use as qualitative learning. Do not claim demand, conversion, or public reward-thesis validation.</text>
+</svg>
