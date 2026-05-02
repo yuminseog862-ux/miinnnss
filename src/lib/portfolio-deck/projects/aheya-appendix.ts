@@ -41,7 +41,7 @@ export const aheyaAppendixSlides = [
         ["Core Rail", "live idea -> support -> Good/Improve -> optional proof", "public product story"],
         ["EVM/Base", "direct-send verify, registry/claim wiring context", "deployment/adoption proof 아님"],
         ["Solana", "wallet connect, wallet-signed publish, direct-send support runtime", "legacy program-first runtime claim 금지"],
-        ["Portfolio", "January smart-contract work as verification foundation", "conversion improvement 표현 금지"],
+        ["Portfolio", "January smart-contract work as verification foundation", "개선 수치 과장 금지"],
       ],
     },
     media: { src: "/aheya/ppt/aheya-onchain-verification-rail.svg", alt: "AHEYA onchain verification rail", label: "Onchain rail" },
