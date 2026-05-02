@@ -727,6 +727,571 @@
   font-weight: 800;
 }
 
+.timelineCanvas {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  min-height: 0;
+}
+
+.timelineCard {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 10px;
+  min-height: 310px;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 12% 10%, var(--accent-soft), transparent 46%),
+    linear-gradient(160deg, rgba(18, 26, 47, 0.92), rgba(9, 13, 26, 0.76));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.timelineCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), rgba(127, 208, 255, 0.16));
+}
+
+.timelineStep {
+  position: absolute;
+  right: 14px;
+  top: 13px;
+  color: rgba(247, 236, 221, 0.38);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.timelineDate {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 1px solid rgba(247, 236, 221, 0.14);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.timelineCard strong {
+  color: #f7ecdd;
+  font-size: 17px;
+  line-height: 1.24;
+}
+
+.timelineCard p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.76);
+  font-size: 13.5px;
+  line-height: 1.48;
+}
+
+.researchCanvas {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 18px;
+  min-height: 0;
+}
+
+.researchProblemPair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.researchProblemCard,
+.researchBridge,
+.problemSideCard,
+.problemCenterRail,
+.coreRailNode,
+.coreRailBoundary {
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 10px;
+  background:
+    linear-gradient(145deg, rgba(45, 51, 66, 0.42), rgba(19, 22, 29, 0.18)),
+    rgba(9, 13, 26, 0.54);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 22px 68px rgba(0, 0, 0, 0.14);
+}
+
+.researchProblemCard {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 260px;
+  padding: 26px;
+}
+
+.researchBridge {
+  display: grid;
+  grid-template-columns: auto minmax(0, 0.55fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 104px;
+  padding: 20px 24px;
+  border-color: rgba(87, 214, 255, 0.2);
+  background:
+    linear-gradient(110deg, rgba(87, 214, 255, 0.16), rgba(139, 124, 246, 0.08)),
+    rgba(11, 13, 18, 0.56);
+}
+
+.researchProblemCard span,
+.researchBridge span,
+.problemSideCard span,
+.problemCenterRail span {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 30px;
+  padding: 0 11px;
+  border-radius: 999px;
+  color: #090d1a;
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.researchProblemCard strong,
+.researchBridge strong,
+.problemSideCard strong,
+.problemCenterRail strong {
+  color: #f7ecdd;
+  font-size: 24px;
+  line-height: 1.22;
+}
+
+.researchBridge strong {
+  font-size: 20px;
+}
+
+.researchProblemCard p,
+.researchBridge p,
+.problemSideCard p,
+.problemCenterRail p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.76);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.problemBridgeCanvas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(310px, 0.78fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.problemSideCard,
+.problemCenterRail {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  min-height: 326px;
+  padding: 28px;
+}
+
+.problemCenterRail {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-color: rgba(98, 216, 182, 0.24);
+  background:
+    radial-gradient(circle at 50% 16%, rgba(98, 216, 182, 0.24), transparent 48%),
+    linear-gradient(180deg, rgba(18, 26, 47, 0.9), rgba(9, 13, 26, 0.82));
+}
+
+.problemCenterRail::before,
+.problemCenterRail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 42px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.62;
+}
+
+.problemCenterRail::before {
+  left: -8px;
+}
+
+.problemCenterRail::after {
+  right: -8px;
+}
+
+.problemCenterRail span {
+  justify-self: center;
+}
+
+.coreRailCanvas {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 20px;
+  min-height: 0;
+}
+
+.coreRailFlow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.coreRailNode {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 18px;
+  min-height: 222px;
+  padding: 24px;
+}
+
+.coreRailNode span {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 34px;
+  border-radius: 999px;
+  color: #090d1a;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.coreRailNode strong {
+  color: #f7ecdd;
+  font-size: 25px;
+  line-height: 1.16;
+}
+
+.coreRailNode i {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  z-index: 2;
+  width: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(127, 208, 255, 0.3));
+}
+
+.coreRailNode i::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--accent);
+}
+
+.coreRailBoundaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.coreRailBoundary {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  padding: 14px 16px;
+  color: rgba(247, 236, 221, 0.82);
+  font-size: 14px;
+  line-height: 1.38;
+  font-weight: 750;
+}
+
+.kpiBoardCanvas {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  min-height: 0;
+}
+
+.kpiRail {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.kpiRailStep {
+  display: grid;
+  gap: 8px;
+  min-height: 84px;
+  padding: 15px;
+  border: 1px solid rgba(87, 214, 255, 0.18);
+  border-radius: 9px;
+  background:
+    linear-gradient(145deg, rgba(87, 214, 255, 0.12), rgba(255, 255, 255, 0.025)),
+    rgba(9, 13, 26, 0.52);
+}
+
+.kpiRailStep span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.kpiRailStep strong {
+  color: #f7ecdd;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.kpiBoardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  min-height: 0;
+}
+
+.kpiMetricCard {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+  min-height: 192px;
+  padding: 17px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 16% 12%, var(--accent-soft), transparent 48%),
+    rgba(18, 26, 47, 0.7);
+}
+
+.kpiMetricCard span {
+  width: fit-content;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #090d1a;
+  background: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.kpiMetricCard strong {
+  color: #f7ecdd;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.kpiMetricCard p,
+.kpiMetricCard em {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.75);
+  font-size: 13px;
+  line-height: 1.42;
+  font-style: normal;
+}
+
+.kpiMetricCard em {
+  color: #f4c558;
+  font-weight: 800;
+}
+
+.kpiBoundary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.kpiBoundary span {
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid rgba(244, 197, 88, 0.2);
+  border-radius: 8px;
+  color: rgba(247, 236, 221, 0.8);
+  background: rgba(244, 197, 88, 0.08);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 750;
+}
+
+.proofGridCanvas {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 14px;
+  min-height: 0;
+}
+
+.proofGallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-height: 0;
+}
+
+.proofGridAsset .proofGallery {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.proofCard {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  border: 1px solid rgba(247, 236, 221, 0.14);
+  border-radius: 10px;
+  color: #f7ecdd;
+  background:
+    radial-gradient(circle at 12% 12%, var(--accent-soft), transparent 48%),
+    rgba(18, 26, 47, 0.76);
+}
+
+a.proofCard {
+  display: block;
+}
+
+.proofCard img {
+  object-fit: cover;
+}
+
+.proofGridX .proofCard img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.proofGridOutreach .proofCard img {
+  object-fit: cover;
+  object-position: left top;
+  background: #fff;
+}
+
+.proofGridX .proofCard::after,
+.proofGridOutreach .proofCard::after {
+  display: none;
+}
+
+.proofGridX .proofCard > span,
+.proofGridOutreach .proofCard > span {
+  display: none;
+}
+
+.proofGridX .proofCard p,
+.proofGridOutreach .proofCard p {
+  display: none;
+}
+
+.proofCard::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(9, 13, 26, 0.86));
+}
+
+.proofCard > span {
+  position: absolute;
+  left: 14px;
+  bottom: 42px;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(247, 236, 221, 0.16);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(9, 13, 26, 0.74);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.proofCard p {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  margin: 0;
+  color: rgba(247, 236, 221, 0.78);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.proofCard svg {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 2;
+  color: #f7ecdd;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.42));
+}
+
+.proofExplanationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.proofExplanationGrid article {
+  min-height: 86px;
+  padding: 14px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 9px;
+  background: rgba(9, 13, 26, 0.46);
+}
+
+.proofExplanationGrid span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.proofExplanationGrid p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.78);
+  font-size: 12.5px;
+  line-height: 1.38;
+  font-weight: 700;
+}
+
+.proofLinkRail {
+  display: flex;
+  gap: 10px;
+  min-height: 38px;
+}
+
+.proofLinkRail a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(87, 214, 255, 0.22);
+  border-radius: 999px;
+  color: #f7ecdd;
+  background: rgba(87, 214, 255, 0.08);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.proofLinkRail strong {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.proofLinkRail span {
+  color: rgba(247, 236, 221, 0.66);
+}
+
 .referenceDeck {
   --reference-ink: #eef2f8;
   --reference-soft: rgba(238, 242, 248, 0.72);
@@ -1189,8 +1754,29 @@
   .splitGrid,
   .processGrid,
   .matrixGrid,
-  .evidenceGrid {
+  .evidenceGrid,
+  .timelineCanvas,
+  .researchProblemPair,
+  .problemBridgeCanvas,
+  .coreRailFlow,
+  .coreRailBoundaryGrid {
     grid-template-columns: 1fr;
+  }
+
+  .researchBridge {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineCard,
+  .researchProblemCard,
+  .problemSideCard,
+  .problemCenterRail,
+  .coreRailNode {
+    min-height: auto;
+  }
+
+  .coreRailNode i {
+    display: none;
   }
 
   .toolbar {

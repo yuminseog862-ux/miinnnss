@@ -2,6 +2,16 @@ export type Accent = "aqua" | "amber" | "violet" | "cyan" | "danger";
 
 export type SlideVariant = "cover" | "toc" | "split" | "process" | "matrix" | "evidence";
 
+export type SlideCustomLayout =
+  | "aheyaTimeline"
+  | "aheyaResearchProblems"
+  | "aheyaProblemBridge"
+  | "aheyaCoreRail"
+  | "aheyaKpiBoard"
+  | "aheyaXPostGrid"
+  | "aheyaOutreachGrid"
+  | "aheyaContentAssetGrid";
+
 export type SlideSection = "Common" | "AHEYA" | "ADSB" | "SFTI" | "AB-Luna" | "Appendix";
 
 export type SlideTable = {
@@ -13,6 +23,14 @@ export type SlideMedia = {
   src: string;
   alt: string;
   label: string;
+};
+
+export type SlideGalleryItem = {
+  src: string;
+  alt: string;
+  label: string;
+  href?: string;
+  caption?: string;
 };
 
 export type SlideLink = {
@@ -28,6 +46,7 @@ export type Slide = {
   label: string;
   accent: Accent;
   variant: SlideVariant;
+  custom?: SlideCustomLayout;
   intent: string;
   claim: string;
   include: string[];
@@ -35,6 +54,7 @@ export type Slide = {
   process?: string[];
   table?: SlideTable;
   media?: SlideMedia;
+  gallery?: SlideGalleryItem[];
   links?: SlideLink[];
   note?: string;
 };
