@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import type { Accent, DeckContent, Slide, SlideVariant } from "@/lib/portfolio-deck/types";
+import type { Accent, DeckContent, Slide, SlideSection, SlideVariant } from "@/lib/portfolio-deck/types";
 import { paddedSlideNo } from "@/lib/portfolio-deck/types";
 
 import { moodAsset, moodForSlide, type MoodKey } from "./mood";
@@ -38,6 +38,13 @@ const moodClass: Record<MoodKey, string> = {
   material: styles.moodMaterial,
 };
 
+const projectClass: Partial<Record<SlideSection, string>> = {
+  AHEYA: styles.projectAheya,
+  ADSB: styles.projectAdsb,
+  "AB-Luna": styles.projectAbluna,
+  SFTI: styles.projectSfti,
+};
+
 export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckContent; theme: PortfolioDeckTheme }) {
   const slideNo = paddedSlideNo(slide.no);
   const mood = moodForSlide(slide);
@@ -47,6 +54,8 @@ export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckCont
     <article
       id={`slide-${slideNo}`}
       className={`${styles.slide} ${variantClass[slide.variant]} ${accentClass[slide.accent]} ${
+        projectClass[slide.section] ?? ""
+      } ${
         isReference ? `${styles.referenceSlide} ${moodClass[mood]}` : ""
       }`}
     >
