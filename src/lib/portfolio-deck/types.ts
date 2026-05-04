@@ -3,14 +3,28 @@ export type Accent = "aqua" | "amber" | "violet" | "cyan" | "danger";
 export type SlideVariant = "cover" | "toc" | "split" | "process" | "matrix" | "evidence";
 
 export type SlideCustomLayout =
+  | "aheyaOverview"
   | "aheyaTimeline"
-  | "aheyaResearchProblems"
-  | "aheyaProblemBridge"
+  | "aheyaResearchSolution"
+  | "aheyaProductSurfaceMap"
+  | "aheyaFeatureEvidenceMap"
+  | "aheyaDecisionCards"
+  | "aheyaHypothesisBoard"
   | "aheyaCoreRail"
+  | "aheyaFlowHero"
+  | "aheyaLandingCallout"
+  | "aheyaMvpCut"
+  | "aheyaPlanningBoard"
   | "aheyaKpiBoard"
+  | "aheyaGtmBridge"
+  | "aheyaMessageLadder"
+  | "aheyaMessagingEvolution"
   | "aheyaXPostGrid"
   | "aheyaOutreachGrid"
-  | "aheyaContentAssetGrid";
+  | "aheyaContentAssetGrid"
+  | "aheyaLaunchLoop"
+  | "aheyaSignalSplit"
+  | "aheyaDecisionClose";
 
 export type SlideSection = "Common" | "AHEYA" | "ADSB" | "SFTI" | "AB-Luna" | "Appendix";
 
@@ -29,6 +43,9 @@ export type SlideGalleryItem = {
   src: string;
   alt: string;
   label: string;
+  type?: "image" | "video";
+  poster?: string;
+  startTime?: number;
   href?: string;
   caption?: string;
 };
