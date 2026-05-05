@@ -381,17 +381,10 @@ function AheyaProblemBridge({ slide }: { slide: Slide }) {
 function AheyaFlowHero({ slide }: { slide: Slide }) {
   const topSteps = [
     ["01 DISCOVER", "X / content", "post, reply, visual, demo note"],
-    ["02 OPEN", "Project page", "/ideas/[id] live idea surface"],
-    ["03 ACTION", "Support intent", "small support action before heavy mechanics"],
-    ["04 VERIFY", "Support check", "server verifies support evidence"],
-    ["05 RESPONSE", "Feedback / proof", "positive/improvement feedback, proof record"],
-  ];
-  const serverSteps = [
-    ["ACCESS", "session / wallet gate"],
-    ["DESTINATION", "recipient wallet truth"],
-    ["VERIFY API", "/api/support/seed/verify"],
-    ["RECORD", "FundingParticipation"],
-    ["REVIEW", "proof queue / response evidence"],
+    ["02 OPEN", "Public idea page", "project context and simple action path"],
+    ["03 ACT", "Support intent", "small support action"],
+    ["04 RESPOND", "Quick feedback", "Good / Improve response"],
+    ["05 RECORD", "Optional record", "reviewable response evidence"],
   ];
 
   return (
@@ -407,22 +400,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
             </article>
           ))}
         </div>
-        <div className={styles.directServerLayer}>
-          <header>
-            <strong>Server / Verification Layer</strong>
-            <p>사용자에게는 단순한 participation flow로 보이고, 내부에서는 wallet/session, destination, direct-send, review queue를 분리해서 처리</p>
-          </header>
-          <div>
-            {serverSteps.map((step, index) => (
-              <article key={step[0]}>
-                <span>{step[0]}</span>
-                <strong>{step[1]}</strong>
-                {index < serverSteps.length - 1 ? <ArrowRight size={16} /> : null}
-              </article>
-            ))}
-          </div>
-        </div>
-        <em>Flow proof, not conversion proof · Core Rail remains the public product story</em>
+        <em>Flow evidence, not funnel outcome evidence · backend verification stays in appendix</em>
       </div>
       <div className={styles.flowHeroSlots}>
         {slide.slots.map((slot) => (
@@ -509,7 +487,7 @@ function AheyaPlanningBoard({ slide }: { slide: Slide }) {
             </article>
           ))}
         </div>
-        <em>Proof without raw export · 문서명은 provenance, 판단 연결이 본문 근거</em>
+        <em>Evidence without raw export · 문서명은 provenance, 판단 연결이 본문 근거</em>
       </div>
       <div className={styles.planningDocGrid}>
         {rows.map((row) => (
@@ -557,12 +535,12 @@ function AheyaGtmBridge({ slide }: { slide: Slide }) {
       <div className={styles.gtmBridgeRail}>
         <article>
           <span>Maker outcome</span>
-          <strong>first users / clear feedback / proof record</strong>
+          <strong>first users / clear feedback / response evidence</strong>
         </article>
         <ArrowRight size={28} />
         <article>
           <span>Web3 action</span>
-          <strong>support + positive/improvement feedback</strong>
+          <strong>open, support, leave Good / Improve</strong>
         </article>
       </div>
       <div className={styles.gtmBridgeCards}>
@@ -620,23 +598,23 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
         <div>
           <article>
             <span>2025 Nov</span>
-            <strong>Raven planning</strong>
-            <p>funding, quest, helper, reward</p>
+            <strong>Broad planning</strong>
+            <p>reward, quest, funding mechanics</p>
           </article>
           <ArrowRight size={18} />
           <article>
             <span>2026 Jan</span>
-            <strong>AHEYA pivot</strong>
-            <p>support + feedback + proof rail</p>
+            <strong>Scope narrowing</strong>
+            <p>support + feedback flow</p>
           </article>
           <ArrowRight size={18} />
           <article>
             <span>2026 Feb-Apr</span>
-            <strong>X / GTM language</strong>
-            <p>first signal, live idea, proof</p>
+            <strong>Public language</strong>
+            <p>first response, public idea page</p>
           </article>
         </div>
-        <em>Portfolio transition: broad reward/funding plan to first-signal rail</em>
+        <em>Portfolio transition: broad mechanics to lightweight support and feedback flow</em>
       </div>
       <div className={styles.messagingEvolutionPairs}>
         {rows.map((row) => (
@@ -790,7 +768,7 @@ function AheyaSignalSplit({ slide }: { slide: Slide }) {
           <span>02 Next events</span>
           <span>03 Boundary</span>
         </div>
-        <em>No KPI outcome · No conversion-lift claim · Read-only snapshot 전 숫자 과장 금지</em>
+        <em>No KPI outcome · No funnel outcome claim · Read-only snapshot 전 숫자 과장 금지</em>
       </div>
       <div className={styles.signalColumnGrid}>
         <SignalColumn title="Actual surface" rows={actual} />
