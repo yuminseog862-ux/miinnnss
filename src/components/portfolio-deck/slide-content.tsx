@@ -308,6 +308,7 @@ function AheyaDecisionCards({ slide }: { slide: Slide }) {
       <div className={styles.decisionCardsGrid}>
         {rows.map((row, index) => (
           <article key={`${slide.no}-${row[0]}`} className={index === 0 ? styles.decisionCardPrimary : ""}>
+            <b className={styles.decisionCardNumber}>{String(index + 1).padStart(2, "0")}</b>
             <span>{row[0]}</span>
             <strong>{row[1]}</strong>
             <p>{row[2]}</p>
@@ -382,9 +383,9 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
   const topSteps = [
     ["01 DISCOVER", "X / content", "post, reply, visual, demo note"],
     ["02 OPEN", "Public idea page", "project context and simple action path"],
-    ["03 ACT", "Support intent", "small support action"],
-    ["04 RESPOND", "Quick feedback", "Good / Improve response"],
-    ["05 RECORD", "Optional record", "reviewable response evidence"],
+    ["03 ACT", "Backing intent", "small backing action"],
+    ["04 RESPOND", "Quick feedback", "positive / improvement response"],
+    ["05 RECORD", "Response record", "reviewable response cue"],
   ];
 
   return (
@@ -540,7 +541,7 @@ function AheyaGtmBridge({ slide }: { slide: Slide }) {
         <ArrowRight size={28} />
         <article>
           <span>Web3 action</span>
-          <strong>open, support, leave Good / Improve</strong>
+          <strong>open, back, leave one clear response</strong>
         </article>
       </div>
       <div className={styles.gtmBridgeCards}>
@@ -605,7 +606,7 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
           <article>
             <span>2026 Jan</span>
             <strong>Scope narrowing</strong>
-            <p>support + feedback flow</p>
+            <p>small backing + feedback path</p>
           </article>
           <ArrowRight size={18} />
           <article>
@@ -614,7 +615,7 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
             <p>first response, public idea page</p>
           </article>
         </div>
-        <em>Portfolio transition: broad mechanics to lightweight support and feedback flow</em>
+        <em>Portfolio transition: broad mechanics to lightweight response path</em>
       </div>
       <div className={styles.messagingEvolutionPairs}>
         {rows.map((row) => (
