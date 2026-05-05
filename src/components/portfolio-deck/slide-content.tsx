@@ -383,9 +383,9 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
   const topSteps = [
     ["01 DISCOVER", "X / content", "post, reply, visual, demo note"],
     ["02 OPEN", "Public idea page", "project context and simple action path"],
-    ["03 ACT", "Backing intent", "small backing action"],
+    ["03 SUPPORT", "Wallet support", "visible support action"],
     ["04 RESPOND", "Quick feedback", "positive / improvement response"],
-    ["05 RECORD", "Response record", "reviewable response cue"],
+    ["05 RECORD", "Saved feedback record", "reviewable feedback cue"],
   ];
 
   return (
@@ -401,7 +401,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
             </article>
           ))}
         </div>
-        <em>Flow evidence, not funnel outcome evidence · backend verification stays in appendix</em>
+        <em>Flow evidence, not funnel outcome evidence · technical verification details stay in appendix</em>
       </div>
       <div className={styles.flowHeroSlots}>
         {slide.slots.map((slot) => (
@@ -593,29 +593,29 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
   return (
     <section className={styles.messagingEvolutionCanvas}>
       <div className={styles.messagingLineageBoard}>
-        <span>Lineage map</span>
-        <strong>Product Evolution Evidence</strong>
+        <span>Scope rationale</span>
+        <strong>Messaging Evolution Evidence</strong>
         <p>planning-to-narrowing 흐름만 보여주고 performance로 해석하지 않음</p>
         <div>
           <article>
-            <span>2025 Nov</span>
-            <strong>Broad planning</strong>
+            <span>Phase 1</span>
+            <strong>Broad idea</strong>
             <p>reward, quest, funding mechanics</p>
           </article>
           <ArrowRight size={18} />
           <article>
-            <span>2026 Jan</span>
+            <span>Phase 2</span>
             <strong>Scope narrowing</strong>
-            <p>small backing + feedback path</p>
+            <p>wallet support + feedback path</p>
           </article>
           <ArrowRight size={18} />
           <article>
-            <span>2026 Feb-Apr</span>
+            <span>Phase 3</span>
             <strong>Public language</strong>
             <p>first response, public idea page</p>
           </article>
         </div>
-        <em>Portfolio transition: broad mechanics to lightweight response path</em>
+        <em>Scope rationale: broad mechanics to visible support and feedback path</em>
       </div>
       <div className={styles.messagingEvolutionPairs}>
         {rows.map((row) => (
