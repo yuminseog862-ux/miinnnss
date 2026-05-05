@@ -359,7 +359,7 @@
 
 .slideLead {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr);
+  grid-template-columns: minmax(0, 0.5fr);
   grid-template-areas:
     "kicker"
     "title"
@@ -375,11 +375,14 @@
 
 .slideLead h2 {
   grid-area: title;
-  max-width: 820px;
+  max-width: min(760px, 50vw);
   margin: 0;
-  font-size: 58px;
+  overflow: hidden;
+  font-size: clamp(42px, 4vw, 58px);
   line-height: 1;
   font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .intent {
@@ -393,12 +396,16 @@
 .claim {
   grid-area: claim;
   margin: 0;
-  max-width: 760px;
+  display: -webkit-box;
+  max-width: min(690px, 48vw);
+  overflow: hidden;
   color: #aab4d6;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.38;
   font-weight: 500;
   white-space: pre-line;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .slideFooter {
@@ -1003,12 +1010,30 @@
 }
 
 .decisionCardsGrid article {
+  position: relative;
   display: grid;
   grid-template-rows: auto auto 1fr;
   gap: 12px;
   min-height: 272px;
-  padding: 20px;
+  padding: 62px 20px 20px;
   border-radius: 18px;
+}
+
+.decisionCardNumber {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #090d1a;
+  background: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 950;
+  line-height: 1;
 }
 
 .decisionCardsGrid strong,
@@ -3304,6 +3329,59 @@ a.proofCard {
   background: rgba(9, 13, 26, 0.88);
 }
 
+.projectAheya .surfaceMapCanvas {
+  grid-template-columns: minmax(0, 1fr) minmax(310px, 0.38fr);
+  gap: 16px;
+}
+
+.projectAheya .surfaceMapMedia {
+  gap: 14px;
+}
+
+.projectAheya .surfaceMapCard {
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 8px;
+  min-height: 0;
+  padding: 12px;
+}
+
+.projectAheya .surfaceMapFrame {
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.projectAheya .surfaceMapFrame video {
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.34);
+}
+
+.projectAheya .surfaceMapNotes {
+  gap: 10px;
+}
+
+.projectAheya .surfaceMapNotes article {
+  min-height: 72px;
+  padding: 13px;
+}
+
+.projectAheya .featureEvidenceGallery {
+  gap: 12px;
+}
+
+.projectAheya .featureEvidenceCard {
+  min-height: 292px;
+}
+
+.projectAheya .featureEvidenceFrame img {
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.26);
+}
+
+.projectAheya .featureEvidenceRail article {
+  min-height: 68px;
+}
+
 .projectAheya .coreRailFlow {
   position: relative;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3341,14 +3419,25 @@ a.proofCard {
 }
 
 .projectAheya .directFlowBoard {
-  grid-template-rows: auto auto;
-  gap: 14px;
-  padding: 20px;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 18px;
 }
 
 .projectAheya .directFlowRow article,
 .projectAheya .directServerLayer article {
-  min-height: 82px;
+  min-height: 92px;
+  padding: 12px;
+}
+
+.projectAheya .flowHeroSlots {
+  gap: 8px;
+}
+
+.projectAheya .flowHeroSlots article {
+  min-height: 50px;
+  padding: 10px 12px;
+  border-radius: 18px;
 }
 
 .mvpScopeList {
@@ -3442,7 +3531,7 @@ a.proofCard {
 }
 
 .projectAheya .messageLadderCanvas {
-  grid-template-columns: minmax(330px, 0.45fr) minmax(0, 1fr);
+  grid-template-columns: minmax(330px, 0.42fr) minmax(0, 1fr);
   gap: 18px;
   align-items: stretch;
 }
@@ -3451,16 +3540,38 @@ a.proofCard {
   display: grid;
   gap: 10px;
   min-height: 0;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .projectAheya .messageLadderStep {
-  min-height: 76px;
+  align-content: start;
+  min-height: 0;
   padding: 14px 16px;
   border-radius: 18px;
 }
 
 .projectAheya .messageLadderStep strong {
   font-size: 17px;
+}
+
+.projectAheya .kpiBoardGrid,
+.projectAheya .kpiBoundary {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.projectAheya .kpiMetricCard {
+  min-height: 142px;
+  padding: 12px;
+}
+
+.projectAheya .kpiMetricCard strong {
+  font-size: 14px;
+}
+
+.projectAheya .kpiBoundary span {
+  min-height: 40px;
+  padding: 9px 10px;
+  font-size: 11px;
 }
 
 .messageLadderProof {
@@ -3483,7 +3594,7 @@ a.proofCard {
 
 .messageLadderProofCard div {
   position: relative;
-  min-height: 260px;
+  min-height: 0;
   overflow: hidden;
   border-radius: 14px;
   background: rgba(0, 0, 0, 0.28);
@@ -3590,6 +3701,24 @@ a.proofCard {
 .projectAheya .decisionCloseGrid article {
   min-height: 166px;
   padding: 16px;
+}
+
+.projectAheya .proofGridAsset .proofGallery {
+  gap: 12px;
+}
+
+.projectAheya .proofGridAsset .proofCard {
+  min-height: 236px;
+}
+
+.projectAheya .proofGridAsset .proofExplanationGrid article {
+  min-height: 72px;
+  padding: 12px;
+}
+
+.projectAheya .proofGridAsset .proofCaptionBar {
+  min-height: 56px;
+  padding: 9px 11px 10px;
 }
 
 @media (max-width: 1100px) {
