@@ -15,6 +15,7 @@ export type SlideCustomLayout =
   | "aheyaLandingCallout"
   | "aheyaMvpCut"
   | "aheyaPlanningBoard"
+  | "aheyaCsvEvidence"
   | "aheyaKpiBoard"
   | "aheyaGtmBridge"
   | "aheyaMessageLadder"
@@ -102,5 +103,12 @@ export type DeckContent = {
 };
 
 export function paddedSlideNo(no: number) {
-  return String(no).padStart(2, "0");
+  const raw = String(no);
+
+  if (raw.includes(".")) {
+    const [major, minor] = raw.split(".");
+    return `${major.padStart(2, "0")}-${minor}`;
+  }
+
+  return raw.padStart(2, "0");
 }

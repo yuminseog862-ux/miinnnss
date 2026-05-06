@@ -1,0 +1,25 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" rx="36" fill="#08101f"/>
+  <rect x="34" y="34" width="1132" height="607" rx="28" fill="#101b2e" stroke="#27496c"/>
+  <circle cx="1050" cy="96" r="150" fill="#7FD0FF" opacity=".08"/>
+  <text x="72" y="92" fill="#7FD0FF" font-family="Menlo, monospace" font-size="18" font-weight="800">CSV BOARD 19-1</text>
+  <text x="72" y="136" fill="#F7ECDD" font-family="Arial, sans-serif" font-size="34" font-weight="800">KPI Tree / Event Architecture</text>
+  <text x="72" y="166" fill="#B7C7DB" font-family="Arial, sans-serif" font-size="16">성과 숫자가 아니라 다음 판단을 위한 event split</text>
+  <rect x="72" y="210" width="1056" height="56" rx="12" fill="#162842" stroke="#365C82"/>
+  <text x="96" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">stage</text>
+  <text x="256" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">event layer</text>
+  <text x="520" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">decision question</text>
+  <text x="874" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">boundary</text>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#F7ECDD">
+    <rect x="72" y="282" width="1056" height="58" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="318">01 Discovery</text><text x="256" y="318">post_url / phase / visual_hook</text><text x="520" y="318">어떤 hook을 다음 content에 남길까?</text><text x="874" y="318">attention cue</text>
+    <rect x="72" y="352" width="1056" height="58" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="388">02 Entry</text><text x="256" y="388">landing_visit / project_open</text><text x="520" y="388">제품 설명이 이해됐는가?</text><text x="874" y="388">visit proof 아님</text>
+    <rect x="72" y="422" width="1056" height="58" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="458">03 Support</text><text x="256" y="458">wallet_support_start / submit</text><text x="520" y="458">support 의도와 완료를 구분했는가?</text><text x="874" y="458">conversion claim 아님</text>
+    <rect x="72" y="492" width="1056" height="58" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="528">04 Feedback</text><text x="256" y="528">feedback_submit / record_created</text><text x="520" y="528">업데이트에 쓸 수 있는 반응인가?</text><text x="874" y="528">quality signal</text>
+  </g>
+  <rect x="72" y="582" width="1056" height="30" rx="15" fill="#173450" stroke="#35698A"/>
+  <text x="96" y="603" fill="#F4C558" font-family="Arial, sans-serif" font-size="14" font-weight="700">No KPI outcome claim · No conversion lift claim · SQL-ready design only</text>
+</svg>

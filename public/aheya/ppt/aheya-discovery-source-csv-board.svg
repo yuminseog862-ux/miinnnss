@@ -1,0 +1,25 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" rx="36" fill="#08101f"/>
+  <rect x="34" y="34" width="1132" height="607" rx="28" fill="#101b2e" stroke="#27496c"/>
+  <circle cx="1040" cy="120" r="150" fill="#7FD0FF" opacity=".08"/>
+  <text x="72" y="92" fill="#7FD0FF" font-family="Menlo, monospace" font-size="18" font-weight="800">CSV BOARD 19-2</text>
+  <text x="72" y="136" fill="#F7ECDD" font-family="Arial, sans-serif" font-size="34" font-weight="800">Discovery Source Map</text>
+  <text x="72" y="166" fill="#B7C7DB" font-family="Arial, sans-serif" font-size="16">X/content surface를 performance가 아니라 content decision source로 기록</text>
+  <rect x="72" y="210" width="1056" height="56" rx="12" fill="#162842" stroke="#365C82"/>
+  <text x="96" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">source</text>
+  <text x="250" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">fields</text>
+  <text x="546" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">use</text>
+  <text x="878" y="244" fill="#9FE7FF" font-family="Menlo, monospace" font-size="15" font-weight="800">read</text>
+  <g font-family="Arial, sans-serif" font-size="17" fill="#F7ECDD">
+    <rect x="72" y="282" width="1056" height="62" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="318">Public post</text><text x="250" y="318">post_url, date, message hook</text><text x="546" y="318">copy angle 비교</text><text x="878" y="318">attention cue</text>
+    <rect x="72" y="356" width="1056" height="62" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="392">Visual hook</text><text x="250" y="392">asset type, mood, motif</text><text x="546" y="392">이미지/영상이 발견을 돕는지 판단</text><text x="878" y="392">discovery asset</text>
+    <rect x="72" y="430" width="1056" height="62" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="466">Reply surface</text><text x="250" y="466">segment, context, CTA</text><text x="546" y="466">cold/warm/hot language check</text><text x="878" y="466">qualitative only</text>
+    <rect x="72" y="504" width="1056" height="62" rx="12" fill="#0D1728" stroke="#203957"/>
+    <text x="96" y="540">Landing link</text><text x="250" y="540">link, route, page intent</text><text x="546" y="540">content에서 product entry로 이어지는지 확인</text><text x="878" y="540">no demand proof</text>
+  </g>
+  <rect x="72" y="596" width="1056" height="30" rx="15" fill="#173450" stroke="#35698A"/>
+  <text x="96" y="617" fill="#F4C558" font-family="Arial, sans-serif" font-size="14" font-weight="700">Public source only · private handle/body excluded · strongest post metric is not product outcome</text>
+</svg>
