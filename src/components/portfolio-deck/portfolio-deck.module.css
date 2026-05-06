@@ -222,10 +222,10 @@
 }
 
 .projectAheya {
-  --project-accent: #34d399;
-  --project-accent-2: #8b5cf6;
-  --project-glow: rgba(52, 211, 153, 0.18);
-  --project-panel: rgba(8, 18, 15, 0.82);
+  --project-accent: #7fd0ff;
+  --project-accent-2: #34d399;
+  --project-glow: rgba(127, 208, 255, 0.18);
+  --project-panel: rgba(8, 14, 22, 0.84);
   --accent: var(--project-accent);
   --accent-soft: var(--project-glow);
 }
@@ -271,9 +271,9 @@
 
 .projectAheya {
   background:
-    radial-gradient(circle at 83% 22%, rgba(52, 211, 153, 0.2), transparent 33%),
-    radial-gradient(circle at 20% 78%, rgba(139, 92, 246, 0.12), transparent 34%),
-    linear-gradient(160deg, rgba(8, 18, 15, 0.94), rgba(7, 8, 10, 0.98) 54%, rgba(8, 13, 12, 0.96));
+    radial-gradient(circle at 83% 22%, rgba(127, 208, 255, 0.18), transparent 33%),
+    radial-gradient(circle at 20% 78%, rgba(52, 211, 153, 0.1), transparent 34%),
+    linear-gradient(160deg, rgba(8, 14, 22, 0.95), rgba(7, 8, 10, 0.98) 54%, rgba(7, 12, 18, 0.96));
 }
 
 .projectAdsb {
@@ -784,6 +784,18 @@
 }
 
 .mediaSlot {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 8px;
+  margin: 0;
+  min-height: 300px;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.mediaFrame {
   position: relative;
   min-height: 300px;
   overflow: hidden;
@@ -799,27 +811,15 @@
 }
 
 .mediaSlot::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 48%, rgba(9, 13, 26, 0.78));
+  display: none;
 }
 
-.mediaSlot > span {
-  position: absolute;
-  left: 18px;
-  bottom: 16px;
-  z-index: 1;
-  display: inline-flex;
-  min-height: 32px;
-  align-items: center;
-  padding: 0 10px;
-  border: 1px solid rgba(247, 236, 221, 0.18);
-  border-radius: 6px;
-  color: #f7ecdd;
-  background: rgba(9, 13, 26, 0.72);
-  font-size: 13px;
-  font-weight: 850;
+.mediaCaption {
+  justify-self: start;
+  color: rgba(247, 236, 221, 0.62);
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.2;
 }
 
 .mediaPlaceholder {
@@ -857,6 +857,10 @@
 }
 
 .aheyaOverviewMediaColumn .mediaSlot {
+  min-height: 356px;
+}
+
+.aheyaOverviewMediaColumn .mediaFrame {
   min-height: 356px;
 }
 
@@ -1056,6 +1060,44 @@
   background:
     radial-gradient(circle at 16% 12%, rgba(98, 216, 182, 0.18), transparent 52%),
     rgba(9, 13, 26, 0.62) !important;
+}
+
+.decisionSentenceList {
+  display: grid;
+  gap: 18px;
+  align-content: center;
+  justify-content: center;
+  min-height: 360px;
+  padding-inline: 8vw;
+}
+
+.decisionSentenceList p {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  margin: 0;
+}
+
+.decisionSentenceList span {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.decisionSentenceList strong {
+  color: #f7ecdd;
+  font-size: 25px;
+  line-height: 1.26;
+}
+
+.decisionSentenceList em {
+  grid-column: 2;
+  color: rgba(247, 236, 221, 0.66);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.42;
 }
 
 .decisionSummaryRail {
@@ -1287,6 +1329,10 @@
   min-height: 382px;
 }
 
+.landingMediaWrap .mediaFrame {
+  min-height: 382px;
+}
+
 .landingCalloutStack {
   display: grid;
   gap: 10px;
@@ -1339,6 +1385,67 @@
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.54fr);
   gap: 18px;
   min-height: 0;
+}
+
+.csvEvidenceCanvas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.42fr);
+  gap: 18px;
+  min-height: 0;
+}
+
+.csvEvidenceMedia {
+  min-height: 0;
+}
+
+.csvEvidenceMedia .mediaSlot {
+  min-height: 390px;
+}
+
+.csvEvidenceMedia .mediaFrame {
+  min-height: 390px;
+  border-color: rgba(127, 208, 255, 0.16);
+  background: rgba(9, 13, 26, 0.48);
+}
+
+.csvEvidenceMedia .mediaFrame img {
+  object-fit: contain;
+}
+
+.csvEvidenceNotes {
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+}
+
+.csvEvidenceNotes article {
+  display: grid;
+  gap: 8px;
+  min-height: 82px;
+  padding: 14px 15px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent, var(--accent)) 8%, transparent),
+      color-mix(in srgb, var(--project-accent-2, var(--accent)) 4%, transparent)
+    ),
+    rgba(9, 13, 26, 0.58);
+}
+
+.csvEvidenceNotes span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.csvEvidenceNotes p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.76);
+  font-size: 13px;
+  line-height: 1.42;
 }
 
 .planningDirectBoard {
@@ -1469,8 +1576,9 @@
 
 .gtmBridgeRail article {
   display: grid;
+  grid-template-rows: auto minmax(42px, auto);
   gap: 8px;
-  min-height: 78px;
+  min-height: 96px;
   padding: 16px;
   border-radius: 24px;
   text-align: center;
@@ -1505,7 +1613,7 @@
 .messageLadderStep {
   position: relative;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto;
   gap: 12px;
   min-height: 220px;
   padding: 18px;
@@ -1518,22 +1626,21 @@
 
 .messagingEvolutionCanvas {
   display: grid;
-  grid-template-columns: minmax(0, 0.54fr) minmax(0, 1fr);
-  gap: 18px;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 14px;
   min-height: 0;
 }
 
 .messagingLineageBoard {
   display: grid;
-  align-content: start;
-  gap: 12px;
+  align-content: center;
+  justify-content: center;
+  gap: 0;
   min-height: 0;
-  padding: 22px;
-  border: 1px solid rgba(87, 214, 255, 0.14);
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 82% 12%, rgba(98, 216, 182, 0.18), transparent 30%),
-    linear-gradient(155deg, rgba(14, 46, 62, 0.78), rgba(10, 16, 28, 0.86));
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .messagingLineageBoard > span {
@@ -1563,7 +1670,8 @@
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 10px;
   align-items: center;
-  margin-top: 4px;
+  width: min(100%, 760px);
+  margin: 0 auto;
 }
 
 .messagingLineageBoard article {
@@ -1600,17 +1708,18 @@
 
 .messagingEvolutionPairs {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
   min-height: 0;
 }
 
 .messagingEvolutionPairs article {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: 82px minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 10px;
   align-items: center;
-  min-height: 84px;
-  padding: 14px;
+  min-height: 92px;
+  padding: 12px;
   border-radius: 16px;
 }
 
@@ -2018,84 +2127,112 @@
 
 .researchSolutionCanvas {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1.08fr) auto minmax(0, 0.92fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 0;
+}
+
+.researchInputPanel,
+.problemStackPanel {
+  display: grid;
   gap: 14px;
   min-height: 0;
 }
 
-.researchSolutionGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: 10px;
-  min-height: 0;
+.researchInputPanel {
+  padding: 20px 22px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 20px;
+  background: rgba(9, 13, 26, 0.32);
 }
 
-.researchSolutionGrid > span {
+.researchInputPanel > span,
+.problemStackCard > span {
+  width: fit-content;
+  padding: 6px 12px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 999px;
   color: var(--accent);
-  font-size: 11px;
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 10.5px;
   font-weight: 900;
   text-transform: uppercase;
 }
 
-.researchSolutionRow {
-  grid-column: 1 / -1;
+.researchInputBlock {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 12px;
-  align-items: center;
-  min-height: 116px;
-  padding: 15px;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(87, 214, 255, 0.14), transparent 44%),
-    rgba(18, 26, 47, 0.66);
+  padding-block: 2px 14px;
+  border-bottom: 1px solid rgba(247, 236, 221, 0.1);
 }
 
-.researchSolutionRow p,
-.researchSolutionRow strong,
-.researchSolutionRow em {
-  margin: 0;
-  font-style: normal;
-  line-height: 1.38;
+.researchInputBlock:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
-.researchSolutionRow p {
-  color: rgba(247, 236, 221, 0.74);
-  font-size: 13px;
-}
-
-.researchSolutionRow strong {
+.researchInputBlock em {
   color: #f7ecdd;
-  font-size: 17px;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 900;
 }
 
-.researchSolutionRow em {
-  color: #d9fbed;
-  font-size: 14px;
-  font-weight: 830;
+.researchInputBlock ul,
+.problemStackCard ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
 }
 
-.researchSolutionRow svg {
+.researchInputBlock li,
+.problemStackCard li {
+  color: rgba(247, 236, 221, 0.74);
+  font-size: 12.5px;
+  line-height: 1.42;
+}
+
+.researchInputBlock li::marker,
+.problemStackCard li::marker {
   color: var(--accent);
 }
 
-.researchSolutionBottom {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+.researchInputBlock div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
 }
 
-.researchSolutionBottom span {
-  min-height: 44px;
-  padding: 12px 14px;
-  border: 1px solid rgba(87, 214, 255, 0.15);
+.researchInputBlock div span {
+  padding: 5px 9px;
+  border: 1px solid rgba(247, 236, 221, 0.1);
   border-radius: 999px;
-  color: rgba(247, 236, 221, 0.82);
-  background: rgba(9, 13, 26, 0.42);
-  font-size: 12px;
-  font-weight: 850;
-  text-align: center;
+  color: rgba(247, 236, 221, 0.68);
+  background: rgba(255, 255, 255, 0.035);
+  font-size: 10px;
+  font-weight: 780;
+}
+
+.researchProblemArrow {
+  color: rgba(247, 236, 221, 0.56);
+}
+
+.problemStackCard {
+  display: grid;
+  gap: 13px;
+  min-height: 178px;
+  padding: 20px 22px;
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  border-radius: 20px;
+  background: rgba(9, 13, 26, 0.28);
+}
+
+.problemStackCard strong {
+  color: #f7ecdd;
+  font-size: 20px;
+  line-height: 1.24;
 }
 
 .surfaceMapCanvas {
@@ -3106,7 +3243,7 @@ a.proofCard {
 .projectAheya .panel,
 .projectAheya .tableWrap,
 .projectAheya .processRail,
-.projectAheya .mediaSlot,
+.projectAheya .mediaFrame,
 .projectAheya .miniMediaSlot,
 .projectAheya .slot,
 .projectAheya .linkCard,
@@ -3135,10 +3272,14 @@ a.proofCard {
 .projectAheya .surfaceMapNotes article,
 .projectAheya .featureEvidenceRail article,
 .projectAheya .proofCard {
-  border-color: rgba(52, 211, 153, 0.18);
+  border-color: color-mix(in srgb, var(--project-accent) 22%, transparent);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(145deg, rgba(52, 211, 153, 0.08), rgba(139, 92, 246, 0.035)),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent) 8%, transparent),
+      color-mix(in srgb, var(--project-accent-2) 4%, transparent)
+    ),
     var(--project-panel);
 }
 
@@ -3146,7 +3287,7 @@ a.proofCard {
 .projectAdsb .panel,
 .projectAdsb .tableWrap,
 .projectAdsb .processRail,
-.projectAdsb .mediaSlot,
+.projectAdsb .mediaFrame,
 .projectAdsb .miniMediaSlot,
 .projectAdsb .slot,
 .projectAdsb .proofCard {
@@ -3158,7 +3299,7 @@ a.proofCard {
     var(--project-panel);
 }
 
-.projectAdsb .mediaSlot,
+.projectAdsb .mediaFrame,
 .projectAdsb .miniMediaSlot,
 .projectAdsb .proofCard {
   box-shadow:
@@ -3175,7 +3316,7 @@ a.proofCard {
 .projectAbluna .panel,
 .projectAbluna .tableWrap,
 .projectAbluna .processRail,
-.projectAbluna .mediaSlot,
+.projectAbluna .mediaFrame,
 .projectAbluna .miniMediaSlot,
 .projectAbluna .slot,
 .projectAbluna .linkCard,
@@ -3200,7 +3341,7 @@ a.proofCard {
 .projectSfti .panel,
 .projectSfti .tableWrap,
 .projectSfti .processRail,
-.projectSfti .mediaSlot,
+.projectSfti .mediaFrame,
 .projectSfti .miniMediaSlot,
 .projectSfti .slot,
 .projectSfti .linkCard,
@@ -3224,8 +3365,9 @@ a.proofCard {
 
 /* AHEYA final slide polish: tighter PPT-ready spacing and less internal-looking UI. */
 .projectAheya .aheyaOverviewCanvas {
-  grid-template-columns: minmax(0, 0.82fr) minmax(500px, 1fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(520px, 1fr);
   align-items: start;
+  gap: 30px;
 }
 
 .projectAheya .aheyaOverviewText {
@@ -3244,14 +3386,20 @@ a.proofCard {
 
 .projectAheya .aheyaOverviewMediaColumn {
   gap: 8px;
+  margin-top: -82px;
+  transform: translateX(18px);
 }
 
-.projectAheya .aheyaOverviewMediaColumn .mediaSlot {
+.projectAheya .aheyaOverviewMediaColumn .mediaFrame {
   min-height: 332px;
   border-color: rgba(255, 255, 255, 0.1);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
     rgba(9, 13, 26, 0.48);
+}
+
+.projectAheya .aheyaOverviewMediaColumn .mediaCaption {
+  padding-left: 2px;
 }
 
 .projectAheya .overviewLinkRail {
@@ -3277,6 +3425,10 @@ a.proofCard {
   display: none;
 }
 
+.projectAheya .mediaSlot {
+  place-items: stretch;
+}
+
 .projectAheya .overviewLinkRail strong {
   font-size: 10px;
   letter-spacing: 0.02em;
@@ -3285,48 +3437,98 @@ a.proofCard {
 .projectAheya .timelineCanvas {
   position: relative;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0;
-  align-items: center;
+  grid-template-rows: 1fr 68px 1fr;
+  gap: 0 18px;
+  align-items: stretch;
+  min-height: 360px;
+  overflow: visible;
+  padding: 4px 24px 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .projectAheya .timelineCanvas::before {
   content: "";
   position: absolute;
-  left: 24px;
-  right: 24px;
+  left: 54px;
+  right: 54px;
   top: 50%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(52, 211, 153, 0.16), rgba(52, 211, 153, 0.72), rgba(127, 208, 255, 0.18));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--project-accent) 12%, transparent),
+    color-mix(in srgb, var(--project-accent) 62%, transparent),
+    color-mix(in srgb, var(--project-accent-2) 26%, transparent)
+  );
   transform: translateY(-50%);
 }
 
 .projectAheya .timelineItem {
   z-index: 1;
+  display: grid;
+  grid-row: 1 / 4;
+  grid-template-rows: 1fr 68px 1fr;
+  min-height: 0;
+}
+
+.projectAheya .timelineItem::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border: 2px solid color-mix(in srgb, var(--project-accent) 50%, rgba(255, 255, 255, 0.16));
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.28), transparent 38%),
+    var(--project-accent);
+  box-shadow:
+    0 0 0 8px rgba(9, 13, 26, 0.62),
+    0 0 24px color-mix(in srgb, var(--project-accent) 32%, transparent);
+  transform: translate(-50%, -50%);
+}
+
+.projectAheya .timelineItem:nth-child(odd) .timelineCard {
+  grid-row: 1;
+  align-self: end;
+  transform: none;
+}
+
+.projectAheya .timelineItem:nth-child(even) .timelineCard {
+  grid-row: 3;
+  align-self: start;
+  transform: none;
 }
 
 .projectAheya .timelineCard {
   aspect-ratio: auto;
-  height: 198px;
-  padding: 13px;
-  border-radius: 18px;
+  justify-self: center;
+  width: min(100%, 196px);
+  height: auto;
+  min-height: 104px;
+  padding: 13px 14px;
+  border-color: color-mix(in srgb, var(--project-accent) 20%, transparent);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 12% 10%, color-mix(in srgb, var(--project-accent) 12%, transparent), transparent 48%),
+    linear-gradient(160deg, rgba(18, 30, 48, 0.92), rgba(9, 13, 26, 0.82));
 }
 
 .projectAheya .timelineCard strong {
-  font-size: 12.5px;
-  line-height: 1.25;
+  font-size: 11.8px;
+  line-height: 1.22;
 }
 
 .projectAheya .timelineCard p {
-  font-size: 10.8px;
+  font-size: 9.8px;
+  line-height: 1.35;
 }
 
 .projectAheya .timelineArrow {
-  right: -9px;
-  width: 22px;
-  height: 22px;
-  padding: 3px;
-  border-radius: 999px;
-  background: rgba(9, 13, 26, 0.88);
+  display: none;
 }
 
 .projectAheya .surfaceMapCanvas {
@@ -3338,12 +3540,20 @@ a.proofCard {
   gap: 14px;
 }
 
+.projectAheya .surfaceMapMedia:has(.surfaceMapCard:only-child) {
+  grid-template-rows: minmax(0, 1fr);
+}
+
 .projectAheya .surfaceMapCard {
   grid-template-columns: 1fr;
   grid-template-rows: minmax(0, 1fr) auto auto;
   gap: 8px;
   min-height: 0;
   padding: 12px;
+}
+
+.projectAheya .surfaceMapCard:only-child .surfaceMapFrame {
+  min-height: 330px;
 }
 
 .projectAheya .surfaceMapFrame {
@@ -3402,7 +3612,12 @@ a.proofCard {
   right: 56px;
   top: 50%;
   height: 2px;
-  background: linear-gradient(90deg, rgba(52, 211, 153, 0.16), rgba(52, 211, 153, 0.75), rgba(127, 208, 255, 0.2));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--project-accent) 18%, transparent),
+    color-mix(in srgb, var(--project-accent) 72%, transparent),
+    color-mix(in srgb, var(--project-accent-2) 24%, transparent)
+  );
 }
 
 .projectAheya .coreRailNode {
@@ -3459,7 +3674,11 @@ a.proofCard {
   border: 1px solid rgba(247, 236, 221, 0.12);
   border-radius: 18px;
   background:
-    linear-gradient(145deg, rgba(52, 211, 153, 0.08), rgba(139, 92, 246, 0.035)),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent) 8%, transparent),
+      color-mix(in srgb, var(--project-accent-2) 4%, transparent)
+    ),
     var(--project-panel);
 }
 
@@ -3520,6 +3739,19 @@ a.proofCard {
   max-width: 86%;
   margin: 0 auto;
   gap: 28px;
+}
+
+.projectAheya .gtmBridgeRail article {
+  align-content: center;
+  min-height: 112px;
+}
+
+.projectAheya .gtmBridgeRail strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  font-size: 22px;
 }
 
 .projectAheya .gtmBridgeCards {
@@ -3618,9 +3850,10 @@ a.proofCard {
 }
 
 .projectAheya .launchLoopCanvas {
-  grid-template-rows: auto auto;
-  gap: 22px;
-  align-content: start;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  align-content: stretch;
+  min-height: 430px;
 }
 
 .projectAheya .launchLoopRail {
@@ -3638,7 +3871,7 @@ a.proofCard {
 }
 
 .projectAheya .launchLoopNotes article {
-  min-height: 96px;
+  min-height: 220px;
   padding: 16px;
 }
 
@@ -3649,9 +3882,13 @@ a.proofCard {
 
 .projectAheya .signalSummaryPanel,
 .projectAheya .signalColumn {
-  border-color: rgba(52, 211, 153, 0.16);
+  border-color: color-mix(in srgb, var(--project-accent) 18%, transparent);
   background:
-    linear-gradient(145deg, rgba(52, 211, 153, 0.06), rgba(127, 208, 255, 0.035)),
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--project-accent) 7%, transparent),
+      color-mix(in srgb, var(--project-accent-2) 3%, transparent)
+    ),
     rgba(9, 13, 26, 0.58);
 }
 

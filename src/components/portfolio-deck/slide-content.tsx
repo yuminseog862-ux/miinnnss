@@ -54,6 +54,10 @@ export function SlideMain({ slide, deck }: { slide: Slide; deck: DeckContent }) 
     return <AheyaPlanningBoard slide={slide} />;
   }
 
+  if (slide.custom === "aheyaCsvEvidence") {
+    return <AheyaCsvEvidence slide={slide} />;
+  }
+
   if (slide.custom === "aheyaKpiBoard") {
     return <AheyaKpiBoard slide={slide} />;
   }
@@ -223,23 +227,36 @@ function AheyaResearchSolution({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.researchSolutionCanvas}>
-      <div className={styles.researchSolutionGrid}>
-        <span>Research one-line</span>
-        <span>Problem connection</span>
-        <span>AHEYA solution</span>
+      <div className={styles.researchInputPanel}>
+        <span>Research inputs</span>
         {rows.map((row) => (
-          <article key={`${slide.no}-${row[0]}`} className={styles.researchSolutionRow}>
-            <p>{row[0]}</p>
-            <ArrowRight size={16} />
-            <strong>{row[1]}</strong>
-            <ArrowRight size={16} />
-            <em>{row[2]}</em>
+          <article key={`${slide.no}-${row[0]}`} className={styles.researchInputBlock}>
+            <em>{row[0]}</em>
+            <ul>
+              {row[1].split(" | ").map((item) => (
+                <li key={`${slide.no}-${row[0]}-${item}`}>{item}</li>
+              ))}
+            </ul>
+            <div>
+              {(row[4] ?? "").split(" | ").filter(Boolean).map((tag) => (
+                <span key={`${slide.no}-${row[0]}-${tag}`}>{tag}</span>
+              ))}
+            </div>
           </article>
         ))}
       </div>
-      <div className={styles.researchSolutionBottom}>
-        {slide.slots.map((slot) => (
-          <span key={`${slide.no}-${slot}`}>{slot}</span>
+      <ArrowRight className={styles.researchProblemArrow} size={26} />
+      <div className={styles.problemStackPanel}>
+        {rows.map((row, index) => (
+          <article key={`${slide.no}-${row[2]}`} className={styles.problemStackCard}>
+            <span>Problem {String(index + 1).padStart(2, "0")}</span>
+            <strong>{row[2]}</strong>
+            <ul>
+              {row[3].split(" | ").map((item) => (
+                <li key={`${slide.no}-${row[2]}-${item}`}>{item}</li>
+              ))}
+            </ul>
+          </article>
         ))}
       </div>
     </section>
@@ -305,19 +322,13 @@ function AheyaDecisionCards({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.decisionCardsCanvas}>
-      <div className={styles.decisionCardsGrid}>
+      <div className={styles.decisionSentenceList}>
         {rows.map((row, index) => (
-          <article key={`${slide.no}-${row[0]}`} className={index === 0 ? styles.decisionCardPrimary : ""}>
-            <b className={styles.decisionCardNumber}>{String(index + 1).padStart(2, "0")}</b>
-            <span>{row[0]}</span>
+          <p key={`${slide.no}-${row[0]}`}>
+            <span>{String(index + 1)}</span>
             <strong>{row[1]}</strong>
-            <p>{row[2]}</p>
-          </article>
-        ))}
-      </div>
-      <div className={styles.decisionSummaryRail}>
-        {slide.slots.map((slot) => (
-          <span key={`${slide.no}-${slot}`}>{slot}</span>
+            <em>{row[2]}</em>
+          </p>
         ))}
       </div>
     </section>
@@ -503,6 +514,27 @@ function AheyaPlanningBoard({ slide }: { slide: Slide }) {
   );
 }
 
+function AheyaCsvEvidence({ slide }: { slide: Slide }) {
+  return (
+    <section className={styles.csvEvidenceCanvas}>
+      <div className={styles.csvEvidenceMedia}>
+        <MediaSlot slide={slide} />
+      </div>
+      <div className={styles.csvEvidenceNotes}>
+        {slide.slots.map((slot, index) => {
+          const [label, ...body] = slot.split(":");
+          return (
+            <article key={`${slide.no}-${slot}`}>
+              <span>{String(index + 1).padStart(2, "0")} · {label}</span>
+              <p>{body.join(":").trim() || slot}</p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function AheyaCoreRail({ slide }: { slide: Slide }) {
   const steps = slide.process ?? slide.include;
 
@@ -568,7 +600,6 @@ function AheyaMessageLadder({ slide }: { slide: Slide }) {
           <article key={`${slide.no}-${row[0]}`} className={styles.messageLadderStep}>
             <span>{String(index + 1).padStart(2, "0")} · {row[0]}</span>
             <strong>{row[1]}</strong>
-            <p>{row[2]}</p>
           </article>
         ))}
       </div>
@@ -593,9 +624,6 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
   return (
     <section className={styles.messagingEvolutionCanvas}>
       <div className={styles.messagingLineageBoard}>
-        <span>Scope rationale</span>
-        <strong>Messaging Evolution Evidence</strong>
-        <p>planning-to-narrowing 흐름만 보여주고 performance로 해석하지 않음</p>
         <div>
           <article>
             <span>Phase 1</span>
@@ -615,7 +643,6 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
             <p>first response, public idea page</p>
           </article>
         </div>
-        <em>Scope rationale: broad mechanics to visible support and feedback path</em>
       </div>
       <div className={styles.messagingEvolutionPairs}>
         {rows.map((row) => (
@@ -921,24 +948,29 @@ function MediaSlot({ slide }: { slide: Slide }) {
   if (!slide.media) {
     return (
       <div className={styles.mediaSlot}>
-        <div className={styles.mediaPlaceholder}>
-          <Sparkles size={26} />
-          <span>Evidence / Screenshot / Asset</span>
+        <div className={styles.mediaFrame}>
+          <div className={styles.mediaPlaceholder}>
+            <Sparkles size={26} />
+            <span>Evidence / Screenshot / Asset</span>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={styles.mediaSlot}>
-      <Image
-        src={slide.media.src}
-        alt={slide.media.alt}
-        fill
-        sizes="(max-width: 1000px) 100vw, 46vw"
-        {...(slide.no === 1 ? { priority: true } : { loading: "eager" as const })}
-      />
-      <span>{slide.media.label}</span>
-    </div>
+    <figure className={styles.mediaSlot}>
+      <div className={styles.mediaFrame}>
+        <Image
+          src={slide.media.src}
+          alt={slide.media.alt}
+          fill
+          sizes="(max-width: 1000px) 100vw, 46vw"
+          unoptimized={slide.media.src.endsWith(".svg")}
+          {...(slide.no === 1 ? { priority: true } : { loading: "eager" as const })}
+        />
+      </div>
+      <figcaption className={styles.mediaCaption}>{slide.media.label}</figcaption>
+    </figure>
   );
 }

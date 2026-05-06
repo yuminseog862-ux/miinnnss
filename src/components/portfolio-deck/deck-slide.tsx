@@ -84,7 +84,7 @@ export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckCont
         <section className={styles.slideLead}>
           <p className={styles.kicker}>{slide.label}</p>
           <h2>{slide.title}</h2>
-          <p className={styles.claim}>{toSubtitleFragment(slide.claim)}</p>
+          {slide.claim.trim() ? <p className={styles.claim}>{toSubtitleFragment(slide.claim)}</p> : null}
         </section>
 
         <SlideMain slide={slide} deck={deck} />

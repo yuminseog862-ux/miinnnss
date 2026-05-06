@@ -19,7 +19,11 @@ import {
   characterExpansionPoints,
   characterProofs,
   coreAxes,
+  hermesDecisionLogPoints,
   hermesLoop,
+  hermesOutputNotes,
+  hermesRecentXOutputs,
+  hermesServiceMap,
   hookPlanningSteps,
   loopSummaryPoints,
   planningSummaryPoints,
@@ -66,6 +70,50 @@ function BulletList({ items, className = "" }: { items: readonly string[]; class
   );
 }
 
+function getXPostId(embedUrl: string) {
+  return embedUrl.match(/status\/(\d+)/)?.[1];
+}
+
+function getXPostEmbedUrl(embedUrl: string) {
+  const postId = getXPostId(embedUrl);
+
+  if (!postId) {
+    return undefined;
+  }
+
+  const params = new URLSearchParams({
+    dnt: "true",
+    hide_thread: "true",
+    id: postId,
+    theme: "dark",
+  });
+
+  return `https://platform.twitter.com/embed/Tweet.html?${params.toString()}`;
+}
+
+function XPostEmbed({ href, label }: { href: string; label: string }) {
+  const embedUrl = getXPostEmbedUrl(href);
+
+  if (!embedUrl) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" className="inline-link gigr-x-output-link">
+        {label}
+        <ArrowUpRight className="h-4 w-4" />
+      </a>
+    );
+  }
+
+  return (
+    <iframe
+      className="gigr-x-output-iframe"
+      title={`${label} X output`}
+      src={embedUrl}
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+    />
+  );
+}
+
 export default function GigrPage() {
   return (
     <main className="cinema-shell gigr-shell">
@@ -82,7 +130,8 @@ export default function GigrPage() {
             <a href="#aheya">AHEYABARAYA</a>
             <a href="#aheya-assets">소재 확장</a>
             <a href="#adsb">Andersson Bell</a>
-            <a href="#loop">Hermes Loop</a>
+            <a href="#loop">Hermes Map</a>
+            <a href="#automation">Automation</a>
           </nav>
         </header>
 
@@ -503,7 +552,50 @@ export default function GigrPage() {
         <div className="gigr-loop-head">
           <div>
             <p className="eyebrow text-indigo">Operating System</p>
-            <h2 className="section-title">Hermes / Aurora Creative Operating Loop</h2>
+            <h2 className="section-title">Hermes / Aurora는 현재 새 콘텐츠 생산 시스템입니다</h2>
+          </div>
+          <BulletList items={hermesDecisionLogPoints} className="gigr-head-bullets" />
+        </div>
+
+        <div className="gigr-service-map-layout">
+          <div className="gigr-service-map-card">
+            <div className="gigr-service-map-head">
+              <p className="eyebrow text-indigo">Decision Log / Service Map</p>
+              <h3>Recent X Outputs는 이 루프의 출력면입니다</h3>
+              <p>
+                AHEYABARAYA에서 배운 내용은 과거 케이스로 정리하고, 최근 새롭게 만드는 X 출력물은 Hermes/Aurora가
+                매일 후보를 만들고 분류하고 다음 브리프로 되돌리는 자동화 흐름의 산출 증거로 배치합니다.
+              </p>
+            </div>
+
+            <div className="gigr-service-map" aria-label="Hermes Aurora service map">
+              {hermesServiceMap.map((item, index) => (
+                <article key={item.lane} className="gigr-service-node">
+                  <span>{item.lane}</span>
+                  <strong>{item.title}</strong>
+                  <p>{item.body}</p>
+                  {index < hermesServiceMap.length - 1 ? <ArrowDownRight className="gigr-service-arrow h-4 w-4" /> : null}
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <aside className="gigr-service-note-stack">
+            {hermesOutputNotes.map((item) => (
+              <article key={item.label}>
+                <strong>{item.label}</strong>
+                <span>{item.body}</span>
+              </article>
+            ))}
+          </aside>
+        </div>
+      </motion.section>
+
+      <motion.section {...fadeUp} id="automation" className="page-frame gigr-section gigr-slide-section">
+        <div className="gigr-loop-head">
+          <div>
+            <p className="eyebrow text-indigo">Automation Flow</p>
+            <h2 className="section-title">자동화 영상은 후보 생산 루프의 근거입니다</h2>
           </div>
           <BulletList items={loopSummaryPoints} className="gigr-head-bullets" />
         </div>
@@ -549,6 +641,26 @@ export default function GigrPage() {
             <span>제작 후보 자동화와 게시 자동화를 분리하고, API 비용을 본 뒤 승인 기반 검수 단계부터 확장</span>
           </article>
         </div>
+
+        {hermesRecentXOutputs.length > 0 ? (
+          <div className="gigr-x-output-section">
+            <div>
+              <p className="eyebrow text-aqua">Recent X Output Proof</p>
+              <h3>최근 출력물은 AHEYABARAYA가 아니라 Hermes/Aurora 루프의 산출물로 연결합니다</h3>
+            </div>
+            <div className="gigr-x-output-grid">
+              {hermesRecentXOutputs.map((output) => (
+                <article key={output.href} className="gigr-x-output-card">
+                  <XPostEmbed href={output.href} label={output.label} />
+                  <div>
+                    <strong>{output.label}</strong>
+                    <span>{output.note}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </motion.section>
 
       <motion.section {...fadeUp} id="support" className="page-frame gigr-section gigr-support-section">

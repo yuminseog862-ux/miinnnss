@@ -55,9 +55,9 @@ export const adsbExecutionPoints = [
 ] as const;
 
 export const loopSummaryPoints = [
+  "최근 X 출력물은 AHEYABARAYA가 아니라 Hermes/Aurora 새 콘텐츠 루프의 산출물",
   "자동 게시보다 제작 후보 자동화가 우선",
-  "입력값: 레퍼런스, 전날 관찰 신호, 제품 메시지",
-  "출력값: 이미지 후보, 영상 프롬프트, 게시 메타데이터, 다음 브리프",
+  "출력값: 이미지 후보, 숏폼 프롬프트, 게시 메타데이터, 다음 브리프",
 ] as const;
 
 export const coreAxes = [
@@ -107,7 +107,7 @@ export const recruiterFitRows = [
   {
     need: "제작 워크플로우 효율화",
     proof: "Hermes/Aurora 구조를 광고 소재 후보 생성 루프로 정리했습니다.",
-    output: "Brief → Asset → Review → Learning 운영 구조",
+    output: "Decision Log → Brief Harness → Candidate → X Output → Observation",
     href: "#loop",
   },
 ];
@@ -299,29 +299,91 @@ export const characterProofs = [
 export const hermesLoop = [
   {
     step: "Input",
-    body: "전날 관찰 신호, 트렌드/레퍼런스, 제품 메시지를 제작 입력값으로 모읍니다.",
+    body: "Readable 자료, 저장한 레퍼런스, 전날 관찰 신호를 제작 입력값으로 모읍니다.",
+  },
+  {
+    step: "Decision",
+    body: "왜 이 무드, 장면, 문장을 고르는지 한 줄 판단으로 남깁니다.",
   },
   {
     step: "Brief",
-    body: "첫 장면 훅, 감정 훅, 메시지 키워드, 타깃 플랫폼을 브리프로 기록합니다.",
+    body: "첫 장면 훅, 감정 훅, 메시지 키워드, X 발행 맥락을 브리프로 기록합니다.",
   },
   {
-    step: "Asset",
-    body: "이미지 프롬프트, 영상화 계획, 캡션 훅을 하나의 소재 후보로 묶습니다.",
+    step: "Candidate",
+    body: "이미지 후보, 숏폼 프롬프트, 캡션 훅을 하나의 출력 후보로 묶습니다.",
   },
   {
-    step: "Review",
-    body: "빠른 실험 후보, 대표 소재 후보, 댓글 대응 후보, 보류 항목으로 분류해 제작 우선순위를 정합니다.",
-  },
-  {
-    step: "Publish Prep",
-    body: "게시 문안, 캡션, 사용 자산을 남겨 이후 관찰 로그와 다시 연결되게 합니다.",
+    step: "Output",
+    body: "AHEYABARAYA와 분리된 새 X 출력물로 발행하거나, 발행 후보와 메타데이터로 보관합니다.",
   },
   {
     step: "Learning",
-    body: "댓글, 리포스트 맥락, 저장해 둔 관찰 로그를 보고 다음 프롬프트 방향을 조정합니다.",
+    body: "반응을 성과로 단정하지 않고 다음 무드, 카피, 프롬프트 선택 기준으로 되돌립니다.",
   },
 ];
+
+export const hermesDecisionLogPoints = [
+  "AHEYABARAYA는 과거 실험과 학습 케이스, Hermes/Aurora는 현재 새 콘텐츠 생산 시스템",
+  "Recent X Outputs는 새 루프의 출력면으로 배치",
+  "Decision Log가 레퍼런스, 훅 판단, 프롬프트, 발행 메타데이터를 연결",
+] as const;
+
+export const hermesServiceMap = [
+  {
+    lane: "01 Source",
+    title: "Readable / Reference Inputs",
+    body: "최근 생성 자료, 레퍼런스 장면, 저장한 관찰 신호를 하루 제작 입력값으로 모읍니다.",
+  },
+  {
+    lane: "02 Decision Log",
+    title: "Creative Decision",
+    body: "오늘 왜 이 무드, 캐릭터, 장면, 문장을 선택하는지 짧은 판단 기록으로 남깁니다.",
+  },
+  {
+    lane: "03 Brief Harness",
+    title: "Hook Brief",
+    body: "타깃 가설, 첫 1-3초 장면, 카피 훅, 이미지/영상 프롬프트를 같은 형식으로 묶습니다.",
+  },
+  {
+    lane: "04 Candidate Factory",
+    title: "Image / Short-form Candidate",
+    body: "이미지 후보와 숏폼 프롬프트를 생성하고, 게시 가능한 후보와 보류 후보를 나눕니다.",
+  },
+  {
+    lane: "05 Output Surface",
+    title: "Recent X Outputs",
+    body: "AHEYABARAYA에서 벗어난 새 콘텐츠 산출물을 X embed 또는 로컬 캡처로 연결합니다.",
+  },
+  {
+    lane: "06 Learning",
+    title: "Observation → Next Brief",
+    body: "반응을 다음 무드, 캐릭터, 카피, 프롬프트 선택 기준으로 다시 decision log에 넣습니다.",
+  },
+] as const;
+
+export const hermesOutputNotes = [
+  {
+    label: "Scope",
+    body: "최근 X 출력물은 AHEYABARAYA의 문제 검증 근거가 아니라 Hermes/Aurora 자동화 루프의 산출 증거로 둡니다.",
+  },
+  {
+    label: "Proof Format",
+    body: "X API를 직접 당기지 못하는 구간은 공개 포스트 embed와 PDF용 로컬 캡처를 병행하는 구조가 맞습니다.",
+  },
+  {
+    label: "Current Boundary",
+    body: "자동 게시는 API 비용과 품질 기준 확인 후 확장하고, 현재는 후보 생성·메타데이터·검수 흐름을 먼저 보여줍니다.",
+  },
+] as const;
+
+export type HermesRecentXOutput = {
+  label: string;
+  href: string;
+  note: string;
+};
+
+export const hermesRecentXOutputs: HermesRecentXOutput[] = [];
 
 export const supportProofs = [
   {
