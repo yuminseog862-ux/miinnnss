@@ -42,10 +42,13 @@ export type SlideMedia = {
 };
 
 export type SlideGalleryItem = {
-  src: string;
+  src?: string;
   alt: string;
   label: string;
   type?: "image" | "video";
+  embedType?: "x";
+  embedUrl?: string;
+  embedText?: string;
   poster?: string;
   startTime?: number;
   href?: string;
