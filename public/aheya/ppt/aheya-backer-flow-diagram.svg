@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">AHEYA backer supporter flow diagram</title>
+  <desc id="desc">Web3 user or supporter discovers a live idea, opens the page, supports from wallet, leaves quick Good or Improve feedback, and creates a saved feedback record.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07101f"/>
+      <stop offset="0.52" stop-color="#102643"/>
+      <stop offset="1" stop-color="#090d1a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#113653" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#0b1324" stop-opacity="0.94"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.39 0 0 0 0 0.85 0 0 0 0 0.71 0 0 0 0.31 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="620" rx="34" fill="url(#bg)"/>
+  <circle cx="1050" cy="520" r="210" fill="#62d8b6" opacity="0.08"/>
+  <circle cx="104" cy="84" r="166" fill="#4fd1ff" opacity="0.08"/>
+  <path d="M86 182 C284 287, 398 204, 575 323 C755 444, 881 325, 1088 452" fill="none" stroke="#62d8b6" stroke-opacity="0.14" stroke-width="4"/>
+  <text x="60" y="70" fill="#7dd3fc" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="4">BACKER / SUPPORTER FLOW</text>
+  <text x="60" y="116" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="850">온체인 행동을 가벼운 support와 feedback으로 변환</text>
+  <text x="60" y="154" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">reward claim보다 작은 wallet action과 Good / Improve response를 먼저 남김</text>
+
+  <g transform="translate(62 228)" filter="url(#glow)">
+    <line x1="110" y1="96" x2="1040" y2="96" stroke="#62d8b6" stroke-width="4" stroke-opacity="0.6"/>
+    <g>
+      <rect x="0" y="0" width="204" height="192" rx="24" fill="url(#card)" stroke="#4fd1ff" stroke-opacity="0.22"/>
+      <circle cx="42" cy="44" r="22" fill="#4fd1ff"/>
+      <text x="33" y="51" fill="#07101f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">01</text>
+      <text x="28" y="94" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850">Discover</text>
+      <text x="28" y="130" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">X / content에서 idea 발견</text>
+    </g>
+    <g transform="translate(232 0)">
+      <rect x="0" y="0" width="204" height="192" rx="24" fill="url(#card)" stroke="#4fd1ff" stroke-opacity="0.22"/>
+      <circle cx="42" cy="44" r="22" fill="#4fd1ff"/>
+      <text x="33" y="51" fill="#07101f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">02</text>
+      <text x="28" y="94" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850">Open idea</text>
+      <text x="28" y="130" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">problem / demo context 확인</text>
+    </g>
+    <g transform="translate(464 0)">
+      <rect x="0" y="0" width="204" height="192" rx="24" fill="url(#card)" stroke="#62d8b6" stroke-opacity="0.28"/>
+      <circle cx="42" cy="44" r="22" fill="#62d8b6"/>
+      <text x="33" y="51" fill="#07101f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">03</text>
+      <text x="28" y="94" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850">Support</text>
+      <text x="28" y="130" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">wallet으로 작은 지지 표시</text>
+    </g>
+    <g transform="translate(696 0)">
+      <rect x="0" y="0" width="204" height="192" rx="24" fill="url(#card)" stroke="#62d8b6" stroke-opacity="0.28"/>
+      <circle cx="42" cy="44" r="22" fill="#62d8b6"/>
+      <text x="33" y="51" fill="#07101f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">04</text>
+      <text x="28" y="94" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850">Good / Improve</text>
+      <text x="28" y="130" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">짧은 피드백 선택</text>
+    </g>
+    <g transform="translate(928 0)">
+      <rect x="0" y="0" width="204" height="192" rx="24" fill="url(#card)" stroke="#7dd3fc" stroke-opacity="0.24"/>
+      <circle cx="42" cy="44" r="22" fill="#7dd3fc"/>
+      <text x="33" y="51" fill="#07101f" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="900">05</text>
+      <text x="28" y="94" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="850">Saved record</text>
+      <text x="28" y="130" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="650">다음 update 판단에 사용</text>
+    </g>
+  </g>
+
+  <rect x="60" y="500" width="1080" height="64" rx="32" fill="#0b1324" stroke="#62d8b6" stroke-opacity="0.24"/>
+  <text x="94" y="540" fill="#f7ecdd" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Portfolio read:</text>
+  <text x="248" y="540" fill="#aab4d6" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="650">사용자 행동 증거이지 demand proof나 conversion claim으로 해석하지 않음</text>
+</svg>

@@ -1,0 +1,94 @@
+<svg width="1600" height="760" viewBox="0 0 1600 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.56" stop-color="#0A1425"/>
+      <stop offset="1" stop-color="#07100F"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="46" y1="96" x2="1554" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#112944" stop-opacity="0.72"/>
+      <stop offset="0.52" stop-color="#091321" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#06100D" stop-opacity="0.86"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <style>
+      .kicker { fill: #7FD0FF; font: 800 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.16em; text-transform: uppercase; }
+      .title { fill: #F7ECDD; font: 900 42px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: -0.035em; }
+      .subtitle { fill: rgba(247,236,221,0.66); font: 700 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .head { fill: #57D6FF; font: 900 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .source { fill: #F7ECDD; font: 900 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .line { fill: rgba(247,236,221,0.62); font: 760 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .quote { fill: rgba(247,236,221,0.83); font: 760 17px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .decision { fill: #D6E8FF; font: 850 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .tag { fill: #0A1425; font: 900 12px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+      .small { fill: rgba(247,236,221,0.58); font: 760 13px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .safe { fill: #C9C1FF; font: 850 14px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    </style>
+  </defs>
+  <rect width="1600" height="760" rx="34" fill="url(#bg)"/>
+  <circle cx="1310" cy="105" r="172" fill="#57D6FF" fill-opacity="0.09" filter="url(#soft)"/>
+  <circle cx="220" cy="640" r="184" fill="#8B7CF6" fill-opacity="0.11" filter="url(#soft)"/>
+  <path d="M80 604C260 468 444 482 624 552C812 625 998 668 1200 540C1335 454 1444 444 1530 486" stroke="#57D6FF" stroke-opacity="0.08" stroke-width="3"/>
+
+  <text x="64" y="62" class="kicker">PM artifacts / source proof</text>
+  <text x="64" y="114" class="title">Documentation &amp; Decision Trace</text>
+  <text x="64" y="148" class="subtitle">문서 제목이 아니라, 읽은 문서의 발췌와 포트폴리오 판단 연결을 함께 보여주는 보드</text>
+
+  <rect x="48" y="190" width="1504" height="500" rx="28" fill="url(#panel)" stroke="#7FD0FF" stroke-opacity="0.18"/>
+  <line x1="382" y1="232" x2="382" y2="652" stroke="#7FD0FF" stroke-opacity="0.14"/>
+  <line x1="1052" y1="232" x2="1052" y2="652" stroke="#7FD0FF" stroke-opacity="0.14"/>
+  <text x="82" y="234" class="head">Reviewed source</text>
+  <text x="414" y="234" class="head">Source excerpt / evidence cue</text>
+  <text x="1084" y="234" class="head">Portfolio decision</text>
+
+  <g transform="translate(76 262)">
+    <rect x="0" y="0" width="282" height="62" rx="16" fill="#0A1425" fill-opacity="0.78" stroke="#7FD0FF" stroke-opacity="0.16"/>
+    <text x="18" y="27" class="source">aheyabaraya-source-summary.md</text>
+    <text x="18" y="49" class="line">lines 45-46, 54-56</text>
+    <text x="338" y="25" class="quote">"building live fast"와 "first users / first signal / feedback / proof" 사이의 gap을 AHEYA 문제로 정리</text>
+    <text x="338" y="53" class="quote">legacy BP는 reward/token/quest를 현재 scope가 아니라 문제 정의와 narrowing 근거로 사용</text>
+    <text x="1012" y="34" class="decision">Problem slide와 target hypothesis의 기준선</text>
+  </g>
+
+  <g transform="translate(76 346)">
+    <rect x="0" y="0" width="282" height="62" rx="16" fill="#0A1425" fill-opacity="0.78" stroke="#7FD0FF" stroke-opacity="0.16"/>
+    <text x="18" y="27" class="source">master-copy-adaptation.ko.md</text>
+    <text x="18" y="49" class="line">lines 138-141, 175-176</text>
+    <text x="338" y="25" class="quote">PRD-like docs, user flow, roadmap, GTM brief, KPI/event plan, SQL notes, decision log를 하나의 planning system으로 연결</text>
+    <text x="338" y="53" class="quote">KPI/SQL은 성과 수치가 아니라 measurement design으로 표기</text>
+    <text x="1012" y="34" class="decision">18번은 artifact board, 19번은 KPI/SQL design board로 분리</text>
+  </g>
+
+  <g transform="translate(76 430)">
+    <rect x="0" y="0" width="282" height="62" rx="16" fill="#0A1425" fill-opacity="0.78" stroke="#7FD0FF" stroke-opacity="0.16"/>
+    <text x="18" y="27" class="source">claim-audit.md</text>
+    <text x="18" y="49" class="line">lines 4, 6-18, 27-46</text>
+    <text x="338" y="25" class="quote">confirmed, design-only, assumed, unverified, excluded claim을 분리하고 source excerpt가 없으면 확인했다고 쓰지 않음</text>
+    <text x="338" y="53" class="quote">Core Rail, offchain receipt, KPI/export design, X public history는 확인/설계 근거로만 사용</text>
+    <text x="1012" y="34" class="decision">성과, 전환, market validation 표현 차단</text>
+  </g>
+
+  <g transform="translate(76 514)">
+    <rect x="0" y="0" width="282" height="62" rx="16" fill="#0A1425" fill-opacity="0.78" stroke="#7FD0FF" stroke-opacity="0.16"/>
+    <text x="18" y="27" class="source">source-map.md</text>
+    <text x="18" y="49" class="line">lines 33-40, slide source map</text>
+    <text x="338" y="25" class="quote">service-flow master, offchain direction, service map, problem research, founder handoff, KPI/export, trust/core synthesis를 source map으로 묶음</text>
+    <text x="338" y="53" class="quote">슬라이드별로 어떤 문서가 어디에 쓰이는지 연결</text>
+    <text x="1012" y="34" class="decision">각 slide의 근거 위치와 appendix 경계 추적</text>
+  </g>
+
+  <g transform="translate(76 598)">
+    <rect x="0" y="0" width="282" height="62" rx="16" fill="#0A1425" fill-opacity="0.78" stroke="#7FD0FF" stroke-opacity="0.16"/>
+    <text x="18" y="27" class="source">local docs + git/log maps</text>
+    <text x="18" y="49" class="line">sanitized references only</text>
+    <text x="338" y="25" class="quote">handoff, decision log, X/Git connection map은 product change와 public copy 흐름을 연결하되 raw private evidence는 제외</text>
+    <text x="338" y="53" class="quote">읽지 않은 자료는 not reviewed로 남기는 규칙 유지</text>
+    <text x="1012" y="34" class="decision">포트폴리오 본문은 checked source만 사용</text>
+  </g>
+
+  <rect x="64" y="704" width="242" height="28" rx="14" fill="#7FD0FF"/>
+  <text x="83" y="723" class="tag">sanitized source excerpt</text>
+  <text x="330" y="724" class="safe">No raw private export · No secret-bearing source · Evidence is cited by document and line cue</text>
+</svg>

@@ -6,6 +6,7 @@ export type SlideCustomLayout =
   | "aheyaOverview"
   | "aheyaTimeline"
   | "aheyaResearchSolution"
+  | "aheyaBuilderBridge"
   | "aheyaProductSurfaceMap"
   | "aheyaFeatureEvidenceMap"
   | "aheyaDecisionCards"

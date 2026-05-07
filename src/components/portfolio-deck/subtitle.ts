@@ -1,6 +1,7 @@
 export function toSubtitleFragment(text: string) {
   return text
     .trim()
+    .replace(/\s*\n\s*/g, " ")
     .replace(/[.。]+$/u, "")
     .replace(/구조화했다$/u, "구조화한 작업")
     .replace(/전환합니다$/u, "전환")

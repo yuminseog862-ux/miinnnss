@@ -18,6 +18,10 @@ export function SlideMain({ slide, deck }: { slide: Slide; deck: DeckContent }) 
     return <AheyaResearchSolution slide={slide} />;
   }
 
+  if (slide.custom === "aheyaBuilderBridge") {
+    return <AheyaBuilderBridge slide={slide} />;
+  }
+
   if (slide.custom === "aheyaProductSurfaceMap") {
     return <AheyaProductSurfaceMap slide={slide} />;
   }
@@ -263,6 +267,41 @@ function AheyaResearchSolution({ slide }: { slide: Slide }) {
   );
 }
 
+function AheyaBuilderBridge({ slide }: { slide: Slide }) {
+  const rows = slide.table?.rows ?? [];
+  const inputs = rows.slice(0, 2);
+  const loop = rows.slice(2);
+
+  return (
+    <section className={styles.builderBridgeCanvas}>
+      <div className={styles.builderBridgeInputs}>
+        {inputs.map((row, index) => (
+          <article key={`${slide.no}-${row[0]}`}>
+            <span>{row[0]}</span>
+            <strong>{row[1]}</strong>
+            <p>{row[2]}</p>
+            {index === 0 ? <ArrowRight className={styles.builderBridgeArrow} size={22} /> : null}
+          </article>
+        ))}
+      </div>
+      <div className={styles.builderBridgeSurface}>
+        <span>AHEYABARAYA PAGE</span>
+        <strong>live idea page에 Web3 참여 행동을 붙이는 bridge</strong>
+        <p>builder는 아이디어를 올리고, user는 wallet support와 짧은 feedback을 남기며, feedback은 X quote / reply로 다시 꺼낼 수 있는 초기 마케팅 loop가 된다.</p>
+      </div>
+      <div className={styles.builderBridgeLoop}>
+        {loop.map((row, index) => (
+          <article key={`${slide.no}-${row[0]}`}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{row[1]}</strong>
+            <p>{row[2]}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function AheyaProductSurfaceMap({ slide }: { slide: Slide }) {
   const gallery = slide.gallery ?? [];
 
@@ -325,7 +364,7 @@ function AheyaDecisionCards({ slide }: { slide: Slide }) {
       <div className={styles.decisionSentenceList}>
         {rows.map((row, index) => (
           <p key={`${slide.no}-${row[0]}`}>
-            <span>{String(index + 1)}</span>
+            <span>{String(index + 1)}.</span>
             <strong>{row[1]}</strong>
             <em>{row[2]}</em>
           </p>
@@ -391,6 +430,7 @@ function AheyaProblemBridge({ slide }: { slide: Slide }) {
 }
 
 function AheyaFlowHero({ slide }: { slide: Slide }) {
+  const gallery = slide.gallery ?? [];
   const topSteps = [
     ["01 DISCOVER", "X / content", "post, reply, visual, demo note"],
     ["02 OPEN", "Public idea page", "project context and simple action path"],
@@ -401,19 +441,33 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.flowHeroCanvas}>
-      <div className={styles.directFlowBoard}>
-        <div className={styles.directFlowRow}>
-          {topSteps.map((step, index) => (
-            <article key={step[0]}>
-              <span>{step[0]}</span>
-              <strong>{step[1]}</strong>
-              <p>{step[2]}</p>
-              {index < topSteps.length - 1 ? <ArrowRight size={18} /> : null}
-            </article>
+      {gallery.length ? (
+        <div className={styles.flowDiagramGrid}>
+          {gallery.map((item) => (
+            <figure key={`${slide.no}-${item.src}`} className={styles.flowDiagramCard}>
+              <div className={styles.flowDiagramFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 42vw")}</div>
+              <figcaption>
+                <span>{item.label}</span>
+                {item.caption ? <p>{item.caption}</p> : null}
+              </figcaption>
+            </figure>
           ))}
         </div>
-        <em>Flow evidence, not funnel outcome evidence · technical verification details stay in appendix</em>
-      </div>
+      ) : (
+        <div className={styles.directFlowBoard}>
+          <div className={styles.directFlowRow}>
+            {topSteps.map((step, index) => (
+              <article key={step[0]}>
+                <span>{step[0]}</span>
+                <strong>{step[1]}</strong>
+                <p>{step[2]}</p>
+                {index < topSteps.length - 1 ? <ArrowRight size={18} /> : null}
+              </article>
+            ))}
+          </div>
+          <em>Flow evidence, not funnel outcome evidence · technical verification details stay in appendix</em>
+        </div>
+      )}
       <div className={styles.flowHeroSlots}>
         {slide.slots.map((slot) => (
           <article key={`${slide.no}-${slot}`}>
@@ -451,13 +505,11 @@ function AheyaLandingCallout({ slide }: { slide: Slide }) {
 
 function AheyaMvpCut({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
-  const kept = rows.filter((row) => row[0] !== "Deferred");
-  const deferred = rows.find((row) => row[0] === "Deferred");
 
   return (
     <section className={styles.mvpCutCanvas}>
       <ol className={styles.mvpScopeList}>
-        {kept.map((row, index) => (
+        {rows.map((row, index) => (
           <li key={`${slide.no}-${row[0]}-${index}`} className={styles.mvpScopeItem}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <div>
@@ -468,19 +520,22 @@ function AheyaMvpCut({ slide }: { slide: Slide }) {
           </li>
         ))}
       </ol>
-      {deferred ? (
-        <aside className={styles.mvpDeferredCard}>
-          <span>{deferred[0]}</span>
-          <strong>{deferred[1]}</strong>
-          <p>{deferred[2]}</p>
-        </aside>
-      ) : null}
     </section>
   );
 }
 
 function AheyaPlanningBoard({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
+
+  if (slide.media) {
+    return (
+      <section className={`${styles.planningBoardCanvas} ${styles.planningEvidenceOnly}`}>
+        <div className={styles.planningEvidenceMedia}>
+          <MediaSlot slide={slide} />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className={styles.planningBoardCanvas}>
@@ -515,21 +570,36 @@ function AheyaPlanningBoard({ slide }: { slide: Slide }) {
 }
 
 function AheyaCsvEvidence({ slide }: { slide: Slide }) {
+  const rows = slide.slots.map((slot) => {
+    const [label, ...body] = slot.split(":");
+    return {
+      label: label.trim(),
+      body: body.join(":").trim() || slot,
+    };
+  });
+
   return (
     <section className={styles.csvEvidenceCanvas}>
-      <div className={styles.csvEvidenceMedia}>
-        <MediaSlot slide={slide} />
-      </div>
-      <div className={styles.csvEvidenceNotes}>
-        {slide.slots.map((slot, index) => {
-          const [label, ...body] = slot.split(":");
-          return (
-            <article key={`${slide.no}-${slot}`}>
-              <span>{String(index + 1).padStart(2, "0")} · {label}</span>
-              <p>{body.join(":").trim() || slot}</p>
+      <div className={styles.csvEvidenceDirectBoard}>
+        <header>
+          <span>{slide.label}</span>
+          <strong>Measurement design, not performance proof</strong>
+          <p>성과 숫자를 보여주는 표가 아니라, 어떤 이벤트를 남기고 어떤 판단에 쓸지 정리한 설계 보드</p>
+        </header>
+        <div className={styles.csvEvidenceDirectTable}>
+          <div className={styles.csvEvidenceDirectHead}>
+            <span>Layer</span>
+            <span>Tracking / query unit</span>
+            <span>Decision use</span>
+          </div>
+          {rows.map((row) => (
+            <article key={`${slide.no}-${row.label}`}>
+              <span>{row.label}</span>
+              <strong>{row.body}</strong>
+              <p>{row.label === "Boundary" ? "claim guardrail" : "next product / content question"}</p>
             </article>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -623,42 +693,42 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.messagingEvolutionCanvas}>
-      <div className={styles.messagingLineageBoard}>
+      <div className={styles.messagingEvolutionColumn}>
+        <header>
+          <span>Before</span>
+          <strong>Internal / mechanism-first</strong>
+        </header>
         <div>
-          <article>
-            <span>Phase 1</span>
-            <strong>Broad idea</strong>
-            <p>reward, quest, funding mechanics</p>
-          </article>
-          <ArrowRight size={18} />
-          <article>
-            <span>Phase 2</span>
-            <strong>Scope narrowing</strong>
-            <p>wallet support + feedback path</p>
-          </article>
-          <ArrowRight size={18} />
-          <article>
-            <span>Phase 3</span>
-            <strong>Public language</strong>
-            <p>first response, public idea page</p>
-          </article>
+          {rows.map((row, index) => (
+            <article key={`${slide.no}-before-${row[0]}`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <em>{row[0]}</em>
+                <p>{row[1]}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
-      <div className={styles.messagingEvolutionPairs}>
-        {rows.map((row) => (
-          <article key={`${slide.no}-${row[0]}`}>
-            <span>{row[0]}</span>
-            <div>
-              <strong>Before</strong>
-              <p>{row[1]}</p>
-            </div>
-            <ArrowRight size={18} />
-            <div>
-              <strong>After</strong>
-              <p>{row[2]}</p>
-            </div>
-          </article>
-        ))}
+      <div className={styles.messagingEvolutionDivider} aria-hidden="true">
+        <ArrowRight size={24} />
+      </div>
+      <div className={`${styles.messagingEvolutionColumn} ${styles.messagingEvolutionAfterColumn}`}>
+        <header>
+          <span>After</span>
+          <strong>Public / action-first</strong>
+        </header>
+        <div>
+          {rows.map((row, index) => (
+            <article key={`${slide.no}-after-${row[0]}`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <em>{row[0]}</em>
+                <p>{row[2]}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -752,28 +822,38 @@ function AheyaProofGrid({ slide, mode }: { slide: Slide; mode: "x" | "outreach" 
 
 function AheyaLaunchLoop({ slide }: { slide: Slide }) {
   const steps = slide.process ?? [];
+  const notes = slide.slots.map((slot) => {
+    const [label, ...body] = slot.split(":");
+    return {
+      label: label.trim(),
+      body: body.join(":").trim() || slot,
+    };
+  });
 
   return (
     <section className={styles.launchLoopCanvas}>
-      <div className={styles.launchLoopRail}>
-        {steps.map((step, index) => (
-          <article key={`${slide.no}-${step}`}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{step}</strong>
-            {index < steps.length - 1 ? <ArrowRight size={18} /> : null}
-          </article>
-        ))}
+      <div className={styles.launchLoopHero}>
+        <div className={styles.launchLoopCore}>
+          <span>Channel test loop</span>
+          <strong>public language → product action → response review</strong>
+        </div>
+        <div className={styles.launchLoopRail}>
+          {steps.map((step, index) => (
+            <article key={`${slide.no}-${step}`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{step}</strong>
+              {index < steps.length - 1 ? <ArrowRight size={16} /> : null}
+            </article>
+          ))}
+        </div>
       </div>
       <div className={styles.launchLoopNotes}>
-        {slide.slots.map((slot) => {
-          const [label, ...body] = slot.split(":");
-          return (
-            <article key={`${slide.no}-${slot}`}>
-              <span>{label}</span>
-              <p>{body.join(":").trim() || slot}</p>
-            </article>
-          );
-        })}
+        {notes.map((note) => (
+          <article key={`${slide.no}-${note.label}`}>
+            <span>{note.label}</span>
+            <p>{note.body}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
@@ -781,43 +861,33 @@ function AheyaLaunchLoop({ slide }: { slide: Slide }) {
 
 function AheyaSignalSplit({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
-  const actual = rows.filter((row) => row[0] === "Actual");
-  const designed = rows.filter((row) => row[0] === "Designed");
-  const boundary = rows.filter((row) => row[0] === "Boundary");
 
   return (
     <section className={styles.signalSplitCanvas}>
-      <div className={styles.signalSummaryPanel}>
-        <span>AHEYA / Metrics</span>
-        <strong>확인한 표면과 다음 측정 항목을 분리해서 읽는다</strong>
-        <p>현재 자료는 attention/evidence surface이고, KPI/SQL은 다음 판단을 위한 measurement design이다.</p>
-        <div className={styles.signalReadRules}>
-          <span>01 Current evidence</span>
-          <span>02 Next events</span>
-          <span>03 Boundary</span>
+      <div className={styles.signalReviewBoard}>
+        <header>
+          <span>Pre-decision review</span>
+          <strong>앞단 자료를 결론 직전의 판단 재료로 정리</strong>
+          <p>X/content evidence, product surface, KPI/SQL design을 한 번에 읽고 29번 decision으로 넘긴다.</p>
+        </header>
+        <div className={styles.signalReviewTable}>
+          <div className={styles.signalReviewHead}>
+            <span>Source</span>
+            <span>Signal read</span>
+            <span>Decision use</span>
+          </div>
+          {rows.map((row, index) => (
+            <article key={`${slide.no}-${row[0]}`}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{row[0]}</strong>
+              <p>{row[1]}</p>
+              <em>{row[2]}</em>
+            </article>
+          ))}
         </div>
-        <em>No KPI outcome · No funnel outcome claim · Read-only snapshot 전 숫자 과장 금지</em>
-      </div>
-      <div className={styles.signalColumnGrid}>
-        <SignalColumn title="Actual surface" rows={actual} />
-        <SignalColumn title="Measurement plan" rows={designed} />
-        <SignalColumn title="Boundary" rows={boundary} />
+        <footer>No KPI outcome · No funnel outcome claim · 결론은 방향 판단과 다음 측정 구조로 제한</footer>
       </div>
     </section>
-  );
-}
-
-function SignalColumn({ title, rows }: { title: string; rows: string[][] }) {
-  return (
-    <article className={styles.signalColumn}>
-      <span>{title}</span>
-      {rows.map((row) => (
-        <div key={`${title}-${row.join("-")}`}>
-          <strong>{row[1]}</strong>
-          <p>{row[2]}</p>
-        </div>
-      ))}
-    </article>
   );
 }
 
@@ -866,7 +936,7 @@ function renderGalleryMedia(item: NonNullable<Slide["gallery"]>[number], sizes: 
     );
   }
 
-  return <Image src={item.src} alt={item.alt} fill sizes={sizes} />;
+  return <Image src={item.src} alt={item.alt} fill sizes={sizes} unoptimized={item.src.endsWith(".svg")} />;
 }
 
 function DataTable({ slide }: { slide: Slide }) {
