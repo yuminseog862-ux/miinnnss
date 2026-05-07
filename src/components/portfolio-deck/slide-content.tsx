@@ -217,7 +217,7 @@ function AheyaTimeline({ slide }: { slide: Slide }) {
             <span className={styles.timelineStep}>{String(index + 1).padStart(2, "0")}</span>
             <span className={styles.timelineDate}>{row[0]}</span>
             <strong>{row[1]}</strong>
-            <p>{row[2]}</p>
+            {row[2] ? <p>{row[2]}</p> : null}
           </article>
           {index < rows.length - 1 ? <ArrowRight className={styles.timelineArrow} size={18} /> : null}
         </div>
@@ -238,7 +238,10 @@ function AheyaResearchSolution({ slide }: { slide: Slide }) {
             <em>{row[0]}</em>
             <ul>
               {row[1].split(" | ").map((item) => (
-                <li key={`${slide.no}-${row[0]}-${item}`}>{item}</li>
+                <li key={`${slide.no}-${row[0]}-${item}`}>
+                  <span aria-hidden="true">*</span>
+                  <p>{item.replace(/^\*\s*/, "")}</p>
+                </li>
               ))}
             </ul>
             <div>
@@ -286,8 +289,8 @@ function AheyaBuilderBridge({ slide }: { slide: Slide }) {
       </div>
       <div className={styles.builderBridgeSurface}>
         <span>AHEYABARAYA PAGE</span>
-        <strong>live idea page에 Web3 참여 행동을 붙이는 bridge</strong>
-        <p>builder는 아이디어를 올리고, user는 wallet support와 짧은 feedback을 남기며, feedback은 X quote / reply로 다시 꺼낼 수 있는 초기 마케팅 loop가 된다.</p>
+        <strong>live idea page에 useful wallet action을 붙이는 bridge</strong>
+        <p>builder는 첫 반응과 저장된 피드백을 얻고, Web3 user는 작은 wallet support와 Good/Improve response로 실제 제품 참여를 남긴다.</p>
       </div>
       <div className={styles.builderBridgeLoop}>
         {loop.map((row, index) => (
@@ -309,7 +312,7 @@ function AheyaProductSurfaceMap({ slide }: { slide: Slide }) {
     <section className={styles.surfaceMapCanvas}>
       <div className={styles.surfaceMapMedia}>
         {gallery.map((item) => (
-          <article key={`${slide.no}-${item.src}`} className={styles.surfaceMapCard}>
+          <article key={`${slide.no}-${getGalleryKey(item)}`} className={styles.surfaceMapCard}>
             <div className={styles.surfaceMapFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 38vw")}</div>
             <span>{item.label}</span>
             {item.caption ? <p>{item.caption}</p> : null}
@@ -335,7 +338,7 @@ function AheyaFeatureEvidenceMap({ slide }: { slide: Slide }) {
     <section className={styles.featureEvidenceCanvas}>
       <div className={styles.featureEvidenceGallery}>
         {gallery.map((item) => (
-          <article key={`${slide.no}-${item.src}`} className={styles.featureEvidenceCard}>
+          <article key={`${slide.no}-${getGalleryKey(item)}`} className={styles.featureEvidenceCard}>
             <div className={styles.featureEvidenceFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 23vw")}</div>
             <div>
               <span>{item.label}</span>
@@ -444,7 +447,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
       {gallery.length ? (
         <div className={styles.flowDiagramGrid}>
           {gallery.map((item) => (
-            <figure key={`${slide.no}-${item.src}`} className={styles.flowDiagramCard}>
+            <figure key={`${slide.no}-${getGalleryKey(item)}`} className={styles.flowDiagramCard}>
               <div className={styles.flowDiagramFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 42vw")}</div>
               <figcaption>
                 <span>{item.label}</span>
@@ -579,12 +582,12 @@ function AheyaCsvEvidence({ slide }: { slide: Slide }) {
   });
 
   return (
-    <section className={styles.csvEvidenceCanvas}>
+    <section className={`${styles.csvEvidenceCanvas} ${slide.media ? styles.csvEvidenceWithMedia : ""}`}>
       <div className={styles.csvEvidenceDirectBoard}>
         <header>
           <span>{slide.label}</span>
-          <strong>Measurement design, not performance proof</strong>
-          <p>성과 숫자를 보여주는 표가 아니라, 어떤 이벤트를 남기고 어떤 판단에 쓸지 정리한 설계 보드</p>
+          <strong>{slide.title}</strong>
+          <p>성과 숫자가 아니라 어떤 이벤트를 남기고 어떤 판단에 쓸지 정리한 설계 보드</p>
         </header>
         <div className={styles.csvEvidenceDirectTable}>
           <div className={styles.csvEvidenceDirectHead}>
@@ -601,6 +604,11 @@ function AheyaCsvEvidence({ slide }: { slide: Slide }) {
           ))}
         </div>
       </div>
+      {slide.media ? (
+        <div className={styles.csvEvidenceMedia}>
+          <MediaSlot slide={slide} />
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -675,13 +683,32 @@ function AheyaMessageLadder({ slide }: { slide: Slide }) {
       </div>
       {gallery.length ? (
         <div className={styles.messageLadderProof}>
-          {gallery.map((item) => (
-            <a key={item.src} href={item.href} target="_blank" rel="noreferrer" className={styles.messageLadderProofCard}>
-              <div>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 44vw")}</div>
-              <span>{item.label}</span>
-              {item.caption ? <p>{item.caption}</p> : null}
-            </a>
-          ))}
+          {gallery.map((item) => {
+            const body = (
+              <>
+                <div>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 44vw")}</div>
+                <span>{item.label}</span>
+                {item.caption ? <p>{item.caption}</p> : null}
+              </>
+            );
+
+            if (item.embedType === "x" && item.embedUrl) {
+              return (
+                <article key={getGalleryKey(item)} className={styles.messageLadderProofCard}>
+                  {body}
+                  <a href={item.href ?? item.embedUrl} target="_blank" rel="noreferrer" aria-label={`${item.label} X 원문 보기`}>
+                    <ArrowUpRight size={14} />
+                  </a>
+                </article>
+              );
+            }
+
+            return (
+              <a key={getGalleryKey(item)} href={item.href} target="_blank" rel="noreferrer" className={styles.messageLadderProofCard}>
+                {body}
+              </a>
+            );
+          })}
         </div>
       ) : null}
     </section>
@@ -774,6 +801,7 @@ function AheyaProofGrid({ slide, mode }: { slide: Slide; mode: "x" | "outreach" 
     <section className={`${styles.proofGridCanvas} ${styles[`proofGrid${capitalize(mode)}`]}`}>
       <div className={styles.proofGallery}>
         {gallery.map((item) => {
+          const isEmbed = item.embedType === "x" && item.embedUrl;
           const body = (
             <>
               <div className={styles.proofImageFrame}>
@@ -786,13 +814,26 @@ function AheyaProofGrid({ slide, mode }: { slide: Slide; mode: "x" | "outreach" 
             </>
           );
 
+          if (isEmbed) {
+            return (
+              <article key={getGalleryKey(item)} className={`${styles.proofCard} ${styles.proofEmbedCard}`}>
+                {body}
+                {item.href || item.embedUrl ? (
+                  <a href={item.href ?? item.embedUrl} target="_blank" rel="noreferrer" aria-label={`${item.label} X 원문 보기`}>
+                    <ArrowUpRight size={16} />
+                  </a>
+                ) : null}
+              </article>
+            );
+          }
+
           return item.href ? (
-            <a key={item.src} href={item.href} target="_blank" rel="noreferrer" className={styles.proofCard}>
+            <a key={getGalleryKey(item)} href={item.href} target="_blank" rel="noreferrer" className={styles.proofCard}>
               {body}
               <ArrowUpRight size={16} />
             </a>
           ) : (
-            <article key={item.src} className={styles.proofCard}>
+            <article key={getGalleryKey(item)} className={styles.proofCard}>
               {body}
             </article>
           );
@@ -919,7 +960,33 @@ function capitalize(value: string) {
 }
 
 function renderGalleryMedia(item: NonNullable<Slide["gallery"]>[number], sizes: string) {
+  if (item.embedType === "x" && item.embedUrl) {
+    const src = getXPostEmbedUrl(item.embedUrl);
+
+    if (!src) {
+      return (
+        <a href={item.href ?? item.embedUrl} target="_blank" rel="noreferrer" className={styles.xEmbedFallback}>
+          X post source
+        </a>
+      );
+    }
+
+    return (
+      <iframe
+        className={styles.xEmbedFrame}
+        title={`${item.label} X post`}
+        src={src}
+        loading="lazy"
+        referrerPolicy="strict-origin-when-cross-origin"
+      />
+    );
+  }
+
   if (item.type === "video") {
+    if (!item.src) {
+      return null;
+    }
+
     const src = item.startTime ? `${item.src}#t=${item.startTime}` : item.src;
 
     return (
@@ -936,7 +1003,38 @@ function renderGalleryMedia(item: NonNullable<Slide["gallery"]>[number], sizes: 
     );
   }
 
+  if (!item.src) {
+    return null;
+  }
+
   return <Image src={item.src} alt={item.alt} fill sizes={sizes} unoptimized={item.src.endsWith(".svg")} />;
+}
+
+function getGalleryKey(item: NonNullable<Slide["gallery"]>[number]) {
+  return item.src ?? item.embedUrl ?? item.href ?? item.label;
+}
+
+function getXPostId(embedUrl?: string) {
+  return embedUrl?.match(/status\/(\d+)/)?.[1];
+}
+
+function getXPostEmbedUrl(embedUrl: string) {
+  const postId = getXPostId(embedUrl);
+
+  if (!postId) {
+    return undefined;
+  }
+
+  const params = new URLSearchParams({
+    chrome: "noheader nofooter noborders transparent",
+    dnt: "true",
+    hide_thread: "true",
+    id: postId,
+    lang: "en",
+    theme: "dark",
+  });
+
+  return `https://platform.twitter.com/embed/Tweet.html?${params.toString()}`;
 }
 
 function DataTable({ slide }: { slide: Slide }) {
