@@ -65,8 +65,8 @@ export const aheyaSlides = [
     variant: "matrix",
     custom: "aheyaResearchSolution",
     intent: "리서치 두 축을 Web3 user 문제와 AI-native builder 문제로 구조화한다.",
-    claim: "잔여 온체인 자산 리서치와 builder 참여 구조 리서치를\n각각 Web3 user problem과 builder problem으로 연결",
-    include: ["Residual onchain asset research", "AI-native builder participation research", "Problem framing"],
+    claim: "잔여 온체인 자산 리서치와 AI-native builder 공개 이후 반응 문제를 각각 Web3 user problem과 builder problem으로 연결",
+    include: ["Residual onchain asset research", "AI-native builder response research", "Problem framing"],
     slots: ["Web3 user problem", "AI-native builder problem"],
     table: {
       headers: ["Research", "Evidence notes", "Problem", "Problem notes", "Tags"],
@@ -79,11 +79,60 @@ export const aheyaSlides = [
           "native gas token | project token | wallet remainder | utility gap",
         ],
         [
-          "AI-native builder 참여 구조 리서치",
-          "AI로 demo/docs/GitHub/launch post 제작 속도는 빨라짐 | Galxe식 참여 구조를 참고했지만 reward farming보다 first users와 feedback 기록이 더 중요 | 공개 이후 첫 반응과 업데이트 근거가 흩어지는 문제 확인",
-          "빠른 제작 이후 첫 사용자·피드백·proof가 약함",
-          "builder는 demo를 열 수 있지만 누가 실제로 봤고 무엇이 좋고 부족한지 남기기 어려움 | 참여 구조는 reward보다 첫 반응을 읽고 다음 판단에 쓰는 방향이어야 함",
-          "AI-native builder | first users | feedback | proof",
+          "AI-native builder 공개 이후 반응 리서치",
+          "AI로 demo, docs, GitHub, launch post를 만드는 속도는 빨라짐 | 공개 이후 X marketing 글은 첫 반응과 피드백을 끌어내는 포텐셜이 낮게 남기 쉬움 | 첫 반응과 업데이트 근거가 흩어지는 문제 확인",
+          "빠른 제작 이후 X marketing 포텐셜이 낮음",
+          "builder는 demo를 열 수 있지만 X post만으로는 누가 실제로 봤고 무엇을 개선해야 하는지 남기기 어려움 | 필요한 것은 reward 참여가 아니라 첫 반응과 feedback이 다시 public copy와 reply로 이어지는 loop",
+          "AI-native builder | demo speed | X marketing | feedback loop",
+        ],
+      ],
+    },
+  },
+  {
+    no: 12,
+    section: "AHEYA",
+    title: "Builder x Web3 Bridge",
+    label: "Bridge",
+    accent: "cyan",
+    variant: "process",
+    custom: "aheyaCoreRail",
+    intent: "AI-native builder의 빠른 제작 문제와 Web3 user의 참여 행동 양식을 AHEYA 제품 구조로 연결한다.",
+    claim: "AI-native builder의 빠른 제작 이후 문제에 Web3 user의 참여 행동을 붙여 support와 X feedback loop를 만드는 구조",
+    include: ["Builder problem", "Web3 action", "AHEYABARAYA page", "X feedback loop"],
+    slots: [
+      "AI로 demo/service 제작 속도는 빨라졌지만 공개 이후 첫 반응과 피드백은 약함",
+      "Web3 user의 visit/support/feedback/share 행동을 lightweight action으로 재해석",
+      "feedback을 quote/reply 표면으로 다시 꺼내 초기 노출 가능성을 만듦",
+      "exposure 가능성 설계이지 growth outcome claim은 아님",
+    ],
+    process: ["AI demo/service", "Live idea page", "Wallet support", "Quick feedback", "X quote/reply loop"],
+    table: {
+      headers: ["Layer", "Point", "Role"],
+      rows: [
+        [
+          "AI-native builder",
+          "demo/service 제작 속도는 빨라짐",
+          "하지만 공개 이후 X 글만으로는 첫 반응과 명확한 피드백을 만들기 어렵다",
+        ],
+        [
+          "Web3 user behavior",
+          "visit, support, feedback, share 행동 양식",
+          "Galxe식 참여 습관을 reward claim이 아니라 lightweight support / response로 재해석한다",
+        ],
+        [
+          "Open",
+          "AHEYABARAYA에 live idea를 올림",
+          "builder의 demo를 설명 가능한 public page와 CTA 표면으로 바꾼다",
+        ],
+        [
+          "Support",
+          "wallet support로 첫 행동을 남김",
+          "무거운 contract 설명보다 작은 support action으로 참여 장벽을 낮춘다",
+        ],
+        [
+          "Feedback",
+          "Good/Improve feedback을 X quote / reply 재료로 전환",
+          "피드백을 public copy와 reply로 다시 꺼내 초기 제품 노출 가능성을 만든다",
         ],
       ],
     },
@@ -245,6 +294,20 @@ export const aheyaSlides = [
       "technical verification details stay in appendix",
     ],
     process: ["Discover", "Open", "Act", "Respond", "Record"],
+    gallery: [
+      {
+        src: "/aheya/ppt/aheya-builder-flow-diagram.svg",
+        alt: "AHEYA builder journey diagram",
+        label: "Builder flow",
+        caption: "live idea를 열고 support/feedback을 X feedback loop로 다시 꺼내는 흐름",
+      },
+      {
+        src: "/aheya/ppt/aheya-backer-flow-diagram.svg",
+        alt: "AHEYA backer supporter journey diagram",
+        label: "Backer / supporter flow",
+        caption: "idea를 보고 wallet support와 Good/Improve feedback을 남기는 흐름",
+      },
+    ],
   },
   {
     no: 17,
@@ -278,9 +341,10 @@ export const aheyaSlides = [
     variant: "matrix",
     custom: "aheyaPlanningBoard",
     intent: "PRD, user stories, wireframe, roadmap, GTM, KPI, decision log를 실행 메모리로 연결한다.",
-    claim: "문서 제목만 보여주지 않고,\n날짜, 문서 유형, evidence cue, 사용된 판단을 함께 묶은 sanitized trace",
+    claim: "원문 발췌와 판단 연결을 한 장에 묶은 planning evidence board",
     include: ["PRD", "User Stories", "Wireframe", "Roadmap", "KPI/SQL", "Decision log"],
     slots: ["AI-assisted planning", "Planning background", "Drive source map", "Read/not-reviewed boundary"],
+    media: { src: "/aheya/ppt/aheya-document-decision-evidence-board.svg", alt: "AHEYA source excerpt and decision evidence board", label: "Sanitized source excerpt board" },
     table: {
       headers: ["Artifact", "Purpose", "Evidence cue", "Used for", "Boundary"],
       rows: [
@@ -301,7 +365,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaCsvEvidence",
     intent: "KPI/SQL을 성과 숫자가 아니라 다음 판단을 위한 tracking architecture로 분리한다.",
-    claim: "KPI는 성과 증명이 아니라,\n콘텐츠 발견부터 feedback record까지 어떤 이벤트를 볼지 정한 설계",
+    claim: "KPI는 성과 증명이 아니라 콘텐츠 발견부터 feedback record까지 어떤 이벤트를 볼지 정한 설계",
     include: ["KPI tree", "Event split", "Decision use", "Boundary"],
     slots: [
       "Tree: discovery -> entry -> wallet support -> quick feedback -> saved record",
@@ -309,7 +373,6 @@ export const aheyaSlides = [
       "SQL: content/page/action/feedback 단위로 나눠 query-ready 구조를 준비",
       "Boundary: KPI outcome, conversion lift, market validation claim 아님",
     ],
-    media: { src: "/aheya/ppt/aheya-kpi-tree-csv-board.svg", alt: "AHEYA KPI tree CSV-style evidence board", label: "KPI tree CSV board" },
   },
   {
     no: 19.2,
@@ -320,7 +383,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaCsvEvidence",
     intent: "X/content surface와 landing source를 측정 가능한 discovery source로 분리한다.",
-    claim: "Discovery는 X post, visual hook, reply surface를\nperformance가 아니라 다음 content 판단 근거로 기록",
+    claim: "Discovery는 X post, visual hook, reply surface를 performance가 아니라 다음 content 판단 근거로 기록",
     include: ["Post URL", "Date", "Phase", "Content hook"],
     slots: [
       "Source: public X post surface와 visual hook을 content source로 분리",
@@ -328,7 +391,6 @@ export const aheyaSlides = [
       "Use: 어떤 hook을 다음 content에 남길지 판단",
       "Boundary: impression 숫자는 attention cue이지 product outcome 아님",
     ],
-    media: { src: "/aheya/ppt/aheya-discovery-source-csv-board.svg", alt: "AHEYA discovery source CSV-style evidence board", label: "Discovery source CSV board" },
   },
   {
     no: 19.3,
@@ -339,7 +401,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaCsvEvidence",
     intent: "landing_visit, project_open, CTA click을 content 관심과 product 이해의 분리 이벤트로 보여준다.",
-    claim: "Product entry는 content 관심과 제품 이해를 분리해,\npage open과 action intent를 따로 읽도록 설계",
+    claim: "Product entry는 content 관심과 제품 이해를 분리해 page open과 action intent를 따로 읽도록 설계",
     include: ["Landing visit", "Project open", "CTA click", "Session boundary"],
     slots: [
       "Entry: landing_visit과 project_open을 분리해 public page 이해 여부를 확인",
@@ -347,7 +409,6 @@ export const aheyaSlides = [
       "Session: source, page, idea id, session id를 query key로 사용",
       "Boundary: 방문자 수가 아니라 다음 설명/CTA 수정 질문을 준비",
     ],
-    media: { src: "/aheya/ppt/aheya-product-entry-csv-board.svg", alt: "AHEYA product entry event CSV-style evidence board", label: "Product entry CSV board" },
   },
   {
     no: 19.4,
@@ -358,7 +419,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaCsvEvidence",
     intent: "wallet support와 quick feedback이 어떤 이벤트와 record로 남는지 보여준다.",
-    claim: "Wallet support와 quick feedback은 한 덩어리가 아니라,\nintent, verification, feedback, saved record로 나눠 읽는다",
+    claim: "Wallet support와 quick feedback은 한 덩어리가 아니라 intent, verification, feedback, saved record로 나눠 읽는다",
     include: ["Support start", "Support submit", "Feedback submit", "Record created"],
     slots: [
       "Support: wallet_support_start와 support_submit을 분리해 의도와 완료를 구분",
@@ -366,7 +427,6 @@ export const aheyaSlides = [
       "Review: record_created 이후 review status를 다음 업데이트 판단에 사용",
       "Boundary: support 수량보다 reusable response evidence 구조가 핵심",
     ],
-    media: { src: "/aheya/ppt/aheya-support-feedback-csv-board.svg", alt: "AHEYA support and feedback CSV-style evidence board", label: "Support / feedback CSV board" },
   },
   {
     no: 19.5,
@@ -377,7 +437,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaCsvEvidence",
     intent: "SQL-ready event split을 다음 decision question으로 연결한다.",
-    claim: "SQL은 성과를 증명하기 위한 숫자판이 아니라,\n다음 product/content decision을 묻기 위한 read model",
+    claim: "SQL은 성과를 증명하기 위한 숫자판이 아니라 다음 product/content decision을 묻기 위한 read model",
     include: ["Aggregate", "Filter", "Decision question", "Boundary"],
     slots: [
       "Aggregate: content/page/support/feedback 단위 COUNT와 FILTER를 준비",
@@ -385,7 +445,6 @@ export const aheyaSlides = [
       "Decision: message, visual hook, landing CTA, support UX를 다음 iteration 후보로 분리",
       "Boundary: read-only snapshot 전에는 final number, improvement claim을 쓰지 않음",
     ],
-    media: { src: "/aheya/ppt/aheya-sql-decision-csv-board.svg", alt: "AHEYA SQL decision CSV-style evidence board", label: "SQL decision CSV board" },
   },
   {
     no: 20,
@@ -433,11 +492,25 @@ export const aheyaSlides = [
     },
     gallery: [
       {
+        src: "/aheya/ppt/x-cards/aheya-reply-2026-03-19.png",
+        alt: "AHEYA public reply screenshot used as segment messaging evidence",
+        label: "Segment reply evidence",
+        href: "https://x.com/minnns_aheya/status/2034680247053164585",
+        caption: "AI-native creator segment wording",
+      },
+      {
         src: "/aheya/ppt/x-cards/aheya-x-post-2026-03-27.png",
         alt: "AHEYA public X post screenshot used as messaging evidence",
         label: "Public copy evidence",
         href: "https://x.com/minnns_aheya/status/2037465808524460467",
         caption: "first-response / saved feedback record public copy cue",
+      },
+      {
+        src: "/aheya/ppt/x-cards/aheya-x-post-2026-04-10.png",
+        alt: "AHEYA public X post screenshot used as later builder-start messaging evidence",
+        label: "Late copy phase",
+        href: "https://x.com/minnns_aheya/status/2042684370486727146",
+        caption: "from-zero builder framing",
       },
     ],
   },
@@ -549,21 +622,21 @@ export const aheyaSlides = [
     ],
     gallery: [
       {
-        src: "/aheya/ppt/x-cards/aheya-x-post-2026-03-17.png",
+        src: "/aheya/ppt/x-cards/aheya-x-post-2026-03-17.svg",
         alt: "AHEYA public X post screenshot from 2026-03-17",
         label: "Strongest public post",
         href: "https://x.com/minnns_aheya/status/2033738008516825288",
         caption: "1,987 impressions / qualitative signal",
       },
       {
-        src: "/aheya/ppt/x-cards/aheya-x-post-2026-03-27.png",
+        src: "/aheya/ppt/x-cards/aheya-x-post-2026-03-27.svg",
         alt: "AHEYA public X post screenshot from 2026-03-27",
         label: "Cleaner response copy",
         href: "https://x.com/minnns_aheya/status/2037465808524460467",
         caption: "support/feedback language",
       },
       {
-        src: "/aheya/ppt/x-cards/aheya-x-post-2026-04-10.png",
+        src: "/aheya/ppt/x-cards/aheya-x-post-2026-04-10.svg",
         alt: "AHEYA public X post screenshot from 2026-04-10",
         label: "Builder start copy",
         href: "https://x.com/minnns_aheya/status/2042684370486727146",
@@ -656,22 +729,22 @@ export const aheyaSlides = [
   {
     no: 28,
     section: "AHEYA",
-    title: "Early Signals & Measurement Plan",
+    title: "Pre-Decision Signal Review",
     label: "Signal Read",
     accent: "aqua",
     variant: "matrix",
     custom: "aheyaSignalSplit",
-    intent: "actual signal과 measurement plan을 명확히 분리한다.",
-    claim: "Current evidence와 next events를 분리해,\nKPI outcome/funnel outcome claim 없이 early signal만 읽는다.",
-    include: ["Actual signals", "Designed metrics", "DB/KPI caution"],
-    slots: ["Public X post surface", "Strongest post metric as attention signal", "Public product surface", "landing_visit / project_open / wallet_support_start / feedback_submit / feedback_record_created"],
+    intent: "앞단 X, product surface, KPI/SQL 설계를 결론 직전 판단 재료로 정리한다.",
+    claim: "X 반응과 KPI 설계는 성과 입증이 아니라 다음 판단을 위한 signal review다.",
+    include: ["X/content evidence", "Product surface", "KPI/SQL design", "Decision boundary"],
+    slots: ["Public X post/reply evidence", "Landing and support/feedback surface", "Event/source mapping", "No outcome claim"],
     table: {
-      headers: ["구분", "포함", "해석"],
+      headers: ["Source", "Signal read", "Decision use"],
       rows: [
-        ["Actual", "public X post surface, keyword matches, representative post metrics", "content attention signal only"],
-        ["Actual", "product surface, test/runtime aggregate, Drive/source map", "technical surface evidence"],
-        ["Designed", "visit, open, wallet support start, support submit, feedback submitted, feedback record created", "next decision structure"],
-        ["Boundary", "KPI/SQL, aggregate, funnel", "성과 숫자나 개선 수치로 쓰지 않음"],
+        ["X / content", "public post, reply, representative post metric은 어떤 언어와 visual hook이 attention을 받는지 보는 표면", "content angle과 outreach wording을 조정하는 재료"],
+        ["Product surface", "landing, project page, wallet support, quick feedback path는 첫 action이 가능한지 확인하는 구현 표면", "다음 MVP에서 남길 행동과 줄일 설명을 판단"],
+        ["KPI / SQL design", "landing_visit, project_open, wallet_support_start, feedback_submit, feedback_record_created를 event/source로 분리", "성과 숫자가 아니라 이후 read-only snapshot의 기준선"],
+        ["Boundary", "current deck에서는 conversion, market validation, KPI lift를 결론으로 쓰지 않음", "29번은 방향 판단과 다음 측정 구조로만 연결"],
       ],
     },
   },

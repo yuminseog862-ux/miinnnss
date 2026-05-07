@@ -16,6 +16,17 @@
   --radius-lg: 22px;
   --radius-md: 16px;
   --hairline: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(125, 211, 252, 0.18);
+  --glass-bg:
+    radial-gradient(circle at 50% 0%, rgba(125, 211, 252, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+    rgba(8, 10, 14, 0.86);
+  --glass-bg-soft:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(8, 10, 14, 0.5);
+  --glass-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 88px rgba(0, 0, 0, 0.34);
 }
 
 .deckPage {
@@ -359,7 +370,7 @@
 
 .slideLead {
   display: grid;
-  grid-template-columns: minmax(0, 0.5fr);
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas:
     "kicker"
     "title"
@@ -375,10 +386,10 @@
 
 .slideLead h2 {
   grid-area: title;
-  max-width: min(760px, 50vw);
+  max-width: 100%;
   margin: 0;
   overflow: hidden;
-  font-size: clamp(42px, 4vw, 58px);
+  font-size: clamp(38px, 3.8vw, 58px);
   line-height: 1;
   font-weight: 850;
   text-overflow: ellipsis;
@@ -396,16 +407,15 @@
 .claim {
   grid-area: claim;
   margin: 0;
-  display: -webkit-box;
-  max-width: min(690px, 48vw);
-  overflow: hidden;
+  display: block;
+  max-width: 100%;
+  overflow: visible;
   color: #aab4d6;
-  font-size: 18px;
-  line-height: 1.38;
+  font-size: clamp(12px, 1.12vw, 18px);
+  line-height: 1.25;
   font-weight: 500;
-  white-space: pre-line;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  text-overflow: clip;
+  white-space: nowrap;
 }
 
 .slideFooter {
@@ -437,11 +447,11 @@
 .focusPanel,
 .panel {
   min-height: 0;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, var(--accent-soft), rgba(255, 255, 255, 0.02) 36%),
-    rgba(18, 26, 47, 0.68);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .focusPanel {
@@ -480,10 +490,10 @@
   align-items: center;
   min-height: 34px;
   padding: 0 12px;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 6px;
+  border: 1px solid rgba(247, 236, 221, 0.14);
+  border-radius: 999px;
   color: #f7ecdd;
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--glass-bg-soft);
   font-size: 13px;
   font-weight: 750;
 }
@@ -497,9 +507,10 @@
 .casePair article {
   min-height: 124px;
   padding: 18px;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 8px;
-  background: rgba(9, 13, 26, 0.42);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  background: var(--glass-bg-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .casePair strong {
@@ -538,9 +549,11 @@
   align-items: center;
   min-height: 40px;
   padding: 10px 12px;
-  border-radius: 6px;
+  border: 1px solid rgba(247, 236, 221, 0.11);
+  border-radius: 18px;
   color: #f7ecdd;
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--glass-bg-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
   font-size: 17px;
   line-height: 1.35;
   font-weight: 700;
@@ -569,10 +582,11 @@
   gap: 10px;
   min-height: 88px;
   padding: 16px;
-  border: 1px dashed rgba(247, 236, 221, 0.2);
-  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
   color: rgba(247, 236, 221, 0.86);
-  background: rgba(9, 13, 26, 0.38);
+  background: var(--glass-bg-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
   font-size: 15px;
   font-weight: 750;
 }
@@ -609,10 +623,11 @@
   align-items: center;
   min-height: 58px;
   padding: 13px 14px;
-  border: 1px solid rgba(87, 214, 255, 0.26);
-  border-radius: 7px;
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
   color: #f7ecdd;
-  background: rgba(87, 214, 255, 0.09);
+  background: var(--glass-bg-soft);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
   font-size: 13px;
   line-height: 1.35;
 }
@@ -635,11 +650,10 @@
   min-height: 146px;
   margin-top: 14px;
   overflow: hidden;
-  border: 1px solid rgba(247, 236, 221, 0.14);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, var(--accent-soft), transparent 45%),
-    #121a2f;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
 }
 
 .miniMediaSlot img {
@@ -682,9 +696,11 @@
   gap: 10px;
   min-height: 0;
   padding: 22px;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 8px;
-  background: rgba(18, 26, 47, 0.62);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .processStep {
@@ -694,8 +710,9 @@
   align-items: center;
   min-height: 58px;
   padding: 12px 14px;
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(247, 236, 221, 0.11);
+  border-radius: 18px;
+  background: var(--glass-bg-soft);
 }
 
 .processStep span {
@@ -735,9 +752,11 @@
 .tableWrap {
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(247, 236, 221, 0.12);
-  border-radius: 8px;
-  background: rgba(18, 26, 47, 0.62);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .tableWrap table {
@@ -799,11 +818,10 @@
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  border: 1px solid rgba(247, 236, 221, 0.14);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, var(--accent-soft), transparent 45%),
-    #121a2f;
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
 }
 
 .mediaSlot img {
@@ -1064,7 +1082,7 @@
 
 .decisionSentenceList {
   display: grid;
-  gap: 18px;
+  gap: 26px;
   align-content: center;
   justify-content: center;
   min-height: 360px;
@@ -1147,6 +1165,56 @@
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 16px;
   min-height: 0;
+}
+
+.flowDiagramGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+}
+
+.flowDiagramCard {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 10px;
+  min-height: 0;
+  margin: 0;
+}
+
+.flowDiagramFrame {
+  position: relative;
+  min-height: 316px;
+  overflow: hidden;
+  border: 1px solid rgba(87, 214, 255, 0.14);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(87, 214, 255, 0.12), transparent 42%),
+    rgba(9, 13, 26, 0.46);
+}
+
+.flowDiagramFrame img {
+  object-fit: contain;
+}
+
+.flowDiagramCard figcaption {
+  display: grid;
+  gap: 4px;
+  min-height: 46px;
+}
+
+.flowDiagramCard span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.flowDiagramCard p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.72);
+  font-size: 12.5px;
+  line-height: 1.32;
 }
 
 .landingMediaWrap .mediaSlot img,
@@ -1387,11 +1455,137 @@
   min-height: 0;
 }
 
+.planningEvidenceOnly {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.planningEvidenceMedia {
+  min-height: 0;
+}
+
+.planningEvidenceMedia .mediaSlot {
+  min-height: 462px;
+}
+
+.planningEvidenceMedia .mediaFrame {
+  min-height: 462px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.planningEvidenceMedia .mediaFrame img {
+  object-fit: contain;
+}
+
 .csvEvidenceCanvas {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.42fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
   min-height: 0;
+}
+
+.csvEvidenceDirectBoard {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 18px;
+  width: min(1180px, 100%);
+  min-height: 418px;
+  padding: 24px;
+  border: 1px solid rgba(127, 208, 255, 0.18);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(127, 208, 255, 0.15), transparent 36%),
+    radial-gradient(circle at 84% 90%, rgba(139, 124, 246, 0.12), transparent 34%),
+    linear-gradient(145deg, rgba(17, 41, 68, 0.7), rgba(8, 13, 24, 0.76));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.csvEvidenceDirectBoard header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px 16px;
+  align-items: center;
+}
+
+.csvEvidenceDirectBoard header span {
+  width: fit-content;
+  padding: 6px 11px;
+  border: 1px solid rgba(127, 208, 255, 0.22);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(127, 208, 255, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.csvEvidenceDirectBoard header strong {
+  color: #f7ecdd;
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.csvEvidenceDirectBoard header p {
+  grid-column: 2;
+  margin: 0;
+  color: rgba(247, 236, 221, 0.64);
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.csvEvidenceDirectTable {
+  display: grid;
+  grid-template-rows: auto repeat(4, minmax(58px, 1fr));
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(247, 236, 221, 0.1);
+  border-radius: 20px;
+  background: rgba(6, 11, 20, 0.44);
+}
+
+.csvEvidenceDirectHead,
+.csvEvidenceDirectTable article {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.22fr) minmax(0, 1fr) minmax(190px, 0.28fr);
+  gap: 18px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.csvEvidenceDirectHead {
+  min-height: 42px;
+  color: rgba(127, 208, 255, 0.86);
+  background: rgba(127, 208, 255, 0.06);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.csvEvidenceDirectTable article {
+  border-top: 1px solid rgba(247, 236, 221, 0.09);
+}
+
+.csvEvidenceDirectTable article > span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.csvEvidenceDirectTable article strong {
+  color: #f7ecdd;
+  font-size: 17px;
+  line-height: 1.34;
+}
+
+.csvEvidenceDirectTable article p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.62);
+  font-size: 12.5px;
+  font-weight: 760;
+  line-height: 1.32;
 }
 
 .csvEvidenceMedia {
@@ -1626,9 +1820,142 @@
 
 .messagingEvolutionCanvas {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 16px;
+  min-height: 0;
+}
+
+.messagingEvolutionColumn {
+  display: grid;
   grid-template-rows: auto minmax(0, 1fr);
   gap: 14px;
   min-height: 0;
+  padding: 18px;
+  border: 1px solid rgba(127, 208, 255, 0.16);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(127, 208, 255, 0.11), rgba(5, 8, 16, 0.36)),
+    rgba(6, 11, 22, 0.52);
+}
+
+.messagingEvolutionColumn header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(127, 208, 255, 0.14);
+}
+
+.messagingEvolutionColumn header span {
+  color: #7fd0ff;
+  font-size: 15px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.messagingEvolutionColumn header strong {
+  color: rgba(247, 236, 221, 0.64);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.messagingEvolutionColumn > div {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  min-height: 0;
+}
+
+.messagingEvolutionColumn article {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  align-content: start;
+  min-height: 0;
+  padding: 13px;
+  border: 1px solid rgba(127, 208, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(7, 12, 24, 0.48);
+}
+
+.messagingEvolutionColumn article span {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(127, 208, 255, 0.28);
+  border-radius: 999px;
+  color: #7fd0ff;
+  background: rgba(127, 208, 255, 0.1);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.messagingEvolutionColumn article div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.messagingEvolutionColumn article em {
+  color: rgba(127, 208, 255, 0.82);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.messagingEvolutionColumn article p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.82);
+  font-size: 16px;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.messagingEvolutionAfterColumn {
+  border-color: rgba(91, 224, 194, 0.18);
+  background:
+    linear-gradient(135deg, rgba(91, 224, 194, 0.1), rgba(5, 8, 16, 0.36)),
+    rgba(6, 11, 22, 0.52);
+}
+
+.messagingEvolutionAfterColumn header {
+  border-bottom-color: rgba(91, 224, 194, 0.16);
+}
+
+.messagingEvolutionAfterColumn header span,
+.messagingEvolutionAfterColumn article em {
+  color: rgba(91, 224, 194, 0.9);
+}
+
+.messagingEvolutionAfterColumn article {
+  border-color: rgba(91, 224, 194, 0.14);
+}
+
+.messagingEvolutionAfterColumn article span {
+  border-color: rgba(91, 224, 194, 0.3);
+  color: rgba(91, 224, 194, 0.95);
+  background: rgba(91, 224, 194, 0.1);
+}
+
+.messagingEvolutionDivider {
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 72px;
+  border: 1px solid rgba(127, 208, 255, 0.16);
+  border-radius: 999px;
+  color: #7fd0ff;
+  background: rgba(7, 12, 24, 0.5);
 }
 
 .messagingLineageBoard {
@@ -1733,52 +2060,246 @@
 }
 
 .launchLoopCanvas {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 18px;
+  min-height: 0;
+}
+
+.launchLoopHero {
+  position: relative;
+  display: grid;
   grid-template-rows: auto minmax(0, 1fr);
+  gap: 22px;
+  min-height: 248px;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(127, 208, 255, 0.14);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 12% 24%, rgba(139, 124, 246, 0.24), transparent 32%),
+    radial-gradient(circle at 84% 70%, rgba(87, 214, 255, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(17, 41, 68, 0.62), rgba(8, 13, 24, 0.74));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 64px rgba(0, 0, 0, 0.18);
+}
+
+.launchLoopHero::before {
+  position: absolute;
+  inset: 76px 42px auto;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(127, 208, 255, 0.54), rgba(139, 124, 246, 0.48), transparent);
+}
+
+.launchLoopCore {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.launchLoopCore span {
+  width: fit-content;
+  padding: 7px 12px;
+  border: 1px solid rgba(127, 208, 255, 0.22);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(127, 208, 255, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.launchLoopCore strong {
+  color: rgba(247, 236, 221, 0.86);
+  font-size: 22px;
+  line-height: 1.14;
+  text-align: right;
 }
 
 .launchLoopRail {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
+  align-items: center;
   min-height: 0;
 }
 
 .launchLoopRail article {
   position: relative;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 8px;
-  align-items: center;
-  min-height: 76px;
-  padding: 12px;
-  border-radius: 16px;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 10px;
+  align-content: center;
+  min-height: 126px;
+  padding: 16px 14px;
+  border-radius: 22px;
+  text-align: left;
+  backdrop-filter: blur(10px);
 }
 
 .launchLoopRail article svg {
   position: absolute;
-  right: -13px;
+  right: -15px;
   top: 50%;
   z-index: 2;
   color: var(--accent);
+  filter: drop-shadow(0 0 12px rgba(127, 208, 255, 0.36));
 }
 
 .launchLoopNotes {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
 .launchLoopNotes article {
-  min-height: 68px;
-  padding: 13px 14px;
-  border-radius: 16px;
+  min-height: 102px;
+  padding: 15px 16px;
+  border-radius: 20px;
 }
 
 .signalSplitCanvas {
   display: grid;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+}
+
+.signalReviewBoard {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   gap: 18px;
   min-height: 0;
+  padding: 26px;
+  border: 1px solid rgba(127, 208, 255, 0.16);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(127, 208, 255, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(127, 208, 255, 0.08), rgba(91, 224, 194, 0.05)),
+    rgba(7, 12, 24, 0.58);
+}
+
+.signalReviewBoard header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.28fr) minmax(0, 0.72fr);
+  gap: 12px 22px;
+  align-items: end;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(127, 208, 255, 0.14);
+}
+
+.signalReviewBoard header span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.signalReviewBoard header strong {
+  color: #f7ecdd;
+  font-size: 25px;
+  line-height: 1.12;
+}
+
+.signalReviewBoard header p {
+  grid-column: 2;
+  margin: 0;
+  color: rgba(247, 236, 221, 0.68);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.signalReviewTable {
+  display: grid;
+  grid-template-rows: auto repeat(4, minmax(0, 1fr));
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(247, 236, 221, 0.1);
+  border-radius: 22px;
+  background: rgba(5, 8, 16, 0.34);
+}
+
+.signalReviewHead,
+.signalReviewTable article {
+  display: grid;
+  grid-template-columns: 54px minmax(120px, 0.18fr) minmax(0, 0.44fr) minmax(0, 0.38fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.signalReviewHead {
+  min-height: 40px;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(127, 208, 255, 0.14);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.signalReviewHead span:first-child {
+  grid-column: 2;
+}
+
+.signalReviewTable article {
+  min-height: 78px;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(247, 236, 221, 0.08);
+}
+
+.signalReviewTable article:last-child {
+  border-bottom: 0;
+}
+
+.signalReviewTable article > span {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: #08101a;
+  background: var(--accent);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.signalReviewTable strong {
+  color: #f7ecdd;
+  font-size: 16px;
+  line-height: 1.18;
+}
+
+.signalReviewTable p,
+.signalReviewTable em {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.74);
+  font-size: 13px;
+  line-height: 1.38;
+  font-style: normal;
+}
+
+.signalReviewTable em {
+  color: rgba(91, 224, 194, 0.86);
+  font-weight: 760;
+}
+
+.signalReviewBoard footer {
+  justify-self: center;
+  padding: 10px 18px;
+  border: 1px solid rgba(244, 197, 88, 0.22);
+  border-radius: 999px;
+  color: #f4c558;
+  background: rgba(244, 197, 88, 0.08);
+  font-size: 12px;
+  font-weight: 850;
 }
 
 .signalSummaryPanel {
@@ -2235,6 +2756,101 @@
   line-height: 1.24;
 }
 
+.builderBridgeCanvas {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 16px;
+  min-height: 0;
+}
+
+.builderBridgeInputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 42px;
+  min-height: 0;
+}
+
+.builderBridgeInputs article,
+.builderBridgeSurface,
+.builderBridgeLoop article {
+  border: 1px solid rgba(247, 236, 221, 0.12);
+  background:
+    linear-gradient(145deg, rgba(45, 51, 66, 0.42), rgba(19, 22, 29, 0.18)),
+    rgba(9, 13, 26, 0.52);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 18px 52px rgba(0, 0, 0, 0.13);
+}
+
+.builderBridgeInputs article {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  min-height: 122px;
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.builderBridgeArrow {
+  position: absolute;
+  right: -33px;
+  top: 50%;
+  color: var(--accent);
+  transform: translateY(-50%);
+}
+
+.builderBridgeSurface {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.52fr) minmax(0, 0.74fr);
+  gap: 18px;
+  align-items: center;
+  min-height: 104px;
+  padding: 18px 22px;
+  border-radius: 24px;
+}
+
+.builderBridgeLoop {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-height: 0;
+}
+
+.builderBridgeLoop article {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 10px;
+  min-height: 150px;
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.builderBridgeInputs span,
+.builderBridgeSurface span,
+.builderBridgeLoop span {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.builderBridgeInputs strong,
+.builderBridgeSurface strong,
+.builderBridgeLoop strong {
+  color: #f7ecdd;
+  font-size: 20px;
+  line-height: 1.24;
+}
+
+.builderBridgeInputs p,
+.builderBridgeSurface p,
+.builderBridgeLoop p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.74);
+  font-size: 13.2px;
+  line-height: 1.44;
+}
+
 .surfaceMapCanvas {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.54fr);
@@ -2614,12 +3230,21 @@ a.proofCard {
   object-fit: contain;
 }
 
-.proofGridX .proofImageFrame,
+.proofGridX .proofImageFrame {
+  background:
+    radial-gradient(circle at 76% 0%, rgba(87, 214, 255, 0.14), transparent 42%),
+    rgba(9, 13, 26, 0.88);
+}
+
+.proofGridX .proofImageFrame img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .proofGridOutreach .proofImageFrame {
   background: #f4f6f8;
 }
 
-.proofGridX .proofImageFrame img,
 .proofGridOutreach .proofImageFrame img {
   object-fit: contain;
   object-position: top center;
@@ -3272,15 +3897,18 @@ a.proofCard {
 .projectAheya .surfaceMapNotes article,
 .projectAheya .featureEvidenceRail article,
 .projectAheya .proofCard {
-  border-color: color-mix(in srgb, var(--project-accent) 22%, transparent);
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--project-accent) 18%, transparent);
+  border-radius: 24px;
   background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--project-accent) 12%, transparent), transparent 42%),
     linear-gradient(
-      145deg,
-      color-mix(in srgb, var(--project-accent) 8%, transparent),
-      color-mix(in srgb, var(--project-accent-2) 4%, transparent)
+      180deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
     ),
     var(--project-panel);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .projectAdsb .focusPanel,
@@ -3297,6 +3925,8 @@ a.proofCard {
     radial-gradient(circle at 50% 0%, rgba(125, 211, 252, 0.12), transparent 42%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
     var(--project-panel);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .projectAdsb .mediaFrame,
@@ -3321,13 +3951,14 @@ a.proofCard {
 .projectAbluna .slot,
 .projectAbluna .linkCard,
 .projectAbluna .proofCard {
-  border-color: rgba(16, 185, 129, 0.2);
-  border-radius: 18px;
+  border-color: rgba(16, 185, 129, 0.18);
+  border-radius: 24px;
   background:
-    linear-gradient(rgba(16, 185, 129, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 185, 129, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
     var(--project-panel);
-  background-size: 88px 56px, 88px 56px, auto;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .projectAbluna .panelHeader,
@@ -3347,10 +3978,13 @@ a.proofCard {
 .projectSfti .linkCard,
 .projectSfti .proofCard {
   border-color: rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
+  border-radius: 24px;
   background:
+    radial-gradient(circle at 50% 0%, rgba(147, 197, 253, 0.1), transparent 42%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.018)),
     var(--project-panel);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(18px);
 }
 
 .projectSfti .slideMeta span {
@@ -3365,41 +3999,66 @@ a.proofCard {
 
 /* AHEYA final slide polish: tighter PPT-ready spacing and less internal-looking UI. */
 .projectAheya .aheyaOverviewCanvas {
-  grid-template-columns: minmax(0, 0.8fr) minmax(520px, 1fr);
+  grid-template-columns: minmax(320px, 0.56fr) minmax(640px, 1.08fr);
   align-items: start;
-  gap: 30px;
+  gap: 36px;
 }
 
 .projectAheya .aheyaOverviewText {
   grid-template-rows: minmax(0, 1fr);
+  padding-top: 12px;
 }
 
 .projectAheya .aheyaOverviewCards {
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 18px;
   align-content: start;
 }
 
 .projectAheya .aheyaOverviewCards article {
-  min-height: 126px;
-  padding: 18px;
+  min-height: 0;
+  padding: 0 0 17px;
+  border: 0;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.16);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.projectAheya .aheyaOverviewCards article:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.projectAheya .aheyaOverviewCards span {
+  color: var(--project-accent);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.projectAheya .aheyaOverviewCards p {
+  max-width: 360px;
+  color: rgba(247, 236, 221, 0.82);
+  font-size: 16px;
+  line-height: 1.42;
 }
 
 .projectAheya .aheyaOverviewMediaColumn {
   gap: 8px;
-  margin-top: -82px;
-  transform: translateX(18px);
+  margin-top: -88px;
+  transform: translateX(22px);
 }
 
 .projectAheya .aheyaOverviewMediaColumn .mediaFrame {
-  min-height: 332px;
-  border-color: rgba(255, 255, 255, 0.1);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)),
-    rgba(9, 13, 26, 0.48);
+  min-height: 422px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .projectAheya .aheyaOverviewMediaColumn .mediaCaption {
-  padding-left: 2px;
+  padding-left: 0;
 }
 
 .projectAheya .overviewLinkRail {
@@ -3437,10 +4096,10 @@ a.proofCard {
 .projectAheya .timelineCanvas {
   position: relative;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-rows: 1fr 68px 1fr;
+  grid-template-rows: 1fr 58px 1fr;
   gap: 0 18px;
   align-items: stretch;
-  min-height: 360px;
+  min-height: 322px;
   overflow: visible;
   padding: 4px 24px 12px;
   border: 0;
@@ -3468,7 +4127,7 @@ a.proofCard {
   z-index: 1;
   display: grid;
   grid-row: 1 / 4;
-  grid-template-rows: 1fr 68px 1fr;
+  grid-template-rows: 1fr 58px 1fr;
   min-height: 0;
 }
 
@@ -3506,10 +4165,10 @@ a.proofCard {
 .projectAheya .timelineCard {
   aspect-ratio: auto;
   justify-self: center;
-  width: min(100%, 196px);
+  width: min(100%, 188px);
   height: auto;
-  min-height: 104px;
-  padding: 13px 14px;
+  min-height: 86px;
+  padding: 12px 14px;
   border-color: color-mix(in srgb, var(--project-accent) 20%, transparent);
   border-radius: 14px;
   background:
@@ -3518,13 +4177,12 @@ a.proofCard {
 }
 
 .projectAheya .timelineCard strong {
-  font-size: 11.8px;
-  line-height: 1.22;
+  font-size: 12.2px;
+  line-height: 1.24;
 }
 
 .projectAheya .timelineCard p {
-  font-size: 9.8px;
-  line-height: 1.35;
+  display: none;
 }
 
 .projectAheya .timelineArrow {
@@ -3571,8 +4229,17 @@ a.proofCard {
 }
 
 .projectAheya .surfaceMapNotes article {
-  min-height: 72px;
+  min-height: 76px;
   padding: 13px;
+}
+
+.projectAheya .surfaceMapNotes span {
+  font-size: 11.5px;
+}
+
+.projectAheya .surfaceMapNotes p {
+  font-size: 14.5px;
+  line-height: 1.42;
 }
 
 .projectAheya .featureEvidenceGallery {
@@ -3594,7 +4261,7 @@ a.proofCard {
 
 .projectAheya .coreRailFlow {
   position: relative;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 0;
   min-height: 214px;
   padding: 0 18px;
@@ -3630,7 +4297,7 @@ a.proofCard {
 }
 
 .projectAheya .coreRailNode strong {
-  font-size: 22px;
+  font-size: clamp(16px, 1.35vw, 22px);
 }
 
 .projectAheya .directFlowBoard {
@@ -3646,6 +4313,7 @@ a.proofCard {
 }
 
 .projectAheya .flowHeroSlots {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -3722,8 +4390,8 @@ a.proofCard {
 }
 
 .projectAheya .mvpCutCanvas {
-  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.42fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
 }
 
 .projectAheya .mvpDeferredCard {
@@ -3731,8 +4399,35 @@ a.proofCard {
   min-height: auto;
 }
 
+.projectAheya .mvpScopeList {
+  gap: 9px;
+}
+
+.projectAheya .mvpScopeItem {
+  min-height: 64px;
+  padding: 11px 14px;
+}
+
+.projectAheya .mvpScopeItem > span {
+  width: 30px;
+  height: 30px;
+  font-size: 11px;
+}
+
+.projectAheya .mvpScopeItem strong {
+  font-size: 14.5px;
+  line-height: 1.18;
+}
+
+.projectAheya .mvpScopeItem p {
+  font-size: 11.8px;
+  line-height: 1.28;
+}
+
 .projectAheya .gtmBridgeCanvas {
-  gap: 24px;
+  grid-template-rows: auto minmax(214px, 1fr);
+  gap: 42px;
+  min-height: 402px;
 }
 
 .projectAheya .gtmBridgeRail {
@@ -3756,10 +4451,12 @@ a.proofCard {
 
 .projectAheya .gtmBridgeCards {
   gap: 16px;
+  align-items: stretch;
+  min-height: 214px;
 }
 
 .projectAheya .gtmBridgeCards article {
-  min-height: 168px;
+  min-height: 214px;
 }
 
 .projectAheya .messageLadderCanvas {
@@ -3808,6 +4505,8 @@ a.proofCard {
 
 .messageLadderProof {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
   min-height: 0;
 }
 
@@ -3816,8 +4515,9 @@ a.proofCard {
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto auto;
   gap: 8px;
+  min-width: 0;
   min-height: 0;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid rgba(247, 236, 221, 0.12);
   border-radius: 20px;
   color: #f7ecdd;
@@ -3838,7 +4538,7 @@ a.proofCard {
 
 .messageLadderProofCard span {
   color: var(--accent);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -3846,12 +4546,13 @@ a.proofCard {
 .messageLadderProofCard p {
   margin: 0;
   color: rgba(247, 236, 221, 0.72);
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.28;
 }
 
 .projectAheya .launchLoopCanvas {
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 18px;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 20px;
   align-content: stretch;
   min-height: 430px;
 }
@@ -3861,23 +4562,23 @@ a.proofCard {
 }
 
 .projectAheya .launchLoopRail article {
-  min-height: 62px;
-  padding: 10px 12px;
+  min-height: 136px;
+  padding: 16px 14px;
 }
 
 .projectAheya .launchLoopNotes {
-  align-items: start;
+  align-items: stretch;
   gap: 12px;
 }
 
 .projectAheya .launchLoopNotes article {
-  min-height: 220px;
+  min-height: 112px;
   padding: 16px;
 }
 
 .projectAheya .signalSplitCanvas {
-  grid-template-columns: minmax(0, 0.66fr) minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
 }
 
 .projectAheya .signalSummaryPanel,
