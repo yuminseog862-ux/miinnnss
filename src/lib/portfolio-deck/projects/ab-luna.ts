@@ -10,7 +10,7 @@ export const abLunaSlides = [
     variant: "evidence",
     intent: "AB-Luna를 AI handoff와 shared-state 문제를 다룬 제품 사고 보강 케이스로 소개한다.",
     claim:
-      "여러 AI 툴의 산출물을 readable project state, clear next action, reliable handoff로 복원하려 한 AI workflow product case",
+      "여러 AI 툴의 산출물을 readable project state, clear next action, reliable handoff로 복원하려 한 AI workflow support case",
     include: [
       "Summary: multi-AI project work에서 상태와 다음 행동이 흩어지는 문제를 정의",
       "My Role: problem definition, market framing, MVP scope, UX simplification, KPI/readiness design",

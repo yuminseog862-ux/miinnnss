@@ -8,12 +8,12 @@ import { supportSlides } from "./projects/support";
 const slides = [...commonSlides, ...aheyaSlides, ...adsbSlides, ...supportSlides, ...aheyaAppendixSlides];
 
 export const aheyaAdsbDeck: DeckContent = {
-  navTitle: "Portfolio Deck System",
+  navTitle: "Product x GTM x AI Creative Portfolio",
   introKicker: "AHEYA / ADSB / AB-Luna / SFTI Portfolio Master",
-  introTitle: "제품 구조, GTM 메시지, 콘텐츠 실험, 판단 근거를 PPT-ready deck으로 정리했습니다.",
+  introTitle: "초기 아이디어를 제품 구조, 시장 메시지, 콘텐츠 실험으로 전환합니다.",
   introBody:
-    "AHEYA는 Core Rail 본문과 Trust API/onchain/legacy appendix를 분리했습니다. ADSB는 두 번째 메인 콘텐츠 케이스, AB-Luna는 AI workflow와 사용자 리서치 검증면, SFTI는 research writing support case로 유지합니다.",
-  footerNote: "AHEYA PM/GTM + ADSB Creative + AB-Luna/SFTI Support + Appendix",
+    "AHEYA는 product/GTM/content validation, ADSB는 AI creative content production을 보여주는 main case입니다. AB-Luna와 SFTI-CMU는 AI workflow와 research writing support evidence로 읽습니다.",
+  footerNote: "Product x GTM x AI Creative Portfolio",
   focusAreas: [
     "Product Planning",
     "GTM Strategy",
@@ -45,12 +45,12 @@ export const aheyaAdsbDeck: DeckContent = {
     },
   ],
   sectionMeta: [
-    { label: "Common", title: "공통 / 도입부", range: "01-08", href: "#slide-01" },
-    { label: "AHEYA", title: "PM + GTM + Marketing/Content", range: "09-29", href: "#slide-09" },
-    { label: "ADSB", title: "AI Creative Content", range: "30-37", href: "#slide-30" },
-    { label: "AB-Luna", title: "AI Workflow / Handoff MVP", range: "38-44", href: "#slide-38" },
-    { label: "SFTI", title: "Research Writing / External Submission", range: "45-48", href: "#slide-45" },
-    { label: "Appendix", title: "AHEYA Boundaries / Source Evidence", range: "49-52", href: "#slide-49" },
+    { label: "Cover", title: "Positioning", range: "01", href: "#slide-01" },
+    { label: "AHEYA", title: "Product / GTM / Content Validation", range: "09", href: "#slide-09" },
+    { label: "ADSB", title: "AI Creative Content Production", range: "30", href: "#slide-30" },
+    { label: "AB-Luna", title: "Supporting Evidence", range: "38", href: "#slide-38" },
+    { label: "SFTI", title: "Research Support", range: "45", href: "#slide-45" },
+    { label: "Appendix", title: "Technical Archive", range: "49", href: "#slide-49" },
   ],
   slides,
 };

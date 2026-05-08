@@ -55,7 +55,7 @@
       <text x="621" y="227" fill="#7FD0FF" font-size="13" font-weight="900">CLAIM AUDIT</text>
       <text x="603" y="267" fill="#EEF2F8" font-size="25" font-weight="820">claim-audit.md</text>
       <text x="603" y="304" fill="#A1A7B3" font-size="17">confirmed / design-only / excluded</text>
-      <text x="603" y="335" fill="#A1A7B3" font-size="17">성과, 수요 입증, DM 원문 claim 차단</text>
+      <text x="603" y="335" fill="#A1A7B3" font-size="17">성과/수요 주장, DM 원문 claim 차단</text>
     </g>
 
     <g>
@@ -63,7 +63,7 @@
       <text x="1108" y="227" fill="#6EE7D6" font-size="13" font-weight="900">X / GIT</text>
       <text x="1090" y="267" fill="#EEF2F8" font-size="25" font-weight="820">x-signal-product-iteration.md</text>
       <text x="1090" y="304" fill="#A1A7B3" font-size="17">X public copy phase와 제품 변화 연결</text>
-      <text x="1090" y="335" fill="#A1A7B3" font-size="17">February CTA -> April Core Rail wording</text>
+      <text x="1090" y="335" fill="#A1A7B3" font-size="17">February CTA -> April support-flow wording</text>
     </g>
 
     <g>

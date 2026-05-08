@@ -20,7 +20,7 @@ export const adsbSlides = [
     slots: [
       "프로젝트 요약: 생성형 AI 기반 패션 브랜드 VIRTUAL CONTENT / Andersson Bell brand-fit AI short-form",
       "역할: brand analysis / storyboard / prompt direction / feedback alignment",
-      "툴: Midjourney, Gemini/Nano Banana, Photoshop, Kling",
+      "툴: Midjourney, Gemini image correction, Photoshop, Kling",
       "산출물: 최종보고서, 스토리보드 패키지, 이미지 시안, 약 15초 숏폼",
     ],
     media: { src: "/adsb/adsb-cover.webp", alt: "ADSB cover visual", label: "Final visual direction" },
@@ -56,7 +56,7 @@ export const adsbSlides = [
       rows: [
         ["브랜드 과제", "한국과 스칸디나비아 감각의 대비, Expect the Unexpected, 유틸리티/해체주의/절제된 디테일을 숏폼으로 번역", "brand analysis, visual reference"],
         ["제작 문제", "초기 AI 생성은 이미지가 많아질수록 톤이 분산되고 시선이 흩어짐", "초기 콜라주/시안 비교"],
-        ["목표", "브랜드 정체성, 세일즈 목적, 짧은 러닝타임에 맞는 단일 시각 흐름 구축", "스토리보드와 고정 앵글 sequence"],
+        ["목표", "브랜드 정체성과 짧은 러닝타임에 맞는 단일 시각 흐름 구축", "스토리보드와 고정 앵글 sequence"],
         ["판단 기준", "예쁜 이미지보다 브랜드 적합성, 임팩트, 톤앤매너, 컷 흐름을 우선", "최종 15초 결과 프레임"],
       ],
     },
@@ -137,12 +137,12 @@ export const adsbSlides = [
     variant: "process",
     intent: "AI를 단순 생성 도구가 아니라 제작 워크플로우로 활용한 방식을 단계별로 보여준다.",
     claim:
-      "Midjourney, Gemini/Nano Banana, Photoshop, Kling을 이미지 시안-보정-영상화-피드백 수정의 production loop로 연결",
+      "Midjourney, Gemini image correction, Photoshop, Kling을 이미지 시안-보정-영상화-피드백 수정의 production loop로 연결",
     include: [
       "Brand analysis",
       "Storyboard and cut logic",
       "Midjourney image generation",
-      "Gemini/Nano Banana image correction",
+      "Gemini image correction",
       "Photoshop visual refinement",
       "Kling video generation",
       "Frame and runtime compression",
@@ -159,7 +159,7 @@ export const adsbSlides = [
       "Brand analysis",
       "Storyboard",
       "Midjourney generation",
-      "Gemini/Nano Banana correction",
+      "Gemini correction",
       "Photoshop refinement",
       "Kling video",
       "Frame / runtime edit",

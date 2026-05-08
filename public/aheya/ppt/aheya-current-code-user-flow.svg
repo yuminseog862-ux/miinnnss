@@ -31,7 +31,7 @@
   <path d="M0 238H1600M0 448H1600M0 658H1600M238 0V900M478 0V900M718 0V900M958 0V900M1198 0V900M1438 0V900" stroke="#A1A7B3" stroke-opacity="0.07"/>
 
   <text x="92" y="92" fill="#EEF2F8" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">Current Code Flow</text>
-  <text x="94" y="132" fill="#A1A7B3" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500">X/content discovery에서 Core Rail action, server verification, proof review로 이어지는 현재 구현 기준 도식</text>
+  <text x="94" y="132" fill="#A1A7B3" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500">X/content discovery에서 support action, server verification, proof review로 이어지는 현재 구현 기준 도식</text>
   <rect x="1256" y="72" width="250" height="42" rx="21" fill="#8B7CF6" fill-opacity="0.18" stroke="#B8A7FF" stroke-opacity="0.28"/>
   <text x="1280" y="100" fill="#B8A7FF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800">No private code screenshot</text>
 
@@ -106,5 +106,5 @@
 
   <path d="M820 372C820 424 820 443 820 582" stroke="url(#accent)" stroke-width="3" stroke-dasharray="8 10" marker-end="url(#arrow)"/>
   <rect x="575" y="770" width="450" height="48" rx="24" fill="url(#accent)" fill-opacity="0.16" stroke="#7FD0FF" stroke-opacity="0.22"/>
-  <text x="602" y="801" fill="#EEF2F8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Flow proof, not conversion proof · Core Rail remains the public product story</text>
+  <text x="602" y="801" fill="#EEF2F8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Flow proof, not conversion proof · Public support flow remains the product story</text>
 </svg>

@@ -21,5 +21,5 @@
     <text x="96" y="528">04 Feedback</text><text x="256" y="528">feedback_submit / record_created</text><text x="520" y="528">업데이트에 쓸 수 있는 반응인가?</text><text x="874" y="528">quality signal</text>
   </g>
   <rect x="72" y="582" width="1056" height="30" rx="15" fill="#173450" stroke="#35698A"/>
-  <text x="96" y="603" fill="#F4C558" font-family="Arial, sans-serif" font-size="14" font-weight="700">No KPI outcome claim · No conversion lift claim · SQL-ready design only</text>
+  <text x="96" y="603" fill="#F4C558" font-family="Arial, sans-serif" font-size="14" font-weight="700">No KPI result claim · No conversion lift claim · SQL-ready design only</text>
 </svg>
