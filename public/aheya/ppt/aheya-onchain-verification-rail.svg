@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">AHEYA Onchain Verification Rail</title>
-  <desc id="desc">Portfolio-safe diagram showing Core Rail supported by EVM/Base and Solana verification substrate.</desc>
+  <desc id="desc">Portfolio-safe diagram showing public support flow supported by EVM/Base and Solana verification substrate.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#07151c"/>
@@ -19,11 +19,11 @@
   <circle cx="1330" cy="120" r="260" fill="#f2b84b" opacity="0.08"/>
   <circle cx="120" cy="760" r="320" fill="#61d394" opacity="0.07"/>
   <text x="92" y="104" fill="#f6ead2" font-family="Georgia, serif" font-size="54" font-weight="700">Onchain Verification Rail</text>
-  <text x="94" y="150" fill="#b9c9c4" font-family="Arial, sans-serif" font-size="22">ETH / SOL mechanics stay under Core Rail as proof infrastructure, not as a traction claim.</text>
+  <text x="94" y="150" fill="#b9c9c4" font-family="Arial, sans-serif" font-size="22">ETH / SOL mechanics stay under the public support flow as proof infrastructure, not as a traction claim.</text>
 
   <g filter="url(#shadow)">
     <rect x="92" y="220" width="1416" height="190" rx="28" fill="url(#card)" stroke="#f2b84b" stroke-opacity="0.44"/>
-    <text x="132" y="274" fill="#f6ead2" font-family="Arial, sans-serif" font-size="26" font-weight="700">Core Rail</text>
+    <text x="132" y="274" fill="#f6ead2" font-family="Arial, sans-serif" font-size="26" font-weight="700">Public support flow</text>
     <text x="132" y="314" fill="#d4dfda" font-family="Arial, sans-serif" font-size="20">live idea -> support -> Good/Improve -> optional proof -> reusable signal</text>
     <g font-family="Arial, sans-serif" font-size="17" font-weight="700">
       <rect x="132" y="340" width="220" height="44" rx="22" fill="#1c3d46" stroke="#5fbec4"/>

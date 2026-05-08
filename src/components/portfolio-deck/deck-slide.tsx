@@ -77,7 +77,6 @@ export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckCont
           <em>{slide.label}</em>
         </div>
         <div className={styles.slideRule} />
-        <span className={styles.slideFormat}>16:9 PPT-ready</span>
       </div>
 
       <div className={styles.slideBody}>
@@ -91,8 +90,8 @@ export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckCont
       </div>
 
       <footer className={styles.slideFooter}>
-        <span>Portfolio Case Deck</span>
         <span>{deck.footerNote}</span>
+        <span>{slide.section}</span>
       </footer>
     </article>
   );

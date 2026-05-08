@@ -926,7 +926,7 @@ function AheyaSignalSplit({ slide }: { slide: Slide }) {
             </article>
           ))}
         </div>
-        <footer>No KPI outcome · No funnel outcome claim · 결론은 방향 판단과 다음 측정 구조로 제한</footer>
+        <footer>No KPI result claim · No funnel result claim · 결론은 방향 판단과 다음 측정 구조로 제한</footer>
       </div>
     </section>
   );
