@@ -64,8 +64,8 @@ export const aheyaSlides = [
     accent: "cyan",
     variant: "matrix",
     custom: "aheyaResearchSolution",
-    intent: "리서치 두 축을 Web3 user 문제와 AI-native builder 문제로 구조화한다.",
-    claim: "잔여 온체인 자산 리서치와 AI-native builder 공개 이후 반응 문제를 각각 Web3 user problem과 builder problem으로 연결",
+    intent: "리서치 두 축을 Web3 user 과제와 AI-native builder 과제로 구조화한다.",
+    claim: "잔여 온체인 자산 리서치와 AI-native builder의 공개 후 반응 확보 문제를 각각 Web3 user 과제와 builder 과제로 연결",
     include: ["Residual onchain asset research", "AI-native builder response research", "Problem framing"],
     slots: ["Web3 user problem", "AI-native builder problem"],
     table: {
@@ -73,17 +73,17 @@ export const aheyaSlides = [
       rows: [
         [
           "잔여 온체인 자산 리서치",
-          "에어드랍·퀘스트·거래 이후 지갑에 남는 native gas token / project token 잔여 흐름을 확인 | Solana token account와 CloseAccount 회수 구조, Base/EVM transfer history와 current holding 조회 방식을 비교 | 남은 금액·체인·용도 단위가 실제 사용 행동으로 이어지는지 관찰",
+          "에어드랍·퀘스트·거래 이후 지갑에 남는 native gas token / project token 잔여 흐름을 정리 | Solana token account와 CloseAccount 회수 구조, Base/EVM transfer history와 current holding 조회 방식을 비교 | 남은 금액·체인·용도가 실제 사용 행동으로 이어지기 어려운 이유를 관찰",
           "온체인 활동이 실제 효용으로 이어지지 않음",
-          "작은 자산은 지갑 안에 남지만 다시 쓰기에는 금액·gas·chain·용도 장벽이 있음 | 문제 정의는 수익이 아니라 소액 참여와 피드백으로 전환 가능한 utility gap",
+          "작은 자산은 지갑 안에 남지만 다시 쓰기에는 금액·gas·chain·용도 장벽이 있음 | 문제 정의는 수익이 아니라 소액 참여와 피드백으로 바꾸기 어려운 utility gap",
           "native gas token | project token | wallet remainder | utility gap",
         ],
         [
           "AI-native builder 공개 이후 반응 리서치",
-          "AI로 demo, docs, GitHub, launch post를 만드는 속도는 빨라졌지만 공개 이후 X 게시만으로는 첫 반응·명확한 피드백·업데이트 근거가 충분히 쌓이지 않았음",
-          "빠른 제작 이후 첫 반응과 개선 근거가 약하게 남음",
-          "builder는 demo를 열 수 있지만 X post만으로는 누가 실제로 봤고 무엇을 개선해야 하는지 남기기 어려움 | 필요한 것은 reward 참여가 아니라 첫 반응과 feedback이 public copy와 reply로 이어지는 loop",
-          "AI-native builder | demo speed | first response | feedback loop",
+          "AI로 demo를 빠르게 만들 수 있지만 X에 제품을 공개·홍보하는 것만으로는 첫 반응과 첫 피드백을 얻기 어려운 사례를 확인 | 제품을 만든 이후에도 누가 실제로 봤고 무엇을 고쳐야 하는지 남기는 장치가 약함",
+          "만들기는 쉬워졌지만 첫 반응과 피드백을 얻기는 여전히 어려운 상황",
+          "builder는 demo를 빠르게 만들 수 있지만 X post만으로는 첫 사용자 반응과 개선 근거가 충분히 남지 않음 | 필요한 것은 reward 참여가 아니라 첫 반응과 feedback을 public copy와 reply로 다시 연결하는 loop",
+          "AI demo speed | product promotion | first response | feedback loop",
         ],
       ],
     },
@@ -96,8 +96,8 @@ export const aheyaSlides = [
     accent: "cyan",
     variant: "process",
     custom: "aheyaBuilderBridge",
-    intent: "AI-native builder의 빠른 제작 문제와 Web3 user의 참여 행동 양식을 AHEYA 제품 구조로 연결한다.",
-    claim: "AI-native builder는 첫 반응과 피드백 기록을 얻고, Web3 user는 작은 wallet action을 실제 제품 참여로 바꾼다",
+    intent: "AI-native builder가 demo를 빠르게 만드는 흐름과 Web3 user의 참여 행동 양식을 AHEYA 제품 구조로 연결한다.",
+    claim: "AI-native builder는 첫 반응과 피드백 기록을 얻고, Web3 user는 wallet action을 제품 참여로 바꾼다",
     include: ["Builder problem", "Web3 action", "AHEYABARAYA page", "X feedback loop"],
     slots: [
       "AI-native builder: 첫 support, quick feedback, saved response record를 얻음",
@@ -111,12 +111,12 @@ export const aheyaSlides = [
       rows: [
         [
           "AI-native builder",
-          "first response / feedback record",
-          "live demo를 public idea page로 열고 support, Good/Improve, saved record를 다음 업데이트 재료로 얻음",
+          "빠르게 만든 demo",
+          "demo를 public idea page에 올리고 첫 support, quick feedback, saved response record를 다음 업데이트 재료로 얻음",
         ],
         [
           "Web3 user",
-          "useful wallet participation",
+          "쓸모 있는 wallet 참여",
           "작은 wallet action으로 live idea를 support하고 한 번에 이해되는 Good/Improve response를 남김",
         ],
         [
@@ -132,7 +132,7 @@ export const aheyaSlides = [
         [
           "Feedback",
           "X quote / reply loop",
-          "짧은 feedback을 public copy와 reply 재료로 다시 꺼낼 수 있게 함",
+          "짧은 feedback을 public copy와 reply의 재료로 다시 활용할 수 있게 함",
         ],
       ],
     },
@@ -149,10 +149,10 @@ export const aheyaSlides = [
     claim: "Builder는 live idea를 열고 첫 support와 feedback을 다음 업데이트 판단 재료로 본다",
     include: ["Builder motion", "Idea page", "Feedback record", "Boundary"],
     slots: [
-      "Builder gets: 첫 support, Good/Improve feedback, saved response record",
-      "Decision use: 무엇을 고칠지 다음 업데이트 재료로 남김",
-      "Content use: feedback을 X reply/quote 문장으로 다시 꺼낼 수 있음",
-      "Boundary: builder-side review flow evidence이지 traction proof가 아님",
+      "Builder gets: 첫 support / quick feedback / saved record",
+      "Decision use: 다음 업데이트 판단 재료",
+      "Content use: X reply/quote로 재활용",
+      "Boundary: traction proof 아님",
     ],
     gallery: [
       {
@@ -175,13 +175,13 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaProductSurfaceMap",
     intent: "Web3 user가 useful live idea를 열고 wallet support와 Good/Improve를 남기는 흐름을 분리해서 보여준다.",
-    claim: "Web3 user는 온체인 활동을 실제로 열어본 제품의 support와 Good/Improve 신호로 바꾼다",
+    claim: "Web3 user는 제품을 직접 확인한 뒤 wallet support와 Good/Improve 신호를 남긴다",
     include: ["Web3 user motion", "Support action", "Quick feedback", "Boundary"],
     slots: [
-      "Web3 user gets: wallet으로 작은 support action을 남기는 실제 참여",
-      "Decision use: Good/Improve로 제품에 대한 한 줄 신호를 남김",
-      "System: support verification과 saved feedback record를 분리",
-      "Boundary: wallet action design evidence이지 user demand proof가 아님",
+      "Web3 user gets: wallet support로 실제 참여",
+      "Decision use: Good/Improve 한 줄 신호",
+      "System: verification / feedback record 분리",
+      "Boundary: demand proof 아님",
     ],
     gallery: [
       {
@@ -203,13 +203,13 @@ export const aheyaSlides = [
     accent: "cyan",
     variant: "evidence",
     custom: "aheyaFeatureEvidenceMap",
-    intent: "정적 화면 캡처를 기능별로 매칭해 어떤 화면이 어떤 product function을 맡는지 보여준다.",
-    claim: "화면 캡처는 public idea, explore, action, record가 어디에 구현되어 있는지 분리해서 보여준다",
+    intent: "정적 화면 캡처를 기능별로 연결해 어떤 화면이 어떤 기능을 맡는지 보여준다.",
+    claim: "각 화면이 public idea, explore, action, record 기능을 어디에서 담당하는지 보여준다",
     include: ["Public idea", "Explore", "Action", "Record"],
     slots: [
-      "Public idea page: 아이디어를 한 화면에서 이해하고 시작하는 공개면",
-      "Explore surface: 다른 live idea를 탐색하는 진입면",
-      "Action surface: wallet support와 Good/Improve를 남기는 행동면",
+      "Public idea page: 아이디어를 한 화면에서 이해하고 시작하는 공개 화면",
+      "Explore surface: 다른 live idea를 탐색하는 진입 화면",
+      "Action surface: wallet support와 Good/Improve를 남기는 행동 화면",
       "Feedback record: 다음 업데이트에 참고할 수 있는 저장 기록",
     ],
     gallery: [
@@ -223,13 +223,13 @@ export const aheyaSlides = [
         src: "/aheya/page-assets/screens/aheya-aheya-explore.webp",
         alt: "AHEYA explore screenshot",
         label: "Explore",
-        caption: "다른 live idea를 탐색하는 진입면",
+        caption: "다른 live idea를 탐색하는 진입 화면",
       },
       {
         src: "/aheya/page-assets/screens/aheya-aheya-apppage.webp",
         alt: "AHEYA app page action screenshot",
         label: "Action page",
-        caption: "wallet support와 Good/Improve 행동면",
+        caption: "wallet support와 Good/Improve 행동 화면",
       },
       {
         src: "/aheya/aheya-lane-panels.webp",
@@ -242,22 +242,22 @@ export const aheyaSlides = [
   {
     no: 14,
     section: "AHEYA",
-    title: "First Target Hypothesis",
-    label: "Prioritization",
+    title: "첫 타깃 가설",
+    label: "우선순위",
     accent: "amber",
     variant: "matrix",
     custom: "aheyaDecisionCards",
-    intent: "Prioritization & Goals와 Hypotheses를 crypto/wallet-adjacent live-demo builder entry 중심으로 한 장에 묶는다.",
-    claim: "첫 대상은 모든 Web3 사용자가 아니라 live demo는 있지만 첫 사용자와 명확한 피드백이 부족한 AI-native builder",
-    include: ["Live-demo builder", "First offer", "Minimal flow", "Measurement goal"],
-    slots: ["AI-native builder first", "Outcome before full mechanism", "Wallet support as first action", "Reward/technical depth postponed"],
+    intent: "첫 타깃, 첫 제안, 최소 행동, 측정 기준을 한 장에 묶는다.",
+    claim: "첫 대상은 모든 Web3 사용자가 아니라 데모는 있지만 첫 사용자와 명확한 피드백이 부족한 AI builder",
+    include: ["데모를 만든 builder", "첫 제안", "최소 행동", "측정 기준"],
+    slots: ["AI builder 우선", "기술 설명보다 결과 먼저", "wallet support를 첫 행동으로", "reward와 기술 설명은 뒤로"],
     table: {
       headers: ["우선순위", "선택", "이유"],
       rows: [
-        ["Target", "AI-native builder with live demo, project page, GitHub, or launch post", "첫 사용자, 명확한 피드백, response evidence가 부족한 segment"],
-        ["Offer", "Public idea page where early users can explore, support from wallet, and leave quick feedback", "wallet action을 첫 참여 행동으로 단순화"],
-        ["MVP flow", "public idea page, wallet support intent, quick feedback, saved feedback record", "처음 보는 사람도 이해할 수 있는 가장 작은 Web3 참여 행동"],
-        ["Measurement", "content discovery, page open, wallet support, feedback, record event split", "관찰한 반응과 다음 측정 가정을 분리"],
+        ["대상", "라이브 데모를 만든 AI builder", "데모는 있지만 첫 사용자와 피드백이 부족함"],
+        ["제안", "아이디어를 공개하고 wallet support 받기", "기술 설명보다 첫 참여 행동을 먼저 보여줌"],
+        ["행동", "짧은 Good/Improve 피드백 남기기", "처음 보는 사람도 바로 남길 수 있는 반응"],
+        ["측정", "방문, support, 피드백 기록을 분리해 측정하기", "성과가 아니라 다음 개선 판단을 위한 기준"],
       ],
     },
   },
@@ -288,20 +288,6 @@ export const aheyaSlides = [
     include: ["See", "Open", "Understand", "Support", "Feedback", "Record"],
     slots: [],
     process: ["Discover", "Open", "Act", "Respond", "Record"],
-    gallery: [
-      {
-        src: "/aheya/ppt/aheya-builder-flow-diagram.svg",
-        alt: "AHEYA builder journey diagram",
-        label: "Builder flow",
-        caption: "live idea를 열고 support/feedback을 X feedback loop로 다시 꺼내는 흐름",
-      },
-      {
-        src: "/aheya/ppt/aheya-backer-flow-diagram.svg",
-        alt: "AHEYA backer supporter journey diagram",
-        label: "Backer / supporter flow",
-        caption: "idea를 보고 wallet support와 Good/Improve feedback을 남기는 흐름",
-      },
-    ],
   },
   {
     no: 17,
@@ -319,7 +305,7 @@ export const aheyaSlides = [
       headers: ["Cut line", "MVP에 남긴 것", "판단 기준"],
       rows: [
         ["Included", "public idea page, project surface, builder problem hook", "builder가 support/feedback flow에 들어오는 입구"],
-        ["Included", "wallet-based support action, quick Good/Improve feedback, saved feedback record", "wallet support와 피드백이 첫 observed response로 남는 최소 행동"],
+        ["Included", "wallet-based support action, quick Good/Improve feedback, saved feedback record", "wallet support와 피드백이 처음 관찰 가능한 반응으로 남는 최소 행동"],
         ["Priority", "KPI/event hooks, review list, saved feedback record", "재사용 가능한 response evidence와 다음 판단 구조"],
         ["Sequencing", "manual sourcing -> response sprint -> weekly review -> next lane decision", "12주 계획은 성과 예측이 아니라 운영 리듬과 학습 단위로 사용"],
         ["Deferred", "reward-first public framing, token launch, technical verification as front-door story, heavy automation", "첫 entry clarity를 흐리는 요소 제거"],
@@ -334,7 +320,7 @@ export const aheyaSlides = [
     accent: "violet",
     variant: "matrix",
     custom: "aheyaPlanningBoard",
-    intent: "PRD, user stories, wireframe, roadmap, GTM, KPI, decision log를 실행 메모리로 연결한다.",
+    intent: "PRD, user stories, wireframe, roadmap, GTM, KPI, decision log를 판단 근거로 연결한다.",
     claim: "원문 발췌와 판단 연결을 한 장에 묶은 planning evidence board",
     include: ["PRD", "User Stories", "Wireframe", "Roadmap", "KPI/SQL", "Decision log"],
     slots: ["AI-assisted planning", "Planning background", "Drive source map", "Read/not-reviewed boundary"],
@@ -342,8 +328,8 @@ export const aheyaSlides = [
     table: {
       headers: ["Artifact", "Purpose", "Evidence cue", "Used for", "Boundary"],
       rows: [
-        ["BP / Problem Thesis", "problem definition", "2026-03~04 BP/problem memo: reward-loop participation + builder growth gap cue", "problem slide and target hypothesis", "current commitment 아님"],
-        ["Marketing / Ops Docs", "target and GTM", "2026-03 strategy notes: wallet-adjacent front door + reply/DM workflow cue", "GTM bridge and message ladder", "external deal proof로 해석하지 않음"],
+        ["BP / Problem Thesis", "problem definition", "2026-03~04 BP/problem memo: reward-loop participation + builder growth gap cue", "problem slide and target hypothesis", "현재 실행 약속 아님"],
+        ["Marketing / Ops Docs", "target and GTM", "2026-03 strategy notes: wallet-adjacent front door + reply/DM workflow cue", "GTM bridge and message ladder", "외부 거래 성과로 해석하지 않음"],
         ["Flow / Code Map", "product flow", "2026-04 flow/code map: public idea, wallet support, feedback, saved record cue", "screen evidence and user flow", "raw code screenshot 제외"],
         ["KPI / SQL Notes", "measurement design", "KPI/SQL addendum: content, page, wallet support, feedback event split cue", "measurement board and signal read", "read-only snapshot 전 숫자 제한"],
         ["Decision Log / Handoff", "PM judgment", "handoff/decision log: keep, defer, appendix boundary cue", "scope cut and final learning", "인과 과장 금지"],
@@ -363,7 +349,7 @@ export const aheyaSlides = [
     include: ["KPI tree", "Event split", "Decision use", "Boundary"],
     slots: [
       "Tree: discovery -> entry -> wallet support -> quick feedback -> saved record",
-      "Decision: 어디에서 drop되는지가 아니라 다음에 무엇을 더 명확히 설명할지 판단",
+      "Decision: 어디에서 이탈했는지가 아니라 다음에 무엇을 더 명확히 설명할지 판단",
       "SQL: content/page/action/feedback 단위로 나눠 query-ready 구조를 준비",
       "Boundary: KPI output이 아니라 measurement design",
     ],
@@ -454,14 +440,14 @@ export const aheyaSlides = [
     variant: "matrix",
     custom: "aheyaGtmBridge",
     intent: "builder와 wallet-adjacent user를 Web3 mechanism이 아니라 first-response 문제로 연결하는 GTM bridge를 보여준다.",
-    claim: "Full Web3 mechanism보다 builder problem을 먼저 말하고 wallet support는 lightweight user action으로 제안",
+    claim: "전체 Web3 구조보다 builder problem을 먼저 말하고 wallet support는 가벼운 user action으로 제안",
     include: ["Who", "Trigger", "Offer", "Bridge"],
     slots: ["Primary ICP: AI-native builder", "Secondary audience: Web3-curious user", "Offer: support and feedback path", "Outcome before full mechanism"],
     table: {
       headers: ["GTM element", "정의", "표현 원칙"],
       rows: [
         ["Primary ICP", "AI-native builder with a live demo or project page", "manual audience discovery 가능한 범위로 좁힘"],
-        ["Trigger", "live demo 이후 first users / feedback / saved feedback record가 약함", "builder pain을 먼저 말함"],
+        ["Trigger", "live demo 이후 첫 사용자, feedback, saved feedback record가 부족함", "builder pain을 먼저 말함"],
         ["Offer", "explore the idea, support from wallet, leave quick feedback", "wallet support를 product action으로 설명"],
         ["Secondary audience", "Web3-curious users who can take a lightweight wallet-based support action", "token/contract보다 first user response로 끌어옴"],
       ],
@@ -476,13 +462,13 @@ export const aheyaSlides = [
     variant: "matrix",
     custom: "aheyaMessageLadder",
     intent: "cold/warm/hot 접근 단계별로 내부 mechanism을 외부 메시지로 바꾼다.",
-    claim: "Build는 빨라졌지만 첫 사용자 반응과 명확한 피드백은 여전히 느리다",
+    claim: "Build는 빨라졌지만 첫 사용자 반응과 명확한 피드백을 얻기는 여전히 어려운 상황",
     include: ["Problem", "Offer", "Action", "Boundary"],
     slots: ["Problem: first user response is still slow", "Offer: live demo -> support and feedback path", "Action: open, support, leave feedback", "Boundary: reward thesis를 public test처럼 쓰지 않음"],
     table: {
       headers: ["Message layer", "Copy direction", "주의점"],
       rows: [
-        ["Problem", "Build는 빨라졌지만 첫 반응은 여전히 느림", ""],
+        ["Problem", "Build는 빨라졌지만 첫 반응을 얻기는 여전히 어려운 상황", ""],
         ["Open", "Open a live idea.", ""],
         ["Support", "Support the idea from your wallet.", ""],
         ["Feedback", "Leave one clear Good/Improve feedback.", ""],
@@ -612,7 +598,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaXPostGrid",
     intent: "X post를 performance가 아니라 public copy와 product entry iteration ledger로 보여준다.",
-    claim: "X posting은 product entry 변경 흐름과 함께 읽는다: clearer first action, wallet support, quick feedback",
+    claim: "X posting은 product entry 변경 흐름과 함께 보여준다: clearer first action, wallet support, quick feedback",
     include: ["First response", "Response language", "Start from zero"],
     slots: [
       "Phase 1: link/testnet CTA -> product mention",
