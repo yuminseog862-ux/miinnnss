@@ -1179,6 +1179,138 @@
   min-height: 0;
 }
 
+.flowSwimlaneBoard {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) auto;
+  gap: 16px;
+  min-height: 0;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(121, 208, 255, 0.18);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(121, 208, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 88% 72%, rgba(85, 217, 190, 0.12), transparent 36%),
+    linear-gradient(rgba(121, 208, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(121, 208, 255, 0.035) 1px, transparent 1px),
+    rgba(7, 11, 22, 0.64);
+  background-size: auto, auto, 112px 76px, 112px 76px, auto;
+}
+
+.flowSwimlaneBoard > em {
+  justify-self: center;
+  margin-top: 2px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: rgba(214, 232, 255, 0.78);
+  background: rgba(121, 208, 255, 0.11);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 820;
+}
+
+.flowSwimlane {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-height: 0;
+  padding: 16px;
+  border: 1px solid rgba(121, 208, 255, 0.14);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(121, 208, 255, 0.11), transparent 40%),
+    rgba(8, 13, 25, 0.58);
+}
+
+.flowSwimlane header {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(8, 13, 25, 0.58);
+}
+
+.flowSwimlane header span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.flowSwimlane header strong {
+  color: #f7ecdd;
+  font-size: clamp(19px, 1.45vw, 25px);
+  line-height: 1.18;
+}
+
+.flowSwimlaneSteps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.flowSwimlaneStep {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 9px;
+  align-content: center;
+  min-width: 0;
+  min-height: 118px;
+  padding: 14px 13px;
+  border: 1px solid rgba(121, 208, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(6, 10, 20, 0.5);
+}
+
+.flowSwimlaneStep i {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: #071321;
+  background: linear-gradient(135deg, #79d0ff, #55d9be);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.flowSwimlaneStep div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.flowSwimlaneStep strong {
+  color: #d6e8ff;
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.12;
+}
+
+.flowSwimlaneStep p {
+  margin: 0;
+  color: rgba(214, 232, 255, 0.66);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.flowSwimlaneStep svg {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  z-index: 2;
+  color: #79d0ff;
+  transform: translateY(-50%);
+}
+
 .flowDiagramGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2853,20 +2985,21 @@
 
 .builderBridgeCanvas {
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr);
-  gap: 16px;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  gap: 12px;
   min-height: 0;
 }
 
 .builderBridgeInputs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 42px;
+  gap: 34px;
   min-height: 0;
 }
 
 .builderBridgeInputs article,
 .builderBridgeSurface,
+.builderBridgeArchitecture article,
 .builderBridgeLoop article {
   border: 1px solid rgba(247, 236, 221, 0.12);
   background:
@@ -2881,12 +3014,12 @@
   position: relative;
   display: grid;
   gap: 10px;
-  min-height: 122px;
-  padding: 18px;
+  min-height: 96px;
+  padding: 15px 17px;
   border-radius: 20px;
 }
 
-.builderBridgeArrow {
+.builderBridgeInputArrow {
   position: absolute;
   right: -33px;
   top: 50%;
@@ -2894,34 +3027,72 @@
   transform: translateY(-50%);
 }
 
+.builderBridgeArchitecture {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) 42px minmax(0, 1.08fr) 42px minmax(0, 0.9fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 160px;
+  padding: 20px;
+  border: 1px solid rgba(127, 208, 255, 0.14);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(127, 208, 255, 0.13), transparent 42%),
+    linear-gradient(135deg, rgba(17, 41, 68, 0.64), rgba(8, 13, 24, 0.72));
+}
+
+.builderBridgeArchitecture article {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  min-height: 108px;
+  padding: 18px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.builderBridgeCore {
+  min-height: 132px !important;
+  border-color: rgba(91, 224, 194, 0.26) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(91, 224, 194, 0.18), transparent 54%),
+    rgba(7, 13, 22, 0.72) !important;
+}
+
+.builderBridgeArrow {
+  justify-self: center;
+  color: var(--accent);
+}
+
 .builderBridgeSurface {
   display: grid;
   grid-template-columns: minmax(180px, 0.28fr) minmax(0, 0.52fr) minmax(0, 0.74fr);
   gap: 18px;
   align-items: center;
-  min-height: 104px;
-  padding: 18px 22px;
+  min-height: 82px;
+  padding: 14px 18px;
   border-radius: 24px;
 }
 
 .builderBridgeLoop {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
   min-height: 0;
 }
 
 .builderBridgeLoop article {
   display: grid;
   grid-template-rows: auto auto 1fr;
-  gap: 10px;
-  min-height: 150px;
-  padding: 18px;
+  gap: 8px;
+  min-height: 116px;
+  padding: 15px;
   border-radius: 20px;
 }
 
 .builderBridgeInputs span,
 .builderBridgeSurface span,
+.builderBridgeArchitecture span,
 .builderBridgeLoop span {
   color: var(--accent);
   font-size: 11px;
@@ -2931,14 +3102,16 @@
 
 .builderBridgeInputs strong,
 .builderBridgeSurface strong,
+.builderBridgeArchitecture strong,
 .builderBridgeLoop strong {
   color: #f7ecdd;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.24;
 }
 
 .builderBridgeInputs p,
 .builderBridgeSurface p,
+.builderBridgeArchitecture p,
 .builderBridgeLoop p {
   margin: 0;
   color: rgba(247, 236, 221, 0.74);
@@ -3041,8 +3214,8 @@
 
 .featureEvidenceCanvas {
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  gap: 14px;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 0;
   min-height: 0;
 }
 
@@ -3057,7 +3230,7 @@
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 10px;
-  min-height: 300px;
+  min-height: 368px;
   padding: 12px;
   border-radius: 18px;
 }
@@ -3094,6 +3267,31 @@
   min-height: 0;
 }
 
+.coreRailMap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: center;
+  min-height: 330px;
+  padding: 30px;
+  border: 1px solid rgba(127, 208, 255, 0.13);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(127, 208, 255, 0.14), transparent 44%),
+    linear-gradient(135deg, rgba(17, 41, 68, 0.62), rgba(8, 13, 24, 0.76));
+}
+
+.coreRailMap::before {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(127, 208, 255, 0.22), rgba(91, 224, 194, 0.72), rgba(127, 208, 255, 0.22));
+}
+
 .coreRailFlow {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -3103,14 +3301,20 @@
 
 .coreRailNode {
   position: relative;
-  display: flex;
-  align-items: center;
+  z-index: 1;
+  display: grid;
   gap: 10px;
-  min-height: 112px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+  align-content: center;
+  min-height: 178px;
+  padding: 22px;
+  border: 1px solid rgba(127, 208, 255, 0.15);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(91, 224, 194, 0.12), transparent 54%),
+    rgba(7, 13, 22, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 18px 48px rgba(0, 0, 0, 0.18);
 }
 
 .coreRailNode span {
@@ -3127,8 +3331,15 @@
 
 .coreRailNode strong {
   color: #f7ecdd;
-  font-size: 24px;
+  font-size: 21px;
   line-height: 1.16;
+}
+
+.coreRailNode p {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.68);
+  font-size: 13px;
+  line-height: 1.36;
 }
 
 .coreRailNode i {
@@ -4354,8 +4565,11 @@ a.proofCard {
 }
 
 .projectAheya .surfaceMapNotes p {
-  font-size: 15.5px;
-  line-height: 1.42;
+  overflow: hidden;
+  font-size: 12.8px;
+  line-height: 1.24;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .projectAheya .featureEvidenceGallery {
@@ -4363,7 +4577,7 @@ a.proofCard {
 }
 
 .projectAheya .featureEvidenceCard {
-  min-height: 292px;
+  min-height: 408px;
 }
 
 .projectAheya .featureEvidenceFrame img {
@@ -4373,6 +4587,22 @@ a.proofCard {
 
 .projectAheya .featureEvidenceRail article {
   min-height: 68px;
+}
+
+.projectAheya .builderBridgeArchitecture {
+  min-height: 178px;
+}
+
+.projectAheya .builderBridgeInputs article {
+  min-height: 92px;
+}
+
+.projectAheya .builderBridgeLoop article {
+  min-height: 108px;
+}
+
+.projectAheya .coreRailMap {
+  min-height: 360px;
 }
 
 .projectAheya .coreRailFlow {

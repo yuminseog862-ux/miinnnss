@@ -283,14 +283,31 @@ function AheyaBuilderBridge({ slide }: { slide: Slide }) {
             <span>{row[0]}</span>
             <strong>{row[1]}</strong>
             <p>{row[2]}</p>
-            {index === 0 ? <ArrowRight className={styles.builderBridgeArrow} size={22} /> : null}
+            {index === 0 ? <ArrowRight className={styles.builderBridgeInputArrow} size={22} /> : null}
           </article>
         ))}
       </div>
+      <div className={styles.builderBridgeArchitecture}>
+        <article>
+          <span>Builder asset</span>
+          <strong>AI로 빠르게 만든 demo</strong>
+        </article>
+        <ArrowRight className={styles.builderBridgeArrow} size={22} />
+        <article className={styles.builderBridgeCore}>
+          <span>AHEYABARAYA</span>
+          <strong>public idea page</strong>
+          <p>support + quick feedback + saved record</p>
+        </article>
+        <ArrowRight className={styles.builderBridgeArrow} size={22} />
+        <article>
+          <span>Public loop</span>
+          <strong>X quote / reply feedback loop</strong>
+        </article>
+      </div>
       <div className={styles.builderBridgeSurface}>
-        <span>AHEYABARAYA PAGE</span>
-        <strong>live idea page에 useful wallet action을 붙이는 bridge</strong>
-        <p>builder는 첫 반응과 저장된 피드백을 얻고, Web3 user는 작은 wallet support와 Good/Improve response로 실제 제품 참여를 남긴다.</p>
+        <span>Value bridge</span>
+        <strong>AI builder의 demo 속도와 Web3 user의 wallet action을 한 페이지에서 연결</strong>
+        <p>빠르게 만든 demo가 그냥 홍보 글로 끝나지 않도록, support와 quick feedback을 public response 재료로 남긴다.</p>
       </div>
       <div className={styles.builderBridgeLoop}>
         {loop.map((row, index) => (
@@ -344,14 +361,6 @@ function AheyaFeatureEvidenceMap({ slide }: { slide: Slide }) {
               <span>{item.label}</span>
               {item.caption ? <p>{item.caption}</p> : null}
             </div>
-          </article>
-        ))}
-      </div>
-      <div className={styles.featureEvidenceRail}>
-        {slide.slots.map((slot) => (
-          <article key={`${slide.no}-${slot}`}>
-            <span>{slot.split(":")[0]}</span>
-            <p>{slot.includes(":") ? slot.slice(slot.indexOf(":") + 1).trim() : slot}</p>
           </article>
         ))}
       </div>
@@ -433,44 +442,56 @@ function AheyaProblemBridge({ slide }: { slide: Slide }) {
 }
 
 function AheyaFlowHero({ slide }: { slide: Slide }) {
-  const gallery = slide.gallery ?? [];
-  const topSteps = [
-    ["01 DISCOVER", "X / content", "post, reply, visual, demo note"],
-    ["02 OPEN", "Public idea page", "project context and simple action path"],
-    ["03 SUPPORT", "Wallet support", "visible support action"],
-    ["04 RESPOND", "Quick feedback", "positive / improvement response"],
-    ["05 RECORD", "Saved feedback record", "reviewable feedback cue"],
+  const lanes = [
+    {
+      label: "Builder",
+      title: "빠르게 만든 demo를 공개 아이디어와 피드백 기록으로 전환",
+      steps: [
+        ["01", "Demo 정리", "AI로 만든 demo를 live idea로 설명"],
+        ["02", "공개 페이지", "문제, 이미지, CTA를 한 화면에 배치"],
+        ["03", "Support 확인", "wallet support로 첫 관심을 확인"],
+        ["04", "Feedback 저장", "Good/Improve와 note를 record로 남김"],
+        ["05", "X 재활용", "reply/quote로 다음 노출 재료화"],
+      ],
+    },
+    {
+      label: "Supporter",
+      title: "제품을 본 사용자가 가벼운 wallet action과 한 줄 피드백을 남김",
+      steps: [
+        ["01", "발견", "X/content에서 live idea를 접함"],
+        ["02", "이해", "public idea page에서 맥락을 파악"],
+        ["03", "Support", "작은 wallet action으로 참여"],
+        ["04", "Respond", "Good/Improve 한 줄 피드백 작성"],
+        ["05", "Record", "builder가 다음 업데이트에 참고"],
+      ],
+    },
   ];
 
   return (
     <section className={styles.flowHeroCanvas}>
-      {gallery.length ? (
-        <div className={styles.flowDiagramGrid}>
-          {gallery.map((item) => (
-            <figure key={`${slide.no}-${getGalleryKey(item)}`} className={styles.flowDiagramCard}>
-              <div className={styles.flowDiagramFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 42vw")}</div>
-              <figcaption>
-                <span>{item.label}</span>
-                {item.caption ? <p>{item.caption}</p> : null}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      ) : (
-        <div className={styles.directFlowBoard}>
-          <div className={styles.directFlowRow}>
-            {topSteps.map((step, index) => (
-              <article key={step[0]}>
-                <span>{step[0]}</span>
-                <strong>{step[1]}</strong>
-                <p>{step[2]}</p>
-                {index < topSteps.length - 1 ? <ArrowRight size={18} /> : null}
-              </article>
-            ))}
-          </div>
-          <em>Flow evidence, not funnel outcome evidence · technical verification details stay in appendix</em>
-        </div>
-      )}
+      <div className={styles.flowSwimlaneBoard}>
+        {lanes.map((lane) => (
+          <article key={lane.label} className={styles.flowSwimlane}>
+            <header>
+              <span>{lane.label}</span>
+              <strong>{lane.title}</strong>
+            </header>
+            <div className={styles.flowSwimlaneSteps}>
+              {lane.steps.map((step, index) => (
+                <section key={`${lane.label}-${step[0]}`} className={styles.flowSwimlaneStep}>
+                  <i>{step[0]}</i>
+                  <div>
+                    <strong>{step[1]}</strong>
+                    <p>{step[2]}</p>
+                  </div>
+                  {index < lane.steps.length - 1 ? <ArrowRight size={17} /> : null}
+                </section>
+              ))}
+            </div>
+          </article>
+        ))}
+        <em>Flow evidence only · conversion이나 traction claim이 아니라 제품 경로와 판단 단위를 보여줌</em>
+      </div>
       <div className={styles.flowHeroSlots}>
         {slide.slots.map((slot) => (
           <article key={`${slide.no}-${slot}`}>
@@ -618,12 +639,12 @@ function AheyaCoreRail({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.coreRailCanvas}>
-      <div className={styles.coreRailFlow}>
+      <div className={styles.coreRailMap}>
         {steps.map((step, index) => (
           <article key={`${slide.no}-${step}`} className={styles.coreRailNode}>
             <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{step}</strong>
-            {index < steps.length - 1 ? <i aria-hidden="true" /> : null}
+            <p>{getProductDirectionNote(index)}</p>
           </article>
         ))}
       </div>
@@ -636,6 +657,17 @@ function AheyaCoreRail({ slide }: { slide: Slide }) {
       </div>
     </section>
   );
+}
+
+function getProductDirectionNote(index: number) {
+  const notes = [
+    "demo를 설명 가능한 공개 페이지로 전환",
+    "작은 wallet action으로 첫 참여를 만듦",
+    "한 줄 Good/Improve 반응을 남김",
+    "다음 업데이트에 쓸 기록으로 저장",
+  ];
+
+  return notes[index] ?? "";
 }
 
 function AheyaGtmBridge({ slide }: { slide: Slide }) {
