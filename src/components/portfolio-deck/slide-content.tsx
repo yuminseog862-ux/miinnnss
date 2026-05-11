@@ -296,18 +296,18 @@ function AheyaBuilderBridge({ slide }: { slide: Slide }) {
         <article className={styles.builderBridgeCore}>
           <span>AHEYABARAYA</span>
           <strong>public idea page</strong>
-          <p>support + quick feedback + saved record</p>
+          <p>small donation + detailed feedback + saved record</p>
         </article>
         <ArrowRight className={styles.builderBridgeArrow} size={22} />
         <article>
           <span>Public loop</span>
-          <strong>X quote / reply feedback loop</strong>
+          <strong>user-led Share on X</strong>
         </article>
       </div>
       <div className={styles.builderBridgeSurface}>
         <span>Value bridge</span>
-        <strong>AI builder의 demo 속도와 Web3 user의 wallet action을 한 페이지에서 연결</strong>
-        <p>빠르게 만든 demo가 그냥 홍보 글로 끝나지 않도록, support와 quick feedback을 public response 재료로 남긴다.</p>
+        <strong>AI builder의 첫 반응 문제와 Web3 user의 잔여 온체인 자산 사용 문제를 연결</strong>
+        <p>빠르게 만든 demo가 홍보 글로만 끝나지 않도록, 소액 후원과 상세 피드백을 saved feedback record로 남긴다.</p>
       </div>
       <div className={styles.builderBridgeLoop}>
         {loop.map((row, index) => (
@@ -445,24 +445,26 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
   const lanes = [
     {
       label: "Builder",
-      title: "빠르게 만든 demo를 공개 아이디어와 피드백 기록으로 전환",
+      title: "빠르게 만든 demo를 공개 아이디어, 후원, 피드백 기록으로 전환",
       steps: [
-        ["01", "Demo 정리", "AI로 만든 demo를 live idea로 설명"],
-        ["02", "공개 페이지", "문제, 이미지, CTA를 한 화면에 배치"],
-        ["03", "Support 확인", "wallet support로 첫 관심을 확인"],
-        ["04", "Feedback 저장", "Good/Improve와 note를 record로 남김"],
-        ["05", "X 재활용", "reply/quote로 다음 노출 재료화"],
+        ["01", "Demo 정리", "AI로 만든 demo/service/tool/agent를 설명"],
+        ["02", "원본 X 글", "builder가 demo/idea를 소개하는 글을 올림"],
+        ["03", "공개 페이지", "원본 X 글에서 AHEYA page로 연결"],
+        ["04", "후원 확인", "암호화폐 소액 후원으로 관심 신호를 확인"],
+        ["05", "Feedback 저장", "Good/Improve 상세 피드백을 record로 남김"],
+        ["06", "X 연결", "사용자가 선택하면 Share on X로 연결"],
       ],
     },
     {
-      label: "Supporter",
-      title: "제품을 본 사용자가 가벼운 wallet action과 한 줄 피드백을 남김",
+      label: "Web3 user",
+      title: "제품을 본 사용자가 소액 후원과 상세 피드백을 남김",
       steps: [
-        ["01", "발견", "X/content에서 live idea를 접함"],
+        ["01", "발견", "X에서 builder의 원본 글을 봄"],
         ["02", "이해", "public idea page에서 맥락을 파악"],
-        ["03", "Support", "작은 wallet action으로 참여"],
-        ["04", "Respond", "Good/Improve 한 줄 피드백 작성"],
-        ["05", "Record", "builder가 다음 업데이트에 참고"],
+        ["03", "후원", "암호화폐로 작은 금액을 후원"],
+        ["04", "Respond", "Good/Improve 상세 피드백 작성"],
+        ["05", "Share", "선택 시 Share on X로 공개 반응 연결"],
+        ["06", "Record", "AHEYA에도 피드백 기록을 남김"],
       ],
     },
   ];
@@ -490,7 +492,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
             </div>
           </article>
         ))}
-        <em>Flow evidence only · conversion이나 traction claim이 아니라 제품 경로와 판단 단위를 보여줌</em>
+        <em>Flow evidence only · X 노출이나 traction claim이 아니라 제품 경로와 판단 단위를 보여줌</em>
       </div>
       <div className={styles.flowHeroSlots}>
         {slide.slots.map((slot) => (
@@ -661,9 +663,11 @@ function AheyaCoreRail({ slide }: { slide: Slide }) {
 
 function getProductDirectionNote(index: number) {
   const notes = [
-    "demo를 설명 가능한 공개 페이지로 전환",
-    "작은 wallet action으로 첫 참여를 만듦",
-    "한 줄 Good/Improve 반응을 남김",
+    "builder의 demo/idea 글을 anchor로 둠",
+    "맥락과 CTA를 한 화면에 정리",
+    "잔여 온체인 자산을 소액 후원으로 사용",
+    "Good/Improve와 상세 note를 남김",
+    "사용자가 선택할 때 X reply/quote로 연결",
     "다음 업데이트에 쓸 기록으로 저장",
   ];
 
@@ -678,12 +682,12 @@ function AheyaGtmBridge({ slide }: { slide: Slide }) {
       <div className={styles.gtmBridgeRail}>
         <article>
           <span>Maker outcome</span>
-          <strong>first users / clear feedback / response evidence</strong>
+          <strong>first response / detailed feedback / saved record</strong>
         </article>
         <ArrowRight size={28} />
         <article>
           <span>Web3 action</span>
-          <strong>open, back, leave one clear response</strong>
+          <strong>small donation / feedback / Share on X</strong>
         </article>
       </div>
       <div className={styles.gtmBridgeCards}>
