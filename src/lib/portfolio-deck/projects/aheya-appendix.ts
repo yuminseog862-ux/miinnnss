@@ -60,7 +60,7 @@ export const aheyaAppendixSlides = [
       "EVM: EIP-712 permit registration, operator-gated funding records, seed wallet metadata",
       "Solana: Anchor program, register_idea, support_native, record_funding_attested",
       "GitHub/editor code screenshots are excluded",
-      "AheyaDustTokenE2E source not found; generated artifact만으로 source evidence 처리 금지",
+      "Not used as a source-verified implementation claim; treated only as generated / planning artifact",
     ],
     media: { src: "/aheya/ppt/aheya-contract-source-evidence-cards.svg", alt: "AHEYA contract source evidence cards", label: "Source evidence cards" },
     note: "Public deck should not expose private repo URLs, raw source blocks, tokens, or deployment/adoption claims.",

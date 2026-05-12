@@ -41,6 +41,7 @@ export const adsbSlides = [
     label: "Brief Boundary",
     accent: "cyan",
     variant: "matrix",
+    custom: "portfolioScopeCards",
     intent: "브랜드 맥락, 팀 단위 해석, 개인 기여 범위를 분리해 과장 없이 소개한다.",
     claim:
       "패션 브랜드 숏폼에서 제품 설명보다 먼저 읽히는 hook, motif, first-frame clarity를 정리한 케이스",
@@ -52,12 +53,11 @@ export const adsbSlides = [
       "Boundary: no traction, no complete brand-system claim",
     ],
     table: {
-      headers: ["구분", "내용", "콘텐츠 반영"],
+      headers: ["Scope", "Content", "Boundary"],
       rows: [
-        ["브랜드 맥락", "한국과 스칸디나비아 감각의 대비, 유틸리티/해체주의/절제된 디테일을 숏폼의 첫 인상으로 번역", "reference reading, mood cue"],
-        ["팀 단위 작업", "브랜드 reference, visual tone, feedback review는 팀 단위로 정리", "shared reading"],
-        ["개인 기여", "dog-and-ball hook, motif rule, prompt direction, image-to-video iteration에 집중", "hook / prompt / motion"],
-        ["제외 범위", "전체 브랜드 전략, 캠페인 성과, 최종 retouching 단독 기여는 주장하지 않음", "boundary note"],
+        ["Team Scope", "shared reference reading | visual tone | feedback review", "공유된 브랜드 reading과 팀 피드백"],
+        ["My Scope", "dog-and-ball hook | motif rule | prompt direction | image-to-video iteration", "hook / prompt / motion direction 중심"],
+        ["Not Claimed", "full brand strategy | campaign performance | final retouching as sole ownership", "기여 범위 과장 방지"],
       ],
     },
     media: { src: "/adsb/source-assets/adsb-key-msg.webp", alt: "ADSB key message visual", label: "Key message" },
@@ -71,14 +71,15 @@ export const adsbSlides = [
     label: "Mood Insight",
     accent: "amber",
     variant: "matrix",
+    custom: "portfolioMediaFocus",
     intent: "ADSB를 감각적 취향이 아니라 브랜드 톤과 숏폼 소비 방식의 해석 결과로 보여준다.",
     claim:
       "Mutated Mundane, 신호등, 횡단보도, 도시적 고정 앵글을 dog-and-ball motif와 연결해 첫 프레임의 읽힘을 높인 방향",
     include: ["Mutated Mundane", "Dog-and-ball hook", "Urban restraint", "First-frame readability"],
     slots: [
-      "Mutated Mundane motif",
-      "Dog / ball / crosswalk visual cue",
-      "Fixed-angle street scene",
+      "Mutated Mundane",
+      "dog-and-ball hook",
+      "fixed-angle urban sequence",
       "Audience first-frame rule",
     ],
     table: {
@@ -174,6 +175,7 @@ export const adsbSlides = [
     label: "Prompt Direction",
     accent: "cyan",
     variant: "matrix",
+    custom: "portfolioCriteriaCards",
     intent: "프롬프트 원문 보존이 아니라 반복 기준과 선별 기준을 갖고 운영한 방향성을 보여준다.",
     claim:
       "더 많은 이미지를 만드는 과정이 아니라 subject, object, camera, motion, negative constraint를 조정하며 남길 컷의 규칙을 정한 반복 과정",
@@ -186,15 +188,17 @@ export const adsbSlides = [
       "Boundary: 프롬프트 원문 보존본을 증거로 주장하지 않음",
     ],
     table: {
-      headers: ["반복 기준", "수정 내용", "선택/폐기 기준"],
+      headers: ["Card", "Content", "Decision use"],
       rows: [
-        ["브랜드 적합성", "공유된 reference와 moodboard에 맞지 않는 과한 생성 이미지를 제거", "Andersson Bell 톤과 dog-and-ball motif가 보이는가"],
-        ["장면 집중도", "콜라주처럼 시선이 분산되는 방향을 폐기", "첫 프레임의 목적과 오브젝트가 바로 읽히는가"],
-        ["영상화 가능성", "정지 이미지를 컷 단위 sequence로 다시 정리", "Kling으로 움직임을 붙였을 때 무드가 유지되는가"],
-        ["피드백 반영", "실무진 피드백을 기준으로 구도, 색, 리듬을 보정", "취향보다 구조적 문제를 해결했는가"],
+        ["Brand Fit", "과한 생성 이미지를 제거하고 Andersson Bell mood에 맞는 컷만 남김", "brand-fit selection"],
+        ["Frame Clarity", "첫 프레임에서 dog / ball / object가 바로 읽히는지 확인", "first-frame readability"],
+        ["Motion Readiness", "Kling으로 움직임을 붙였을 때 무드가 유지되는지 확인", "image-to-video readiness"],
+        ["Feedback Rule", "취향이 아니라 구조적 문제를 기준으로 구도, 색, 리듬을 보정", "production rule"],
       ],
     },
     media: { src: "/adsb/adsb-images-draft.webp", alt: "ADSB generated draft variants", label: "Draft variants" },
+    note:
+      "Prompt & Motion Direction은 exact prompt archive가 아니라, image-to-video 테스트를 위해 subject, object, camera, motion, negative constraint를 조정한 direction logic이다.",
   },
   {
     no: 36,
@@ -203,6 +207,7 @@ export const adsbSlides = [
     label: "Output Structure",
     accent: "amber",
     variant: "matrix",
+    custom: "portfolioStoryboardBeats",
     intent: "선별 이미지, 영상 프롬프트, 숏폼 스토리보드를 실제 산출물 구조로 연결한다.",
     claim:
       "dog-and-ball hook, 컷별 대표 이미지, Kling 영상, 약 15초 러닝타임으로 정리된 숏폼 패키지",

@@ -26,7 +26,11 @@ export type SlideCustomLayout =
   | "aheyaContentAssetGrid"
   | "aheyaLaunchLoop"
   | "aheyaSignalSplit"
-  | "aheyaDecisionClose";
+  | "aheyaDecisionClose"
+  | "portfolioScopeCards"
+  | "portfolioMediaFocus"
+  | "portfolioCriteriaCards"
+  | "portfolioStoryboardBeats";
 
 export type SlideSection = "Common" | "AHEYA" | "ADSB" | "SFTI" | "AB-Luna" | "Appendix";
 

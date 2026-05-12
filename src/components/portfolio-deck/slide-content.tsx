@@ -102,6 +102,22 @@ export function SlideMain({ slide, deck }: { slide: Slide; deck: DeckContent }) 
     return <AheyaDecisionClose slide={slide} />;
   }
 
+  if (slide.custom === "portfolioScopeCards") {
+    return <PortfolioScopeCards slide={slide} />;
+  }
+
+  if (slide.custom === "portfolioMediaFocus") {
+    return <PortfolioMediaFocus slide={slide} />;
+  }
+
+  if (slide.custom === "portfolioCriteriaCards") {
+    return <PortfolioCriteriaCards slide={slide} />;
+  }
+
+  if (slide.custom === "portfolioStoryboardBeats") {
+    return <PortfolioStoryboardBeats slide={slide} />;
+  }
+
   if (slide.variant === "cover") {
     return (
       <section className={styles.coverGrid}>
@@ -531,34 +547,145 @@ function AheyaLandingCallout({ slide }: { slide: Slide }) {
 
 function AheyaMvpCut({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
+  const included = rows.filter((row) => row[0].toLowerCase().includes("included"));
+  const deferred = rows.filter((row) => row[0].toLowerCase().includes("deferred"));
+  const decision = rows.find((row) => row[0].toLowerCase().includes("decision"));
 
   return (
     <section className={styles.mvpCutCanvas}>
-      <ol className={styles.mvpScopeList}>
-        {rows.map((row, index) => (
-          <li key={`${slide.no}-${row[0]}-${index}`} className={styles.mvpScopeItem}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <div>
-              <em>{row[0]}</em>
-              <strong>{row[1]}</strong>
-              <p>{row[2]}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <div className={styles.mvpScopeColumns}>
+        <div className={styles.mvpScopeColumn}>
+          <header>
+            <span>Included</span>
+            <strong>MVP에 남긴 것</strong>
+          </header>
+          <ol className={styles.mvpScopeList}>
+            {included.map((row, index) => (
+              <li key={`${slide.no}-${row[1]}-${index}`} className={styles.mvpScopeItem}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <strong>{row[1]}</strong>
+                  <p>{row[2]}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div className={`${styles.mvpScopeColumn} ${styles.mvpScopeDeferredColumn}`}>
+          <header>
+            <span>Deferred</span>
+            <strong>보류한 것</strong>
+          </header>
+          <ol className={styles.mvpScopeList}>
+            {deferred.map((row, index) => (
+              <li key={`${slide.no}-${row[1]}-${index}`} className={styles.mvpScopeItem}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <strong>{row[1]}</strong>
+                  <p>{row[2]}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+      {decision ? (
+        <footer className={styles.mvpDecisionStrip}>
+          <strong>{decision[1]}</strong>
+          <span>{decision[2]}</span>
+        </footer>
+      ) : null}
     </section>
   );
 }
 
 function AheyaPlanningBoard({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
+  const sourceCards = slide.slots.map((slot) => {
+    const [label, ...body] = slot.split(":");
+    return {
+      label: label.trim(),
+      body: body.join(":").trim() || slot,
+    };
+  });
 
   if (slide.media) {
     return (
-      <section className={`${styles.planningBoardCanvas} ${styles.planningEvidenceOnly}`}>
-        <div className={styles.planningEvidenceMedia}>
-          <MediaSlot slide={slide} />
+      <section className={`${styles.planningBoardCanvas} ${styles.planningTraceCanvas}`}>
+        <div className={styles.planningTraceBoard}>
+          <header>
+            <strong>Evidence → Decision → Product</strong>
+            <p>문서가 보관용 archive가 아니라 제품 판단과 화면 구조로 연결됐다는 점을 한 장에서 보여준다.</p>
+          </header>
+          <div className={styles.planningTraceTable}>
+            {slide.table?.headers.map((header) => (
+              <span key={`${slide.no}-${header}`} className={styles.planningTraceHeader}>
+                {header}
+              </span>
+            ))}
+            {rows.map((row, rowIndex) =>
+              row.slice(0, 3).map((cell, cellIndex) => (
+                <p key={`${slide.no}-trace-${rowIndex}-${cellIndex}`} className={styles.planningTraceCell}>
+                  <span>{String(rowIndex + 1).padStart(2, "0")}</span>
+                  {cell}
+                </p>
+              )),
+            )}
+          </div>
         </div>
+        <aside className={styles.planningSourcePanel}>
+          <div className={styles.planningSourceMedia}>
+            <MediaSlot slide={slide} />
+          </div>
+          <div className={styles.planningSourceCards}>
+            {sourceCards.map((card, index) => (
+              <article key={`${slide.no}-source-${card.label}-${index}`}>
+                <strong>{card.label}</strong>
+                <p>{card.body}</p>
+              </article>
+            ))}
+          </div>
+          {slide.note ? <p className={styles.planningBoundaryNote}>{slide.note}</p> : null}
+        </aside>
+      </section>
+    );
+  }
+
+  if (slide.table?.headers.length === 3) {
+    return (
+      <section className={`${styles.planningBoardCanvas} ${styles.planningTraceCanvas}`}>
+        <div className={styles.planningTraceBoard}>
+          <header>
+            <strong>Evidence → Decision → Product</strong>
+            <p>근거, 판단, 제품 반영을 분리해 보여준다.</p>
+          </header>
+          <div className={styles.planningTraceTable}>
+            {slide.table.headers.map((header) => (
+              <span key={`${slide.no}-${header}`} className={styles.planningTraceHeader}>
+                {header}
+              </span>
+            ))}
+            {rows.map((row, rowIndex) =>
+              row.slice(0, 3).map((cell, cellIndex) => (
+                <p key={`${slide.no}-trace-${rowIndex}-${cellIndex}`} className={styles.planningTraceCell}>
+                  <span>{String(rowIndex + 1).padStart(2, "0")}</span>
+                  {cell}
+                </p>
+              )),
+            )}
+          </div>
+        </div>
+        <aside className={styles.planningSourcePanel}>
+          <div className={styles.planningSourceCards}>
+            {sourceCards.map((card, index) => (
+              <article key={`${slide.no}-source-${card.label}-${index}`}>
+                <strong>{card.label}</strong>
+                <p>{card.body}</p>
+              </article>
+            ))}
+          </div>
+          {slide.note ? <p className={styles.planningBoundaryNote}>{slide.note}</p> : null}
+        </aside>
       </section>
     );
   }
@@ -598,9 +725,11 @@ function AheyaPlanningBoard({ slide }: { slide: Slide }) {
 function AheyaCsvEvidence({ slide }: { slide: Slide }) {
   const rows = slide.slots.map((slot) => {
     const [label, ...body] = slot.split(":");
+    const [tracking, decision] = body.join(":").split(" | ");
     return {
       label: label.trim(),
-      body: body.join(":").trim() || slot,
+      body: (tracking ?? "").trim() || slot,
+      decision: (decision ?? "").trim(),
     };
   });
 
@@ -622,7 +751,7 @@ function AheyaCsvEvidence({ slide }: { slide: Slide }) {
             <article key={`${slide.no}-${row.label}`}>
               <span>{row.label}</span>
               <strong>{row.body}</strong>
-              <p>{row.label === "Boundary" ? "claim guardrail" : "next product / content question"}</p>
+              <p>{row.decision || (row.label === "Boundary" ? "claim guardrail" : "decision question")}</p>
             </article>
           ))}
         </div>
@@ -706,6 +835,7 @@ function AheyaGtmBridge({ slide }: { slide: Slide }) {
 function AheyaMessageLadder({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
   const gallery = slide.gallery ?? [];
+  const notes = slide.slots ?? [];
 
   return (
     <section className={styles.messageLadderCanvas}>
@@ -717,36 +847,52 @@ function AheyaMessageLadder({ slide }: { slide: Slide }) {
           </article>
         ))}
       </div>
-      {gallery.length ? (
-        <div className={styles.messageLadderProof}>
-          {gallery.map((item) => {
-            const body = (
-              <>
-                <div>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 44vw")}</div>
-                <span>{item.label}</span>
-                {item.caption ? <p>{item.caption}</p> : null}
-              </>
-            );
+      <div className={styles.messageLadderEvidenceColumn}>
+        {gallery.length ? (
+          <div className={styles.messageLadderProof}>
+            {gallery.map((item) => {
+              const body = (
+                <>
+                  <div>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 44vw")}</div>
+                  <span>{item.label}</span>
+                  {item.caption ? <p>{item.caption}</p> : null}
+                </>
+              );
 
-            if (item.embedType === "x" && item.embedUrl) {
+              if (item.embedType === "x" && item.embedUrl) {
+                return (
+                  <article key={getGalleryKey(item)} className={styles.messageLadderProofCard}>
+                    {body}
+                    <a href={item.href ?? item.embedUrl} target="_blank" rel="noreferrer" aria-label={`${item.label} X 원문 보기`}>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  </article>
+                );
+              }
+
               return (
-                <article key={getGalleryKey(item)} className={styles.messageLadderProofCard}>
+                <a key={getGalleryKey(item)} href={item.href} target="_blank" rel="noreferrer" className={styles.messageLadderProofCard}>
                   {body}
-                  <a href={item.href ?? item.embedUrl} target="_blank" rel="noreferrer" aria-label={`${item.label} X 원문 보기`}>
-                    <ArrowUpRight size={14} />
-                  </a>
+                </a>
+              );
+            })}
+          </div>
+        ) : null}
+        {notes.length ? (
+          <div className={styles.messageLadderNotes}>
+            {notes.map((slot) => {
+              const [label, ...body] = slot.split(":");
+
+              return (
+                <article key={`${slide.no}-${slot}`}>
+                  <span>{label}</span>
+                  <p>{body.join(":").trim() || slot}</p>
                 </article>
               );
-            }
-
-            return (
-              <a key={getGalleryKey(item)} href={item.href} target="_blank" rel="noreferrer" className={styles.messageLadderProofCard}>
-                {body}
-              </a>
-            );
-          })}
-        </div>
-      ) : null}
+            })}
+          </div>
+        ) : null}
+      </div>
     </section>
   );
 }
@@ -793,6 +939,7 @@ function AheyaMessagingEvolution({ slide }: { slide: Slide }) {
           ))}
         </div>
       </div>
+      {slide.note ? <footer className={styles.messagingEvolutionDecision}>{slide.note}</footer> : null}
     </section>
   );
 }
@@ -947,22 +1094,99 @@ function AheyaSignalSplit({ slide }: { slide: Slide }) {
           <strong>앞단 자료를 결론 직전의 판단 재료로 정리</strong>
           <p>X/content evidence, product surface, KPI/SQL design을 한 번에 읽고 29번 decision으로 넘긴다.</p>
         </header>
-        <div className={styles.signalReviewTable}>
-          <div className={styles.signalReviewHead}>
-            <span>Source</span>
-            <span>Signal read</span>
-            <span>Decision use</span>
-          </div>
+        <div className={styles.signalReviewCards}>
           {rows.map((row, index) => (
             <article key={`${slide.no}-${row[0]}`}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{row[0]}</strong>
               <p>{row[1]}</p>
               <em>{row[2]}</em>
+              {row[3] ? <small>{row[3]}</small> : null}
             </article>
           ))}
         </div>
         <footer>No KPI result claim · No funnel result claim · 결론은 방향 판단과 다음 측정 구조로 제한</footer>
+      </div>
+    </section>
+  );
+}
+
+function PortfolioScopeCards({ slide }: { slide: Slide }) {
+  const rows = slide.table?.rows ?? [];
+
+  return (
+    <section className={styles.portfolioScopeCanvas}>
+      {rows.map((row) => (
+        <article key={`${slide.no}-${row[0]}`} className={styles.portfolioScopeCard}>
+          <span>{row[0]}</span>
+          <strong>{row[2]}</strong>
+          <ul>
+            {row[1].split(" | ").map((item) => (
+              <li key={`${slide.no}-${row[0]}-${item}`}>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+function PortfolioMediaFocus({ slide }: { slide: Slide }) {
+  return (
+    <section className={styles.portfolioMediaFocusCanvas}>
+      <div className={styles.portfolioMediaFocusAsset}>
+        <MediaSlot slide={slide} />
+      </div>
+      <div className={styles.portfolioMediaFocusNotes}>
+        {slide.slots.slice(0, 3).map((slot, index) => (
+          <article key={`${slide.no}-${slot}`}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{slot}</strong>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PortfolioCriteriaCards({ slide }: { slide: Slide }) {
+  const rows = slide.table?.rows ?? [];
+
+  return (
+    <section className={styles.portfolioCriteriaCanvas}>
+      <div className={styles.portfolioCriteriaMedia}>
+        <MediaSlot slide={slide} />
+      </div>
+      <div className={styles.portfolioCriteriaCards}>
+        {rows.map((row) => (
+          <article key={`${slide.no}-${row[0]}`}>
+            <span>{row[0]}</span>
+            <strong>{row[1]}</strong>
+            <p>{row[2]}</p>
+          </article>
+        ))}
+      </div>
+      {slide.note ? <footer>{slide.note}</footer> : null}
+    </section>
+  );
+}
+
+function PortfolioStoryboardBeats({ slide }: { slide: Slide }) {
+  const rows = slide.table?.rows ?? [];
+
+  return (
+    <section className={styles.portfolioStoryboardCanvas}>
+      <div className={styles.portfolioStoryboardMedia}>
+        <MediaSlot slide={slide} />
+      </div>
+      <div className={styles.portfolioStoryboardBeats}>
+        {rows.map((row) => (
+          <article key={`${slide.no}-${row[0]}`}>
+            <span>{row[0]}</span>
+            <strong>{row[2]}</strong>
+            <p>{row[3]}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
