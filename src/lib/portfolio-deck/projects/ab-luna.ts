@@ -52,7 +52,7 @@ export const abLunaSlides = [
     table: {
       headers: ["분석 축", "관찰", "제품 해석"],
       rows: [
-        ["학생 시장", "학생층의 AI 사용은 이미 mainstream에 가까움", "문제는 AI 접근성이 아니라 AI 사용 이후의 상태 관리"],
+        ["학생 시장", "학생 팀 프로젝트에서도 GPT, Gemini, Claude, NotebookLM, Notion / Drive 등 여러 AI·문서 도구가 함께 쓰이는 환경을 관찰했다.", "문제는 AI 접근성이 아니라 AI 사용 이후의 상태 관리"],
         ["워크플로우", "GPT, Gemini, Claude, NotebookLM, Notion/Drive 등 산출물이 흩어짐", "scattered outputs를 canonical state로 복원해야 함"],
         ["경쟁 카테고리", "workspace, research notebook, PM tool은 많지만 handoff layer는 약함", "another workspace가 아니라 state/handoff layer로 포지셔닝"],
         ["최종 문제", "여러 AI 산출물이 readable project state와 next action으로 이어지지 않음", "result-to-state conversion failure로 정의"],
@@ -173,11 +173,11 @@ export const abLunaSlides = [
       "What this proves: problem framing, MVP scope, UX simplification, KPI readiness",
     ],
     slots: [
-      "Learning 1",
-      "Learning 2",
-      "Learning 3",
-      "What This Proves",
-      "Role-fit Summary",
+      "Learning 1: AI output 문제는 모델 성능보다 상태 정리와 handoff 문제에 가까웠다.",
+      "Learning 2: 새로운 workspace보다 readable project state와 clear next action이 먼저 필요했다.",
+      "Learning 3: markdown-first contract는 non-coding user도 이해 가능한 최소 handoff 구조였다.",
+      "What This Proves: scattered AI output을 product workflow 문제로 정의하고, state / next action / handoff layer로 좁힐 수 있다.",
+      "Role-fit Summary: PM / Product Planning 관점에서는 문제 정의, MVP scope, workflow 구조화 증거로 사용한다.",
     ],
     media: {
       src: "/ab-luna/source-assets/abluna-6.webp",
