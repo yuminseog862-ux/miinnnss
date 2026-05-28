@@ -3960,61 +3960,6 @@ a.proofCard {
   pointer-events: none;
 }
 
-.moodBackground {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  object-fit: cover;
-  filter: saturate(0.9) brightness(0.72);
-  opacity: 0.74;
-}
-
-.moodGeneral .moodBackground {
-  object-position: left center;
-  opacity: 0.7;
-}
-
-.moodAbLuna .moodBackground {
-  object-position: left center;
-  filter: saturate(0.72) brightness(0.74);
-  opacity: 0.76;
-}
-
-.moodContent .moodBackground {
-  object-position: center;
-  filter: saturate(0.84) brightness(0.7);
-  opacity: 0.72;
-}
-
-.moodDocument .moodBackground {
-  object-position: center;
-  filter: saturate(0.74) brightness(0.6);
-  opacity: 0.66;
-}
-
-.moodStrategy .moodBackground {
-  object-position: right center;
-  opacity: 0.78;
-}
-
-.moodGtm .moodBackground {
-  object-position: center;
-  filter: saturate(0.82) brightness(0.66);
-  opacity: 0.76;
-}
-
-.moodAdsb .moodBackground {
-  object-position: center;
-  filter: saturate(0.78) brightness(0.62);
-  opacity: 0.72;
-}
-
-.moodMaterial .moodBackground {
-  object-position: right center;
-  filter: saturate(0.86) brightness(0.68);
-  opacity: 0.72;
-}
-
 .referenceDeck .slideChrome,
 .referenceDeck .slideBody,
 .referenceDeck .slideFooter {
@@ -5807,6 +5752,24 @@ a.proofCard {
   font-size: 12px;
   font-weight: 760;
   line-height: 1.32;
+}
+
+/* Submission mode: keep only the slide canvas and content. */
+.toolbar,
+.deckIntro,
+.overviewGrid,
+.slideChrome,
+.slideFooter {
+  display: none;
+}
+
+.deckPage {
+  padding-top: 32px;
+}
+
+.slideBody {
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 @media (max-width: 1100px) {

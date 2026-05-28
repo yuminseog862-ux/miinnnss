@@ -1,9 +1,6 @@
-import Image from "next/image";
-
 import type { Accent, DeckContent, Slide, SlideSection, SlideVariant } from "@/lib/portfolio-deck/types";
 import { paddedSlideNo } from "@/lib/portfolio-deck/types";
 
-import { moodAsset, moodForSlide, type MoodKey } from "./mood";
 import { SlideMain } from "./slide-content";
 import { toSubtitleFragment } from "./subtitle";
 import styles from "./portfolio-deck.module.css";
@@ -27,17 +24,6 @@ const variantClass: Record<SlideVariant, string> = {
   evidence: "",
 };
 
-const moodClass: Record<MoodKey, string> = {
-  general: styles.moodGeneral,
-  abLuna: styles.moodAbLuna,
-  content: styles.moodContent,
-  document: styles.moodDocument,
-  strategy: styles.moodStrategy,
-  gtm: styles.moodGtm,
-  adsb: styles.moodAdsb,
-  material: styles.moodMaterial,
-};
-
 const projectClass: Partial<Record<SlideSection, string>> = {
   AHEYA: styles.projectAheya,
   ADSB: styles.projectAdsb,
@@ -47,7 +33,6 @@ const projectClass: Partial<Record<SlideSection, string>> = {
 
 export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckContent; theme: PortfolioDeckTheme }) {
   const slideNo = paddedSlideNo(slide.no);
-  const mood = moodForSlide(slide);
   const isReference = theme === "reference";
 
   return (
@@ -56,20 +41,9 @@ export function DeckSlide({ slide, deck, theme }: { slide: Slide; deck: DeckCont
       className={`${styles.slide} ${variantClass[slide.variant]} ${accentClass[slide.accent]} ${
         projectClass[slide.section] ?? ""
       } ${
-        isReference ? `${styles.referenceSlide} ${moodClass[mood]}` : ""
+        isReference ? styles.referenceSlide : ""
       }`}
     >
-      {isReference ? (
-        <Image
-          className={styles.moodBackground}
-          src={moodAsset[mood]}
-          alt=""
-          fill
-          sizes="1600px"
-          priority={slide.no <= 2}
-          aria-hidden="true"
-        />
-      ) : null}
       <div className={styles.slideChrome}>
         <div className={styles.slideMeta}>
           <span>{slideNo}</span>
