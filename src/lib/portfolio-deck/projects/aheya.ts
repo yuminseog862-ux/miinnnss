@@ -10,12 +10,13 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaOverview",
     intent: "AHEYA 프로젝트의 역할, 기간, 산출물, 본문/appendix 경계를 한 장에서 정리한다.",
-    claim: "AHEYA는 AI service idea를 공개하고 암호화폐 소액 후원과 Good/Improve 상세 피드백을 받는 product / GTM / content validation case",
+    claim: "AHEYA는 AI service idea를 공개하고 small crypto support와 Good/Improve feedback을 받을 수 있는 first-signal product/GTM planning case",
     include: ["Role", "Evidence", "Boundary", "Appendix"],
     slots: [
       "Role: product planning, GTM framing, content system, measurement design",
+      "Definition: AI builder가 live idea를 공개하고, Web3 user가 small crypto support와 Good/Improve feedback을 남길 수 있는 first-signal loop",
       "Main evidence: public page, small crypto donation, Good/Improve feedback, Share on X, KPI/event design",
-      "Boundary: 성과/전환 입증이 아니라 초기 제품, 메시지, 콘텐츠 검증 사례",
+      "Boundary: 시장 검증이나 전환 성과가 아니라 초기 제품 방향, 메시지, 콘텐츠 반응을 점검한 사례",
       "Appendix: technical verification, API notes, smart contract notes",
     ],
     media: { src: "/aheya/aheyabaraya-homepage-2026-04-28.png", alt: "AHEYA public surface", label: "AHEYA public surface" },
@@ -31,7 +32,7 @@ export const aheyaSlides = [
         description: "public content surface",
       },
     ],
-    note: "성과/전환 입증이 아니라 초기 제품, 메시지, 콘텐츠 검증 사례.",
+    note: "시장 검증이나 전환 성과가 아니라 초기 제품 방향, 메시지, 콘텐츠 반응을 점검한 사례.",
   },
   {
     no: 10,
@@ -50,7 +51,7 @@ export const aheyaSlides = [
       rows: [
         ["2025-12~01", "Smart contract / Solana deploy까지 고려한 큰 온체인 기획", ""],
         ["2026-02", "소액 후원 + Good/Improve UX로 첫 행동을 좁힘", ""],
-        ["2026-02~03", "Mainnet-ready 후원 flow + Privy wallet entry 정리", ""],
+        ["2026-02~03", "mainnet-compatible support flow design + Privy wallet entry 정리", ""],
         ["2026-03~04", "Public idea와 wallet-signed receipt로 설명 축소", ""],
         ["2026-04", "Direct-send verify와 feedback record를 분리", ""],
       ],
@@ -73,8 +74,8 @@ export const aheyaSlides = [
       rows: [
         [
           "잔여 온체인 자산 리서치",
-          "에어드랍·퀘스트·거래 이후 지갑에 남는 native gas token / project token 잔여 흐름을 정리 | Solana token account와 CloseAccount 회수 구조, Base/EVM transfer history와 current holding 조회 방식을 비교 | 남은 금액·체인·용도가 실제 사용 행동으로 이어지기 어려운 이유를 관찰",
-          "온체인 활동이 실제 효용으로 이어지지 않음",
+          "에어드랍·퀘스트·거래 이후 지갑에 남는 native gas token / project token 잔여 흐름을 정리 | Solana token account와 CloseAccount 회수 구조, Base/EVM transfer history와 current holding 조회 방식을 비교 | 남은 금액·체인·용도가 실제 서비스 경험으로 이어지기 어려운 지점을 정리",
+          "작은 온체인 잔여 자산이 실제 서비스 경험으로 이어지기 어려운 utility gap",
           "작은 자산은 지갑 안에 남지만 다시 쓰기에는 금액·gas·chain·용도 장벽이 있음 | 문제 정의는 수익이 아니라 실제 효용 있는 서비스 경험으로 연결되기 어려운 utility gap",
           "native gas token | project token | wallet remainder | utility gap",
         ],
@@ -87,6 +88,7 @@ export const aheyaSlides = [
         ],
       ],
     },
+    note: "Bridge logic: 두 문제는 모두 작은 관심이나 자산이 의미 있는 반응 기록으로 남기 어렵다는 공통점이 있다. AHEYA는 이를 small support, Good/Improve feedback, saved feedback record로 연결하는 first-signal loop로 설계했다.",
   },
   {
     no: 12,
@@ -97,11 +99,11 @@ export const aheyaSlides = [
     variant: "process",
     custom: "aheyaBuilderBridge",
     intent: "AI builder의 첫 반응 확보 문제와 Web3 user의 잔여 온체인 자산 효용 문제를 연결한다.",
-    claim: "AI builder는 후원과 피드백 기록을 얻고, Web3 user는 잔여 온체인 자산을 AI service idea 후원으로 사용한다",
+    claim: "AI builder가 후원과 피드백 기록을 받을 수 있고, Web3 user가 잔여 온체인 자산을 AI service idea 후원에 사용할 수 있는 행동 경로를 설계했다",
     include: ["Builder problem", "Small crypto donation", "AHEYABARAYA page", "Share on X"],
     slots: [
-      "AI builder: 소액 후원, Good/Improve 상세 피드백, saved feedback record를 얻음",
-      "Web3 user: 잔여 온체인 자산을 실제 효용 가능성이 있는 AI service idea에 후원",
+      "AI builder: 소액 후원, Good/Improve 상세 피드백, saved feedback record를 받을 수 있는 경로",
+      "Web3 user: 잔여 온체인 자산을 AI service idea 후원에 사용할 수 있는 행동 경로",
       "AHEYABARAYA: feedback을 사용자 주도 Share on X와 내부 기록으로 분리",
       "X 노출 보장이 아니라 공개 반응이 생길 수 있는 UX 연결점",
     ],
@@ -112,12 +114,12 @@ export const aheyaSlides = [
         [
           "AI-native builder",
           "빠르게 만든 demo",
-          "원본 X 글에서 public idea page로 연결하고 소액 후원, 상세 피드백, saved feedback record를 다음 업데이트 재료로 얻음",
+          "원본 X 글에서 public idea page로 연결하고 소액 후원, 상세 피드백, saved feedback record를 다음 업데이트 판단 재료로 받을 수 있는 경로",
         ],
         [
           "Web3 user",
           "잔여 온체인 자산의 효용",
-          "작은 온체인 자산을 실제 효용 가능성이 있는 AI service idea에 대한 후원으로 사용",
+          "작은 온체인 자산을 AI service idea 후원에 사용할 수 있는 행동 경로",
         ],
         [
           "Open",
@@ -132,7 +134,7 @@ export const aheyaSlides = [
         [
           "Feedback loop",
           "Share on X + saved record",
-          "상세 피드백을 사용자가 원할 때 공개 반응으로 연결하고 내부 기록에도 저장",
+          "상세 피드백을 사용자가 원할 때 공개 반응으로 연결할 수 있고, 내부 기록으로도 남기는 구조",
         ],
       ],
     },
@@ -146,11 +148,11 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaProductSurfaceMap",
     intent: "builder가 원본 X 글에서 AHEYA page로 연결하고 후원/피드백/공유 기록을 확인하는 흐름을 보여준다.",
-    claim: "Builder는 원본 X 글을 anchor로 삼아 AHEYA page로 연결하고 후원, 상세 피드백, saved record를 다음 업데이트 판단 재료로 본다",
+    claim: "Builder가 원본 X 글을 anchor로 삼아 AHEYA page로 연결하고 후원, 상세 피드백, saved record를 다음 업데이트 판단 재료로 확인할 수 있는 구조",
     include: ["Original X post", "Idea page", "Donation", "Share on X"],
     slots: [
       "Original X post: builder가 demo / idea를 먼저 공개하고 AHEYA page의 anchor로 사용",
-      "Builder gets: 소액 후원 / Good/Improve 상세 피드백 / saved feedback record",
+      "Builder can receive/review: 소액 후원 / Good/Improve 상세 피드백 / saved feedback record",
       "Share on X: 사용자가 선택한 피드백이 원본 X 글의 reply / quote 흐름에 연결될 수 있음",
       "Boundary: X 노출 보장 아님. 공개 반응이 생길 수 있는 UX 연결점",
     ],
@@ -174,14 +176,14 @@ export const aheyaSlides = [
     accent: "cyan",
     variant: "evidence",
     custom: "aheyaProductSurfaceMap",
-    intent: "Web3 user가 잔여 온체인 자산을 실제 효용 가능성이 있는 AI service idea에 소액 후원하는 흐름을 보여준다.",
-    claim: "남은 온체인 자산을 실제 효용 가능성이 있는 AI service idea에 대한 소액 후원과 피드백 행동으로 전환한다",
+    intent: "Web3 user가 잔여 온체인 자산을 AI service idea 후원에 사용할 수 있는 흐름을 보여준다.",
+    claim: "남은 온체인 자산을 AI service idea에 대한 소액 후원과 피드백 행동으로 연결하는 제품 가설",
     include: ["Residual asset", "Small donation", "Detailed feedback", "Saved record"],
     slots: [
       "Problem: 남은 native gas / project token이 trading, airdrop, quest 밖의 실제 서비스 경험으로 이어지기 어려움",
       "Action flow: open idea -> small crypto donation -> Good/Improve feedback -> optional Share on X -> saved feedback record",
       "AHEYA use: 잔여 온체인 자산을 AI service idea 후원과 피드백 행동으로 연결",
-      "Boundary: demand proof 아님. utility gap을 제품 참여 행동으로 바꾸는 가설",
+      "Boundary: demand proof 아님. utility gap을 제품 참여 행동으로 연결할 수 있는지 보는 가설",
     ],
     gallery: [
       {
@@ -250,7 +252,12 @@ export const aheyaSlides = [
     intent: "첫 타깃, 첫 제안, 최소 행동, 측정 기준을 한 장에 묶는다.",
     claim: "첫 대상은 모든 Web3 사용자가 아니라 데모는 있지만 첫 사용자와 명확한 피드백이 부족한 AI builder",
     include: ["데모를 만든 builder", "첫 제안", "최소 행동", "측정 기준"],
-    slots: ["AI builder 우선", "기술 설명보다 결과 먼저", "소액 후원을 첫 행동으로", "reward와 기술 설명은 뒤로"],
+    slots: [
+      "AI builder 우선: demo는 빠르게 만들 수 있지만 첫 사용자 반응과 개선 근거가 부족한 segment",
+      "기술 설명보다 결과 먼저",
+      "소액 후원을 첫 행동으로",
+      "reward와 기술 설명은 뒤로",
+    ],
     table: {
       headers: ["우선순위", "선택", "이유"],
       rows: [
@@ -306,16 +313,16 @@ export const aheyaSlides = [
       rows: [
         ["Included", "Original X post anchor", "Share on X가 연결될 기준점"],
         ["Included", "Public idea page", "원본 X 글만으로 부족한 아이디어 맥락을 한 화면에서 설명"],
-        ["Included", "Small crypto donation", "잔여 온체인 자산을 실제 효용 가능성이 있는 AI service idea 후원으로 전환"],
-        ["Included", "Detailed Good/Improve feedback", "단순 반응보다 다음 업데이트에 쓸 수 있는 피드백 확보"],
+        ["Included", "Small crypto donation", "잔여 온체인 자산을 AI service idea 후원으로 연결하는 행동 경로 설계"],
+        ["Included", "Detailed Good/Improve feedback", "단순 반응보다 다음 업데이트에 참고할 수 있는 피드백 입력 구조 마련"],
         ["Included", "Share on X action point", "피드백을 플랫폼 내부에만 두지 않고 공개 reply / quote 흐름으로 연결"],
-        ["Included", "Saved feedback record", "외부 공유와 별개로 builder가 다시 볼 수 있는 내부 기록 확보"],
+        ["Included", "Saved feedback record", "외부 공유와 별개로 builder가 다시 볼 수 있는 saved record surface 마련"],
         ["Included", "KPI / event hooks", "후원, 피드백, 공유, 기록을 다음 판단 단위로 분리"],
         ["Deferred", "Reward-first public framing", "첫 화면에서 보상 구조를 강조하면 후원 / 피드백 / 공유라는 첫 행동이 흐려짐"],
-        ["Deferred", "Token launch", "초기 검증 단계에서 복잡도와 리스크가 큼"],
+        ["Deferred", "Token launch", "초기 신호 확인 단계에서 복잡도와 리스크가 큼"],
         ["Deferred", "Automated posting", "user-led Share on X 원칙과 X policy risk 때문에 보류"],
         ["Deferred", "Technical verification as front-door story", "처음 보는 사용자는 기술 구조보다 행동 흐름을 먼저 이해해야 함"],
-        ["Deferred", "Heavy automation", "먼저 수동 / 반자동 흐름으로 후원·피드백·공유 루프를 확인하는 것이 현실적"],
+        ["Deferred", "Heavy automation", "먼저 수동 / 반자동 흐름으로 후원·피드백·공유 루프를 점검하는 것이 현실적"],
         ["Decision", "Decision", "기술 구조보다 original X post, 소액 후원, 상세 피드백, Share on X, saved feedback record가 먼저 읽히는 MVP action flow로 좁혔다."],
       ],
     },
@@ -346,8 +353,8 @@ export const aheyaSlides = [
         ["초기 구조는 crypto trading information sharing이었고, crypto traders가 supply-side 역할을 했다.", "trading info 중심 구조는 X engagement / reward 구조와 가까워질 위험이 있었다.", "supply-side를 AI builders로 전환"],
         ["후원과 X 활용 구조 자체는 유지 가능했다.", "X를 reward engine이 아니라 public feedback / share channel로만 사용하기로 했다.", "user-led Share on X"],
         ["Kaito-like InfoFi / X API policy risk를 확인했다.", "X action 자체를 보상하는 구조는 피했다.", "automated posting, reward-first framing 보류"],
-        ["Web3 user의 잔여 온체인 자산은 실제 효용 서비스 경험으로 연결되기 어렵다.", "trading 정보보다 실제 효용 가능성이 있는 AI service idea에 후원하도록 전환했다.", "small crypto donation"],
-        ["AI builder는 demo를 만들지만 첫 반응과 피드백을 얻기 어렵다.", "원본 X 글과 public idea page를 연결해 후원 / 피드백 대상이 생기게 했다.", "original X post anchor + public idea page"],
+        ["Web3 user의 잔여 온체인 자산은 실제 서비스 경험으로 이어지기 어렵다는 utility gap이 있다.", "trading 정보보다 AI service idea 후원에 사용할 수 있는 경로로 전환했다.", "small crypto donation"],
+        ["AI builder는 demo를 만들지만 첫 반응과 피드백을 얻기 어렵다.", "원본 X 글과 public idea page를 연결해 후원 / 피드백 대상이 명확히 보이도록 했다.", "original X post anchor + public idea page"],
         ["피드백이 내부에만 있으면 build-in-public 흐름으로 돌아가지 않는다.", "상세 피드백을 X에 공유할 수 있는 UX 연결점을 만들었다.", "Good/Improve feedback + Share on X"],
         ["builder가 다음 업데이트에 쓰려면 기록이 필요하다.", "외부 공유와 별개로 내부 기록을 남긴다.", "saved feedback record"],
       ],
@@ -370,7 +377,7 @@ export const aheyaSlides = [
       "Event unit: 어떤 event unit을 다음 product / content decision의 기준으로 볼 것인가? | 측정 단위 확정",
       "Boundary: KPI output이 아니라 measurement design | 성과 claim 차단",
     ],
-    media: { src: "/aheya/ppt/source-snips/aheya-19-1-kpi-ledger-source.html.png", alt: "KPI aggregate ledger source proof lines", label: "source line capture" },
+    media: { src: "/aheya/ppt/source-snips/aheya-19-1-kpi-ledger-source.html.png", alt: "KPI aggregate ledger source excerpt lines", label: "source line capture" },
   },
   {
     no: 19.2,
@@ -389,7 +396,7 @@ export const aheyaSlides = [
       "Attention cue: impression은 attention cue이지 traction proof가 아님 | claim boundary",
       "Boundary: public post surface만 discovery signal로 읽음 | demand proof 금지",
     ],
-    media: { src: "/aheya/ppt/source-snips/aheya-19-2-x-ledger-source.html.png", alt: "X sanitized post ledger source proof lines", label: "source line capture" },
+    media: { src: "/aheya/ppt/source-snips/aheya-19-2-x-ledger-source.html.png", alt: "X sanitized post ledger source excerpt lines", label: "source line capture" },
   },
   {
     no: 19.3,
@@ -408,7 +415,7 @@ export const aheyaSlides = [
       "Question: 방문자 수가 아니라 다음 설명 / CTA 수정 질문을 준비 | iteration 후보 정리",
       "Boundary: entry event design이지 conversion result가 아님 | result claim 차단",
     ],
-    media: { src: "/aheya/ppt/source-snips/aheya-19-3-event-plan-source.html.png", alt: "KPI tree and entry event plan source proof lines", label: "source line capture" },
+    media: { src: "/aheya/ppt/source-snips/aheya-19-3-event-plan-source.html.png", alt: "KPI tree and entry event plan source excerpt lines", label: "source line capture" },
   },
   {
     no: 19.4,
@@ -427,7 +434,7 @@ export const aheyaSlides = [
       "Share: Share on X는 user-led action 후보로 분리 | 자동 노출 claim 차단",
       "Boundary: 후원 수량보다 reusable response evidence 구조가 핵심 | outcome claim 차단",
     ],
-    media: { src: "/aheya/ppt/source-snips/aheya-19-4-feedback-service-source.html.png", alt: "Feedback service source proof lines", label: "source line capture" },
+    media: { src: "/aheya/ppt/source-snips/aheya-19-4-feedback-service-source.html.png", alt: "Feedback service source excerpt lines", label: "source line capture" },
   },
   {
     no: 19.5,
@@ -446,7 +453,7 @@ export const aheyaSlides = [
       "Read model: COUNT / FILTER는 read-only snapshot 기준선 | query-ready 구조",
       "Boundary: read-only snapshot 전에는 final number, improvement claim을 쓰지 않음 | 성과 claim 금지",
     ],
-    media: { src: "/aheya/ppt/source-snips/aheya-19-5-kpi-export-source.html.png", alt: "KPI export source proof lines", label: "source line capture" },
+    media: { src: "/aheya/ppt/source-snips/aheya-19-5-kpi-export-source.html.png", alt: "KPI export source excerpt lines", label: "source line capture" },
   },
   {
     no: 20,
@@ -459,7 +466,7 @@ export const aheyaSlides = [
     intent: "builder의 첫 반응 확보 문제와 Web3 user의 잔여 온체인 자산 사용 문제를 GTM bridge와 visual hook rationale로 연결한다.",
     claim: "Builder-first GTM은 문제를 먼저 말하고 이미지 / 영상 visual hook으로 첫 발견 지점을 만든다",
     include: ["Who", "Trigger", "Offer", "Bridge"],
-    slots: ["Primary ICP: AI-native builder", "Secondary audience: Web3-curious user", "Offer: small donation and feedback path", "Outcome before full mechanism"],
+    slots: ["Primary ICP: AI-native builder", "Secondary audience: Web3-curious user", "Offer: small donation and feedback path", "User action before full mechanism"],
     table: {
       headers: ["GTM decision", "Why", "Execution"],
       rows: [
@@ -485,7 +492,7 @@ export const aheyaSlides = [
       "Visual hook note: Text-only post만으로는 추상적인 제품 구조가 잘 읽히지 않아 이미지 / 영상 콘텐츠를 first-touch visual hook으로 사용했다",
       "Offer: live demo -> donation and feedback path",
       "Action: open, donate, leave feedback",
-      "Boundary: validation design, not traction proof",
+      "Boundary: signal-check design, not traction proof",
     ],
     table: {
       headers: ["Message layer", "Copy direction", "주의점"],
@@ -495,7 +502,7 @@ export const aheyaSlides = [
         ["Donation", "Make a small crypto donation.", ""],
         ["Feedback", "Leave detailed Good/Improve feedback.", ""],
         ["Share", "Share feedback on X when you choose.", ""],
-        ["Boundary", "Validation design, not traction proof.", ""],
+        ["Boundary", "Signal-check design, not traction proof.", ""],
       ],
     },
     gallery: [
@@ -582,7 +589,7 @@ export const aheyaSlides = [
     slots: [
       "Purpose: abstract product를 더 쉽게 발견하게 만드는 visual hook",
       "Entry: visual interest에서 public idea page로 이동시키는 첫 touchpoint",
-      "Memory: 반복 가능한 mood/character asset으로 기억 가능성 확보",
+      "Memory: 반복 가능한 mood/character asset으로 visual recall 가능성 테스트",
       "Boundary: visual assets are discovery hooks, not traction proof",
     ],
     gallery: [
@@ -607,7 +614,7 @@ export const aheyaSlides = [
       {
         src: "/aheya/worldbuilding/aheyacharacter/aheya-aheyabaraya-aurora.webp",
         alt: "AHEYA Aurora character visual asset",
-        label: "Brand memory",
+        label: "Memory cue",
         caption: "brand-memory asset",
       },
     ],
@@ -621,7 +628,7 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaXPostGrid",
     intent: "X post를 performance가 아니라 public copy와 product entry iteration ledger로 보여준다.",
-    claim: "X posting은 product entry 변경 흐름과 함께 보여준다: original post, small donation, detailed feedback, Share on X",
+    claim: "X posting은 public copy와 product-entry language iteration을 보여준다: original post, small donation, detailed feedback, Share on X",
     include: ["First response", "Response language", "Start from zero"],
     slots: [
       "Phase 1: link/testnet CTA -> product mention",
@@ -632,11 +639,11 @@ export const aheyaSlides = [
     gallery: [
       {
         alt: "AHEYA public X post screenshot from 2026-03-17",
-        label: "Strongest public post",
+        label: "Representative high-signal post",
         href: "https://x.com/minnns_aheya/status/2033738008516825288",
         embedUrl: "https://x.com/minnns_aheya/status/2033738008516825288",
         embedType: "x",
-        caption: "1,987 impressions / qualitative signal",
+        caption: "Public attention cue, not traction proof",
       },
       {
         alt: "AHEYA public X post screenshot from 2026-03-27",
@@ -691,11 +698,11 @@ export const aheyaSlides = [
     custom: "aheyaOutreachGrid",
     intent: "public reply 기반 message clarity와 segment fit 확인을 private evidence와 분리한다.",
     claim: "Public replies were used only to check message clarity and segment fit, not external deal evidence",
-    include: ["Exploratory", "Relevant segment", "High-fit builder", "Privacy boundary"],
+    include: ["Exploratory", "Relevant segment", "High-fit builder hypothesis", "Privacy boundary"],
     slots: [
       "Exploratory message: vibe coding / AI agents 대상 donation/feedback path 제안",
       "Relevant segment message: AI-native creators working on tools, agents, games",
-      "High-fit builder message: founder-first response system for live demos",
+      "High-fit builder hypothesis: founder-first response system for live demos",
       "Boundary: private DM body, handle, account ID excluded",
     ],
     gallery: [
@@ -717,7 +724,7 @@ export const aheyaSlides = [
       {
         src: "/aheya/ppt/x-cards/aheya-reply-2026-04-02.png",
         alt: "AHEYA public reply screenshot from 2026-04-02",
-        label: "High-fit builder reply",
+        label: "High-fit builder hypothesis reply",
         href: "https://x.com/minnns_aheya/status/2039543700045656099",
         caption: "founder-first response",
       },
@@ -745,7 +752,7 @@ export const aheyaSlides = [
     table: {
       headers: ["Source", "Signal", "Decision use", "Boundary"],
       rows: [
-        ["X / Content", "public post, reply, representative post metric", "content angle과 outreach wording 조정", "attention cue, not traction proof"],
+        ["X / Content", "public post, reply, representative attention cue", "content angle과 outreach wording 조정", "attention cue, not traction proof"],
         ["Product Surface", "landing, project page, donation path, detailed feedback path", "다음 MVP에서 남길 행동과 줄일 설명 판단", "product path evidence, not conversion result"],
         ["KPI / SQL Design", "site_visit, project_open, donation_intent, feedback_submit, share_on_x, feedback_record_created candidates", "read-only snapshot의 기준선", "measurement design, not metric proof"],
         ["Final Boundary", "No KPI result claim / No funnel result claim", "29번 decision으로만 연결", "방향 판단과 다음 측정 구조로 제한"],
@@ -765,14 +772,15 @@ export const aheyaSlides = [
     include: ["Continue", "Lower", "Separate", "Next"],
     slots: ["Product story became simpler", "Small crypto donation remained as a visible product action", "Share on X stayed user-led", "KPI/SQL stayed as measurement design"],
     table: {
-      headers: ["What this proves", "Portfolio read", "Evidence boundary"],
+      headers: ["What this shows", "Portfolio signal", "Claim boundary"],
       rows: [
         ["PM", "Narrowed a broad reward/quest/funding idea into a visible idea/donation/feedback/share flow.", "scope and decision trace, not traction proof"],
         ["GTM", "Moved from technical-structure-first language to builder-outcome messaging.", "message clarity, not demand proof"],
         ["Content", "Used visual and X content as discovery hooks.", "attention cue, not traction proof"],
-        ["Data", "Designed KPI/event/SQL structure without overstating performance.", "measurement design, not metric proof"],
+        ["Data", "Designed KPI/event/SQL structure for future read-only review.", "measurement design, not metric proof"],
       ],
     },
     media: { src: "/aheya/ppt/aheya-core-rail-flow.svg", alt: "AHEYA donation and feedback flow recap", label: "Decision recap" },
+    note: "Final readout is about decision quality and signal design, not market validation, demand proof, traction, or revenue result.",
   },
 ] satisfies Slide[];
