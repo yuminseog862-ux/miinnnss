@@ -534,36 +534,36 @@ export const workCases: WorkCase[] = [
   {
     slug: "sfti-cmu",
     section: "Selected Work",
-    eyebrow: "Research translation / English writing",
+    eyebrow: "Research communication / English structuring",
     title: "SFTI-CMU",
     oneLiner:
-      "An accepted conference submission that turned AI-generated emotional content into a structured external-facing research case.",
+      "A research communication case that turned an AI-generated emotional content idea into an English abstract and poster-style structure.",
     summary:
-      "This case is less about academic prestige and more about structured communication: building a usable concept, organizing references, and turning AI-content research into an English-language argument that could travel externally.",
-    roles: ["Research framing", "English writing", "AI content analysis", "External communication"],
-    evidence: ["Submission", "Acceptance with revisions", "Abstract", "Framework"],
-    status: "Accepted conference submission",
+      "This case is framed as structured communication rather than prestige or outcome proof: narrowing a vague AI-content idea into identity-based visual clustering, English abstract structuring, poster-style organization, and revision handling.",
+    roles: ["Research framing", "English abstract structuring", "Poster-style organization", "External communication"],
+    evidence: ["Review result", "Revision comments", "Abstract draft", "Framework pages"],
+    status: "Review/revision evidence",
     tier: "selected",
     accent: "indigo",
     year: "2025",
     coverImage: {
       src: "/appendix/bluegarage/sfti/result.webp",
-      alt: "SFTI-CMU accepted abstract page and conference result image.",
+      alt: "SFTI-CMU review result and research structure screenshot.",
       fit: "contain",
     },
     overview: [
-      "A conference submission on AI-generated emotional content strategy for niche fashion brands.",
-      "The work connects research language, brand interpretation, and a visual clustering framework.",
+      "A support case on AI-generated emotional content strategy for niche fashion brands.",
+      "The work connects research framing, English abstract structuring, brand interpretation, and an identity-based visual clustering framework.",
     ],
     whatIDid: [
       "Defined the research question and overall framing.",
-      "Built the abstract and external-facing English document.",
+      "Structured the English abstract draft and external-facing document flow.",
       "Organized the idea into a visual clustering approach tied to identity and narrative.",
     ],
     whatExists: [
-      "Submission-ready English abstract and framing.",
-      "Review form with acceptance and revision request.",
-      "Clear evidence of research-to-communication translation.",
+      "English abstract draft and poster-style framing.",
+      "Review result and revision-comment evidence.",
+      "Clear evidence of research-to-communication translation and revision handling.",
     ],
     keyDecisions: [
       "Frame the project around identity-based visual clustering instead of a vague AI trend theme.",
@@ -571,11 +571,11 @@ export const workCases: WorkCase[] = [
       "Use the submission as a proof of structured writing and concept clarity.",
     ],
     galleryIntro:
-      "The accepted abstract page is the most convincing visual proof here, so this case now shows it directly instead of implying the research through generic placeholders.",
+      "The review and abstract screenshot is used as supporting evidence for structure, writing, and revision handling, not as academic or performance proof.",
     placeholderMedia: [
       {
-        label: "Accepted abstract page",
-        note: "Conference submission page showing the abstract structure, visual framework, and acceptance result together.",
+        label: "Review and abstract structure",
+        note: "Screenshot showing the abstract structure, visual framework, and review/revision context together.",
         src: "/appendix/bluegarage/sfti/result.webp",
         alt: "SFTI-CMU abstract and result screenshot.",
         fit: "contain",
@@ -583,8 +583,8 @@ export const workCases: WorkCase[] = [
       },
     ],
     currentStatus: [
-      "Closed research output with a concrete external result.",
-      "Best used as evidence of writing, framing, and English communication under ambiguity.",
+      "Closed support case with review/revision evidence.",
+      "Best used as evidence of research framing, English abstract structuring, and external communication under ambiguity.",
     ],
   },
   {
