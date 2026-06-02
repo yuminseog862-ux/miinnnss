@@ -289,48 +289,46 @@ function AheyaResearchSolution({ slide }: { slide: Slide }) {
 function AheyaBuilderBridge({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
   const inputs = rows.slice(0, 2);
-  const loop = rows.slice(2);
+  const outputs = [
+    {
+      label: "Output 01",
+      title: "Support signal",
+      body: "소액 후원을 첫 관심 신호로 분리",
+    },
+    {
+      label: "Output 02",
+      title: "Feedback record",
+      body: "Good/Improve와 상세 note를 다음 업데이트 기록으로 저장",
+    },
+    {
+      label: "Output 03",
+      title: "User-led Share on X",
+      body: "사용자가 선택할 때 공개 reply / quote로 연결",
+    },
+  ];
 
   return (
     <section className={styles.builderBridgeCanvas}>
       <div className={styles.builderBridgeInputs}>
         {inputs.map((row, index) => (
           <article key={`${slide.no}-${row[0]}`}>
-            <span>{row[0]}</span>
+            <span>{`Input ${String(index + 1).padStart(2, "0")}`}</span>
             <strong>{row[1]}</strong>
             <p>{row[2]}</p>
-            {index === 0 ? <ArrowRight className={styles.builderBridgeInputArrow} size={22} /> : null}
           </article>
         ))}
       </div>
-      <div className={styles.builderBridgeArchitecture}>
-        <article>
-          <span>Builder asset</span>
-          <strong>AI로 빠르게 만든 demo</strong>
-        </article>
-        <ArrowRight className={styles.builderBridgeArrow} size={22} />
-        <article className={styles.builderBridgeCore}>
-          <span>AHEYABARAYA</span>
-          <strong>public idea page</strong>
-          <p>small donation + detailed feedback + saved record</p>
-        </article>
-        <ArrowRight className={styles.builderBridgeArrow} size={22} />
-        <article>
-          <span>Public loop</span>
-          <strong>user-led Share on X</strong>
-        </article>
-      </div>
-      <div className={styles.builderBridgeSurface}>
-        <span>Value bridge</span>
-        <strong>AI builder의 첫 반응 문제와 Web3 user의 잔여 온체인 자산 사용 문제를 연결</strong>
-        <p>빠르게 만든 demo가 홍보 글로만 끝나지 않도록, 소액 후원과 상세 피드백을 saved feedback record로 남긴다.</p>
-      </div>
-      <div className={styles.builderBridgeLoop}>
-        {loop.map((row, index) => (
-          <article key={`${slide.no}-${row[0]}`}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{row[1]}</strong>
-            <p>{row[2]}</p>
+      <article className={styles.builderBridgeCore}>
+        <span>AHEYABARAYA value bridge</span>
+        <strong>public idea page</strong>
+        <p>small support + Good/Improve feedback + saved record</p>
+      </article>
+      <div className={styles.builderBridgeOutputs}>
+        {outputs.map((output) => (
+          <article key={`${slide.no}-${output.label}`}>
+            <span>{output.label}</span>
+            <strong>{output.title}</strong>
+            <p>{output.body}</p>
           </article>
         ))}
       </div>
@@ -366,13 +364,24 @@ function AheyaProductSurfaceMap({ slide }: { slide: Slide }) {
 
 function AheyaFeatureEvidenceMap({ slide }: { slide: Slide }) {
   const gallery = slide.gallery ?? [];
+  const [primary, ...supporting] = gallery;
 
   return (
     <section className={styles.featureEvidenceCanvas}>
-      <div className={styles.featureEvidenceGallery}>
-        {gallery.map((item) => (
+      {primary ? (
+        <article className={`${styles.featureEvidenceCard} ${styles.featureEvidencePrimary}`}>
+          <div className={styles.featureEvidenceFrame}>{renderGalleryMedia(primary, "(max-width: 1000px) 100vw, 42vw")}</div>
+          <div>
+            <span>Primary surface</span>
+            <strong>{primary.label}</strong>
+            {primary.caption ? <p>{primary.caption}</p> : null}
+          </div>
+        </article>
+      ) : null}
+      <div className={styles.featureEvidenceSupport}>
+        {supporting.map((item) => (
           <article key={`${slide.no}-${getGalleryKey(item)}`} className={styles.featureEvidenceCard}>
-            <div className={styles.featureEvidenceFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 23vw")}</div>
+            <div className={styles.featureEvidenceFrame}>{renderGalleryMedia(item, "(max-width: 1000px) 100vw, 24vw")}</div>
             <div>
               <span>{item.label}</span>
               {item.caption ? <p>{item.caption}</p> : null}
@@ -380,6 +389,7 @@ function AheyaFeatureEvidenceMap({ slide }: { slide: Slide }) {
           </article>
         ))}
       </div>
+      <footer className={styles.featureEvidenceBoundary}>object-fit: contain · product path evidence · not traction proof</footer>
     </section>
   );
 }
@@ -810,13 +820,8 @@ function AheyaGtmBridge({ slide }: { slide: Slide }) {
     <section className={styles.gtmBridgeCanvas}>
       <div className={styles.gtmBridgeRail}>
         <article>
-          <span>Maker outcome</span>
-          <strong>first response / detailed feedback / saved record</strong>
-        </article>
-        <ArrowRight size={28} />
-        <article>
-          <span>Web3 action</span>
-          <strong>small donation / feedback / Share on X</strong>
+          <span>GTM bridge</span>
+          <strong>Maker outcome first → Web3 action path → visual hook as discovery</strong>
         </article>
       </div>
       <div className={styles.gtmBridgeCards}>
@@ -1197,20 +1202,16 @@ function AheyaDecisionClose({ slide }: { slide: Slide }) {
 
   return (
     <section className={styles.decisionCloseCanvas}>
-      <div className={styles.decisionCloseHero}>
-        <span>Final read</span>
-        <strong>{slide.claim}</strong>
-        <p>{slide.slots.join(" · ")}</p>
-      </div>
       <div className={styles.decisionCloseGrid}>
         {rows.map((row) => (
           <article key={`${slide.no}-${row[0]}`}>
-            <span>{row[0]}</span>
+            <span>{row[0].toUpperCase()}</span>
             <strong>{row[1]}</strong>
             <p>{row[2]}</p>
           </article>
         ))}
       </div>
+      {slide.note ? <footer className={styles.decisionCloseNote}>{slide.note}</footer> : null}
     </section>
   );
 }
