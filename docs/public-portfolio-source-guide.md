@@ -192,21 +192,30 @@ SFTI-CMU is a supporting research-writing case. It should remain secondary.
 
 Safe framing:
 
-> A complex idea about brand identity and generative AI visual content was structured into an external-facing research document.
+> A vague AI-generated emotional content idea was structured into an English abstract and poster-style research output around identity-based visual clustering.
 
 Use it to show:
 
 - research framing,
-- English writing,
-- narrative structure,
+- English abstract structuring,
+- poster-style research structure,
 - brand interpretation,
-- ability to make an abstract topic readable.
+- review/revision handling,
+- ability to make an abstract topic readable to an external reader.
 
 Avoid:
 
-- presenting it as deep academic research output,
+- presenting it as prestige, paper-like, or event-result proof,
 - implying a live conference presentation if not directly evidenced,
+- using accepted/revision evidence as prestige proof instead of review context,
+- promoting poster scenario statements such as CTR, conversion, recall, or cost reduction as measured results,
 - mixing it with Web3 research claims.
+
+Maintenance anchor:
+
+- `docs/projects/sfti/sfti_copy_fix_instructions.md`
+- `src/lib/portfolio-deck/projects/sfti.ts`
+- `src/data/portfolio.ts`
 
 ## TainAI / AI-Native PM Page Logic
 
