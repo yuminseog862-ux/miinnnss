@@ -414,7 +414,8 @@
   line-height: 1.25;
   font-weight: 500;
   text-overflow: clip;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .slideFooter {
@@ -818,6 +819,7 @@
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 8px;
+  width: 100%;
   margin: 0;
   min-height: 300px;
   overflow: visible;
@@ -828,6 +830,7 @@
 
 .mediaFrame {
   position: relative;
+  width: 100%;
   min-height: 300px;
   overflow: hidden;
   border: 0;
@@ -4438,6 +4441,144 @@ a.proofCard {
 
 .projectSfti .slideRule {
   background: linear-gradient(90deg, rgba(245, 247, 251, 0.92), rgba(147, 197, 253, 0.72), rgba(255, 255, 255, 0.05));
+}
+
+/* ADSB/SFTI final proof pass: fewer cards, larger evidence, no achievement overclaiming. */
+:global(#slide-30) .evidenceGrid,
+:global(#slide-37) .evidenceGrid {
+  grid-template-columns: minmax(0, 0.66fr) minmax(560px, 1fr);
+  align-items: stretch;
+}
+
+:global(#slide-30) .slotGrid,
+:global(#slide-37) .slotGrid,
+:global(#slide-45) .slotGrid,
+:global(#slide-47) .slotGrid,
+:global(#slide-48) .slotGrid {
+  grid-template-columns: 1fr;
+}
+
+:global(#slide-30) .slot,
+:global(#slide-37) .slot {
+  min-height: 82px;
+  font-size: 17px;
+}
+
+:global(#slide-30) .panel::after {
+  content: "Boundary: not full brand strategy, campaign performance, or final retouching sole ownership.";
+  display: block;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid rgba(244, 197, 88, 0.2);
+  border-radius: 999px;
+  color: rgba(244, 197, 88, 0.88);
+  background: rgba(244, 197, 88, 0.08);
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+:global(#slide-30) .mediaSlot,
+:global(#slide-30) .mediaFrame,
+:global(#slide-37) .mediaSlot,
+:global(#slide-37) .mediaFrame {
+  min-height: 520px;
+}
+
+:global(#slide-30) .mediaFrame img {
+  object-fit: cover;
+  object-position: 50% 72%;
+}
+
+:global(#slide-37) .mediaFrame img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+:global(#slide-33) .portfolioCriteriaCanvas,
+:global(#slide-34) .portfolioCriteriaCanvas {
+  grid-template-columns: minmax(0, 0.54fr) minmax(0, 0.46fr);
+}
+
+:global(#slide-33) .portfolioCriteriaMedia .mediaSlot,
+:global(#slide-33) .portfolioCriteriaMedia .mediaFrame,
+:global(#slide-34) .portfolioCriteriaMedia .mediaSlot,
+:global(#slide-34) .portfolioCriteriaMedia .mediaFrame,
+:global(#slide-35) .portfolioCriteriaMedia .mediaSlot,
+:global(#slide-35) .portfolioCriteriaMedia .mediaFrame {
+  min-height: 430px;
+}
+
+:global(#slide-33) .portfolioCriteriaCards article,
+:global(#slide-34) .portfolioCriteriaCards article,
+:global(#slide-35) .portfolioCriteriaCards article {
+  padding: 18px;
+}
+
+:global(#slide-34) .portfolioCriteriaCards strong {
+  font-size: 17px;
+}
+
+:global(#slide-34) .portfolioCriteriaCards p {
+  font-size: 11.5px;
+}
+
+:global(#slide-36) .portfolioStoryboardCanvas {
+  grid-template-rows: minmax(0, 0.76fr) auto;
+}
+
+:global(#slide-36) .portfolioStoryboardMedia .mediaSlot,
+:global(#slide-36) .portfolioStoryboardMedia .mediaFrame {
+  min-height: 420px;
+}
+
+:global(#slide-36) .portfolioStoryboardBeats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+:global(#slide-36) .portfolioStoryboardBeats article {
+  padding: 18px;
+}
+
+:global(#slide-45) .evidenceGrid,
+:global(#slide-47) .evidenceGrid,
+:global(#slide-48) .evidenceGrid {
+  grid-template-columns: minmax(0, 0.62fr) minmax(560px, 1fr);
+  align-items: center;
+}
+
+:global(#slide-46) .matrixWithMedia {
+  grid-template-columns: minmax(0, 0.76fr) minmax(520px, 0.88fr);
+  align-items: center;
+}
+
+:global(#slide-45) .mediaSlot,
+:global(#slide-45) .mediaFrame,
+:global(#slide-48) .mediaSlot,
+:global(#slide-48) .mediaFrame {
+  min-height: 320px;
+}
+
+:global(#slide-46) .mediaSlot,
+:global(#slide-46) .mediaFrame,
+:global(#slide-47) .mediaSlot,
+:global(#slide-47) .mediaFrame {
+  min-height: 470px;
+}
+
+:global(#slide-45) .mediaFrame,
+:global(#slide-46) .mediaFrame,
+:global(#slide-47) .mediaFrame,
+:global(#slide-48) .mediaFrame {
+  background: #f7f8fb;
+}
+
+:global(#slide-45) .mediaFrame img,
+:global(#slide-46) .mediaFrame img,
+:global(#slide-47) .mediaFrame img,
+:global(#slide-48) .mediaFrame img {
+  object-fit: contain;
+  object-position: center;
 }
 
 /* AHEYA final slide polish: tighter slide spacing and less internal-looking UI. */

@@ -494,8 +494,8 @@ export const adsbSupportingProof = {
   ],
   caveat: "메인 직무 증거가 아니라, 콘텐츠 제작·피드백 반영·시각 자산화 능력을 보완하는 자료입니다.",
   media: {
-    src: "/video/anderssonbell.mp4",
-    poster: "/work/andersson-bell-cover.webp",
+    src: "/adsb/adsb-result-vid.mp4",
+    poster: "/adsb/adsb-cover.webp",
   },
   detailHref: "/creative/work/adsb",
   reelHref: "https://www.instagram.com/reel/DRvZIP1EosJ/?igsh=c3Z3ZzFxN25zN205",
@@ -514,7 +514,7 @@ export const sftiSupportingProof = {
   ],
   caveat: "Web3 리서치 증거가 아니라, 복잡한 주제를 구조화해 읽히는 글로 바꾸는 보조 자료입니다.",
   image: {
-    src: "/appendix/bluegarage/sfti/result.webp",
+    src: "/sfti/result.webp",
     alt: "SFTI-CMU research poster on AI-generated emotional content strategy for niche fashion brands.",
   },
   detailHref: "/creative/work/sfti-cmu",

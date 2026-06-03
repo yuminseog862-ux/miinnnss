@@ -547,7 +547,7 @@ export const workCases: WorkCase[] = [
     accent: "indigo",
     year: "2025",
     coverImage: {
-      src: "/appendix/bluegarage/sfti/result.webp",
+      src: "/sfti/result.webp",
       alt: "SFTI-CMU review result and research structure screenshot.",
       fit: "contain",
     },
@@ -576,7 +576,7 @@ export const workCases: WorkCase[] = [
       {
         label: "Review and abstract structure",
         note: "Screenshot showing the abstract structure, visual framework, and review/revision context together.",
-        src: "/appendix/bluegarage/sfti/result.webp",
+        src: "/sfti/result.webp",
         alt: "SFTI-CMU abstract and result screenshot.",
         fit: "contain",
         featured: true,
