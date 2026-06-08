@@ -5,12 +5,12 @@ export const sftiSlides = [
     no: 45,
     section: "SFTI",
     title: "SFTI-CMU Overview",
-    label: "Research Writing Support",
+    label: "Support Evidence",
     accent: "aqua",
     variant: "evidence",
     intent: "SFTI를 영어 리서치 프레이밍과 외부 제출형 문서 구조화 케이스로 소개한다.",
     claim:
-      "AI-generated emotional content idea를 identity-based visual clustering 중심의 English abstract와 poster-style research structure로 정리한 research communication case",
+      "Research communication support, not academic result. 감각적 AI content idea를 problem, approach, evidence, implication이 보이는 external reader-ready research structure로 재배치한 support evidence",
     include: [
       "Summary: niche brand content의 single-account isolation 문제를 AI-generated emotional content와 identity clustering 관점으로 정리",
       "My Role: research framing, English abstract structuring, visual clustering framework, poster-style organization",
@@ -39,7 +39,7 @@ export const sftiSlides = [
     variant: "matrix",
     intent: "막연한 AI 트렌드 아이디어를 외부 독자가 이해할 수 있는 연구 질문과 구조로 바꾼다.",
     claim:
-      "막연한 AI trend narrative를 niche brand content limitation, symbolic identity, identity-based visual clustering framework로 좁힌 research framing",
+      "막연한 AI trend narrative를 niche brand content limitation, symbolic identity, identity-based visual clustering framework로 좁힌 research communication support",
     include: ["Research Question", "Concept Narrowing", "Narrative Framework", "External Reader Fit"],
     slots: [
       "Initial Vague Idea",
@@ -83,7 +83,7 @@ export const sftiSlides = [
     variant: "evidence",
     intent: "영문 초록과 포스터 구조를 통해 외부 제출 가능한 커뮤니케이션 역량을 보여준다.",
     claim:
-      "브랜드 해석과 AI content strategy 아이디어를 English abstract draft, poster-style structure, framework pages로 정리한 external reader-ready communication case",
+      "감각적 아이디어를 problem, approach, evidence, implication이 보이는 external reader-ready structure로 재배치한 communication support case",
     include: [
       "English abstract: niche brand content limitation, symbolic narrative, and identity-based visual clustering을 한 흐름으로 정리",
       "Poster-style structure: resource limitation, symbolic structure, solution frame, brand interpretation 순서",
@@ -106,23 +106,23 @@ export const sftiSlides = [
   {
     no: 48,
     section: "SFTI",
-    title: "Revision Evidence & What This Shows",
+    title: "Revision Evidence as Communication Support",
     label: "Revision Evidence",
     accent: "cyan",
     variant: "evidence",
     intent: "리비전 증거와 SFTI가 보여주는 writing/research communication 역량을 정리한다.",
     claim:
-      "review comments를 바탕으로 citation support, grammar/format, structure clarity를 보정할 수 있음을 보여주는 revision evidence",
+      "Revision evidence, not publication proof. review comments를 citation support, grammar/format, structure clarity 보정 기준으로 전환한 support evidence",
     include: [
       "Revision evidence: review result and revision comments",
       "Learning: 모호한 아이디어는 연구 질문과 구조로 좁혀야 읽힌다",
       "Learning: 영어 문서는 감각 표현보다 problem, approach, contribution이 선명해야 한다",
-      "What this shows: research framing, English abstract structuring, poster-style organization, revision handling",
+      "What this supports: research framing, English abstract structuring, poster-style organization, revision handling",
     ],
     slots: [
       "Revision Focus: citation support, grammar/format, and structure clarity",
       "Learning: vague idea needs research frame",
-      "What This Shows: external reader-ready research communication",
+      "What This Supports: external reader-ready research communication",
     ],
     media: {
       src: "/sfti/crops/sfti-revision-comments.png",
