@@ -392,7 +392,8 @@
   font-size: clamp(34px, 3.25vw, 52px);
   line-height: 1;
   font-weight: 850;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .intent {
@@ -6474,6 +6475,7 @@ a.proofCard {
 
   .slideLead h2 {
     font-size: 42px;
+    line-height: 1.08;
   }
 
   .casePair,
