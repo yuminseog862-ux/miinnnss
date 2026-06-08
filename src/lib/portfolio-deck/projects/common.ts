@@ -32,20 +32,22 @@ export const commonSlides = [
     label: "Fast Read",
     accent: "cyan",
     variant: "matrix",
-    intent: "지원 직무와 핵심 역량을 빠르게 보여주는 요약 페이지.",
-    claim: "Product Planning, GTM Strategy, AI-assisted Execution 관점에서 대표 증거를 한 장으로 스캔하게 만든다.",
-    include: ["Target Roles", "Work I Do", "Tools", "Evidence Cases"],
+    intent: "지원 직무 렌즈와 핵심 역량을 빠르게 보여주는 요약 페이지.",
+    claim: "Product/GTM/AI-assisted execution을 고정 직무명이 아니라 공통 역량 축으로 읽게 만든다.",
+    include: ["Target Lens", "Work I Do", "Tools", "Evidence Cases"],
     slots: ["Fast-read Summary", "Tool Stack Rail", "Representative Evidence Chips"],
     table: {
       headers: ["Category", "Summary"],
       rows: [
-        ["Target Roles", "Product Planning, GTM Strategy, AI-assisted Execution"],
+        ["Target Lens", "Product/GTM-oriented roles where planning, messaging, execution, and signal review overlap"],
         ["Work I Do", "Define problems, structure product/GTM systems, shape messages, execute with AI workflows, review signals"],
         ["Main Evidence", "AHEYA: product/GTM planning + signal review / ADSB: AI-assisted content execution"],
         ["Tools", "GPT, Claude, Grok, Codex, Supabase, React/Next.js"],
         ["Support Evidence", "AB-Luna: AI workflow support / SFTI-CMU: research communication support"],
       ],
     },
+    note:
+      "Submission customization: replace only the Target Lens row per application, e.g. Product Strategy / Product Marketing, GTM Strategy / Marketing Strategy, AI Content Marketing / Creative Planning, or AI-assisted Workflow / Product Operations.",
   },
   {
     no: 3,
