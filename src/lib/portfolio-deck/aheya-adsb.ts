@@ -26,7 +26,7 @@ export const aheyaAdsbDeck: DeckContent = {
     {
       title: "AHEYA / AHEYABARAYA",
       label: "Flagship Case",
-      body: "AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 first-signal planning case",
+      body: "AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 초기 반응 확인 설계 사례",
     },
     {
       title: "ADSB",
@@ -46,7 +46,7 @@ export const aheyaAdsbDeck: DeckContent = {
   ],
   sectionMeta: [
     { label: "Cover", title: "Positioning", range: "01", href: "#slide-01" },
-    { label: "AHEYA", title: "First-signal Product/GTM Planning", range: "09", href: "#slide-09" },
+    { label: "AHEYA", title: "초기 반응 확인 Product/GTM Planning", range: "09", href: "#slide-09" },
     { label: "ADSB", title: "AI Short-form Creative Direction", range: "30", href: "#slide-30" },
     { label: "AB-Luna", title: "Supporting Evidence", range: "38", href: "#slide-38" },
     { label: "SFTI", title: "Research Communication Support", range: "45", href: "#slide-45" },

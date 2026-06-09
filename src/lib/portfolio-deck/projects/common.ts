@@ -11,7 +11,7 @@ export const commonSlides = [
     intent: "첫 화면에서 Product/GTM Planner — AI-assisted Execution & Signal Review 중심 포트폴리오임을 바로 보여준다.",
     claim: "초기 아이디어를 제품 구조, GTM 메시지, AI-assisted 실행 루프, 다음 판단 단위로 좁힙니다.",
     include: [
-      "AHEYA: First-signal Product/GTM Planning",
+      "AHEYA: 초기 반응 확인 Product/GTM Planning",
       "ADSB: AI Short-form Creative Direction",
       "AB-Luna / SFTI-CMU: Supporting Evidence",
       "No performance claim without public evidence",
@@ -41,7 +41,7 @@ export const commonSlides = [
       rows: [
         ["Target Lens", "Product/GTM planning roles where problem framing, message structure, execution loop, and signal review overlap"],
         ["Work I Do", "Narrow ambiguous ideas into product structure, GTM message, AI-assisted 실행 루프, and next decision units"],
-        ["Main Evidence", "AHEYA: first-signal product/GTM planning / ADSB: AI short-form creative direction"],
+        ["Main Evidence", "AHEYA: 초기 반응 확인 product/GTM planning / ADSB: AI short-form creative direction"],
         ["Tools", "GPT, Claude, Grok, Codex, Supabase, React/Next.js"],
         ["Support Evidence", "AB-Luna: workflow support / SFTI-CMU: research communication support"],
       ],
@@ -130,7 +130,7 @@ export const commonSlides = [
     table: {
       headers: ["Case", "Role in Portfolio", "What It Shows"],
       rows: [
-        ["AHEYA", "Flagship Product/GTM Planning Case", "AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 first-signal planning"],
+        ["AHEYA", "Flagship Product/GTM Planning Case", "AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 초기 반응 확인 설계"],
         ["ADSB", "Second Main Creative Direction Case", "Shared brand reading을 hook, motif rule, prompt/motion direction으로 수렴"],
         ["AB-Luna", "Workflow Support Evidence", "AI output 이후 handoff 문제를 product layer로 정의"],
         ["SFTI-CMU", "Research Communication Support Evidence", "감각적 AI content idea를 external reader-ready research structure로 재배치"],
