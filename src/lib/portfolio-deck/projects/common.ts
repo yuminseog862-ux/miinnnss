@@ -107,7 +107,7 @@ export const commonSlides = [
     intent: "채용자가 이 포트폴리오를 어떤 관점으로 읽어야 하는지 안내한다.",
     claim: "AHEYA는 flagship product/GTM planning case, ADSB는 second main creative direction case, AB-Luna와 SFTI-CMU는 support evidence로 읽는다.",
     include: [
-      "AHEYA: AI service idea를 행동 경로, 메시지, 측정 단위로 좁힌 사례",
+      "AHEYA: AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 사례",
       "ADSB: shared brand reading을 hook, motif rule, prompt/motion direction으로 수렴시킨 사례",
       "AB-Luna: AI output 이후 handoff 문제를 product layer로 정의한 support evidence",
       "SFTI: 감각적 AI content idea를 external reader-ready research structure로 재배치한 support evidence",
@@ -130,7 +130,7 @@ export const commonSlides = [
     table: {
       headers: ["Case", "Role in Portfolio", "What It Shows"],
       rows: [
-        ["AHEYA", "Flagship Product/GTM Planning Case", "AI service idea를 행동 경로, 메시지, 측정 단위로 좁힌 first-signal planning"],
+        ["AHEYA", "Flagship Product/GTM Planning Case", "AI 앱 아이디어를 행동 경로, 메시지, 측정 단위로 좁힌 first-signal planning"],
         ["ADSB", "Second Main Creative Direction Case", "Shared brand reading을 hook, motif rule, prompt/motion direction으로 수렴"],
         ["AB-Luna", "Workflow Support Evidence", "AI output 이후 handoff 문제를 product layer로 정의"],
         ["SFTI-CMU", "Research Communication Support Evidence", "감각적 AI content idea를 external reader-ready research structure로 재배치"],
