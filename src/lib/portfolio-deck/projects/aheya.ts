@@ -11,13 +11,12 @@ export const aheyaSlides = [
     custom: "aheyaOverview",
     intent: "AHEYA 프로젝트의 역할, 기간, 산출물, 본문/appendix 경계를 한 장에서 정리한다.",
     claim: "AHEYA는 AI service idea를 public page, small support, Good/Improve feedback, saved record, measurement read model로 좁힌 flagship planning case",
-    include: ["Role", "Evidence", "Boundary", "Appendix"],
+    include: ["Role", "Loop", "Evidence", "Boundary"],
     slots: [
-      "Role: product planning, GTM framing, content system, measurement design",
-      "Definition: AI builder가 live idea를 공개하고, Web3 user가 small crypto support와 Good/Improve feedback을 남길 수 있는 first-signal loop",
-      "Main evidence: public page, small crypto donation, Good/Improve feedback, Share on X, KPI/event design",
-      "Boundary: 성과를 증명한 사례가 아니라 초기 제품 방향, 메시지, 콘텐츠 반응, 측정 단위를 다음 의사결정에 맞게 정렬한 planning case",
-      "Appendix: technical verification, API notes, smart contract notes",
+      "Role: Product/GTM planning, message framing, measurement design",
+      "Loop: live idea -> small support -> Good/Improve feedback -> saved record",
+      "Evidence: public page, support/feedback flow, X copy, KPI event map",
+      "Boundary: first-signal planning, not performance proof",
     ],
     media: { src: "/aheya/aheyabaraya-homepage-2026-04-28.png", alt: "AHEYA public surface", label: "AHEYA public surface" },
     links: [
