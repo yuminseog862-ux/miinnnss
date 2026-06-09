@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>무신사 무진장 인공지능 광고 포트폴리오</title>
+  <style>
+    :root {
+      --bg: #030405;
+      --slide: #07080a;
+      --slide-soft: #0b0d10;
+      --line: rgba(255, 255, 255, 0.11);
+      --panel: rgba(255, 255, 255, 0.045);
+      --panel-strong: rgba(255, 255, 255, 0.075);
+      --panel-line: rgba(255, 255, 255, 0.115);
+      --text: #f5f7fb;
+      --sub: rgba(235, 239, 245, 0.74);
+      --muted: rgba(235, 239, 245, 0.52);
+      --faint: rgba(235, 239, 245, 0.38);
+      --accent: #fe4900;
+      --accent-2: #f4c558;
+      --green: #63715f;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --glass-line: rgba(254, 73, 0, 0.2);
+      --glass:
+        radial-gradient(circle at 50% 0%, rgba(254, 73, 0, 0.14), transparent 44%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+        rgba(8, 10, 14, 0.86);
+      --glass-soft:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+        rgba(8, 10, 14, 0.5);
+      --glass-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 28px 88px rgba(0, 0, 0, 0.34);
+      --sans: "IBM Plex Sans", "Apple SD Gothic Neo", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(254, 73, 0, 0.14), transparent 28%),
+        radial-gradient(circle at 86% 10%, rgba(244, 197, 88, 0.08), transparent 26%),
+        radial-gradient(circle at 64% 100%, rgba(99, 113, 95, 0.09), transparent 32%),
+        linear-gradient(180deg, #030405 0%, #06080b 52%, #030405 100%);
+      font-family: var(--sans);
+      letter-spacing: 0;
+      word-break: keep-all;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    figure,
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .deck-page {
+      min-height: 100vh;
+      padding: 24px 0 72px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      width: min(1600px, calc(100% - 48px));
+      margin: 0 auto 28px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+        rgba(7, 8, 10, 0.88);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 28px rgba(254, 73, 0, 0.62);
+      flex: 0 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--panel-line);
+      border-radius: 10px;
+      color: var(--sub);
+      background: var(--panel);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      border-color: rgba(254, 73, 0, 0.36);
+      background: var(--panel-strong);
+    }
+
+    .slide-stack {
+      display: grid;
+      gap: 32px;
+    }
+
+    .slide {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: min(1600px, calc(100% - 48px));
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+      margin: 0 auto;
+      overflow: hidden;
+      scroll-margin-top: 84px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 82% 18%, rgba(254, 73, 0, 0.16), transparent 32%),
+        radial-gradient(circle at 14% 90%, rgba(244, 197, 88, 0.08), transparent 34%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent 38%),
+        linear-gradient(180deg, rgba(7, 8, 10, 0.98), rgba(11, 13, 16, 0.98));
+      box-shadow: 0 34px 100px rgba(0, 0, 0, 0.38);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(247, 236, 221, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(247, 236, 221, 0.04) 1px, transparent 1px);
+      background-size: 120px 120px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 72%);
+    }
+
+    .slide-chrome,
+    .slide-body,
+    .slide-footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide-chrome {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 32px 72px 0;
+    }
+
+    .slide-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(247, 236, 221, 0.74);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .slide-meta span {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 30px;
+      border-radius: 6px;
+      color: #090d1a;
+      background: var(--accent);
+    }
+
+    .slide-meta strong {
+      color: #f7ecdd;
+    }
+
+    .slide-rule {
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), rgba(247, 236, 221, 0.08));
+    }
+
+    .slide-type {
+      color: rgba(247, 236, 221, 0.58);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .slide-body {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 22px;
+      flex: 1;
+      min-height: 0;
+      padding: 38px 72px 34px;
+    }
+
+    .slide-lead {
+      display: grid;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .kicker {
+      color: var(--accent);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .slide-lead h1,
+    .slide-lead h2 {
+      max-width: 1040px;
+      color: var(--text);
+      font-size: clamp(36px, 3.35vw, 54px);
+      line-height: 1.02;
+      font-weight: 850;
+    }
+
+    .slide-lead h1 {
+      font-size: clamp(44px, 4.4vw, 70px);
+    }
+
+    .claim {
+      max-width: 820px;
+      color: var(--sub);
+      font-size: clamp(13px, 1.05vw, 17px);
+      line-height: 1.38;
+      font-weight: 520;
+    }
+
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 72px 30px;
+      color: rgba(170, 180, 214, 0.68);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cover-grid,
+    .split-grid,
+    .evidence-grid,
+    .matrix-grid,
+    .role-grid,
+    .card-grid,
+    .process-grid,
+    .archive-grid {
+      min-height: 0;
+    }
+
+    .cover-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.02fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(430px, 0.86fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.84fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .proof-card,
+    .media-frame,
+    .table-wrap,
+    .video-frame,
+    .identity-tile,
+    .process-card,
+    .archive-card {
+      border: 1px solid var(--glass-line);
+      border-radius: var(--radius-lg);
+      background: var(--glass);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .proof-card {
+      display: grid;
+      align-content: start;
+      gap: 12px;
+      min-height: 0;
+      padding: 22px;
+    }
+
+    .proof-card.compact {
+      padding: 18px;
+      background: var(--glass-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    }
+
+    .proof-card .eyebrow,
+    .identity-tile .eyebrow,
+    .process-card .eyebrow,
+    .archive-card .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .proof-card h3,
+    .identity-tile h3,
+    .process-card h3,
+    .archive-card h3 {
+      color: #f7ecdd;
+      font-size: 22px;
+      line-height: 1.24;
+      font-weight: 850;
+    }
+
+    .proof-card p,
+    .identity-tile p,
+    .process-card p,
+    .archive-card p {
+      color: rgba(247, 236, 221, 0.74);
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 630;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(247, 236, 221, 0.14);
+      border-radius: 999px;
+      color: #f7ecdd;
+      background: var(--glass-soft);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .hero-board {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .hero-board .media-frame:first-child {
+      grid-row: span 2;
+    }
+
+    .media-frame,
+    .video-frame {
+      position: relative;
+      display: grid;
+      min-height: 0;
+      overflow: hidden;
+      background: #050505;
+    }
+
+    .media-frame img,
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #050505;
+    }
+
+    .media-caption {
+      margin-top: 8px;
+      color: rgba(247, 236, 221, 0.62);
+      font-size: 11px;
+      font-weight: 760;
+      line-height: 1.35;
+    }
+
+    .video-frame {
+      aspect-ratio: 16 / 9;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .focus-list li {
+      display: grid;
+      grid-template-columns: 12px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      min-height: 42px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(247, 236, 221, 0.1);
+      color: rgba(247, 236, 221, 0.9);
+      font-size: 16px;
+      line-height: 1.42;
+      font-weight: 710;
+    }
+
+    .focus-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .focus-list.green li::before {
+      background: var(--green);
+    }
+
+    .table-wrap {
+      overflow: hidden;
+    }
+
+    .matrix-table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+    }
+
+    .matrix-table th {
+      padding: 14px 16px;
+      color: #090d1a;
+      background: var(--accent);
+      font-size: 13px;
+      text-align: left;
+      font-weight: 900;
+    }
+
+    .matrix-table td {
+      padding: 15px 16px;
+      border-top: 1px solid rgba(247, 236, 221, 0.1);
+      color: rgba(247, 236, 221, 0.88);
+      font-size: 15px;
+      line-height: 1.42;
+      font-weight: 650;
+      vertical-align: top;
+    }
+
+    .matrix-table td:first-child {
+      width: 86px;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .identity-tile {
+      display: grid;
+      grid-template-columns: minmax(96px, 0.72fr) minmax(0, 1fr);
+      gap: 10px;
+      align-items: stretch;
+      padding: 12px;
+      min-height: 0;
+      background: var(--glass-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    }
+
+    .identity-tile .media-frame {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      border-radius: 14px;
+      box-shadow: none;
+      aspect-ratio: auto;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(254, 73, 0, 0.08), transparent 42%),
+        #050505;
+    }
+
+    .identity-tile > div {
+      display: grid;
+      align-content: center;
+      min-width: 0;
+    }
+
+    .identity-tile h3 {
+      margin-top: 3px;
+      font-size: 15px;
+    }
+
+    .identity-tile p {
+      margin-top: 4px;
+      font-size: 12px;
+      line-height: 1.34;
+    }
+
+    .process-card {
+      display: grid;
+      grid-template-rows: auto auto;
+      gap: 14px;
+      padding: 18px;
+      min-height: 0;
+      background: var(--glass-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    }
+
+    .process-card .media-frame {
+      min-height: 0;
+      border-radius: 16px;
+      box-shadow: none;
+      aspect-ratio: 16 / 9;
+    }
+
+    .process-card h3 {
+      font-size: 21px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+    }
+
+    .version-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+      gap: 22px;
+      min-height: 0;
+    }
+
+    .version-rows {
+      display: grid;
+      gap: 10px;
+      min-height: 0;
+    }
+
+    .version-row {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 15px 16px;
+      border: 1px solid rgba(247, 236, 221, 0.11);
+      border-radius: 16px;
+      background: var(--glass-soft);
+    }
+
+    .version-row strong {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .version-row span {
+      color: rgba(247, 236, 221, 0.78);
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .archive-card {
+      min-height: 154px;
+      padding: 20px;
+      background: var(--glass-soft);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055);
+    }
+
+    .archive-card h3 {
+      margin-top: 12px;
+      font-size: 20px;
+    }
+
+    .archive-card p {
+      margin-top: 10px;
+      font-size: 13.5px;
+    }
+
+    .dense .slide-body {
+      gap: 16px;
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    .dense .slide-lead h2 {
+      max-width: 1120px;
+      font-size: clamp(32px, 2.75vw, 44px);
+      line-height: 1.03;
+    }
+
+    .dense .claim {
+      max-width: 900px;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    #slide-05 .matrix-grid {
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+      gap: 20px;
+      height: 100%;
+      align-items: stretch;
+      overflow: hidden;
+    }
+
+    #slide-05 .matrix-table th {
+      padding: 9px 12px;
+      font-size: 12px;
+    }
+
+    #slide-05 .matrix-table td {
+      padding: 9px 12px;
+      font-size: 12.5px;
+      line-height: 1.25;
+    }
+
+    #slide-05 .table-wrap,
+    #slide-05 .matrix-grid > div {
+      min-height: 0;
+    }
+
+    #slide-05 .matrix-grid > div:last-child {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      gap: 8px;
+      overflow: hidden;
+    }
+
+    #slide-05 .media-frame {
+      height: 100%;
+      min-height: 0;
+    }
+
+    #slide-05 .media-caption {
+      margin-top: 0;
+      font-size: 10.5px;
+      line-height: 1.3;
+    }
+
+    #slide-06 .identity-grid {
+      gap: 10px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      background: rgba(0, 0, 0, 0.92);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 88vh;
+      object-fit: contain;
+      background: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .lightbox button {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1180px) {
+      .toolbar,
+      .slide {
+        width: min(100% - 24px, 980px);
+      }
+
+      .slide {
+        aspect-ratio: auto;
+      }
+
+      .slide-chrome {
+        padding: 24px 24px 0;
+      }
+
+      .slide-body {
+        padding: 28px 24px 28px;
+      }
+
+      .slide-footer {
+        padding: 0 24px 24px;
+      }
+
+      .cover-grid,
+      .split-grid,
+      .evidence-grid,
+      .matrix-grid,
+      .version-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-board {
+        min-height: 560px;
+      }
+
+      .identity-grid,
+      .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .deck-page {
+        padding: 8px 0 40px;
+      }
+
+      .toolbar {
+        width: calc(100% - 16px);
+        margin-bottom: 12px;
+        border-radius: 16px;
+      }
+
+      .brand {
+        font-size: 13px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .slide-stack {
+        gap: 16px;
+      }
+
+      .slide {
+        width: calc(100% - 16px);
+        border-radius: 20px;
+      }
+
+      .slide-chrome {
+        grid-template-columns: auto 1fr;
+        padding: 20px 16px 0;
+      }
+
+      .slide-type {
+        display: none;
+      }
+
+      .slide-body {
+        padding: 24px 16px;
+        gap: 18px;
+      }
+
+      .slide-footer {
+        padding: 0 16px 20px;
+      }
+
+      .slide-lead h1 {
+        font-size: 38px;
+      }
+
+      .slide-lead h2 {
+        font-size: 29px;
+      }
+
+      .claim {
+        font-size: 15px;
+      }
+
+      .cover-grid,
+      .split-grid,
+      .evidence-grid,
+      .matrix-grid,
+      .role-grid,
+      .card-grid,
+      .process-grid,
+      .archive-grid,
+      .version-grid,
+      .identity-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-board {
+        min-height: 0;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-board .media-frame:first-child {
+        grid-row: auto;
+      }
+
+      .hero-board .media-frame {
+        aspect-ratio: 4 / 5;
+      }
+
+      .tag-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tag {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .matrix-table th,
+      .matrix-table td {
+        padding: 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media print {
+      .toolbar,
+      .lightbox {
+        display: none !important;
+      }
+
+      .slide {
+        width: 100%;
+        box-shadow: none;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck-page">
+    <header class="toolbar">
+      <a class="brand" href="#slide-01">무신사 무진장 인공지능 광고 포트폴리오</a>
+      <nav class="nav" aria-label="슬라이드 이동">
+        <a href="#slide-02">결과</a>
+        <a href="#slide-03">기획</a>
+        <a href="#slide-04">역할</a>
+        <a href="#slide-05">흐름</a>
+        <a href="#slide-07">과정</a>
+        <a href="#slide-09">정리</a>
+      </nav>
+    </header>
+
+    <main class="slide-stack">
+      <section class="slide" id="slide-01" data-title="커버">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>01</span><strong>커버</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">포트폴리오</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">2026 무신사 무진장 인공지능 광고 공모전 제출 케이스</p>
+            <h1>편견을 벗다,<br />다양성을 입다,<br />무진장을 만나다.</h1>
+            <p class="claim">축원굿의 성공 기원 구조를 무신사 오렌지 신호가 이어지는 글로벌 패션 릴레이로 번역한 30초 AI 광고 영상</p>
+          </div>
+          <div class="cover-grid">
+            <article class="proof-card">
+              <span class="eyebrow">핵심 포지션</span>
+              <h3>공모전 제출 케이스 · 3인 팀 작업 · 포트폴리오용 제작 기록</h3>
+              <p>최종 영상만 제시하는 자료가 아닌, 초기 아이디어가 팀 작업 안에서 광고 구조로 수렴하는 과정 기록</p>
+              <div class="tag-row" aria-label="프로젝트 요약">
+                <span class="tag">3인 팀</span>
+                <span class="tag">30초 제출본</span>
+                <span class="tag">주요 스토리보드</span>
+                <span class="tag">생성 결과 검토</span>
+              </div>
+            </article>
+            <div class="hero-board" aria-label="대표 이미지">
+              <figure class="media-frame"><img src="../identity/01_mudang-shaman_fullbody.webp" alt="의식의 시작을 담당하는 무당 퍼포머 대표 이미지" /></figure>
+              <figure class="media-frame"><img src="../identity/02_calligraphy-brush-artist_fullbody.webp" alt="붓 아티스트 대표 이미지" /></figure>
+              <figure class="media-frame"><img src="../identity/04_grandmother-runway-model_fullbody.webp" alt="할머니 런웨이 모델 대표 이미지" /></figure>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>무신사 무진장 광고 포트폴리오</span><span>축원굿에서 글로벌 패션 릴레이로</span></footer>
+      </section>
+
+      <section class="slide" id="slide-02" data-title="최종 결과">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>02</span><strong>최종 결과</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">결과물</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">무엇을 만들었나</p>
+            <h2>굿의 의식 구조를 오렌지 신호로 전환한 인물, 세대, 문화 릴레이</h2>
+            <p class="claim">인물의 나열이 아니라, 하나의 오렌지 신호가 장면을 이어가는 축제형 광고 구조</p>
+          </div>
+          <div class="evidence-grid">
+            <div>
+              <figure class="video-frame">
+                <video controls playsinline preload="metadata" poster="../contact_sheets/final-musinsa-mujinjang-ai-contest-contact-sheet.webp">
+                  <source src="../drop_downloads_final_here/final-musinsa-mujinjang-ai-contest.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <p class="media-caption">무당의 방울과 부채에서 시작된 오렌지 신호가 붓선, 연기, 런웨이, 아이들, 스케이트보드를 거쳐 무당 복귀와 키비주얼 엔딩으로 닫히는 30초 제출본</p>
+            </div>
+            <article class="proof-card">
+              <span class="eyebrow">핵심 결과</span>
+              <ul class="focus-list">
+                <li>무당의 방울과 부채로 여는 의식성</li>
+                <li>붓선과 오렌지 연기를 통한 그래피티, 런웨이 장면 확장</li>
+                <li>아이들, 5주년 풍선, 스케이트보드로 연결한 세대와 거리 문화</li>
+                <li>무당 복귀, 오렌지 폭발, 무진장 키비주얼로 닫는 엔딩 구조</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>최종 결과</span><span>영상 재생과 핵심 흐름</span></footer>
+      </section>
+
+      <section class="slide" id="slide-03" data-title="기획 스파인">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>03</span><strong>기획 스파인</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">기획</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">미리 정한 기획 초안</p>
+            <h2>전통 굿의 재현보다, 성공을 비는 의식 구조를 30초 축제형 광고 흐름으로 전환</h2>
+            <p class="claim">축원굿, 글로벌 패션, 동서양 예술 교차를 하나의 오렌지 신호가 이어지는 장면 구조로 묶은 초기 스파인</p>
+          </div>
+          <div class="split-grid">
+            <article class="proof-card">
+              <span class="eyebrow">초안 문장</span>
+              <h3>서로 다른 세대와 문화권의 인물이 하나의 오렌지 신호를 이어받는 방식으로, 공모전 주제의 다양성 톤을 시각화</h3>
+              <p>전통 굿의 직접 재현이 아니라, 성공을 비는 시작-전환-확장-복귀 구조를 30초 광고 흐름으로 번역</p>
+            </article>
+            <div class="card-grid">
+              <article class="proof-card compact"><span class="eyebrow">첫 장면</span><h3>축원 의식</h3><p>의식의 시작을 맡는 무당 퍼포머가 방울과 부채로 오렌지 신호를 연다</p></article>
+              <article class="proof-card compact"><span class="eyebrow">전환</span><h3>오렌지 신호</h3><p>붓과 연기가 선, 질감, 거리 장면으로 이어지는 전환 장치가 된다</p></article>
+              <article class="proof-card compact"><span class="eyebrow">확장</span><h3>세대 교차</h3><p>런웨이, 아이들, 스케이트보드가 신호를 이어받아 축제 흐름을 넓힌다</p></article>
+              <article class="proof-card compact"><span class="eyebrow">후보</span><h3>해태 엔딩</h3><p>수호자 이미지로 검토한 후보 자산</p></article>
+              <article class="proof-card compact"><span class="eyebrow">최종</span><h3>무당 복귀</h3><p>성공 기원 메시지를 더 명확히 닫는 무당 복귀 구조</p></article>
+              <article class="proof-card compact"><span class="eyebrow">기준</span><h3>흐름 우선</h3><p>아름다운 컷보다 신호 연결을 우선한 장면 기준</p></article>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>기획 스파인</span><span>축원굿과 오렌지 신호의 연결</span></footer>
+      </section>
+
+      <section class="slide" id="slide-04" data-title="역할">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>04</span><strong>역할</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">협업</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">팀 작업과 내 역할</p>
+            <h2>개인 기여와 팀 협업을 분리해 읽히는 역할 기록</h2>
+            <p class="claim">개인 기여와 팀 협업의 경계를 분리해 정리한 역할 중심 크레딧</p>
+          </div>
+          <div class="role-grid">
+            <article class="proof-card">
+              <span class="eyebrow">나의 기여</span>
+              <ul class="focus-list">
+                <li>무진장 성공을 비는 축원 의식으로서의 굿 아이디어 제안</li>
+                <li>주요 스토리보드와 장면 순서 설계 주도</li>
+                <li>캐릭터 비주얼과 생성 영상 제작 공동 진행</li>
+                <li>생성 클립 검토를 바탕으로 전환, 컷 흐름, 최종 방향 조정에 기여</li>
+              </ul>
+            </article>
+            <article class="proof-card">
+              <span class="eyebrow">팀 협업</span>
+              <ul class="focus-list green">
+                <li>초기 아이디어를 전체 스토리라인으로 확장한 공동 구체화</li>
+                <li>캐릭터 비주얼 디테일 보강</li>
+                <li>생성 클립 제작과 컷편집 역할 분담</li>
+                <li>전환, 컷 수정, 음악 적용을 공동 검토해 제출본 완성</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>역할 정리</span><span>개인 기여와 팀 협업 분리</span></footer>
+      </section>
+
+      <section class="slide dense" id="slide-05" data-title="최종 흐름">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>05</span><strong>최종 흐름</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">구조</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">최종 영상 흐름</p>
+            <h2>30초 광고 흐름을 기준으로 한 장면 후보 압축 구조</h2>
+            <p class="claim">해태 엔딩과 군무 확장은 후보 자산으로 분리하고, 제출본은 무당 복귀와 키비주얼 엔딩으로 축원 구조를 닫았다.</p>
+          </div>
+          <div class="matrix-grid">
+            <div class="table-wrap">
+              <table class="matrix-table" aria-label="최종 영상 시간 흐름">
+                <thead><tr><th>시간</th><th>화면 판단</th></tr></thead>
+                <tbody>
+                  <tr><td>0초대</td><td>무당의 하체, 방울, 부채로 여는 의식의 시작</td></tr>
+                  <tr><td>4초대</td><td>붓 아티스트의 오렌지 선과 원형 질감 생성</td></tr>
+                  <tr><td>9초대</td><td>오렌지 연기 속 런웨이와 세대 교차 등장</td></tr>
+                  <tr><td>14초대</td><td>5주년 풍선과 아이들을 통한 축제성 강화</td></tr>
+                  <tr><td>19초대</td><td>스케이트보드와 바닥선으로 만드는 후반 속도</td></tr>
+                  <tr><td>25초대</td><td>무당 복귀, 오렌지 폭발, 무진장 키비주얼 엔딩</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <figure class="media-frame"><img src="../contact_sheets/final-musinsa-mujinjang-ai-contest-contact-sheet.webp" alt="최종 제출 영상 전체 흐름 이미지" /></figure>
+              <p class="media-caption">최종 제출본 전체 흐름. 초안과 다른 점은 버전 변화 슬라이드에서 분리</p>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>최종 흐름</span><span>실제 제출본 기준</span></footer>
+      </section>
+
+      <section class="slide dense" id="slide-06" data-title="캐릭터 시스템">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>06</span><strong>캐릭터 시스템</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">자산</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">캐릭터와 행동 설계</p>
+            <h2>하나의 오렌지 신호를 문화와 세대별 인물로 분산한 캐릭터 설계</h2>
+            <p class="claim">최종 사용, 압축 사용, 과정 자산, 후보 제외를 구분해 30초 제출본의 장면 연결 기준을 드러냈다.</p>
+          </div>
+          <div class="identity-grid">
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/01_mudang-shaman_fullbody.webp" alt="무당 퍼포머 이미지" /></figure><div><span class="eyebrow">최종 사용</span><h3>무당 퍼포머</h3><p>의식의 시작과 복귀를 담당하는 구조적 앵커</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/02_calligraphy-brush-artist_fullbody.webp" alt="붓 아티스트 이미지" /></figure><div><span class="eyebrow">최종 사용</span><h3>붓 아티스트</h3><p>오렌지 신호를 선과 원형 질감으로 전환</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/04_grandmother-runway-model_fullbody.webp" alt="할머니 런웨이 모델 이미지" /></figure><div><span class="eyebrow">최종 사용</span><h3>할머니 모델</h3><p>축제 흐름 안에서 세대 교차를 만드는 런웨이 장면</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/05_runway-kids-set_board-01.webp" alt="5주년 풍선을 든 아이들 이미지" /></figure><div><span class="eyebrow">최종 사용</span><h3>5주년 아이들</h3><p>무진장 5주년의 축제성을 직접화</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/06_skateboard-boy_identity.webp" alt="스케이트보드 소년 이미지" /></figure><div><span class="eyebrow">최종 사용</span><h3>스케이트 소년</h3><p>후반부 속도와 거리 패션 감각을 연결</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/07_skateboard-girl_identity.webp" alt="스케이트보드 소녀 이미지" /></figure><div><span class="eyebrow">과정 자산</span><h3>스케이트 소녀</h3><p>후반 거리 장면을 검토한 과정 자산</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/03_graffiti-artist_fullbody.webp" alt="그래피티 아티스트 이미지" /></figure><div><span class="eyebrow">압축 사용</span><h3>그래피티</h3><p>오렌지 신호의 질감 확장</p></div></article>
+            <article class="identity-tile"><figure class="media-frame"><img src="../identity/08_haetae-mask-ending_candidate-no-backlight.webp" alt="해태 마스크 엔딩 후보 이미지" /></figure><div><span class="eyebrow">후보 제외</span><h3>해태 엔딩</h3><p>최종 엔딩이 아니라 수호자 이미지로 검토한 후보 자산</p></div></article>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>캐릭터 시스템</span><span>최종 사용과 후보 구분</span></footer>
+      </section>
+
+      <section class="slide" id="slide-07" data-title="제작 과정">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>07</span><strong>제작 과정</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">검토</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">스토리보드와 생성 검토</p>
+            <h2>이미지 완성도와 다음 컷으로 이어지는 동작, 색 신호의 연결성 검토</h2>
+            <p class="claim">과정 자산 중 컷 전환, 색 신호, 동작 지속성이 분명한 대표 보드만 선별했다.</p>
+          </div>
+          <div class="process-grid">
+            <article class="process-card"><figure class="media-frame"><img src="../actions/02_mudang_brush_graffiti_contact_sheet.webp" alt="무당에서 붓과 그래피티로 이어지는 액션 보드" /></figure><div><span class="eyebrow">초반 신호</span><h3>무당에서 붓으로</h3><p>무당의 동작이 붓선과 그래피티 질감으로 넘어가는 연결 검토</p></div></article>
+            <article class="process-card"><figure class="media-frame"><img src="../actions/03_smoke_grandmother_runway_contact_sheet.webp" alt="연기와 런웨이 액션 보드" /></figure><div><span class="eyebrow">세대 전환</span><h3>연기에서 런웨이로</h3><p>오렌지 연기가 할머니 런웨이와 아이들 장면을 여는 전환 조정</p></div></article>
+            <article class="process-card"><figure class="media-frame"><img src="../actions/04_skateboard_crossing_contact_sheet.webp" alt="스케이트보드 액션 보드" /></figure><div><span class="eyebrow">후반 속도</span><h3>스케이트보드 연결</h3><p>바닥 접점이 오렌지 신호를 이어받는 후반 연결 비교</p></div></article>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>제작 과정</span><span>스토리보드와 생성 결과 검토</span></footer>
+      </section>
+
+      <section class="slide" id="slide-08" data-title="버전 변화">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>08</span><strong>버전 변화</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">판단</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">초안에서 최종본으로</p>
+            <h2>장면 확장보다 30초 안에서 읽히는 오렌지 신호 연결을 우선한 압축 판단</h2>
+            <p class="claim">후보 폐기가 아니라, 30초 제출본에서 오렌지 신호, 동작 지속성, 키비주얼 복귀가 가장 선명하게 읽히도록 압축한 선택 과정</p>
+          </div>
+          <div class="version-grid">
+            <article class="proof-card">
+              <span class="eyebrow">변경 판단</span>
+              <ul class="focus-list">
+                <li>1인 무당 중심에서 여러 인물의 오렌지 신호 릴레이로 확장</li>
+                <li>무신사 오렌지, 검은 무대, 비어 있는 공간의 시각 기준 고정</li>
+                <li>해태 엔딩 후보 보존, 최종본의 무당 복귀 선택</li>
+                <li>실제 30초 제출본 화면 흐름 기준의 최종 설명 작성</li>
+              </ul>
+            </article>
+            <div class="version-rows">
+              <div class="version-row"><strong>초기</strong><span>무진장을 패션 축제와 인공지능 창작 이벤트로 읽는 공통 리서치</span></div>
+              <div class="version-row"><strong>1안</strong><span>무당 퍼포머의 방울, 부채, 오렌지 신호가 생긴 1인 중심 기획</span></div>
+              <div class="version-row"><strong>2안</strong><span>붓, 그래피티, 런웨이, 아이들, 스케이트보드로 이어지는 릴레이 구조</span></div>
+              <div class="version-row"><strong>정리</strong><span>캐릭터, 행동, 스토리보드, 클립을 나누어 보는 검토 구조</span></div>
+              <div class="version-row"><strong>최종</strong><span>30초 제출본 기준의 기획 의도, 변경점, 역할, 산출물 재기록</span></div>
+            </div>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>버전 변화</span><span>후보와 최종 판단 분리</span></footer>
+      </section>
+
+      <section class="slide" id="slide-09" data-title="산출물 정리">
+        <div class="slide-chrome">
+          <div class="slide-meta"><span>09</span><strong>산출물 정리</strong></div>
+          <div class="slide-rule"></div>
+          <div class="slide-type">정리</div>
+        </div>
+        <div class="slide-body">
+          <div class="slide-lead">
+            <p class="kicker">산출물 정리 방식</p>
+            <h2>제출본과 제작 아카이브를 구분한 증거 자료 정리</h2>
+            <p class="claim">최종 영상, 컨택트시트, 캐릭터/액션 보드, 변경 로그를 분리해 결과물과 제작 판단의 근거가 함께 읽히도록 정리했다.</p>
+          </div>
+          <div class="archive-grid">
+            <article class="archive-card"><span class="eyebrow">결과</span><h3>제출본 영상 / 최종 컨택트시트</h3><p>30초 제출본 전체 흐름을 확인하는 기준 자료</p></article>
+            <article class="archive-card"><span class="eyebrow">보드</span><h3>캐릭터 identity / action board</h3><p>무당, 붓, 런웨이, 아이들, 스케이트보드의 장면 기능 자료</p></article>
+            <article class="archive-card"><span class="eyebrow">과정</span><h3>전환 검토용 contact sheet</h3><p>후보와 반복 생성 결과를 컷 전환 기준으로 비교한 자료</p></article>
+            <article class="archive-card"><span class="eyebrow">문서</span><h3>버전 요약 / 변경 로그</h3><p>초안에서 최종 제출본까지의 압축 판단 기록</p></article>
+          </div>
+        </div>
+        <footer class="slide-footer"><span>산출물 정리</span><span>제출본과 제작 아카이브 분리</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button type="button" id="close" aria-label="이미지 닫기">×</button>
+    <img id="lightboxImage" alt="" />
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.getElementById("close");
+
+    document.querySelectorAll(".media-frame img").forEach((image) => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.removeAttribute("src");
+    }
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+  </script>
+</body>
+</html>

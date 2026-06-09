@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>무신사 무진장 포트폴리오 미리보기</title>
+  <style>
+    :root {
+      --bg: #030405;
+      --line: rgba(255, 255, 255, 0.11);
+      --panel: rgba(255, 255, 255, 0.045);
+      --text: #f5f7fb;
+      --sub: rgba(235, 239, 245, 0.74);
+      --muted: rgba(235, 239, 245, 0.52);
+      --accent: #fe4900;
+      --accent-2: #f4c558;
+      --glass-line: rgba(254, 73, 0, 0.2);
+      --glass:
+        radial-gradient(circle at 50% 0%, rgba(254, 73, 0, 0.14), transparent 44%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015)),
+        rgba(8, 10, 14, 0.86);
+      --shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 28px 88px rgba(0, 0, 0, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(254, 73, 0, 0.14), transparent 28%),
+        radial-gradient(circle at 86% 10%, rgba(244, 197, 88, 0.08), transparent 26%),
+        linear-gradient(180deg, #030405 0%, #06080b 52%, #030405 100%);
+      font-family: "IBM Plex Sans", "Apple SD Gothic Neo", "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 24px 0 64px;
+    }
+
+    .toolbar,
+    .intro,
+    .grid {
+      width: min(1600px, calc(100% - 48px));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 64px;
+      margin-bottom: 28px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025)),
+        rgba(7, 8, 10, 0.88);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .toolbar::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 28px rgba(254, 73, 0, 0.62);
+    }
+
+    .toolbar strong {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.48fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 26px;
+      padding: 8px 4px;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 940px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.04;
+      font-weight: 850;
+    }
+
+    .intro p {
+      color: var(--sub);
+      font-size: 17px;
+      line-height: 1.58;
+      font-weight: 630;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--glass-line);
+      border-radius: 24px;
+      background: var(--glass);
+      box-shadow: var(--shadow);
+    }
+
+    .thumb {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      object-position: center;
+      background: #050505;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .mobile .thumb {
+      aspect-ratio: 10 / 16;
+      max-height: 520px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+    }
+
+    .meta span {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .meta h2 {
+      font-size: 20px;
+      line-height: 1.25;
+      font-weight: 850;
+    }
+
+    .meta p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    @media (max-width: 1040px) {
+      .intro,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding-top: 8px;
+      }
+
+      .toolbar,
+      .intro,
+      .grid {
+        width: calc(100% - 16px);
+      }
+
+      .toolbar {
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="toolbar"><strong>무신사 무진장 포트폴리오 미리보기</strong></header>
+    <section class="intro">
+      <div>
+        <p class="kicker">검수용 화면 묶음</p>
+        <h1>각 슬라이드의 독립 화면 검수를 위한 미리보기</h1>
+      </div>
+      <p>이미지 나열이 아닌, 슬라이드 번호와 확인 목적을 함께 보는 검수용 인덱스</p>
+    </section>
+    <main class="grid">
+      <a class="card" href="01_커버.webp"><img class="thumb" src="01_커버.webp" alt="커버 슬라이드 미리보기" /><div class="meta"><span>01</span><h2>커버</h2><p>프로젝트 제목, 포지셔닝, 대표 캐릭터 3장</p></div></a>
+      <a class="card" href="02_최종결과.webp"><img class="thumb" src="02_최종결과.webp" alt="최종 결과 슬라이드 미리보기" /><div class="meta"><span>02</span><h2>최종 결과</h2><p>최종 영상 재생 영역과 핵심 결과 주장</p></div></a>
+      <a class="card" href="03_기획스파인.webp"><img class="thumb" src="03_기획스파인.webp" alt="기획 스파인 슬라이드 미리보기" /><div class="meta"><span>03</span><h2>기획 스파인</h2><p>축원굿 아이디어와 다양성 구조</p></div></a>
+      <a class="card" href="04_역할.webp"><img class="thumb" src="04_역할.webp" alt="역할 슬라이드 미리보기" /><div class="meta"><span>04</span><h2>역할</h2><p>개인 기여와 팀 협업을 분리한 크레딧</p></div></a>
+      <a class="card" href="05_최종흐름.webp"><img class="thumb" src="05_최종흐름.webp" alt="최종 흐름 슬라이드 미리보기" /><div class="meta"><span>05</span><h2>최종 흐름</h2><p>시간대별 비트 표와 최종 컨택트시트</p></div></a>
+      <a class="card" href="06_캐릭터시스템.webp"><img class="thumb" src="06_캐릭터시스템.webp" alt="캐릭터 시스템 슬라이드 미리보기" /><div class="meta"><span>06</span><h2>캐릭터 시스템</h2><p>최종 사용 인물과 후보 자산 구분</p></div></a>
+      <a class="card" href="07_제작과정.webp"><img class="thumb" src="07_제작과정.webp" alt="제작 과정 슬라이드 미리보기" /><div class="meta"><span>07</span><h2>제작 과정</h2><p>스토리보드와 생성 검토 대표 보드</p></div></a>
+      <a class="card" href="08_버전변화.webp"><img class="thumb" src="08_버전변화.webp" alt="버전 변화 슬라이드 미리보기" /><div class="meta"><span>08</span><h2>버전 변화</h2><p>초안에서 최종본으로 바뀐 판단</p></div></a>
+      <a class="card" href="09_산출물정리.webp"><img class="thumb" src="09_산출물정리.webp" alt="산출물 정리 슬라이드 미리보기" /><div class="meta"><span>09</span><h2>산출물 정리</h2><p>제출본과 제작 아카이브를 구분한 증거 자료 정리</p></div></a>
+      <a class="card mobile" href="모바일_커버.webp"><img class="thumb" src="모바일_커버.webp" alt="모바일 커버 미리보기" /><div class="meta"><span>모바일</span><h2>커버</h2><p>휴대폰 폭에서 첫 화면이 잘리지 않는지 확인</p></div></a>
+      <a class="card mobile" href="모바일_결과.webp"><img class="thumb" src="모바일_결과.webp" alt="모바일 결과 미리보기" /><div class="meta"><span>모바일</span><h2>결과</h2><p>휴대폰 폭에서 영상 영역과 설명이 안정적인지 확인</p></div></a>
+    </main>
+  </div>
+</body>
+</html>
