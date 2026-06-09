@@ -470,11 +470,11 @@ function AheyaProblemBridge({ slide }: { slide: Slide }) {
 function AheyaFlowHero({ slide }: { slide: Slide }) {
   const lanes = [
     {
-      label: "Builder",
-      title: "빠르게 만든 demo를 공개 아이디어, 후원, 피드백 기록으로 전환",
+      label: "AI app idea",
+      title: "AI 앱 아이디어를 공개 페이지, 후원, 피드백 기록으로 전환",
       steps: [
-        ["01", "Demo 정리", "AI로 만든 demo/service/tool/agent를 설명"],
-        ["02", "원본 X 글", "builder가 demo/idea를 소개하는 글을 올림"],
+        ["01", "Idea 정리", "AI로 만든 demo / app idea를 설명"],
+        ["02", "원본 X 글", "AI 앱 아이디어를 소개하는 글을 올림"],
         ["03", "공개 페이지", "원본 X 글에서 AHEYA page로 연결"],
         ["04", "후원 확인", "암호화폐 소액 후원으로 관심 신호를 확인"],
         ["05", "Feedback 저장", "Good/Improve 상세 피드백을 record로 남김"],
@@ -485,7 +485,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
       label: "Web3 user",
       title: "제품을 본 사용자가 소액 후원과 상세 피드백을 남김",
       steps: [
-        ["01", "발견", "X에서 builder의 원본 글을 봄"],
+        ["01", "발견", "X에서 AI 앱 아이디어의 원본 글을 봄"],
         ["02", "이해", "public idea page에서 맥락을 파악"],
         ["03", "후원", "암호화폐로 작은 금액을 후원"],
         ["04", "Respond", "Good/Improve 상세 피드백 작성"],
@@ -802,7 +802,7 @@ function AheyaCoreRail({ slide }: { slide: Slide }) {
 
 function getProductDirectionNote(index: number) {
   const notes = [
-    "builder의 demo/idea 글을 anchor로 둠",
+    "AI 앱 아이디어 글을 anchor로 둠",
     "맥락과 CTA를 한 화면에 정리",
     "잔여 온체인 자산을 소액 후원으로 사용",
     "Good/Improve와 상세 note를 남김",
