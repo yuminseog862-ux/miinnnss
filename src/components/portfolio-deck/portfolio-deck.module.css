@@ -6528,6 +6528,21 @@ a.proofCard {
   .projectAheya .builderBridgeOutputs strong {
     font-size: 20px;
   }
+
+  .projectAheya .surfaceMapCanvas {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .projectAheya .surfaceMapMedia {
+    grid-template-rows: auto;
+  }
+
+  .projectAheya .surfaceMapNotes p {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
 }
 
 @media (max-width: 680px) {

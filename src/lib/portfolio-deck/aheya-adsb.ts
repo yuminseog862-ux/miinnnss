@@ -12,7 +12,7 @@ export const aheyaAdsbDeck: DeckContent = {
   introKicker: "AHEYA-led Product/GTM Planning Portfolio",
   introTitle: "초기 아이디어를 제품 구조, GTM 메시지, AI-assisted 실행 루프, 다음 판단 단위로 좁힙니다.",
   introBody:
-    "AHEYA는 AI 앱 아이디어를 public page, small support, Good/Improve feedback, saved record, measurement read model로 좁힌 flagship case입니다. ADSB는 공유된 brand reading을 dog-and-ball hook, motif rule, prompt/motion direction, image-to-video sequence로 압축한 second main case입니다. AB-Luna와 SFTI-CMU는 workflow와 research communication support evidence로 읽습니다.",
+    "AHEYA는 AI 앱 아이디어를 public page, small support, Good/Improve feedback, 피드백 기록, measurement read model로 좁힌 flagship case입니다. ADSB는 공유된 brand reading을 dog-and-ball hook, motif rule, prompt/motion direction, image-to-video sequence로 압축한 second main case입니다. AB-Luna와 SFTI-CMU는 workflow와 research communication support evidence로 읽습니다.",
   footerNote: "Product/GTM Planner — AI-assisted Execution & Signal Review",
   focusAreas: [
     "Product/GTM Planning",
