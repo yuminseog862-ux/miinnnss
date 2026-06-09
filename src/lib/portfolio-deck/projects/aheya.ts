@@ -16,7 +16,7 @@ export const aheyaSlides = [
       "Role: Product/GTM planning, message framing, measurement design",
       "Loop: AI 앱 아이디어 -> small support -> Good/Improve feedback -> saved record",
       "Evidence: public page, support/feedback flow, X copy, KPI event map",
-      "Boundary: first-signal planning, not performance proof",
+      "Boundary: 성과 증명이 아니라 초기 반응 확인 설계",
     ],
     media: { src: "/aheya/aheyabaraya-homepage-2026-04-28.png", alt: "AHEYA public surface", label: "AHEYA public surface" },
     links: [
@@ -42,7 +42,7 @@ export const aheyaSlides = [
     variant: "matrix",
     custom: "aheyaTimeline",
     intent: "넓은 초기 제품 기획에서 AHEYA public response flow와 public X CTA로 좁혀진 흐름을 날짜순으로 보여준다.",
-    claim: "smart contract 중심의 큰 reward/funding 구상을 original X post, public idea page, small donation, feedback record로 작동하는 first-signal loop로 줄인 과정",
+    claim: "smart contract 중심의 큰 reward/funding 구상을 original X post, public idea page, small donation, feedback record로 작동하는 초기 반응 확인 흐름으로 줄인 과정",
     include: ["Smart contract plan", "Donation/feedback UX", "Privy wallet", "Offchain publish", "Direct-send verification"],
     slots: ["Smart contract plan", "Donation box", "Privy wallet", "Offchain publish", "Direct-send verify"],
     table: {
@@ -87,7 +87,7 @@ export const aheyaSlides = [
         ],
       ],
     },
-    note: "First-signal planning, not demand proof. 두 문제는 모두 작은 관심이나 자산이 의미 있는 반응 기록으로 남기 어렵다는 공통점이 있다.",
+    note: "수요 검증이 아니라 초기 반응 확인 설계. 두 문제는 모두 작은 관심이나 자산이 의미 있는 반응 기록으로 남기 어렵다는 공통점이 있다.",
   },
   {
     no: 12,
@@ -133,7 +133,7 @@ export const aheyaSlides = [
         [
           "Feedback loop",
           "Share on X + saved record",
-          "상세 피드백을 사용자가 원할 때 공개 반응으로 연결할 수 있고, 내부 기록으로도 남기는 first-signal planning 구조",
+          "상세 피드백을 사용자가 원할 때 공개 반응으로 연결할 수 있고, 내부 기록으로도 남기는 초기 반응 기록 구조",
         ],
       ],
     },
@@ -147,13 +147,13 @@ export const aheyaSlides = [
     variant: "evidence",
     custom: "aheyaProductSurfaceMap",
     intent: "AI 앱 아이디어를 원본 X 글에서 AHEYA page로 연결하고 후원/피드백/공유 기록을 확인하는 흐름을 보여준다.",
-    claim: "AI 앱 아이디어를 원본 X 글과 AHEYA page에 연결해 후원, 상세 피드백, saved record를 다음 업데이트 판단 재료로 확인하는 first-signal 구조",
+    claim: "AI 앱 아이디어를 원본 X 글과 AHEYA page에 연결해 후원, 상세 피드백, saved record를 다음 업데이트 판단 재료로 확인하는 초기 반응 기록 구조",
     include: ["Original X post", "Idea page", "Donation", "Share on X"],
     slots: [
       "Original X post: AI 앱 아이디어를 먼저 공개하고 AHEYA page의 anchor로 사용",
       "Response review: 소액 후원 / Good/Improve 상세 피드백 / saved feedback record",
       "Share on X: 사용자가 선택한 피드백이 원본 X 글의 reply / quote 흐름에 연결될 수 있음",
-      "Boundary: First-signal planning, not demand proof. X 노출 보장이 아니라 공개 반응이 생길 수 있는 UX 연결점",
+      "Boundary: 수요 검증이 아니라 초기 반응 확인 설계. X 노출 보장이 아니라 공개 반응이 생길 수 있는 UX 연결점",
     ],
     gallery: [
       {
@@ -182,7 +182,7 @@ export const aheyaSlides = [
       "Problem: 남은 native gas / project token이 trading, airdrop, quest 밖의 실제 서비스 경험으로 이어지기 어려움",
       "Action flow: open idea -> small crypto donation -> Good/Improve feedback -> optional Share on X -> saved feedback record",
       "AHEYA use: 잔여 온체인 자산을 AI 앱 아이디어 후원과 피드백 행동으로 연결",
-      "Boundary: First-signal planning, not demand proof. utility gap을 제품 참여 행동으로 연결할 수 있는지 보는 가설",
+      "Boundary: 수요 검증이 아니라 초기 반응 확인 설계. utility gap을 제품 참여 행동으로 연결할 수 있는지 보는 가설",
     ],
     gallery: [
       {

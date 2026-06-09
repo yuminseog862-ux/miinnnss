@@ -16,7 +16,7 @@ export const aheyaAppendixSlides = [
       headers: ["Area", "Public product flow", "Trust API"],
       rows: [
         ["Portfolio placement", "Main body", "Appendix only"],
-        ["Public meaning", "Founder first-signal loop", "Internal trust/evaluation layer"],
+        ["Public meaning", "Founder 초기 반응 확인 흐름", "Internal trust/evaluation layer"],
         ["Main loop", "support -> Good/Improve -> optional proof", "resolve -> signals -> trust memory"],
         ["Evidence type", "product flow, X/content surface", "API docs, decision logs, runtime signal structure"],
         ["Safe claim", "support/feedback/proof system design", "API boundary and runtime contract design"],
@@ -73,14 +73,14 @@ export const aheyaAppendixSlides = [
     accent: "amber",
     variant: "matrix",
     intent: "Raven/Aheaya planning을 현재 public support/feedback flow와 분리된 기획/문서화 evidence로 정리한다.",
-    claim: "Planning lineage - not current product truth. broad reward/quest/funding system에서 support + feedback + proof rail 중심의 first-signal loop로 줄인 판단의 흔적",
+    claim: "Planning lineage - not current product truth. broad reward/quest/funding system에서 support + feedback + proof rail 중심의 초기 반응 확인 흐름으로 줄인 판단의 흔적",
     include: ["Legacy flow", "Requirements", "Roadmap", "KPI templates", "January narrowing"],
     slots: ["Founder/funder flow", "Creator flow", "Sprint requirements", "Community/SNS/KOL KPI templates"],
     table: {
       headers: ["Earlier Raven planning", "January 2026 AHEYA pivot"],
       rows: [
         ["funding + quest + helper + reward + point/token loop", "support + feedback + proof rail"],
-        ["multiple participation lanes and reward mechanics", "simpler first-signal loop"],
+        ["multiple participation lanes and reward mechanics", "simpler 초기 반응 확인 흐름"],
         ["token/DAO/claim and marketplace assumptions", "wallet/proof substrate kept, heavy reward language reduced"],
         ["community/KOL/KPI templates", "KPI/event design separated from results"],
       ],
