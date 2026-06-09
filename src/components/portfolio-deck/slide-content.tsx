@@ -297,7 +297,7 @@ function AheyaBuilderBridge({ slide }: { slide: Slide }) {
     },
     {
       label: "Output 02",
-      title: "Feedback record",
+      title: "피드백 기록",
       body: "Good/Improve와 상세 note를 다음 업데이트 기록으로 저장",
     },
     {
@@ -321,7 +321,7 @@ function AheyaBuilderBridge({ slide }: { slide: Slide }) {
       <article className={styles.builderBridgeCore}>
         <span>AHEYABARAYA value bridge</span>
         <strong>public idea page</strong>
-        <p>small support + Good/Improve feedback + saved record</p>
+        <p>small support + Good/Improve feedback + 피드백 기록</p>
       </article>
       <div className={styles.builderBridgeOutputs}>
         {outputs.map((output) => (
@@ -477,7 +477,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
         ["02", "원본 X 글", "AI 앱 아이디어를 소개하는 글을 올림"],
         ["03", "공개 페이지", "원본 X 글에서 AHEYA page로 연결"],
         ["04", "후원 확인", "암호화폐 소액 후원으로 관심 신호를 확인"],
-        ["05", "Feedback 저장", "Good/Improve 상세 피드백을 record로 남김"],
+        ["05", "피드백 기록", "Good/Improve 상세 피드백을 다음 업데이트 기록으로 남김"],
         ["06", "X 연결", "사용자가 선택하면 Share on X로 연결"],
       ],
     },
@@ -490,7 +490,7 @@ function AheyaFlowHero({ slide }: { slide: Slide }) {
         ["03", "후원", "암호화폐로 작은 금액을 후원"],
         ["04", "Respond", "Good/Improve 상세 피드백 작성"],
         ["05", "Share", "선택 시 Share on X로 공개 반응 연결"],
-        ["06", "Record", "AHEYA에도 피드백 기록을 남김"],
+        ["06", "피드백 기록", "AHEYA에도 다음 업데이트용 피드백을 남김"],
       ],
     },
   ];
