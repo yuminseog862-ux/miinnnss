@@ -371,7 +371,7 @@ export const aheyaSlides = [
     claim: "Measurement design, not performance result. KPI는 원본 X 글부터 후원, 피드백, user-led Share on X, 피드백 기록까지 어떤 이벤트를 볼지 정한 설계",
     include: ["KPI tree", "Event split", "Decision use", "Boundary"],
     slots: [
-      "Question 1: 어떤 단계에서 설명이 부족해지는가? | copy / CTA 설명 보정",
+      "Question 1: 어느 진입점/CTA에서 다음 행동이 덜 명확한가? | copy / CTA 문구 보정",
       "Question 2: original X post -> page entry -> donation -> feedback -> Share on X -> 피드백 기록 중 어느 흐름을 더 명확히 해야 하는가? | product flow clarity 판단",
       "Event unit: 어떤 event unit을 다음 product / content decision의 기준으로 볼 것인가? | 측정 단위 확정",
       "Boundary: Measurement design, not performance result. | 성과 claim 차단",
