@@ -103,6 +103,7 @@ export type DeckContent = {
   introKicker: string;
   introTitle: string;
   introBody: string;
+  hideIntro?: boolean;
   footerNote: string;
   focusAreas: string[];
   coverCases: CoverCase[];

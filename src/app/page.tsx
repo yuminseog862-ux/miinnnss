@@ -1,6 +1,5 @@
-import { PortfolioDeck } from "@/components/portfolio-deck/portfolio-deck";
-import { aheyaAdsbDeck } from "@/lib/portfolio-deck/aheya-adsb";
+import { MasterHubPage } from "@/components/portfolio-hub/portfolio-pages";
 
 export default function HomePage() {
-  return <PortfolioDeck deck={aheyaAdsbDeck} theme="reference" />;
+  return <MasterHubPage />;
 }
