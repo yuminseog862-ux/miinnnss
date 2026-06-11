@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { ArrowRight, Github, Home } from "lucide-react";
+import { ArrowRight, ExternalLink, Home } from "lucide-react";
 
 import styles from "./project-deck.module.css";
 
@@ -247,11 +247,11 @@ export function LoomDeckPage() {
               </Link>
               <a
                 className={`${styles.button} ${styles.buttonSecondary}`}
-                href="https://github.com/aheyabaraya/loom-signal-deck"
+                href="https://loom-signal-deck.vercel.app"
                 target="_blank"
                 rel="noreferrer"
               >
-                Web Repo <Github size={16} />
+                IDOL Web <ExternalLink size={16} />
               </a>
             </div>
           </DeckSectionLead>

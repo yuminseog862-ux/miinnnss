@@ -120,9 +120,9 @@ export const projects: PortfolioProject[] = [
         description: "이력서용 핵심 문장과 산출물 요약",
       },
       {
-        label: "Loom Web Repo",
-        href: "https://github.com/aheyabaraya/loom-signal-deck",
-        description: "Track, member archive, Harne vote UX를 분리한 공개 웹 저장소",
+        label: "Loom IDOL Web",
+        href: "https://loom-signal-deck.vercel.app",
+        description: "Track, member archive, Harne vote UX를 확인하는 공개 웹 페이지",
       },
     ],
     bullets: [
