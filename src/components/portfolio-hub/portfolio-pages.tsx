@@ -11,10 +11,10 @@ const navItems = [
   { href: "/adsb", label: "ADSB" },
 ];
 
-function Shell({ children }: { children: React.ReactNode }) {
+function Shell({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
     <main className={styles.page}>
-      <div className={styles.shell}>
+      <div className={`${styles.shell} ${wide ? styles.wideShell : ""}`}>
         <nav className={styles.nav} aria-label="Portfolio navigation">
           <Link className={styles.brand} href="/">
             <span className={styles.brandMark} />
@@ -39,7 +39,7 @@ function Shell({ children }: { children: React.ReactNode }) {
 
 export function MasterHubPage() {
   return (
-    <Shell>
+    <Shell wide>
       <section className={styles.hero}>
         <div className={`${styles.heroText} ${styles.caseTitleBlock}`}>
           <span className={styles.sectionLabel}>Resume Portfolio</span>
