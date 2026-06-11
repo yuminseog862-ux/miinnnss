@@ -21,6 +21,10 @@
   margin: 0 auto;
 }
 
+.wideShell {
+  width: calc(100% - 40px);
+}
+
 .nav {
   position: sticky;
   top: 0;
