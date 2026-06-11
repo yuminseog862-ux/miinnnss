@@ -119,6 +119,11 @@ export const projects: PortfolioProject[] = [
         href: "/loom",
         description: "이력서용 핵심 문장과 산출물 요약",
       },
+      {
+        label: "Loom Web Repo",
+        href: "https://github.com/aheyabaraya/loom-signal-deck",
+        description: "Track, member archive, Harne vote UX를 분리한 공개 웹 저장소",
+      },
     ],
     bullets: [
       "M01 Saeyan을 첫 공개 진입점으로 둔 13명 AI 아이돌 그룹 Loom의 Track 01, 멤버 identity board, storyboard, stage cut archive, CF lane, Harne Vote prototype 웹 포트폴리오 구성",
