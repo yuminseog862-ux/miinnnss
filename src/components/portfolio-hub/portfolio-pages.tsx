@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, FileText, Layers, Route } from "lucide-react";
+import { ArrowRight, Layers, Route } from "lucide-react";
 import styles from "./portfolio-hub.module.css";
 import { projects, resumeProfile, type PortfolioProject } from "@/lib/portfolio-hub/content";
 
 const navItems = [
-  { href: "/", label: "Resume" },
+  { href: "/", label: "Portfolio" },
   { href: "/musinsa", label: "Musinsa" },
   { href: "/loom", label: "Loom" },
   { href: "/aheya", label: "AHEYA" },
@@ -18,7 +18,7 @@ function Shell({ children, wide = false }: { children: React.ReactNode; wide?: b
         <nav className={styles.nav} aria-label="Portfolio navigation">
           <Link className={styles.brand} href="/">
             <span className={styles.brandMark} />
-            Resume Portfolio
+            Portfolio
           </Link>
           <div className={styles.navLinks}>
             {navItems.map((item) => (
@@ -30,7 +30,7 @@ function Shell({ children, wide = false }: { children: React.ReactNode; wide?: b
         </nav>
         {children}
         <footer className={styles.footer}>
-          Resume-first portfolio hub for AI content marketing, creative production, and project abstracts.
+          Public AI creative portfolio for short-form, IP content, and service prototype work.
         </footer>
       </div>
     </main>
@@ -42,15 +42,12 @@ export function MasterHubPage() {
     <Shell wide>
       <section className={styles.hero}>
         <div className={`${styles.heroText} ${styles.caseTitleBlock}`}>
-          <span className={styles.sectionLabel}>Resume Portfolio</span>
+          <span className={styles.sectionLabel}>Portfolio</span>
           <h1>{resumeProfile.headline}</h1>
           <p className={styles.caseHeadline}>{resumeProfile.subline}</p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryLink} href="#project-routes">
               프로젝트 보기 <Layers size={16} />
-            </Link>
-            <Link className={styles.secondaryLink} href="/resume-common.html">
-              HTML 복붙 파일 <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -62,40 +59,6 @@ export function MasterHubPage() {
           <h2>Projects</h2>
         </div>
         <ProjectOutcomeList />
-      </section>
-    </Shell>
-  );
-}
-
-export function ResumePage() {
-  return (
-    <Shell>
-      <section className={styles.projectHero}>
-        <span className={styles.sectionLabel}>Copy-ready Resume</span>
-        <h1>공통 이력서 붙여넣기 버전</h1>
-        <p>
-          채용 플랫폼의 자기소개, 핵심역량, 프로젝트 입력칸에 나눠 넣기 쉬운 형태. HTML 파일은 정적 파일로도 열람 가능
-        </p>
-        <div className={styles.actionRow}>
-          <Link className={styles.htmlLink} href="/resume-common.html">
-            HTML 파일 열기 <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-      <ResumeSummary />
-      <section className={styles.section} id="project-routes">
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Portfolio Routes</span>
-          <h2>최종 결과물과 상세 덱</h2>
-        </div>
-        <ProjectOutcomeList />
-      </section>
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Plain Text</span>
-          <h2>플랫폼 입력칸용 원문</h2>
-        </div>
-        <pre className={styles.pasteBlock}>{plainTextResume}</pre>
       </section>
     </Shell>
   );
@@ -156,29 +119,6 @@ function ProjectOutcomeList() {
   );
 }
 
-function ResumeSummary() {
-  return (
-    <div className={styles.resumeGrid}>
-      <article className={styles.copyPanel}>
-        <span className={styles.copyLabel}>Headline</span>
-        <h3>{resumeProfile.headline}</h3>
-        <p>{resumeProfile.subline}</p>
-        <span className={styles.copyLabel}>Profile</span>
-        <p>{resumeProfile.profile}</p>
-      </article>
-      <aside className={styles.competencyPanel}>
-        <span className={styles.copyLabel}>Core Competencies</span>
-        {resumeProfile.competencies.map(([title, body]) => (
-          <div className={styles.competencyItem} key={title}>
-            <strong>{title}</strong>
-            <span>{body}</span>
-          </div>
-        ))}
-      </aside>
-    </div>
-  );
-}
-
 export function ProjectPage({ project }: { project: PortfolioProject }) {
   return (
     <Shell>
@@ -192,14 +132,11 @@ export function ProjectPage({ project }: { project: PortfolioProject }) {
               <p className={styles.caseHeadline}>{project.headline}</p>
               <p className={styles.caseResult}>{project.abstract}</p>
             </div>
-            <div className={styles.projectMeta}>
-              <span>{project.period}</span>
-              <span>{project.role}</span>
-            </div>
-            <div className={styles.actionRow}>
-              <Link className={styles.primaryLink} href="/resume">
-                <FileText size={16} /> 공통 이력서
-              </Link>
+          <div className={styles.projectMeta}>
+            <span>{project.period}</span>
+            <span>{project.role}</span>
+          </div>
+          <div className={styles.actionRow}>
               <Link className={styles.secondaryLink} href="/">
                 <Route size={16} /> Portfolio Top
               </Link>
@@ -252,50 +189,6 @@ export function ProjectPage({ project }: { project: PortfolioProject }) {
           </div>
         </div>
       </section>
-      <section className={styles.projectDetailGrid}>
-        <article className={styles.projectDetailPanel}>
-          <span className={styles.copyLabel}>Resume Bullets</span>
-          <ul>
-            {project.bullets.map((bullet) => (
-              <li key={bullet}>{bullet}</li>
-            ))}
-          </ul>
-        </article>
-        <aside className={styles.projectDetailPanel}>
-          <span className={styles.copyLabel}>Outputs</span>
-          <div className={styles.outputList}>
-            {project.outputs.map((output) => (
-              <span key={output}>{output}</span>
-            ))}
-          </div>
-        </aside>
-      </section>
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>One-line Resume Copy</span>
-          <h2>압축 문장</h2>
-        </div>
-        <pre className={styles.pasteBlock}>{project.resumeLine}</pre>
-      </section>
     </Shell>
   );
 }
-
-const plainTextResume = `${resumeProfile.headline}
-${resumeProfile.subline}
-
-Profile
-${resumeProfile.profile}
-
-Core Competencies
-${resumeProfile.competencies.map(([title, body]) => `- ${title}: ${body}`).join("\n")}
-
-Projects
-${projects.map((project) => `${project.title} | ${project.role} | ${project.period}\n${project.bullets.map((bullet) => `- ${bullet}`).join("\n")}`).join("\n\n")}
-
-Portfolio Links
-${projects.map((project) => `${project.shortTitle}\n${project.deckLinks.map((link) => `- ${link.label}: ${link.href}`).join("\n")}`).join("\n\n")}
-
-Positioning
-- 메인 포지션은 AI 콘텐츠 마케팅, 콘텐츠 기획/제작, PMM 메시지 구조화 중심으로 표기
-- PM과 프론트엔드는 콘텐츠를 직접 구조화하고 공개 결과물로 정리하기 위한 보조 역량으로 표기`;

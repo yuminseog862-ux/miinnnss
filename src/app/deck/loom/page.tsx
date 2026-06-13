@@ -1,5 +1,5 @@
-import { LoomDeckPage } from "@/components/project-decks/project-decks";
+import { redirect } from "next/navigation";
 
 export default function LoomDeckRoute() {
-  return <LoomDeckPage />;
+  redirect("https://loom-signal-deck.vercel.app");
 }
