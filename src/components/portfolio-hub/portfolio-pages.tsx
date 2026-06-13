@@ -7,8 +7,8 @@ const navItems = [
   { href: "/", label: "Portfolio" },
   { href: "/musinsa", label: "Musinsa" },
   { href: "/loom", label: "Loom" },
-  { href: "/aheya", label: "AHEYA" },
   { href: "/adsb", label: "ADSB" },
+  { href: "/aheya", label: "AHEYA" },
 ];
 
 function Shell({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
@@ -44,7 +44,7 @@ export function MasterHubPage() {
         <div className={`${styles.heroText} ${styles.caseTitleBlock}`}>
           <span className={styles.sectionLabel}>Portfolio</span>
           <h1>{resumeProfile.headline}</h1>
-          <p className={styles.caseHeadline}>{resumeProfile.subline}</p>
+          <p className={`${styles.caseHeadline} ${styles.heroSubline}`}>{resumeProfile.subline}</p>
           <div className={styles.heroActions}>
             <Link className={styles.primaryLink} href="#project-routes">
               프로젝트 보기 <Layers size={16} />

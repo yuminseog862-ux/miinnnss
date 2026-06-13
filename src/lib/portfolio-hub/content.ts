@@ -131,50 +131,6 @@ export const projects: PortfolioProject[] = [
       "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 정의하고, Track 01 Root Signal/LOW track 제작 board, Harne vote identity flow, PRE-00부터 publish까지 이어지는 최소 개입형 production harness 및 Codex/Suno/Grok 기반 단계별 제작 toolchain을 웹 포트폴리오와 문서로 구성",
   },
   {
-    slug: "aheya",
-    title: "AHEYA First-Signal Service Prototype",
-    shortTitle: "AHEYA",
-    role: "AI Creative, First-signal Flow, Service Prototype",
-    period: "2025.09-2026.04",
-    route: "/aheya",
-    accent: "aqua",
-    headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",
-    abstract:
-      "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, X 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
-    finalResult:
-      "AHEYA의 초기 반응 흐름, 메시지 구조, 후원·피드백·공유·저장 이벤트 기록 설계를 PPT형 상세 덱으로 구성",
-    media: {
-      src: "/aheya/aheya-home-hero.webp",
-      alt: "AHEYA public surface hero",
-      label: "AHEYA public surface",
-    },
-    keyContents: [
-      "AI builder 공개 아이디어 -> 후원/피드백/공유/저장으로 이어지는 초기 반응 흐름",
-      "테스트넷/링크 안내 중심 CTA를 초기 반응, 검증 근거, 직접 후원 메시지로 전환",
-      "다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 정의",
-    ],
-    deckLinks: [
-      {
-        label: "AHEYA PPT Deck",
-        href: "/deck/aheya-adsb#slide-09",
-        description: "AHEYA first-signal planning 섹션으로 이동",
-      },
-      {
-        label: "Project Abstract",
-        href: "/aheya",
-        description: "이력서용 핵심 문장과 산출물 요약",
-      },
-    ],
-    bullets: [
-      "AI builder의 공개 아이디어를 소액 후원, Good/Improve 피드백, X 공유, 저장 기록으로 연결하는 초기 반응 흐름 기획",
-      "테스트넷/링크 안내 중심 문구를 첫 반응, 검증 근거, 직접 후원 메시지로 재구성하는 메시지 프레이밍 설계",
-      "후원, 피드백, 공유, 저장 이벤트를 분리해 다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 구조 설계",
-    ],
-    outputs: ["초기 반응 흐름", "message framing", "event tracking structure", "service prototype flow"],
-    resumeLine:
-      "AHEYA의 초기 반응 흐름과 X 공개 문구 개선 방향을 메시지 구조화, 이벤트 설계, 콘텐츠형 서비스 프로토타입 관점에서 구성",
-  },
-  {
     slug: "adsb",
     title: "ADSB AI-assisted Short-form Execution",
     shortTitle: "ADSB",
@@ -217,6 +173,50 @@ export const projects: PortfolioProject[] = [
     outputs: ["15s short-form shotboard", "AI short-form execution", "feedback revision loop"],
     resumeLine:
       "ADSB 15초 AI 숏폼 제작 프로세스를 브랜드 reading, shotboard, AI creative execution 관점에서 구조화",
+  },
+  {
+    slug: "aheya",
+    title: "AHEYA First-Signal Service Prototype",
+    shortTitle: "AHEYA",
+    role: "AI Creative, First-signal Flow, Service Prototype",
+    period: "2025.09-2026.04",
+    route: "/aheya",
+    accent: "aqua",
+    headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",
+    abstract:
+      "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, X 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
+    finalResult:
+      "AHEYA의 초기 반응 흐름, 메시지 구조, 후원·피드백·공유·저장 이벤트 기록 설계를 PPT형 상세 덱으로 구성",
+    media: {
+      src: "/aheya/aheya-home-hero.webp",
+      alt: "AHEYA public surface hero",
+      label: "AHEYA public surface",
+    },
+    keyContents: [
+      "AI builder 공개 아이디어 -> 후원/피드백/공유/저장으로 이어지는 초기 반응 흐름",
+      "테스트넷/링크 안내 중심 CTA를 초기 반응, 검증 근거, 직접 후원 메시지로 전환",
+      "다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 정의",
+    ],
+    deckLinks: [
+      {
+        label: "AHEYA PPT Deck",
+        href: "/deck/aheya-adsb#slide-09",
+        description: "AHEYA first-signal planning 섹션으로 이동",
+      },
+      {
+        label: "Project Abstract",
+        href: "/aheya",
+        description: "이력서용 핵심 문장과 산출물 요약",
+      },
+    ],
+    bullets: [
+      "AI builder의 공개 아이디어를 소액 후원, Good/Improve 피드백, X 공유, 저장 기록으로 연결하는 초기 반응 흐름 기획",
+      "테스트넷/링크 안내 중심 문구를 첫 반응, 검증 근거, 직접 후원 메시지로 재구성하는 메시지 프레이밍 설계",
+      "후원, 피드백, 공유, 저장 이벤트를 분리해 다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 구조 설계",
+    ],
+    outputs: ["초기 반응 흐름", "message framing", "event tracking structure", "service prototype flow"],
+    resumeLine:
+      "AHEYA의 초기 반응 흐름과 X 공개 문구 개선 방향을 메시지 구조화, 이벤트 설계, 콘텐츠형 서비스 프로토타입 관점에서 구성",
   },
 ];
 
