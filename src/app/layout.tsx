@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Content Marketing Portfolio",
-  description: "Common resume and portfolio routing hub for AI content marketing projects.",
+  title: "AI Creative Portfolio",
+  description: "Public portfolio hub for AI creative short-form, IP content, and service prototype work.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

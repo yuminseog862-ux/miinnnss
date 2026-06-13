@@ -1,5 +1,5 @@
-import { MusinsaDeckPage } from "@/components/project-decks/project-decks";
+import { redirect } from "next/navigation";
 
 export default function MusinsaDeckRoute() {
-  return <MusinsaDeckPage />;
+  redirect("/musinsa/record/presentation/musinsa-mujinjang-case-study.html");
 }

@@ -26,16 +26,16 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "AI Content Marketer / Creative Marketer",
+  headline: "AI Creative Portfolio",
   subline:
-    "브랜드/캠페인 브리프를 고객 메시지, 숏폼 AI 영상, 콘텐츠 아카이브, SNS 게시 흐름으로 전환하는 신입 마케터",
+    "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다.",
   profile:
-    "브랜드/캠페인 브리프를 타깃이 이해할 수 있는 메시지와 숏폼 콘텐츠 구조로 전환하는 데 집중. 무신사 AI 광고제, Loom/Aurora V2, AHEYA/ADSB 프로젝트에서 메시지 문장, 영상 구성, 프롬프트/모션 디렉션, 웹 포트폴리오 정리, 게시 후 초기 반응 기록까지 직접 수행. 신입 포지션 기준 성과 과장보다 기획 의도, 제작 과정, 공개 결과물을 함께 확인할 수 있는 AI 콘텐츠 마케팅 역량 설명",
+    "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다. 무신사 AI 광고제 출품작, AI 아이돌 IP 서비스 프로토타입 Loom, ADSB AI 숏폼 크리에이티브, AHEYA 후원·피드백 서비스 기획을 진행하며 브리프 해석, 메시지 구조화, 키비주얼/스토리보드 설계, AI 생성 결과 검수, 컷 편집 흐름 조정, 사용자 행동 기준 정리까지 연결했습니다. 생성형 AI를 단순 제작 도구로 쓰는 것보다, 기획 의도를 실제 공개 가능한 콘텐츠와 서비스 경험으로 만드는 데 강점이 있습니다.",
   competencies: [
-    ["PMM Messaging", "브랜드/캠페인 브리프 해석, 핵심 메시지와 CTA 구성, 고객이 이해할 수 있는 문장 정리"],
-    ["Content Marketing", "숏폼 훅, 기억 문장, 영상 구성, 콘텐츠 아카이브, 게시 후 초기 반응 확인"],
-    ["AI Creative Production", "프롬프트 디렉션, 이미지-투-비디오 제작 흐름, 모션 디렉션, 결과 검수"],
-    ["SNS Publishing", "YouTube/Instagram 업로드, 게시 링크와 초기 반응 기록, 다음 개선점 정리"],
+    ["Message Structure", "브랜드/캠페인 브리프 해석, 핵심 메시지와 CTA 구성, 고객이 이해할 수 있는 문장 설계"],
+    ["AI Creative Production", "Seedance 2.0, Kling, Grok 등 생성 도구 기반 이미지/영상 제작 흐름, 결과 검수"],
+    ["AI Production Harness", "PRE-00 리서치부터 publish까지 action queue와 사용자 선택/승인 gate로 이어지는 최소 개입형 제작 구조 구축. Codex 사용(리서치/기획, 이미지 제작 준비, 초안 편집), Suno, Grok Build, Grok Imagine을 단계별 도구로 사용"],
+    ["Content Structure", "영상 훅, 기억 문장, 장면 구성, 콘텐츠 아카이브, 확인 가능한 결과물 근거 구성"],
     ["Building Support", "Next.js/React 기반 포트폴리오 페이지 구성, 결과물 링크와 자료 구조화"],
   ],
 };
@@ -45,15 +45,15 @@ export const projects: PortfolioProject[] = [
     slug: "musinsa",
     title: "MUSINSA Mujinjang AI Ad - 편견을 벗다, 다양성을 입다",
     shortTitle: "MUSINSA",
-    role: "PMM, Content Marketing, AI Video Generation",
+    role: "AI Creative, Short-form Ad, Message Structure",
     period: "2026.05-2026.06",
     route: "/musinsa",
     accent: "ice",
-    headline: "무신사 무진장 AI 광고제 브리프를 다양성 메시지의 24초 숏폼 CF로 전환한 프로젝트",
+    headline: "무신사 무진장 AI 광고제 브리프를 다양성 메시지의 30초 팀 숏폼 광고로 전환한 프로젝트",
     abstract:
-      "할인 고지형 광고가 아니라 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지로 읽히도록 영상 구조 정리. 다양한 인물과 스타일을 통해 무진장을 더 넓은 패션 이벤트로 보여주는 숏폼 광고 사례 배치",
+      "3인 팀 작업에서 서브기획과 제작 과정을 리딩하며 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지가 먼저 읽히도록 영상 구조를 설계. Seedance 2.0, Kling, Grok 기반 생성 결과를 검토하며 다양한 인물과 스타일을 통해 무진장을 더 넓은 패션 경험으로 보여주는 30초 광고 제출본 제작",
     finalResult:
-      "24초 AI 숏폼 광고, YouTube 공개 영상, 핵심 메시지 구조, 48시간 초기 조회 반응을 하나의 포트폴리오 사례로 정리",
+      "30초 AI 숏폼 광고 제출본, 3인 팀 제작 흐름, 핵심 메시지 구조, 생성 결과 검토와 컷 흐름 조정을 하나의 포트폴리오 사례로 구성",
     media: {
       src: "https://i.ytimg.com/vi/70blJ_6wh6s/maxresdefault.jpg",
       alt: "MUSINSA Mujinjang AI ad final video thumbnail",
@@ -61,14 +61,14 @@ export const projects: PortfolioProject[] = [
     },
     keyContents: [
       "`편견을 벗다, 다양성을 입다, 무진장을 만나다`를 중심으로 한 메시지 구조",
-      "무신사를 할인 이벤트가 아니라 다양한 스타일을 만나는 패션 경험으로 해석",
-      "게시 후 48시간 기준 Instagram 약 1,500 views / YouTube 약 1,400 views 초기 반응 기록",
+      "3인 팀 프로젝트에서 서브기획, 주요 스토리보드, 장면 순서 설계 리딩",
+      "Seedance 2.0, Kling, Grok 기반 생성 결과를 검토하며 컷 흐름, 전환, 최종 방향 조정",
     ],
     deckLinks: [
       {
-        label: "MUSINSA PPT Deck",
-        href: "/deck/musinsa",
-        description: "CF 결과물, 메시지 구조, 공개 영상 중심의 하위 포트폴리오",
+        label: "MUSINSA PPT Portfolio",
+        href: "/musinsa/record/presentation/musinsa-mujinjang-case-study.html",
+        description: "최종 영상, 기획 스파인, 역할, 제작 과정, 산출물 구분을 담은 9장 포트폴리오",
       },
       {
         label: "Project Abstract",
@@ -77,76 +77,72 @@ export const projects: PortfolioProject[] = [
       },
     ],
     bullets: [
-      "무신사 무진장 AI 광고제 브리프 기반 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지의 24초 AI 숏폼 광고 기획/제작",
-      "할인 고지보다 다양한 인물과 스타일이 만나는 패션 경험이 먼저 읽히도록 콘셉트, 장면 흐름, 공개 카피 정리",
-      "YouTube/Instagram 직접 게시, 게시 후 48시간 기준 Instagram 약 1,500 views, YouTube 약 1,400 views의 초기 조회 반응 기록",
+      "무신사 무진장 AI 광고제 브리프 기반 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지의 30초 AI 숏폼 광고 제출본 기획/제작",
+      "3인 팀 작업에서 서브기획, 주요 스토리보드, 장면 순서 설계, 제작 과정 리딩",
+      "Seedance 2.0, Kling, Grok 기반 이미지/영상 생성 결과를 검토하며 컷 흐름, 전환, 최종 방향 조정",
     ],
-    outputs: ["24s short-form CF", "diversity message concept", "YouTube public video", "Instagram/YouTube first reaction snapshot"],
+    outputs: ["30s team short-form ad", "diversity message concept", "sub-planning/storyboard lead", "Seedance 2.0/Kling/Grok generation review"],
     resumeLine:
-      "무신사 무진장 AI 광고제 맥락에서 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지의 24초 AI 숏폼 광고 기획/제작, 직접 게시 후 48시간 기준 Instagram 약 1,500 views, YouTube 약 1,400 views의 초기 조회 반응 기록",
+      "무신사 무진장 AI 광고제 맥락에서 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지의 30초 AI 숏폼 광고 제출본을 3인 팀으로 제작하고, 서브기획/스토리보드/제작 과정 리딩 및 Seedance 2.0, Kling, Grok 생성 결과 검수를 수행",
   },
   {
     slug: "loom",
-    title: "Loom / Aurora V2 AI Idol Content System",
-    shortTitle: "Loom / Aurora V2",
-    role: "AI Content Production, Content Archive, SNS Publishing",
+    title: "Loom AI Idol Track Production Harness",
+    shortTitle: "Loom",
+    role: "AI Creative, IP Content System, Production Workflow",
     period: "2026.05-2026.06",
     route: "/loom",
     accent: "violet",
-    headline: "AI 아이돌 콘텐츠 IP를 웹 포트폴리오와 제작 운영 흐름으로 정리한 프로젝트",
+    headline: "AI 아이돌 IP를 앨범/트랙 단위 콘텐츠 제품과 최소 개입형 production harness로 구조화한 프로젝트",
     abstract:
-      "M01 Saeyan을 첫 공개 진입점으로 두고, 13명 AI 아이돌 그룹 Loom의 Track 01, 멤버 identity board, storyboard, stage cut archive, CF lane, Harne Vote local prototype을 하나의 웹 포트폴리오로 구성. Aurora V2 제작 흐름은 제작, 검토, 패키징, 게시 계획, 반응 기록을 연결하는 운영 구조로 정리",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, Track 01 Root Signal과 LOW track을 앨범/트랙 단위 영상 제작 흐름으로 설계. Harne 투표를 통해 멤버 정체성을 부여하는 기능 방향과 PRE-00부터 publish까지 run artifact, action queue, 사용자 선택/승인 gate로 이어지는 production harness를 함께 구축하고, 그 안에서 Codex 사용(리서치/기획, 이미지 제작 준비, 초안 편집), Suno, Grok Build, Grok Imagine을 단계별 도구로 사용",
     finalResult:
-      "M01 Saeyan 대표 공개 컷, Loom Track 01, 13명 멤버 identity, storyboard/stage archive, CF lane, Harne Vote prototype, 제작 운영 흐름을 하나의 AI 콘텐츠 마케팅 사례로 정리",
+      "Loom Track 01 Root Signal, LOW track 제작 board, 13명 멤버 identity, Harne vote identity flow, storyboard/video prompt/output registry, social publishing loop를 하나의 AI creative production 사례로 구성",
     media: {
       src: "/loom-deck/saeyan-spotlight.png",
       alt: "Loom M01 Saeyan representative spotlight",
       label: "M01 Saeyan representative spotlight",
     },
     keyContents: [
-      "M01 Saeyan을 Loom의 첫 공개 진입점이자 대표 캐릭터로 배치",
-      "13 character boards, 46 stage cuts, 4 storyboard anchors, 3 CF campaign entries",
-      "리서치, 선곡/스토리보드, 프롬프트 패킷, 생성 결과 검토, 게시용 패키징 흐름 정리",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 정의",
+      "Track 01 Root Signal과 LOW track을 앨범/트랙 단위 영상 제작 흐름으로 설계",
+      "PRE-00 research radar부터 05 package, publishing plan, post ledger까지 최소 개입으로 다음 작업을 산출하는 harness 구축",
+      "Codex 사용(리서치/기획, 이미지 제작 준비, 초안 편집), Suno 음악 후보, Grok Build 영상 프롬프트 추출, Grok Imagine 영상 생성을 단계별 제작 도구로 사용",
     ],
     deckLinks: [
       {
-        label: "Loom PPT Deck",
-        href: "/deck/loom",
-        description: "콘텐츠 제작 운영 흐름과 공개 포트폴리오를 보여주는 하위 포트폴리오",
+        label: "Loom Webpage",
+        href: "https://loom-signal-deck.vercel.app",
+        description: "Track, member archive, Harne vote UX를 확인하는 공개 웹 페이지",
       },
       {
         label: "Project Abstract",
         href: "/loom",
         description: "이력서용 핵심 문장과 산출물 요약",
       },
-      {
-        label: "Loom IDOL Web",
-        href: "https://loom-signal-deck.vercel.app",
-        description: "Track, member archive, Harne vote UX를 확인하는 공개 웹 페이지",
-      },
     ],
     bullets: [
-      "M01 Saeyan을 첫 공개 진입점으로 둔 13명 AI 아이돌 그룹 Loom의 Track 01, 멤버 identity board, storyboard, stage cut archive, CF lane, Harne Vote prototype 웹 포트폴리오 구성",
-      "13 character boards, 46 stage cuts, 4 storyboard anchors, 3 CF campaign entries 등 제작 결과물을 탐색 가능한 콘텐츠 아카이브로 정리",
-      "리서치, 스토리보드, 프롬프트 패킷, 생성 결과 검토, 게시용 패키징으로 이어지는 AI 콘텐츠 제작 운영 흐름 문서화",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 보고 멤버 identity, Harne vote, track release surface 구성",
+      "Track 01 Root Signal과 LOW track의 곡 해석, 멤버 파트, storyboard, video prompt, output registry, SNS loop 설계",
+      "PRE-00, song lock, 02/02A/02B, 03V, 04 edit, 05 package, publishing plan/post ledger를 action queue와 사용자 선택/승인 gate로 연결하고, Codex 사용(리서치/기획, 이미지 제작 준비, 초안 편집), Suno, Grok Build, Grok Imagine을 단계별 도구로 쓰는 production harness 구축",
     ],
-    outputs: ["web portfolio", "AI content archive", "production workflow", "social publishing record"],
+    outputs: ["track-based AI idol content system", "Harne vote identity flow", "PRE-00-to-publish production harness", "Codex/Suno/Grok toolchain"],
     resumeLine:
-      "M01 Saeyan을 첫 공개 진입점으로 둔 13명 AI 아이돌 그룹 Loom의 웹 포트폴리오와 AI 콘텐츠 제작 운영 흐름을 Next.js, React, TypeScript 기반으로 구현 및 문서화",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 정의하고, Track 01 Root Signal/LOW track 제작 board, Harne vote identity flow, PRE-00부터 publish까지 이어지는 최소 개입형 production harness 및 Codex/Suno/Grok 기반 단계별 제작 toolchain을 웹 포트폴리오와 문서로 구성",
   },
   {
     slug: "aheya",
-    title: "AHEYA Product-GTM Planning",
+    title: "AHEYA First-Signal Service Prototype",
     shortTitle: "AHEYA",
-    role: "PMM/GTM, Product Planning, Early Signal Design",
+    role: "AI Creative, First-signal Flow, Service Prototype",
     period: "2025.09-2026.04",
     route: "/aheya",
     accent: "aqua",
-    headline: "AI builder의 공개 아이디어를 초기 반응 흐름과 GTM 메시지로 구조화한 프로젝트",
+    headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",
     abstract:
-      "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, X 공유, 저장 기록을 남기는 흐름을 콘텐츠 중심 GTM 관점으로 정리. PM 자체보다 마케팅 판단을 뒷받침하는 product/GTM 설계 사례로 배치",
+      "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, X 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
     finalResult:
-      "AHEYA의 초기 반응 흐름, PMM 메시지 구조, 이벤트 기록 설계, product/GTM 판단 흐름을 PPT형 상세 덱으로 정리",
+      "AHEYA의 초기 반응 흐름, 메시지 구조, 후원·피드백·공유·저장 이벤트 기록 설계를 PPT형 상세 덱으로 구성",
     media: {
       src: "/aheya/aheya-home-hero.webp",
       alt: "AHEYA public surface hero",
@@ -155,13 +151,13 @@ export const projects: PortfolioProject[] = [
     keyContents: [
       "AI builder 공개 아이디어 -> 후원/피드백/공유/저장으로 이어지는 초기 반응 흐름",
       "테스트넷/링크 안내 중심 CTA를 초기 반응, 검증 근거, 직접 후원 메시지로 전환",
-      "마케팅 판단을 뒷받침하는 product/GTM 구조와 이벤트 정의",
+      "다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 정의",
     ],
     deckLinks: [
       {
         label: "AHEYA PPT Deck",
         href: "/deck/aheya-adsb#slide-09",
-        description: "AHEYA product/GTM planning 섹션으로 이동",
+        description: "AHEYA first-signal planning 섹션으로 이동",
       },
       {
         label: "Project Abstract",
@@ -171,35 +167,35 @@ export const projects: PortfolioProject[] = [
     ],
     bullets: [
       "AI builder의 공개 아이디어를 소액 후원, Good/Improve 피드백, X 공유, 저장 기록으로 연결하는 초기 반응 흐름 기획",
-      "테스트넷/링크 안내 중심 문구를 첫 반응, 검증 근거, 직접 후원 메시지로 재구성하는 메시지 프레이밍 정리",
-      "후원, 피드백, 공유, 저장 이벤트를 분리해 마케팅 판단에 활용할 수 있는 이벤트 구조 설계",
+      "테스트넷/링크 안내 중심 문구를 첫 반응, 검증 근거, 직접 후원 메시지로 재구성하는 메시지 프레이밍 설계",
+      "후원, 피드백, 공유, 저장 이벤트를 분리해 다음 제품/콘텐츠 판단에 활용할 수 있는 이벤트 구조 설계",
     ],
-    outputs: ["초기 반응 흐름", "PMM message framing", "event tracking structure", "content-led GTM flow"],
+    outputs: ["초기 반응 흐름", "message framing", "event tracking structure", "service prototype flow"],
     resumeLine:
-      "AHEYA의 초기 반응 흐름과 X 공개 문구 개선 방향을 Product/GTM, 이벤트 설계, PMM 메시지 구조화 관점에서 정리",
+      "AHEYA의 초기 반응 흐름과 X 공개 문구 개선 방향을 메시지 구조화, 이벤트 설계, 콘텐츠형 서비스 프로토타입 관점에서 구성",
   },
   {
     slug: "adsb",
     title: "ADSB AI-assisted Short-form Execution",
     shortTitle: "ADSB",
-    role: "AI Creative Direction, Prompt/Motion Direction",
+    role: "AI Creative, Short-form Execution, Production Workflow",
     period: "2025.09-2026.04",
     route: "/adsb",
     accent: "green",
     headline: "브랜드 무드를 15초 AI 숏폼 제작 흐름으로 전환한 프로젝트",
     abstract:
-      "ADSB 산학공동연구에서 dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 숏폼 샷보드, frame generation, motion test, feedback revision으로 연결. 전체 브랜드 성과가 아니라 AI creative direction과 제작 실행력의 증거로 배치",
+      "ADSB 산학공동연구에서 dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드와 제작 반복, 피드백 반영 흐름으로 연결. 전체 브랜드 성과가 아니라 AI 숏폼 제작 실행의 증거로 배치",
     finalResult:
-      "브랜드 mood reading, 15초 shotboard, prompt/motion direction, frame generation, feedback revision을 AI creative execution 사례로 정리",
+      "브랜드 mood reading, 15초 shotboard, 제작 반복, feedback revision을 AI creative execution 사례로 구성",
     media: {
       src: "/adsb/adsb-cover.webp",
-      alt: "ADSB AI short-form visual direction",
-      label: "ADSB short-form visual direction",
+      alt: "ADSB AI short-form execution",
+      label: "ADSB short-form execution",
     },
     keyContents: [
       "dog-and-ball hook과 urban fixed-angle sequence 중심의 숏폼 기획",
-      "Midjourney/Gemini/Nano Banana/Kling 기반 frame generation과 motion test",
-      "브랜드 성과가 아니라 AI creative direction과 제작 실행 증거로 배치",
+      "Midjourney/Gemini/Nano Banana/Kling 기반 이미지 생성과 피드백 반영 반복",
+      "브랜드 성과가 아니라 AI 숏폼 제작 실행 증거로 배치",
     ],
     deckLinks: [
       {
@@ -215,12 +211,12 @@ export const projects: PortfolioProject[] = [
     ],
     bullets: [
       "dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드로 전환",
-      "Midjourney/Gemini/Nano Banana/Kling 기반 frame generation, motion test, 피드백 반영 반복",
-      "hook, prompt direction, motion direction, short-form execution workflow 관점의 AI creative direction 사례 정리",
+      "Midjourney/Gemini/Nano Banana/Kling 기반 이미지 생성과 피드백 반영 반복",
+      "hook, shotboard, short-form execution workflow 관점의 AI creative execution 사례 구성",
     ],
-    outputs: ["15s short-form shotboard", "frame generation", "motion test", "feedback revision loop"],
+    outputs: ["15s short-form shotboard", "AI short-form execution", "feedback revision loop"],
     resumeLine:
-      "ADSB 15초 AI 숏폼 제작 프로세스를 브랜드 reading, prompt/motion direction, AI creative execution 관점에서 구조화",
+      "ADSB 15초 AI 숏폼 제작 프로세스를 브랜드 reading, shotboard, AI creative execution 관점에서 구조화",
   },
 ];
 
