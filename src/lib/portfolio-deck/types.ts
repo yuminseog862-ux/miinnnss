@@ -30,7 +30,7 @@ export type SlideCustomLayout =
   | "portfolioScopeCards"
   | "portfolioMediaFocus"
   | "portfolioCriteriaCards"
-  | "portfolioStoryboardBeats";
+  | "portfolioInstagramOutput";
 
 export type SlideSection = "Common" | "AHEYA" | "ADSB" | "SFTI" | "AB-Luna" | "Appendix";
 
@@ -65,6 +65,13 @@ export type SlideLink = {
   description: string;
 };
 
+export type SlideEmbed = {
+  type: "instagram";
+  src: string;
+  href: string;
+  title: string;
+};
+
 export type Slide = {
   no: number;
   section: SlideSection;
@@ -80,6 +87,7 @@ export type Slide = {
   process?: string[];
   table?: SlideTable;
   media?: SlideMedia;
+  embed?: SlideEmbed;
   gallery?: SlideGalleryItem[];
   links?: SlideLink[];
   note?: string;
