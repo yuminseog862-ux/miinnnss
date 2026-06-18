@@ -18,14 +18,16 @@ export const sftiSlides = [
       "Positioning: external reader-ready research communication and visual framework",
     ],
     slots: [
-      "Research framing: vague idea -> external reader-ready structure",
-      "Role: English abstract structuring / poster-style organization",
+      "Project Summary: AI-generated emotional content strategy for niche fashion brands",
+      "Role: research framing / English abstract structuring / poster-style structure",
+      "Deliverables: abstract draft, framework pages, poster-style structure, review/revision evidence",
       "Evidence: review result / revision comments",
+      "Positioning: external reader-ready communication",
     ],
     media: {
       src: "/sfti/crops/sfti-review-comments.png",
-      alt: "SFTI-CMU review result and revision-comment evidence.",
-      label: "Review/revision evidence, not result-status proof",
+      alt: "SFTI-CMU review score and evaluator comment evidence.",
+      label: "Review evidence",
     },
     note:
       "영어 문서화, 리서치 프레이밍, poster-style 구조화를 보여주는 support case로 사용한다. 학술 성과나 발표 실적이 아니라 외부 독자가 읽을 수 있는 구조화 역량으로 닫는다.",
@@ -45,6 +47,8 @@ export const sftiSlides = [
       "Initial Vague Idea",
       "Research Question",
       "Identity-based Clustering",
+      "Narrative Framework",
+      "Reader-fit Note",
     ],
     table: {
       headers: ["전환 전", "전환 후", "왜 중요한가"],
@@ -62,14 +66,19 @@ export const sftiSlides = [
         [
           "해결 프레임",
           "design language, narrative tone, visual identity coherence 기준의 clustering framework",
+          "identity-based visual clustering으로 설명",
+        ],
+        [
+          "제출 형태",
+          "English abstract draft와 poster-style narrative",
           "외부 독자가 빠르게 이해할 수 있는 research communication 구조로 정리",
         ],
       ],
     },
     media: {
-      src: "/sfti/crops/sfti-framework-structure.png",
+      src: "/sfti/source-assets/sfti-3.webp",
       alt: "SFTI framework page.",
-      label: "Framework structure",
+      label: "Framework page",
     },
     note:
       "이 장은 SFTI를 '영어를 잘 썼다'보다 '모호한 아이디어를 연구 프레임으로 번역했다'로 읽히게 한다. 성과 숫자나 브랜드 성과로 확장하지 않는다.",
@@ -91,14 +100,15 @@ export const sftiSlides = [
       "Review use: reviewer comments에 맞춰 citation support, grammar/format, and structure clarity를 보정",
     ],
     slots: [
-      "Abstract: niche brand content limitation -> symbolic narrative -> identity-based visual clustering",
-      "Poster narrative: resource limitation -> symbolic structure -> solution frame",
-      "Writing decision: overly academic보다 clearer external reader fit",
+      "Final poster: AI-generated emotional content strategy and identity-based visual clustering",
+      "Author line: Minseok Yu only for the public portfolio version",
+      "Structure: introduction, theory, solution proposal, scene framework, conclusions",
+      "Revision use: reviewer comments -> citation support, grammar, and structure clarity",
     ],
     media: {
-      src: "/sfti/crops/sfti-abstract-structure.png",
-      alt: "SFTI poster or framework page.",
-      label: "Poster structure -- structure evidence, not result-status proof",
+      src: "/sfti/result-minseok-only.png",
+      alt: "SFTI-CMU final poster with only Minseok Yu kept on the author line.",
+      label: "Final poster / Minseok Yu author line",
     },
     note:
       "성과보다 구조를 보여준다. problem, approach, evidence, implication이 한 장에서 보이도록 세부 내용을 채운다.",
@@ -117,17 +127,20 @@ export const sftiSlides = [
       "Revision evidence: review result and revision comments",
       "Learning: 모호한 아이디어는 연구 질문과 구조로 좁혀야 읽힌다",
       "Learning: 영어 문서는 감각 표현보다 problem, approach, contribution이 선명해야 한다",
+      "Learning: emotional storytelling은 engagement/recall 주장보다 브랜드 정체성과 visual immersion의 연결로 설명해야 함",
       "What this shows: research framing, English abstract structuring, poster-style organization, revision handling",
     ],
     slots: [
+      "Review / Revision Evidence: review result and revision comments",
       "Revision Focus: citation support, grammar/format, and structure clarity",
       "Learning: vague idea needs research frame",
       "What This Shows: external reader-ready research communication",
+      "Role-fit Summary: research communication / English structuring",
     ],
     media: {
-      src: "/sfti/crops/sfti-revision-comments.png",
+      src: "/sfti/source-assets/sfti-revision.webp",
       alt: "SFTI revision evidence.",
-      label: "Revision evidence, not result-status proof",
+      label: "Revision evidence",
     },
     note:
       "마지막 문장은 '학술 성과'가 아니라 '외부 독자에게 전달 가능한 구조와 영어 표현으로 정리할 수 있음'으로 닫는다.",

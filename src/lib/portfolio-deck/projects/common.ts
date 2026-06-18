@@ -133,7 +133,7 @@ export const commonSlides = [
       headers: ["Case", "Role in Portfolio", "What It Shows"],
       rows: [
         ["AHEYA", "Flagship Case", "Product/GTM planning: problem definition, MVP scope, messaging, signal review"],
-        ["ADSB", "Second Main Case", "AI-assisted execution: brand reading, prompt/motion direction, storyboard iteration"],
+        ["ADSB", "Second Main Case", "AI-assisted execution: brand reading, prompt/motion direction, final Reel output"],
         ["AB-Luna", "Supporting Evidence", "AI workflow support: handoff MVP, user input structure, KPI readiness"],
         ["SFTI-CMU", "Supporting Evidence", "Research communication support: English abstract, poster narrative, external reader-ready writing"],
       ],
@@ -155,7 +155,7 @@ export const commonSlides = [
       rows: [
         ["Product Planning", "AHEYA: 문제 정의, MVP scope, 유저 플로우, 판단 기준", "AB-Luna: problem definition, handoff MVP, KPI readiness"],
         ["GTM Strategy", "AHEYA: 타깃, 포지셔닝, 메시지, 채널 가설", "ADSB: content context / AB-Luna: market definition"],
-        ["AI-assisted Execution", "AHEYA: planning, documentation, signal review workflow", "ADSB: prompt, storyboard, image-to-video iteration"],
+        ["AI-assisted Execution", "AHEYA: planning, documentation, signal review workflow", "ADSB: prompt, image-to-video iteration, final Reel output"],
         ["Marketing / GTM Content", "AHEYA: 콘텐츠 훅, SNS 실험, early signal review", "ADSB: brand mood and short-form direction"],
         ["Working Method", "Research -> Structure -> Build/Produce -> Publish/Test -> Learn/Decide", "AB-Luna/SFTI: support evidence"],
       ],

@@ -5,6 +5,7 @@ Internal-only working area for portfolio materials.
 - `projects/`: project-scoped source files, evidence, exports, notes, and decks.
 - `source/`: remaining raw source files that are not yet assigned to a project.
 - `organize/`: remaining company-specific writeups that are not yet assigned to a project.
+- `drafts/`: superseded common application copy kept only for reference.
 
 ## Project Folders
 

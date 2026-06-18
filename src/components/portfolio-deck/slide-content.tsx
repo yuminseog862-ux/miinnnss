@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, CheckCircle2, PanelTop, Sparkles } from "lucide-react";
 
@@ -114,8 +115,8 @@ export function SlideMain({ slide, deck }: { slide: Slide; deck: DeckContent }) 
     return <PortfolioCriteriaCards slide={slide} />;
   }
 
-  if (slide.custom === "portfolioStoryboardBeats") {
-    return <PortfolioStoryboardBeats slide={slide} />;
+  if (slide.custom === "portfolioInstagramOutput") {
+    return <PortfolioInstagramOutput slide={slide} />;
   }
 
   if (slide.variant === "cover") {
@@ -1178,22 +1179,43 @@ function PortfolioCriteriaCards({ slide }: { slide: Slide }) {
   );
 }
 
-function PortfolioStoryboardBeats({ slide }: { slide: Slide }) {
+function PortfolioInstagramOutput({ slide }: { slide: Slide }) {
   const rows = slide.table?.rows ?? [];
+  const primaryLink = slide.links?.[0];
 
   return (
-    <section className={styles.portfolioStoryboardCanvas}>
-      <div className={styles.portfolioStoryboardMedia}>
-        <MediaSlot slide={slide} />
+    <section className={styles.portfolioOutputCanvas}>
+      <div className={styles.portfolioOutputEmbedShell}>
+        <div className={styles.portfolioOutputPhone}>
+          {slide.embed ? (
+            <iframe
+              className={styles.portfolioOutputFrame}
+              title={slide.embed.title}
+              src={slide.embed.src}
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          ) : (
+            <MediaSlot slide={slide} />
+          )}
+        </div>
       </div>
-      <div className={styles.portfolioStoryboardBeats}>
+      <div className={styles.portfolioOutputDetails}>
         {rows.map((row) => (
           <article key={`${slide.no}-${row[0]}`}>
             <span>{row[0]}</span>
-            <strong>{row[2]}</strong>
-            <p>{row[3]}</p>
+            <strong>{row[1]}</strong>
+            <p>{row[2]}</p>
           </article>
         ))}
+        {primaryLink ? (
+          <a href={primaryLink.href} target="_blank" rel="noreferrer" className={styles.portfolioOutputLink}>
+            <strong>{primaryLink.label}</strong>
+            <span>{primaryLink.description}</span>
+            <ArrowUpRight size={16} />
+          </a>
+        ) : null}
       </div>
     </section>
   );
@@ -1376,6 +1398,8 @@ function SlotPanel({
 }
 
 function MediaSlot({ slide }: { slide: Slide }) {
+  const [expanded, setExpanded] = useState(false);
+
   if (!slide.media) {
     return (
       <div className={styles.mediaSlot}>
@@ -1391,17 +1415,41 @@ function MediaSlot({ slide }: { slide: Slide }) {
 
   return (
     <figure className={styles.mediaSlot}>
-      <div className={styles.mediaFrame}>
+      <button
+        type="button"
+        className={`${styles.mediaFrame} ${styles.mediaFrameButton}`}
+        onClick={() => setExpanded(true)}
+        aria-label={`${slide.media.label} 이미지 확대`}
+      >
         <Image
           src={slide.media.src}
           alt={slide.media.alt}
           fill
-          sizes="(max-width: 1000px) 100vw, 46vw"
+          sizes={slide.no === 36 ? "(max-width: 1000px) 100vw, 70vw" : "(max-width: 1000px) 100vw, 46vw"}
           unoptimized={slide.media.src.endsWith(".svg")}
           {...(slide.no === 1 ? { priority: true } : { loading: "eager" as const })}
         />
-      </div>
+      </button>
       <figcaption className={styles.mediaCaption}>{slide.media.label}</figcaption>
+      {expanded ? (
+        <button
+          type="button"
+          className={styles.mediaLightbox}
+          onClick={() => setExpanded(false)}
+          aria-label={`${slide.media.label} 이미지 닫기`}
+        >
+          <span className={styles.mediaLightboxImage}>
+            <Image
+              src={slide.media.src}
+              alt={slide.media.alt}
+              fill
+              sizes="100vw"
+              unoptimized={slide.media.src.endsWith(".svg")}
+            />
+          </span>
+          <span className={styles.mediaLightboxLabel}>Click image to close</span>
+        </button>
+      ) : null}
     </figure>
   );
 }

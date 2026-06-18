@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -12,6 +13,31 @@ type PortfolioDeckTheme = "classic" | "reference";
 
 export function PortfolioDeck({ deck, theme = "classic" }: { deck: DeckContent; theme?: PortfolioDeckTheme }) {
   const isReference = theme === "reference";
+
+  useEffect(() => {
+    function scrollToHash() {
+      const id = window.location.hash.slice(1);
+      if (!id) return;
+
+      const target = document.getElementById(decodeURIComponent(id));
+      if (!target) return;
+
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ block: "start" });
+      });
+    }
+
+    const initialFrame = window.requestAnimationFrame(scrollToHash);
+    const latePass = window.setTimeout(scrollToHash, 250);
+
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.cancelAnimationFrame(initialFrame);
+      window.clearTimeout(latePass);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
 
   return (
     <main className={`${styles.deckPage} ${isReference ? styles.referenceDeck : ""}`}>

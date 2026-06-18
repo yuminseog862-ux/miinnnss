@@ -839,8 +839,57 @@
   box-shadow: var(--glass-shadow);
 }
 
+.mediaFrameButton {
+  appearance: none;
+  display: block;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+
+.mediaFrameButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .mediaSlot img {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+}
+
+.mediaLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  padding: 32px;
+  border: 0;
+  color: #f7ecdd;
+  background: rgba(0, 0, 0, 0.88);
+  cursor: zoom-out;
+}
+
+.mediaLightboxImage {
+  position: relative;
+  display: block;
+  width: min(94vw, 1500px);
+  height: min(88vh, 1300px);
+}
+
+.mediaLightboxImage img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.mediaLightboxLabel {
+  color: rgba(247, 236, 221, 0.72);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
 .mediaSlot::after {
@@ -1735,16 +1784,16 @@
 }
 
 .planningSourceMedia {
-  min-height: 0;
+  min-height: 220px;
 }
 
 .planningSourceMedia .mediaSlot {
-  min-height: 0;
+  min-height: 220px;
   height: 100%;
 }
 
 .planningSourceMedia .mediaFrame {
-  min-height: 0;
+  min-height: 220px;
   height: 100%;
   border: 1px solid rgba(127, 208, 255, 0.14);
   border-radius: 20px;
@@ -3347,7 +3396,14 @@
 }
 
 .surfaceMapFrame img,
-.surfaceMapFrame video,
+.surfaceMapFrame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .featureEvidenceFrame img,
 .featureEvidenceFrame video,
 .proofImageFrame video {
@@ -3355,7 +3411,8 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .surfaceMapCard span,
@@ -3707,7 +3764,7 @@ a.proofCard {
 
 .proofImageFrame {
   position: relative;
-  min-height: 0;
+  min-height: 180px;
   background:
     radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 46%),
     rgba(9, 13, 26, 0.44);
@@ -3745,7 +3802,7 @@ a.proofCard {
 }
 
 .proofGridX .proofImageFrame img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
@@ -4453,8 +4510,8 @@ a.proofCard {
 /* ADSB/SFTI final proof pass: fewer cards, larger evidence, no achievement overclaiming. */
 :global(#slide-30) .evidenceGrid,
 :global(#slide-37) .evidenceGrid {
-  grid-template-columns: minmax(0, 0.66fr) minmax(560px, 1fr);
-  align-items: stretch;
+  grid-template-columns: minmax(0, 0.72fr) minmax(480px, 0.9fr);
+  align-items: start;
 }
 
 :global(#slide-30) .slotGrid,
@@ -4467,15 +4524,16 @@ a.proofCard {
 
 :global(#slide-30) .slot,
 :global(#slide-37) .slot {
-  min-height: 82px;
-  font-size: 17px;
+  min-height: 68px;
+  padding: 12px 15px;
+  font-size: 15px;
 }
 
 :global(#slide-30) .panel::after {
   content: "Boundary: not full brand strategy, campaign performance, or final retouching sole ownership.";
   display: block;
-  margin-top: 14px;
-  padding: 10px 12px;
+  margin-top: 12px;
+  padding: 9px 12px;
   border: 1px solid rgba(244, 197, 88, 0.2);
   border-radius: 999px;
   color: rgba(244, 197, 88, 0.88);
@@ -4489,16 +4547,16 @@ a.proofCard {
 :global(#slide-30) .mediaFrame,
 :global(#slide-37) .mediaSlot,
 :global(#slide-37) .mediaFrame {
-  min-height: 520px;
+  min-height: 450px;
 }
 
 :global(#slide-30) .mediaFrame img {
-  object-fit: cover;
-  object-position: 50% 72%;
+  object-fit: contain;
+  object-position: center;
 }
 
 :global(#slide-37) .mediaFrame img {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center top;
 }
 
@@ -4530,27 +4588,15 @@ a.proofCard {
   font-size: 11.5px;
 }
 
-:global(#slide-36) .portfolioStoryboardCanvas {
-  grid-template-rows: minmax(0, 0.76fr) auto;
-}
-
-:global(#slide-36) .portfolioStoryboardMedia .mediaSlot,
-:global(#slide-36) .portfolioStoryboardMedia .mediaFrame {
-  min-height: 420px;
-}
-
-:global(#slide-36) .portfolioStoryboardBeats {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-:global(#slide-36) .portfolioStoryboardBeats article {
-  padding: 18px;
-}
-
 :global(#slide-45) .evidenceGrid,
 :global(#slide-47) .evidenceGrid,
 :global(#slide-48) .evidenceGrid {
-  grid-template-columns: minmax(0, 0.62fr) minmax(560px, 1fr);
+  grid-template-columns: minmax(0, 0.78fr) minmax(480px, 0.9fr);
+  align-items: start;
+}
+
+:global(#slide-45) .evidenceGrid {
+  grid-template-columns: minmax(320px, 0.44fr) minmax(660px, 0.96fr);
   align-items: center;
 }
 
@@ -4563,14 +4609,53 @@ a.proofCard {
 :global(#slide-45) .mediaFrame,
 :global(#slide-48) .mediaSlot,
 :global(#slide-48) .mediaFrame {
-  min-height: 320px;
+  min-height: 300px;
+}
+
+:global(#slide-45) .mediaSlot,
+:global(#slide-45) .mediaFrame {
+  min-height: 0;
+}
+
+:global(#slide-45) .mediaSlot {
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-self: center;
+}
+
+:global(#slide-45) .mediaFrame {
+  aspect-ratio: 1010 / 344;
 }
 
 :global(#slide-46) .mediaSlot,
 :global(#slide-46) .mediaFrame,
 :global(#slide-47) .mediaSlot,
 :global(#slide-47) .mediaFrame {
-  min-height: 470px;
+  min-height: 380px;
+}
+
+:global(#slide-45) .panel,
+:global(#slide-47) .panel,
+:global(#slide-48) .panel {
+  padding: 18px;
+}
+
+:global(#slide-45) .slotGrid,
+:global(#slide-47) .slotGrid,
+:global(#slide-48) .slotGrid {
+  gap: 9px;
+}
+
+:global(#slide-45) .slot,
+:global(#slide-47) .slot,
+:global(#slide-48) .slot {
+  min-height: 58px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.28;
+}
+
+:global(#slide-45) .slot {
+  font-size: 12.5px;
 }
 
 :global(#slide-45) .mediaFrame,
@@ -4845,7 +4930,7 @@ a.proofCard {
 }
 
 .projectAheya .featureEvidenceFrame img {
-  object-fit: cover;
+  object-fit: contain;
   background: rgba(0, 0, 0, 0.26);
 }
 
@@ -5683,8 +5768,7 @@ a.proofCard {
 
 .portfolioScopeCanvas,
 .portfolioMediaFocusCanvas,
-.portfolioCriteriaCanvas,
-.portfolioStoryboardCanvas {
+.portfolioCriteriaCanvas {
   min-height: 0;
 }
 
@@ -5709,8 +5793,7 @@ a.proofCard {
 
 .portfolioScopeCard span,
 .portfolioCriteriaCards span,
-.portfolioMediaFocusNotes span,
-.portfolioStoryboardBeats span {
+.portfolioMediaFocusNotes span {
   color: var(--accent);
   font-size: 12px;
   font-weight: 950;
@@ -5759,7 +5842,8 @@ a.proofCard {
 }
 
 .portfolioMediaFocusAsset .mediaFrame img {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .portfolioMediaFocusNotes {
@@ -5804,7 +5888,8 @@ a.proofCard {
 }
 
 .portfolioCriteriaMedia .mediaFrame img {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .portfolioCriteriaCards {
@@ -5851,55 +5936,97 @@ a.proofCard {
   font-weight: 850;
 }
 
-.portfolioStoryboardCanvas {
+.portfolioOutputCanvas {
   display: grid;
-  grid-template-rows: minmax(0, 0.68fr) minmax(0, 0.32fr);
-  gap: 16px;
-}
-
-.portfolioStoryboardMedia .mediaSlot,
-.portfolioStoryboardMedia .mediaFrame {
-  min-height: 300px;
-}
-
-.portfolioStoryboardMedia .mediaFrame {
-  border: 0;
-  background: transparent;
-}
-
-.portfolioStoryboardMedia .mediaFrame img {
-  object-fit: cover;
-}
-
-.portfolioStoryboardBeats {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.portfolioStoryboardBeats article {
-  display: grid;
-  align-content: start;
-  gap: 8px;
+  grid-template-columns: minmax(260px, 0.4fr) minmax(0, 0.82fr);
+  gap: 24px;
+  align-items: stretch;
+  height: 100%;
   min-height: 0;
-  padding: 16px;
+}
+
+.portfolioOutputEmbedShell {
+  display: grid;
+  min-height: 0;
+  place-items: center;
+}
+
+.portfolioOutputPhone {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  height: min(100%, 400px);
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(247, 236, 221, 0.18);
+  border-radius: 30px;
+  background: #050506;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 82px rgba(0, 0, 0, 0.36);
+}
+
+.portfolioOutputFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #050506;
+}
+
+.portfolioOutputDetails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  gap: 12px;
+  min-height: 0;
+}
+
+.portfolioOutputDetails article,
+.portfolioOutputLink {
+  display: grid;
+  gap: 8px;
+  min-height: 120px;
+  padding: 18px;
   border: 1px solid rgba(244, 197, 88, 0.16);
   border-radius: 20px;
-  background: rgba(5, 9, 18, 0.5);
-}
-
-.portfolioStoryboardBeats strong {
   color: #f7ecdd;
-  font-size: 16px;
-  line-height: 1.2;
+  background: rgba(5, 9, 18, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.portfolioStoryboardBeats p {
-  margin: 0;
-  color: rgba(247, 236, 221, 0.65);
+.portfolioOutputDetails span {
+  color: #f4c558;
   font-size: 12px;
-  font-weight: 760;
-  line-height: 1.32;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.portfolioOutputDetails strong {
+  color: #f7ecdd;
+  font-size: 19px;
+  line-height: 1.18;
+}
+
+.portfolioOutputDetails p,
+.portfolioOutputLink span {
+  margin: 0;
+  color: rgba(247, 236, 221, 0.68);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.portfolioOutputLink {
+  position: relative;
+  padding-right: 48px;
+}
+
+.portfolioOutputLink svg {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: #f4c558;
 }
 
 /* AHEYA approved layout revisions: deck-native layouts from imagegen references. */
@@ -6452,6 +6579,8 @@ a.proofCard {
   .deckIntro,
   .overviewGrid,
   .slideLead,
+  .aheyaOverviewCanvas,
+  .landingCalloutCanvas,
   .coverGrid,
   .splitGrid,
   .processGrid,
@@ -6461,7 +6590,76 @@ a.proofCard {
   .researchProblemPair,
   .problemBridgeCanvas,
   .coreRailFlow,
-  .coreRailBoundaryGrid {
+  .coreRailBoundaryGrid,
+  .featureEvidenceCanvas,
+  .portfolioScopeCanvas,
+  .portfolioMediaFocusCanvas,
+  .portfolioCriteriaCanvas,
+  .portfolioOutputCanvas {
+    grid-template-columns: 1fr;
+  }
+
+  .aheyaOverviewMediaColumn,
+  .portfolioMediaFocusAsset,
+  .portfolioCriteriaMedia,
+  .portfolioOutputEmbedShell {
+    min-width: 0;
+  }
+
+  .portfolioOutputCanvas {
+    height: auto;
+  }
+
+  .portfolioOutputDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolioOutputPhone {
+    height: 520px;
+    max-height: 62vh;
+  }
+
+  .aheyaOverviewMediaColumn .mediaSlot,
+  .aheyaOverviewMediaColumn .mediaFrame,
+  .portfolioMediaFocusAsset .mediaSlot,
+  .portfolioMediaFocusAsset .mediaFrame,
+  .portfolioCriteriaMedia .mediaSlot,
+  .portfolioCriteriaMedia .mediaFrame {
+    min-height: 300px;
+  }
+
+  .featureEvidenceSupport,
+  .proofGallery,
+  .proofGridAsset .proofGallery,
+  .portfolioCriteriaCards {
+    grid-template-columns: 1fr;
+  }
+
+  .featureEvidenceFrame,
+  .proofImageFrame {
+    min-height: 240px;
+  }
+
+  .projectAheya .aheyaOverviewCanvas,
+  .projectAheya .landingCalloutCanvas,
+  .projectAheya .featureEvidenceCanvas {
+    grid-template-columns: 1fr;
+  }
+
+  .projectAheya .aheyaOverviewMediaColumn .mediaSlot,
+  .projectAheya .aheyaOverviewMediaColumn .mediaFrame,
+  .projectAheya .landingMediaWrap .mediaSlot,
+  .projectAheya .landingMediaWrap .mediaFrame,
+  .projectAheya .featureEvidenceFrame {
+    min-height: 300px;
+  }
+
+  .projectAheya .landingMediaWrap {
+    align-self: stretch;
+    transform: none;
+  }
+
+  .projectAheya .featureEvidenceSupport {
     grid-template-columns: 1fr;
   }
 
@@ -6507,6 +6705,19 @@ a.proofCard {
     padding-right: 28px;
   }
 
+  .slideBody {
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .slideBody > *,
+  .slideLead,
+  .mediaSlot,
+  .mediaFrame {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .slideLead {
     grid-template-areas:
       "kicker"
@@ -6517,6 +6728,20 @@ a.proofCard {
 
   .slideLead h2 {
     font-size: 42px;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    word-break: normal;
+  }
+
+  .claim,
+  .projectAheya .aheyaOverviewCards p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .projectAheya .aheyaOverviewCards article {
+    min-width: 0;
   }
 
   .casePair,
