@@ -45,8 +45,8 @@ export const resumeProfile = {
     "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다. 무신사 AI 광고제에서는 캠페인 콘셉트를 30초 광고 흐름으로 구체화했고, Loom에서는 13명 AI 아이돌 IP를 Root Signal, Pulso 트랙과 멤버 아카이브·Harne 투표가 있는 웹페이지로 연결했으며, ADSB에서는 브랜드 무드와 피드백을 AI 숏폼 제작 흐름으로 옮겼습니다. AHEYA는 Product/GTM 메시지를 공개 채널 콘텐츠와 시각 자산으로 풀어낸 보조 사례이고, SFTI-CMU는 감정 콘텐츠와 시각 정체성 아이디어를 영문 초록/포스터형 자료로 구조화한 리서치 커뮤니케이션 보조 사례입니다.",
   competencies: [
     ["Message Structure", "콘텐츠 의도, 캠페인 콘셉트, 장면 흐름, 사용자에게 남길 인상을 기준으로 문장과 컷 구조 설계"],
-    ["AI Creative Production", "LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집"],
-    ["AI Production Harness", "LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집을 연결한 최소 개입형 제작 루프"],
+    ["AI Creative Production", "LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집"],
+    ["AI Production Harness", "LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집을 연결한 최소 개입형 제작 루프"],
     ["Content Structure", "영상 훅, 기억 문장, 장면 구성, 콘텐츠 아카이브, 확인 가능한 결과물 근거 구성"],
     ["Building Support", "Next.js/React 기반 포트폴리오 페이지 구성, 결과물 링크와 자료 구조화"],
   ],
@@ -113,7 +113,7 @@ export const projects: PortfolioProject[] = [
     accent: "violet",
     headline: "AI 아이돌 IP를 앨범/트랙 단위 콘텐츠 제품과 최소 개입형 production harness로 구조화한 프로젝트",
     abstract:
-      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, Root Signal과 Pulso를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, CF 콘셉트, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, Root Signal과 Pulso를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, CF 콘셉트, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-Suno 음악 제작-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
     finalResult:
       "Loom 최신 웹페이지, Root Signal/Pulso track board, 13명 멤버 identity, Harne vote identity flow, storyboard/video prompt/output registry, social publishing loop를 하나의 AI creative production 사례로 구성",
     media: {
@@ -124,9 +124,8 @@ export const projects: PortfolioProject[] = [
     },
     keyContents: [
       "역할: Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 정의하고 Root Signal/Pulso 트랙 방향, 멤버 identity, 투표 경험을 기획",
-      "제작 흐름: PRE-00 research radar부터 song lock, storyboard/prompt, generation review, 05 package, publishing plan, post ledger까지 다음 작업을 산출하는 harness 구축",
+      "제작 흐름: LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집 흐름 구성",
       "공개 산출물: 최신 Loom 웹에서 홈, 멤버 아카이브, 트랙, 스토리보드, CF 콘셉트, Harne 투표를 탐색 가능한 proof surface로 구성",
-      "LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집 흐름 구성",
     ],
     deckLinks: [
       {
@@ -155,11 +154,11 @@ export const projects: PortfolioProject[] = [
     bullets: [
       "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 보고 멤버 identity, Harne vote, track release surface, updated web proof surface 구성",
       "Root Signal과 Pulso의 곡 해석, 멤버 파트, storyboard, video prompt, output registry, SNS loop 설계",
-      "LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 반복 가능한 production harness 구축",
+      "LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 반복 가능한 production harness 구축",
     ],
     outputs: ["updated Loom web proof surface", "Root Signal/Pulso track system", "Harne vote identity flow", "LLM/coding agent/API production harness", "Grok Imagine/CapCut/Codex video workflow"],
     resumeLine:
-      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 정의하고, 최신 Loom 웹에 Root Signal/Pulso track board, 멤버 아카이브, Harne vote identity flow를 구성. LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 최소 개입형 production harness 구축",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 정의하고, 최신 Loom 웹에 Root Signal/Pulso track board, 멤버 아카이브, Harne vote identity flow를 구성. LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 최소 개입형 production harness 구축",
   },
   {
     slug: "adsb",

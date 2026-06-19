@@ -135,7 +135,7 @@ AI로 숏폼 광고·패션 영상·AI 아이돌 음악·영상 콘텐츠를 기
 - AI Creative Production: 숏폼 광고, 패션 브랜드 AI 영상, 아이돌 IP 음악·영상·웹 콘텐츠 기획 및 제작
 - Storyboard / Scene Planning: 메시지 구조, 숏폼 훅, 주요 스토리보드, 장면 흐름 구성
 - AI Image / Video Generation: Midjourney, Kling, Seedance 2.0, Grok 계열 도구를 활용한 이미지·영상 후보 제작 및 결과 검토
-- Prompt / Production Workflow: LLM 기획, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, 컨택트 시트 비교, Grok Imagine 영상화, CapCut·Codex 편집
+- Prompt / Production Workflow: LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, 컨택트 시트 비교, Grok Imagine 영상화, CapCut·Codex 편집
 - Content Marketing: 타깃이 멈추는 훅, 공감 포인트, 기억되는 메시지, SNS/외부 채널용 콘텐츠 구성
 - Portfolio / Web Support: Next.js/React 기반 포트폴리오 페이지 구성, 결과물 링크와 자료 구조화
 
