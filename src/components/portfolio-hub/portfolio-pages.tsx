@@ -6,6 +6,7 @@ import { getProject, projects, resumeProfile, type PortfolioProject } from "@/li
 
 const navItems = [
   { href: "/", label: "Portfolio" },
+  { href: "/content-performance", label: "Metrics" },
   { href: "/deck/musinsa", label: "Musinsa" },
   { href: "/deck/loom", label: "Loom" },
   { href: "/deck/adsb", label: "ADSB" },
@@ -130,7 +131,7 @@ function ProjectMediaFigure({ project }: { project: PortfolioProject }) {
   );
 }
 
-function Shell({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
+export function Shell({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
     <main className={styles.page}>
       <div className={`${styles.shell} ${wide ? styles.wideShell : ""}`}>

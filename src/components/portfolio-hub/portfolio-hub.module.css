@@ -1145,6 +1145,451 @@
   font-weight: 850;
 }
 
+.performanceHero {
+  padding: 44px 0 28px;
+}
+
+.performanceHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(360px, 0.38fr);
+  gap: 26px;
+  align-items: end;
+}
+
+.performanceHeroCopy {
+  display: grid;
+  gap: 16px;
+}
+
+.performanceHeroCopy h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.performanceHeroCopy p {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(239, 244, 247, 0.74);
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.72;
+}
+
+.performanceHeroStats {
+  display: grid;
+  gap: 10px;
+}
+
+.performanceHeroStats article,
+.performancePlatformPanel,
+.performanceCasePanel,
+.performanceListPanel,
+.performanceEmbedCard,
+.performanceScopeBand,
+.performanceClosingBand {
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(145, 199, 220, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.034);
+}
+
+.performanceHeroStats article {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+}
+
+.performanceHeroStats span,
+.performanceMetricLabel,
+.performancePanelNote,
+.performanceTable td span,
+.performanceEmbedCard figcaption span,
+.performanceListPanel li span {
+  color: rgba(239, 244, 247, 0.58);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.performanceHeroStats strong {
+  color: #ffffff;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 0.95;
+}
+
+.performanceHeroStats p,
+.performanceScopeBand p,
+.performanceClosingBand p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.performanceScopeBand,
+.performanceClosingBand {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px 20px;
+  margin: 0 0 34px;
+}
+
+.performanceClosingBand {
+  margin: 0 0 56px;
+}
+
+.performanceScopeBand svg,
+.performanceClosingBand svg {
+  color: var(--loom-cyan);
+}
+
+.performanceScopeBand strong,
+.performanceClosingBand strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.performancePlatformGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.performancePlatformPanel {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.performancePlatformHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.performancePlatformHeader > svg {
+  flex: 0 0 auto;
+  color: var(--loom-cyan);
+}
+
+.performancePlatformHeader div {
+  display: grid;
+  gap: 3px;
+}
+
+.performancePlatformHeader span {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 920;
+}
+
+.performancePlatformHeader a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 12px;
+  font-weight: 820;
+  text-decoration: none;
+}
+
+.performanceMainMetric {
+  color: #ffffff;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.9;
+}
+
+.performanceMetricLabel {
+  margin-top: -8px;
+}
+
+.performanceStatList {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.performanceStatList div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(230, 238, 242, 0.09);
+}
+
+.performanceStatList dt,
+.performanceCasePanel dt {
+  color: rgba(239, 244, 247, 0.56);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.performanceStatList dd {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: right;
+}
+
+.performancePanelNote {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.performanceCaseGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+}
+
+.performanceCasePanel {
+  padding: 20px;
+}
+
+.performanceCasePanel h3,
+.performanceEmbedSectionHeader h3,
+.performanceListPanel h3 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.18;
+}
+
+.performanceCasePanel dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.performanceCasePanel div {
+  display: grid;
+  gap: 5px;
+}
+
+.performanceCasePanel dd {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.76);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.performanceEmbedStack {
+  display: grid;
+  gap: 28px;
+}
+
+.performanceEmbedSection {
+  display: grid;
+  gap: 14px;
+  scroll-margin-top: 96px;
+}
+
+.performanceEmbedSectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.performanceEmbedSectionHeader h3 {
+  margin-bottom: 0;
+}
+
+.performanceEmbedSectionHeader span {
+  color: rgba(169, 212, 227, 0.9);
+  font-size: 12px;
+  font-weight: 920;
+  text-transform: uppercase;
+}
+
+.performanceEmbedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.performanceEmbedCard {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  margin: 0;
+  padding: 14px;
+}
+
+.performanceEmbedCard figcaption {
+  display: grid;
+  gap: 5px;
+}
+
+.performanceEmbedCard figcaption strong {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.performanceEmbedCard figcaption p {
+  margin: 2px 0 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 12px;
+  font-weight: 820;
+  line-height: 1.45;
+}
+
+.performanceEmbedCard figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--loom-cyan);
+  font-size: 12px;
+  font-weight: 860;
+  text-decoration: none;
+}
+
+.performanceEmbedFrame {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #060808;
+}
+
+.performanceEmbedFrame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.performanceEmbedCard[data-platform="TikTok"] .performanceEmbedFrame iframe {
+  min-height: 620px;
+}
+
+.performanceEmbedCard[data-platform="YouTube"] .performanceEmbedFrame iframe {
+  aspect-ratio: 16 / 9;
+}
+
+.performanceTableShell {
+  overflow-x: auto;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.032);
+}
+
+.performanceTable {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.performanceTable th,
+.performanceTable td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(230, 238, 242, 0.09);
+  color: rgba(239, 244, 247, 0.76);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  vertical-align: top;
+}
+
+.performanceTable th {
+  color: rgba(169, 212, 227, 0.94);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.performanceTable td:nth-child(n + 3):not(:last-child),
+.performanceTable th:nth-child(n + 3):not(:last-child) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.performanceTable tr:last-child td {
+  border-bottom: 0;
+}
+
+.performanceTable td strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.performanceTable td p {
+  max-width: 360px;
+  margin: 7px 0 0;
+  color: rgba(239, 244, 247, 0.56);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.performanceTable a {
+  display: inline-flex;
+  color: var(--loom-cyan);
+}
+
+.performanceTwoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.performanceListPanel {
+  padding: 20px;
+}
+
+.performanceListPanel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.performanceListPanel li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid rgba(230, 238, 242, 0.09);
+}
+
+.performanceListPanel li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.performanceListPanel li strong {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.performanceListPanel li p {
+  margin: 6px 0 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.performanceListPanel li a {
+  color: var(--loom-cyan);
+}
+
 .footer {
   padding: 36px 0 56px;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
@@ -1156,6 +1601,10 @@
   .hero,
   .resumeGrid,
   .caseBoard,
+  .performanceHeroGrid,
+  .performanceCaseGrid,
+  .performanceEmbedGrid,
+  .performanceTwoColumn,
   .projectHeroGrid,
   .sftiHero,
   .outcomeBody,
@@ -1172,6 +1621,7 @@
   .sftiPositionGrid,
   .sftiFlowGrid,
   .sftiEvidenceGrid,
+  .performancePlatformGrid,
   .bemoonSignalGrid,
   .bemoonFlowGrid,
   .bemoonStructureGrid,
@@ -1217,6 +1667,7 @@
   .sectionHeader h2,
   .caseTitleBlock h1,
   .caseTitleBlock h3,
+  .performanceHeroCopy h1,
   .projectHero > h1,
   .sftiHeroCopy h1 {
     white-space: normal;
@@ -1224,6 +1675,7 @@
 
   .heroText h1,
   .caseTitleBlock h1,
+  .performanceHeroCopy h1,
   .projectHero > h1,
   .sftiHeroCopy h1 {
     font-size: 42px;
@@ -1243,6 +1695,46 @@
 
   .projectGrid {
     grid-template-columns: 1fr;
+  }
+
+  .performanceHero {
+    padding: 34px 0 24px;
+  }
+
+  .performanceHeroStats article {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .performanceHeroStats strong {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    font-size: 28px;
+    text-align: right;
+  }
+
+  .performanceHeroStats span,
+  .performanceHeroStats p {
+    grid-column: 1;
+  }
+
+  .performanceScopeBand,
+  .performanceClosingBand {
+    grid-template-columns: 1fr;
+    padding-right: 92px;
+  }
+
+  .performanceScopeBand {
+    padding-bottom: 86px;
+  }
+
+  .performancePlatformPanel,
+  .performanceCasePanel,
+  .performanceEmbedCard,
+  .performanceListPanel {
+    padding: 16px;
   }
 
   .projectCard {

@@ -133,6 +133,11 @@ export const projects: PortfolioProject[] = [
         href: "https://loom-signal-deck.vercel.app",
         description: "Root Signal, Pulso, member archive, Harne vote UX를 확인하는 공개 웹 페이지",
       },
+      {
+        label: "Metrics",
+        href: "/content-performance#loom-metrics",
+        description: "Loom/Pulso TikTok·YouTube 대표 성과 지표로 이동",
+      },
     ],
     socialLinks: [
       {
