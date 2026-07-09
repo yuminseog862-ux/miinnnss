@@ -569,6 +569,373 @@
   color: var(--project-accent, var(--loom-cyan));
 }
 
+.workflowPageHero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) auto;
+  gap: 24px;
+  align-items: end;
+  padding: 44px 0 30px;
+}
+
+.workflowHeroCopy {
+  display: grid;
+  gap: 14px;
+}
+
+.workflowHeroCopy h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.workflowHeroCopy p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(239, 244, 247, 0.72);
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.7;
+}
+
+.workflowHeroActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.workflowPageShell {
+  display: grid;
+  gap: 26px;
+  padding: 26px 0 52px;
+  border-top: 1px solid rgba(230, 238, 242, 0.1);
+}
+
+.workflowPurposeBand {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.32fr) minmax(0, 0.68fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 22px 24px;
+  border: 1px solid rgba(230, 238, 242, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(135, 214, 232, 0.1), rgba(221, 194, 123, 0.045) 48%, rgba(230, 238, 242, 0.025)),
+    rgba(5, 8, 7, 0.78);
+}
+
+.workflowPurposeBand > div:first-child {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+}
+
+.workflowPurposeBand > div:first-child span,
+.workflowPurposeGrid article span {
+  color: var(--loom-cyan);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.workflowPurposeBand h2 {
+  max-width: 420px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.workflowPurposeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.workflowPurposeGrid article {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-height: 236px;
+  padding: 14px;
+  border: 1px solid rgba(230, 238, 242, 0.12);
+  border-radius: 8px;
+  background: rgba(2, 3, 3, 0.42);
+}
+
+.workflowPurposeGrid h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.22;
+  letter-spacing: 0;
+}
+
+.workflowPurposeGrid p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.workflowPurposeTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.workflowPurposeTools em {
+  min-height: 26px;
+  padding: 5px 8px;
+  border: 1px solid rgba(145, 199, 220, 0.28);
+  border-radius: 999px;
+  color: rgba(239, 244, 247, 0.82);
+  background: rgba(145, 199, 220, 0.08);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.workflowPurposeWhy {
+  display: block;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(230, 238, 242, 0.1);
+  color: rgba(239, 244, 247, 0.6);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.workflowBoundarySection,
+.workflowImageSection,
+.workflowEvidenceSection {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid rgba(230, 238, 242, 0.15);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(145, 199, 220, 0.11), transparent 28%),
+    radial-gradient(circle at 92% 0%, rgba(170, 181, 255, 0.09), transparent 30%),
+    linear-gradient(90deg, rgba(230, 238, 242, 0.035) 0 1px, transparent 1px 112px),
+    linear-gradient(180deg, rgba(230, 238, 242, 0.03) 0 1px, transparent 1px 96px),
+    rgba(8, 13, 15, 0.9);
+  scroll-margin-top: 96px;
+}
+
+.workflowSectionHeader,
+.workflowImageCardHeader {
+  display: grid;
+  gap: 9px;
+}
+
+.workflowSectionHeader span,
+.workflowImageCardHeader span {
+  color: var(--loom-cyan);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.workflowSectionHeader h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.workflowSectionHeader p,
+.workflowImageCardHeader p {
+  max-width: 860px;
+  margin: 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.workflowImageNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 4px;
+}
+
+.workflowImageNav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(230, 238, 242, 0.16);
+  border-radius: 999px;
+  color: rgba(239, 244, 247, 0.78);
+  background: rgba(230, 238, 242, 0.055);
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.workflowImageNav span {
+  color: var(--loom-cyan);
+  font-weight: 950;
+}
+
+.workflowImageRail {
+  display: grid;
+  gap: 18px;
+  padding: 2px 0 0;
+}
+
+.workflowImageCard {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(230, 238, 242, 0.055), rgba(230, 238, 242, 0.018)),
+    rgba(2, 3, 3, 0.52);
+  scroll-margin-top: 96px;
+}
+
+.workflowImageCardHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(24px, 2.7vw, 36px);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.workflowBoundaryGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.4fr) minmax(0, 0.6fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.workflowBoundaryStatement,
+.workflowBoundaryTable article,
+.workflowFocusPanel {
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(230, 238, 242, 0.07), rgba(230, 238, 242, 0.022)),
+    rgba(2, 3, 3, 0.54);
+}
+
+.workflowBoundaryStatement {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 28px;
+}
+
+.workflowBoundaryStatement span,
+.workflowFocusPanel > span,
+.workflowBoundaryTable article span {
+  color: var(--loom-cyan);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.workflowBoundaryStatement strong {
+  color: #ffffff;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.workflowBoundaryStatement p,
+.workflowBoundaryTable article p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.72);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.workflowBoundaryTable {
+  display: grid;
+  gap: 12px;
+}
+
+.workflowBoundaryTable article {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.24fr) repeat(2, minmax(0, 0.38fr));
+  gap: 14px;
+  align-items: start;
+  padding: 18px;
+}
+
+.workflowBoundaryTable h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 19px;
+  line-height: 1.22;
+}
+
+.workflowBoundaryTable article div {
+  display: grid;
+  gap: 7px;
+}
+
+.workflowImageMedia {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  border: 1px solid rgba(230, 238, 242, 0.14);
+  border-radius: 6px;
+  background-color: #020303;
+  box-shadow: inset 0 0 0 1px rgba(2, 3, 3, 0.6);
+  overflow: hidden;
+}
+
+.workflowImageMedia img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.workflowFocusPanel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+}
+
+.workflowFocusPanel ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflowFocusPanel li {
+  min-height: 30px;
+  padding: 6px 10px;
+  border: 1px solid rgba(145, 199, 220, 0.24);
+  border-radius: 999px;
+  color: rgba(239, 244, 247, 0.76);
+  background: rgba(145, 199, 220, 0.07);
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
 .resumeGrid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.75fr);
@@ -1601,6 +1968,9 @@
   .hero,
   .resumeGrid,
   .caseBoard,
+  .workflowPageHero,
+  .workflowPurposeBand,
+  .workflowBoundaryGrid,
   .performanceHeroGrid,
   .performanceCaseGrid,
   .performanceEmbedGrid,
@@ -1621,6 +1991,7 @@
   .sftiPositionGrid,
   .sftiFlowGrid,
   .sftiEvidenceGrid,
+  .workflowPurposeGrid,
   .performancePlatformGrid,
   .bemoonSignalGrid,
   .bemoonFlowGrid,
@@ -1638,6 +2009,15 @@
     border-right: 0;
     border-bottom: 1px solid rgba(230, 238, 242, 0.1);
   }
+
+  .workflowBoundaryTable article {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowPurposeGrid article {
+    min-height: 0;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -1691,6 +2071,55 @@
 
   .sectionHeader h2 {
     font-size: 32px;
+  }
+
+  .workflowPageHero {
+    padding: 34px 0 24px;
+  }
+
+  .workflowHeroCopy h1 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .workflowHeroActions {
+    justify-content: flex-start;
+  }
+
+  .workflowBoundarySection,
+  .workflowImageSection,
+  .workflowEvidenceSection {
+    padding: 18px;
+    scroll-margin-top: 150px;
+  }
+
+  .workflowPurposeBand {
+    padding: 18px;
+  }
+
+  .workflowImageCard {
+    padding: 14px;
+    scroll-margin-top: 150px;
+  }
+
+  .workflowSectionHeader h2 {
+    font-size: 30px;
+  }
+
+  .workflowBoundaryStatement {
+    padding: 20px;
+  }
+
+  .workflowBoundaryStatement strong {
+    font-size: 29px;
+  }
+
+  .workflowImageNav a {
+    max-width: 220px;
+  }
+
+  .workflowFocusPanel {
+    padding: 16px;
   }
 
   .projectGrid {

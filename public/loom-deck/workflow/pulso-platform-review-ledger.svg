@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pulso 게시 검토 기록</title>
+  <desc id="desc">YouTube, TikTok, X 공개 전 초안 상태와 캡션, 렌더 비율, 승인 상태를 나눠 확인하는 제작 기록 도식</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07100f"/>
+      <stop offset=".48" stop-color="#0d1517"/>
+      <stop offset="1" stop-color="#030504"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#87d6e8"/>
+      <stop offset="1" stop-color="#e8f7fb"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.31 0 0 0 0 0.72 0 0 0 0 0.82 0 0 0 .45 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#e6eef2" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <circle cx="1360" cy="104" r="230" fill="#87d6e8" opacity=".08"/>
+  <circle cx="190" cy="772" r="260" fill="#ddc27b" opacity=".06"/>
+
+  <rect x="44" y="42" width="1512" height="816" rx="28" fill="#050807" fill-opacity=".56" stroke="#e6eef2" stroke-opacity=".16"/>
+
+  <g transform="translate(86 82)">
+    <rect x="0" y="0" width="68" height="40" rx="20" fill="#87d6e8" fill-opacity=".14" stroke="#87d6e8" stroke-opacity=".55"/>
+    <text x="34" y="27" text-anchor="middle" fill="#c8f2fb" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="800">06</text>
+    <text x="0" y="92" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="0">게시 검토 기록</text>
+    <text x="0" y="136" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="23" font-weight="500">편집본을 바로 공개하지 않고 플랫폼별 초안, 캡션, 렌더 비율, 공개 결정을 나눠 확인했다.</text>
+  </g>
+
+  <g transform="translate(92 258)">
+    <g>
+      <rect x="0" y="0" width="316" height="112" rx="18" fill="#10191b" stroke="#e6eef2" stroke-opacity=".13"/>
+      <text x="28" y="42" fill="#87d6e8" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" font-weight="900">1</text>
+      <text x="58" y="44" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="25" font-weight="800">편집본 선택</text>
+      <text x="58" y="78" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17">컷 연결과 리듬 확인</text>
+    </g>
+    <path d="M336 56H404" stroke="#87d6e8" stroke-opacity=".75" stroke-width="3"/>
+    <path d="M404 56l-14-9v18z" fill="#87d6e8"/>
+    <g transform="translate(424 0)">
+      <rect x="0" y="0" width="316" height="112" rx="18" fill="#10191b" stroke="#e6eef2" stroke-opacity=".13"/>
+      <text x="28" y="42" fill="#87d6e8" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" font-weight="900">2</text>
+      <text x="58" y="44" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="25" font-weight="800">플랫폼 초안</text>
+      <text x="58" y="78" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17">업로드 전 상태 기록</text>
+    </g>
+    <path d="M760 56H828" stroke="#87d6e8" stroke-opacity=".75" stroke-width="3"/>
+    <path d="M828 56l-14-9v18z" fill="#87d6e8"/>
+    <g transform="translate(848 0)">
+      <rect x="0" y="0" width="316" height="112" rx="18" fill="#10191b" stroke="#e6eef2" stroke-opacity=".13"/>
+      <text x="28" y="42" fill="#87d6e8" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" font-weight="900">3</text>
+      <text x="58" y="44" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="25" font-weight="800">캡션·비율 확인</text>
+      <text x="58" y="78" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17">문구와 렌더 규격 점검</text>
+    </g>
+    <path d="M1184 56H1252" stroke="#87d6e8" stroke-opacity=".75" stroke-width="3"/>
+    <path d="M1252 56l-14-9v18z" fill="#87d6e8"/>
+    <g transform="translate(1272 0)">
+      <rect x="0" y="0" width="210" height="112" rx="18" fill="#102016" stroke="#ddc27b" stroke-opacity=".28"/>
+      <text x="28" y="42" fill="#ddc27b" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="16" font-weight="900">4</text>
+      <text x="58" y="44" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="24" font-weight="800">승인 후 공개</text>
+      <text x="58" y="78" fill="#c8d0ce" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="16">최종 공개 결정</text>
+    </g>
+  </g>
+
+  <g transform="translate(86 444)">
+    <g filter="url(#softGlow)">
+      <rect x="0" y="0" width="452" height="252" rx="24" fill="#0b1214" stroke="#87d6e8" stroke-opacity=".34"/>
+    </g>
+    <text x="34" y="52" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="34" font-weight="850">YouTube</text>
+    <rect x="34" y="78" width="156" height="32" rx="16" fill="#87d6e8" fill-opacity=".13"/>
+    <text x="112" y="100" text-anchor="middle" fill="#c8f2fb" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" font-weight="800">공개본 후보</text>
+    <text x="34" y="145" fill="#e9f2f3" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="22" font-weight="720">최종본 업로드 등록</text>
+    <text x="34" y="184" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18">임베드 확인 · 썸네일 확인 · 설명문 확인</text>
+    <text x="34" y="220" fill="#ddc27b" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17" font-weight="820">검토 후 최종 공개</text>
+  </g>
+
+  <g transform="translate(574 444)">
+    <rect x="0" y="0" width="452" height="252" rx="24" fill="#0b1214" stroke="#e6eef2" stroke-opacity=".17"/>
+    <text x="34" y="52" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="34" font-weight="850">TikTok</text>
+    <rect x="34" y="78" width="128" height="32" rx="16" fill="#e5b1d4" fill-opacity=".14"/>
+    <text x="98" y="100" text-anchor="middle" fill="#ffd7ef" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" font-weight="800">세로본 확인</text>
+    <text x="34" y="145" fill="#e9f2f3" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="22" font-weight="720">초안 업로드 기록</text>
+    <text x="34" y="184" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18">9:16 렌더 · 초반 3초 · 캡션 직접 확인</text>
+    <text x="34" y="220" fill="#ddc27b" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17" font-weight="820">승인 전 대기</text>
+  </g>
+
+  <g transform="translate(1062 444)">
+    <rect x="0" y="0" width="452" height="252" rx="24" fill="#0b1214" stroke="#e6eef2" stroke-opacity=".17"/>
+    <text x="34" y="52" fill="#ffffff" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="34" font-weight="850">X</text>
+    <rect x="34" y="78" width="148" height="32" rx="16" fill="#ddc27b" fill-opacity=".14"/>
+    <text x="108" y="100" text-anchor="middle" fill="#f5dd91" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="15" font-weight="800">게시 문구 확인</text>
+    <text x="34" y="145" fill="#e9f2f3" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="22" font-weight="720">수동 업로드 시트</text>
+    <text x="34" y="184" fill="#b8c4c7" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18">풀버전 · 섹션 클립 · 해시태그 문구 정리</text>
+    <text x="34" y="220" fill="#ddc27b" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="17" font-weight="820">공개 순서 확인</text>
+  </g>
+
+  <g transform="translate(86 746)">
+    <rect x="0" y="0" width="1428" height="68" rx="20" fill="#e6eef2" fill-opacity=".055" stroke="#e6eef2" stroke-opacity=".12"/>
+    <text x="34" y="43" fill="#c8f2fb" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18" font-weight="850">확인 기준</text>
+    <text x="154" y="43" fill="#d7e1e3" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="18">컷 선택 / 렌더 비율 / 캡션 / 플랫폼 상태 / 승인 기록</text>
+    <text x="1394" y="43" text-anchor="end" fill="#7f8b8e" font-family="Inter, Pretendard, Apple SD Gothic Neo, Arial, sans-serif" font-size="15">Pulso edit review</text>
+  </g>
+</svg>

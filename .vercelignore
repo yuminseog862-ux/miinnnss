@@ -1,7 +1,9 @@
 .playwright-cli
+.tmp
 archive
 docs
 output
+outputs
 tmp
 public/appendix/bluegarage/adsb/collage.pdf
 public/appendix/bluegarage/adsb/storyboard-research.pdf
