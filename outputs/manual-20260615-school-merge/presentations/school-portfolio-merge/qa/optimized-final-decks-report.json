@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-06-17T07:09:56.733Z",
+  "mode": "artifact-tool-import-image-optimize-export",
+  "settings": {
+    "maxLongEdge": 1920,
+    "maxPixels": 2073600,
+    "jpegQuality": 88
+  },
+  "results": [
+    {
+      "source": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션크리에이티브_디렉션_2251014_유민석.pptx",
+      "output": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션크리에이티브_디렉션_2251014_유민석_optimized.pptx",
+      "originalSlideCount": 104,
+      "optimizedSlideCount": 104,
+      "originalBytes": 117747633,
+      "optimizedBytes": 25097783,
+      "changedImages": 145,
+      "scannedImages": 163,
+      "savedImageBytes": 93225296,
+      "emptyImages": 0,
+      "forbiddenHits": []
+    },
+    {
+      "source": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션마케팅_2251014_유민석.pptx",
+      "output": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션마케팅_2251014_유민석_optimized.pptx",
+      "originalSlideCount": 135,
+      "optimizedSlideCount": 135,
+      "originalBytes": 125759024,
+      "optimizedBytes": 37156065,
+      "changedImages": 714,
+      "scannedImages": 729,
+      "savedImageBytes": 88617085,
+      "emptyImages": 0,
+      "forbiddenHits": []
+    }
+  ]
+}

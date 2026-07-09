@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-06-15T00:45:38.495Z",
+  "url": "file:///Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/index.html",
+  "htmlFile": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/index.html",
+  "allIds": [
+    "bemoon-slide-01",
+    "bemoon-slide-02",
+    "bemoon-slide-03",
+    "bemoon-slide-04",
+    "bemoon-slide-05",
+    "bemoon-slide-06"
+  ],
+  "captured": [
+    {
+      "id": "bemoon-slide-01",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-01.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bemoon-slide-02",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-02.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bemoon-slide-03",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-03.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bemoon-slide-04",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-04.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bemoon-slide-05",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-05.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "bemoon-slide-06",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/bemoon-html/bemoon-slide-06.png",
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "skipped": []
+}

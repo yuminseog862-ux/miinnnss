@@ -1,0 +1,737 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gfmlkjm1",
+    "id": "gfmlkjm1",
+    "slide": 28,
+    "layoutId": "/ppt/slideLayouts/slideLayout7.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+    "backgroundColor": "#12887A",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout7.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/2",
+          "id": "2",
+          "name": "Title 1",
+          "bbox": [
+            52.93,
+            164.44,
+            599.89,
+            113.46
+          ],
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/3",
+          "id": "3",
+          "name": "Subtitle 2",
+          "bbox": [
+            105.86,
+            299.96,
+            494.02,
+            135.27
+          ],
+          "text": "Click to edit Master subtitle style",
+          "textPreview": "Click to edit Master subtitle style",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master subtitle style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master subtitle style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "6/1/24",
+          "textPreview": "6/1/24",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6/1/24",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6/1/24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout7.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster3.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            35.29,
+            21.2,
+            635.18,
+            88.22
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            35.29,
+            123.51,
+            635.18,
+            349.34
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            35.29,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "6/1/24",
+          "textPreview": "6/1/24",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6/1/24",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6/1/24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            241.13,
+            490.61,
+            223.49,
+            28.18
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            505.79,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/y90je9cv",
+      "id": "1",
+      "name": "Object 2",
+      "bbox": [
+        0,
+        0.02,
+        1411.32,
+        793.87
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image397.png",
+        "contentType": "image/png",
+        "byteLength": 67200
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image397.png",
+        "contentType": "image/png",
+        "byteLength": 67200
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/5wjudg7a",
+      "id": "2",
+      "name": "Object 5",
+      "bbox": [
+        48.13,
+        -8.1,
+        1320.04,
+        810.11
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image398.png",
+        "contentType": "image/png",
+        "byteLength": 10350
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image398.png",
+        "contentType": "image/png",
+        "byteLength": 10350
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gbq1oryt",
+      "id": "3",
+      "name": "Object 8",
+      "bbox": [
+        75.88,
+        93.86,
+        312.95,
+        5.41
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image446.png",
+        "contentType": "image/png",
+        "byteLength": 129
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image446.png",
+        "contentType": "image/png",
+        "byteLength": 129
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/n29gr2p8",
+      "id": "4",
+      "name": "Object 11",
+      "bbox": [
+        -165.18,
+        39.49,
+        1094.81,
+        722.78
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image447.png",
+        "contentType": "image/png",
+        "byteLength": 7885
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image447.png",
+        "contentType": "image/png",
+        "byteLength": 7885
+      }
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/yhgn29gr",
+      "id": "5",
+      "name": "Object 12",
+      "bbox": [
+        104.59,
+        216.26,
+        547.41,
+        361.39
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image448.png",
+        "contentType": "image/png",
+        "byteLength": 119266
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image448.png",
+        "contentType": "image/png",
+        "byteLength": 119266
+      }
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/58z25kb6",
+      "id": "6",
+      "name": "Object 15",
+      "bbox": [
+        458.03,
+        39.49,
+        1094.81,
+        722.78
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image447.png",
+        "contentType": "image/png",
+        "byteLength": 7885
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image447.png",
+        "contentType": "image/png",
+        "byteLength": 7885
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/gn29gr2p",
+      "id": "7",
+      "name": "Object 16",
+      "bbox": [
+        727.8,
+        216.26,
+        547.41,
+        361.39
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image449.png",
+        "contentType": "image/png",
+        "byteLength": 105776
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image449.png",
+        "contentType": "image/png",
+        "byteLength": 105776
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/neloj2t8",
+      "id": "8",
+      "name": "Object 18",
+      "bbox": [
+        64.63,
+        30.35,
+        348.47,
+        97.24
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image450.png",
+        "contentType": "image/png",
+        "byteLength": 6666
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image450.png",
+        "contentType": "image/png",
+        "byteLength": 6666
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ytsvu9kn",
+      "id": "9",
+      "name": "Object 21",
+      "bbox": [
+        -154.97,
+        562.4,
+        1718.76,
+        289.47
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image404.png",
+        "contentType": "image/png",
+        "byteLength": 5207
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image404.png",
+        "contentType": "image/png",
+        "byteLength": 5207
+      }
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/83itgfml",
+      "id": "10",
+      "name": "Object 22",
+      "bbox": [
+        275.97,
+        632.92,
+        859.38,
+        144.73
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image405.png",
+        "contentType": "image/png",
+        "byteLength": 2119
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image405.png",
+        "contentType": "image/png",
+        "byteLength": 2119
+      }
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/xobm58z2",
+      "id": "11",
+      "name": "Object 24",
+      "bbox": [
+        134.76,
+        654.62,
+        1020.58,
+        107.97
+      ],
+      "rotation": 0,
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image451.png",
+        "contentType": "image/png",
+        "byteLength": 23718
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image451.png",
+        "contentType": "image/png",
+        "byteLength": 23718
+      }
+    },
+    {
+      "order": 12,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qxs72x4n",
+      "id": "12",
+      "name": "Object 26",
+      "bbox": [
+        68.67,
+        102.01,
+        324.71,
+        62.04
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image452.png",
+        "contentType": "image/png",
+        "byteLength": 7812
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image452.png",
+        "contentType": "image/png",
+        "byteLength": 7812
+      }
+    }
+  ],
+  "composeRuns": []
+}

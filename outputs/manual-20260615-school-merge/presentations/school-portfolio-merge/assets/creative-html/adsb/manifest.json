@@ -1,0 +1,59 @@
+{
+  "generatedAt": "2026-06-15T10:22:34.970Z",
+  "key": "adsb",
+  "url": "http://127.0.0.1:3000/deck/adsb",
+  "allIds": [
+    "slide-30",
+    "slide-32",
+    "slide-33",
+    "slide-34",
+    "slide-35",
+    "slide-36",
+    "slide-37"
+  ],
+  "captured": [
+    {
+      "id": "slide-30",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-30.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-32",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-32.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-33",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-33.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-34",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-34.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-35",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-35.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-36",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-36.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-37",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/adsb/slide-37.png",
+      "width": 1394,
+      "height": 785
+    }
+  ],
+  "skipped": []
+}

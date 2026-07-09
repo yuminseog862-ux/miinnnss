@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-06-17T07:37:29.526Z",
+  "mode": "artifact-tool-import-image-optimize-export",
+  "profile": "crisp",
+  "settings": {
+    "maxLongEdge": 10000,
+    "maxPixels": 100000000,
+    "jpegQuality": 100,
+    "jpegSubsampling": 0,
+    "allowPngToJpeg": false,
+    "allowPngPalette": false,
+    "suffix": "_optimized_crisp"
+  },
+  "results": [
+    {
+      "source": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션마케팅_2251014_유민석.pptx",
+      "output": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/병합본/패션마케팅_2251014_유민석_optimized_crisp.pptx",
+      "originalSlideCount": 135,
+      "optimizedSlideCount": 135,
+      "originalBytes": 125759024,
+      "optimizedBytes": 113076344,
+      "changedImages": 676,
+      "scannedImages": 729,
+      "savedImageBytes": 12958801,
+      "emptyImages": 0,
+      "forbiddenHits": []
+    }
+  ]
+}

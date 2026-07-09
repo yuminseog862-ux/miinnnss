@@ -1,0 +1,2058 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/83itgfml",
+    "id": "83itgfml",
+    "slide": 53,
+    "layoutId": "/ppt/slideLayouts/slideLayout18.xml",
+    "layoutName": "제목 슬라이드",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "NanumGothic"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout18.xml",
+      "name": "제목 슬라이드",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "2024. 6. 1.",
+          "textPreview": "2024. 6. 1.",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2024. 6. 1.",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2024. 6. 1."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster3.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            35.29,
+            21.2,
+            635.18,
+            88.22
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            35.29,
+            123.51,
+            635.18,
+            349.34
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            35.29,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "6/1/24",
+          "textPreview": "6/1/24",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6/1/24",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6/1/24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            241.13,
+            490.61,
+            223.49,
+            28.18
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            505.79,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcrmhk3q",
+      "id": "28",
+      "name": "직선 연결선 27",
+      "bbox": [
+        81.05,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orytsvu9",
+      "id": "29",
+      "name": "직선 연결선 28",
+      "bbox": [
+        164.34,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i9s36hcr",
+      "id": "30",
+      "name": "직선 연결선 29",
+      "bbox": [
+        247.64,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4vmtwra",
+      "id": "19",
+      "name": "직선 연결선 18",
+      "bbox": [
+        123.82,
+        24.42,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwfyxobm",
+      "id": "20",
+      "name": "직선 연결선 19",
+      "bbox": [
+        123.82,
+        -58.87,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obm58z25",
+      "id": "21",
+      "name": "직선 연결선 20",
+      "bbox": [
+        123.82,
+        -142.16,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "22",
+      "name": "직선 연결선 21",
+      "bbox": [
+        123.82,
+        -225.46,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "23",
+      "name": "직선 연결선 22",
+      "bbox": [
+        123.82,
+        -308.75,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "24",
+      "name": "직선 연결선 23",
+      "bbox": [
+        123.82,
+        -392.04,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "25",
+      "name": "직선 연결선 24",
+      "bbox": [
+        123.82,
+        -475.34,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zed8v6ps",
+      "id": "26",
+      "name": "직선 연결선 25",
+      "bbox": [
+        123.82,
+        -558.63,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "27",
+      "name": "직선 연결선 26",
+      "bbox": [
+        123.82,
+        -641.92,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "lineColor": {
+        "type": "theme",
+        "value": "accent1",
+        "transform": {
+          "lighten": 0.8
+        }
+      }
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0fepkzup",
+      "id": "3",
+      "name": "TextBox 2",
+      "bbox": [
+        764.48,
+        50.91,
+        501.61,
+        95.19
+      ],
+      "geometry": "rect",
+      "text": "오프라인 점포 \n공간관리분석 (내부)",
+      "textPreview": "오프라인 점포  | 공간관리분석 (내부)",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "오프라인 점포"
+          },
+          {
+            "index": 2,
+            "text": "공간관리분석 (내부)"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "오프라인 점포 ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "오프라인 점포 ",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "공간관리분석 (내부)",
+          "runs": [
+            {
+              "index": 1,
+              "text": "공간관리분석 ",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "(",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "내부",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": ")",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi9s36hc",
+      "id": "4",
+      "name": "TextBox 3",
+      "bbox": [
+        755.83,
+        147.15,
+        482.49,
+        583.5
+      ],
+      "geometry": "rect",
+      "text": "\n신발을 제외한 모든 상품을 골든 존의 범위 내에 디피 되어 있음. \n신발은 스톡 존에 디피 됨.(의류 행거 밑 바닥) \n\n색상 별으로 의류 상품들을 디피 해놓음 \n\n가방은 전면 진열, 의류상품들은 측면 진열\n\n매장의 조명은 내부 공간을 전체적으로 밝게 하는 조명을 사용함. \n매장의 인테리어 색상은 화이트 톤을 중심으로 벽돌을 사용하여 디자인되어 있음. 미술관이나 전시회장에 온 것 같은 느낌을 주는 화이트 톤의 인테리어. \n\n판매원은 앤더슨 벨의 직간접적인 광고, 마네킹, 판매, 서비스의 역할을 모두 수행하고 있으며 따라서 대체적으로 키가 큰 직원들이 앤더슨 벨의 옷을 입고 근무중. \n\nCctv 는 매 층마다 평균 2개 정도로 구석에 설치되어 있음.",
+      "textPreview": "| 신발을 제외한 모든 상품을 골든 존의 범위 내에 디피 되어 있음.  | 신발은 스톡 존에 디피 됨.(의류 행거 밑 바닥)  |  | 색상 별으로 의류 상품들을 디피 해놓음  |  | 가방은 전면 진열, 의류상품들은 측면 진열 |  | 매장의 ...",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 20,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "신발을 제외한 모든 상품을 골든 존의 범위 내에 디피 되어"
+          },
+          {
+            "index": 3,
+            "text": "있음."
+          },
+          {
+            "index": 4,
+            "text": "신발은 스톡 존에 디피 됨.(의류 행거 밑 바닥)"
+          },
+          {
+            "index": 5,
+            "text": ""
+          },
+          {
+            "index": 6,
+            "text": "색상 별으로 의류 상품들을 디피 해놓음"
+          },
+          {
+            "index": 7,
+            "text": ""
+          },
+          {
+            "index": 8,
+            "text": "가방은 전면 진열, 의류상품들은 측면 진열"
+          },
+          {
+            "index": 9,
+            "text": ""
+          },
+          {
+            "index": 10,
+            "text": "매장의 조명은 내부 공간을 전체적으로 밝게 하는 조명을"
+          },
+          {
+            "index": 11,
+            "text": "사용함."
+          },
+          {
+            "index": 12,
+            "text": "매장의 인테리어 색상은 화이트 톤을 중심으로 벽돌을"
+          },
+          {
+            "index": 13,
+            "text": "사용하여 디자인되어 있음. 미술관이나 전시회장에 온 것"
+          },
+          {
+            "index": 14,
+            "text": "같은 느낌을 주는 화이트 톤의 인테리어."
+          },
+          {
+            "index": 15,
+            "text": ""
+          },
+          {
+            "index": 16,
+            "text": "판매원은 앤더슨 벨의 직간접적인 광고, 마네킹, 판매,"
+          },
+          {
+            "index": 17,
+            "text": "서비스의 역할을 모두 수행하고 있으며 따라서 대체적으로"
+          },
+          {
+            "index": 18,
+            "text": "키가 큰 직원들이 앤더슨 벨의 옷을 입고 근무중."
+          },
+          {
+            "index": 19,
+            "text": ""
+          },
+          {
+            "index": 20,
+            "text": "Cctv 는 매 층마다 평균 2개 정도로 구석에 설치되어 있음."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 2,
+          "text": "신발을 제외한 모든 상품을 골든 존의 범위 내에 디피 되어 있음. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "신발을 제외한 모든 상품을 골든 존의 범위 내에 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "디피",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " 되어 있음",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ". ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "신발은 스톡 존에 디피 됨.(의류 행거 밑 바닥) ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "신발은 스톡 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "존에",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": "디피",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": " 됨",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": ".(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": "의류 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 8,
+              "text": "행거",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 9,
+              "text": " 밑 바닥",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 10,
+              "text": ") ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "색상 별으로 의류 상품들을 디피 해놓음 ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "색상 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "별으로",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " 의류 상품들을 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": "디피",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": " ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": "해놓음",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": " ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "가방은 전면 진열, 의류상품들은 측면 진열",
+          "runs": [
+            {
+              "index": 1,
+              "text": "가방은 전면 진열",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "의류상품들은 측면 진열",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "매장의 조명은 내부 공간을 전체적으로 밝게 하는 조명을 사용함. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "매장의 조명은 내부 공간을 전체적으로 밝게 하는 조명을 사용함",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": ". ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 10,
+          "text": "매장의 인테리어 색상은 화이트 톤을 중심으로 벽돌을 사용하여 디자인되어 있음. 미술관이나 전시회장에 온 것 같은 느낌을 주는 화이트 톤의 인테리어. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "매장의 인테리어 색상은 화이트 톤을 중심으로 벽돌을 사용하여 디자인되어 있음",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": ". ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "미술관이나 전시회장에 온 것 같은 느낌을 주는 화이트 톤의 인테리어",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ". ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 12,
+          "text": "판매원은 앤더슨 벨의 직간접적인 광고, 마네킹, 판매, 서비스의 역할을 모두 수행하고 있으며 따라서 대체적으로 키가 큰 직원들이 앤더슨 벨의 옷을 입고 근무중. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "판매원은 앤더슨 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "벨의",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " 직간접적인 광고",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "마네킹",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": "판매",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 8,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 9,
+              "text": "서비스의 역할을 모두 수행하고 있으며 따라서 대체적으로 키가 큰 직원들이 앤더슨 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 10,
+              "text": "벨의",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 11,
+              "text": " 옷을 입고 근무중",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 12,
+              "text": ". ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 14,
+          "text": "Cctv 는 매 층마다 평균 2개 정도로 구석에 설치되어 있음.",
+          "runs": [
+            {
+              "index": 1,
+              "text": "Cctv",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": " ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "는 매 층마다 평균 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": "2",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "개 정도로 구석에 설치되어 있음",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": ".",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tovahoza",
+      "id": "6",
+      "name": "자유형: 도형 5",
+      "bbox": [
+        1281.33,
+        730.17,
+        26.71,
+        26.71
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1"
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/032lszqt",
+      "id": "7",
+      "name": "자유형: 도형 6",
+      "bbox": [
+        1316.32,
+        730.17,
+        26.71,
+        26.71
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1"
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6xkf6dc",
+      "id": "8",
+      "name": "자유형: 도형 7",
+      "bbox": [
+        1351.32,
+        730.17,
+        26.71,
+        26.71
+      ],
+      "rotation": 0,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1"
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi9s36hc",
+      "id": "35",
+      "name": "직사각형 34",
+      "bbox": [
+        62.74,
+        66.74,
+        289.52,
+        280.54
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1",
+      "lineWidth": 2
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/il0rqd4v",
+      "id": "9",
+      "name": "직사각형 8",
+      "bbox": [
+        80.93,
+        89.54,
+        289.52,
+        280.54
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ovahoza1",
+      "id": "10",
+      "name": "직사각형 9",
+      "bbox": [
+        395.31,
+        89.38,
+        289.52,
+        280.54
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dg7adsji",
+      "id": "11",
+      "name": "직사각형 10",
+      "bbox": [
+        81.46,
+        388.93,
+        289.52,
+        280.54
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6tovahoz",
+      "id": "12",
+      "name": "직사각형 11",
+      "bbox": [
+        395.86,
+        388.93,
+        289.52,
+        280.54
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d8v6psfi",
+      "id": "15",
+      "name": "직사각형 14",
+      "bbox": [
+        1325.32,
+        14.05,
+        58.75,
+        58.75
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6hcrmhk3",
+      "id": "16",
+      "name": "TextBox 15",
+      "bbox": [
+        1312.25,
+        24.03,
+        84.89,
+        38.78
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "A",
+      "textPreview": "A",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A",
+              "typeface": "Calibri Light",
+              "color": "bg1"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3m94fu18",
+      "id": "36",
+      "name": "그림 12",
+      "bbox": [
+        80.93,
+        89.38,
+        288.15,
+        280.54
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image16.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 121490
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image16.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 121490
+      }
+    },
+    {
+      "order": 26,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/a5gbq1or",
+      "id": "37",
+      "name": "그림 32",
+      "bbox": [
+        396.12,
+        89.38,
+        288.71,
+        280.54
+      ],
+      "contentType": "image/jpeg",
+      "imageCrop": {
+        "left": 0,
+        "top": 0.13638,
+        "right": 0,
+        "bottom": 0.13676
+      },
+      "asset": {
+        "assetId": "/ppt/media/image17.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 109181
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image17.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 109181
+      }
+    },
+    {
+      "order": 27,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hoza1gvy",
+      "id": "38",
+      "name": "그림 36",
+      "bbox": [
+        81.61,
+        388.93,
+        289.64,
+        280.54
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image18.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 101504
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image18.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 101504
+      }
+    },
+    {
+      "order": 28,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/s36hcrmh",
+      "id": "39",
+      "name": "그림 39",
+      "bbox": [
+        400.41,
+        384.29,
+        280.73,
+        289.64
+      ],
+      "rotation": 90,
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image19.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 217993
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image19.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 217993
+      }
+    }
+  ],
+  "composeRuns": []
+}

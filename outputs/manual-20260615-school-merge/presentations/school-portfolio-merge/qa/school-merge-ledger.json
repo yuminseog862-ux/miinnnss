@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-06-15T10:32:43.228Z",
+  "artifactTool": "/Users/yuminseog/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs",
+  "sources": {
+    "digital": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/수업 자료들/무제 폴더 3/포트폴리오 2251014 유민석.pptx",
+    "aiProject": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/AI를 활용한 디자인/24SS Ai Project.pptx",
+    "aiReport": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/AI를 활용한 디자인/최종보고서 설명.pptx",
+    "styling": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/패션스타일링_2251014_유민석.pptx",
+    "clo": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/클로 포트폴리오_Zero to one_2251014_유민석.pptx",
+    "adsbOriginal": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/AI 포스터 수정중.pptx",
+    "stage": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/무대복식 PPT (1).pptx",
+    "retail": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/패유통/패션유통관리 통합 및 요약본 2024-1학기 앤더슨벨/2024 패션리테일러분석기말과제_통합본_A반_앤더슨벨_경복궁 스토어_2251014_유민석.pptx",
+    "aura": "/Users/yuminseog/portfolio/docs/source/my_real_projects_only/학교/아우라.pptx"
+  },
+  "sourceSlideCounts": {
+    "digital": 15,
+    "aiProject": 40,
+    "aiReport": 3,
+    "styling": 9,
+    "clo": 14,
+    "adsbOriginal": 1,
+    "stage": 20,
+    "retail": 89,
+    "aura": 8,
+    "creativeGenerated": 7,
+    "marketingGenerated": 11,
+    "adsbPosterOriginalsGenerated": 1,
+    "adsbHtmlGenerated": 7,
+    "sftiHtmlGenerated": 4,
+    "bemoonHtmlGenerated": 6,
+    "aheyaHtmlGenerated": 27
+  },
+  "outputs": [
+    {
+      "outFile": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/output/패션크리에이티브_디렉션_2251014_유민석.pptx",
+      "slideCount": 104,
+      "imageCount": 165,
+      "forbiddenHits": []
+    },
+    {
+      "outFile": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/output/패션마케팅_2251014_유민석.pptx",
+      "slideCount": 135,
+      "imageCount": 273,
+      "forbiddenHits": []
+    }
+  ]
+}
