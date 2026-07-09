@@ -7,14 +7,14 @@ import { getProject, projects, resumeProfile, type PortfolioProject } from "@/li
 const navItems = [
   { href: "/", label: "Portfolio" },
   { href: "/content-performance", label: "Metrics" },
-  { href: "/deck/musinsa", label: "Musinsa" },
   { href: "/deck/loom", label: "Loom" },
+  { href: "/deck/musinsa", label: "Musinsa" },
   { href: "/deck/adsb", label: "ADSB" },
   { href: "/deck/sfti", label: "SFTI" },
   { href: "/deck/aheya", label: "AHEYA" },
 ];
 
-const visibleProjectOrder: PortfolioProject["slug"][] = ["musinsa", "loom", "adsb", "sfti", "aheya"];
+const visibleProjectOrder: PortfolioProject["slug"][] = ["loom", "musinsa", "adsb", "sfti", "aheya"];
 const visibleProjects = visibleProjectOrder
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is PortfolioProject => Boolean(project));

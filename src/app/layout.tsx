@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 import { MainPageCta } from "@/components/main-page-cta";
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body style={{ margin: 0, background: "#020303" }}>
         {children}
         <MainPageCta />
+        <Analytics />
       </body>
     </html>
   );
