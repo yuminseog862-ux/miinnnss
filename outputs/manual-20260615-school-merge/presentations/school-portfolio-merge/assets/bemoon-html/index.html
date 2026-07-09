@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BE;MOON HTML Slides</title>
+    <style>
+      :root {
+        --ink: #f8f2e8;
+        --muted: #aeb8c6;
+        --soft: #dde5ef;
+        --paper: #101827;
+        --panel: rgba(255, 255, 255, 0.075);
+        --panel-strong: rgba(255, 255, 255, 0.12);
+        --rule: rgba(255, 255, 255, 0.16);
+        --amber: #f1b85a;
+        --mint: #54d6c3;
+        --blue: #78a7ff;
+        --red: #e86f61;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #050a12;
+        color: var(--ink);
+        font-family:
+          Inter,
+          "Pretendard",
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          Arial,
+          sans-serif;
+      }
+
+      main {
+        display: grid;
+        gap: 28px;
+        padding: 32px;
+      }
+
+      .deck-slide {
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(241, 184, 90, 0.18), rgba(84, 214, 195, 0.08) 36%, rgba(7, 17, 31, 0) 64%),
+          radial-gradient(circle at 84% 14%, rgba(120, 167, 255, 0.16), transparent 34%),
+          linear-gradient(155deg, #07111f 0%, #0d1726 46%, #101827 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+        isolation: isolate;
+      }
+
+      .deck-slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: linear-gradient(120deg, rgba(0, 0, 0, 0.2), transparent 60%);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .slide-inner {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%;
+        padding: 54px 64px 40px;
+      }
+
+      .topline,
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--amber);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .kicker::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--amber);
+        box-shadow: 0 0 0 5px rgba(241, 184, 90, 0.14);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-size: 74px;
+        line-height: 0.96;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        max-width: 900px;
+        font-size: 46px;
+        line-height: 1.08;
+        font-weight: 780;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 840px;
+        color: var(--soft);
+        font-size: 24px;
+        line-height: 1.46;
+        font-weight: 520;
+      }
+
+      .body-grid {
+        align-self: center;
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 44px;
+        align-items: center;
+      }
+
+      .stack {
+        display: grid;
+        gap: 24px;
+      }
+
+      .title-stack {
+        display: grid;
+        gap: 20px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 13px;
+        border: 1px solid var(--rule);
+        color: var(--soft);
+        background: rgba(255, 255, 255, 0.05);
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .panel {
+        border: 1px solid var(--rule);
+        background: var(--panel);
+        backdrop-filter: blur(16px);
+      }
+
+      .statement {
+        display: grid;
+        gap: 18px;
+        padding: 26px;
+      }
+
+      .statement strong {
+        color: var(--amber);
+        font-size: 38px;
+        line-height: 1;
+      }
+
+      .statement p {
+        color: var(--soft);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .cards-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .card {
+        min-height: 156px;
+        padding: 22px;
+        border: 1px solid var(--rule);
+        background: var(--panel);
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+
+      .card small {
+        color: var(--amber);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .card h3 {
+        color: var(--ink);
+        font-size: 24px;
+        line-height: 1.18;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      .card ul {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .rail {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      .rail-step {
+        position: relative;
+        min-height: 184px;
+        padding: 20px;
+        border: 1px solid var(--rule);
+        background: rgba(255, 255, 255, 0.072);
+      }
+
+      .rail-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        width: 16px;
+        height: 1px;
+        background: var(--amber);
+      }
+
+      .rail-step span {
+        display: block;
+        color: var(--amber);
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .rail-step h3 {
+        font-size: 21px;
+        line-height: 1.12;
+        margin-bottom: 12px;
+      }
+
+      .rail-step p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.42;
+      }
+
+      .diagram-panel {
+        min-height: 360px;
+        padding: 28px;
+        display: grid;
+        place-items: center;
+      }
+
+      .diagram-panel img {
+        width: 100%;
+        max-height: 312px;
+        object-fit: contain;
+        filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.22));
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 18px;
+      }
+
+      .metric {
+        min-height: 178px;
+        padding: 24px;
+        border: 1px solid var(--rule);
+        background: linear-gradient(180deg, var(--panel-strong), rgba(255, 255, 255, 0.055));
+      }
+
+      .metric b {
+        display: block;
+        color: var(--amber);
+        font-size: 34px;
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+
+      .metric h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .metric p {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.46;
+      }
+
+      .split-list {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .large-note {
+        padding: 30px;
+        border-left: 4px solid var(--amber);
+        background: rgba(241, 184, 90, 0.12);
+      }
+
+      .large-note p {
+        color: var(--soft);
+        font-size: 24px;
+        line-height: 1.38;
+        font-weight: 650;
+      }
+
+      .check-list {
+        display: grid;
+        gap: 14px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .check-list li {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 12px;
+        align-items: start;
+        color: var(--soft);
+        font-size: 18px;
+        line-height: 1.42;
+      }
+
+      .check-list li::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        border: 2px solid var(--amber);
+        background: rgba(241, 184, 90, 0.16);
+      }
+
+      .footer {
+        border-top: 1px solid var(--rule);
+        padding-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="deck-slide" id="bemoon-slide-01">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">BE;MOON / Online Fashion Startup Capstone</span>
+            <span>2251014 유민석</span>
+          </div>
+          <div class="body-grid">
+            <div class="title-stack">
+              <h1>Fashion trust rail for digital warranty</h1>
+              <p class="lead">
+                구매 인증, QR/WL 인증, 디지털 보증서 발급, 진위 검증, OMS 상태 동기화를 하나의 패션 신뢰 레일로 묶은 스타트업 기획안.
+              </p>
+              <div class="meta-row">
+                <span class="pill">2024-2</span>
+                <span class="pill">온라인 패션스타트업 캡스톤디자인</span>
+                <span class="pill">DPP / Warranty / OMS</span>
+              </div>
+            </div>
+            <div class="statement panel">
+              <strong>BE;MOON</strong>
+              <p>
+                성과 주장보다 문제 정의, MVP 흐름, 사업계획서 가정, 브랜드 운영 적합성을 보여주는 제출용 케이스로 정리합니다.
+              </p>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Use: concept, service structure, business assumption map</span>
+            <span>01 / 06</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="deck-slide" id="bemoon-slide-02">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">Problem Map</span>
+            <span>BE;MOON</span>
+          </div>
+          <div class="stack">
+            <div class="title-stack">
+              <h2>DPP, 가품 유통, 내부 보증서 한계가 같은 운영 문제로 모인다.</h2>
+              <p class="lead">패션 브랜드가 제품 이력과 진위, 사후 상태를 외부 검증 가능한 형태로 다루기 어려운 지점에서 출발합니다.</p>
+            </div>
+            <div class="cards-3">
+              <section class="card">
+                <small>01</small>
+                <h3>DPP 대응 부담</h3>
+                <p>소재, 공급망, 제품 식별 정보 요구가 브랜드 운영 데이터 정리 문제로 이동합니다.</p>
+              </section>
+              <section class="card">
+                <small>02</small>
+                <h3>가품과 2차 거래 신뢰</h3>
+                <p>리셀 상황에서는 원 구매처, 진위, 소유 상태를 외부에서 즉시 확인하기 어렵습니다.</p>
+              </section>
+              <section class="card">
+                <small>03</small>
+                <h3>내부 보증서의 한계</h3>
+                <p>CRM/A/S용 기록은 내부에 머물기 쉬워 검증, 공유, 거래 순간의 증명력이 약합니다.</p>
+              </section>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Core gap: internal record does not become external proof</span>
+            <span>02 / 06</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="deck-slide" id="bemoon-slide-03">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">Service Rail</span>
+            <span>Purchase to OMS sync</span>
+          </div>
+          <div class="stack">
+            <div class="title-stack">
+              <h2>구매 이후의 보증 흐름을 브랜드 운영 데이터와 다시 연결한다.</h2>
+              <p class="lead">사용자에게는 확인 가능한 보증서, 브랜드에게는 상태를 관리할 수 있는 운영 레일로 설계합니다.</p>
+            </div>
+            <div class="rail">
+              <section class="rail-step">
+                <span>01</span>
+                <h3>Purchase</h3>
+                <p>자사몰 또는 외부 유통 구매 데이터를 인증 진입점으로 설정.</p>
+              </section>
+              <section class="rail-step">
+                <span>02</span>
+                <h3>QR / WL Auth</h3>
+                <p>QR, WL1/WL2, 추가 인증으로 상품과 구매자를 연결.</p>
+              </section>
+              <section class="rail-step">
+                <span>03</span>
+                <h3>Proof Issue</h3>
+                <p>지갑/계정 기반 디지털 보증서를 발급하고 검증 로그를 생성.</p>
+              </section>
+              <section class="rail-step">
+                <span>04</span>
+                <h3>Verify / Benefit</h3>
+                <p>진위 확인, 혜택 확인, 향후 거래 검증 표면으로 확장.</p>
+              </section>
+              <section class="rail-step">
+                <span>05</span>
+                <h3>OMS Sync</h3>
+                <p>교환, 환불, 추적, 소유 상태를 브랜드 운영 데이터와 동기화.</p>
+              </section>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Trust rail: purchase authentication, proof issue, verification, status sync</span>
+            <span>03 / 06</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="deck-slide" id="bemoon-slide-04">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">MVP Structure</span>
+            <span>Brand / Core / Proof / Channel</span>
+          </div>
+          <div class="body-grid">
+            <div class="stack">
+              <div class="title-stack">
+                <h2>초기 구현은 거래 플랫폼보다 발급과 검증의 최소 구조에 집중한다.</h2>
+                <p class="lead">모든 커머스 기능을 한 번에 만들기보다, 디지털 보증서가 발급되고 외부에서 확인되는 핵심 루프를 먼저 정의합니다.</p>
+              </div>
+              <div class="cards-2">
+                <section class="card">
+                  <small>Brand / OMS</small>
+                  <h3>제품·주문·상태 데이터</h3>
+                  <p>보증서 발급 기준과 운영 상태를 브랜드 시스템에서 관리.</p>
+                </section>
+                <section class="card">
+                  <small>Consumer / Channel</small>
+                  <h3>마이페이지·진위 확인</h3>
+                  <p>소비자가 보증서와 혜택, 상태를 확인하는 외부 표면.</p>
+                </section>
+              </div>
+            </div>
+            <figure class="diagram-panel panel">
+              <img src="file:///Users/yuminseog/portfolio/public/bemoon/bemoon-trust-rail.svg" alt="BE;MOON trust rail diagram" />
+            </figure>
+          </div>
+          <div class="footer">
+            <span>Source asset: public/bemoon/bemoon-trust-rail.svg</span>
+            <span>04 / 06</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="deck-slide" id="bemoon-slide-05">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">Business Assumptions</span>
+            <span>Planning numbers, not performance claims</span>
+          </div>
+          <div class="stack">
+            <div class="title-stack">
+              <h2>수익 모델은 검증 성과가 아니라 사업계획서상의 가정으로 표기한다.</h2>
+              <p class="lead">보증서 발급 SaaS, 검증 시스템, 거래 플랫폼은 단계별 확장 가능성을 설명하기 위한 모델링입니다.</p>
+            </div>
+            <div class="metric-grid">
+              <section class="metric">
+                <b>200원</b>
+                <h3>Issuance SaaS</h3>
+                <p>보증서 1건당 발급 단가를 가정하고 브랜드 OMS 연동 구조로 설명.</p>
+              </section>
+              <section class="metric">
+                <b>0.5-1%</b>
+                <h3>Primary Fee</h3>
+                <p>1차 거래 수수료는 플랫폼 검증 전 모델링 가정으로만 표기.</p>
+              </section>
+              <section class="metric">
+                <b>5%</b>
+                <h3>Resale Fee</h3>
+                <p>2차 거래 검증/보증서 이전에서의 장기 수익 가능성으로 분리.</p>
+              </section>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Boundary: no launch, revenue, customer validation claim</span>
+            <span>05 / 06</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="deck-slide" id="bemoon-slide-06">
+        <div class="slide-inner">
+          <div class="topline">
+            <span class="kicker">Submission Boundary</span>
+            <span>Final portfolio rule</span>
+          </div>
+          <div class="split-list">
+            <div class="large-note">
+              <p>
+                BE;MOON은 출시 성과가 아니라 온라인 패션스타트업 캡스톤디자인의 기획, 사업계획, 서비스 구조 증거로 편입합니다.
+              </p>
+            </div>
+            <div class="panel statement">
+              <ul class="check-list">
+                <li>시장·매출 숫자는 검증 결과가 아니라 계획 가정으로 표기.</li>
+                <li>혜택·거래는 2nd layer로 두고 발급·검증 레일을 중심으로 설명.</li>
+                <li>최종 PPT/HTML 편입본에는 2251014 유민석 외 개인 이름을 노출하지 않음.</li>
+                <li>비문 자료는 AHEYA처럼 HTML 캡처 슬라이드로 정리해 병합본에 삽입.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer">
+            <span>Course mapping: 온라인 패션스타트업 캡스톤디자인</span>
+            <span>06 / 06</span>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

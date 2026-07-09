@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-06-14T17:17:15.526Z",
+  "url": "http://127.0.0.1:3000/deck/aheya",
+  "allIds": [
+    "slide-09",
+    "slide-10",
+    "slide-11",
+    "slide-12",
+    "slide-12-1",
+    "slide-12-2",
+    "slide-13",
+    "slide-14",
+    "slide-15",
+    "slide-16",
+    "slide-17",
+    "slide-18",
+    "slide-19-1",
+    "slide-19-2",
+    "slide-19-3",
+    "slide-19-4",
+    "slide-19-5",
+    "slide-20",
+    "slide-21",
+    "slide-22",
+    "slide-23",
+    "slide-24",
+    "slide-25",
+    "slide-26",
+    "slide-27",
+    "slide-28",
+    "slide-29"
+  ],
+  "candidates": [
+    "slide-09",
+    "slide-10",
+    "slide-11",
+    "slide-12",
+    "slide-12-1",
+    "slide-12-2",
+    "slide-13",
+    "slide-14",
+    "slide-15",
+    "slide-16",
+    "slide-17",
+    "slide-18",
+    "slide-19-1",
+    "slide-19-2",
+    "slide-19-3",
+    "slide-19-4",
+    "slide-19-5",
+    "slide-20",
+    "slide-21",
+    "slide-22",
+    "slide-23",
+    "slide-24",
+    "slide-25",
+    "slide-26",
+    "slide-27",
+    "slide-28",
+    "slide-29"
+  ],
+  "captured": [
+    {
+      "id": "slide-09",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-09.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-10",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-10.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-11",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-11.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-12",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-12.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-12-1",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-12-1.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-12-2",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-12-2.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-13",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-13.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-14",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-14.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-15",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-15.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-16",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-16.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-17",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-17.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-18",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-18.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-19-1",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-19-1.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-19-2",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-19-2.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-19-3",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-19-3.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-19-4",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-19-4.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-19-5",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-19-5.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-20",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-20.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-21",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-21.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-22",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-22.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-23",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-23.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-24",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-24.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-25",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-25.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-26",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-26.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-27",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-27.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-28",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-28.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-29",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/aheya-html/slide-29.png",
+      "width": 1394,
+      "height": 785
+    }
+  ],
+  "skipped": []
+}

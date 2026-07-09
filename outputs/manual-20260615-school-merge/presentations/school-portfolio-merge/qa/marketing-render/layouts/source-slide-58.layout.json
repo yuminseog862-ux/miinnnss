@@ -1,0 +1,1326 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ih4byhgn",
+    "id": "ih4byhgn",
+    "slide": 59,
+    "layoutId": "/ppt/slideLayouts/slideLayout18.xml",
+    "layoutName": "제목 슬라이드",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "NanumGothic"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout18.xml",
+      "name": "제목 슬라이드",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "2024. 6. 1.",
+          "textPreview": "2024. 6. 1.",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2024. 6. 1.",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2024. 6. 1."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout18.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster3.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            35.29,
+            21.2,
+            635.18,
+            88.22
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            35.29,
+            123.51,
+            635.18,
+            349.34
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            35.29,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "6/1/24",
+          "textPreview": "6/1/24",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6/1/24",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6/1/24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            241.13,
+            490.61,
+            223.49,
+            28.18
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            505.79,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/obm58z25",
+      "id": "13",
+      "name": "직선 연결선 12",
+      "bbox": [
+        997.28,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zed8v6ps",
+      "id": "14",
+      "name": "직선 연결선 13",
+      "bbox": [
+        1080.57,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6xkf6dcb",
+      "id": "15",
+      "name": "직선 연결선 14",
+      "bbox": [
+        1163.86,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "16",
+      "name": "직선 연결선 15",
+      "bbox": [
+        1247.16,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oza1gvy9",
+      "id": "17",
+      "name": "직선 연결선 16",
+      "bbox": [
+        1330.45,
+        0.02,
+        0,
+        793.97
+      ],
+      "rotation": 0,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bi9s36h",
+      "id": "2",
+      "name": "직사각형 1",
+      "bbox": [
+        849.63,
+        191.89,
+        448.81,
+        448.81
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pwb2hwfy",
+      "id": "3",
+      "name": "직사각형 2",
+      "bbox": [
+        812.14,
+        153.3,
+        448.81,
+        448.81
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r65wju",
+      "id": "7",
+      "name": "TextBox 6",
+      "bbox": [
+        113.06,
+        180.43,
+        541.97,
+        52.44
+      ],
+      "geometry": "rect",
+      "text": "소비자들의 평가 분석",
+      "textPreview": "소비자들의 평가 분석",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "소비자들의 평가 분석"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "소비자들의 평가 분석",
+          "runs": [
+            {
+              "index": 1,
+              "text": "소비자들의 평가 분석",
+              "fontSize": 35.28,
+              "typeface": "NanumGothic",
+              "color": "#333333",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih4byhgn",
+      "id": "8",
+      "name": "TextBox 7",
+      "bbox": [
+        103.04,
+        479.88,
+        296.15,
+        184.33
+      ],
+      "geometry": "rect",
+      "text": "앤더슨 벨의 경우 컨셉에 따라 너무 평이 갈림\n\n가령  웨스턴 룩 연출은 호평과 혹평을 동시에 받은 컨셉으로 과하다는 의견과 디자인의 창의성이라는 의견이 갈림",
+      "textPreview": "앤더슨 벨의 경우 컨셉에 따라 너무 평이 갈림 |  | 가령  웨스턴 룩 연출은 호평과 혹평을 동시에 받은 컨셉으로 과하다는 의견과 디자인의 창의성이라는 의견이 갈림",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 7,
+        "lines": [
+          {
+            "index": 1,
+            "text": "앤더슨 벨의 경우 컨셉에 따라 너무"
+          },
+          {
+            "index": 2,
+            "text": "평이 갈림"
+          },
+          {
+            "index": 3,
+            "text": ""
+          },
+          {
+            "index": 4,
+            "text": "가령  웨스턴 룩 연출은 호평과"
+          },
+          {
+            "index": 5,
+            "text": "혹평을 동시에 받은 컨셉으로"
+          },
+          {
+            "index": 6,
+            "text": "과하다는 의견과 디자인의"
+          },
+          {
+            "index": 7,
+            "text": "창의성이라는 의견이 갈림"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "앤더슨 벨의 경우 컨셉에 따라 너무 평이 갈림",
+          "runs": [
+            {
+              "index": 1,
+              "text": "앤더슨 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "벨의",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": " 경우 컨셉에 따라 너무 평이 갈림",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "가령  웨스턴 룩 연출은 호평과 혹평을 동시에 받은 컨셉으로 과하다는 의견과 디자인의 창의성이라는 의견이 갈림",
+          "runs": [
+            {
+              "index": 1,
+              "text": "가령  웨스턴 룩 연출은 호평과 혹평을 동시에 받은 컨셉으로 과하다는 의견과 디자인의 창의성이라는 의견이 갈림",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72x4nap4",
+      "id": "9",
+      "name": "TextBox 8",
+      "bbox": [
+        103.04,
+        426.55,
+        296.15,
+        38.2
+      ],
+      "geometry": "rect",
+      "text": "컨셉에 따라 너무 갈림",
+      "textPreview": "컨셉에 따라 너무 갈림",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "컨셉에 따라 너무 갈림"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "컨셉에 따라 너무 갈림",
+          "runs": [
+            {
+              "index": 1,
+              "text": "컨셉에 따라 너무 갈림",
+              "fontSize": 23.52,
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "10",
+      "name": "TextBox 9",
+      "bbox": [
+        438.31,
+        479.88,
+        331.86,
+        259.17
+      ],
+      "geometry": "rect",
+      "text": "룩북 자체에는 너무 난해한 옷들이 많아서 평시엔 입기 힘든 옷들이 너무 많음\n\n그러나 이점은 소비자들마다 너무 다르고  그렇기에 소비자들은 이번 시즌 컨셉이 안 좋을 시 다른 비슷한 가격의 브랜드(우영미, 준지 등)으로 넘어갈 가능성이 너무 크다",
+      "textPreview": "룩북 자체에는 너무 난해한 옷들이 많아서 평시엔 입기 힘든 옷들이 너무 많음 |  | 그러나 이점은 소비자들마다 너무 다르고  그렇기에 소비자들은 이번 시즌 컨셉이 안 좋을 시 다른 비슷한 가격의 브랜드(우영미, 준지 등)으로 넘어갈 가능성이 너...",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "룩북 자체에는 너무 난해한 옷들이 많아서"
+          },
+          {
+            "index": 2,
+            "text": "평시엔 입기 힘든 옷들이 너무 많음"
+          },
+          {
+            "index": 3,
+            "text": ""
+          },
+          {
+            "index": 4,
+            "text": "그러나 이점은 소비자들마다 너무 다르고"
+          },
+          {
+            "index": 5,
+            "text": " 그렇기에 소비자들은 이번 시즌 컨셉이"
+          },
+          {
+            "index": 6,
+            "text": "안 좋을 시 다른 비슷한 가격의 브랜드("
+          },
+          {
+            "index": 7,
+            "text": "우영미, 준지 등)으로 넘어갈 가능성이"
+          },
+          {
+            "index": 8,
+            "text": "너무 크다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "룩북 자체에는 너무 난해한 옷들이 많아서 평시엔 입기 힘든 옷들이 너무 많음",
+          "runs": [
+            {
+              "index": 1,
+              "text": "룩북",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": " 자체에는 너무 난해한 옷들이 많아서 평시엔 입기 힘든 옷들이 너무 많음",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "그러나 이점은 소비자들마다 너무 다르고  그렇기에 소비자들은 이번 시즌 컨셉이 안 좋을 시 다른 비슷한 가격의 브랜드(우영미, 준지 등)으로 넘어갈 가능성이 너무 크다",
+          "runs": [
+            {
+              "index": 1,
+              "text": "그러나 이점은 소비자들마다 너무 다르고  그렇기에 소비자들은 이번 시즌 컨셉이 안 좋을 시 다른 비슷한 가격의 브랜드",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "우영미",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "준지 등",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": ")",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": "으로 넘어갈 가능성이 너무 크다",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.15
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "11",
+      "name": "TextBox 10",
+      "bbox": [
+        438.31,
+        426.55,
+        296.15,
+        38.2
+      ],
+      "geometry": "rect",
+      "text": "너무 아트 웨어적이다",
+      "textPreview": "너무 아트 웨어적이다",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "너무 아트 웨어적이다"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "너무 아트 웨어적이다",
+          "runs": [
+            {
+              "index": 1,
+              "text": "너무 아트 ",
+              "fontSize": 23.52,
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "웨어적이다",
+              "fontSize": 23.52,
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z61032ls",
+      "id": "18",
+      "name": "직선 연결선 17",
+      "bbox": [
+        705.75,
+        24.42,
+        0,
+        1411.5
+      ],
+      "rotation": 270,
+      "geometry": "line",
+      "fillColor": "bg1",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al87ed8b",
+      "id": "19",
+      "name": "직사각형 18",
+      "bbox": [
+        892.97,
+        296.57,
+        287.15,
+        62.86
+      ],
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent2"
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72x4nap4",
+      "id": "21",
+      "name": "Freeform 26",
+      "bbox": [
+        110.27,
+        368.56,
+        39.47,
+        39.47
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1",
+      "lineWidth": 2
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nuxc3yl",
+      "id": "22",
+      "name": "Freeform 26",
+      "bbox": [
+        445.55,
+        368.56,
+        39.47,
+        39.47
+      ],
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1",
+      "lineWidth": 2
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih4byhgn",
+      "id": "20",
+      "name": "직사각형 19",
+      "bbox": [
+        1339.68,
+        13.67,
+        58.75,
+        58.75
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent2",
+      "lineColor": "tx1",
+      "lineWidth": 2
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8nqxs72",
+      "id": "23",
+      "name": "TextBox 22",
+      "bbox": [
+        1326.61,
+        23.66,
+        84.89,
+        38.78
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "C",
+      "textPreview": "C",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "C"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "C",
+          "resolvedTextStyle": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "C",
+              "typeface": "Calibri Light",
+              "color": "bg1"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/dg7adsji",
+      "id": "24",
+      "name": "그림 25",
+      "bbox": [
+        812.16,
+        153.3,
+        448.81,
+        448.81
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image610.png",
+        "contentType": "image/png",
+        "byteLength": 439519
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image610.png",
+        "contentType": "image/png",
+        "byteLength": 439519
+      }
+    }
+  ],
+  "composeRuns": []
+}

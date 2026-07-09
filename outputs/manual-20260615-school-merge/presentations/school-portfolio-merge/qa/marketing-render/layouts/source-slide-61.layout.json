@@ -1,0 +1,1655 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y90je9cv",
+    "id": "y90je9cv",
+    "slide": 62,
+    "layoutId": "/ppt/slideLayouts/slideLayout22.xml",
+    "layoutName": "2_제목 슬라이드",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light",
+      "맑은 고딕"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout22.xml",
+      "name": "2_제목 슬라이드",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster3.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout22.xml/6",
+          "id": "6",
+          "name": "그림 개체 틀 5",
+          "bbox": [
+            779.63,
+            0,
+            631.87,
+            794
+          ],
+          "geometry": "custom",
+          "resolvedTextStyle": {
+            "wrap": "square",
+            "autoFit": "none"
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster3.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/2",
+          "id": "2",
+          "name": "Title Placeholder 1",
+          "bbox": [
+            35.29,
+            21.2,
+            635.18,
+            88.22
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master title style",
+          "textPreview": "Click to edit Master title style",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master title style",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master title style"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/3",
+          "id": "3",
+          "name": "Text Placeholder 2",
+          "bbox": [
+            35.29,
+            123.51,
+            635.18,
+            349.34
+          ],
+          "geometry": "rect",
+          "text": "Click to edit Master text styles\nSecond level\nThird level\nFourth level\nFifth level",
+          "textPreview": "Click to edit Master text styles | Second level | Third level | Fourth level | Fifth level",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Click to edit Master text styles",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Click to edit Master text styles"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "Second level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Second level"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "Third level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Third level"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "Fourth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fourth level"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "Fifth level",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Fifth level"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/4",
+          "id": "4",
+          "name": "Date Placeholder 3",
+          "bbox": [
+            35.29,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "6/1/24",
+          "textPreview": "6/1/24",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6/1/24",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6/1/24"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/5",
+          "id": "5",
+          "name": "Footer Placeholder 4",
+          "bbox": [
+            241.13,
+            490.61,
+            223.49,
+            28.18
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster3.xml/6",
+          "id": "6",
+          "name": "Slide Number Placeholder 5",
+          "bbox": [
+            505.79,
+            490.61,
+            164.67,
+            28.18
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65wjudg7",
+      "id": "4",
+      "name": "Freeform 6",
+      "bbox": [
+        277.01,
+        32.14,
+        150.47,
+        167.19
+      ],
+      "rotation": 0,
+      "horizontalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent2",
+      "lineWidth": 0.5
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "5",
+      "name": "Freeform 7",
+      "bbox": [
+        278.16,
+        -145.01,
+        158.39,
+        94.81
+      ],
+      "rotation": 0,
+      "horizontalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent4",
+      "lineWidth": 0.5
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zupwb2hw",
+      "id": "9",
+      "name": "Freeform 11",
+      "bbox": [
+        248.33,
+        -73.94,
+        137.71,
+        131.33
+      ],
+      "rotation": 0,
+      "horizontalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent3",
+      "lineWidth": 0.5
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r65wju",
+      "id": "12",
+      "name": "Freeform 14",
+      "bbox": [
+        248.33,
+        205.28,
+        45.54,
+        142.77
+      ],
+      "rotation": 0,
+      "horizontalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "vertical": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "insets": {
+          "top": 5.29,
+          "right": 10.59,
+          "bottom": 5.29,
+          "left": 10.59
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "fillColor": "accent1",
+      "lineWidth": 0.5
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qd4vmtwr",
+      "id": "28",
+      "name": "Google Shape;124;p15",
+      "bbox": [
+        119.74,
+        128.2,
+        552.73,
+        155.34
+      ],
+      "geometry": "rect",
+      "text": "앤더슨벨 구조",
+      "textPreview": "앤더슨벨 구조",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 3.97,
+          "right": 7.94,
+          "bottom": 3.97,
+          "left": 7.94
+        },
+        "useParagraphSpacing": true
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "앤더슨벨 구조"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "앤더슨벨 구조",
+          "resolvedTextStyle": {
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "앤더슨벨",
+              "fontSize": 58.81,
+              "typeface": "Calibri Light",
+              "color": "tx2",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": " 구조",
+              "fontSize": 58.81,
+              "typeface": "Calibri Light",
+              "color": "tx2",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbq1oryt",
+      "id": "31",
+      "name": "TextBox 30",
+      "bbox": [
+        119.74,
+        285.27,
+        546.16,
+        248.09
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "조직도는 따로 확인되지 않음\n\n부서는 그래픽팀(웹디자인), 스토어팀(리테일샵 업무), 컨텐츠팀(컨텐츠 제작업무), 생산팀(생산팀 업무), 해외세일즈팀(해외세일즈), 온라인팀(MD 업무), 크리에이티브팀(크리에이티브팀), 비주얼 컨텐츠팀, 컨텐츠 디벨롭먼트팀이 있으며, \n\n이외에 남성복·여성복·슈즈·백,ACC 디자이너를 따로 모집",
+      "textPreview": "조직도는 따로 확인되지 않음 |  | 부서는 그래픽팀(웹디자인), 스토어팀(리테일샵 업무), 컨텐츠팀(컨텐츠 제작업무), 생산팀(생산팀 업무), 해외세일즈팀(해외세일즈), 온라인팀(MD 업무), 크리에이티브팀(크리에이티브팀), 비주얼 컨텐츠팀, ...",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "조직도는 따로 확인되지 않음"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "부서는 그래픽팀(웹디자인), 스토어팀(리테일샵 업무), 컨텐츠팀("
+          },
+          {
+            "index": 4,
+            "text": "컨텐츠 제작업무), 생산팀(생산팀 업무), 해외세일즈팀(해외세일즈),"
+          },
+          {
+            "index": 5,
+            "text": "온라인팀(MD 업무), 크리에이티브팀(크리에이티브팀), 비주얼"
+          },
+          {
+            "index": 6,
+            "text": "컨텐츠팀, 컨텐츠 디벨롭먼트팀이 있으며,"
+          },
+          {
+            "index": 7,
+            "text": ""
+          },
+          {
+            "index": 8,
+            "text": "이외에 남성복·여성복·슈즈·백,ACC 디자이너를 따로 모집"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "조직도는 따로 확인되지 않음",
+          "lineSpacingPercent": 107000,
+          "spaceAfter": 882,
+          "runs": [
+            {
+              "index": 1,
+              "text": "조직도는 따로 확인되지 않음",
+              "fontSize": 20.59,
+              "typeface": "맑은 고딕",
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "부서는 그래픽팀(웹디자인), 스토어팀(리테일샵 업무), 컨텐츠팀(컨텐츠 제작업무), 생산팀(생산팀 업무), 해외세일즈팀(해외세일즈), 온라인팀(MD 업무), 크리에이티브팀(크리에이티브팀), 비주얼 컨텐츠팀, 컨텐츠 디벨롭먼트팀이 있으며, ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "부서는 그래픽팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "웹디자인",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "스토어팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": "리테일샵",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 8,
+              "text": " 업무",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 9,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 10,
+              "text": "컨텐츠팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 11,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 12,
+              "text": "컨텐츠 제작업무",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 13,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 14,
+              "text": "생산팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 15,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 16,
+              "text": "생산팀 업무",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 17,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 18,
+              "text": "해외세일즈팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 19,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 20,
+              "text": "해외세일즈",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 21,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 22,
+              "text": "온라인팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 23,
+              "text": "(MD ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 24,
+              "text": "업무",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 25,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 26,
+              "text": "크리에이티브팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 27,
+              "text": "(",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 28,
+              "text": "크리에이티브팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 29,
+              "text": "), ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 30,
+              "text": "비주얼 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 31,
+              "text": "컨텐츠팀",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 32,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 33,
+              "text": "컨텐츠 ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 34,
+              "text": "디벨롭먼트팀이",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 35,
+              "text": " 있으며",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 36,
+              "text": ", ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "이외에 남성복·여성복·슈즈·백,ACC 디자이너를 따로 모집",
+          "runs": [
+            {
+              "index": 1,
+              "text": "이외에 남성복",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": "·",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "여성복",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": "·",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 5,
+              "text": "슈즈",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 6,
+              "text": "·",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 7,
+              "text": "백",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 8,
+              "text": ",ACC ",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 9,
+              "text": "디자이너를 따로 모집",
+              "fontSize": 20.59,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nuxc3ylc",
+      "id": "32",
+      "name": "TextBox 31",
+      "bbox": [
+        119.74,
+        246.08,
+        319.63,
+        38.2
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "패션 리테일러의 조직구조",
+      "textPreview": "패션 리테일러의 조직구조",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "패션 리테일러의 조직구조"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "패션 리테일러의 조직구조",
+          "runs": [
+            {
+              "index": 1,
+              "text": "패션 ",
+              "fontSize": 23.52,
+              "color": "tx2",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": "리테일러의",
+              "fontSize": 23.52,
+              "color": "tx2",
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": " 조직구조",
+              "fontSize": 23.52,
+              "color": "tx2",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y90je9cv",
+      "id": "33",
+      "name": "TextBox 32",
+      "bbox": [
+        119.74,
+        658.99,
+        546.16,
+        69.84
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "\n잡 코리아를 통해서 유추하여 직무군 파악",
+      "textPreview": "| 잡 코리아를 통해서 유추하여 직무군 파악",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "잡 코리아를 통해서 유추하여 직무군 파악"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 2,
+          "text": "잡 코리아를 통해서 유추하여 직무군 파악",
+          "lineSpacingPercent": 150000,
+          "runs": [
+            {
+              "index": 1,
+              "text": "잡",
+              "fontSize": 17.64,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 2,
+              "text": " 코리아를 통해서 유추하여 ",
+              "fontSize": 17.64,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 3,
+              "text": "직무군",
+              "fontSize": 17.64,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            },
+            {
+              "index": 4,
+              "text": " 파악",
+              "fontSize": 17.64,
+              "color": {
+                "type": "theme",
+                "value": "tx1",
+                "transform": {
+                  "lighten": 0.35
+                }
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58z25kb6",
+      "id": "34",
+      "name": "TextBox 33",
+      "bbox": [
+        119.74,
+        619.8,
+        319.63,
+        38.2
+      ],
+      "rotation": 0,
+      "geometry": "rect",
+      "text": "앤더슨벨 직원 유추",
+      "textPreview": "앤더슨벨 직원 유추",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "앤더슨벨 직원 유추"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "앤더슨벨 직원 유추",
+          "runs": [
+            {
+              "index": 1,
+              "text": "앤더슨벨",
+              "fontSize": 23.52,
+              "color": "tx2",
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": " 직원 유추",
+              "fontSize": 23.52,
+              "color": "tx2",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gn29gr2p",
+      "id": "35",
+      "name": "자유형: 도형 34",
+      "bbox": [
+        1068.33,
+        506.5,
+        138.37,
+        129.31
+      ],
+      "horizontalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": {
+        "type": "theme",
+        "value": "bg1",
+        "transform": {
+          "darken": 0.15
+        }
+      },
+      "lineWidth": 1.33
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0z61032l",
+      "id": "36",
+      "name": "그림 17",
+      "bbox": [
+        715.12,
+        165.71,
+        618.63,
+        500.49
+      ],
+      "contentType": "image/png",
+      "imageCrop": {
+        "left": 0.04376,
+        "top": 0.10019,
+        "right": 0.51797,
+        "bottom": 0.26945
+      },
+      "asset": {
+        "assetId": "/ppt/media/image612.png",
+        "contentType": "image/png",
+        "byteLength": 682454
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image612.png",
+        "contentType": "image/png",
+        "byteLength": 682454
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fyxobm58",
+      "id": "29",
+      "name": "자유형: 도형 28",
+      "bbox": [
+        1194.25,
+        567.99,
+        279,
+        45.54
+      ],
+      "rotation": 90,
+      "horizontalFlip": true,
+      "verticalFlip": true,
+      "geometry": "custom",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "lt1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          }
+        ]
+      },
+      "lineColor": {
+        "type": "theme",
+        "value": "tx1",
+        "transform": {
+          "lighten": 0.25
+        }
+      },
+      "lineWidth": 6
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qtcj6tov",
+      "id": "20",
+      "name": "TextBox 19",
+      "bbox": [
+        929.38,
+        717.9,
+        705.75,
+        23.72
+      ],
+      "geometry": "rect",
+      "text": "https://www.jobkorea.co.kr/Recruit/Co_Read/Recruit/C/17045285",
+      "textPreview": "https://www.jobkorea.co.kr/Recruit/Co_Read/Recruit/C/17045285",
+      "resolvedFontSize": 17.64,
+      "resolvedTextStyle": {
+        "fontSize": 17.64,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "resizeShapeToFitText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "https://www.jobkorea.co.kr/Recruit/Co_Read/Recruit/C/17045285"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "https://www.jobkorea.co.kr/Recruit/Co_Read/Recruit/C/17045285",
+          "lineSpacingPercent": 107000,
+          "spaceAfter": 882,
+          "runs": [
+            {
+              "index": 1,
+              "text": "https://www.jobkorea.co.kr/Recruit/Co_Read/Recruit/C/17045285",
+              "fontSize": 11.76,
+              "typeface": "맑은 고딕",
+              "color": "#467886"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ],
+  "composeRuns": []
+}

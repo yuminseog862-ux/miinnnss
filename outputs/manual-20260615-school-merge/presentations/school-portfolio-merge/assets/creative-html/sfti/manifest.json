@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2026-06-15T10:22:40.089Z",
+  "key": "sfti",
+  "url": "http://127.0.0.1:3000/deck/sfti",
+  "allIds": [
+    "slide-45",
+    "slide-46",
+    "slide-47",
+    "slide-48"
+  ],
+  "captured": [
+    {
+      "id": "slide-45",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/sfti/slide-45.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-46",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/sfti/slide-46.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-47",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/sfti/slide-47.png",
+      "width": 1394,
+      "height": 785
+    },
+    {
+      "id": "slide-48",
+      "output": "/Users/yuminseog/portfolio/outputs/manual-20260615-school-merge/presentations/school-portfolio-merge/assets/creative-html/sfti/slide-48.png",
+      "width": 1394,
+      "height": 785
+    }
+  ],
+  "skipped": []
+}

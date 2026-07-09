@@ -1,0 +1,673 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y90je9cv",
+    "id": "y90je9cv",
+    "slide": 62,
+    "layoutId": "/ppt/slideLayouts/slideLayout48.xml",
+    "layoutName": "제목 및 내용",
+    "layoutType": "obj",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster4.xml",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout48.xml",
+      "name": "제목 및 내용",
+      "type": "obj",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster4.xml",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout48.xml/2",
+          "id": "2",
+          "name": "제목 1",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "마스터 제목 스타일 편집",
+          "textPreview": "마스터 제목 스타일 편집",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 제목 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 제목 스타일 편집"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout48.xml/3",
+          "id": "3",
+          "name": "내용 개체 틀 2",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "마스터 텍스트 스타일 편집\n둘째 수준\n셋째 수준\n넷째 수준\n다섯째 수준",
+          "textPreview": "마스터 텍스트 스타일 편집 | 둘째 수준 | 셋째 수준 | 넷째 수준 | 다섯째 수준",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 텍스트 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 텍스트 스타일 편집"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "둘째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "둘째 수준"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "셋째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "셋째 수준"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "넷째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "넷째 수준"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "다섯째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "다섯째 수준"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout48.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "2024-05-16",
+          "textPreview": "2024-05-16",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2024-05-16",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2024-05-16"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout48.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "aid": "template/layout//ppt/slideLayouts/slideLayout48.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster4.xml",
+      "type": "master",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster4.xml/2",
+          "id": "2",
+          "name": "제목 개체 틀 1",
+          "bbox": [
+            88,
+            38.33,
+            1104,
+            139.17
+          ],
+          "geometry": "rect",
+          "text": "마스터 제목 스타일 편집",
+          "textPreview": "마스터 제목 스타일 편집",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 제목 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 제목 스타일 편집"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster4.xml/3",
+          "id": "3",
+          "name": "텍스트 개체 틀 2",
+          "bbox": [
+            88,
+            191.67,
+            1104,
+            456.83
+          ],
+          "geometry": "rect",
+          "text": "마스터 텍스트 스타일 편집\n둘째 수준\n셋째 수준\n넷째 수준\n다섯째 수준",
+          "textPreview": "마스터 텍스트 스타일 편집 | 둘째 수준 | 셋째 수준 | 넷째 수준 | 다섯째 수준",
+          "resolvedTextStyle": {
+            "vertical": 1,
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "마스터 텍스트 스타일 편집",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "마스터 텍스트 스타일 편집"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "둘째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "둘째 수준"
+                }
+              ]
+            },
+            {
+              "index": 3,
+              "text": "셋째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "셋째 수준"
+                }
+              ]
+            },
+            {
+              "index": 4,
+              "text": "넷째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "넷째 수준"
+                }
+              ]
+            },
+            {
+              "index": 5,
+              "text": "다섯째 수준",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "다섯째 수준"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster4.xml/4",
+          "id": "4",
+          "name": "날짜 개체 틀 3",
+          "bbox": [
+            88,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "2024-05-16",
+          "textPreview": "2024-05-16",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2024-05-16",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2024-05-16"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster4.xml/5",
+          "id": "5",
+          "name": "바닥글 개체 틀 4",
+          "bbox": [
+            424,
+            667.33,
+            432,
+            38.33
+          ],
+          "geometry": "rect",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "master",
+          "aid": "template/master//ppt/slideMasters/slideMaster4.xml/6",
+          "id": "6",
+          "name": "슬라이드 번호 개체 틀 5",
+          "bbox": [
+            904,
+            667.33,
+            288,
+            38.33
+          ],
+          "geometry": "rect",
+          "text": "‹#›",
+          "textPreview": "‹#›",
+          "resolvedTextStyle": {
+            "anchor": 2,
+            "vertical": 1,
+            "verticalAlignment": "middle",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            }
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "‹#›",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "‹#›"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hk3q5o7q",
+      "id": "3",
+      "name": "내용 개체 틀 2",
+      "bbox": [
+        724.84,
+        191.67,
+        467.16,
+        456.83
+      ],
+      "text": "단순하게 어떤 옷, 어떤 컬러의 옷들만 작성하게 된다면 예상한 것과는 다른 무드의 패션 디자인 이미지가 생성이 되었으며, 전신이 나오지 않고 상반신 혹은 옷의 특정 부분만 강조가 되는 이미지가 생성이 됨. \n\n프롬포트 값이 같아도 시도에 따라 사용하는 프로그램에 따라 달리 나옴\n",
+      "textPreview": "단순하게 어떤 옷, 어떤 컬러의 옷들만 작성하게 된다면 예상한 것과는 다른 무드의 패션 디자인 이미지가 생성이 되었으며, 전신이 나오지 않고 상반신 혹은 옷의 특정 부분만 강조가 되는 이미지가 생성이 됨.  |  | 프롬포트 값이 같아도 시도에 ...",
+      "resolvedFontSize": 37.33,
+      "resolvedTextStyle": {
+        "vertical": 1,
+        "fontSize": 37.33,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 14,
+        "lines": [
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "단순하게 어떤 옷, 어떤 컬러의 옷들만"
+          },
+          {
+            "index": 3,
+            "text": "작성하게 된다면 예상한 것과는 다른"
+          },
+          {
+            "index": 4,
+            "text": "무드의 패션 디자인 이미지가 생성이"
+          },
+          {
+            "index": 5,
+            "text": "되었으며, 전신이 나오지 않고 상반신 혹은"
+          },
+          {
+            "index": 6,
+            "text": "옷의 특정 부분만 강조가 되는 이미지가"
+          },
+          {
+            "index": 7,
+            "text": "생성이 됨."
+          },
+          {
+            "index": 8,
+            "text": ""
+          },
+          {
+            "index": 9,
+            "text": ""
+          },
+          {
+            "index": 10,
+            "text": ""
+          },
+          {
+            "index": 11,
+            "text": "프롬포트 값이 같아도 시도에 따라"
+          },
+          {
+            "index": 12,
+            "text": "사용하는 프로그램에 따라 달리 나옴"
+          },
+          {
+            "index": 13,
+            "text": ""
+          },
+          {
+            "index": 14,
+            "text": ""
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "단순하게 어떤 옷, 어떤 컬러의 옷들만 작성하게 된다면 예상한 것과는 다른 무드의 패션 디자인 이미지가 생성이 되었으며, 전신이 나오지 않고 상반신 혹은 옷의 특정 부분만 강조가 되는 이미지가 생성이 됨. ",
+          "runs": [
+            {
+              "index": 1,
+              "text": "단순하게 어떤 옷",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": ", ",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 3,
+              "text": "어떤 컬러의 옷들만 작성하게 된다면 예상한 것과는 다른 무드의 패션 디자인 이미지가 생성이 되었으며",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 4,
+              "text": ", ",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 5,
+              "text": "전신이 나오지 않고 상반신 혹은 옷의 특정 부분만 강조가 되는 이미지가 생성이 됨",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 6,
+              "text": ". ",
+              "fontSize": 26.67,
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "•",
+          "marginLeft": 228600,
+          "indent": -228600,
+          "lineSpacingPercent": 90000,
+          "spaceBefore": 1000
+        },
+        {
+          "index": 3,
+          "text": "프롬포트 값이 같아도 시도에 따라 사용하는 프로그램에 따라 달리 나옴",
+          "marginLeft": 0,
+          "indent": 0,
+          "runs": [
+            {
+              "index": 1,
+              "text": "프롬포트",
+              "fontSize": 26.67,
+              "bold": true
+            },
+            {
+              "index": 2,
+              "text": " 값이 같아도 시도에 따라 사용하는 프로그램에 따라 달리 나옴",
+              "fontSize": 26.67,
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "•",
+          "lineSpacingPercent": 90000,
+          "spaceBefore": 1000
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/p4r65wju",
+      "id": "6",
+      "name": "Picture 1",
+      "bbox": [
+        31.83,
+        47.65,
+        665.31,
+        600.85
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image70.png",
+        "contentType": "image/png",
+        "byteLength": 148007
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image70.png",
+        "contentType": "image/png",
+        "byteLength": 148007
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zqtcj6to",
+      "id": "5",
+      "name": "직선 화살표 연결선 5",
+      "bbox": [
+        467.67,
+        404.26,
+        262.46,
+        53.72
+      ],
+      "horizontalFlip": true,
+      "verticalFlip": true,
+      "geometry": "straightConnector1",
+      "lineWidth": 6
+    }
+  ],
+  "composeRuns": []
+}
