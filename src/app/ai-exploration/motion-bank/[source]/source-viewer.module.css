@@ -1,0 +1,224 @@
+.page {
+  min-height: 100svh;
+  color: #edf3ef;
+  background: #071013;
+}
+
+.topbar {
+  display: flex;
+  width: min(1240px, calc(100% - 72px));
+  min-height: 74px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(237, 243, 239, 0.16);
+}
+
+.backLink,
+.rawLink {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  color: #91e6f8;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.rawLink {
+  color: #edf3ef;
+}
+
+.backLink:hover,
+.rawLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.content {
+  width: min(1240px, calc(100% - 72px));
+  margin: 0 auto;
+  padding: 82px 0 120px;
+}
+
+.sourceHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.58fr);
+  gap: 64px;
+  padding-bottom: 42px;
+}
+
+.sourceHeader > div > span,
+.fileBar span:first-child {
+  color: #91e6f8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.sourceHeader h1 {
+  max-width: 760px;
+  margin: 12px 0 18px;
+  overflow-wrap: anywhere;
+  font-size: 48px;
+  line-height: 1.08;
+}
+
+.sourceHeader p {
+  max-width: 700px;
+  margin: 0;
+  color: rgba(237, 243, 239, 0.68);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.metaList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid rgba(237, 243, 239, 0.16);
+  border-bottom: 1px solid rgba(237, 243, 239, 0.16);
+}
+
+.metaList div {
+  min-height: 94px;
+  padding: 17px 18px;
+  border-top: 1px solid rgba(237, 243, 239, 0.12);
+  border-left: 1px solid rgba(237, 243, 239, 0.12);
+}
+
+.metaList div:nth-child(-n + 2) {
+  border-top: 0;
+}
+
+.metaList div:nth-child(odd) {
+  border-left: 0;
+}
+
+.metaList dt {
+  margin-bottom: 8px;
+  color: #91e6f8;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.metaList dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: rgba(237, 243, 239, 0.74);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.snapshotNote {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  max-width: 900px;
+  margin-bottom: 34px;
+  padding: 20px 0;
+  border-top: 3px solid #91e6f8;
+  border-bottom: 1px solid rgba(237, 243, 239, 0.16);
+}
+
+.snapshotNote svg {
+  color: #91e6f8;
+}
+
+.snapshotNote p {
+  margin: 0;
+  color: rgba(237, 243, 239, 0.7);
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.fileFrame {
+  overflow: hidden;
+  border: 1px solid rgba(237, 243, 239, 0.2);
+  background: #040809;
+}
+
+.fileBar {
+  display: flex;
+  min-height: 44px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border-bottom: 1px solid rgba(237, 243, 239, 0.16);
+}
+
+.fileBar span:last-child {
+  overflow: hidden;
+  color: rgba(237, 243, 239, 0.55);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileFrame pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 26px;
+  overflow-wrap: anywhere;
+  color: rgba(237, 243, 239, 0.8);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.72;
+  tab-size: 2;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 780px) {
+  .topbar,
+  .content {
+    width: min(100% - 36px, 1240px);
+  }
+
+  .topbar {
+    min-height: 64px;
+  }
+
+  .content {
+    padding: 58px 0 84px;
+  }
+
+  .sourceHeader {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 34px;
+  }
+
+  .sourceHeader h1 {
+    font-size: 34px;
+  }
+
+  .sourceHeader p {
+    font-size: 14px;
+  }
+
+  .metaList {
+    grid-template-columns: 1fr;
+  }
+
+  .metaList div,
+  .metaList div:nth-child(-n + 2),
+  .metaList div:nth-child(odd) {
+    min-height: 0;
+    border-top: 1px solid rgba(237, 243, 239, 0.12);
+    border-left: 0;
+  }
+
+  .metaList div:first-child {
+    border-top: 0;
+  }
+
+  .fileFrame pre {
+    padding: 18px;
+    font-size: 11px;
+  }
+}

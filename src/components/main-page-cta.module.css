@@ -41,3 +41,16 @@
 .mainPageCta svg {
   flex: 0 0 auto;
 }
+
+@media (max-width: 720px) {
+  .mainPageCta {
+    width: 2.6rem;
+    min-height: 2.6rem;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .mainPageCta span {
+    display: none;
+  }
+}

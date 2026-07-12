@@ -6,6 +6,7 @@ import { getProject, projects, resumeProfile, type PortfolioProject } from "@/li
 
 const navItems = [
   { href: "/", label: "Portfolio" },
+  { href: "/ai-exploration", label: "Exploration" },
   { href: "/content-performance", label: "Metrics" },
   { href: "/deck/loom", label: "Loom" },
   { href: "/deck/musinsa", label: "Musinsa" },
@@ -171,6 +172,22 @@ export function MasterHubPage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className={styles.explorationFeature}>
+        <Link className={styles.explorationRoute} href="/ai-exploration">
+          <div className={styles.explorationRouteCopy}>
+            <span className={styles.sectionLabel}>Process Portfolio</span>
+            <h2>AI Exploration</h2>
+            <p>완성 결과보다 자동화, 편집, 모션 분석, 에이전트 실험의 가설과 중단·선정 기준을 먼저 보여줍니다.</p>
+            <span className={styles.explorationRouteAction}>
+              탐구 과정 보기 <ArrowRight size={16} />
+            </span>
+          </div>
+          <div className={styles.explorationRouteMedia}>
+            <img alt="Loom AI video candidate review gallery" src="/loom-deck/workflow/grok-candidate-gallery.jpg" />
+          </div>
+        </Link>
       </section>
 
       <section className={styles.section} id="project-routes">

@@ -2,6 +2,11 @@
 
 작성일: 2026-07-09
 
+> 2026-07-12 현재 최종 포지셔닝, 점수, 제출 문안과 링크 순서는
+> [최종 지원 팩](gentlemonster-ai-experience-final-submission-pack-2026-07-12.md)을 우선한다.
+> [evidence and application map](gentlemonster-ai-experience-evidence-and-application-map-2026-07-12.md)은 실제 레포 근거와 주장 경계를 확인하는 보조 문서다.
+> 공간/리테일은 완료 사례로 쓰지 않으며, OpenClaw Yui의 실제 실행 코드와 AHEYA 공개 archive의 증거 범위도 분리한다.
+
 ## 공식 지원 양식 확인 결과
 
 - 공식 채용 페이지: https://www.iiccareers.com/ko/o/211450
