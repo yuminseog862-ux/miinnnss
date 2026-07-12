@@ -240,6 +240,47 @@
   font-weight: 900;
 }
 
+.portfolioOverview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 54px;
+  border-top: 1px solid rgba(17, 19, 16, 0.26);
+  border-bottom: 1px solid rgba(17, 19, 16, 0.26);
+}
+
+.portfolioOverview > div {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  min-height: 106px;
+  padding: 20px 22px;
+  border-top: 1px solid rgba(17, 19, 16, 0.26);
+  border-left: 1px solid rgba(17, 19, 16, 0.26);
+}
+
+.portfolioOverview > div:nth-child(-n + 2) {
+  border-top: 0;
+}
+
+.portfolioOverview > div:nth-child(odd) {
+  border-left: 0;
+}
+
+.portfolioOverview span {
+  color: rgba(17, 19, 16, 0.6);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.portfolioOverview strong {
+  color: #111310;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.58;
+}
+
 .section {
   padding: 112px 34px;
   border-top: 1px solid var(--line);
@@ -337,19 +378,35 @@
   line-height: 1.32;
 }
 
-.experimentGrid p,
-.experimentGrid strong {
+.experimentGrid dl,
+.experimentGrid dl > div {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.experimentGrid dl {
+  gap: 16px;
+  margin-top: auto;
+}
+
+.experimentGrid dt {
+  color: var(--acid);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.experimentGrid dd {
   margin: 0;
   font-size: 13px;
   line-height: 1.68;
 }
 
-.experimentGrid p {
+.experimentGrid dd {
   color: var(--muted);
 }
 
-.experimentGrid strong {
-  margin-top: auto;
+.experimentGrid dl > div:last-child dd {
   color: rgba(255, 255, 255, 0.88);
   font-weight: 700;
 }
@@ -415,8 +472,51 @@
   line-height: 1.7;
 }
 
+.evolutionQuestion,
+.evolutionAnswer {
+  display: grid;
+  gap: 7px;
+}
+
+.evolutionQuestion > span,
+.evolutionAnswer > span,
+.caseSummary span {
+  color: var(--acid);
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .systemSection {
   background: #050605;
+}
+
+.caseSummary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 0 46px 138px;
+  border-top: 3px solid var(--acid);
+  border-bottom: 1px solid var(--line);
+}
+
+.caseSummary > div {
+  display: grid;
+  align-content: start;
+  gap: 9px;
+  min-height: 154px;
+  padding: 20px;
+  border-left: 1px solid var(--line);
+}
+
+.caseSummary > div:first-child {
+  border-left: 0;
+}
+
+.caseSummary p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.65;
 }
 
 .productionFlow {
@@ -591,6 +691,29 @@
 .evidenceBar a:hover {
   border-color: var(--acid);
   color: var(--acid);
+}
+
+.disclosureLine {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 12px;
+  min-height: 68px;
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(216, 255, 67, 0.045);
+}
+
+.disclosureLine strong {
+  color: var(--acid);
+  font-size: 9px;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.disclosureLine span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  line-height: 1.58;
 }
 
 .evidenceExcerpt pre {
@@ -1093,6 +1216,10 @@
     margin-left: 0;
   }
 
+  .caseSummary {
+    margin-left: 0;
+  }
+
   .evolutionList article {
     grid-template-columns: 52px 160px minmax(220px, 0.75fr) minmax(0, 1.25fr);
     gap: 18px;
@@ -1126,6 +1253,10 @@
   }
 
   .evidenceBar {
+    grid-column: 1 / -1;
+  }
+
+  .disclosureLine {
     grid-column: 1 / -1;
   }
 
@@ -1216,6 +1347,25 @@
     font-size: 30px;
   }
 
+  .portfolioOverview {
+    grid-template-columns: 1fr;
+    margin-top: 38px;
+  }
+
+  .portfolioOverview > div,
+  .portfolioOverview > div:nth-child(-n + 2),
+  .portfolioOverview > div:nth-child(odd) {
+    grid-template-columns: 90px minmax(0, 1fr);
+    min-height: 0;
+    padding: 17px 0;
+    border-top: 1px solid rgba(17, 19, 16, 0.26);
+    border-left: 0;
+  }
+
+  .portfolioOverview > div:first-child {
+    border-top: 0;
+  }
+
   .section {
     padding: 76px 18px;
   }
@@ -1241,6 +1391,7 @@
   }
 
   .experimentGrid,
+  .caseSummary,
   .systemSummary,
   .excerptGridTwo,
   .videoFeature,
@@ -1251,6 +1402,22 @@
   .brandProofs,
   .footer {
     grid-template-columns: 1fr;
+  }
+
+  .caseSummary {
+    margin-bottom: 36px;
+  }
+
+  .caseSummary > div,
+  .caseSummary > div:first-child {
+    min-height: 0;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .caseSummary > div:first-child {
+    border-top: 0;
   }
 
   .experimentGrid article,
@@ -1286,8 +1453,8 @@
   }
 
   .evolutionList article > div,
-  .evolutionList h4,
-  .evolutionList p {
+  .evolutionQuestion,
+  .evolutionAnswer {
     grid-column: 2;
   }
 
@@ -1340,6 +1507,11 @@
   .evidenceExcerpt pre {
     min-height: 0;
     font-size: 9px;
+  }
+
+  .disclosureLine {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .evidenceExcerpt > p {
