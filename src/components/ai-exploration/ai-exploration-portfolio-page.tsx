@@ -46,6 +46,69 @@ const storySpine = [
   },
 ];
 
+const reconstructionCases = [
+  {
+    index: "01",
+    reference: "PREMIERE PRO · AFTER EFFECTS · CAPCUT",
+    question: "SNS 영상에 정말 필요한 편집 기능은 무엇일까?",
+    observation: "완성형 편집 앱 전체보다 소스 선택, 인·아웃 지점, 컷 순서, 타이밍, 마커, 연속성 검토가 먼저 필요했습니다.",
+    implementation: "Python/Tk로 Source·Program 모니터와 타임라인을 만들고, ffprobe로 소스를 읽고 ffmpeg로 선택 구간을 다시 렌더링하도록 구성했습니다. OpenCV·librosa는 프레임과 비트 관찰을 보조합니다.",
+    boundary: "프리미어나 애프터이펙트를 대체한다고 주장하지 않습니다. 생성 후보를 빠르게 고르고 배열하며 QC하기 위한 로컬 편집 보조 앱입니다.",
+    evidenceSlug: "idol-edit-desk-implementation",
+  },
+  {
+    index: "02",
+    reference: "COMFYUI · GROK IMAGINE AGENT · FIGMA",
+    question: "노드 그래프 대신, 기획자가 실제로 보고 결정해야 할 화면은 무엇일까?",
+    observation: "생성 노드를 많이 연결하는 것보다 곡 구간, 레퍼런스의 역할, 후보 상태, 보류 이유와 모델 대화를 같은 맥락에서 보는 일이 더 중요했습니다.",
+    implementation: "Live Plan, Planning Canvas, Sequence Rail, Contact Sheet와 Codex·Grok 터미널을 한 화면에 둔 Workbench를 만들었습니다. 생성기가 아니라 생성 전 판단과 인계를 연결하는 작업 화면입니다.",
+    boundary: "ComfyUI 복제나 범용 이미지 편집기가 아닙니다. 별도 API 비용과 로컬 서버를 추가하지 않고 기존 구독형 CLI 세션과 제작 기록을 연결했습니다.",
+    evidenceSlug: "front-planning-workbench-checkpoint",
+  },
+  {
+    index: "03",
+    reference: "CODEX · GROK CLI · OPENCLAW · HARNESSING",
+    question: "AI에게 무엇을 맡겨야 결과가 반복되지 않을까?",
+    observation: "창의적 판단까지 스크립트로 고정하면 같은 구도와 빛이 반복됐습니다. 반면 파일 경로, 실행 상태, 누락 검사, 후보 요약과 재실행은 자동화할수록 안정됐습니다.",
+    implementation: "기획·생성·검토·편집·공개를 단계로 나누고, 각 단계의 입력·산출물·승인·수정 경로를 레지스트리로 연결했습니다. AI는 맥락을 이어받아 실행하고 저는 방향과 최종 통과를 결정합니다.",
+    boundary: "모델을 자율 감독자로 두지 않습니다. 유료 실행, 기획 변경, 통과·보류와 공개는 명시적인 사람의 결정으로 남깁니다.",
+    evidenceSlug: "idol-harness-stage-registry",
+  },
+];
+
+const architectureLayers = [
+  {
+    index: "01",
+    label: "DIRECTION",
+    title: "제가 정하는 기획",
+    detail: "메시지 · 곡 구간 · 레퍼런스의 역할 · 금지선 · 통과 기준",
+  },
+  {
+    index: "02",
+    label: "CONTEXT",
+    title: "Workbench와 제작 기억",
+    detail: "Live Plan · Canvas · 후보 상태 · 보류 이유 · 이전 결정",
+  },
+  {
+    index: "03",
+    label: "GENERATION",
+    title: "세션과 API 실행",
+    detail: "Codex · Grok · 이미지/영상 API · 재실행 가능한 작업 단위",
+  },
+  {
+    index: "04",
+    label: "REVIEW & EDIT",
+    title: "후보 비교와 편집",
+    detail: "컨택트시트 · 움직임/비트 관찰 · Edit Desk · ffmpeg preview",
+  },
+  {
+    index: "05",
+    label: "RECORD",
+    title: "승인과 다음 학습",
+    detail: "통과·보류 · 파일 계보 · 공개 기록 · 채널 반응 · 다음 기준",
+  },
+];
+
 const turningPoints = [
   {
     index: "01",
@@ -247,6 +310,22 @@ function EvidenceExcerpt({ slug }: { slug: string }) {
   );
 }
 
+function EvidenceLink({ slug }: { slug: string }) {
+  const source = getEvidenceSource(slug);
+
+  if (!source) {
+    return null;
+  }
+
+  return (
+    <Link className={styles.evidenceLink} href={`/ai-exploration/motion-bank/${source.slug}`}>
+      <span>{getEvidenceDisclosureLabel(source)}</span>
+      <strong>{source.fileName}</strong>
+      <ExternalLink size={15} />
+    </Link>
+  );
+}
+
 export function AiExplorationPortfolioPage() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
@@ -284,9 +363,9 @@ export function AiExplorationPortfolioPage() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span>AI RESEARCH & EXPLORATION / PROCESS PORTFOLIO</span>
-          <h1>새로운 AI를<br />실제 제작에서<br />시험합니다.</h1>
+          <h1>AI 도구를 분해해<br />제작 시스템으로<br />다시 조립합니다.</h1>
           <p>
-            새로운 기능을 써보는 데서 멈추지 않고, 실제 제작의 문제에 적용했습니다. 성공과 실패에서 얻은 판단은 다음 실험이 다시 쓸 수 있는 기록으로 남겼습니다.
+            프리미어 프로, ComfyUI, 생성·에이전트 도구가 실제로 해결하는 작업을 파악하고, 제 기획·생성·검토 흐름에 필요한 기능만 로컬 앱과 API, 제작 규칙으로 다시 만들었습니다.
           </p>
           <div className={styles.heroActions}>
             <a className={styles.primaryAction} href="#experiments">
@@ -307,7 +386,7 @@ export function AiExplorationPortfolioPage() {
       <section className={styles.positioningBand}>
         <Reveal className={styles.contentWidth}>
           <p>
-            저는 AI 결과물을 많이 만드는 사람보다, <strong>무엇을 시험할지 정하고, 결과를 비교하고, 다음 시도에 남길 기준을 만드는 사람</strong>에 가깝습니다.
+            저는 AI 툴을 많이 써본 사람보다, 새로운 툴이 나오면 <strong>“이 기능은 내 제작에서 무엇을 줄일 수 있는가?”를 묻고 필요한 부분을 직접 다시 만드는 사람</strong>에 가깝습니다.
           </p>
           <div className={styles.storySpine}>
             {storySpine.map((item, index) => (
@@ -324,23 +403,80 @@ export function AiExplorationPortfolioPage() {
       <section className={styles.section} id="experiments">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="새 기능을 먼저 나열하지 않았습니다. 제작에서 막힌 문제를 정한 뒤, X와 공식 문서·강연·기술 글에서 찾은 변화를 작은 실험으로 붙였습니다. 실제 작업 방식이 달라진 경우에만 다음 단계로 남겼습니다."
+            body="완성된 도구를 그대로 도입하기보다, 그 안에서 실제로 작동하는 작업 단위를 찾았습니다. 필요한 기능은 현재 제작 흐름에 맞게 더 작고 명확한 로컬 도구와 자동화 단계로 다시 조립했습니다."
             index="01"
-            label="탐색 방식 / TREND TO TEST"
-            title="하나의 질문이 어떻게 다음 실험으로 이어졌을까?"
+            label="핵심 탐구 방식 / REVERSE ENGINEERING"
+            title="기성 AI 도구에서 무엇을 가져오고, 무엇을 만들지 않았을까?"
           />
 
-          <div className={styles.explorationMethod}>
+          <div className={styles.reverseEngineeringLead}>
             <div>
-              <span>반복 실험 규칙</span>
-              <h3>새 기술이 아니라, 지금 막힌 작업에서 시작했습니다.</h3>
+              <span>핵심 질문</span>
+              <h3>“저 도구를 써야 하나?”보다 “저 도구는 어떤 일을 하고 있나?”에서 시작했습니다.</h3>
             </div>
-            <ol>
-              <li><span>01</span><strong>병목을 한 문장으로 정한다</strong></li>
-              <li><span>02</span><strong>쓸 수 있는 새 기능을 찾는다</strong></li>
-              <li><span>03</span><strong>작은 제작 단위에서 시험한다</strong></li>
-              <li><span>04</span><strong>채택·보류·폐기 이유를 남긴다</strong></li>
-            </ol>
+            <p>구독 비용을 피하기 위한 접근이 아니라, 기능의 본질을 이해해 제 작업에 맞는 제작 루프로 바꾸기 위한 접근입니다. 기능 전체를 복제하지 않고 실제 병목을 줄이는 최소 단위만 구현했습니다.</p>
+          </div>
+
+          <div className={styles.reconstructionCases}>
+            {reconstructionCases.map((item) => (
+              <article key={item.index}>
+                <header>
+                  <span>{item.index}</span>
+                  <small>{item.reference}</small>
+                </header>
+                <blockquote>{item.question}</blockquote>
+                <dl>
+                  <div>
+                    <dt>관찰한 본질</dt>
+                    <dd>{item.observation}</dd>
+                  </div>
+                  <div>
+                    <dt>실제 구현</dt>
+                    <dd>{item.implementation}</dd>
+                  </div>
+                  <div>
+                    <dt>만들지 않은 것</dt>
+                    <dd>{item.boundary}</dd>
+                  </div>
+                </dl>
+                <EvidenceLink slug={item.evidenceSlug} />
+              </article>
+            ))}
+          </div>
+
+          <div className={styles.architectureBlueprint}>
+            <div className={styles.blueprintHeading}>
+              <span>IDOL / AUTOMATION ARCHITECTURE</span>
+              <h3>기획만 던지고 전부 맡긴 것이 아니라, 판단이 흘러가는 구조를 만들었습니다.</h3>
+              <p>앞 단계의 결정이 다음 단계의 입력이 되고, 실패하면 생성 결과를 억지로 고치는 대신 원인이 생긴 단계로 돌아갑니다.</p>
+            </div>
+            <div className={styles.founderRail}>
+              <span>사람의 결정이 필요한 지점</span>
+              <strong>방향 설정</strong>
+              <strong>후보 선택</strong>
+              <strong>유료 실행 승인</strong>
+              <strong>최종 공개</strong>
+            </div>
+            <div className={styles.architectureFlow}>
+              {architectureLayers.map((layer) => (
+                <article key={layer.index}>
+                  <span>{layer.index}</span>
+                  <small>{layer.label}</small>
+                  <h4>{layer.title}</h4>
+                  <p>{layer.detail}</p>
+                </article>
+              ))}
+            </div>
+            <div className={styles.blueprintBoundary}>
+              <span>자동화의 경계</span>
+              <p><strong>자동화:</strong> 자료 정리, 상태·경로 관리, 누락 검사, 후보 요약, 반복 생성과 렌더링</p>
+              <p><strong>직접 판단:</strong> 메시지, 레퍼런스의 역할, 장면 방향, 통과·보류, 비용 집행과 공개</p>
+            </div>
+          </div>
+
+          <div className={styles.historyLead}>
+            <span>어떻게 여기까지 왔나</span>
+            <h3>이 구조는 한 번에 설계한 것이 아니라, 실패할 때마다 바뀌었습니다.</h3>
           </div>
 
           <div className={styles.turningPointList}>
@@ -452,6 +588,7 @@ export function AiExplorationPortfolioPage() {
             <EvidenceExcerpt slug="front-planning-workbench-checkpoint" />
             <EvidenceExcerpt slug="idol-harness-stage-registry" />
             <EvidenceExcerpt slug="idol-video-source-intake" />
+            <EvidenceExcerpt slug="idol-edit-desk-implementation" />
           </div>
         </Reveal>
       </section>
