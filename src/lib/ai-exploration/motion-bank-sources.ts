@@ -15,6 +15,78 @@ export type EvidenceSource = {
 
 export const evidenceSources: EvidenceSource[] = [
   {
+    slug: "aurora-v1-to-v2-archive-map",
+    collection: "harness",
+    returnAnchor: "archive",
+    system: "AURORA / SYSTEM EVOLUTION",
+    period: "2026.05 / ARCHIVED DECISION",
+    fileName: "v1-compressed-map-2026-05-15.md",
+    fileType: "Markdown 원문 일부",
+    state: "V1 ARCHIVED / V2 ACTIVE",
+    description: "생산·리서치·검토·게시·분석을 한 트리에 섞었던 V1을 보존하고, V2의 책임과 기준으로 다시 나눈 실제 아카이브 결정입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "원문에서 V1의 문제와 V2 전환 원칙만 선별했습니다. 내부 경로와 복구 절차의 상세는 포함하지 않습니다.",
+    excerpt: `## What V1 Was
+
+V1 combined several concerns in one broad tree:
+- image prompt and video prompt production
+- source research and source-to-prompt conversion
+- asset dropzone and readable review storage
+- platform posting and analytics support
+- manually curated research runs and rollups
+
+This made the system productive, but too easy to
+confuse with active canon.
+
+## Decision
+
+Aurora V1 is moved out of the active production path
+and archived as legacy reference.`,
+  },
+  {
+    slug: "aurora-v2-stage-decision-log",
+    collection: "harness",
+    returnAnchor: "archive",
+    system: "AURORA V2 / DECISION LOG",
+    period: "2026.05 / ITERATION RECORD",
+    fileName: "DECISION_LOG.md",
+    fileType: "결정 기록 원문 일부",
+    state: "TEST · OBSERVE · REVISE",
+    description: "캡처 없이 안무를 설계하는 경로가 안전한 K-pop 포즈로 수렴하자, 기계적 점수 대신 곡의 흐름을 읽는 자연어 비트시트로 수정한 기록입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "결정 배경과 수정 방향만 선별했습니다. 실행 프롬프트, 내부 경로, 현재 제작 상태는 공개하지 않습니다.",
+    excerpt: `Founder identified that no-capture
+agent_designed_choreography was causing STAGE boards
+to converge on similar safe K-pop pose grammar.
+
+A mechanical scoring layer would over-systematize a
+creative choice.
+
+Future STAGE no-capture packet builds keep same-dance
+keypoint direction in natural beat-sheet prose.`,
+  },
+  {
+    slug: "aurora-platform-signal-boundary",
+    collection: "harness",
+    returnAnchor: "archive",
+    system: "AURORA V2 / PLATFORM SIGNAL",
+    period: "2026.05 / X · TIKTOK ANALYSIS",
+    fileName: "platform-signal-report.md",
+    fileType: "분석 보고서 원문 일부",
+    state: "REVIEW EVIDENCE / NOT AUTO-APPLIED",
+    description: "X와 TikTok의 공개 지표를 비교하되, 지표가 곧 창작의 원인이나 자동 수정 명령이 되지 않도록 적용 범위를 제한한 기록입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "공개 가능한 분석 경계만 선별했습니다. 계정 세부 정보, 원본 로그, 관리자 데이터는 포함하지 않습니다.",
+    excerpt: `Reports here are review evidence only.
+
+Analytics-derived candidates stay
+founder_review_required: true and
+application_status: not_applied until the founder
+explicitly approves applying them to future creative
+packets, prompts, identity assignments, source/media
+choices, publishing, or constellation core.`,
+  },
+  {
     slug: "idol-harness-stage-registry",
     collection: "harness",
     returnAnchor: "system",
