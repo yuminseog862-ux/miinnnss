@@ -106,6 +106,89 @@
   gap: 12px;
 }
 
+.explorationFeature {
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.explorationRoute {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.74fr) minmax(0, 1.26fr);
+  min-height: 330px;
+  color: #eff4f7;
+  background: #070909;
+  text-decoration: none;
+}
+
+.explorationRouteCopy {
+  z-index: 2;
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 34px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.explorationRouteCopy h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.explorationRouteCopy p {
+  max-width: 540px;
+  margin: 0;
+  color: rgba(239, 244, 247, 0.7);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.explorationRouteAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 8px;
+  color: #d6ff43;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.explorationRouteMedia {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+}
+
+.explorationRouteMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 180px 0 140px -100px rgba(0, 0, 0, 0.92);
+  transition: background 180ms ease;
+}
+
+.explorationRouteMedia img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 58%;
+  filter: saturate(0.78) contrast(1.04);
+  transition: transform 420ms ease;
+}
+
+.explorationRoute:hover .explorationRouteMedia img {
+  transform: scale(1.025);
+}
+
+.explorationRoute:hover .explorationRouteMedia::after {
+  background: rgba(0, 0, 0, 0.08);
+}
+
 .primaryLink,
 .secondaryLink,
 .htmlLink {
@@ -1984,6 +2067,15 @@
     grid-template-columns: 1fr;
   }
 
+  .explorationRoute {
+    grid-template-columns: 1fr;
+  }
+
+  .explorationRouteCopy {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
   .projectGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2071,6 +2163,19 @@
 
   .sectionHeader h2 {
     font-size: 32px;
+  }
+
+  .explorationRouteCopy {
+    padding: 24px 18px;
+  }
+
+  .explorationRouteCopy h2 {
+    font-size: 36px;
+  }
+
+  .explorationRouteMedia,
+  .explorationRoute {
+    min-height: 250px;
   }
 
   .workflowPageHero {
