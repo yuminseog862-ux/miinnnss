@@ -247,6 +247,46 @@ render:
 boundary: analysis never locks creative cut timing`,
   },
   {
+    slug: "idol-edit-desk-implementation",
+    collection: "toolchain",
+    returnAnchor: "system",
+    system: "IDOL / LOCAL EDIT DESK",
+    period: "2026.07 / WORKING MVP",
+    fileName: "idol_edit_desk.py",
+    fileType: "Python 편집 발췌",
+    state: "SOURCE · TIMELINE · MARKERS · PREVIEW",
+    description: "Premiere와 CapCut의 작업 방식을 참고해 만든 로컬 편집 보조 앱에서 소스 분석, 타임라인 표시, 선택 구간 렌더링을 담당하는 실제 함수만 선별했습니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "실제 Python 구현에서 핵심 함수와 호출 관계만 편집했습니다. 로컬 작업 경로, 파일 이름, 예외 로그와 전체 UI 코드는 포함하지 않습니다.",
+    excerpt: `def probe_video_duration(path: Path) -> float:
+    proc = subprocess.run([
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "json", str(path),
+    ], capture_output=True, text=True)
+    payload = json.loads(proc.stdout or "{}")
+    duration = float(payload.get("format", {}).get("duration") or 0)
+    if duration > 0:
+        return duration
+
+def draw_timeline(self) -> None:
+    self.draw_work_area()
+    self.draw_markers_lane()
+    self.draw_waveform()
+    self.draw_sections_lane()
+    self.draw_effects()
+    self.draw_clips()
+
+def render_preview(self) -> None:
+    self.save_draft()
+    # range, output path, and command construction omitted
+    threading.Thread(
+        target=self._render_worker,
+        args=(cmd, out),
+        daemon=True,
+    ).start()`,
+  },
+  {
     slug: "aheya-evm-funding-registry",
     collection: "contract",
     returnAnchor: "aheya",
