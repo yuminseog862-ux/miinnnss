@@ -1,7 +1,7 @@
 export type EvidenceSource = {
   slug: string;
   collection: "trust" | "motion" | "harness" | "workbench" | "toolchain" | "contract";
-  returnAnchor: "systems" | "workbench" | "harness" | "toolchain" | "aheya" | "archive";
+  returnAnchor: "systems" | "system" | "workbench" | "harness" | "toolchain" | "aheya" | "archive";
   system: string;
   period: string;
   fileName: string;
@@ -9,28 +9,38 @@ export type EvidenceSource = {
   state: string;
   description: string;
   excerpt: string;
+  excerptKind?: "verbatim-selection" | "redacted-selection" | "structured-summary";
+  disclosureNote?: string;
 };
 
 export const evidenceSources: EvidenceSource[] = [
   {
     slug: "idol-harness-stage-registry",
     collection: "harness",
-    returnAnchor: "harness",
+    returnAnchor: "system",
     system: "IDOL / PRODUCTION SYSTEM",
     period: "ACTIVE STRUCTURE",
     fileName: "stage-registry.yaml",
-    fileType: "Curated YAML excerpt",
+    fileType: "YAML 원문 일부",
     state: "8 PHASES / 29 STAGES",
-    description: "제작 단계의 semantic id, owner, 산출물, gate, upstream dependency를 관리하는 레지스트리의 공개용 요약입니다.",
-    excerpt: `status: active
+    description: "실제 단계 레지스트리에서 단계 간 책임과 수정 원칙을 정한 부분만 선별했습니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "원문 1-32행 중 공개에 필요한 항목만 선별했습니다. 경로·운영 명령·현재 작업 상태는 포함하지 않습니다.",
+    excerpt: `schema_version: idol-harness-stage-registry.v1
+status: active
+
 compatibility_policy:
   semantic_ids_are_stable: true
+  operator_names_may_evolve: true
   legacy_codes_remain_resolvable: true
+  legacy_filenames_remain_valid: true
+  new_aliases_are_additive: true
 
-stage_contract:
-  canonical_owner: required
-  human_approval_gate: explicit
-  upstream_stage_ids: traceable`,
+decision_ownership_policy:
+  one_canonical_owner_per_decision: true
+  downstream_projection_does_not_reown: true
+  feedback_creates_upstream_revision: true
+  compiler_returns_missing_creative_truth_upstream: true`,
   },
   {
     slug: "idol-harness-action-queue-contract",
@@ -39,7 +49,7 @@ stage_contract:
     system: "IDOL / PRODUCTION SYSTEM",
     period: "ACTIVE CONTRACT",
     fileName: "action-queue-contract.json",
-    fileType: "Curated schema excerpt",
+    fileType: "스키마 구조 요약",
     state: "OWNER · BLOCKER · FORBIDDEN ACTIONS",
     description: "자동화 queue가 실행 단위의 책임, 상태, 근거, 금지 행동을 빠뜨리지 않도록 하는 공개용 계약 발췌입니다.",
     excerpt: `queue.required = [
@@ -58,7 +68,7 @@ status = pending | current | blocked | not_approved`,
     system: "IDOL / PRODUCTION SYSTEM",
     period: "ACTIVE IMPLEMENTATION",
     fileName: "context-pack-builder.rb",
-    fileType: "Curated implementation excerpt",
+    fileType: "구현 구조 요약",
     state: "READ-ONLY / HASHED / SECTION-GATED",
     description: "현재 작업에 필요한 맥락만 안전하게 다시 묶는 context pack의 동작 원리를 공개 범위에서 발췌했습니다.",
     excerpt: `context_pack:
@@ -76,7 +86,7 @@ rule: edit canonical sources, then regenerate`,
     system: "IDOL / PRODUCTION SYSTEM",
     period: "ACTIVE IMPLEMENTATION",
     fileName: "approval-gate-refresh.rb",
-    fileType: "Curated implementation excerpt",
+    fileType: "구현 구조 요약",
     state: "EXPLICIT APPROVAL / SCHEMA VALIDATED",
     description: "명시적 승인 이후 어떤 상태 문서가 함께 갱신되는지 보여주는 공개용 실행 체인 발췌입니다.",
     excerpt: `decision_apply requires: explicit input
@@ -92,13 +102,13 @@ record decision
   {
     slug: "pulso-front-planning-readiness",
     collection: "workbench",
-    returnAnchor: "workbench",
+    returnAnchor: "system",
     system: "PULSO / ACTUAL PLANNING RECORD",
     period: "2026.06 / READY FOR DOWNSTREAM",
     fileName: "pulso-front-planning-readiness.yaml",
-    fileType: "Curated production-record excerpt",
+    fileType: "제작 기록 구조 요약",
     state: "6 SOURCE REFS / 9 DOWNSTREAM TARGETS",
-    description: "실제 Pulso run에서 음원·컷·가사·비주얼 보드·의상 판단을 이후 제작 단계로 넘기기 위해 남긴 planning readiness record의 공개용 요약입니다.",
+    description: "실제 Pulso 작업에서 음원·컷·가사·비주얼 보드·의상 판단을 다음 제작 단계로 넘기기 위해 남긴 인계 기록의 공개용 요약입니다.",
     excerpt: `content: Pulso
 status: ready_for_downstream
 
@@ -114,25 +124,26 @@ automation:
   {
     slug: "front-planning-workbench-checkpoint",
     collection: "workbench",
-    returnAnchor: "workbench",
+    returnAnchor: "system",
     system: "IDOL / FRONT PLANNING WORKBENCH",
     period: "2026.07 / RUNNABLE DEVELOPMENT CHECKPOINT",
     fileName: "workbench-checkpoint.md",
-    fileType: "Curated build-and-verification excerpt",
+    fileType: "Markdown 원문 일부",
     state: "NATIVE APP / REAL-SONG PILOT NOT ACCEPTED",
-    description: "실제 planning record를 읽고 선택·보류·handoff하기 위해 만든 local native workbench의 구현 및 검증 범위를 공개용으로 요약했습니다.",
-    excerpt: `implemented:
-  live plan + visual board
-  sequence rail + contact sheet
-  explicit pass / revise / hold
-  hash-bound readiness
+    description: "실제 구현·검증 문서에서 주장 수준을 구분한 기준을 그대로 선별했습니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "원문 Evidence Standard 구간입니다. 모델 세션 ID, 내부 테스트 상세, 환경 정보는 공개하지 않습니다.",
+    excerpt: `This record separates four kinds of claim:
 
-verified:
-  contracts + native tests
-  native Codex/Grok turns
-  persistence + no localhost server
+1. implemented — the route exists in executable code;
+2. hermetic pass — the route passed a fake/local
+   contract test without consuming provider usage;
+3. subscription-native pass — the route ran through
+   the installed product client; and
+4. not yet accepted — a real-song or scale/quality
+   condition remains.
 
-boundary: real-song pilot not accepted yet`,
+It does not describe a scaffold as production-complete.`,
   },
   {
     slug: "ink-output-registry",
@@ -141,9 +152,9 @@ boundary: real-song pilot not accepted yet`,
     system: "INK / DUNE PRODUCTION REGISTRY",
     period: "2026.06 / REGISTERED RUN",
     fileName: "output-registry.yaml",
-    fileType: "Curated YAML registry excerpt",
+    fileType: "YAML 레지스트리 구조 요약",
     state: "02A · 02B · EDIT · PACKAGE POINTERS",
-    description: "INK의 0618 DUNE run에서 keyframe, contact sheet, video prompt, edit, package 경로를 어떻게 등록했는지 보여주는 공개용 registry 발췌입니다.",
+    description: "INK의 0618 DUNE 작업에서 키프레임, 컨택트시트, 영상 프롬프트, 편집본, 공개 패키지의 경로를 어떻게 등록했는지 보여주는 구조 요약입니다.",
     excerpt: `content_id: 0618_DUNE_SUCCESS_PRE00
 status: generated
 
@@ -168,11 +179,11 @@ boundary:
   {
     slug: "idol-media-runtime",
     collection: "toolchain",
-    returnAnchor: "toolchain",
+    returnAnchor: "system",
     system: "IDOL / PYTHON MEDIA RUNTIME",
     period: "PINNED LOCAL RUNTIME",
     fileName: "idol-video-python + requirements-video.txt",
-    fileType: "Curated runtime excerpt",
+    fileType: "실행 환경 구조 요약",
     state: "PYTHON 3.12 · FFMPEG · FFPROBE",
     description: "오디오·영상 분석과 편집 보조 스크립트가 같은 재현 가능한 환경에서 실행되도록 고정한 로컬 런타임의 공개용 요약입니다.",
     excerpt: `runtime:
@@ -189,29 +200,39 @@ rule: validate package pins before media work`,
   {
     slug: "idol-video-source-intake",
     collection: "toolchain",
-    returnAnchor: "toolchain",
+    returnAnchor: "system",
     system: "IDOL / MEDIA ANALYSIS",
     period: "IMPLEMENTED SCRIPT",
     fileName: "idol_video_source_intake.py",
-    fileType: "Curated Python excerpt",
+    fileType: "Python 편집 발췌",
     state: "PROBE · MOTION PEAKS · CONTACT SHEET",
-    description: "생성 영상 후보를 메타데이터, 움직임 피크, 시간표시 컨택트시트로 바꾸어 편집 판단 전에 읽을 수 있게 만든 구현의 공개용 요약입니다.",
-    excerpt: `for each video source:
-  ffprobe -> duration / geometry / fps / codec
-  OpenCV Farneback -> top motion peaks
-  ffmpeg -> timecoded contact sheet
-  SHA-256 -> cache and evidence integrity
+    description: "실제 Python 스크립트에서 움직임이 큰 구간을 찾는 함수의 핵심 부분을 선별했습니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "원문 426-464행의 계산 로직을 짧게 편집했습니다. 반복문 일부, 로컬 경로, 작업 식별자는 포함하지 않습니다.",
+    excerpt: `def motion_peaks(video_path: Path,
+                 sample_fps: float,
+                 limit: int = MOTION_PEAK_LIMIT):
+    cap = cv2.VideoCapture(str(video_path))
+    native_fps = cap.get(cv2.CAP_PROP_FPS) or 24.0
 
-output: compact source-intake index for edit review`,
+    flow = cv2.calcOpticalFlowFarneback(
+        prev_gray, gray, None,
+        0.5, 3, 15, 3, 5, 1.2, 0,
+    )
+    mag, _ = cv2.cartToPolar(flow[..., 0], flow[..., 1])
+    score = float(np.mean(mag))
+
+    return sorted(rows, key=lambda row: row["motion_score"],
+                  reverse=True)[:limit]`,
   },
   {
     slug: "idol-beat-aware-roughcut",
     collection: "toolchain",
-    returnAnchor: "toolchain",
+    returnAnchor: "system",
     system: "IDOL / EDIT ASSIST",
     period: "IMPLEMENTED SCRIPT",
     fileName: "idol_video_sync_workbench.py",
-    fileType: "Curated Python excerpt",
+    fileType: "Python 구조 요약",
     state: "BEAT/ONSET ASSIST · EDIT RECIPE · QC",
     description: "오디오의 beat·onset과 영상 움직임을 관찰 자료로 만들고, 사람이 고친 YAML recipe에서 roughcut과 QC 시트를 다시 만드는 구현의 공개용 요약입니다.",
     excerpt: `audio assist:
@@ -232,19 +253,30 @@ boundary: analysis never locks creative cut timing`,
     system: "AHEYA / SMART CONTRACT EXPLORATION",
     period: "PUBLIC SOURCE ARTIFACT",
     fileName: "AheyaEvmFundingRegistryRecord.sol",
-    fileType: "Curated Solidity excerpt",
+    fileType: "Solidity 편집 발췌",
     state: "EIP-712 PERMIT · OPERATOR RECORD · EVENTS",
-    description: "AI와 함께 제품 아이디어 등록·후원 기록의 책임 경계를 스마트계약 수준까지 탐구한 실제 소스의 공개용 요약입니다.",
-    excerpt: `register idea:
-  EIP-712 signed permit
-  creator + metadata hash + seed wallet
-  deadline + nonce replay guard
+    description: "공개 저장소의 실제 Solidity 코드에서 등록 허가와 운영자 기록 구조를 선별했습니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "이미 공개된 스마트계약 코드에서 함수 인자와 검증 본문을 축약했습니다. 실제 주소, 배포 정보, 거래 데이터는 포함하지 않습니다.",
+    excerpt: `struct PublishPermit {
+    address creator;
+    bytes32 ideaId;
+    bytes32 metadataHash;
+    address seedWallet;
+    uint256 deadline;
+    uint256 nonce;
+}
 
-record funding:
-  owner/operator gate
-  event-only funding record
+modifier onlyOperator() {
+    if (msg.sender != owner && !isOperator[msg.sender])
+        revert NoPermission();
+    _;
+}
 
-boundary: source artifact only; deployment and adoption not claimed`,
+function recordIdeaFunding(...) external onlyOperator {
+    // validation omitted
+    emit IdeaFundingRecorded(..., block.timestamp);
+}`,
   },
   {
     slug: "aheya-openclaw-orchestration-flow",
@@ -253,19 +285,32 @@ boundary: source artifact only; deployment and adoption not claimed`,
     system: "AHEYA / OPENCLAW YUI",
     period: "IMPLEMENTED PRIVATE RUNTIME",
     fileName: "yui-orchestration-flow.ts",
-    fileType: "Curated implementation excerpt",
+    fileType: "TypeScript 편집 발췌",
     state: "EXECUTE · REVIEW · RECORD",
-    description: "OpenClaw Yui가 후보 snapshot, 선택 plan, 실행 job, strict review, canonical 기록 상태를 분리하는 공개용 흐름입니다.",
-    excerpt: `browse market
-  -> build candidate snapshot
-  -> select plan
-  -> execute stages
-  -> strict review
-  -> canonical record
+    description: "실제 Yui flow에서 후보 선택, 단계 실행, 검토, 기록 상태를 분리한 부분만 편집해 공개합니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "인증 교환, 접근 토큰, 지갑 식별 필드, API 주소, 최종 기록 요청 본문을 제외했습니다. 아래 코드는 흐름 확인에 필요한 실제 식별자와 상태 처리만 남긴 편집 발췌입니다.",
+    excerpt: `export async function runOrchestrateAndDeliver(input) {
+  const candidates = await browseMarket(request)
+  const candidateSnapshot = buildCandidateSnapshot(candidates, limit)
 
-boundary:
-  skipCanonical: explicit only
-  delivery_success != recording_success`,
+  // authentication and API details omitted
+  const selectedPlan = selectPlan(plan, request.chosenPlanId)
+  const stageRuns = await executeSelectedPlan(
+    request, snapshotKey, selectedPlan
+  )
+  const { review, verdict } = buildStrictReview({ ... })
+
+  let recordingStatus = request.skipCanonical
+    ? 'skipped'
+    : 'written'
+
+  // canonical write details omitted
+  // on write failure: recordingStatus = 'failed'
+
+  return { selectedPlan, stageRuns, review, verdict,
+           recordingStatus, warnings }
+}`,
   },
   {
     slug: "aheya-trust-recommendation-memory",
@@ -274,9 +319,9 @@ boundary:
     system: "AHEYA / TRUST",
     period: "CURRENT IMPLEMENTATION",
     fileName: "recommendation-memory.ts",
-    fileType: "Curated implementation excerpt",
+    fileType: "구현 구조 요약",
     state: "CANONICAL + HUMAN/AGENT FEEDBACK",
-    description: "새 후보 판단에 이전 canonical 신호와 평가 메모리를 어떤 방식으로 고려하는지 보여주는 공개용 발췌입니다.",
+    description: "새 후보를 판단할 때 이전에 확정한 신호와 평가 기록을 어떤 방식으로 고려하는지 보여주는 공개용 요약입니다.",
     excerpt: `candidate score:
   provider memory
   + offering memory
@@ -294,7 +339,7 @@ output:
     system: "AHEYA / OPERATING RECORD",
     period: "FEATURE SIGNAL SHEET",
     fileName: "feature-signal-sheet.md",
-    fileType: "Curated record-template excerpt",
+    fileType: "기록 템플릿 구조 요약",
     state: "RESPONSE · REUSE · RECALL · NEXT STEP",
     description: "선정 이유와 이후 반응을 다음 판단으로 이어가기 위해 만든 실제 운영 시트의 공개용 필드 구조입니다. 개별 사용자나 실제 기록값은 포함하지 않습니다.",
     excerpt: `record per feature:
@@ -316,7 +361,7 @@ scale: strong | medium | weak | unknown`,
     system: "AHEYA / REDACTED PRODUCT EVIDENCE",
     period: "2026.05 / AGGREGATE SNAPSHOT",
     fileName: "product-evidence-ledger.md",
-    fileType: "Curated aggregate-data excerpt",
+    fileType: "집계 데이터 구조 요약",
     state: "ACTIVITY · PROOF · REVIEW · TRUST",
     description: "개별 계정이나 원문 데이터를 노출하지 않고 제품의 activity, proof, review, Trust 상태를 집계로 남긴 evidence ledger의 공개용 요약입니다.",
     excerpt: `aggregate snapshot:
@@ -336,7 +381,7 @@ boundary:
     system: "AHEYA / OPERATING AUTOMATION",
     period: "SPECIFICATION / 08:00 KST",
     fileName: "daily-brief-automation.md",
-    fileType: "Curated automation-spec excerpt",
+    fileType: "자동화 규칙 구조 요약",
     state: "OPERATING SPEC / NO RUNTIME CLAIM",
     description: "현재 시즌과 기록을 읽어 당일 실행·proof·blocker를 정리하도록 한 자동화 명세의 공개용 구조입니다. 실제 스케줄러 실행 성과를 뜻하지 않습니다.",
     excerpt: `cadence: daily / 08:00 KST
@@ -358,7 +403,7 @@ report:
     system: "AURORA V1 / LEGACY ARCHIVE",
     period: "2026.05",
     fileName: "legacy-archive-map.md",
-    fileType: "Curated Markdown excerpt",
+    fileType: "Markdown 구조 요약",
     state: "ARCHIVE ONLY / NOT ACTIVE TRUTH",
     description: "V1의 범위와 재사용 제한을 보여주는 공개용 보관 경계 발췌입니다.",
     excerpt: `status: legacy archive
@@ -376,7 +421,7 @@ rewrite the result into current terms before reuse.`,
     system: "AURORA V2 / ARCHIVE",
     period: "2026.05",
     fileName: "motion-bank-scope.md",
-    fileType: "Curated Markdown excerpt",
+    fileType: "Markdown 구조 요약",
     state: "REFERENCE-LOCKED CANDIDATE MEMORY",
     description: "후보 모션 문법을 저장하되 창의 판단에 자동 재사용하지 않는 조건을 정리한 공개용 발췌입니다.",
     excerpt: `status: extractable candidate memory
@@ -393,7 +438,7 @@ while the lock remains closed.`,
     system: "AURORA V2 / ARCHIVE",
     period: "2026.05",
     fileName: "motion-grammar-index.json",
-    fileType: "Curated JSON excerpt",
+    fileType: "JSON 구조 요약",
     state: "CANDIDATE ONLY / NOT SOURCE TRUTH",
     description: "후보 문법 파일의 수량과 접근 제한만 남긴 공개용 인덱스 발췌입니다.",
     excerpt: `counts:
@@ -412,7 +457,7 @@ policy:
     system: "IDOL / MOTION DIRECTION",
     period: "2026.06",
     fileName: "audio-motion-map.yaml",
-    fileType: "Curated YAML excerpt",
+    fileType: "YAML 구조 요약",
     state: "REVIEW-PASSED AUDIO RETIME",
     description: "오디오 분석을 몸·오브젝트·카메라·컷 타이밍으로 번역하는 제작 맵의 공개용 발췌입니다.",
     excerpt: `purpose:
@@ -432,7 +477,7 @@ boundary: does not replace image selection or create new top-level cuts`,
     system: "IDOL / PERFORMANCE MEMORY",
     period: "2026.05-06",
     fileName: "performance-memory.md",
-    fileType: "Curated Markdown excerpt",
+    fileType: "Markdown 구조 요약",
     state: "REVIEWED OR REPEATED USE",
     description: "검토를 통과한 컷·몸·카메라 판단만 재사용 후보로 남기는 performance memory의 공개용 발췌입니다.",
     excerpt: `cut decision = cue function
@@ -453,4 +498,15 @@ export const contractEvidenceSources = evidenceSources.filter((source) => source
 
 export function getEvidenceSource(slug: string) {
   return evidenceSources.find((source) => source.slug === slug);
+}
+
+export function getEvidenceDisclosureLabel(source: EvidenceSource) {
+  switch (source.excerptKind ?? "structured-summary") {
+    case "verbatim-selection":
+      return "원문 일부";
+    case "redacted-selection":
+      return "편집 발췌";
+    default:
+      return "구조 요약";
+  }
 }

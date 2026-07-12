@@ -13,12 +13,34 @@ import {
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import type { PropsWithChildren } from "react";
 
-import { getEvidenceSource } from "@/lib/ai-exploration/motion-bank-sources";
+import {
+  getEvidenceDisclosureLabel,
+  getEvidenceSource,
+} from "@/lib/ai-exploration/motion-bank-sources";
 import { channelPerformanceSnapshot } from "@/lib/portfolio-hub/channel-performance";
 
 import styles from "./ai-exploration-portfolio.module.css";
 
 const AHEYA_ARCHIVE_URL = "https://github.com/aheyabaraya/aheya-public-archive";
+
+const portfolioOverview = [
+  {
+    label: "중심 질문",
+    value: "새로운 AI가 실제 제작 과정의 어떤 문제를 줄이거나 바꿀 수 있는가?",
+  },
+  {
+    label: "내 역할",
+    value: "질문 설정, 기획 방향, 레퍼런스 선택, 후보 검토, 최종 승인, 기록 기준",
+  },
+  {
+    label: "대표 결과",
+    value: "INK 뮤직비디오, IDOL 제작 시스템, Front Planning Workbench, AHEYA Trust 실험",
+  },
+  {
+    label: "읽는 순서",
+    value: "탐색한 변화 → 제작 방식의 변화 → 실제 적용 사례 → 별도 서비스 실험 → 기록과 한계",
+  },
+];
 
 const experiments = [
   {
@@ -56,7 +78,7 @@ const evolution = [
     period: "2025.12–2026.04",
     title: "AHEYA와 Yui",
     question: "AI로 서비스와 신뢰 기록까지 만들 수 있을까?",
-    answer: "크라우드펀딩, 스마트계약, Trust API와 agent 실행·평가 구조를 개발 수준까지 파고들었습니다. 구현과 시장 수요는 별개라는 점도 확인했습니다.",
+    answer: "크라우드펀딩, 스마트계약, Trust API와 AI 에이전트의 실행·평가 구조를 직접 구현했습니다. 기술적으로 만들 수 있다는 사실과 시장이 필요로 한다는 판단은 별개임을 확인했습니다.",
   },
   {
     period: "2026.05",
@@ -68,7 +90,7 @@ const evolution = [
     period: "2026.05",
     title: "Root Signal · LOW",
     question: "반복 생성 구조만으로 첫 뮤직비디오를 완성할 수 있을까?",
-    answer: "완주는 가능했지만 카메라와 빛이 단조로웠고, LOW에서는 얼굴 기준이 무너졌습니다. 창의 판단의 스크립트화와 reference 없는 생성은 중단했습니다.",
+    answer: "완주는 가능했지만 카메라와 빛이 단조로웠고, LOW에서는 얼굴 기준이 무너졌습니다. 창의적 판단을 스크립트로 고정하는 방식과 기준 이미지 없는 생성은 중단했습니다.",
   },
   {
     period: "2026.06",
@@ -114,12 +136,12 @@ const toolRoles = [
   {
     tool: "Python media tools",
     role: "관찰과 재실행",
-    detail: "영상·오디오를 프레임, 비트, 움직임, 컨택트시트, 편집 recipe로 바꿨습니다.",
+    detail: "영상·오디오를 프레임, 비트, 움직임, 컨택트시트와 재사용 가능한 편집 조건으로 바꿨습니다.",
   },
   {
     tool: "OpenClaw / AHEYA",
     role: "서비스 실행과 기록",
-    detail: "후보 탐색, 실행, 엄격 검토, canonical 기록을 분리하는 별도 서비스 실험에 사용했습니다.",
+    detail: "후보 탐색, 실행, 엄격 검토, 최종 기록을 분리하는 별도 서비스 실험에 사용했습니다.",
   },
 ];
 
@@ -130,7 +152,7 @@ const jdConnections = [
   },
   {
     requirement: "서로 다른 유형의 AI 도구 활용",
-    proof: "LLM·생성 모델·agent/CLI·Python 분석 도구를 서로 다른 작업에 배치",
+    proof: "LLM·생성 모델·AI 에이전트·Python 분석 도구를 서로 다른 작업에 배치",
   },
   {
     requirement: "경험·콘텐츠·서비스로 확장",
@@ -142,7 +164,7 @@ const jdConnections = [
   },
   {
     requirement: "인사이트 아카이빙과 공유",
-    proof: "단계별 owner, 검토 상태, 파일 계보, 공개용 핵심 발췌",
+    proof: "단계별 책임, 검토 상태, 파일 계보, 공개용 핵심 발췌",
   },
 ];
 
@@ -192,6 +214,8 @@ function EvidenceExcerpt({ slug }: { slug: string }) {
     return null;
   }
 
+  const disclosureLabel = getEvidenceDisclosureLabel(source);
+
   return (
     <article className={styles.evidenceExcerpt}>
       <div className={styles.evidenceBar}>
@@ -199,9 +223,13 @@ function EvidenceExcerpt({ slug }: { slug: string }) {
           <span>{source.system}</span>
           <strong>{source.fileName}</strong>
         </div>
-        <Link aria-label={`${source.fileName} 전체 공개 발췌 보기`} href={`/ai-exploration/motion-bank/${source.slug}`}>
+        <Link aria-label={`${source.fileName} 상세 공개 범위 보기`} href={`/ai-exploration/motion-bank/${source.slug}`}>
           <ExternalLink size={15} />
         </Link>
+      </div>
+      <div className={styles.disclosureLine}>
+        <strong>{disclosureLabel}</strong>
+        <span>{source.disclosureNote ?? "원본 구조를 공개용으로 다시 쓴 요약이며 실행 정보와 인증 정보는 포함하지 않습니다."}</span>
       </div>
       <pre>{source.excerpt}</pre>
       <p>{source.description}</p>
@@ -224,11 +252,11 @@ export function AiExplorationPortfolioPage() {
           <strong>AI Creative</strong>
         </Link>
         <nav aria-label="AI Research & Exploration portfolio navigation">
-          <a href="#experiments">Experiments</a>
-          <a href="#system">System</a>
+          <a href="#experiments">탐색</a>
+          <a href="#system">제작 시스템</a>
           <a href="#ink">INK</a>
           <a href="#aheya">AHEYA</a>
-          <a href="#fit">Fit</a>
+          <a href="#fit">직무 연결</a>
         </nav>
       </header>
 
@@ -271,6 +299,14 @@ export function AiExplorationPortfolioPage() {
           <p>
             저는 AI 결과물을 많이 만드는 사람보다, <strong>무엇을 시험할지 정하고, 결과를 비교하고, 다음 시도에 남길 기준을 만드는 사람</strong>에 가깝습니다.
           </p>
+          <div className={styles.portfolioOverview}>
+            {portfolioOverview.map((item) => (
+              <div key={item.label}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </div>
         </Reveal>
       </section>
 
@@ -279,7 +315,7 @@ export function AiExplorationPortfolioPage() {
           <SectionHeading
             body="X와 공식 문서, 강연, 기술 글에서 발견한 변화를 현재 제작 과정의 문제에 직접 적용했습니다. 실제 작업 방식이 달라진 경우에만 다음 구조에 남겼습니다."
             index="01"
-            label="TREND TO TEST"
+            label="탐색 방식 / TREND TO TEST"
             title="새 AI 기능은 실제 제작에서 무엇을 바꿨을까?"
           />
 
@@ -291,8 +327,16 @@ export function AiExplorationPortfolioPage() {
                   <small>{experiment.label}</small>
                 </div>
                 <h3>{experiment.question}</h3>
-                <p>{experiment.test}</p>
-                <strong>{experiment.result}</strong>
+                <dl>
+                  <div>
+                    <dt>시험한 것</dt>
+                    <dd>{experiment.test}</dd>
+                  </div>
+                  <div>
+                    <dt>확인한 것</dt>
+                    <dd>{experiment.result}</dd>
+                  </div>
+                </dl>
               </article>
             ))}
           </div>
@@ -309,8 +353,14 @@ export function AiExplorationPortfolioPage() {
                   <small>{item.period}</small>
                   <strong>{item.title}</strong>
                 </div>
-                <h4>{item.question}</h4>
-                <p>{item.answer}</p>
+                <div className={styles.evolutionQuestion}>
+                  <span>질문</span>
+                  <h4>{item.question}</h4>
+                </div>
+                <div className={styles.evolutionAnswer}>
+                  <span>확인하고 바꾼 것</span>
+                  <p>{item.answer}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -320,11 +370,30 @@ export function AiExplorationPortfolioPage() {
       <section className={`${styles.section} ${styles.systemSection}`} id="system">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="IDOL production system은 AHEYA와 별개의 영상 제작 하네스입니다. 곡의 방향을 정한 뒤 생성, 검토, 편집, 공개와 학습까지 이어지는 과정만 자동화 대상으로 삼았습니다."
+            body="IDOL 제작 시스템은 AHEYA와 별개로 만든 영상 제작 구조입니다. 곡의 방향을 정한 뒤 생성, 검토, 편집, 공개와 학습까지 이어지는 반복 작업만 자동화 대상으로 삼았습니다."
             index="02"
-            label="IDOL PRODUCTION SYSTEM"
+            label="제작 시스템 / IDOL"
             title="무엇을 자동화하고, 무엇을 직접 판단했을까?"
           />
+
+          <div className={styles.caseSummary}>
+            <div>
+              <span>문제</span>
+              <p>기획, 생성 후보, 검토 결과가 여러 대화와 폴더에 흩어져 다음 작업을 이어가기 어려웠습니다.</p>
+            </div>
+            <div>
+              <span>만든 것</span>
+              <p>곡의 방향부터 생성, 검토, 편집, 공개 기록까지 이어지는 7단계 제작 흐름을 만들었습니다.</p>
+            </div>
+            <div>
+              <span>내가 맡은 판단</span>
+              <p>메시지, 레퍼런스의 역할, 카메라와 컷, 통과·보류, 유료 실행과 공개를 직접 결정했습니다.</p>
+            </div>
+            <div>
+              <span>확인한 변화</span>
+              <p>누락과 반복 작업은 줄었지만, 기획과 최종 선택은 자동화할수록 결과가 단조로워졌습니다.</p>
+            </div>
+          </div>
 
           <div className={styles.productionFlow}>
             {productionFlow.map(([index, title, detail]) => (
@@ -349,7 +418,7 @@ export function AiExplorationPortfolioPage() {
 
           <div className={styles.proofFeature}>
             <div className={styles.proofCopy}>
-              <span>FRONT PLANNING WORKBENCH</span>
+              <span>FRONT PLANNING WORKBENCH / 개발 중인 작동 버전</span>
               <h3>생성 전에 생각과 후보를 한 화면에 모았습니다.</h3>
               <p>
                 여러 대화와 폴더에 흩어진 곡 구간, 레퍼런스, 후보, 보류 이유를 한곳에서 비교하기 위해 만든 로컬 작업 화면입니다. 현재는 실행 가능한 개발 단계이며 실제 곡의 최종 승인 도구로 완성됐다고 주장하지 않습니다.
@@ -357,7 +426,7 @@ export function AiExplorationPortfolioPage() {
             </div>
             <figure>
               <img alt="Front Planning Workbench development checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
-              <figcaption>Development checkpoint / real-song production acceptance 미완료</figcaption>
+              <figcaption>실제 곡을 사용한 최종 제작 검증 전 단계</figcaption>
             </figure>
           </div>
 
@@ -374,13 +443,32 @@ export function AiExplorationPortfolioPage() {
           <SectionHeading
             body="INK는 이 제작 시스템이 실제 결과로 이어진 대표 사례입니다. 완성 영상만 보여주지 않고, 어떤 기준으로 장면을 설계하고 후보를 비교했는지 함께 남겼습니다."
             index="03"
-            label="CASE / INK"
+            label="적용 사례 / INK"
             title="한 편의 영상 안에서 메시지와 장면을 어떻게 이어 갔을까?"
           />
 
+          <div className={styles.caseSummary}>
+            <div>
+              <span>목표</span>
+              <p>곡의 감정과 메시지가 장면마다 달라지지 않으면서도 카메라와 빛은 반복되지 않게 만들고자 했습니다.</p>
+            </div>
+            <div>
+              <span>방법</span>
+              <p>곡을 구간별로 나누고, 각 구간의 인물·카메라·빛·오브젝트 역할을 먼저 정했습니다.</p>
+            </div>
+            <div>
+              <span>결과</span>
+              <p>얼굴 유지와 장면 연결이 이전 작업보다 안정됐고, 현재 공개 가능한 한 편의 영상으로 완성했습니다.</p>
+            </div>
+            <div>
+              <span>남은 한계</span>
+              <p>영상 전문가의 촬영·편집 완성도에는 미치지 못하며, 복잡한 액션의 물리성은 One Move에서 별도로 실험 중입니다.</p>
+            </div>
+          </div>
+
           <div className={styles.videoFeature}>
             <div>
-              <span>PUBLIC PROOF</span>
+              <span>공개 결과</span>
               <h3>Loom — INK</h3>
               <p>곡 구간마다 카메라, 빛, 오브젝트의 역할을 정하고, 얼굴 유지와 장면 연결을 함께 검토한 현재 대표 완성본입니다.</p>
             </div>
@@ -437,22 +525,41 @@ export function AiExplorationPortfolioPage() {
       <section className={`${styles.section} ${styles.aheyaSection}`} id="aheya">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="AHEYA는 IDOL 제작 하네스와 별개의 개인 서비스 실험입니다. AI coding agent를 활용해 서비스의 행동과 신뢰 기록을 어디까지 직접 구현할 수 있는지 탐구했습니다."
+            body="AHEYA는 IDOL 제작 시스템과 별개의 개인 서비스 실험입니다. AI 코딩 에이전트와 함께 서비스의 실행과 신뢰 기록을 어디까지 직접 구현할 수 있는지 탐구했습니다."
             index="04"
-            label="SEPARATE EXPLORATION / AHEYA"
+            label="별도 서비스 실험 / AHEYA"
             title="AI를 콘텐츠 밖의 서비스 문제에도 적용할 수 있을까?"
           />
 
-          <div className={styles.aheyaIntro}>
+          <div className={styles.caseSummary}>
             <div>
-              <span>SMART CONTRACT</span>
-              <h3>후원 기록의 책임을 코드 수준까지 내려가 보았습니다.</h3>
-              <p>EIP-712 서명, nonce 재사용 방지, owner/operator 권한, event 기반 기록을 실제 Solidity source로 구성했습니다. 상용 배포나 개발 경력을 주장하는 자료는 아닙니다.</p>
+              <span>시작한 문제</span>
+              <p>AI 빌더가 아이디어를 공개하고 후원을 받는 과정에서 수수료와 신뢰 기록을 함께 다루고자 했습니다.</p>
             </div>
             <div>
-              <span>OPENCLAW YUI / TRUST API</span>
-              <h3>agent의 실행 결과를 다음 선택의 기록으로 바꾸었습니다.</h3>
-              <p>후보 탐색, plan, 실행, 엄격 검토, canonical 기록을 분리했습니다. 실행 성공과 기록 성공을 같은 상태로 취급하지 않았습니다.</p>
+              <span>만든 것</span>
+              <p>스마트계약, Trust API, AI 에이전트의 후보 탐색·실행·검토·기록 흐름을 AI 코딩 도구와 함께 구현했습니다.</p>
+            </div>
+            <div>
+              <span>확인한 것</span>
+              <p>비개발 전공자도 AI와 함께 복잡한 기술 구조를 끝까지 파고들 수 있었지만, 구현 가능성이 시장 수요를 뜻하지는 않았습니다.</p>
+            </div>
+            <div>
+              <span>중단한 이유</span>
+              <p>초기 사용자 반응과 시장 조건이 약해 서비스를 더 확장하지 않았고, 구현·실행·기록을 분리한 경험만 남겼습니다.</p>
+            </div>
+          </div>
+
+          <div className={styles.aheyaIntro}>
+            <div>
+              <span>스마트계약</span>
+              <h3>후원 기록의 책임을 코드 수준까지 내려가 보았습니다.</h3>
+              <p>EIP-712 서명, nonce 재사용 방지, 운영 권한, 이벤트 기반 기록을 실제 Solidity 코드로 구성했습니다. 상용 배포나 개발 경력을 주장하는 자료는 아닙니다.</p>
+            </div>
+            <div>
+              <span>OpenClaw Yui / Trust API</span>
+              <h3>AI 에이전트의 실행 결과를 다음 선택에 쓸 기록으로 바꾸었습니다.</h3>
+              <p>후보 탐색, 계획, 실행, 엄격 검토, 최종 기록을 분리했습니다. 작업이 실행됐다는 사실과 그 결과가 기록됐다는 사실을 같은 상태로 취급하지 않았습니다.</p>
             </div>
           </div>
 
@@ -462,7 +569,7 @@ export function AiExplorationPortfolioPage() {
           </div>
 
           <a className={styles.archiveLink} href={AHEYA_ARCHIVE_URL} rel="noreferrer" target="_blank">
-            AHEYA public archive에서 실제 source 보기 <ExternalLink size={16} />
+            AHEYA 공개 아카이브에서 실제 코드 보기 <ExternalLink size={16} />
           </a>
         </Reveal>
       </section>
@@ -472,7 +579,7 @@ export function AiExplorationPortfolioPage() {
           <SectionHeading
             body="모든 기록을 그대로 재사용하지 않습니다. 한 작업에서 실제로 확인한 판단만 짧게 정리해 다음 기획에 반영합니다."
             index="05"
-            label="ARCHIVE & LEARN"
+            label="기록과 학습"
             title="실험 결과를 다음 작업에 어떻게 다시 쓸까?"
           />
 
@@ -497,7 +604,7 @@ export function AiExplorationPortfolioPage() {
           <div className={styles.channelBand}>
             <ChartNoAxesCombined size={25} />
             <div>
-              <span>PUBLIC CHANNEL SNAPSHOT / 2026.07.02</span>
+              <span>공개 채널 기록 / 2026.07.02</span>
               <h3>발행 결과는 정답이 아니라 다음 질문의 근거로 사용했습니다.</h3>
               <p>{channelPerformanceSnapshot.contentCases[0].metrics}</p>
               <small>공개 수치만 사용했으며, 관리자용 audience 데이터·전환·인과 성과는 주장하지 않습니다.</small>
@@ -521,7 +628,7 @@ export function AiExplorationPortfolioPage() {
           <SectionHeading
             body="이 페이지는 GENTLE MONSTER AI Research & Exploration 공고의 포트폴리오 요구를 실제 자료와 연결해 구성했습니다."
             index="06"
-            label="ROLE FIT"
+            label="직무 연결"
             title="이 경험이 AI Research & Exploration 업무와 어떻게 연결될까?"
           />
 
@@ -538,14 +645,14 @@ export function AiExplorationPortfolioPage() {
           <div className={styles.boundaryBlock}>
             <ShieldCheck size={23} />
             <div>
-              <span>CLAIM BOUNDARY</span>
+              <span>이 포트폴리오가 주장하지 않는 것</span>
               <p>동일 조건의 모델 우열 비교, AHEYA의 상용 성과, Workbench의 실제 곡 승인, 완료되지 않은 리테일·공간 경험은 주장하지 않습니다.</p>
             </div>
           </div>
 
           <div className={styles.brandProofs}>
             <div>
-              <span>BRAND CONTENT PROOF</span>
+              <span>별도 브랜드 콘텐츠 근거</span>
               <h3>브랜드 메시지를 영상으로 옮긴 별도 프로젝트</h3>
               <p>AI Exploration과 직접 연결된 하네스 사례는 아니지만, MUSINSA와 ADSB에서 패션 브랜드의 메시지와 무드를 장면 흐름으로 번역했습니다.</p>
             </div>

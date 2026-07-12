@@ -3,7 +3,11 @@ import { ArrowLeft, FileCode2 } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { evidenceSources, getEvidenceSource } from "@/lib/ai-exploration/motion-bank-sources";
+import {
+  evidenceSources,
+  getEvidenceDisclosureLabel,
+  getEvidenceSource,
+} from "@/lib/ai-exploration/motion-bank-sources";
 
 import styles from "./source-viewer.module.css";
 
@@ -22,11 +26,11 @@ export async function generateMetadata({ params }: SourcePageProps): Promise<Met
   const source = getEvidenceSource(slug);
 
   if (!source) {
-    return { title: "Evidence Source | AI Creative Portfolio" };
+    return { title: "공개 근거 | AI Creative Portfolio" };
   }
 
   return {
-    title: `${source.fileName} | Evidence Source`,
+    title: `${source.fileName} | 공개 근거`,
     description: `${source.system}의 ${source.fileName} 공개용 발췌 열람 페이지`,
   };
 }
@@ -39,12 +43,14 @@ export default async function MotionBankSourcePage({ params }: SourcePageProps) 
     notFound();
   }
 
+  const disclosureLabel = getEvidenceDisclosureLabel(source);
+
   return (
     <main className={styles.page}>
       <header className={styles.topbar}>
         <Link className={styles.backLink} href={`/ai-exploration#${source.returnAnchor}`}>
           <ArrowLeft size={17} />
-          Evidence archive
+          포트폴리오로 돌아가기
         </Link>
       </header>
 
@@ -57,20 +63,20 @@ export default async function MotionBankSourcePage({ params }: SourcePageProps) 
           </div>
           <dl className={styles.metaList}>
             <div>
-              <dt>Archive</dt>
+              <dt>기록 시점</dt>
               <dd>{source.period}</dd>
             </div>
             <div>
-              <dt>Format</dt>
+              <dt>자료 형태</dt>
               <dd>{source.fileType}</dd>
             </div>
             <div>
-              <dt>State</dt>
+              <dt>확인 상태</dt>
               <dd>{source.state}</dd>
             </div>
             <div>
-              <dt>Disclosure</dt>
-              <dd>Curated public excerpt</dd>
+              <dt>공개 방식</dt>
+              <dd>{disclosureLabel}</dd>
             </div>
           </dl>
         </div>
@@ -78,15 +84,15 @@ export default async function MotionBankSourcePage({ params }: SourcePageProps) 
         <div className={styles.snapshotNote}>
           <FileCode2 size={21} />
           <p>
-            이 화면은 포트폴리오 공개 범위에 맞춰 만든 핵심 발췌입니다. 원본 파일, 실행 코드, run 데이터, 인증 정보는
-            제공하지 않으며 현재 운영 중인 원본의 단일 진실을 대체하지 않습니다.
+            {source.disclosureNote ??
+              "이 자료는 원본의 핵심 구조를 공개용으로 다시 쓴 요약입니다. 원본 파일, 실행 데이터, 인증 정보는 포함하지 않습니다."}
           </p>
         </div>
 
-        <section aria-label={`${source.fileName} public excerpt`} className={styles.fileFrame}>
+        <section aria-label={`${source.fileName} 공개 발췌`} className={styles.fileFrame}>
           <div className={styles.fileBar}>
-            <span>CURATED EXCERPT</span>
-            <span>PUBLIC-SAFE STRUCTURE</span>
+            <span>{disclosureLabel}</span>
+            <span>공개 범위 확인 완료</span>
           </div>
           <pre>{source.excerpt}</pre>
         </section>
