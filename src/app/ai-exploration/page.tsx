@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
-import { AiExplorationPage } from "@/components/ai-exploration/ai-exploration-page";
+import { AiExplorationPortfolioPage } from "@/components/ai-exploration/ai-exploration-portfolio-page";
 
 export const metadata: Metadata = {
   title: "AI Exploration | AI Creative Portfolio",
   description:
-    "AHEYA에서 26개의 IDOL 제작 단위, MV 실패와 개선, INK, Workbench까지 AI 변화를 실제 제작 병목에 적용한 실험 연대기.",
+    "새로운 AI 변화를 실제 제작 문제에 적용하고, 실패와 선택의 이유를 다음 실험에 남긴 AI Research & Exploration 포트폴리오.",
 };
 
 export default function AiExplorationRoute() {
-  return <AiExplorationPage />;
+  return <AiExplorationPortfolioPage />;
 }

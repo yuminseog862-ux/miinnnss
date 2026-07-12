@@ -179,13 +179,13 @@ export function MasterHubPage() {
           <div className={styles.explorationRouteCopy}>
             <span className={styles.sectionLabel}>Process Portfolio</span>
             <h2>AI Exploration</h2>
-            <p>완성 결과보다 자동화, 편집, 모션 분석, 에이전트 실험의 가설과 중단·선정 기준을 먼저 보여줍니다.</p>
+            <p>새로운 AI를 실제 제작의 문제에 적용하고, 성공과 실패에서 얻은 판단을 다음 실험에 남긴 과정입니다.</p>
             <span className={styles.explorationRouteAction}>
               탐구 과정 보기 <ArrowRight size={16} />
             </span>
           </div>
           <div className={styles.explorationRouteMedia}>
-            <img alt="Loom AI video candidate review gallery" src="/loom-deck/workflow/grok-candidate-gallery.jpg" />
+            <img alt="INK music video keyframe exploration" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
           </div>
         </Link>
       </section>
