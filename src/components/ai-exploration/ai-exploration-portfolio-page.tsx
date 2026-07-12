@@ -23,92 +23,102 @@ import styles from "./ai-exploration-portfolio.module.css";
 
 const AHEYA_ARCHIVE_URL = "https://github.com/aheyabaraya/aheya-public-archive";
 
-const portfolioOverview = [
+const storySpine = [
   {
-    label: "중심 질문",
-    value: "새로운 AI가 실제 제작 과정의 어떤 문제를 줄이거나 바꿀 수 있는가?",
+    label: "출발",
+    title: "AHEYA 콘텐츠",
+    detail: "한 사람이 운영할 수 있는 반복 제작을 고민했습니다.",
   },
   {
-    label: "내 역할",
-    value: "질문 설정, 기획 방향, 레퍼런스 선택, 후보 검토, 최종 승인, 기록 기준",
+    label: "첫 실험",
+    title: "Aurora 26개 제작 단위",
+    detail: "13명의 얼굴을 유지하며 장면을 반복 생성했습니다.",
   },
   {
-    label: "대표 결과",
-    value: "INK 뮤직비디오, IDOL 제작 시스템, Front Planning Workbench, AHEYA Trust 실험",
+    label: "전환",
+    title: "뮤직비디오와 편집",
+    detail: "생성 속도보다 기획과 후보 판단이 병목임을 확인했습니다.",
   },
   {
-    label: "읽는 순서",
-    value: "탐색한 변화 → 제작 방식의 변화 → 실제 적용 사례 → 별도 서비스 실험 → 기록과 한계",
+    label: "현재",
+    title: "INK와 Workbench",
+    detail: "기획의 맥락과 판단 기록을 다음 제작까지 이어가고 있습니다.",
   },
 ];
 
-const experiments = [
+const turningPoints = [
   {
     index: "01",
-    label: "CONTEXT-AWARE LLM",
-    question: "프롬프트보다 맥락을 공유하면 의도를 더 오래 유지할 수 있을까?",
-    test: "메시지, 레퍼런스의 역할, 금지선, 이전 선택을 같은 기획 문서와 세션에 넣었습니다.",
-    result: "모델을 바꾸는 것보다 판단 기준을 이어 주는 일이 중요했습니다.",
+    period: "2025.12—2026.04",
+    technology: "CONTEXT-AWARE LLM · IMAGE API",
+    title: "마케팅 콘텐츠를 만들려던 시도가 영상 제작 실험의 출발점이 됐습니다.",
+    question: "한 사람이 운영해도 콘텐츠가 끊기지 않는 생산 구조를 만들 수 있을까?",
+    attempt: "AHEYA를 개발하며 AI에게 매번 짧은 프롬프트를 주는 것보다, 서비스의 목적과 이전 결정을 같은 맥락으로 공유할 때 의도를 더 오래 유지한다는 점을 확인했습니다. 이 방식을 이미지와 짧은 영상 제작에도 적용했습니다.",
+    friction: "이미지와 10초 클립의 생산량은 늘었지만 채널 반응은 계속 좋아지지 않았습니다. 더 많이 만드는 것만으로는 콘텐츠의 이유와 흐름이 생기지 않았습니다.",
+    decision: "짧은 게시물을 반복하는 대신, 하나의 메시지와 톤을 가진 뮤직비디오를 만들기로 방향을 바꿨습니다.",
+    images: [
+      {
+        src: "/aheya/aheyabaraya-homepage-2026-04-28.png",
+        alt: "AHEYA service homepage",
+        caption: "서비스 개발과 마케팅 콘텐츠 실험이 함께 진행되던 AHEYA",
+      },
+    ],
   },
   {
     index: "02",
-    label: "IMAGE / VIDEO API",
-    question: "반복 생성을 실행 단위로 바꾸면 한 편의 영상을 더 빨리 만들 수 있을까?",
-    test: "곡 구간, 파일 이름, 후보 상태, 재실행 조건을 나누어 Aurora와 IDOL 제작에 적용했습니다.",
-    result: "생성 속도보다 기획과 후보 관리가 더 큰 병목이라는 점을 확인했습니다.",
+    period: "2026.05",
+    technology: "IMAGE / VIDEO API · IDENTITY CONTINUITY",
+    title: "Aurora에서는 같은 얼굴을 유지한 채 장면을 반복 생산할 수 있는지 시험했습니다.",
+    question: "13명의 얼굴을 유지하면서 서로 다른 26개 장면 단위를 만들 수 있을까?",
+    attempt: "13개 MV 장면과 13개 스테이지 장면을 각각 독립된 실행 단위로 나누고, Loom의 비주얼 레퍼런스를 기준으로 이미지와 영상 후보를 생성했습니다. 공개 작품 26편이 아니라 반복 제작과 얼굴 유지 가능성을 확인하기 위한 구조였습니다.",
+    friction: "얼굴 유지 가능성은 확인했지만, 창의적 선택까지 스크립트로 고정하자 카메라와 빛, 장면 구성이 비슷하게 반복됐습니다.",
+    decision: "파일 이름과 실행 상태는 자동화하되, 장면의 메시지와 카메라 선택은 매 작업에서 다시 판단하도록 분리했습니다.",
+    images: [
+      {
+        src: "/loom-deck/04-archive-members-desktop.png",
+        alt: "Loom member identity archive",
+        caption: "반복 생성의 기준이 된 Loom 멤버 비주얼 아카이브",
+      },
+    ],
   },
   {
     index: "03",
-    label: "AGENT / CLI",
-    question: "AI가 파일과 상태를 함께 다루면 제작 흐름을 어디까지 이어 갈 수 있을까?",
-    test: "기획 확장, 코드 구현, 상태 정리, 실행과 검토를 Codex, Grok CLI, OpenClaw에 나누어 맡겼습니다.",
-    result: "창의적인 선택까지 스크립트로 고정하면 결과가 반복됐습니다. 자동화할 것은 상태와 반복 작업이었습니다.",
+    period: "2026.05—06",
+    technology: "AGENT / CLI · LOCAL MEDIA ANALYSIS",
+    title: "첫 완성보다 중요했던 것은 실패가 다음 제작 방식을 바꾸게 하는 일이었습니다.",
+    question: "프레임과 비트를 읽게 하면 AI가 후보 비교와 컷 연결을 어디까지 보조할 수 있을까?",
+    attempt: "Root Signal과 Pulso를 만들며 ffprobe, OpenCV, librosa, ffmpeg로 영상과 음원을 프레임·비트·움직임 단위로 읽고 컨택트시트와 QC 자료로 바꿨습니다. AI는 앞뒤 프레임과 기획 기록을 함께 보고 연결 후보를 제안했습니다.",
+    friction: "LOW에서는 얼굴 기준이 무너졌고, Left In That Night는 감정의 주인과 장면의 인과가 연결되지 않았습니다. 기술적으로 이어 붙일 수 있어도 기획이 흔들리면 영상은 살아나지 않았습니다.",
+    decision: "편집 자동화보다 생성 전 기획을 먼저 고도화하고, 실패 이유를 다음 작업의 검토 기준으로 올렸습니다.",
+    images: [
+      {
+        src: "/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg",
+        alt: "Root Signal edit contact sheet",
+        caption: "Root Signal의 전체 컷 흐름을 프레임 단위로 다시 본 자료",
+      },
+      {
+        src: "/ai-exploration/edit-qc/pulso-v6-logo-tail-qc.jpg",
+        alt: "Pulso ending QC contact sheet",
+        caption: "Pulso 엔딩 전환과 로고 타이밍을 비교한 QC 자료",
+      },
+    ],
   },
   {
     index: "04",
-    label: "LOCAL MEDIA ANALYSIS",
-    question: "전문 편집 앱 전체가 아니라 후보 비교와 컷 연결만 보조할 수 있을까?",
-    test: "ffprobe, OpenCV, librosa, Pillow, MoviePy, ffmpeg로 프레임·비트·움직임·QC 자료를 만들었습니다.",
-    result: "분석값이 좋은 컷을 정하지는 못했지만, 수백 개 후보를 같은 기준으로 비교할 수 있었습니다.",
-  },
-];
-
-const evolution = [
-  {
-    period: "2025.12–2026.04",
-    title: "AHEYA와 Yui",
-    question: "AI로 서비스와 신뢰 기록까지 만들 수 있을까?",
-    answer: "크라우드펀딩, 스마트계약, Trust API와 AI 에이전트의 실행·평가 구조를 직접 구현했습니다. 기술적으로 만들 수 있다는 사실과 시장이 필요로 한다는 판단은 별개임을 확인했습니다.",
-  },
-  {
-    period: "2026.05",
-    title: "Aurora / 26 production units",
-    question: "같은 13명의 얼굴을 유지하며 다른 장면을 반복 생성할 수 있을까?",
-    answer: "13개 MV 장면과 13개 STAGE 장면의 제작 단위를 구성했습니다. 공개 작품 26편이 아니라 반복 생산과 얼굴 유지 실험입니다.",
-  },
-  {
-    period: "2026.05",
-    title: "Root Signal · LOW",
-    question: "반복 생성 구조만으로 첫 뮤직비디오를 완성할 수 있을까?",
-    answer: "완주는 가능했지만 카메라와 빛이 단조로웠고, LOW에서는 얼굴 기준이 무너졌습니다. 창의적 판단을 스크립트로 고정하는 방식과 기준 이미지 없는 생성은 중단했습니다.",
-  },
-  {
-    period: "2026.06",
-    title: "Pulso · Left In That Night",
-    question: "프레임과 비트를 읽으면 편집과 서사를 함께 개선할 수 있을까?",
-    answer: "Pulso에서 편집 보조 경로를 확인했습니다. 반면 Left In That Night는 감정의 주인과 인과가 연결되지 않아 폐기했고, 생성 전 기획 점검 기준을 추가했습니다.",
-  },
-  {
-    period: "2026.06",
-    title: "INK",
-    question: "레퍼런스의 감정·구도·빛까지 장면의 역할로 정리하면 결과가 달라질까?",
-    answer: "곡 구간마다 카메라, 빛, 오브젝트의 역할을 정하고 후보를 비교했습니다. 현재 공개 가능한 대표 완성 사례입니다.",
-  },
-  {
-    period: "2026.07–현재",
-    title: "Workbench · One Move",
-    question: "가장 큰 병목인 기획과 고난도 움직임을 어떻게 다룰까?",
-    answer: "기획, 레퍼런스, 후보, 보류 이유를 한 화면에 모으는 Workbench를 만들었습니다. One Move의 액션과 물리성은 아직 실험 중이며 성공을 주장하지 않습니다.",
+    period: "2026.06—현재",
+    technology: "MULTIMODAL CONTEXT · WORKBENCH",
+    title: "INK 이후에는 생성보다 앞단의 생각을 재사용하는 작업 화면을 만들고 있습니다.",
+    question: "레퍼런스에서 느낀 감정과 구도, 이전의 보류 이유까지 AI와 같은 맥락으로 볼 수 있을까?",
+    attempt: "INK에서는 곡 구간별로 인물·카메라·빛·오브젝트의 역할을 먼저 정하고, 레퍼런스 영상의 주요 프레임과 다양한 이미지 자료를 컨택트시트로 요약해 기획의 출발점으로 사용했습니다. 이후 이 기록을 한 화면에서 조립하는 Workbench를 만들었습니다.",
+    friction: "수백 개 후보를 빠르게 만들 수 있어도 무엇을 만들지 흔들리면 제가 다시 병목이 됐습니다. Workbench도 실제 곡의 최종 승인 도구로 검증된 단계는 아닙니다.",
+    decision: "AI가 기획을 대신하도록 두지 않고, 제가 정한 질문·레퍼런스·보류 이유를 공유한 뒤 확장과 실행을 맡기는 구조로 정리했습니다.",
+    images: [
+      {
+        src: "/ai-exploration/workbench/front-planning-workbench-demo.png",
+        alt: "Front Planning Workbench",
+        caption: "기획, 레퍼런스, 후보와 보류 이유를 한 화면에 모은 개발 중인 Workbench",
+      },
+    ],
   },
 ];
 
@@ -299,11 +309,12 @@ export function AiExplorationPortfolioPage() {
           <p>
             저는 AI 결과물을 많이 만드는 사람보다, <strong>무엇을 시험할지 정하고, 결과를 비교하고, 다음 시도에 남길 기준을 만드는 사람</strong>에 가깝습니다.
           </p>
-          <div className={styles.portfolioOverview}>
-            {portfolioOverview.map((item) => (
+          <div className={styles.storySpine}>
+            {storySpine.map((item, index) => (
               <div key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
+                <span>{String(index + 1).padStart(2, "0")} / {item.label}</span>
+                <strong>{item.title}</strong>
+                <small>{item.detail}</small>
               </div>
             ))}
           </div>
@@ -313,53 +324,60 @@ export function AiExplorationPortfolioPage() {
       <section className={styles.section} id="experiments">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="X와 공식 문서, 강연, 기술 글에서 발견한 변화를 현재 제작 과정의 문제에 직접 적용했습니다. 실제 작업 방식이 달라진 경우에만 다음 구조에 남겼습니다."
+            body="새 기능을 먼저 나열하지 않았습니다. 제작에서 막힌 문제를 정한 뒤, X와 공식 문서·강연·기술 글에서 찾은 변화를 작은 실험으로 붙였습니다. 실제 작업 방식이 달라진 경우에만 다음 단계로 남겼습니다."
             index="01"
             label="탐색 방식 / TREND TO TEST"
-            title="새 AI 기능은 실제 제작에서 무엇을 바꿨을까?"
+            title="하나의 질문이 어떻게 다음 실험으로 이어졌을까?"
           />
 
-          <div className={styles.experimentGrid}>
-            {experiments.map((experiment) => (
-              <article key={experiment.index}>
-                <div>
-                  <span>{experiment.index}</span>
-                  <small>{experiment.label}</small>
-                </div>
-                <h3>{experiment.question}</h3>
-                <dl>
-                  <div>
-                    <dt>시험한 것</dt>
-                    <dd>{experiment.test}</dd>
-                  </div>
-                  <div>
-                    <dt>확인한 것</dt>
-                    <dd>{experiment.result}</dd>
-                  </div>
-                </dl>
-              </article>
-            ))}
+          <div className={styles.explorationMethod}>
+            <div>
+              <span>반복 실험 규칙</span>
+              <h3>새 기술이 아니라, 지금 막힌 작업에서 시작했습니다.</h3>
+            </div>
+            <ol>
+              <li><span>01</span><strong>병목을 한 문장으로 정한다</strong></li>
+              <li><span>02</span><strong>쓸 수 있는 새 기능을 찾는다</strong></li>
+              <li><span>03</span><strong>작은 제작 단위에서 시험한다</strong></li>
+              <li><span>04</span><strong>채택·보류·폐기 이유를 남긴다</strong></li>
+            </ol>
           </div>
 
-          <div className={styles.evolutionHeading}>
-            <span>2025.12—2026.07</span>
-            <h3>실패할 때마다 제작 방식이 바뀌었습니다.</h3>
-          </div>
-          <div className={styles.evolutionList}>
-            {evolution.map((item, index) => (
-              <article key={item.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <small>{item.period}</small>
-                  <strong>{item.title}</strong>
-                </div>
-                <div className={styles.evolutionQuestion}>
-                  <span>질문</span>
-                  <h4>{item.question}</h4>
-                </div>
-                <div className={styles.evolutionAnswer}>
-                  <span>확인하고 바꾼 것</span>
-                  <p>{item.answer}</p>
+          <div className={styles.turningPointList}>
+            {turningPoints.map((item) => (
+              <article key={item.index}>
+                <figure>
+                  <div className={item.images.length > 1 ? styles.turningVisualGrid : undefined}>
+                    {item.images.map((image) => (
+                      <div key={image.src}>
+                        <img alt={image.alt} src={image.src} />
+                        <small>{image.caption}</small>
+                      </div>
+                    ))}
+                  </div>
+                </figure>
+                <div className={styles.turningCopy}>
+                  <div className={styles.turningMeta}>
+                    <span>{item.index}</span>
+                    <small>{item.period}</small>
+                    <strong>{item.technology}</strong>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <blockquote>{item.question}</blockquote>
+                  <dl>
+                    <div>
+                      <dt>시도</dt>
+                      <dd>{item.attempt}</dd>
+                    </div>
+                    <div>
+                      <dt>막힌 지점</dt>
+                      <dd>{item.friction}</dd>
+                    </div>
+                    <div>
+                      <dt>다음 변화</dt>
+                      <dd>{item.decision}</dd>
+                    </div>
+                  </dl>
                 </div>
               </article>
             ))}
