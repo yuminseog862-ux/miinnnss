@@ -8,6 +8,7 @@ import {
   FileCode2,
   Home,
   ShieldCheck,
+  Undo2,
 } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import type { PropsWithChildren } from "react";
@@ -45,13 +46,13 @@ const originSteps = [
     index: "03",
     label: "AURORA / 26 UNITS",
     title: "짧은 클립의 구조를 13 MV와 13 STAGE 제작 단위로 넓혔습니다.",
-    body: "Loom의 13개 얼굴 레퍼런스를 기준으로, 같은 정체성이 서로 다른 장면과 동작에서도 유지되는지 시험했습니다.",
+    body: "Loom의 13개 얼굴 레퍼런스를 기준으로, 같은 정체성이 서로 다른 장면과 동작에서도 유지되도록 제작 단위를 구성했습니다.",
   },
   {
     index: "04",
     label: "FULL MV / HYPOTHESIS",
     title: "반복 생산보다 하나의 메시지를 끝까지 만드는 쪽으로 질문을 바꿨습니다.",
-    body: "콘텐츠의 양만 늘리는 방식이 반응을 지속시키지 못하자, 전체 곡을 기획·생성·편집하는 제작 실험으로 이동했습니다.",
+    body: "콘텐츠의 양만 늘리는 방식이 반응을 지속시키지 못하자, 전체 곡을 기획·생성·편집하는 제작 방식으로 이동했습니다.",
   },
 ];
 
@@ -174,12 +175,11 @@ const evolution = [
 ];
 
 const systemFlow = [
-  ["01", "질문·리서치", "사람", "메시지와 레퍼런스의 역할을 정함"],
-  ["02", "Front Planning", "사람 + AI", "곡 구간과 후보를 한 맥락에서 확장"],
-  ["03", "생성 준비", "AI 보조", "스토리보드·참조·실행 단위를 검증"],
-  ["04", "이미지·영상 생성", "API / SESSION", "승인된 단위만 실행하고 계보를 기록"],
-  ["05", "검토·편집", "사람 + LOCAL", "통과·보류·수정, 순서·타이밍·QC"],
-  ["06", "공개·분석", "사람", "지표를 다음 질문의 후보로만 사용"],
+  ["01", "레퍼런스 리서치·해석", "RESEARCH · YT-DLP · CONTACT SHEET", "모티브가 쓰인 콘텐츠까지 찾아, 메시지·감정·장면의 역할을 정리"],
+  ["02", "기획 맥락 조립·Workbench", "LIVE PLAN · CANVAS · SEQUENCE RAIL", "곡 구간, 인물 기준, 보류 이유와 후보 상태를 같은 맥락으로 묶음"],
+  ["03", "이미지·영상 생성", "LLM · SESSION · API", "정리된 맥락과 참조를 바탕으로 장면별 후보와 제작 단위를 만듦"],
+  ["04", "후보 정리·분석", "PYTHON · CONTACT SHEET · MEDIA ANALYSIS", "프레임·움직임·비트·구간을 읽고, 수백 개 후보를 비교 가능한 묶음으로 정리"],
+  ["05", "편집·시퀀스 구성", "FFMPEG · FFPROBE · LIBROSA · EDIT DESK", "러프컷, 마커, QC 자료를 만들고 장면이 다음 장면으로 이어지는지 확인"],
 ];
 
 const decisionLogs = [
@@ -281,6 +281,93 @@ function EvidenceExcerpt({ slug }: { slug: string }) {
   );
 }
 
+function ProductionHarnessSection() {
+  return (
+    <section className={`${styles.section} ${styles.systemSection}`} id="harness">
+      <Reveal className={styles.contentWidth}>
+        <SectionHeading
+          body="하네스는 생성 API만을 뜻하지 않습니다. 레퍼런스 리서치, Workbench에서의 맥락 조립, 이미지·영상 생성, 후보 분석, 편집과 시퀀스 구성까지를 한 번의 콘텐츠 제작 과정으로 연결했습니다."
+          index="01"
+          label="ANSWER FIRST / CONTENT PRODUCTION HARNESS"
+          title="기획한 콘텐츠를 반복 제작하기 위한 하네스를 만들었습니다."
+        />
+
+        <div className={styles.harnessStatement}>
+          <span>WHAT I BUILT</span>
+          <p>
+            Loom의 한 곡과 멤버 아이덴티티가 여러 장면과 콘텐츠에서도 이어지도록,
+            리서치부터 편집까지의 제작 과정을 연결했습니다. 새 도구는 이 흐름에서 실제로 필요한 지점에만 붙였습니다.
+          </p>
+        </div>
+
+        <div className={styles.systemDiagram}>
+          {systemFlow.map(([index, title, system, detail]) => (
+            <article key={index}>
+              <span>{index}</span>
+              <small>{system}</small>
+              <h3>{title}</h3>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className={styles.judgementReturn}>
+          <div>
+            <ShieldCheck size={25} />
+            <span>OUTPUT JUDGEMENT</span>
+          </div>
+          <p>
+            제작 결과물은 제가 통과·보류·폐기·재기획으로 판단합니다. 메시지와 톤, 장면의 방향, 최종 선택은 하네스에 맡기지 않습니다.
+          </p>
+          <div className={styles.judgementReturnLoop}>
+            <Undo2 size={17} />
+            <span>다음 리서치와 맥락 조립으로 돌아감</span>
+          </div>
+        </div>
+
+        <div className={styles.systemProofGrid}>
+          <article className={styles.workbenchProof}>
+            <div className={styles.proofCopy}>
+              <span>FRONT PLANNING WORKBENCH</span>
+              <h3>리서치와 기획 맥락을 제작 흐름 안에서 조립합니다.</h3>
+              <p>
+                Live Plan, Planning Canvas, Sequence Rail, Contact Sheet와 Codex·Grok 세션을 연결했습니다.
+                레퍼런스의 역할, 곡 구간, 후보 상태와 보류 이유를 다음 생성과 편집 과정에 넘기는 작업 화면입니다.
+              </p>
+              <EvidenceLink slug="front-planning-workbench-checkpoint" />
+            </div>
+            <img alt="Front Planning Workbench runnable checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
+          </article>
+
+          <article className={styles.editDeskProof}>
+            <div className={styles.proofCopy}>
+              <span>LOCAL EDIT DESK · PYTHON MEDIA TOOLCHAIN</span>
+              <h3>후보를 비교하고 장면을 이어 보기 위한 분석·편집 과정을 붙였습니다.</h3>
+              <p>
+                ffprobe·OpenCV·librosa로 source, 프레임, 움직임, 비트를 읽고 ffmpeg로 컨택트시트·roughcut·QC 자료를 만들었습니다.
+                Source·Program 모니터, 타임라인, 마커, waveform, 구간 렌더는 Python/Tk와 기존 미디어 런타임으로 연결했습니다.
+              </p>
+            </div>
+            <EvidenceExcerpt slug="idol-edit-desk-implementation" />
+          </article>
+
+          <article className={styles.registryProof}>
+            <div className={styles.proofCopy}>
+              <span>8 PHASES / 29 SEMANTIC STAGES</span>
+              <h3>작업이 길어져도 맥락과 수정 경로를 잃지 않도록 구조를 남겼습니다.</h3>
+              <p>
+                각 단계의 입력·산출물·owner·수정 방향을 레지스트리로 연결했습니다.
+                하위 단계가 의미를 임의로 바꾸지 않고, 누락된 판단은 어느 단계에서 다시 확인해야 하는지 남깁니다.
+              </p>
+            </div>
+            <EvidenceExcerpt slug="idol-harness-stage-registry" />
+          </article>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 export function AiExplorationPortfolioPage() {
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { damping: 30, stiffness: 180 });
@@ -294,10 +381,11 @@ export function AiExplorationPortfolioPage() {
           YUMINSEOK / AI EXPLORATION
         </Link>
         <nav aria-label="AI exploration sections">
+          <a href="#harness">하네스</a>
           <a href="#origin">시작</a>
-          <a href="#trend">탐색</a>
-          <a href="#iteration">반복</a>
-          <a href="#ink">결과</a>
+          <a href="#trend">적용</a>
+          <a href="#iteration">변화</a>
+          <a href="#ink">Loom</a>
           <a href="#aheya">서비스</a>
         </nav>
       </header>
@@ -316,23 +404,23 @@ export function AiExplorationPortfolioPage() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className={styles.eyebrow}>AI RESEARCH & EXPLORATION / 2025.12—PRESENT</span>
-          <h1>AI의 변화를<br />실제 콘텐츠에<br />붙여 봅니다.</h1>
+          <h1>콘텐츠를 반복 제작할<br />AI 제작 하네스를<br />구축했습니다.</h1>
           <p>
-            기획의 맥락을 AI와 공유하고 반복 작업을 자동화한다면,
-            한 사람이 운영하는 제작 스튜디오는 어디까지 확장될 수 있을까?
+            레퍼런스 리서치, 기획 맥락 조립, 이미지·영상 생성, 후보 분석, 편집을 하나의 제작 과정으로 연결했습니다.
+            Loom은 이 하네스를 실제 영상과 IP 콘텐츠에 적용하며 발전시킨 작업입니다.
           </p>
           <div className={styles.heroAnswer}>
-            <span>CURRENT ANSWER</span>
-            <strong>자동화할수록 병목은 실행에서 기획과 판단으로 이동했습니다.</strong>
+            <span>MY ROLE</span>
+            <strong>반복 작업은 구조화하고, 메시지·톤·장면의 방향과 최종 선택은 직접 판단합니다.</strong>
           </div>
           <div className={styles.heroActions}>
-            <a href="#origin">탐구 과정 보기 <ArrowDown size={17} /></a>
-            <a href="#ink">결과와 근거 보기 <ArrowRight size={17} /></a>
+            <a href="#harness">하네스 구조 보기 <ArrowDown size={17} /></a>
+            <a href="#ink">Loom 적용 결과 <ArrowRight size={17} /></a>
           </div>
         </motion.div>
         <div className={styles.heroFoot}>
           <span>PERSONAL AI CREATIVE BUILD</span>
-          <span>DISCOVERY · TEST · VERDICT · MEMORY</span>
+          <span>RESEARCH · GENERATION · EDIT · MEMORY</span>
           <span>신입 / 졸업예정</span>
         </div>
       </section>
@@ -342,8 +430,8 @@ export function AiExplorationPortfolioPage() {
           <div className={styles.executiveLead}>
             <span>ANSWER FIRST</span>
             <p>
-              반복 실행은 AI와 로컬 도구에 맡길 수 있었습니다. 대신 메시지·톤·후보 선택·최종 승인은 직접 책임하고,
-              실패와 판단은 다음 제작에서 다시 쓸 수 있도록 남겼습니다.
+              레퍼런스 리서치부터 후보 비교와 편집까지를 하나의 하네스로 연결했습니다.
+              제작 결과를 보고 통과·보류·폐기·재기획을 직접 판단하고, 그 이유를 다음 콘텐츠를 위한 기록으로 남깁니다.
             </p>
           </div>
           <div className={styles.executiveProofs}>
@@ -357,6 +445,8 @@ export function AiExplorationPortfolioPage() {
           </div>
         </Reveal>
       </section>
+
+      <ProductionHarnessSection />
 
       <section className={styles.section} id="origin">
         <Reveal className={styles.contentWidth}>
@@ -407,10 +497,10 @@ export function AiExplorationPortfolioPage() {
       <section className={`${styles.section} ${styles.trendSection}`} id="trend">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="도구 이름을 늘어놓는 대신, 발견한 변화가 어떤 제작 질문이 됐고 실제 사용 뒤 무엇을 채택했는지 세 기록으로 압축했습니다."
+            body="도구 이름을 늘어놓는 대신, 발견한 변화가 하네스의 어느 부분을 바꿨는지와 실제 사용 뒤 무엇을 채택했는지를 세 기록으로 정리했습니다."
             index="02"
-            label="DISCOVERY → TEST → VERDICT"
-            title="새 기능이 나올 때마다, 무엇을 실제 제작에 붙여 봤을까?"
+            label="DISCOVERY → APPLICATION → VERDICT"
+            title="새 기능은 하네스의 어느 부분을 바꿨을까?"
           />
           <div className={styles.trendList}>
             {trendExperiments.map((item, index) => (
@@ -431,7 +521,7 @@ export function AiExplorationPortfolioPage() {
                     <h3>{item.question}</h3>
                   </div>
                   <div>
-                    <span>시험</span>
+                    <span>적용</span>
                     <p>{item.test}</p>
                   </div>
                   <div>
@@ -453,9 +543,9 @@ export function AiExplorationPortfolioPage() {
       <section className={styles.section} id="iteration">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="완성작과 실패작을 분리해 나열하지 않고, 한 작업의 판단이 다음 작업의 제작 방식을 어떻게 바꿨는지 실제 순서로 정리했습니다."
+            body="완성작과 폐기한 작업을 분리해 나열하지 않고, 한 작업의 판단이 다음 작업의 제작 방식을 어떻게 바꿨는지 실제 순서로 정리했습니다."
             index="03"
-            label="REPEATED EXPERIMENT / 2026.05—07"
+            label="ITERATION / PRODUCTION CHANGE / 2026.05—07"
             title="한 편을 끝낼 때마다, 무엇을 버리고 무엇을 다음 규칙으로 남겼을까?"
           />
 
@@ -480,7 +570,7 @@ export function AiExplorationPortfolioPage() {
                   <b>{item.state}</b>
                 </div>
                 <div className={styles.evolutionShift}>
-                  <div><span>이번 시험</span><p>{item.test}</p></div>
+                  <div><span>이번 적용</span><p>{item.test}</p></div>
                   <div><span>판정</span><p>{item.finding}</p></div>
                   <div><span>다음 변화</span><p>{item.change}</p></div>
                 </div>
@@ -493,7 +583,7 @@ export function AiExplorationPortfolioPage() {
       <section className={`${styles.section} ${styles.inkSection}`} id="ink">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="완성 영상만이 결과는 아니었습니다. 반복 실험은 콘텐츠, IP 경험, 제작 도구, 그리고 다음 작업에서 다시 읽을 수 있는 판단 기록으로 남았습니다."
+            body="완성 영상만이 결과는 아니었습니다. 하네스는 콘텐츠, IP 경험, 제작 도구, 그리고 다음 작업에서 다시 읽을 수 있는 판단 기록으로 남았습니다."
             index="04A"
             label="OUTCOME / CONTENT / LOOM — INK"
             title="메시지에서 장면까지, 하나의 곡을 어떻게 끝까지 연결했을까?"
@@ -584,72 +674,13 @@ export function AiExplorationPortfolioPage() {
         </Reveal>
       </section>
 
-      <section className={`${styles.section} ${styles.systemSection}`} id="system">
-        <Reveal className={styles.contentWidth}>
-          <SectionHeading
-            body="AI가 사람을 대신하는 구조가 아니라, 반복 실행과 관찰은 넘기고 방향·선택·승인·공개는 제가 책임지는 구조입니다."
-            index="04C"
-            label="OUTCOME / PRODUCTION / WORKBENCH · EDIT DESK · HARNESS"
-            title="반복 실행과 사람의 판단을 어떻게 서로 다른 단계로 나눴을까?"
-          />
-
-          <div className={styles.systemDiagram}>
-            {systemFlow.map(([index, title, owner, detail]) => (
-              <article key={index}>
-                <span>{index}</span>
-                <div><h3>{title}</h3><p>{detail}</p></div>
-                <small>{owner}</small>
-              </article>
-            ))}
-          </div>
-
-          <div className={styles.humanGate}>
-            <ShieldCheck size={26} />
-            <div>
-              <span>HUMAN DECISION GATE</span>
-              <p>메시지·톤·레퍼런스 해석·최종 선택·유료 실행·외부 공개는 자동 승인하지 않습니다.</p>
-            </div>
-          </div>
-
-          <div className={styles.systemProofGrid}>
-            <article className={styles.workbenchProof}>
-              <div className={styles.proofCopy}>
-                <span>FRONT PLANNING WORKBENCH</span>
-                <h3>기획의 맥락을 생성 전에 한 화면에서 조립합니다.</h3>
-                <p>Live Plan, Planning Canvas, Sequence Rail, Contact Sheet와 Codex·Grok 세션을 연결했습니다. 레퍼런스의 역할과 보류 이유를 다음 단계에 넘기는 작업 화면입니다.</p>
-                <EvidenceLink slug="front-planning-workbench-checkpoint" />
-              </div>
-              <img alt="Front Planning Workbench runnable checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
-            </article>
-
-            <article className={styles.editDeskProof}>
-              <div className={styles.proofCopy}>
-                <span>LOCAL EDIT DESK</span>
-                <h3>후보 선택과 roughcut에 필요한 기능을 로컬로 만들었습니다.</h3>
-                <p>Source·Program 모니터, 타임라인, 마커, waveform, 구간 렌더를 Python/Tk와 기존 미디어 런타임으로 연결했습니다.</p>
-              </div>
-              <EvidenceExcerpt slug="idol-edit-desk-implementation" />
-            </article>
-
-            <article className={styles.registryProof}>
-              <div className={styles.proofCopy}>
-                <span>8 PHASES / 29 SEMANTIC STAGES</span>
-                <h3>파일명이 바뀌어도 책임과 수정 경로는 남도록 했습니다.</h3>
-                <p>각 단계의 입력·산출물·owner·승인·수정 방향을 레지스트리로 연결합니다. 하위 단계가 의미를 임의로 바꾸지 않고, 누락된 판단은 앞 단계로 되돌립니다.</p>
-              </div>
-              <EvidenceExcerpt slug="idol-harness-stage-registry" />
-            </article>
-          </div>
-        </Reveal>
-      </section>
-
       <section className={`${styles.section} ${styles.archiveSection}`} id="archive">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="기록의 목적은 많이 남기는 것이 아니라, 무엇을 유지하고 무엇을 바꿨는지 다음 실험에서 다시 읽을 수 있게 하는 것입니다."
             index="04D"
             label="OUTCOME / MEMORY / ARCHIVE · DECISION LOG"
-            title="성공과 폐기의 이유를 다음 제작에서 다시 읽게 하려면?"
+            title="통과와 폐기의 이유를 다음 제작에서 다시 읽게 하려면?"
           />
 
           <div className={styles.decisionList}>

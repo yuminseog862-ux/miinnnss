@@ -735,68 +735,123 @@
   background: #071011;
 }
 
+.harnessStatement {
+  align-items: start;
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 1px solid var(--green);
+  display: grid;
+  gap: 34px;
+  grid-template-columns: 190px minmax(0, 1fr);
+  padding: 28px 0 34px;
+}
+
+.harnessStatement span {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.harnessStatement p {
+  font-size: 23px;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 900px;
+  word-break: keep-all;
+}
+
 .systemDiagram {
   border-top: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 54px;
 }
 
 .systemDiagram article {
-  align-items: center;
   border-bottom: 1px solid var(--line);
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 54px 1fr 140px;
-  min-height: 92px;
+  border-right: 1px solid var(--line);
+  min-height: 270px;
+  padding: 21px 21px 25px;
+  position: relative;
+}
+
+.systemDiagram article:first-child {
+  padding-left: 0;
+}
+
+.systemDiagram article:last-child {
+  border-right: 0;
+  padding-right: 0;
 }
 
 .systemDiagram article > span {
   color: var(--green);
+  display: block;
   font-size: 12px;
   font-weight: 700;
 }
 
-.systemDiagram h3,
-.systemDiagram p {
-  display: inline;
-  margin: 0;
+.systemDiagram small {
+  color: var(--cyan);
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 38px;
+  min-height: 28px;
 }
 
 .systemDiagram h3 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.45;
+  margin: 14px 0 0;
+  word-break: keep-all;
 }
 
 .systemDiagram p {
   color: var(--muted);
   font-size: 13px;
-  margin-left: 24px;
+  line-height: 1.72;
+  margin: 16px 0 0;
 }
 
-.systemDiagram small {
-  color: var(--cyan);
-  font-size: 10px;
-  font-weight: 700;
-  text-align: right;
-}
-
-.humanGate {
+.judgementReturn {
   align-items: center;
-  background: var(--green);
-  color: #071009;
-  display: flex;
-  gap: 18px;
-  margin-top: 18px;
-  padding: 20px 24px;
+  border-bottom: 1px solid var(--green);
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 190px minmax(0, 1fr) 250px;
+  padding: 22px 0 26px;
 }
 
-.humanGate span {
+.judgementReturn > div:first-child {
+  align-items: center;
+  color: var(--green);
+  display: flex;
+  gap: 10px;
+}
+
+.judgementReturn span {
   font-size: 10px;
   font-weight: 700;
 }
 
-.humanGate p {
-  font-size: 14px;
-  font-weight: 600;
-  margin: 4px 0 0;
+.judgementReturn p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.judgementReturnLoop {
+  align-items: center;
+  color: var(--cyan);
+  display: flex;
+  font-size: 11px;
+  gap: 9px;
+  justify-content: flex-end;
+  line-height: 1.45;
+  text-align: right;
 }
 
 .systemProofGrid {
@@ -1629,6 +1684,30 @@
     grid-column: 2;
   }
 
+  .systemDiagram {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .systemDiagram article:nth-child(3) {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .systemDiagram article:nth-child(n + 4) {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+  }
+
+  .judgementReturn {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .judgementReturnLoop {
+    grid-column: 2;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
   .aheyaFeature > img {
     max-height: 620px;
     min-height: 0;
@@ -1830,30 +1909,43 @@
     grid-template-columns: 1fr;
   }
 
-  .systemDiagram article {
-    align-items: start;
-    gap: 12px;
-    grid-template-columns: 32px 1fr;
-    padding: 20px 0;
-  }
-
-  .systemDiagram h3,
-  .systemDiagram p {
+  .systemDiagram {
     display: block;
+    margin-top: 38px;
   }
 
-  .systemDiagram p {
-    line-height: 1.6;
-    margin: 7px 0 0;
+  .systemDiagram article,
+  .systemDiagram article:first-child,
+  .systemDiagram article:last-child,
+  .systemDiagram article:nth-child(3) {
+    border-right: 0;
+    min-height: 0;
+    padding: 25px 0;
+  }
+
+  .systemDiagram article + article {
+    border-top: 1px solid var(--line);
   }
 
   .systemDiagram small {
-    grid-column: 2;
-    text-align: left;
+    margin-top: 14px;
+    min-height: 0;
   }
 
-  .humanGate {
+  .judgementReturn {
     align-items: flex-start;
+    display: block;
+    padding: 22px 0 26px;
+  }
+
+  .judgementReturn p,
+  .judgementReturnLoop {
+    margin-top: 16px;
+  }
+
+  .judgementReturnLoop {
+    justify-content: flex-start;
+    text-align: left;
   }
 
   .workbenchProof,
@@ -2030,6 +2122,7 @@
   }
 
   .executiveLead,
+  .harnessStatement,
   .originThesis,
   .iterationConclusion {
     display: block;
@@ -2058,6 +2151,11 @@
   .originThesis blockquote {
     font-size: 23px;
     margin-top: 22px;
+  }
+
+  .harnessStatement p {
+    font-size: 19px;
+    margin-top: 20px;
   }
 
   .originGrid {
