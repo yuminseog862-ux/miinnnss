@@ -240,13 +240,15 @@ Loom의 얼굴 reference를 기준으로 Aurora V2에서 13 MV·13 STAGE 제작 
 ### 기록 C. 편집·미디어 분석을 로컬 작업으로 분해
 
 **발견과 문제**
-Premiere Pro·After Effects·CapCut, ComfyUI, Grok Imagine의 기능을 보며 완성형 앱보다 실제 제작에서 필요한 작업 단위를 먼저 보게 됐다. 후보가 늘자 컷 선택과 연결 확인이 느려졌다.
+Premiere Pro와 After Effects의 Source·Program, sequence·timeline, marker, render·QC 구조를 역으로 따라가며 완성형 앱보다 실제 제작에서 필요한 작업 단위를 먼저 보게 됐다. CapCut, ComfyUI, Grok Imagine에서는 빠른 실행과 시각적 상태 관리 방식을 함께 살펴봤다. 후보가 늘자 컷 선택과 연결 확인이 느려졌다.
 
 **질문**
 전문 편집기를 복제하지 않고도 후보 비교, roughcut, QC에 필요한 부분만 만들 수 있을까?
 
 **시험**
 ffprobe·OpenCV·librosa로 source, frame, motion, beat를 읽고, ffmpeg로 contact sheet와 roughcut을 만들었다. 이후 Source/Program monitor, timeline, marker, waveform을 가진 Python/Tk Edit Desk를 시험했다.
+
+이 역탐구를 `source intake → 분석·contact sheet → recipe·roughcut → playback review → final QC`로 다시 조립했고, 현재 편집 하네스의 단계와 Edit Desk가 이 흐름을 사용한다.
 
 **판정**
 `부분 채택` — 분석값과 로컬 도구는 관찰 속도를 높인다. 좋은 컷과 타이밍을 자동 판정하지는 않으며 Edit Desk는 backlog 상태의 보조 MVP로만 공개한다.
@@ -685,3 +687,43 @@ Cola와 Headset은 Loom과 별개로, 같은 제작 구조가 제품 메시지�
 - `물리 공간·리테일`: 현재 완료 실적이 아니라 다중 화면·웹 연속 경험·공간 프로토타입으로 옮길 다음 적용 방향
 
 MUSINSA와 ADSB는 이 Harness가 만든 결과로 연결하지 않는다. 패션 브랜드 메시지와 무드를 팀·이해관계자 피드백 안에서 조정한 별도 협업 증거로만 마지막에 링크한다.
+
+## 17. 2026-07-14 트렌드 유입·배치 보완
+
+### 보완 원칙
+
+기존 내용을 삭제하지 않고 두 가지 읽기 속도로 분리한다.
+
+- 앞단: 목적, 전체 구조, 외부 변화가 실제 도구로 바뀐 세 사례, 작동 결과
+- 후단: 형성 과정, 성공·폐기·업데이트, Workbench·편집 하네스·레지스트리의 상세 근거
+
+X는 발견 채널로만 적고, 채택 근거는 공식 영문 문서와 실제 로컬 구현·판정 기록으로 제시한다.
+
+### 외부 변화가 실제 도구로 바뀐 세 사례
+
+1. **ComfyUI·Grok Imagine·Figma → Front Planning Workbench**
+   - node workflow와 대화형 생성·canvas 구조에서 시각적 상태 관리 가능성을 발견
+   - 생성 노드 복제가 아니라 기획 맥락, 레퍼런스 역할, 후보 상태, 곡 구간, Sequence Rail을 한 화면에 조립
+   - 시각적 상태와 재사용 흐름은 채택하고, ComfyUI node graph 복제·직접 유료 생성·기획 판단 자동 확정은 제외
+2. **Premiere Pro·After Effects·CapCut → 편집 하네스·Edit Desk**
+   - Source·Program, sequence·timeline, marker, render·QC 구조를 역으로 따라가며 작업 단위를 분해
+   - `source intake → 분석·contact sheet → recipe·roughcut → playback review → final QC`로 재조립
+   - ffprobe·OpenCV·librosa·ffmpeg와 Python/Tk Edit Desk로 구현하되 전문 편집기 전체 대체는 주장하지 않음
+3. **Anthropic Agent Skills·MCP·long-running harness → IDOL Production System**
+   - 공식 영문 문서와 공개 skill 구조, Higgsfield MCP·API·CLI 생태계를 기능·권리·비용·전송 위험까지 조사
+   - 작은 skill과 conditional reference, stage registry, state·handoff, 사람 승인 gate, provider-neutral request 계약으로 반영
+   - 점진적 공개와 typed tool 경계는 채택하고, 보호 자산의 외부 MCP 전송과 자동 유료 실행은 보류·금지
+
+### 보완 후 페이지 순서
+
+1. Hero / Core Purpose
+2. Production System 요약과 사람의 판단
+3. External Change → Production Tool → Verdict
+4. Loom·CF Validation
+5. AHEYA·AB_Aurora·Aurora V2·AB_Luna Formation
+6. Root Signal→LOW→Pulso→Left in That Night→INK→Workbench Iteration
+7. Detailed Proof / Workbench·Edit Harness·Stage Registry
+8. INK·Loom Signal Deck
+9. Archive
+10. AHEYA Service Exploration
+11. Brand Experience Translation
