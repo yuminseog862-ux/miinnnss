@@ -1,7 +1,7 @@
 export type EvidenceSource = {
   slug: string;
   collection: "trust" | "motion" | "harness" | "workbench" | "toolchain" | "contract";
-  returnAnchor: "systems" | "system" | "workbench" | "harness" | "toolchain" | "aheya" | "archive";
+  returnAnchor: "systems" | "system" | "workbench" | "harness" | "toolchain" | "origin" | "validation" | "aheya" | "archive";
   system: string;
   period: string;
   fileName: string;
@@ -14,6 +14,105 @@ export type EvidenceSource = {
 };
 
 export const evidenceSources: EvidenceSource[] = [
+  {
+    slug: "ab-aurora-direction-selection-flow",
+    collection: "workbench",
+    returnAnchor: "origin",
+    system: "AB_AURORA / WORKBENCH PREDECESSOR",
+    period: "2026.02-03 / PUBLIC REPOSITORY",
+    fileName: "README_PUBLIC.md",
+    fileType: "공개 README 원문 일부",
+    state: "BRIEF · DIRECTION · TOP-3 · HUMAN SELECTION",
+    description: "짧은 brief를 방향과 후보로 확장하되, 최종 route는 사람이 선택하도록 분리한 AB_Aurora의 실제 공개 흐름입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "공개 저장소 README에서 현재 사용자 흐름과 direction 계약만 선별했습니다. 내부 prompt와 provider 설정은 포함하지 않습니다.",
+    excerpt: `1. Enter a concise brief:
+   - product / audience / first deliverable
+   - style keywords / design requirement
+2. Aurora synthesizes a structured direction.
+3. If the brief is weak, Aurora asks follow-up questions.
+4. If ready, Aurora generates 3 text concept candidates.
+5. The user selects one route.
+6. PACKAGE uses the same direction plus the selected
+   candidate to create final deliverables.
+
+Direction is the canonical source of truth after DEFINE.`,
+  },
+  {
+    slug: "ab-luna-state-handoff-lineage",
+    collection: "harness",
+    returnAnchor: "origin",
+    system: "AB_LUNA / HARNESS MEMORY PREDECESSOR",
+    period: "2026.04 / ARCHIVED PRODUCT BUILD",
+    fileName: "handoff.md + result-index.md",
+    fileType: "실제 파일 계약 구조 요약",
+    state: "CURRENT STATE · BLOCKER · NEXT ACTION · HANDOFF",
+    description: "여러 AI 산출물이 다음 작업으로 이어지지 않는 문제를 current state와 handoff 파일로 풀려 한 구조입니다. 현재 Harness의 기록·인계 방식에 남았습니다.",
+    disclosureNote: "보관된 프로젝트 문서에서 공개 가능한 파일 역할만 요약했습니다. 운영 주소, 인증 정보와 작업 식별자는 포함하지 않습니다.",
+    excerpt: `shared project memory:
+  README.md       -> stable project brief
+  state.md        -> current readable state
+  result-index.md -> artifact index and provenance
+  handoff.md      -> blocker / next action / files to read
+
+goal:
+  scattered AI outputs
+  -> one readable state
+  -> one clear next action
+  -> one reliable handoff`,
+  },
+  {
+    slug: "cf-cola-message-causality",
+    collection: "harness",
+    returnAnchor: "validation",
+    system: "CF / COLA MEMORY-VENDING SPEC COMMERCIAL",
+    period: "2026.07 / FINAL SELECTED V1",
+    fileName: "CF50-keyframe-board.yaml + V6 director review",
+    fileType: "최종 보드·연출 기록 원문 일부",
+    state: "19.58S FINAL · 16 KEYFRAMES · PERSONAL SPEC",
+    description: "제품이 장식으로 남지 않도록 버튼·눈·기억 카드·캔 조립·배출의 인과를 최종 보드와 연출에 유지한 개인 비공식 광고 제작 기록입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "최종 선택 패키지의 keyframe board와 director review에서 세계 규칙, 인과와 카메라 경로만 선별했습니다. 전체 생성 prompt와 로컬 경로는 포함하지 않습니다.",
+    excerpt: `world_rule_engine:
+  A horizontal floor-mounted glass vending machine turns
+  the button / eye trigger into layered memory cards,
+  compresses them into the same can, and returns it.
+
+cause_effect_read:
+  button press -> eye/glasses trigger -> photo-card
+  descent -> can-shaped compression -> red output ->
+  retrieval -> one final opening.
+
+camera_route:
+  overhead drop -> macro button/eye -> memory layers ->
+  lateral can-build tracking -> rise/catch -> opening.`,
+  },
+  {
+    slug: "cf-headset-space-rule",
+    collection: "harness",
+    returnAnchor: "validation",
+    system: "CF / HEADSET SELECTIVE-LISTENING SPEC COMMERCIAL",
+    period: "2026.07 / FINAL MASTER V5",
+    fileName: "CF70-edit-package.yaml",
+    fileType: "구조화 원문 일부",
+    state: "17.92S FINAL · 12 KEYFRAMES · PERSONAL SPEC",
+    description: "헤드셋의 선택 청취 기능을 미술관 안의 소리와 종이 오브젝트 규칙으로 번역한 개인 비공식 광고 제작 기록입니다.",
+    excerptKind: "verbatim-selection",
+    disclosureNote: "원문 planning_visibility와 front_harness_carry에서 관객 경험, 제품 인과와 공개 경계만 선별했습니다. 전체 prompt는 포함하지 않습니다.",
+    excerpt: `viewer_contract:
+  In a public museum, retain the conversation that
+  matters while unwanted chatter recedes.
+
+subject_engine_system:
+  The headphones are the ear-based rule that separates
+  public chatter from wanted portrait conversation.
+
+selected_route_read:
+  the route survives because the product, not the museum
+  fantasy, causes the selective change.
+
+claim_boundary: local portfolio concept only.`,
+  },
   {
     slug: "aurora-v1-to-v2-archive-map",
     collection: "harness",
