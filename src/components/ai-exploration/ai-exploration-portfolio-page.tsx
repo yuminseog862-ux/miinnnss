@@ -135,37 +135,48 @@ const originSteps = [
 
 const trendExperiments = [
   {
-    status: "채택",
-    signal: "CONTEXT-AWARE LLM · CLI",
-    discovery: "맥락을 이어 가는 LLM",
-    question: "매번 프롬프트를 다시 쓰지 않고도 의도를 이어 갈 수 있을까?",
-    origin: "AHEYA를 AI와 개발하며 짧은 명령보다 목적·이전 결정·현재 상태를 함께 공유할 때 의도를 더 오래 유지할 가능성을 보았습니다. 반면 창의적 의미까지 스크립트로 고정하면 결과가 반복됐습니다.",
-    test: "Codex와 Grok 세션에 곡 구간, 레퍼런스의 역할, 보류 이유를 함께 넘기고, 반복 실행 정보만 스킬·레지스트리로 분리했습니다.",
-    decision: "창의적 의미는 대화와 검토에 남기고, 파일 탐색·누락 검사·상태 갱신만 고정합니다.",
-    next: "대화의 맥락과 실행 상태를 분리한 IDOL production system으로 이어졌습니다.",
-    evidenceSlug: "idol-harness-stage-registry",
+    status: "채택·재구성",
+    signal: "VISUAL WORKFLOW / COMFYUI · GROK IMAGINE · FIGMA",
+    discovery: "생성 과정과 후보 관계를 보이는 화면",
+    question: "생성 노드가 아니라 기획 맥락과 후보의 관계를 한 화면에서 이어 볼 수 있을까?",
+    origin: "X에서 ComfyUI의 node workflow와 생성 UI 변화를 발견한 뒤 공식 문서와 실제 화면을 확인했습니다. Grok Imagine의 대화형 생성, Figma의 canvas 구성까지 함께 보며 제 작업에서 필요한 것은 모델 연결선보다 기획 기억과 선택 상태를 보이는 화면이라고 판단했습니다.",
+    test: "Live Plan, Planning Canvas, Sequence Rail, Contact Sheet, Codex·Grok 세션을 연결해 레퍼런스의 역할·곡 구간·후보 상태·보류 이유를 같은 화면에서 조립했습니다.",
+    decision: "시각적 상태 관리와 재사용 가능한 작업 흐름은 채택했습니다. ComfyUI node graph의 복제, Workbench의 직접 유료 생성, 기획 판단의 자동 확정은 제외했습니다.",
+    next: "생성보다 앞단의 기획과 선택을 고정하는 Front Planning Workbench로 발전했습니다.",
+    evidenceSlug: "front-planning-workbench-checkpoint",
+    sourceLinks: [
+      ["ComfyUI / Workflow", "https://docs.comfy.org/development/core-concepts/workflow"],
+    ],
   },
   {
     status: "부분 채택",
-    signal: "IMAGE / VIDEO AGENT · API",
-    discovery: "빨라진 이미지·영상 생성",
-    question: "같은 얼굴을 유지한 채 서로 다른 장면을 빠르게 전개할 수 있을까?",
-    origin: "AHEYA의 짧은 이미지·클립을 만들며 생성 속도를 하나의 IDOL 콘텐츠 시스템으로 확장할 가능성을 보았습니다. 다만 모든 실행을 API에 연결하면 비용과 통제 범위도 함께 커졌습니다.",
-    test: "Loom의 13개 얼굴 레퍼런스를 기준으로 13개 MV와 13개 STAGE 제작 단위를 만들고, 같은 정체성이 장면과 동작에서 유지되는지 확인했습니다.",
-    decision: "세션에서 먼저 확인하고, 반복이 확인된 구간만 API 실행으로 옮깁니다. 얼굴 기준과 유료 실행은 별도 승인 단계로 남깁니다.",
-    next: "반복 실행과 사람의 선택을 분리하고, 통과한 제작 단위만 다음 단계로 넘겼습니다.",
-    evidenceSlug: "aurora-v2-stage-decision-log",
-  },
-  {
-    status: "부분 채택",
-    signal: "LOCAL MEDIA · EDIT ASSIST",
-    discovery: "편집 기능의 작업 단위",
-    question: "생성보다 오래 걸리는 후보 비교와 컷 연결을 줄일 수 있을까?",
-    origin: "Premiere Pro·After Effects·CapCut과 ComfyUI·Grok Imagine의 작업 방식을 보며, 완성형 앱보다 제 제작에 필요한 기능을 작업 단위로 나눠 보기 시작했습니다.",
+    signal: "EDITING GRAMMAR / PREMIERE · AFTER EFFECTS · CAPCUT",
+    discovery: "전문 편집 도구의 작업 구조",
+    question: "생성보다 오래 걸리는 후보 비교와 컷 연결을 필요한 기능만으로 줄일 수 있을까?",
+    origin: "Premiere Pro와 After Effects의 Source·Program, sequence·timeline, marker, render·QC 구조를 역으로 따라가며, 완성형 앱보다 제 제작에 필요한 편집 기능을 작업 단위로 나눴습니다. CapCut에서는 짧은 콘텐츠의 빠른 실행 흐름을 함께 살펴봤습니다.",
     test: "ffprobe·OpenCV·librosa·ffmpeg로 소스, 프레임, 움직임, 비트를 읽고 컨택트시트·roughcut·QC 자료를 만들었습니다.",
-    decision: "분석값은 관찰을 돕지만 좋은 컷을 결정하지 않습니다. 최종 선택·순서·타이밍은 직접 책임집니다.",
-    next: "후보 선택과 roughcut에 필요한 기능만 가진 로컬 Edit Desk로 이어졌습니다.",
+    decision: "분석값은 관찰을 돕지만 좋은 컷을 결정하지 않습니다. 최종 선택·순서·타이밍은 직접 책임하고, 전문 편집기 전체를 대체한다고 주장하지 않습니다.",
+    next: "이 역탐구는 source intake → 분석·컨택트시트 → recipe·roughcut → playback review → final QC로 이어지는 편집 하네스와 로컬 Edit Desk로 발전했습니다.",
     evidenceSlug: "idol-edit-desk-implementation",
+    sourceLinks: [
+      ["Adobe / Source & Program", "https://helpx.adobe.com/uk/premiere/desktop/get-started/source-and-program-monitor-adjustments/about-source-monitor-and-program-monitor.html"],
+      ["Adobe / After Effects Workflow", "https://helpx.adobe.com/after-effects/desktop/get-started/understand-after-effects-workflow/workflows.html"],
+    ],
+  },
+  {
+    status: "채택·보류 분리",
+    signal: "AGENT HARNESS / ANTHROPIC SKILLS · MCP",
+    discovery: "모델보다 오래 남는 맥락·인계·판정 구조",
+    question: "여러 세션과 도구를 지나도 이전 판단을 잃지 않고, 새 기능은 안전하게 붙일 수 있을까?",
+    origin: "X에서 Agent Skills·MCP·long-running harness 흐름을 발견하고 Anthropic의 영문 강연·엔지니어링 문서와 공개 skill 구조를 확인했습니다. Higgsfield의 MCP·API·CLI도 공식 자료로 조사해 기능뿐 아니라 권리·비용·외부 전송 위험까지 함께 검토했습니다.",
+    test: "Codex와 Grok의 맥락은 대화에 남기고, 반복 절차는 작은 skill과 reference로 분리했습니다. stage registry, state·handoff, 사람 승인 gate, provider-neutral request 계약을 로컬 하네스에 연결했습니다.",
+    decision: "절차와 실행 도구를 분리하고, 구조화된 인계와 점진적 공개는 채택했습니다. 보호 자산의 외부 MCP 전송과 자동 유료 실행은 보류하거나 금지했습니다.",
+    next: "8개 phase·29개 semantic stage와 지속적인 변경 기록을 가진 IDOL Production System으로 이어졌습니다.",
+    evidenceSlug: "idol-harness-ecosystem-adoption",
+    sourceLinks: [
+      ["Anthropic / Long-running Harness", "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"],
+      ["Anthropic / Agent Skills", "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills"],
+    ],
   },
 ];
 
@@ -412,6 +423,27 @@ function ProductionHarnessSection() {
           </div>
         </div>
 
+        <div className={styles.systemDepthLink}>
+          <span>DETAILED IMPLEMENTATION</span>
+          <p>도구 화면·코드·레지스트리 원문은 작동 결과와 변화 과정을 확인한 뒤 별도 섹션에서 공개합니다.</p>
+          <a href="#proof">상세 구현 근거 보기 <ArrowDown size={16} /></a>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function SystemProofSection() {
+  return (
+    <section className={`${styles.section} ${styles.proofSection}`} id="proof">
+      <Reveal className={styles.contentWidth}>
+        <SectionHeading
+          body="앞에서 설명한 제작 방식이 개념에 머물지 않았음을 실제 작업 화면, 로컬 편집 코드, 단계 레지스트리의 공개 가능한 일부로 확인합니다."
+          index="06"
+          label="DETAILED PROOF / WORKBENCH · EDIT HARNESS · REGISTRY"
+          title="이 제작 구조는 실제로 어디까지 구현되어 있을까?"
+        />
+
         <div className={styles.systemProofGrid}>
           <article className={styles.workbenchProof}>
             <div className={styles.proofCopy}>
@@ -428,11 +460,11 @@ function ProductionHarnessSection() {
 
           <article className={styles.editDeskProof}>
             <div className={styles.proofCopy}>
-              <span>LOCAL EDIT DESK · PYTHON MEDIA TOOLCHAIN</span>
-              <h3>후보를 비교하고 장면을 이어 보기 위한 분석·편집 과정을 붙였습니다.</h3>
+              <span>PREMIERE · AFTER EFFECTS → EDIT HARNESS · LOCAL EDIT DESK</span>
+              <h3>전문 편집 도구의 구조를 역으로 분석해 편집 하네스의 단계로 다시 조립했습니다.</h3>
               <p>
-                ffprobe·OpenCV·librosa로 source, 프레임, 움직임, 비트를 읽고 ffmpeg로 컨택트시트·roughcut·QC 자료를 만들었습니다.
-                Source·Program 모니터, 타임라인, 마커, waveform, 구간 렌더는 Python/Tk와 기존 미디어 런타임으로 연결했습니다.
+                Source·Program, sequence·timeline, marker, render·QC의 역할을 나눈 뒤, ffprobe·OpenCV·librosa로 source·프레임·움직임·비트를 읽고 ffmpeg로 컨택트시트·roughcut·QC 자료를 만들었습니다.
+                이 흐름은 Python/Tk Edit Desk의 타임라인, 마커, waveform, 구간 렌더와 현재 편집 하네스로 이어집니다.
               </p>
             </div>
             <EvidenceExcerpt slug="idol-edit-desk-implementation" />
@@ -443,12 +475,140 @@ function ProductionHarnessSection() {
               <span>8 PHASES / 29 SEMANTIC STAGES</span>
               <h3>작업이 길어져도 맥락과 수정 경로를 잃지 않도록 구조를 남겼습니다.</h3>
               <p>
-                각 단계의 입력·산출물·owner·수정 방향을 레지스트리로 연결했습니다.
+                각 단계의 입력·산출물·책임자·수정 방향을 레지스트리로 연결했습니다.
                 하위 단계가 의미를 임의로 바꾸지 않고, 누락된 판단은 어느 단계에서 다시 확인해야 하는지 남깁니다.
               </p>
             </div>
             <EvidenceExcerpt slug="idol-harness-stage-registry" />
           </article>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function TrendApplicationSection() {
+  return (
+    <section className={`${styles.section} ${styles.trendSection}`} id="trend">
+      <Reveal className={styles.contentWidth}>
+        <SectionHeading
+          body="X에서 변화를 발견한 뒤 공식 영문 자료와 실제 제품 구조를 확인하고, 제 제작 문제에 필요한 부분만 구현했습니다. 발견 채널보다 적용 결과와 채택·보류 판단을 중심으로 정리했습니다."
+          index="02"
+          label="EXTERNAL CHANGE → PRODUCTION TOOL → VERDICT"
+          title="새로운 AI 흐름은 실제 제작 도구를 어떻게 바꿨을까?"
+        />
+        <div className={styles.trendIntakeRule}>
+          <span>TREND INTAKE RULE</span>
+          <p>X에서 발견 → 공식 문서·제품 구조 확인 → 현재 제작 문제로 번역 → 로컬 적용 → 채택·보류·금지 기록</p>
+        </div>
+        <div className={styles.trendList}>
+          {trendExperiments.map((item, index) => (
+            <article className={styles.trendRow} key={item.signal}>
+              <div className={styles.trendSignal}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <small>{item.signal}</small>
+                <b>{item.status}</b>
+              </div>
+              <div className={styles.trendQuestion}>
+                <span>발견한 변화와 제작 문제</span>
+                <strong>{item.discovery}</strong>
+                <p>{item.origin}</p>
+              </div>
+              <div className={styles.trendPath}>
+                <div>
+                  <span>질문</span>
+                  <h3>{item.question}</h3>
+                </div>
+                <div>
+                  <span>적용</span>
+                  <p>{item.test}</p>
+                </div>
+                <div>
+                  <span>판정</span>
+                  <p>{item.decision}</p>
+                </div>
+                <div>
+                  <span>다음 변화</span>
+                  <p>{item.next}</p>
+                </div>
+              </div>
+              <div className={styles.trendEvidence}>
+                <EvidenceLink label="로컬 적용 근거 보기" slug={item.evidenceSlug} />
+                <div className={styles.trendSources}>
+                  <span>OFFICIAL / ENGLISH INPUT</span>
+                  {item.sourceLinks.map(([label, href]) => (
+                    <a href={href} key={href} rel="noreferrer" target="_blank">{label} <ExternalLink size={12} /></a>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function ValidationSection() {
+  return (
+    <section className={`${styles.section} ${styles.validationSection}`} id="validation">
+      <Reveal className={styles.contentWidth}>
+        <SectionHeading
+          body="Loom에서는 한 곡의 메시지를 전체 뮤직비디오로, CF에서는 한 제품의 기능을 짧은 장면 규칙으로 확장했습니다. 같은 제작 구조가 서로 다른 길이와 목적의 콘텐츠에서도 작동하는지 실제 결과물로 확인했습니다."
+          index="03"
+          label="SYSTEM VALIDATION / LOOM + PRODUCT MESSAGE"
+          title="같은 제작 구조는 서로 다른 메시지를 어디까지 완성할 수 있었을까?"
+        />
+
+        <div className={styles.validationLead}>
+          <figure>
+            <img alt="INK song-section keyframe system" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
+            <figcaption>LOOM / FULL-LENGTH MUSIC VIDEO</figcaption>
+          </figure>
+          <div>
+            <span>LONG-FORM PROOF / LOOM</span>
+            <h3>한 문장의 메시지를 노래 구간·장면·인물·오브젝트의 흐름으로 확장했습니다.</h3>
+            <p>
+              Root Signal, Pulso, INK 세 편을 끝까지 완성하고 LOW와 Left in That Night은 폐기했습니다.
+              완성과 폐기의 이유가 다음 제작의 카메라·빛·장면 인과·편집 기준을 바꾸도록 기록했습니다.
+            </p>
+            <a className={styles.textLink} href="#ink">INK 결과와 과정 보기 <ArrowRight size={15} /></a>
+          </div>
+        </div>
+
+        <div className={styles.cfIntro}>
+          <span>SHORT-FORM TRANSFER</span>
+          <p>
+            Loom에서 만든 흐름을 제품 메시지에 그대로 복사하지 않았습니다. 제품이 장면의 원인이 되도록 먼저 규칙을 정하고,
+            장면 후보·키프레임·영상 작업·편집 순서에 그 규칙이 남는지 확인했습니다.
+          </p>
+        </div>
+
+        <div className={styles.cfList}>
+          {cfCases.map((item) => (
+            <article key={item.label}>
+              <div className={styles.cfMedia}>
+                <video controls playsInline poster={item.poster} preload="none">
+                  <source src={item.video} type="video/mp4" />
+                </video>
+                <img alt={`${item.label} selected keyframe board`} src={item.poster} />
+              </div>
+              <div className={styles.cfCopy}>
+                <div className={styles.cfMeta}><span>{item.index}</span><small>{item.label}</small></div>
+                <b>{item.status}</b>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <div className={styles.cfFlow}><span>MESSAGE → SCENE RULE</span><strong>{item.flow}</strong></div>
+                <div className={styles.cfMetric}>{item.metric}</div>
+                <EvidenceLink label="메시지·장면 규칙 파일 일부" slug={item.evidenceSlug} />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className={styles.specBoundary}>
+          <ShieldCheck size={20} />
+          <p>두 영상은 개인 비공식 spec commercial입니다. 공식 브랜드 협업·캠페인·성과로 주장하지 않으며, 현재 제작 구조가 제품 메시지와 공간 규칙으로 확장될 수 있는지를 보여주는 적용 사례로만 제시합니다.</p>
         </div>
       </Reveal>
     </section>
@@ -469,10 +629,11 @@ export function AiExplorationPortfolioPage() {
         </Link>
         <nav aria-label="AI exploration sections">
           <a href="#harness">시스템</a>
-          <a href="#origin">형성 과정</a>
-          <a href="#validation">작동 결과</a>
           <a href="#trend">기술 적용</a>
+          <a href="#validation">작동 결과</a>
+          <a href="#origin">형성 과정</a>
           <a href="#iteration">변화</a>
+          <a href="#proof">구현 근거</a>
           <a href="#archive">기록</a>
         </nav>
       </header>
@@ -532,12 +693,14 @@ export function AiExplorationPortfolioPage() {
       </section>
 
       <ProductionHarnessSection />
+      <TrendApplicationSection />
+      <ValidationSection />
 
       <section className={styles.section} id="origin">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="현재의 Workbench·Harness·Media Toolchain은 한 번에 설계한 구조가 아닙니다. AHEYA에서 시작한 맥락 기반 생성, AB_Aurora의 방향·선택 구조, Aurora V2의 반복 제작 단위, AB_Luna의 state·handoff가 Loom 제작 안에서 다시 조합됐습니다."
-            index="02"
+            index="04"
             label="FORMATION / FOUR PREDECESSORS"
             title="현재 제작 구조는 어떤 질문과 실패를 거쳐 만들어졌을까?"
           />
@@ -602,114 +765,6 @@ export function AiExplorationPortfolioPage() {
         </Reveal>
       </section>
 
-      <section className={`${styles.section} ${styles.validationSection}`} id="validation">
-        <Reveal className={styles.contentWidth}>
-          <SectionHeading
-            body="Loom에서는 한 곡의 메시지를 전체 뮤직비디오로, CF에서는 한 제품의 기능을 짧은 장면 규칙으로 확장했습니다. 같은 제작 구조가 서로 다른 길이와 목적의 콘텐츠에서도 작동하는지 실제 결과물로 확인했습니다."
-            index="03"
-            label="SYSTEM VALIDATION / LOOM + PRODUCT MESSAGE"
-            title="같은 제작 구조는 서로 다른 메시지를 어디까지 완성할 수 있었을까?"
-          />
-
-          <div className={styles.validationLead}>
-            <figure>
-              <img alt="INK song-section keyframe system" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
-              <figcaption>LOOM / FULL-LENGTH MUSIC VIDEO</figcaption>
-            </figure>
-            <div>
-              <span>LONG-FORM PROOF / LOOM</span>
-              <h3>한 문장의 메시지를 노래 구간·장면·인물·오브젝트의 흐름으로 확장했습니다.</h3>
-              <p>
-                Root Signal, Pulso, INK 세 편을 끝까지 완성하고 LOW와 Left in That Night은 폐기했습니다.
-                완성과 폐기의 이유가 다음 제작의 카메라·빛·장면 인과·편집 기준을 바꾸도록 기록했습니다.
-              </p>
-              <a className={styles.textLink} href="#ink">INK 결과와 과정 보기 <ArrowRight size={15} /></a>
-            </div>
-          </div>
-
-          <div className={styles.cfIntro}>
-            <span>SHORT-FORM TRANSFER</span>
-            <p>
-              Loom에서 만든 흐름을 제품 메시지에 그대로 복사하지 않았습니다. 제품이 장면의 원인이 되도록 먼저 규칙을 정하고,
-              장면 후보·키프레임·영상 작업·편집 순서에 그 규칙이 남는지 확인했습니다.
-            </p>
-          </div>
-
-          <div className={styles.cfList}>
-            {cfCases.map((item) => (
-              <article key={item.label}>
-                <div className={styles.cfMedia}>
-                  <video controls playsInline poster={item.poster} preload="none">
-                    <source src={item.video} type="video/mp4" />
-                  </video>
-                  <img alt={`${item.label} selected keyframe board`} src={item.poster} />
-                </div>
-                <div className={styles.cfCopy}>
-                  <div className={styles.cfMeta}><span>{item.index}</span><small>{item.label}</small></div>
-                  <b>{item.status}</b>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                  <div className={styles.cfFlow}><span>MESSAGE → SCENE RULE</span><strong>{item.flow}</strong></div>
-                  <div className={styles.cfMetric}>{item.metric}</div>
-                  <EvidenceLink label="메시지·장면 규칙 파일 일부" slug={item.evidenceSlug} />
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className={styles.specBoundary}>
-            <ShieldCheck size={20} />
-            <p>두 영상은 개인 비공식 spec commercial입니다. 공식 브랜드 협업·캠페인·성과로 주장하지 않으며, 현재 제작 구조가 제품 메시지와 공간 규칙으로 확장될 수 있는지를 보여주는 적용 사례로만 제시합니다.</p>
-          </div>
-        </Reveal>
-      </section>
-
-      <section className={`${styles.section} ${styles.trendSection}`} id="trend">
-        <Reveal className={styles.contentWidth}>
-          <SectionHeading
-            body="도구 이름을 늘어놓는 대신, 발견한 변화가 하네스의 어느 부분을 바꿨는지와 실제 사용 뒤 무엇을 채택했는지를 세 기록으로 정리했습니다."
-            index="04"
-            label="DISCOVERY → APPLICATION → VERDICT"
-            title="새 기능은 하네스의 어느 부분을 바꿨을까?"
-          />
-          <div className={styles.trendList}>
-            {trendExperiments.map((item, index) => (
-              <article className={styles.trendRow} key={item.signal}>
-                <div className={styles.trendSignal}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <small>{item.signal}</small>
-                  <b>{item.status}</b>
-                </div>
-                <div className={styles.trendQuestion}>
-                  <span>발견한 변화와 제작 문제</span>
-                  <strong>{item.discovery}</strong>
-                  <p>{item.origin}</p>
-                </div>
-                <div className={styles.trendPath}>
-                  <div>
-                    <span>질문</span>
-                    <h3>{item.question}</h3>
-                  </div>
-                  <div>
-                    <span>적용</span>
-                    <p>{item.test}</p>
-                  </div>
-                  <div>
-                    <span>판정</span>
-                    <p>{item.decision}</p>
-                  </div>
-                  <div>
-                    <span>다음 변화</span>
-                    <p>{item.next}</p>
-                  </div>
-                </div>
-                <EvidenceLink label="실제 구조 일부 보기" slug={item.evidenceSlug} />
-              </article>
-            ))}
-          </div>
-        </Reveal>
-      </section>
-
       <section className={styles.section} id="iteration">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
@@ -750,11 +805,13 @@ export function AiExplorationPortfolioPage() {
         </Reveal>
       </section>
 
+      <SystemProofSection />
+
       <section className={`${styles.section} ${styles.inkSection}`} id="ink">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="완성 영상만이 결과는 아니었습니다. 하네스는 콘텐츠, IP 경험, 제작 도구, 그리고 다음 작업에서 다시 읽을 수 있는 판단 기록으로 남았습니다."
-            index="06A"
+            index="07A"
             label="OUTCOME / CONTENT / LOOM — INK"
             title="메시지에서 장면까지, 하나의 곡을 어떻게 끝까지 연결했을까?"
           />
@@ -822,7 +879,7 @@ export function AiExplorationPortfolioPage() {
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="생성한 결과물을 쌓는 데서 멈추지 않고, 정체성·트랙·짧은 콘텐츠·참여를 하나의 IP 안에서 선택하고 따라갈 수 있는 로컬 경험으로 구현했습니다."
-            index="06B"
+            index="07B"
             label="OUTCOME / EXPERIENCE / LOOM SIGNAL DECK"
             title="영상 한 편을 하나의 IP 경험으로 확장하면 무엇이 달라질까?"
           />
@@ -848,7 +905,7 @@ export function AiExplorationPortfolioPage() {
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="기록의 목적은 많이 남기는 것이 아니라, 무엇을 유지하고 무엇을 바꿨는지 다음 제작에서 다시 읽을 수 있게 하는 것입니다."
-            index="07"
+            index="08"
             label="OUTCOME / MEMORY / ARCHIVE · DECISION LOG"
             title="통과와 폐기의 이유를 다음 제작에서 다시 읽게 하려면?"
           />
@@ -878,7 +935,7 @@ export function AiExplorationPortfolioPage() {
         <Reveal className={styles.contentWidth}>
           <SectionHeading
             body="AHEYA는 영상 제작 하네스와 별개의 개인 서비스 탐구입니다. 비개발 전공자로서 AI와 함께 서비스, 스마트계약, 에이전트 실행의 경계까지 파고든 증거로만 둡니다."
-            index="08"
+            index="09"
             label="SERVICE EXPLORATION / AHEYA"
             title="AI와 함께 서비스의 실행과 신뢰 기록은 어디까지 만들 수 있을까?"
           />

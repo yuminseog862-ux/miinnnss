@@ -1,7 +1,7 @@
 export type EvidenceSource = {
   slug: string;
   collection: "trust" | "motion" | "harness" | "workbench" | "toolchain" | "contract";
-  returnAnchor: "systems" | "system" | "workbench" | "harness" | "toolchain" | "origin" | "validation" | "aheya" | "archive";
+  returnAnchor: "systems" | "system" | "workbench" | "harness" | "toolchain" | "trend" | "origin" | "validation" | "aheya" | "archive";
   system: string;
   period: string;
   fileName: string;
@@ -210,8 +210,32 @@ compatibility_policy:
 decision_ownership_policy:
   one_canonical_owner_per_decision: true
   downstream_projection_does_not_reown: true
-  feedback_creates_upstream_revision: true
-  compiler_returns_missing_creative_truth_upstream: true`,
+feedback_creates_upstream_revision: true
+compiler_returns_missing_creative_truth_upstream: true`,
+  },
+  {
+    slug: "idol-harness-ecosystem-adoption",
+    collection: "harness",
+    returnAnchor: "trend",
+    system: "IDOL / EXTERNAL AI ECOSYSTEM ADOPTION",
+    period: "2026.07.12 / OFFICIAL-SOURCE REVIEW",
+    fileName: "agent-skill-structure-reference + harness-ecosystem-adoption-audit",
+    fileType: "영문 공식 자료 조사·도입 판정 요약",
+    state: "ADOPT · HOLD · FORBID",
+    description: "Anthropic Agent Skills·MCP와 Higgsfield 생성 생태계를 공식 자료로 확인하고, IDOL 하네스에 적용할 구조와 보류·금지할 실행을 구분한 기록입니다.",
+    excerptKind: "structured-summary",
+    disclosureNote: "공식 출처와 도입 판정만 요약했습니다. 내부 모델 설정, 인증 정보, 전체 스킬과 운영 계약은 포함하지 않습니다.",
+    excerpt: `official structures reviewed:
+  Anthropic Skills -> small SKILL.md + conditional references
+  MCP / tool use   -> procedure and execution stay separate
+  Higgsfield       -> MCP · REST · CLI · public skills
+
+IDOL decisions:
+  ADOPT  -> progressive disclosure, typed tool boundary,
+            context handoff, provider-neutral request contract
+  HOLD   -> external provider adapter and paid live test
+  FORBID -> protected identity/reference assets sent through
+            unapproved external MCP or automatic execution`,
   },
   {
     slug: "idol-harness-action-queue-contract",

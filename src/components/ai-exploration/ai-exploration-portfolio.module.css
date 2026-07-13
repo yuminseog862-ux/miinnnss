@@ -854,6 +854,37 @@
   text-align: right;
 }
 
+.systemDepthLink {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 190px minmax(0, 1fr) auto;
+  padding: 28px 0 0;
+}
+
+.systemDepthLink > span {
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.systemDepthLink p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.systemDepthLink a {
+  align-items: center;
+  border-left: 1px solid var(--line);
+  display: flex;
+  font-size: 11px;
+  gap: 9px;
+  padding: 22px 0 22px 28px;
+}
+
 .systemProofGrid {
   display: grid;
   gap: 72px;
@@ -1460,6 +1491,30 @@
   background: #070d0e;
 }
 
+.trendIntakeRule {
+  align-items: start;
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 1px solid var(--green);
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 190px minmax(0, 1fr);
+  margin-bottom: 42px;
+  padding: 28px 0 34px;
+}
+
+.trendIntakeRule span {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.trendIntakeRule p {
+  font-size: 22px;
+  line-height: 1.55;
+  margin: 0;
+  word-break: keep-all;
+}
+
 .trendRow {
   gap: 30px;
   grid-template-columns: 160px minmax(220px, 0.72fr) minmax(0, 1.5fr);
@@ -1517,10 +1572,45 @@
   margin: 13px 0 0;
 }
 
-.trendRow > .evidenceLink {
+.trendEvidence {
+  align-items: end;
+  display: flex;
+  gap: 28px;
   grid-column: 3;
+  justify-content: space-between;
   margin-top: -14px;
+}
+
+.trendEvidence > .evidenceLink {
   width: fit-content;
+}
+
+.trendSources {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  justify-content: flex-end;
+}
+
+.trendSources > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  width: 100%;
+  text-align: right;
+}
+
+.trendSources a {
+  align-items: center;
+  color: var(--cyan);
+  display: inline-flex;
+  font-size: 10px;
+  gap: 6px;
+}
+
+.proofSection {
+  background: #050909;
 }
 
 .iterationConclusion {
@@ -2631,7 +2721,7 @@
 
   .trendQuestion,
   .trendPath,
-  .trendRow > .evidenceLink {
+  .trendEvidence {
     grid-column: 2;
   }
 
@@ -2653,6 +2743,16 @@
 
   .outcomeVerdict p {
     grid-column: 2;
+  }
+
+  .systemDepthLink {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+
+  .systemDepthLink a {
+    border-left: 0;
+    grid-column: 2;
+    padding: 0 0 22px;
   }
 }
 
@@ -2809,8 +2909,35 @@
     min-height: 0;
   }
 
-  .trendRow > .evidenceLink {
+  .trendEvidence {
+    align-items: flex-start;
+    flex-direction: column;
     margin-top: 20px;
+  }
+
+  .trendSources {
+    justify-content: flex-start;
+  }
+
+  .trendSources > span {
+    text-align: left;
+  }
+
+  .trendIntakeRule,
+  .systemDepthLink {
+    display: block;
+  }
+
+  .trendIntakeRule p,
+  .systemDepthLink p {
+    margin-top: 18px;
+  }
+
+  .systemDepthLink a {
+    border-left: 0;
+    display: inline-flex;
+    margin-top: 18px;
+    padding: 0 0 22px;
   }
 
   .iterationConclusion p {
