@@ -26,9 +26,8 @@ const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const portfolioNavigation = [
   ["validation", "결과"],
   ["harness", "제작 방식"],
-  ["rationale", "이유·구현"],
-  ["research", "탐색·검증"],
-  ["formation", "형성 과정"],
+  ["rationale", "실제 적용"],
+  ["research", "탐구·형성"],
   ["proof", "부록"],
 ] as const;
 
@@ -122,8 +121,8 @@ const currentSystemCases = [
     label: "03 / EDIT PREPARATION",
     problem: "반복되는 편집 준비가 실제 컷 판단보다 길어짐",
     implementation: "Python Media Toolchain",
-    detail: "소스 상태와 장면을 분석해 컨택트시트·마커·프리뷰·QC 자료를 준비하고, 최종 컷은 사람이 재생 검토로 결정합니다.",
-    criterion: "컨택트시트 · 마커 · 프리뷰 · QC 자료",
+    detail: "소스 상태와 장면을 분석해 컨택트시트·마커·프리뷰·QC 자료를 준비하고, 사람은 실제 재생으로 타이밍·싱크·연결과 통과 여부를 판단합니다.",
+    criterion: "컨택트시트 · 마커 · 프리뷰 · 재생 QC",
     evidenceLabel: "Media Toolchain 구현 근거 보기",
     evidenceSlug: "idol-edit-desk-implementation",
   },
@@ -292,6 +291,74 @@ const trendExperiments = [
     ],
   },
 ];
+
+const systemFormationCases = [
+  {
+    id: "prompt-origin",
+    index: "04—01",
+    period: "AURORA V2 / BEFORE ROOT SIGNAL",
+    title: "구조화된 프롬프트의 시작",
+    status: "PREVIOUS WORK → CURRENT RULE",
+    problem: "멤버 비주얼은 유지됐지만 장면과 포즈가 반복되는 문제",
+    inquiry: "이전 작업에서 통과한 프롬프트 비교. 좋은 결과에 반복된 CONTENT · IDENTITY · REFERENCE · SCENE · REVIEW 다섯 항목 확인",
+    applied: "멤버 비주얼 아이덴티티의 재사용, 메시지·행동·구도의 콘텐츠별 재작성",
+    result: "02A 스토리보드와 02B 프롬프트 패킷으로 이어진 첫 기준",
+    evidenceLabel: "Aurora V2 구조 근거",
+    evidenceSlug: "aurora-v1-to-v2-archive-map",
+  },
+  {
+    id: "root-edit-harness",
+    index: "04—02",
+    period: "ROOT SIGNAL / V11 FINAL",
+    title: "판단 기록을 남기는 편집·Harness 구조",
+    status: "PROBLEM → ANALYSIS → BUILD",
+    problem: "수정이 쌓일수록 통과한 원본과 선택 이유가 이전 렌더 안에서 사라지는 문제",
+    inquiry: "Premiere Pro의 소스·시퀀스·마커·렌더 구조 분석. X에서 본 GPT Image 2 다중 이미지 스토리보드 사례를 바탕으로 기획안·프롬프트·프레임을 함께 읽는 편집 가능성 검토",
+    applied: "Harness에 단계·승인·복귀 지점 기록. ffmpeg·ffprobe·Python으로 프레임 인덱스·컨택트시트·마커·프리뷰 자동 준비",
+    result: "스토리보드 순서의 러프 편집 준비. 원본 in/out·속도·싱크·cutpoint는 사람의 재생 검토",
+    evidenceLabel: "Media Toolchain 구현 근거",
+    evidenceSlug: "idol-edit-desk-implementation",
+  },
+  {
+    id: "api-playback",
+    index: "04—03",
+    period: "AFTER ROOT / LOW → PULSO",
+    title: "API 이후 더 중요해진 구간별 재생 판단",
+    status: "STRUCTURED API + PLAYBACK REVIEW",
+    problem: "손으로 반복 작성하는 생성 요청과, LOW에서 확인한 ‘비트 위치만 맞춰서는 음악과 영상이 이어지지 않는’ 문제",
+    inquiry: "Aurora에서 확인한 좋은 프롬프트 구조의 02A → 02B 고정 항목화. Root 이후 GPT Image 2 API 패킷과 사전 승인 단계 도입",
+    applied: "Pulso에서 구간별 02B 패킷 · 키프레임 후보 · 영상 프롬프트 · 실제 재생 검토 분리",
+    result: "API는 승인 후보의 반복 실행, 사람은 유료 실행·핵심 컷·구간 통과 판단",
+    evidenceLabel: "Pulso 구간 제작 근거",
+    evidenceSlug: "pulso-front-planning-readiness",
+  },
+  {
+    id: "causal-spine",
+    index: "04—04",
+    period: "LEFT IN THAT NIGHT → INK",
+    title: "장면 인과를 먼저 잠그는 기준",
+    status: "DISCARD → REPLAN → FINAL MASTER",
+    problem: "레퍼런스와 모티프는 많지만 감정의 주체·보이는 행동·다음 장면의 이유가 없었던 Left in That Night",
+    inquiry: "더 생성하는 대신 전체 MV 경로 폐기. ‘무슨 장면이 다음 장면을 일으키는가’부터 재검토",
+    applied: "INK에서 공개 메시지 → 멤버 역할 → 오브젝트·공간 → 곡 구간별 행동 순서로 기획",
+    result: "메시지에서 핵심 컷·구간 영상·최종 마스터까지 이어진 시각 체계",
+    evidenceLabel: null,
+    evidenceSlug: null,
+  },
+  {
+    id: "workbench",
+    index: "04—05",
+    period: "AFTER INK → ONE MOVE / CURRENT",
+    title: "ONE MOVE에 적용 중인 Front Planning Workbench",
+    status: "REFERENCE → PROTOTYPE → CURRENT USE",
+    problem: "기획이 선명해진 뒤에도 메시지·레퍼런스 역할·곡 구간·후보 상태가 여러 문서와 세션에 흩어지는 문제",
+    inquiry: "ComfyUI의 연결·재사용 방식과 Grok Imagine Agent의 대화형 후보 확장을 참고해, 기획 맥락과 선택 상태를 한 화면에서 다루는 방법 탐색",
+    applied: "메시지·타깃·레퍼런스·구간 흐름·선택 이유를 한 캔버스에 모은 Workbench 구현",
+    result: "ONE MOVE의 실제 Front Planning 적용. Workbench는 기획·검토, Harness는 생성·수정·인계 담당",
+    evidenceLabel: "Workbench 구현 근거",
+    evidenceSlug: "front-planning-workbench-checkpoint",
+  },
+] as const;
 
 const loomExperience = [
   ["IDENTITY", "13명의 얼굴과 스타일 기준을 한 아카이브에서 확인."],
@@ -484,7 +551,7 @@ const harnessPhases = [
     title: "EDIT & FINISH",
     detail: "편집 · 피니싱 · QC",
     stages: [
-      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "EDIT REVIEW", details: ["원본·프레임·오디오 마커 비교", "컷·순서·속도를 재생하며 결정", "편집안과 프리뷰 갱신"] },
+      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "PLAYBACK QC", details: ["스토리보드의 컷 순서대로 러프 편집 준비", "원본 in/out·속도·오디오 싱크·연결 검토", "통과·수정·14—15단계 복귀 결정"] },
       { index: "24", title: "피니싱 FX", humanGate: "EDIT REVIEW", details: ["통과한 컷에 효과 적용", "코덱·프레임·오디오·납품 상태 확인"] },
     ],
   },
@@ -542,7 +609,7 @@ const harnessFamilies = [
     label: "EDIT",
     phase: "PHASE 07",
     stage: "2 STAGES",
-    human: "컷 · 타이밍 · 마스터",
+    human: "타이밍 · 연결 · 마스터 승인",
     output: "APPROVED MASTER",
     links: [["A", "EDIT & FINISH", "#harness-edit"]],
   },
@@ -629,17 +696,17 @@ const harnessChapters = [
     index: "02—04",
     label: "EDIT HARNESS",
     title: "분석 자료와 재생 판단의 분리",
-    body: "비교 자료는 Harness와 도구가 준비하고, 실제 컷·타이밍·마감은 직접 재생해 통과한 판단만 기준으로 남깁니다.",
+    body: "스토리보드 순서로 만든 러프 편집과 비교 자료는 Harness와 도구가 준비하고, 실제 source in/out·속도·싱크·연결은 직접 재생해 통과 여부를 판단합니다.",
     phaseIds: ["edit"],
     handoffs: [
       ["INPUT", "Reviewed Section Video"],
       ["ASSEMBLY", "Edit Recipe"],
-      ["PLAYBACK", "Approved Cut"],
+      ["PLAYBACK", "Playback-passed Edit"],
       ["FINISH", "FX · Delivery QC"],
       ["OUTPUT", "Approved Master"],
     ],
-    human: "컷 · 순서 · 타이밍 · 피니싱 · 최종 마스터",
-    returnPath: "문제가 생기면 원본·모션·편집 판단 단계로 복귀",
+    human: "source in/out · 타이밍 · 싱크 · 통과·복귀 · 마스터 승인",
+    returnPath: "순서 문제는 14—15단계, 움직임 문제는 21—22단계로 복귀",
   },
   {
     id: "release",
@@ -813,7 +880,7 @@ const evidenceLogic: Record<string, [string, string]> = {
   ],
   "idol-edit-desk-implementation": [
     "이 Python 파일은 영상 길이·마커·파형·클립을 같은 타임라인에 놓고, 선택한 구간만 프리뷰로 렌더합니다.",
-    "분석값은 비교할 근거를 만들며, 실제 컷의 통과와 순서는 재생 검토에서 직접 결정합니다.",
+    "분석값은 비교할 근거를 만들며, 스토리보드 순서의 러프 편집에서 원본 in/out·속도·싱크·연결의 통과 여부를 직접 재생해 검토합니다.",
   ],
   "idol-harness-stage-registry": [
     "이 YAML 레지스트리는 단계마다 기준 산출물과 판단 책임을 고정해, 다음 단계가 앞선 결정을 임의로 바꾸지 않게 합니다.",
@@ -1150,7 +1217,7 @@ function ProductionHarnessSection() {
               <div>
                 <p>RESPONSIBILITY BOUNDARY</p>
                 <h3>반복 작업의 자동화와 창작 결정의 유지</h3>
-                <p>Harness와 Toolchain은 다음 판단에 필요한 자료와 상태를 준비하고, 메시지·장면·컷·공개 여부는 사람이 결정합니다.</p>
+                <p>Harness와 Toolchain은 다음 판단에 필요한 자료와 상태를 준비하고, 메시지·장면 방향·후보 선택·재생 통과·공개 여부는 사람이 결정합니다.</p>
               </div>
             </header>
 
@@ -1163,7 +1230,7 @@ function ProductionHarnessSection() {
                 <span>HUMAN</span>
                 <div>
                   <p><small>PLAN</small><strong>메시지 · 타겟 · 곡 · 장면의 주요 기획 방향 정립</strong></p>
-                  <p><small>SELECT</small><strong>핵심 컷 · 구간 영상 · 최종 컷</strong></p>
+                  <p><small>SELECT</small><strong>핵심 컷 · 구간 영상 · 편집 재생 통과</strong></p>
                   <p><small>APPROVE</small><strong>API를 통한 생성 · 최종 마스터 · 소셜미디어 공개 승인</strong></p>
                   <p><small>LEARN</small><strong>다음 제작 기준으로 승격할 판단</strong></p>
                 </div>
@@ -1173,9 +1240,9 @@ function ProductionHarnessSection() {
         </div>
 
         <div className={styles.systemDepthLink}>
-          <span>NEXT / WHY + IMPLEMENTATION</span>
-          <p>긴 작업에서 판단 기준이 사라지는 문제와 Workbench, Harness, Python Media Toolchain으로 나눈 대응.</p>
-          <a href="#rationale">03 / 필요 이유와 구현 보기 <ArrowDown size={16} /></a>
+          <span>NEXT / ACTUAL APPLICATION</span>
+          <p>Workbench, Harness, Media Toolchain이 실제 기획·인계·재생 검토에서 쓰이는 방식.</p>
+          <a href="#rationale">03 / 실제 적용 보기 <ArrowDown size={16} /></a>
         </div>
       </Reveal>
     </section>
@@ -1546,10 +1613,10 @@ function CurrentSystemSection() {
     <section className={`${styles.section} ${styles.rationaleRebuild}`} id="rationale">
       <Reveal className={`${styles.contentWidth} ${styles.rationaleRebuildInner}`}>
         <SectionHeading
-          body="레퍼런스 재사용, 후보 정리, 프리뷰와 QC는 시스템이 맡고 메시지·장면·최종 컷·공개 여부는 사람이 결정합니다."
+          body="기획 보드, 단계 인계, 재생 검토가 실제 작업에서 어떻게 쓰이는지 세 가지 화면으로 확인합니다."
           index="03"
-          label="WHY + CURRENT IMPLEMENTATION"
-          title="반복 준비의 자동화와 핵심 판단의 유지"
+          label="ACTUAL APPLICATION"
+          title="현재 제작에서 쓰는 세 가지 적용 방식"
         />
 
         <div className={styles.rationalePages}>
@@ -1587,7 +1654,7 @@ function CurrentSystemSection() {
               <header className={styles.rationaleResultHeader}>
                 <span>03—01 / ONE MOVE · PLANNING</span>
                 <h3>반복 준비를 줄이는 하나의 기획 보드</h3>
-                <p>별도 제작 사례 ONE MOVE의 레퍼런스를 인물·카메라 축·세계 전환·곡 구간의 역할로 나눈, 생성 전 흐름·충돌 확인 기반 기획.</p>
+                <p>별도 제작 사례 ONE MOVE에서 레퍼런스를 인물·카메라 축·세계 전환·곡 구간의 역할로 나누고, 생성 전에 장면 흐름과 충돌을 확인하며 기획했습니다.</p>
               </header>
               <div className={styles.llmProblemStatement}>
                 <span>LLM ONLY</span>
@@ -1658,13 +1725,13 @@ function CurrentSystemSection() {
               <header className={styles.rationaleResultHeader}>
                 <span>03—03 / MEDIA TOOLCHAIN → HUMAN GATE</span>
                 <h3>컨택트시트·구간 프리뷰·완성본의 재생 검토</h3>
-                <p>별도 제작 사례 ATTITUDE의 컨택트시트·구간 프리뷰·완성본. 도구의 비교 자료 준비와 사람의 실제 재생·컷 순서·통과 여부 판단.</p>
+                <p>별도 제작 사례 ATTITUDE의 컨택트시트·구간 프리뷰·완성본입니다. 도구는 비교 자료를 준비하고, 사람은 실제 재생으로 연결·타이밍·통과 여부를 판단했습니다.</p>
               </header>
               <div className={styles.humanGateList}>
                 {[
                   ["01", "KEYFRAME SELECTION", "어떤 후보를 기준 컷으로 삼을지"],
                   ["02", "PLAYBACK REVIEW", "움직임과 다음 컷이 이어지는지"],
-                  ["03", "FINAL / RELEASE", "최종 컷과 공개 여부"],
+                  ["03", "FINAL / RELEASE", "최종 마스터와 공개 여부"],
                 ].map(([index, title, detail]) => (
                   <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                 ))}
@@ -1681,8 +1748,8 @@ function CurrentSystemSection() {
 
         <SectionHandoff
           href="#research"
-          label="04 / RESEARCH + VALIDATION"
-          title="새 방법을 제작 기준으로 올리는 검증 루프"
+          label="04 / RESEARCH + SYSTEM FORMATION"
+          title="문제를 발견하고 제작 구조로 바꾼 과정"
         />
       </Reveal>
     </section>
@@ -1967,6 +2034,156 @@ function HarnessAdoptionDiagram() {
         <span>REJECT · REPLAN → Workbench로 복귀</span>
       </div>
     </div>
+  );
+}
+
+function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[number]["id"] }) {
+  if (id === "prompt-origin") {
+    return (
+      <div className={styles.formationAuroraEvidence}>
+        <div className={styles.formationOriginPair}>
+          <figure><img alt="Aurora V2 M01 MV storyboard" src="/ai-exploration/aurora-v2/m01-mv-storyboard.webp" /><figcaption>M01 / MV UNIT</figcaption></figure>
+          <figure><img alt="Aurora V2 M01 stage storyboard" src="/ai-exploration/aurora-v2/m01-stage-storyboard.webp" /><figcaption>M01 / STAGE UNIT</figcaption></figure>
+        </div>
+        <div className={styles.formationMediaRail}>
+          {[
+            ["01", "CONTENT / SECTION"],
+            ["02", "IDENTITY"],
+            ["03", "REFERENCE ROLE"],
+            ["04", "SCENE · CAMERA"],
+            ["05", "HUMAN REVIEW"],
+          ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+        </div>
+      </div>
+    );
+  }
+
+  if (id === "root-edit-harness") {
+    return (
+      <div className={styles.formationRootEvidence}>
+        <div className={styles.formationRootBoards}>
+          <figure className={styles.formationRootTimeline}><img alt="Root Signal V11 final edit contact sheet" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg" /><figcaption>V11 FINAL / EDIT TIMELINE</figcaption></figure>
+          <figure><img alt="Root Signal first storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-01.webp" /><figcaption>STORYBOARD / 01—04</figcaption></figure>
+          <figure><img alt="Root Signal second storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-02.webp" /><figcaption>STORYBOARD / 05—08</figcaption></figure>
+        </div>
+        <div className={styles.formationMediaRail}>
+          {[
+            ["01", "SOURCE INDEX"],
+            ["02", "FRAME · MARKER"],
+            ["03", "ROUGH ASSEMBLY"],
+            ["04", "PLAYBACK QC"],
+          ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+        </div>
+      </div>
+    );
+  }
+
+  if (id === "api-playback") {
+    return (
+      <div className={styles.formationApiEvidence}>
+        <div className={styles.formationPulsoStage}>
+          <div className={styles.formationPulsoFaces}>
+            {pulsoFaceAssets.slice(0, 8).map((face) => <figure key={face.label}><img alt={`Pulso ${face.label} visual identity`} src={face.src} /><figcaption>{face.label}</figcaption></figure>)}
+          </div>
+          <figure className={styles.formationPulsoPreview}><img alt="Pulso final playback review contact sheet" src="/ai-exploration/iteration/pulso/final-preview-contact-sheet.jpg" /><figcaption>PULSO / FINAL PLAYBACK REVIEW</figcaption></figure>
+        </div>
+        <div className={styles.formationMediaRail}>
+          {[
+            ["01", "02A STORYBOARD"],
+            ["02", "02B API PACKET"],
+            ["03", "KEYFRAME · MOTION"],
+            ["04", "SECTION PLAYBACK"],
+          ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+        </div>
+      </div>
+    );
+  }
+
+  if (id === "causal-spine") {
+    return (
+      <div className={styles.formationCausalEvidence}>
+        <div className={styles.formationCausalPair}>
+          <figure><img alt="Left in That Night character visual board" src="/ai-exploration/iteration/left-in-that-night/upper-body-portrait-board.png" /><figcaption>LEFT / CHARACTER VISUAL · DISCARDED ROUTE</figcaption></figure>
+          <figure><img alt="INK approved keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" /><figcaption>INK / APPROVED KEYFRAME REVIEW</figcaption></figure>
+        </div>
+        <div className={styles.formationMediaRail}>
+          {[
+            ["01", "MESSAGE"],
+            ["02", "ACTION · OBJECT"],
+            ["03", "SECTION CAUSE"],
+            ["04", "FINAL MASTER"],
+          ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.formationWorkbenchEvidence}>
+      <div className={styles.formationWorkbenchGrid}>
+        <figure className={styles.formationWorkbenchMain}><img alt="Front Planning Workbench current checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
+        <figure><img alt="ComfyUI workflow used as a reusable visual-state reference" src="/ai-exploration/workbench/comfyui-z-image-turbo-workflow-reference.png" /><figcaption>REFERENCE / COMFYUI FLOW</figcaption></figure>
+        <figure><video controls muted playsInline poster="/ai-exploration/rationale-assets/one-move-planning-last-5s-poster.jpg" preload="metadata" src="/ai-exploration/rationale-assets/one-move-planning-last-5s.mp4" /><figcaption>ONE MOVE / CURRENT USE</figcaption></figure>
+      </div>
+      <div className={styles.formationMediaRail}>
+        {[
+          ["01", "REFERENCE"],
+          ["02", "VISUAL STATE"],
+          ["03", "SELECT · HOLD"],
+          ["04", "HARNESS HANDOFF"],
+        ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+      </div>
+    </div>
+  );
+}
+
+function ResearchFormationSection() {
+  return (
+    <section className={styles.researchFormationSection} id="research">
+      <Reveal className={`${styles.contentWidth} ${styles.researchFormationInner}`}>
+        <div className={styles.researchFormationIntro}>
+          <SectionHeading
+            body="문제 → 탐구·분석 → 직접 만든 것 → 다음 작업에 남긴 기준"
+            index="04"
+            label="RESEARCH + SYSTEM FORMATION"
+            title="문제를 발견하고 제작 구조로 바꾼 과정"
+          />
+          <nav className={styles.researchFormationRoute} aria-label="제작 시스템 형성 과정">
+            {systemFormationCases.map((item) => (
+              <a href={`#research-${item.id}`} key={item.id}><span>{item.index}</span><strong>{item.period.split(" /")[0]}</strong></a>
+            ))}
+          </nav>
+        </div>
+
+        <div className={styles.researchFormationPages}>
+          {systemFormationCases.map((item) => (
+            <article className={styles.systemFormationPage} id={`research-${item.id}`} key={item.id}>
+              <div className={styles.systemFormationMedia}><SystemFormationVisual id={item.id} /></div>
+              <aside className={styles.systemFormationMeta}>
+                <header>
+                  <span>{item.index} / {item.period}</span>
+                  <small>{item.status}</small>
+                  <h3>{item.title}</h3>
+                </header>
+                <dl className={styles.systemFormationEvidence}>
+                  <div><dt>문제</dt><dd>{item.problem}</dd></div>
+                  <div><dt>탐구·분석</dt><dd>{item.inquiry}</dd></div>
+                  <div><dt>직접 한 것</dt><dd>{item.applied}</dd></div>
+                  <div className={styles.systemFormationResult}><dt>남은 기준</dt><dd>{item.result}</dd></div>
+                </dl>
+                {item.evidenceSlug && item.evidenceLabel ? <EvidenceLink label={item.evidenceLabel} slug={item.evidenceSlug} /> : <span className={styles.systemFormationRecord}>FINAL RECORD / LOCAL IDOL SOURCE</span>}
+              </aside>
+            </article>
+          ))}
+        </div>
+
+        <SectionHandoff
+          href="#proof"
+          label="APPENDIX / DETAILED IMPLEMENTATION"
+          title="Workbench · Harness · Media Toolchain의 상세 근거"
+        />
+      </Reveal>
+    </section>
   );
 }
 
@@ -2645,11 +2862,7 @@ export function AiExplorationPortfolioPage() {
       <ProductionHarnessSection />
       <CurrentSystemSection />
 
-      <ResearchValidationSection />
-
-      <section className={`${styles.section} ${styles.trendSection} ${styles.iterationRebuild} ${styles.handoffSection}`} id="formation">
-        <TrendApplicationSection />
-      </section>
+      <ResearchFormationSection />
 
       {false ? (
         <>
