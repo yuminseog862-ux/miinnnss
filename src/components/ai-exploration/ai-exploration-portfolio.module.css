@@ -5696,7 +5696,7 @@
   position: absolute;
 }
 
-.formationAuroraPair {
+.formationOriginPair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: 100%;
@@ -20987,5 +20987,435 @@
   .closingPage {
     min-height: 0;
     padding: 82px 0;
+  }
+}
+
+/* 2026-07-18 / 04+05 merged: one chronological problem-to-system chapter. */
+.researchFormationSection {
+  background: #e7ece8;
+  border-bottom: 1px solid rgba(8, 11, 10, 0.22);
+  color: #080b0a;
+  padding: 0;
+}
+
+.researchFormationInner {
+  max-width: none;
+  width: calc(100% - 48px);
+}
+
+.researchFormationIntro {
+  align-content: center;
+  box-sizing: border-box;
+  display: grid;
+  min-height: 400px;
+  padding: 64px 0 46px;
+}
+
+.researchFormationIntro .sectionHeading {
+  margin-bottom: 38px;
+}
+
+.researchFormationIntro .sectionHeading p {
+  color: #526059;
+  max-width: none;
+}
+
+.researchFormationRoute {
+  border-bottom: 1px solid rgba(8, 11, 10, 0.3);
+  border-top: 1px solid rgba(8, 11, 10, 0.3);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-left: 246px;
+}
+
+.researchFormationRoute a {
+  color: #080b0a;
+  display: grid;
+  gap: 6px;
+  min-height: 68px;
+  padding: 13px 15px;
+  text-decoration: none;
+}
+
+.researchFormationRoute a + a {
+  border-left: 1px solid rgba(8, 11, 10, 0.18);
+}
+
+.researchFormationRoute span {
+  color: #536a00;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.researchFormationRoute strong {
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.researchFormationPages {
+  display: grid;
+  gap: 42px;
+}
+
+.systemFormationPage {
+  border-bottom: 1px solid rgba(8, 11, 10, 0.25);
+  border-top: 1px solid rgba(8, 11, 10, 0.34);
+  box-sizing: border-box;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1.28fr) minmax(340px, 0.72fr);
+  height: calc(100svh - 93px);
+  min-height: 480px;
+  overflow: hidden;
+  padding: 24px 0;
+  scroll-margin-top: 68px;
+}
+
+.systemFormationMedia {
+  background: #050707;
+  box-sizing: border-box;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.systemFormationMedia > div {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 58px;
+  height: 100%;
+  min-height: 0;
+}
+
+.systemFormationMedia figure {
+  background: #0a0f0e;
+  border: 1px solid rgba(237, 243, 239, 0.14);
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.systemFormationMedia :is(img, video) {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.systemFormationMedia figcaption {
+  background: linear-gradient(180deg, transparent, rgba(2, 3, 3, 0.88));
+  bottom: 0;
+  box-sizing: border-box;
+  color: #dce6e1;
+  font-size: 7px;
+  font-weight: 750;
+  left: 0;
+  letter-spacing: 0.03em;
+  padding: 22px 10px 8px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.formationMediaRail {
+  border-bottom: 1px solid rgba(237, 243, 239, 0.18);
+  border-top: 1px solid rgba(237, 243, 239, 0.18);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  min-height: 0;
+}
+
+.formationMediaRail > div {
+  align-content: center;
+  display: grid;
+  gap: 4px;
+  padding: 8px 10px;
+}
+
+.formationMediaRail > div + div {
+  border-left: 1px solid rgba(237, 243, 239, 0.14);
+}
+
+.formationMediaRail span {
+  color: #c8ff45;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.formationMediaRail strong {
+  color: #dce6e1;
+  font-size: 8px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.formationOriginPair {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.formationRootBoards {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1.45fr) minmax(210px, 0.55fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.formationRootTimeline {
+  grid-row: 1 / 3;
+}
+
+.formationRootTimeline img {
+  object-fit: cover;
+}
+
+.formationPulsoStage {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(190px, 0.38fr) minmax(0, 1.62fr);
+  min-height: 0;
+}
+
+.formationPulsoFaces {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.formationPulsoPreview img {
+  object-fit: contain;
+}
+
+.formationCausalPair {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(270px, 0.43fr) minmax(0, 0.57fr);
+  min-height: 0;
+}
+
+.formationWorkbenchGrid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1.48fr) minmax(230px, 0.52fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.formationWorkbenchMain {
+  grid-row: 1 / 3;
+}
+
+.systemFormationMeta {
+  box-sizing: border-box;
+  color: #080b0a;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  padding: 8px 0 4px;
+}
+
+.systemFormationMeta header > span {
+  color: #536a00;
+  display: block;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.systemFormationMeta header > small {
+  color: #617068;
+  display: block;
+  font-size: 8px;
+  margin-top: 8px;
+}
+
+.systemFormationMeta header h3 {
+  color: #080b0a;
+  font-size: clamp(21px, 1.9vw, 28px);
+  font-weight: 540;
+  line-height: 1.22;
+  margin: 14px 0 8px;
+  word-break: keep-all;
+}
+
+.systemFormationEvidence {
+  align-content: center;
+  display: grid;
+  flex: 1 1 auto;
+  margin: 8px 0 10px;
+  min-height: 0;
+}
+
+.systemFormationEvidence > div {
+  border-top: 1px solid rgba(8, 11, 10, 0.17);
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 66px minmax(0, 1fr);
+  padding: 9px 0;
+}
+
+.systemFormationEvidence dt {
+  color: #536a00;
+  font-size: 8.5px;
+  font-weight: 800;
+}
+
+.systemFormationEvidence dd {
+  color: #526059;
+  font-size: 10.5px;
+  line-height: 1.42;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.systemFormationEvidence .systemFormationResult {
+  background: #c8ff45;
+  border-top: 0;
+  margin-top: 4px;
+  padding: 10px 12px;
+}
+
+.systemFormationResult :is(dt, dd) {
+  color: #080b0a;
+}
+
+.systemFormationMeta .evidenceLink {
+  border-color: rgba(8, 11, 10, 0.28);
+  color: #080b0a;
+  min-height: 36px;
+}
+
+.systemFormationMeta .evidenceLink :is(span, strong) {
+  color: #080b0a;
+}
+
+.systemFormationRecord {
+  color: #617068;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 10px 0;
+}
+
+.researchFormationSection .sectionHandoff {
+  border-bottom-color: rgba(8, 11, 10, 0.22);
+  border-top: 0;
+}
+
+.researchFormationSection .sectionHandoff :is(span, svg) {
+  color: #3d4f00;
+}
+
+.researchFormationSection .sectionHandoff strong {
+  color: #080b0a;
+}
+
+@media (min-width: 841px) {
+  .researchFormationIntro .sectionHeading h2 {
+    font-size: clamp(30px, 3vw, 40px);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 1080px) {
+  .systemFormationPage {
+    gap: 28px;
+    grid-template-columns: minmax(0, 1.36fr) minmax(300px, 0.64fr);
+  }
+
+  .formationRootBoards,
+  .formationWorkbenchGrid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(190px, 0.65fr);
+  }
+
+  .formationPulsoStage {
+    grid-template-columns: minmax(160px, 0.34fr) minmax(0, 1.66fr);
+  }
+}
+
+@media (max-width: 840px) {
+  .researchFormationInner {
+    width: calc(100% - 32px);
+  }
+
+  .researchFormationIntro {
+    min-height: 0;
+    padding: 72px 0 48px;
+  }
+
+  .researchFormationRoute {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-left: 0;
+  }
+
+  .researchFormationRoute a + a {
+    border-left: 0;
+  }
+
+  .researchFormationRoute a:nth-child(even) {
+    border-left: 1px solid rgba(8, 11, 10, 0.18);
+  }
+
+  .researchFormationRoute a:nth-child(n + 3) {
+    border-top: 1px solid rgba(8, 11, 10, 0.18);
+  }
+
+  .systemFormationPage {
+    gap: 20px;
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    padding: 20px 0 32px;
+  }
+
+  .systemFormationMedia {
+    min-height: 520px;
+  }
+
+  .systemFormationMeta {
+    min-height: 460px;
+    padding: 8px 0 0;
+  }
+
+  .formationOriginPair,
+  .formationRootBoards,
+  .formationPulsoStage,
+  .formationCausalPair,
+  .formationWorkbenchGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .formationRootTimeline,
+  .formationWorkbenchMain {
+    grid-row: auto;
+  }
+
+  .formationRootBoards > figure:last-child,
+  .formationWorkbenchGrid > figure:last-child {
+    display: none;
+  }
+
+  .formationPulsoFaces {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .formationMediaRail {
+    overflow-x: auto;
+  }
+
+  .formationMediaRail > div {
+    min-width: 112px;
   }
 }
