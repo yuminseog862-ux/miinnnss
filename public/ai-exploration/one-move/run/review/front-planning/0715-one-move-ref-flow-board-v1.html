@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>0715 ONE MOVE — Reference Map &amp; Flow Board</title>
+<style>
+  :root {
+    --bg: #0e0f12;
+    --panel: #16181e;
+    --panel2: #1c1f27;
+    --line: #2a2e38;
+    --text: #e8e6e1;
+    --muted: #9a968c;
+    --amber: #c4a574;
+    --rose: #c97b8f;
+    --ice: #7eb8c9;
+    --mag: #c76b9a;
+    --ash: #8a8478;
+    --steel: #8fa3b5;
+    --ok: #6fbf8a;
+    --warn: #d4a04a;
+    --hot: #d46a6a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    font-size: 15px;
+  }
+  header {
+    padding: 28px 32px 18px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, #171a21 0%, var(--bg) 100%);
+    position: sticky; top: 0; z-index: 20;
+  }
+  header h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: var(--muted); font-size: 13px; }
+  .badge-row { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    font-size: 11px; padding: 3px 9px; border-radius: 999px;
+    border: 1px solid var(--line); color: var(--muted); background: var(--panel);
+  }
+  .badge.ok { color: var(--ok); border-color: #2d4a36; }
+  .badge.warn { color: var(--warn); border-color: #4a3d22; }
+  main { padding: 24px 32px 80px; max-width: 1280px; margin: 0 auto; }
+  section { margin: 0 0 36px; }
+  h2 {
+    font-size: 17px; margin: 0 0 12px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--line); letter-spacing: -0.01em;
+  }
+  h3 { font-size: 14px; margin: 18px 0 8px; color: var(--amber); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 980px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    main, header { padding-left: 16px; padding-right: 16px; }
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .card.soft { background: var(--panel2); }
+  .card h4 { margin: 0 0 8px; font-size: 13px; }
+  .card p, .card li { font-size: 13px; color: var(--muted); }
+  .card ul { margin: 6px 0 0 18px; padding: 0; }
+  .m11 { border-top: 3px solid var(--rose); }
+  .m02 { border-top: 3px solid var(--mag); }
+  .m05 { border-top: 3px solid var(--ash); }
+  .m07 { border-top: 3px solid var(--steel); }
+  .shared { border-top: 3px solid var(--amber); }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  }
+  th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+  th { background: var(--panel2); color: var(--amber); font-weight: 600; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: #b7b3a8; }
+  .flow {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .flow .node {
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; min-width: 120px; font-size: 12px;
+  }
+  .flow .node strong { display: block; color: var(--text); font-size: 12.5px; margin-bottom: 3px; }
+  .flow .arr { color: var(--muted); font-size: 16px; }
+  .thumbs {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; margin-top: 8px;
+  }
+  .thumbs a {
+    display: block; background: #0a0b0e; border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+    text-decoration: none; color: var(--muted); font-size: 10px;
+  }
+  .thumbs img {
+    width: 100%; height: 88px; object-fit: cover; display: block; background: #111;
+  }
+  .thumbs span { display: block; padding: 5px 6px; line-height: 1.3; word-break: break-all; }
+  .callout {
+    border-left: 3px solid var(--warn);
+    background: #1c1912;
+    padding: 12px 14px;
+    border-radius: 0 10px 10px 0;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .callout.ok { border-left-color: var(--ok); background: #121a15; }
+  .callout.hot { border-left-color: var(--hot); background: #1a1212; }
+  .layer {
+    display: grid; grid-template-columns: 160px 1fr; gap: 10px; margin: 8px 0;
+    padding: 10px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  }
+  .layer .tag {
+    font-size: 12px; font-weight: 700; color: var(--amber); align-self: start; padding-top: 2px;
+  }
+  .toc a { color: var(--ice); text-decoration: none; font-size: 13px; }
+  .toc a:hover { text-decoration: underline; }
+  .toc ol { margin: 0; padding-left: 20px; color: var(--muted); }
+  footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .pill {
+    display: inline-block; padding: 1px 7px; border-radius: 6px; font-size: 11px;
+    background: #252833; color: var(--text); margin-right: 4px;
+  }
+  .pill.fw { background: #2a1f28; color: var(--rose); }
+  .pill.play { background: #1f2420; color: var(--ok); }
+  .pill.reality { background: #252218; color: var(--amber); }
+</style>
+</head>
+<body>
+<header>
+  <h1>0715 ONE MOVE — 레퍼런스 연결 · 흐름 보드</h1>
+  <p>Workbench 미합침 검수용 · FP closed 2026-07-16 · context pack 전 Founder 판단 보드</p>
+  <div class="badge-row">
+    <span class="badge ok">FP closed_founder_approved</span>
+    <span class="badge">런: runs/2026-07-15/0715_ONE_MOVE</span>
+    <span class="badge warn">01R 셀 path+SHA 미절단</span>
+    <span class="badge">다음 게이트: 00 context pack → creative_nucleus_lock</span>
+  </div>
+</header>
+<main>
+
+<section class="toc card soft">
+  <h4>목차</h4>
+  <ol>
+    <li><a href="#master">마스터 원리 · 레이어</a></li>
+    <li><a href="#tables">3 테이블 · 카메라 축</a></li>
+    <li><a href="#refmap">멤버 × 레퍼런스 연결 맵</a></li>
+    <li><a href="#gallery">패밀리 갤러리 (디스크 실물)</a></li>
+    <li><a href="#flow">S00–S08 흐름 · 레프 배치</a></li>
+    <li><a href="#86">86 Full World 스파인</a></li>
+    <li><a href="#docs">문서 그래프 (정본 경로)</a></li>
+    <li><a href="#ctx">Context pack 압축 기준 (제안 · 판단용)</a></li>
+  </ol>
+</section>
+
+<section id="master">
+  <h2>1. 마스터 원리 · 레이어</h2>
+  <div class="callout ok">
+    <strong>현실층은 하나의 영화, 월드층은 네 개의 다른 영화.</strong><br/>
+    Full World = 현실 위 VFX가 아니라 <em>프레임 전체가 월드로 교체</em>. 복귀는 반드시 손·돌·응수·변화한 판.
+  </div>
+  <div class="layer"><div class="tag">현실 · 대국</div><div>전 멤버 공통 QG 문법 — 앰버/올리브/크림/우드, 단일 실용광, 정지·느린 푸시, 50–100mm, 키컬러 억제. 구도 풀 6종(OTS / 판 로우 / 프로필 / 오블리크 / 거리 투숏 / 전경 랙).</div></div>
+  <div class="layer"><div class="tag">월드 · Full World</div><div>멤버마다 축·렌즈·움직임·심도·점유 분리. 5단계: Trigger → Body in World → World Scale → Signature Detail → Re-bind. 2–4단계는 현실 0%.</div></div>
+  <div class="layer"><div class="tag">동시 프레임</div><div>허용: M11–Stranger / M02–Stranger / M05–M07 만. 금지: 4인·3인 그룹, 스테이지, 바둑 격자 공간 세트.</div></div>
+  <div class="layer"><div class="tag">하이라이트</div><div>M11 절대 하이라이트 · M02 코피크 · M05–M07 균형 → 무승부 씰. S00: M11 단독 → +M02 한 명. S01: M11 첫 FW 후 M05→M07 한 명씩.</div></div>
+  <div class="layer"><div class="tag">타겟 H1</div><div><em>Precision under pressure</em> — 하드 디시전이 착지할 때 더 날카롭고 쿨해지는 보상. Hit 'Em body + Swag attitude + dry ONE MOVE pocket.</div></div>
+</section>
+
+<section id="tables">
+  <h2>2. 세 테이블 · 카메라 축</h2>
+  <div class="grid-3">
+    <div class="card m11">
+      <h4>Table A — M11 vs Dark Stranger-A</h4>
+      <p><strong>대각선·깊이 · 친밀한 침식</strong></p>
+      <ul>
+        <li>M11 가까이, Stranger 깊은 배경</li>
+        <li>현실 75–100mm · 월드 35–50 / 제한 24–28</li>
+        <li>느린 원호, 물기·로즈가 렌즈 쪽으로</li>
+        <li>S07에서만 Stranger 축 넘어 완전 침식</li>
+      </ul>
+    </div>
+    <div class="card m02">
+      <h4>Table B — M02 vs Dark Stranger-B</h4>
+      <p><strong>정면·축선 · 강박적 축선</strong></p>
+      <ul>
+        <li>판+얼굴 중심축, 5–10% 오프센터</li>
+        <li>현실 50–65 · 매크로 85–100 · 월드 24–35 직선</li>
+        <li>기계적 직선 푸시 · 180 금지</li>
+        <li>정확함이 비정상적으로 깊어지는 광기</li>
+      </ul>
+    </div>
+    <div class="card m05" style="border-top-color: var(--steel);">
+      <h4>Table C — M05 vs M07</h4>
+      <p><strong>수평 충돌 · 지면 vs 수평선</strong></p>
+      <ul>
+        <li>5 왼쪽 좌→우 저각 · 7 오른쪽 우→좌 수평선</li>
+        <li>중앙에서 두 운동이 멈춤 = 무승부 증거</li>
+        <li>끝까지 축 넘지 않음</li>
+        <li>물질: 재·녹·먼지 vs 종이·바람·아이스</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="refmap">
+  <h2>3. 멤버 × 레퍼런스 연결 맵</h2>
+  <p style="color:var(--muted);font-size:13px;margin-top:-4px;">화살표 = 기능 바인딩 (캐릭터 카피 아님). contact sheet는 네비게이션 — 생성 전 셀 path+SHA 필요.</p>
+
+  <div class="grid-2" style="margin-top:12px;">
+    <div class="card m11">
+      <h4>★ M11 매혹/선정 · Suit / Bratop / Mesh</h4>
+      <p>구도: 가까움, 대각선, 반사, 통제 · 색 violet/black → rose</p>
+      <ul>
+        <li><span class="pill">reze_1–4</span> 습윤·꽃·바디 필드 (피 셀 기본 제외 권고)</li>
+        <li><span class="pill">monogatari_kiss</span> 입·손 근접</li>
+        <li><span class="pill">houseki</span> 오브젝트 미감 · 수트 질감</li>
+        <li><span class="pill">edgerunners T4-A</span> 보라 네온 통제 어시스트</li>
+        <li><span class="pill">B′ tongue/crouch</span> 스위치 포즈 11 only</li>
+        <li><span class="pill">sonyeo ep037</span> 선정 play 문법</li>
+      </ul>
+    </div>
+    <div class="card m02">
+      <h4>M02 광기→바둑 몰입 · Shirt / Unbound</h4>
+      <p>구도: 정면, 정확함, 축선 · 색 ice → magenta/neon · 연속체 (calm→burst 모델 폐기)</p>
+      <ul>
+        <li><span class="pill">jinx_part01–05</span> go-world sink 얼굴 (조커 기본 금지)</li>
+        <li><span class="pill">sonyeo ep016/011</span> 보드 몰입 강도 + 셔츠/커프스</li>
+      </ul>
+    </div>
+    <div class="card m05">
+      <h4>M05 무겁 · Lower-body fashion</h4>
+      <p>구도: 지면, 하의, 잔류, 질량 · 색 ash → rust/black · <strong>maki+yuta 병행 유지</strong></p>
+      <ul>
+        <li><span class="pill">maki_3–8</span> 모션·구도·잔류 (parallel)</li>
+        <li><span class="pill">yuta_1–3</span> 광역 매스·경로 (parallel)</li>
+        <li><span class="pill">heavy_preplay</span> 패션 잔류·무게 pre-play</li>
+      </ul>
+    </div>
+    <div class="card m07">
+      <h4>M07 차갑/시크 · Dawn waterfront / Paper wind</h4>
+      <p>구도: 수평선, 거리, 압축, 바람 · 색 steel → ice · <strong>konan + jjk 병행</strong></p>
+      <ul>
+        <li><span class="pill">konan_1–2</span> 종이·바람·수평선 필드 (월드 primary 후보)</li>
+        <li><span class="pill">jjk_1–4</span> 공간/응시/환경 밀어냄 (parallel · 메가단지 기본 룩 강제 금지)</li>
+        <li><span class="pill">QG ×3</span> <strong>전 멤버 현실 문법</strong> (7 life 밀도 가능, QG 인물 금지)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card shared" style="margin-top:12px;">
+    <h4>Shared / system</h4>
+    <ul>
+      <li><span class="pill">소녀바둑 play</span> 전 테이블 B 문법 + 라이트 (ep003 shared 등)</li>
+      <li><span class="pill">86 selected-cells</span> Full World 전이 스파인 순서 (색·오브젝트만 멤버 리맵)</li>
+      <li><span class="pill">moonlit sheet</span> B′ 보드 문법 (셀 바인드)</li>
+      <li><span class="pill">blacklagoon / we_loved</span> side only · primary 아님</li>
+      <li><span class="pill">t4b-mask-warm</span> 연구 흔적 · 비활성 경로</li>
+    </ul>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>4. 패밀리 갤러리 (디스크 실물 · 클릭 가능)</h2>
+  <p class="mono">이미지 경로: review/front-planning/ → ../../research/reference-intake/…</p>
+
+  <h3>M11 — reze / monogatari / houseki / edgerunners / B′</h3>
+  <div class="thumbs">
+    <a href="../../research/reference-intake/world-open-candidates-v1/reze_1.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/reze_1.jpg" alt="reze_1"/><span>reze_1</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/reze_2.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/reze_2.jpg" alt="reze_2"/><span>reze_2</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/reze_3.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/reze_3.jpg" alt="reze_3"/><span>reze_3</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/reze_4.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/reze_4.jpg" alt="reze_4"/><span>reze_4</span></a>
+    <a href="../../research/reference-intake/unit-b-tone-refs-v1/monogatari_kiss_part01.png"><img src="../../research/reference-intake/unit-b-tone-refs-v1/monogatari_kiss_part01.png" alt="mono01"/><span>monogatari_01</span></a>
+    <a href="../../research/reference-intake/unit-b-tone-refs-v1/houseki_if_short_part01.png"><img src="../../research/reference-intake/unit-b-tone-refs-v1/houseki_if_short_part01.png" alt="houseki"/><span>houseki_01</span></a>
+    <a href="../../research/reference-intake/edgerunners-t4-v1/edgerunners_part01_t00-05_balcony_neon.png"><img src="../../research/reference-intake/edgerunners-t4-v1/edgerunners_part01_t00-05_balcony_neon.png" alt="edge"/><span>edgerunners_01</span></a>
+    <a href="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_member_tongue_stone.png"><img src="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_member_tongue_stone.png" alt="tongue"/><span>B′ tongue</span></a>
+    <a href="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_member_crouch_stone.png"><img src="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_member_crouch_stone.png" alt="crouch"/><span>B′ crouch</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep037_member11_seductive_play.jpg"><img src="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep037_member11_seductive_play.jpg" alt="ep037"/><span>ep037 play</span></a>
+  </div>
+
+  <h3>M02 — jinx / 소녀바둑 mania</h3>
+  <div class="thumbs">
+    <a href="../../research/reference-intake/jinx-t4b-v1/jinx_part01_t30-45_open_smile_manic_pose.png"><img src="../../research/reference-intake/jinx-t4b-v1/jinx_part01_t30-45_open_smile_manic_pose.png" alt="j1"/><span>jinx_01</span></a>
+    <a href="../../research/reference-intake/jinx-t4b-v1/jinx_part02_t45-60_soft_smile_eye_ecu.png"><img src="../../research/reference-intake/jinx-t4b-v1/jinx_part02_t45-60_soft_smile_eye_ecu.png" alt="j2"/><span>jinx_02 eye</span></a>
+    <a href="../../research/reference-intake/jinx-t4b-v1/jinx_part04_t45-60_world_blow_smile_stance.png"><img src="../../research/reference-intake/jinx-t4b-v1/jinx_part04_t45-60_world_blow_smile_stance.png" alt="j4"/><span>jinx_04 blow</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep016_member02_mania_a.jpg"><img src="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep016_member02_mania_a.jpg" alt="e16"/><span>ep016 mania</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep011_member02_mania_b.jpg"><img src="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep011_member02_mania_b.jpg" alt="e11"/><span>ep011 mania</span></a>
+  </div>
+
+  <h3>M05 — maki / yuta / heavy (parallel)</h3>
+  <div class="thumbs">
+    <a href="../../research/reference-intake/world-open-candidates-v1/maki_3.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/maki_3.jpg" alt="m3"/><span>maki_3</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/maki_5.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/maki_5.jpg" alt="m5"/><span>maki_5</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/maki_8.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/maki_8.jpg" alt="m8"/><span>maki_8</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/yuta_1.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/yuta_1.jpg" alt="y1"/><span>yuta_1</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/yuta_2.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/yuta_2.jpg" alt="y2"/><span>yuta_2</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/heavy_preplay/member05_heavy_preplay_board.jpg"><img src="../../research/reference-intake/founder-boards-v1/heavy_preplay/member05_heavy_preplay_board.jpg" alt="heavy"/><span>heavy_preplay</span></a>
+  </div>
+
+  <h3>M07 — konan / jjk (parallel) · QG reality-all</h3>
+  <div class="thumbs">
+    <a href="../../research/reference-intake/world-open-candidates-v1/konan_1.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/konan_1.jpg" alt="k1"/><span>konan_1</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/konan_2.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/konan_2.jpg" alt="k2"/><span>konan_2</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/jjk_1.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/jjk_1.jpg" alt="j1"/><span>jjk_1</span></a>
+    <a href="../../research/reference-intake/world-open-candidates-v1/jjk_3.jpg"><img src="../../research/reference-intake/world-open-candidates-v1/jjk_3.jpg" alt="j3"/><span>jjk_3</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_01.jpg"><img src="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_01.jpg" alt="qg1"/><span>QG_01 reality</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_02.jpg"><img src="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_02.jpg" alt="qg2"/><span>QG_02</span></a>
+    <a href="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_03.jpg"><img src="../../research/reference-intake/founder-boards-v1/queens_gambit/qg_member07_preplay_board_03.jpg" alt="qg3"/><span>QG_03</span></a>
+  </div>
+
+  <h3>Shared play + 86 transition cells</h3>
+  <div class="thumbs">
+    <a href="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep003_during_play_shared.jpg"><img src="../../research/reference-intake/founder-boards-v1/sonyeo_baduk/sonyeo_ep003_during_play_shared.jpg" alt="play"/><span>ep003 play shared</span></a>
+    <a href="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_moonlit_board_sheet.jpg"><img src="../../research/reference-intake/pre-world-open-scenes-v1/REF_PRE_WORLD_OPEN_moonlit_board_sheet.jpg" alt="moon"/><span>moonlit B′</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t31s_system_grid_expand_a.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t31s_system_grid_expand_a.png" alt="t31"/><span>86 t31 system</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t36s_body_on_system_field.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t36s_body_on_system_field.png" alt="t36"/><span>86 t36 body</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t39s_system_shatter_blue.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t39s_system_shatter_blue.png" alt="t39"/><span>86 t39 shatter</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t41s_world_scale_small_body.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t41s_world_scale_small_body.png" alt="t41"/><span>86 t41 scale</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t49s_afterimage_face_close.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t49s_afterimage_face_close.png" alt="t49"/><span>86 t49 face</span></a>
+    <a href="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t20s_wide_horizon_after_burst.png"><img src="../../research/reference-intake/board-world-transition-v1/selected-cells/eightysix_t20s_wide_horizon_after_burst.png" alt="t20"/><span>86 t20 horizon</span></a>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>5. S00–S08 흐름 · 레프 배치</h2>
+  <div class="flow" style="margin-bottom:14px;">
+    <div class="node"><strong>S00</strong>M11 현실 → +M02<span class="pill reality">reality</span></div><span class="arr">→</span>
+    <div class="node"><strong>S01</strong>M11 첫 FW · 5·7 입장<span class="pill fw">FW</span></div><span class="arr">→</span>
+    <div class="node"><strong>S02</strong>M02 FW · M11 B′</div><span class="arr">→</span>
+    <div class="node"><strong>S03</strong>PEAK1 11→2</div><span class="arr">→</span>
+    <div class="node"><strong>S04</strong>5 FW → 7 FW</div><span class="arr">→</span>
+    <div class="node"><strong>S05</strong>초고속 내부</div><span class="arr">→</span>
+    <div class="node"><strong>S06</strong>장호흡 내부</div><span class="arr">→</span>
+    <div class="node"><strong>S07</strong>PEAK2 max</div><span class="arr">→</span>
+    <div class="node"><strong>S08</strong>draw + residual</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Sec</th><th>시간</th><th>화면 사건</th><th>레프 · 문법</th><th>FW 타입</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>S00P</td><td>0–0.07</td><td>블랙/마이크로 홀드</td><td>—</td><td>—</td></tr>
+      <tr><td>S00</td><td>0–10.9</td><td>돌 매크로→OTS→거울메쉬→투숏→느린 푸시 → <strong>M02 시드</strong></td><td>QG reality · mesh · shirt seed · 소녀바둑 손</td><td>없음</td></tr>
+      <tr><td>S01</td><td>10.9–30.1</td><td><strong>14.257 첫 FW M11</strong> → M02 정착 → M05 입장 → M07 입장</td><td>reze/mono/houseki · jinx/sonyeo · maki//yuta//heavy · konan//jjk</td><td>압축 5단계 (11)</td></tr>
+      <tr><td>S02</td><td>30.1–43.7</td><td>split-diopter → <strong>M02 FW</strong> → 5/7 싱글 → M11 B′</td><td>jinx neon continuum · B′ tongue/crouch</td><td>압축 (2)</td></tr>
+      <tr><td>S03</td><td>43.7–57.3</td><td>PEAK1 11 원호 확장 FW → 2 직선 FW → C 터치</td><td>11 full stack · jinx+sonyeo</td><td>확장 5단계</td></tr>
+      <tr><td>S04</td><td>57.3–68.6</td><td>5 하체 FW → 7 paper/waterfront FW → 중앙 정지 투숏</td><td>maki//yuta · konan//jjk</td><td>각 멤버 개방</td></tr>
+      <tr><td>S05</td><td>68.6–82.1</td><td>73–78 최속 · 11 hero hold · 이미 열린 세계 내부</td><td>전 풀 교차 · 86 재쇼 금지</td><td>직접 컷 내부</td></tr>
+      <tr><td>S06</td><td>82.1–103.6</td><td>장호흡 5 dwell · 7 dwell · 11 친밀 · <strong>95.7</strong> 2 축선 재개 · C 중앙 정지</td><td>동일 내부</td><td>직접 컷 내부</td></tr>
+      <tr><td>S07</td><td>103.6–120.6</td><td>11 max(축 넘김) → re-bind → <strong>113.8–116 2 코피크</strong> → 5/7 짧은 FW → 11 잔상</td><td>풀 스택 + 86 확장</td><td>확장 5단계</td></tr>
+      <tr><td>S08</td><td>120.6–131.2</td><td>5–7 투숏 → A/B residual → <strong>유일 90° 정수리 무승부 판</strong></td><td>completed board · color residual</td><td>없음</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="86">
+  <h2>6. 86 Full World 스파인 · 운영</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h4>순서 (고정)</h4>
+      <ol style="margin:6px 0 0 18px;color:var(--muted);font-size:13px;">
+        <li>시스템 필드 확장 (t31–34)</li>
+        <li>몸 in field (t36–37)</li>
+        <li>파열 (t39)</li>
+        <li>환경 점유 (t40–45, t20 horizon 보조)</li>
+        <li>얼굴 afterimage / 판 re-bind (t49)</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h4>운영 (차별 — 동일 애니 반복 금지)</h4>
+      <ul>
+        <li><strong>최초 개방:</strong> 압축 5단계</li>
+        <li><strong>재진입:</strong> 직접 컷</li>
+        <li><strong>S03/S07:</strong> 확장 5단계</li>
+        <li><strong>S05/S06:</strong> 이미 열린 세계 내부</li>
+        <li>멤버별 색·오브젝트 스킨만 교체 (blue→red 전역 고정 금지)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="docs">
+  <h2>7. 문서 그래프 (정본 경로)</h2>
+  <table>
+    <thead><tr><th>역할</th><th>파일</th><th>상태</th></tr></thead>
+    <tbody>
+      <tr><td>연출 전문 (lossless body)</td><td class="mono">research/direction-composition-lock-v1.md</td><td>ACTIVE + Overlay A/B/C</td></tr>
+      <tr><td>섹션 사건 표현</td><td class="mono">research/section-storyline-and-ref-placement-v1.md</td><td>ACTIVE</td></tr>
+      <tr><td>멤버·테이블·색</td><td class="mono">research/member-pairing-world-transition-lock-v1.md</td><td>ACTIVE</td></tr>
+      <tr><td>등장 순서·하이라이트</td><td class="mono">research/member-appearance-order-v1.md</td><td>ACTIVE</td></tr>
+      <tr><td>타겟 H1</td><td class="mono">research/target-audience-analysis-v1.md</td><td>H1 revalidated</td></tr>
+      <tr><td>FP 요약·기능 라이브러리</td><td class="mono">research/front-planning-v1.md</td><td>closed_founder_approved</td></tr>
+      <tr><td>readiness</td><td class="mono">research/front-planning-readiness-v1.yaml</td><td>closed_founder_approved</td></tr>
+      <tr><td>closeout 영수증</td><td class="mono">research/founder-front-planning-closeout-v1.md</td><td>APPROVED</td></tr>
+      <tr><td>레프 맵 인덱스</td><td class="mono">research/reference-intake/**/CANDIDATES.md 등</td><td>parallel policy</td></tr>
+      <tr><td>오디오 타이밍</td><td class="mono">research/audio-input-lineage-v1.md → 0705 분석 포인터</td><td>timing only</td></tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top:12px;">
+    <strong>아직 없음 (context pack / 00 이후):</strong> 00-creative-nucleus.yaml · 01R 셀 영수증 · 의상 생성 보드 · 02A 컷리스트 · 유료 생성
+  </div>
+</section>
+
+<section id="ctx">
+  <h2>8. Context pack 압축 기준 — Founder 판단용</h2>
+  <p style="color:var(--muted);font-size:13px;">하니스 규칙: 00 진입 전 체크포인트 프로필 = <span class="mono">front_planning_harness_entry</span> (whole-run, --sections 금지). 스크립트 기본 롤은 오디오 분석·모션맵·readiness·nucleus 슬롯. 지금 nucleus 파일이 아직 없으므로, <strong>무엇을 pack에 넣을지 압축 정책을 Founder가 잠가야</strong> 00이 얇아지거나 과적재되지 않습니다.</p>
+
+  <h3>8.1 권장 3층 압축 모델</h3>
+  <table>
+    <thead><tr><th>층</th><th>포함 내용</th><th>압축 정도</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>L0 해시 포인터</strong></td>
+        <td>정본 경로 + 역할 + (가능 시) SHA-256</td>
+        <td>최대 압축 · 바이트 최소</td>
+        <td>항상 포함. 원문 대체 금지.</td>
+      </tr>
+      <tr>
+        <td><strong>L1 결정 요약</strong></td>
+        <td>H1 promise/pillars/do-not-serve · 3테이블 축 한 표 · S00–S08 one-liner · Overlay A/B · 하이라이트 위계 · Full World 5단계 · 86 ops 표</td>
+        <td><strong>중간 압축</strong> (1–3페이지 분량 산문/표)</td>
+        <td>00 작성 시 “무엇을 잠글지” 즉시 읽기용. 연출 문장 미학은 L2.</td>
+      </tr>
+      <tr>
+        <td><strong>L2 표현 정본</strong></td>
+        <td><code>direction-composition-lock-v1.md</code> 전문 · <code>section-storyline…</code> 전문 · target 전문</td>
+        <td><strong>무압축 / 원문 유지</strong></td>
+        <td>pack이 인라인으로 넣지 말고 <em>필수 오픈 파일</em>로 지정. 00 promote 시 storyline lock verbatim.</td>
+      </tr>
+      <tr>
+        <td><strong>L3 픽셀 레프</strong></td>
+        <td>멤버별 대표 셀 3–8장 + 86 스파인 5셀 (단일 프레임 우선)</td>
+        <td>선택 첨부 · 시트 전체 금지</td>
+        <td>contact sheet 통째 첨부 금지. 01R 전엔 “후보 포인터”만.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>8.2 00 context pack에 대한 명시 제안 (Founder 선택지)</h3>
+  <div class="grid-3">
+    <div class="card">
+      <h4>옵션 P — Pointer-first (권장 기본)</h4>
+      <ul>
+        <li>Pack JSON/텍스트: L0+L1 only</li>
+        <li>L2는 “must-read paths” 목록 + hash</li>
+        <li>이미지 0장 또는 멤버당 1 thumb</li>
+        <li>00 작성 세션이 L2 파일을 직접 연다</li>
+      </ul>
+      <p><span class="badge ok">표현 손실 최소 · 토큰 절약</span></p>
+    </div>
+    <div class="card">
+      <h4>옵션 E — Expression-inline</h4>
+      <ul>
+        <li>L1 + direction body 핵심 섹션 인라인</li>
+        <li>section-storyline S00–S08 전문 인라인</li>
+        <li>레프는 포인터만</li>
+      </ul>
+      <p><span class="badge warn">pack 비대 · 표현 보존 강함</span></p>
+    </div>
+    <div class="card">
+      <h4>옵션 V — Visual-heavy</h4>
+      <ul>
+        <li>L1 + L3 대표 셀 다수 첨부</li>
+        <li>L2는 포인터</li>
+        <li>00보다 01R 직전 세션에 적합</li>
+      </ul>
+      <p><span class="badge">00에는 비권장</span></p>
+    </div>
+  </div>
+
+  <div class="callout hot">
+    <strong>제안 락 (검수 후 확인 바람):</strong> 00 진입 context pack = <em>옵션 P (Pointer-first)</em>.
+    즉 pack 자체는 L0+L1만 싣고, Founder 연출 문장(L2)은 압축하지 않은 채 정본 파일을 필독으로 유지한다.
+    “pack에 다 넣느라 표현을 요약”하는 경로는 금지.
+  </div>
+
+  <h3>8.3 Pack L1에 반드시 들어갈 결정 목록 (압축 허용 단위)</h3>
+  <ul style="color:var(--muted);font-size:13px;">
+    <li>H1 primary + receive chain 한 블록</li>
+    <li>3 tables + axes + end states</li>
+    <li>S00 M11→+M02 · sequential introduce</li>
+    <li>Full World 정의 + 5-step + 86 ops 표</li>
+    <li>멤버→레프 패밀리 표 (parallel 표기)</li>
+    <li>S00–S08 one-line jobs + 오디오 앵커 (14.3 / 73–78 / 95.7 / 113.8)</li>
+    <li>do-not-serve + 동시프레임 금지</li>
+    <li>L2 must-read path list (direction, section-storyline, target, pairing, appearance, closed readiness)</li>
+  </ul>
+
+  <h3>8.4 Pack에 넣지 말 것</h3>
+  <ul style="color:var(--muted);font-size:13px;">
+    <li>contact sheet 전체 바이트</li>
+    <li>0705 구 스토리/비주얼 락 상속</li>
+    <li>lyric meaning 가드 재바인딩</li>
+    <li>superseded 초안 전체 히스토리</li>
+    <li>unit-b mirror 중복 파일 전부</li>
+    <li>02A/프롬프트 발명</li>
+  </ul>
+</section>
+
+<footer>
+  <p>파일: <span class="mono">runs/2026-07-15/0715_ONE_MOVE/review/front-planning/0715-one-move-ref-flow-board-v1.html</span></p>
+  <p>로컬에서 열기: 이 HTML을 브라우저로 오픈하면 상단 갤러리 이미지가 로드됩니다. workbench 합침 없이 검수용.</p>
+  <p>Context pack 실행은 Founder가 위 압축 옵션(P/E/V) 확인 후.</p>
+</footer>
+</main>
+</body>
+</html>
