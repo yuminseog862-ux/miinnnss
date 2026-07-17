@@ -4,8 +4,6 @@ import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   ExternalLink,
   FileCode2,
   Home,
@@ -29,7 +27,8 @@ const portfolioNavigation = [
   ["validation", "결과"],
   ["harness", "제작 방식"],
   ["rationale", "이유·구현"],
-  ["research", "형성 과정"],
+  ["research", "탐색·검증"],
+  ["formation", "형성 과정"],
   ["proof", "부록"],
 ] as const;
 
@@ -45,6 +44,7 @@ const resultSlides = [
     label: "01 / LOOM MV",
     title: "INK / FINAL MASTER",
     detail: "대표 결과 · 완성한 MV",
+    message: "정해진 선을 넘어, 스스로 빛을 향해 나아가는 순간",
     platform: "YOUTUBE",
     videoId: "TyONE0lKI2s",
     href: "https://www.youtube.com/watch?v=TyONE0lKI2s",
@@ -54,6 +54,7 @@ const resultSlides = [
     label: "02 / LOOM MV",
     title: "ROOT SIGNAL / FULL MASTER",
     detail: "첫 번째 완성 MV",
+    message: "흩어진 신호가 하나의 흐름으로 이어지는 순간",
     platform: "YOUTUBE",
     videoId: "DUyCAFHZ7X0",
     href: "https://www.youtube.com/watch?v=DUyCAFHZ7X0",
@@ -63,6 +64,7 @@ const resultSlides = [
     label: "03 / LOOM MV",
     title: "PULSO / FINAL MASTER",
     detail: "구간별 제작·재생 검토를 적용한 MV",
+    message: "서로 다른 박자가 하나의 장면으로 이어지는 순간",
     platform: "YOUTUBE",
     videoId: "0vV4CXL3_Qk",
     href: "https://www.youtube.com/watch?v=0vV4CXL3_Qk",
@@ -129,9 +131,9 @@ const currentSystemCases = [
 
 const structuredPromptFields = [
   ["01", "CONTENT / SECTION", "곡과 구간, 이번 작업의 완료 범위"],
-  ["02", "IDENTITY ANCHOR", "유지할 얼굴·인물 기준"],
+  ["02", "IDENTITY ANCHOR", "유지할 멤버의 비주얼 아이덴티티"],
   ["03", "REFERENCE FUNCTION", "레퍼런스마다 가져올 역할"],
-  ["04", "SCENE · ACTION · CAMERA", "보이는 행동과 장면 연결"],
+  ["04", "SCENE · ACTION · CAMERA", "레퍼런스의 행동·구도·카메라 활용"],
   ["05", "AVOID / GUARD", "반복·왜곡·금지 조건"],
   ["06", "HUMAN REVIEW", "사람이 확인할 통과 기준"],
   ["07", "NEXT HANDOFF", "결과물과 다음 작업"],
@@ -147,10 +149,10 @@ const formationJourney = [
     index: "01",
     period: "2026.05",
     project: "AURORA V2 / LOOM 제작 단위의 전신",
-    question: "같은 얼굴을 유지하면서 콘텐츠 단위를 늘리는 방법",
-    test: "13명의 identity reference를 고정하고 각각에 MV와 STAGE 제작 단위를 연결. 조사 → 선택 → 패킷 → 생성 → 사람 검토의 반복.",
-    finding: "같은 얼굴의 유지와 제작 단위 확장은 가능. 13 MV + 13 STAGE는 자동화 제작 단위이며 공개 완성 작품 26편과 구분. 창의 결정까지 규칙으로 고정할 때 장면과 포즈의 유사성 증가.",
-    change: "identity 정보는 재사용하고, 메시지와 장면 방향은 콘텐츠마다 다시 정하는 분리.",
+    question: "같은 멤버 비주얼 아이덴티티를 유지하면서 콘텐츠 단위를 늘리는 방법",
+    test: "13명의 멤버 비주얼 아이덴티티를 고정하고 각각에 MV와 STAGE 제작 단위를 연결. 조사 → 선택 → 패킷 → 생성 → 사람 검토의 반복.",
+    finding: "같은 비주얼 아이덴티티의 유지와 제작 단위 확장 가능성. 13 MV + 13 STAGE의 자동화 제작 단위와 공개 완성 작품 26편의 구분. 창의적인 결정을 규칙으로 고정할 때 장면과 포즈의 유사성 증가.",
+    change: "비주얼 아이덴티티 정보의 재사용, 메시지·장면 방향의 콘텐츠별 재판단 분리.",
     image: "/ai-exploration/aurora-v2/m01-mv-storyboard.webp",
     evidenceSlug: "aurora-v1-to-v2-archive-map",
   },
@@ -216,8 +218,8 @@ const cfCases = [
     index: "01",
     label: "COLA / MEMORY-VENDING",
     status: "PERSONAL SPEC COMMERCIAL · UNOFFICIAL",
-    title: "버튼을 누르면, 기억이 한 캔의 제품으로 돌아옵니다.",
-    body: "버튼을 누르는 순간 눈이 반응하고, 기억의 층이 열리고, 같은 캔이 다시 조립돼 나옵니다. 이 흐름을 19.58초 세로 영상 안에 담았습니다.",
+    title: "버튼을 누르면 돌아오는 한 캔의 기억",
+    body: "버튼을 누르면 눈앞의 시간이 접히고, 기억 속의 한 캔이 다시 손에 닿습니다. 제품이 돌아오는 순간이 보이도록 장면을 이어 붙였습니다.",
     message: "기억은 버튼을 누르는 순간 다시 제품으로 돌아온다.",
     audience: "짧은 이야기 안에서 제품의 기능을 경험하는 관객",
     flow: "BUTTON → EYE → MEMORY LAYERS → CAN BUILD → RETRIEVE",
@@ -230,7 +232,8 @@ const cfCases = [
     index: "02",
     label: "HEADSET / SELECTIVE LISTENING",
     status: "PERSONAL SPEC COMMERCIAL · UNOFFICIAL",
-    title: "헤드셋 하나로, 듣고 싶은 목소리와 소음 사이에 경계를 만들었습니다.",
+    title: "듣고 싶은 목소리와 소음을 가르는 헤드셋",
+    titleBreakAfter: "듣고 싶은 목소리와",
     body: "미술관의 소음과 초상화의 목소리를 서로 다른 종이처럼 보이게 했습니다. 이어컵이 그 둘을 가르는 순간 제품의 기능이 보이도록 구성했습니다.",
     message: "듣고 싶은 목소리를 선택하면 불필요한 소음은 뒤로 물러난다.",
     audience: "붐비는 공간에서도 자신이 선택한 소리에 집중하고 싶은 관객",
@@ -246,14 +249,12 @@ const trendExperiments = [
   {
     status: "채택 / 제 방식으로 재구성",
     signal: "VISUAL WORKFLOW",
-    proof: "승인 레퍼런스 · 작업 조건 → Front Planning Workbench",
+    title: "시각 상태 조립형 Front Planning Workbench",
     appliedAs: "Front Planning Workbench",
-    discovery: "ComfyUI의 연결 방식, Grok Imagine의 대화형 생성, Figma의 캔버스에서 발견한 시각적 상태 관리.",
-    question: "승인한 얼굴과 장면 레퍼런스를 다음 작업에서 바로 다시 쓰는 방법",
-    origin: "X에서 새로운 화면과 기능을 발견한 뒤 ComfyUI, Grok Imagine, Figma의 공식 자료와 실제 제품 화면을 확인했습니다.",
-    test: "메시지, 곡 구간, 승인한 얼굴과 장면 레퍼런스를 Workbench에 등록. 장면 역할이 정해지면 해당 레퍼런스와 이미지 작업 조건을 다음 단계에 전달하고, 생성 결과는 컨택트시트에서 비교.",
-    decision: "레퍼런스 재사용과 작업 조건 준비는 채택. 메시지·타겟·identity 기준과 핵심 컷 선택의 자동 확정은 제외.",
-    next: "승인 레퍼런스의 장면별 이미지 작업 자동 연결",
+    discovery: "ComfyUI 연결 방식과 Figma 캔버스의 시각 상태 관리 방식",
+    origin: "공식 문서·실제 화면 대조를 통한 상태·재사용 흐름 중심의 검토",
+    test: "메시지·곡 구간·승인 레퍼런스·후보 상태의 Workbench 단일 화면 배치",
+    decision: "레퍼런스 재사용·작업 조건 준비의 채택, 기획 자동 확정의 제외",
     evidenceSlug: "front-planning-workbench-checkpoint",
     sourceLinks: [
       ["ComfyUI / Workflow", "https://docs.comfy.org/development/core-concepts/workflow"],
@@ -263,14 +264,12 @@ const trendExperiments = [
   {
     status: "부분 채택",
     signal: "EDITING GRAMMAR",
-    proof: "소스 분석 → 편집 후보 → 구간 프리뷰 → QC",
+    title: "분석 준비와 재생 판단을 나눈 Media Toolchain",
     appliedAs: "Python Media Toolchain · Local Edit Desk",
-    discovery: "Premiere Pro와 After Effects의 Source·Program, timeline, marker, render·QC에서 분리한 실제 편집 단위.",
-    question: "분석으로 편집 준비를 줄이되 최종 컷은 직접 고르는 방법",
-    origin: "Premiere Pro와 After Effects의 공식 문서와 실제 화면에서 편집 작업이 나뉘는 단위를 확인했습니다.",
-    test: "선택 음원의 구간·온셋과 실제 영상의 몸·손·발·시선·카메라 움직임을 분석. 두 신호를 마커와 편집 후보로 정리하고 컨택트시트와 짧은 프리뷰로 재검토.",
-    decision: "분석값은 후보 축소에만 사용. 실제 순서와 타이밍은 음악·동작·장면 인과의 재생 검토로 결정.",
-    next: "소스 분석 → 편집 후보 → 구간 프리뷰 → QC",
+    discovery: "편집기의 원본 확인, 타임라인, 마커, 렌더·QC가 서로 다른 작업 단위임을 확인했습니다.",
+    origin: "Adobe 공식 문서와 실제 화면을 대조해 반복 준비와 최종 컷 판단을 분리했습니다.",
+    test: "오디오와 영상 분석을 마커·컨택트시트·짧은 프리뷰로 정리해 실제 재생 전에 후보를 좁혔습니다.",
+    decision: "분석은 후보 축소에만 쓰고, 순서와 타이밍은 직접 재생하며 결정했습니다.",
     evidenceSlug: "idol-edit-desk-implementation",
     sourceLinks: [
       ["Adobe / Source & Program", "https://helpx.adobe.com/uk/premiere/desktop/get-started/source-and-program-monitor-adjustments/about-source-monitor-and-program-monitor.html"],
@@ -280,14 +279,12 @@ const trendExperiments = [
   {
     status: "채택 / 위험 구간 보류",
     signal: "AGENT HARNESS",
-    proof: "현재 단계 · 결과물 · 승인 기준 · 다음 행동",
+    title: "세션 간 판단 인계형 Production Harness",
     appliedAs: "Production Harness",
-    discovery: "Anthropic의 long-running harness와 Agent Skills 문서에서 확인한 작은 절차, 명확한 인계, 사람 승인 지점.",
-    question: "세션과 도구가 바뀌어도 앞선 선택을 잃지 않는 방법",
-    origin: "X에서 흐름을 발견한 뒤 Anthropic의 공식 엔지니어링 문서와 공개 skill 구조를 확인했습니다. 권리·비용·보호 자산의 외부 전송 위험도 함께 검토했습니다.",
-    test: "반복 절차를 작은 skill과 reference로 분리. 현재 단계, 기준 결과물, 사람 승인, 다음 행동을 registry와 handoff에 기록하고 특정 모델에 묶이지 않는 작업 형식으로 정리.",
-    decision: "작은 절차, 명확한 인계, 사람 승인 단계는 채택. 보호 자산의 외부 MCP 전송과 자동 유료 실행은 보류 또는 금지.",
-    next: "8개 제작 phase 아래 28개 semantic stage의 상태·승인·인계 관리",
+    discovery: "긴 작업의 작은 절차·명확한 인계·사람 승인 지점 분리",
+    origin: "Anthropic 공식 문서·공개 구조·권리·비용·보호 자산 위험의 병행 검토",
+    test: "현재 단계·결과물·사람 승인·다음 행동 기록을 통한 도구 변경 상황의 작업 연속성 검증",
+    decision: "작은 절차·사람 승인 단계의 채택, 보호 자산 외부 전송·자동 유료 실행의 차단",
     evidenceSlug: "idol-harness-ecosystem-adoption",
     sourceLinks: [
       ["Anthropic / Long-running Harness", "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents"],
@@ -361,7 +358,7 @@ const harnessPhases = [
         index: "01",
         title: "크리에이티브 루트 탐색",
         humanGate: "ROUTE SELECTION",
-        details: ["브리프·레퍼런스의 제작 문제 정리", "복수의 크리에이티브 루트 탐색", "사람이 다음 루트 선택"],
+        details: ["브리프·레퍼런스의 제작 방향 정립", "복수의 크리에이티브 루트 탐색", "사람이 다음 루트 선택"],
       },
     ],
   },
@@ -375,25 +372,25 @@ const harnessPhases = [
         index: "02",
         title: "곡 방향 설계",
         humanGate: "ROUTE SELECTION",
-        details: ["메시지를 Style·Lyrics·Negative로 구조화", "곡 후보의 생성 범위·제외 기준 설정"],
+        details: ["메시지를 곡 스타일·가사·제외 표현으로 분리", "곡 후보의 생성 범위와 제외 기준 설정"],
       },
       {
         index: "03",
         title: "후보 트랙 분석",
         humanGate: null,
-        details: ["레퍼런스 곡의 훅·구간 기능 분석", "후보별 keep·change 근거 기록"],
+        details: ["레퍼런스 곡의 훅·구간 역할 분석", "후보별 유지·변경 근거 기록"],
       },
       {
         index: "04",
         title: "리듬-투-스크린 맵",
         humanGate: null,
-        details: ["section·hook·onset 추출", "장면 trigger·동작 후보 연결"],
+        details: ["곡 구간·훅·보컬 진입점 추출", "장면 전환점과 동작 후보 연결"],
       },
       {
         index: "05",
         title: "트랙 연속성 보드",
         humanGate: null,
-        details: ["가사·motif·밀도 변화 표시", "다음 장면·편집 시간축 전달"],
+        details: ["가사·모티프·밀도 변화 표시", "다음 장면과 편집 시간축 전달"],
       },
     ],
   },
@@ -413,13 +410,13 @@ const harnessPhases = [
         index: "07",
         title: "크리에이티브 코어 락",
         humanGate: "CREATIVE LOCK",
-        details: ["identity·object·space 역할 확정", "제외 기준·Human Gate 기록"],
+        details: ["인물·오브젝트·공간의 역할 확정", "제외 기준과 사람 승인 지점 기록"],
       },
       {
         index: "08",
         title: "곡 프로덕션 락",
         humanGate: "SONG LOCK",
-        details: ["selected audio·lyrics direction 고정", "downstream trigger 확정"],
+        details: ["선택 음원과 가사 방향 확정", "다음 단계의 시작 조건 확정"],
       },
     ],
   },
@@ -433,19 +430,19 @@ const harnessPhases = [
         index: "09",
         title: "디렉션 레퍼런스 마이닝",
         humanGate: null,
-        details: ["장면 기능·카메라·빛 추출", "직접 사용·변형·제외 구분"],
+        details: ["추가 레퍼런스 리서치와 장면 기능·카메라·빛 추출", "직접 사용·변형·제외 구분 후 조합 추가"],
       },
       {
         index: "10",
         title: "레퍼런스 프래그먼트 락",
         humanGate: null,
-        details: ["핵심 fragment·reference binding 고정", "출처·역할·적용 구간 기록"],
+        details: ["핵심 장면 조각과 레퍼런스 연결", "출처·역할·적용 구간 기록"],
       },
       {
         index: "11",
         title: "MV·퍼포먼스 디렉션",
         humanGate: "CREATIVE LOCK",
-        details: ["멤버 행동·퍼포먼스·camera route 설계", "구간별 시작·사건·도착 연결"],
+        details: ["멤버 행동·퍼포먼스·카메라 경로 설계", "구간별 시작·사건·도착 연결"],
       },
       {
         index: "12",
@@ -461,13 +458,13 @@ const harnessPhases = [
     title: "KEYFRAME PRODUCTION",
     detail: "커버리지 · 스토리보드 · 이미지 검토",
     stages: [
-      { index: "13", title: "생성 커버리지 플랜", humanGate: null, details: ["곡 구간별 필요한 컷·역할 정의", "source binding·출력 경로 설정"] },
-      { index: "14", title: "컷·키프레임 스토리보드", humanGate: "STORYBOARD REVIEW", details: ["keyframe·insert·transition 배치", "장면 인과·앞뒤 frame 연결"] },
-      { index: "15", title: "스토리보드 리뷰", humanGate: "STORYBOARD REVIEW", details: ["coverage·identity·인과 검토", "통과 섹션만 prompt로 전달"] },
-      { index: "16", title: "이미지 프롬프트 컴파일", humanGate: null, details: ["section·reference·camera·action compile", "manifest·path·schema preflight"] },
-      { index: "17", title: "이미지 생성 릴리스 게이트", humanGate: "PAID GENERATION", details: ["유료 실행 범위·batch 확인", "사람 승인 job만 queue"] },
-      { index: "18", title: "키프레임 생성", humanGate: "PAID GENERATION", details: ["승인 job 실행", "결과·hash·registry 회수"] },
-      { index: "19", title: "생성 키프레임 리뷰", humanGate: "GENERATED ASSET REVIEW", details: ["contact sheet 비교", "pass·hold·regenerate 결정"] },
+      { index: "13", title: "생성 커버리지 플랜", humanGate: null, details: ["곡 구간별 필요한 컷과 역할 정의", "원본 연결과 출력 경로 설정"] },
+      { index: "14", title: "컷·키프레임 스토리보드", humanGate: "STORYBOARD REVIEW", details: ["핵심 컷·삽입 컷·전환 컷 배치", "장면 인과와 앞뒤 프레임 연결"] },
+      { index: "15", title: "스토리보드 리뷰", humanGate: "STORYBOARD REVIEW", details: ["장면 범위·인물 기준·인과 검토", "통과한 곡 구간만 프롬프트로 전달"] },
+      { index: "16", title: "이미지 프롬프트 컴파일", humanGate: null, details: ["곡 구간·레퍼런스·카메라·행동을 프롬프트로 작성", "작업 목록·경로·형식 사전 점검"] },
+      { index: "17", title: "이미지 생성 릴리스 게이트", humanGate: "PAID GENERATION", details: ["유료 실행 범위와 묶음 확인", "사람이 승인한 작업만 실행 대기열로 전달"] },
+      { index: "18", title: "키프레임 생성", humanGate: "PAID GENERATION", details: ["승인 작업 실행", "결과·파일 식별값·작업 기록 회수"] },
+      { index: "19", title: "생성 키프레임 리뷰", humanGate: "GENERATED ASSET REVIEW", details: ["컨택트시트 비교", "통과·보류·재생성 결정"] },
     ],
   },
   {
@@ -476,9 +473,9 @@ const harnessPhases = [
     title: "MOTION PRODUCTION",
     detail: "오디오 배치 · 모션 · 재생 검토",
     stages: [
-      { index: "20", title: "오디오-프레임 배치", humanGate: null, details: ["selected audio 구간·시작 frame binding", "앞뒤 section timing 연결"] },
-      { index: "21", title: "모션 디렉션과 프롬프팅", humanGate: "PLAYBACK REVIEW", details: ["camera route·motion·arrival frame 작성", "video prompt manifest 검증"] },
-      { index: "22", title: "모션 플레이백 리뷰", humanGate: "PLAYBACK REVIEW", details: ["실제 section playback", "통과 source만 edit handoff"] },
+      { index: "20", title: "오디오-프레임 배치", humanGate: null, details: ["선택 음원 구간과 시작 프레임 연결", "앞뒤 곡 구간의 타이밍 연결"] },
+      { index: "21", title: "모션 디렉션과 프롬프팅", humanGate: "PLAYBACK REVIEW", details: ["카메라 경로·동작·도착 프레임 작성", "영상 프롬프트 작업 목록 검증"] },
+      { index: "22", title: "모션 플레이백 리뷰", humanGate: "PLAYBACK REVIEW", details: ["실제 구간 영상 재생", "통과한 원본만 편집 단계로 인계"] },
     ],
   },
   {
@@ -487,8 +484,8 @@ const harnessPhases = [
     title: "EDIT & FINISH",
     detail: "편집 · 피니싱 · QC",
     stages: [
-      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "EDIT REVIEW", details: ["source·frame·audio marker 비교", "cut·order·speed playback 결정", "edit recipe·preview 갱신"] },
-      { index: "24", title: "피니싱 FX", humanGate: "EDIT REVIEW", details: ["통과 cut에 FX 적용", "codec·frame·audio·delivery QC"] },
+      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "EDIT REVIEW", details: ["원본·프레임·오디오 마커 비교", "컷·순서·속도를 재생하며 결정", "편집안과 프리뷰 갱신"] },
+      { index: "24", title: "피니싱 FX", humanGate: "EDIT REVIEW", details: ["통과한 컷에 효과 적용", "코덱·프레임·오디오·납품 상태 확인"] },
     ],
   },
   {
@@ -497,10 +494,10 @@ const harnessPhases = [
     title: "RELEASE & LEARNING",
     detail: "패키지 · 공개 · 기록 · 학습",
     stages: [
-      { index: "25", title: "마스터 패키지·릴리스 플랜", humanGate: "PUBLIC RELEASE", details: ["master·cutdown·short lineage", "release plan·metadata template"] },
-      { index: "26", title: "퍼블리싱 기록", humanGate: "EXTERNAL ACTION", details: ["platform draft·copy·media path", "외부 실행 전 explicit approval"] },
-      { index: "27", title: "성과 리뷰", humanGate: null, details: ["platform signal은 관찰 자료", "다음 검토 후보만 기록"] },
-      { index: "28", title: "검증 학습 승격", humanGate: "CREATIVE LOCK", details: ["반복 검증된 판단만 승격", "현재 기준·owner·근거 갱신"] },
+      { index: "25", title: "마스터 패키지·릴리스 플랜", humanGate: "PUBLIC RELEASE", details: ["숏폼의 원본 계보 확인", "공개 계획과 메타데이터 형식"] },
+      { index: "26", title: "퍼블리싱 기록", humanGate: "EXTERNAL ACTION", details: ["플랫폼 초안·문구·미디어 경로", "외부 실행 전 명시적 승인"] },
+      { index: "27", title: "성과 리뷰", humanGate: null, details: ["플랫폼 반응은 관찰 자료로만 사용", "다음 검토 후보만 기록"] },
+      { index: "28", title: "검증 학습 승격", humanGate: "CREATIVE LOCK", details: ["개선점 확인", "AGENTS.md · Skill · Harness 구조 업데이트"] },
     ],
   },
 ] as const;
@@ -532,7 +529,7 @@ const harnessFamilies = [
     label: "GENERATION",
     phase: "PHASE 05—06",
     stage: "10 STAGES",
-    human: "스토리보드 · 생성 · 재생 검토",
+    human: "스토리보드 · 판단 · 재생 검토",
     output: "REVIEWED SECTION VIDEO",
     links: [
       ["A", "KEYFRAME", "#harness-generation-a"],
@@ -566,8 +563,8 @@ const harnessChapters = [
     id: "planning-a",
     index: "02—02A",
     label: "PLANNING / DISCOVERY + SONG",
-    title: "브리프를 제작 루트와 곡의 시간축으로 바꿉니다.",
-    body: "Discovery와 Song Development의 5개 Stage가 브리프·레퍼런스·곡 후보를 비교하고, 실제 청취로 선택한 음원만 다음 기획 기준으로 넘깁니다.",
+    title: "브리프에서 제작 루트와 곡의 시간축까지",
+    body: "브리프와 레퍼런스에서 제작 방향을 찾고, 곡 후보를 직접 들어 선택한 음원만 다음 기획으로 넘깁니다.",
     phaseIds: ["discovery", "song"],
     handoffs: [
       ["INPUT", "브리프 · 레퍼런스"],
@@ -575,15 +572,15 @@ const harnessChapters = [
       ["SONG", "Selected Audio Evidence"],
       ["NEXT", "03 Creative Lock"],
     ],
-    human: "크리에이티브 루트 선택 · 곡 후보 청취 · Selected Audio 확정",
-    returnPath: "루트나 곡 판단이 바뀌면 Discovery·Song owner stage로 복귀",
+    human: "제작 루트 선택 · 곡 후보 청취 · 선택 음원 확정",
+    returnPath: "루트나 곡 판단이 바뀌면 해당 판단 단계로 복귀",
   },
   {
     id: "planning-b",
     index: "02—02B",
     label: "PLANNING / CREATIVE + DIRECTION",
-    title: "메시지와 제작 방향을 Direction Map으로 잠급니다.",
-    body: "Creative Lock과 MV Direction의 7개 Stage가 타겟·메시지·identity·오브젝트·공간·카메라를 하나의 다음 제작 기준으로 고정합니다.",
+    title: "메시지와 제작 방향을 확정하는 Direction Map",
+    body: "타겟과 메시지, 인물·오브젝트·공간·카메라 기준을 하나의 제작 지도에 모아 다음 단계의 기준으로 확정합니다.",
     phaseIds: ["creative", "direction"],
     handoffs: [
       ["INPUT", "Selected Audio Evidence"],
@@ -591,15 +588,15 @@ const harnessChapters = [
       ["DIRECTION", "01 Direction Map"],
       ["NEXT", "05 Keyframe Production"],
     ],
-    human: "메시지 · 크리에이티브 코어 · MV·퍼포먼스 · 비주얼 시스템 확정",
-    returnPath: "기획 판단이 바뀌면 Creative Lock·MV Direction owner stage로 복귀",
+    human: "메시지 · 핵심 콘셉트 · MV·퍼포먼스 · 시각 체계 확정",
+    returnPath: "기획 판단이 바뀌면 해당 기획 단계로 복귀",
   },
   {
     id: "generation-a",
     index: "02—03A",
     label: "GENERATION / KEYFRAME",
-    title: "Direction Map을 검토 가능한 Keyframe으로 컴파일합니다.",
-    body: "Keyframe Production의 7개 Stage가 coverage와 storyboard를 먼저 잠그고, 승인된 섹션만 생성해 contact sheet에서 검토합니다.",
+    title: "Direction Map에서 검토 가능한 핵심 컷까지",
+    body: "장면 범위와 스토리보드를 먼저 확정하고, 통과한 곡 구간만 이미지로 만들어 컨택트시트에서 비교합니다.",
     phaseIds: ["keyframe"],
     handoffs: [
       ["INPUT", "01 Direction Map"],
@@ -608,15 +605,15 @@ const harnessChapters = [
       ["KEYFRAME", "Approved Frames"],
       ["NEXT", "06 Motion Production"],
     ],
-    human: "스토리보드 · 유료 생성 · 생성 Keyframe 통과·보류·재생성",
-    returnPath: "보류·거절된 이미지는 storyboard·prompt·generation owner stage로 복귀",
+    human: "스토리보드 · 유료 생성 · 핵심 컷 통과·보류·재생성",
+    returnPath: "보류·거절된 이미지는 스토리보드·프롬프트·생성 단계로 복귀",
   },
   {
     id: "generation-b",
     index: "02—03B",
     label: "GENERATION / MOTION",
-    title: "통과한 Keyframe을 필요한 곡 구간만 영상화합니다.",
-    body: "Motion Production의 3개 Stage가 audio와 frame을 배치하고, camera·action·연결을 작성한 뒤 실제 playback을 통과한 구간만 편집에 넘깁니다.",
+    title: "통과한 핵심 컷의 구간 영상화",
+    body: "선택 음원과 핵심 컷을 맞추고 카메라·동작·장면 연결을 정리한 뒤, 직접 재생해 통과한 구간만 편집에 넘깁니다.",
     phaseIds: ["motion"],
     handoffs: [
       ["INPUT", "Approved Frames"],
@@ -624,15 +621,15 @@ const harnessChapters = [
       ["PLAYBACK", "Reviewed Section Video"],
       ["NEXT", "07 Edit & Finish"],
     ],
-    human: "모션 방향 · 생성 구간 · section playback 통과 여부",
-    returnPath: "보류된 영상은 keyframe·video prompt·motion owner stage로 복귀",
+    human: "모션 방향 · 생성 구간 · 구간 재생 검토",
+    returnPath: "보류된 영상은 핵심 컷·영상 프롬프트·모션 단계로 복귀",
   },
   {
     id: "edit",
     index: "02—04",
     label: "EDIT HARNESS",
-    title: "분석 자료와 재생 판단을 분리합니다.",
-    body: "비교 자료는 Harness와 Toolchain이 준비하지만 실제 컷·타이밍·마감은 재생 검토를 통과한 판단만 기준으로 남깁니다.",
+    title: "분석 자료와 재생 판단의 분리",
+    body: "비교 자료는 Harness와 도구가 준비하고, 실제 컷·타이밍·마감은 직접 재생해 통과한 판단만 기준으로 남깁니다.",
     phaseIds: ["edit"],
     handoffs: [
       ["INPUT", "Reviewed Section Video"],
@@ -642,14 +639,14 @@ const harnessChapters = [
       ["OUTPUT", "Approved Master"],
     ],
     human: "컷 · 순서 · 타이밍 · 피니싱 · 최종 마스터",
-    returnPath: "문제가 생기면 source·motion·edit decision owner로 복귀",
+    returnPath: "문제가 생기면 원본·모션·편집 판단 단계로 복귀",
   },
   {
     id: "release",
     index: "02—05",
     label: "RELEASE HARNESS",
-    title: "공개와 학습의 범위를 마지막으로 잠급니다.",
-    body: "승인된 마스터에서 패키지와 기록을 준비하고, 외부 공개와 검증 학습 승격은 명시적으로 승인한 범위에서만 진행합니다.",
+    title: "공개 범위와 다음 제작 기준의 확정",
+    body: "승인된 마스터의 공개 패키지와 기록을 준비하고, 외부 공개와 다음 제작 기준 반영은 직접 승인한 범위에서만 진행합니다.",
     phaseIds: ["release"],
     handoffs: [
       ["INPUT", "Approved Master"],
@@ -658,8 +655,8 @@ const harnessChapters = [
       ["ANALYZE", "Performance Review"],
       ["LEARN", "Promoted Memory"],
     ],
-    human: "공개 범위 · 외부 실행 · 검증 학습의 현재 기준 승격",
-    returnPath: "승인 전 외부 실행은 차단하고, 변경된 결정은 package·publishing owner로 복귀",
+    human: "공개 범위 · 외부 실행 · 다음 제작 기준 반영",
+    returnPath: "승인 전 외부 실행은 차단하고, 변경된 결정은 패키지·공개 단계로 복귀",
   },
 ] as const;
 
@@ -779,9 +776,9 @@ const stageToolEvidence = {
 } as const;
 
 const studioAutomationLanes = [
-  ["REUSE", "승인한 얼굴 · 레퍼런스 · 메타데이터의 재사용"],
-  ["COMPILE", "메시지와 곡 구간의 이미지 · 영상 · 편집 작업 단위 변환"],
-  ["COMPARE", "컨택트시트 · 마커 · 프리뷰 · QC의 비교 자료 준비"],
+  ["REUSE", "멤버 아이덴티티 · 레퍼런스 · 메타데이터 재사용"],
+  ["COMPILE", "메시지와 곡 구간에 맞춘 반복 작업 자동화"],
+  ["COMPARE", "컨택트시트·마커·프리뷰를 같은 형식의 QC·리뷰 자료로 준비"],
   ["PREPARE", "플랫폼별 카피와 미디어 패키지 준비, 승인 API 작업 실행"],
 ] as const;
 
@@ -868,7 +865,7 @@ function SectionHeading({
   label,
   title,
 }: {
-  body: string;
+  body?: string;
   index: string;
   label: string;
   title: string;
@@ -881,7 +878,7 @@ function SectionHeading({
       </div>
       <div>
         <h2>{title}</h2>
-        <p>{body}</p>
+        {body ? <p>{body}</p> : null}
       </div>
     </div>
   );
@@ -1046,7 +1043,7 @@ function HarnessPhaseTrack({
 
 function HarnessSummaryScore() {
   return (
-    <div className={styles.harnessFamilyScore} aria-label="4개 Harness와 8개 production phase, 28개 semantic stage">
+    <div className={styles.harnessFamilyScore} aria-label="4개 Harness와 8개 제작 phase, 28개 세부 작업 단계">
       <div className={styles.harnessFamilyPath}>
         {harnessFamilies.map((family) => (
             <article key={family.id}>
@@ -1070,9 +1067,12 @@ function HarnessSummaryScore() {
 function HarnessChapterPage({ chapter }: { chapter: (typeof harnessChapters)[number] }) {
   const phases = harnessPhases.filter((phase) => chapter.phaseIds.some((phaseId) => phaseId === phase.id));
   const stageCount = phases.reduce((total, phase) => total + phase.stages.length, 0);
+  const isDense = stageCount >= 7;
+  const pageDensityClass = isDense ? styles.harnessDetailPageDense : styles.harnessDetailPageCompact;
+  const scoreDensityClass = isDense ? styles.harnessDetailDense : styles.harnessDetailCompact;
 
   return (
-    <section className={`${styles.productionPage} ${styles.harnessDetailPage}`} id={`harness-${chapter.id}`}>
+    <section className={`${styles.productionPage} ${styles.harnessDetailPage} ${pageDensityClass}`} id={`harness-${chapter.id}`}>
       <header className={`${styles.harnessPageHeading} ${styles.harnessChapterHeading}`}>
         <div className={styles.harnessPageFolio}><span>{chapter.index}</span><small>{chapter.label}</small></div>
         <div className={styles.harnessChapterTitle}>
@@ -1089,13 +1089,13 @@ function HarnessChapterPage({ chapter }: { chapter: (typeof harnessChapters)[num
             <strong>{chapter.human}</strong>
           </div>
           <div className={styles.harnessChapterHandoff}>
-            <small>CANONICAL HANDOFF</small>
+            <small>NEXT-STAGE RESULT</small>
             <p>{chapter.handoffs.map(([, detail]) => detail).join(" → ")}</p>
           </div>
         </aside>
       </header>
 
-      <div className={styles.harnessDetailScore} aria-label={`${chapter.label} stage map`}>
+      <div className={`${styles.harnessDetailScore} ${scoreDensityClass}`} aria-label={`${chapter.label} stage map`}>
         {phases.map((phase) => <HarnessPhaseTrack key={phase.id} phase={phase} showGateLabels />)}
       </div>
 
@@ -1117,27 +1117,27 @@ function ProductionHarnessSection() {
               <div className={styles.harnessPageFolio}><span>02—01</span><small>HARNESS SUMMARY</small></div>
               <div className={styles.harnessSummaryCopy}>
                 <p>SUMMARY / PRODUCTION HARNESS</p>
-                <h2>한 편의 제작은 네 개의 Harness를 지나 완성됩니다.</h2>
+                <h2>네 개의 Harness로 이어지는 한 편의 제작</h2>
                 <small>반복 작업은 자동화하고, 다음 단계로 넘길 기준은 사람이 확정합니다.</small>
               </div>
-              <div className={styles.harnessSummaryStats} aria-label="8개 phase와 28개 semantic stage">
+              <div className={styles.harnessSummaryStats} aria-label="8개 phase와 28개 세부 작업 단계">
                 <span><strong>08</strong><small>PHASES</small></span>
                 <i aria-hidden="true" />
-                <span><strong>28</strong><small>SEMANTIC STAGES</small></span>
+                <span><strong>28</strong><small>WORK STAGES</small></span>
               </div>
             </header>
 
             <HarnessSummaryScore />
 
-            <div className={styles.harnessStageContract} aria-label="모든 semantic stage의 공통 계약">
+            <div className={styles.harnessStageContract} aria-label="모든 세부 작업 단계의 공통 기준">
               <p>EVERY STAGE KEEPS</p>
               <div>
                 <span><small>OWNER</small><strong>판단 책임</strong></span><i>→</i>
-                <span><small>CANONICAL ARTIFACT</small><strong>기준 결과물</strong></span><i>→</i>
+                <span><small>STAGE RESULT</small><strong>결과물</strong></span><i>→</i>
                 <span className={styles.harnessContractHuman}><small>HUMAN GATE</small><strong>통과 · 보류 · 수정</strong></span><i>→</i>
-                <span><small>HANDOFF</small><strong>다음 행동</strong></span>
+                <span><small>NEXT</small><strong>다음 행동</strong></span>
               </div>
-              <small>RETURN / 변경된 판단은 원래 decision owner stage로 복귀</small>
+              <small>RETURN / 변경된 판단은 그 결정을 맡은 단계로 복귀</small>
             </div>
           </section>
 
@@ -1149,7 +1149,7 @@ function ProductionHarnessSection() {
               <div className={styles.harnessPageFolio}><span>02—06</span><small>OPERATING PRINCIPLE</small></div>
               <div>
                 <p>RESPONSIBILITY BOUNDARY</p>
-                <h3>반복 작업의 자동화, 창작 결정의 유지</h3>
+                <h3>반복 작업의 자동화와 창작 결정의 유지</h3>
                 <p>Harness와 Toolchain은 다음 판단에 필요한 자료와 상태를 준비하고, 메시지·장면·컷·공개 여부는 사람이 결정합니다.</p>
               </div>
             </header>
@@ -1162,9 +1162,9 @@ function ProductionHarnessSection() {
               <section className={styles.harnessPrincipleHuman}>
                 <span>HUMAN</span>
                 <div>
-                  <p><small>PLAN</small><strong>메시지 · 타겟 · 곡 · 장면 방향</strong></p>
+                  <p><small>PLAN</small><strong>메시지 · 타겟 · 곡 · 장면의 주요 기획 방향 정립</strong></p>
                   <p><small>SELECT</small><strong>핵심 컷 · 구간 영상 · 최종 컷</strong></p>
-                  <p><small>APPROVE</small><strong>유료 실행 · 마스터 · 공개 범위</strong></p>
+                  <p><small>APPROVE</small><strong>API를 통한 생성 · 최종 마스터 · 소셜미디어 공개 승인</strong></p>
                   <p><small>LEARN</small><strong>다음 제작 기준으로 승격할 판단</strong></p>
                 </div>
               </section>
@@ -1546,10 +1546,10 @@ function CurrentSystemSection() {
     <section className={`${styles.section} ${styles.rationaleRebuild}`} id="rationale">
       <Reveal className={`${styles.contentWidth} ${styles.rationaleRebuildInner}`}>
         <SectionHeading
-          body="반복 준비는 구조로 고정하고, 메시지·장면·후보·최종 공개처럼 결과를 바꾸는 판단은 사람이 유지합니다."
+          body="레퍼런스 재사용, 후보 정리, 프리뷰와 QC는 시스템이 맡고 메시지·장면·최종 컷·공개 여부는 사람이 결정합니다."
           index="03"
           label="WHY + CURRENT IMPLEMENTATION"
-          title="반복 실행의 구조화와 결과 판단의 유지"
+          title="반복 준비의 자동화와 핵심 판단의 유지"
         />
 
         <div className={styles.rationalePages}>
@@ -1585,9 +1585,9 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—01 / RESEARCH + PLANNING</span>
-                <h3>판단 전에 반복되던 준비를 하나의 기획 보드로 정리합니다.</h3>
-                <p>ONE MOVE의 레퍼런스를 인물·카메라 축·월드 전환·곡 구간의 기능으로 나눠, 생성 전에 흐름과 충돌을 한 화면에서 검토했습니다.</p>
+                <span>03—01 / ONE MOVE · PLANNING</span>
+                <h3>반복 준비를 줄이는 하나의 기획 보드</h3>
+                <p>별도 제작 사례 ONE MOVE의 레퍼런스를 인물·카메라 축·세계 전환·곡 구간의 역할로 나눈, 생성 전 흐름·충돌 확인 기반 기획.</p>
               </header>
               <div className={styles.llmProblemStatement}>
                 <span>LLM ONLY</span>
@@ -1603,7 +1603,7 @@ function CurrentSystemSection() {
               <div className={styles.schemaFieldList} role="table" aria-label="Structured prompt schema fields">
                 <div className={styles.schemaFieldHeading}>
                   <span>STRUCTURED PROMPT / SCHEMA ONLY</span>
-                  <p>생성문 전체가 아니라, 반복 인계에 쓰는 필드 구성만 표시합니다.</p>
+                  <p>생성문 전체가 아니라, 단계 사이에 넘기는 7개 항목만 표시합니다.</p>
                 </div>
                 {structuredPromptFields.map(([index, field, detail]) => (
                   <div className={styles.schemaField} key={field} role="row">
@@ -1616,15 +1616,15 @@ function CurrentSystemSection() {
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—02 / HANDOFF CONTRACT</span>
-                <h3>다음 작업이 읽는 일곱 개의 인계 필드를 고정합니다.</h3>
-                <p>생성문을 반복해서 다시 쓰지 않고, 제작 맥락과 검토 기준을 같은 구조로 전달합니다.</p>
+                <h3>다음 작업에 넘기는 7개 인계 기준</h3>
+                <p>긴 생성문을 매번 다시 쓰지 않고 제작 맥락과 검토 기준만 같은 구조로 전달합니다.</p>
               </header>
               <div className={styles.compactPromptHandoff}>
-                <div><span>LOCK</span><strong>메시지 · identity · reference role</strong></div>
+                <div><span>LOCK</span><strong>메시지 · 멤버 비주얼 아이덴티티 · 레퍼런스 역할</strong></div>
                 <i aria-hidden="true">→</i>
                 <div><span>GENERATE</span><strong>필드 기반 이미지·영상 패킷</strong></div>
                 <i aria-hidden="true">→</i>
-                <div><span>REVIEW</span><strong>후보 비교 · 선택 이유 · next action</strong></div>
+                <div><span>REVIEW</span><strong>후보 비교 · 선택 이유 · 다음 작업</strong></div>
               </div>
             </aside>
           </article>
@@ -1637,17 +1637,17 @@ function CurrentSystemSection() {
                   <figcaption>
                     <span>JELLOVERSE / ACTUAL FINAL MV</span>
                     <strong>ATTITUDE ZLV A58 / FINAL 92 SEC</strong>
-                    <p>구간 영상과 수정안을 하나의 최종 타임라인으로 연결한 retained final master.</p>
+                    <p>구간 영상과 수정안을 하나의 타임라인으로 연결한 승인된 최종 편집본.</p>
                   </figcaption>
                 </figure>
                 <div className={styles.attitudeSectionVideos}>
                   {[
-                    ["01", "/ai-exploration/rationale-assets/attitude-zlv-section-01.mp4", "/ai-exploration/rationale-assets/attitude-zlv-section-01-poster.jpg"],
-                    ["02", "/ai-exploration/rationale-assets/attitude-zlv-section-02.mp4", "/ai-exploration/rationale-assets/attitude-zlv-section-02-poster.jpg"],
-                  ].map(([index, src, poster]) => (
-                    <figure key={index}>
+                    ["FINAL MASTER", "/ai-exploration/rationale-assets/attitude-zlv-a58-final-90s.mp4", "/ai-exploration/rationale-assets/attitude-zlv-a58-final-poster.jpg"],
+                    ["SECTION 03", "/ai-exploration/rationale-assets/attitude-zlv-section-03.mp4", "/ai-exploration/rationale-assets/attitude-zlv-section-03-poster.jpg"],
+                  ].map(([label, src, poster]) => (
+                    <figure key={label}>
                       <video controls playsInline poster={poster} preload="metadata" src={src} />
-                      <figcaption>SECTION {index}</figcaption>
+                      <figcaption>{label}</figcaption>
                     </figure>
                   ))}
                 </div>
@@ -1656,9 +1656,9 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—03 / IMAGE → VIDEO → HUMAN GATE</span>
-                <h3>통과한 이미지를 영상으로 연결하고, 완성본은 재생하며 판단합니다.</h3>
-                <p>Jelloverse의 실제 MV인 ATTITUDE 최종본처럼 시스템은 실행과 검토 자료를 준비하고, 사람은 결과를 바꾸는 최소 지점에서만 통과·보류·폐기를 결정합니다.</p>
+                <span>03—03 / MEDIA TOOLCHAIN → HUMAN GATE</span>
+                <h3>컨택트시트·구간 프리뷰·완성본의 재생 검토</h3>
+                <p>별도 제작 사례 ATTITUDE의 컨택트시트·구간 프리뷰·완성본. 도구의 비교 자료 준비와 사람의 실제 재생·컷 순서·통과 여부 판단.</p>
               </header>
               <div className={styles.humanGateList}>
                 {[
@@ -1681,8 +1681,8 @@ function CurrentSystemSection() {
 
         <SectionHandoff
           href="#research"
-          label="04 / FORMATION + ITERATION"
-          title="이 구조가 실제 제작을 거치며 바뀐 과정"
+          label="04 / RESEARCH + VALIDATION"
+          title="새 방법을 제작 기준으로 올리는 검증 루프"
         />
       </Reveal>
     </section>
@@ -1694,10 +1694,10 @@ function SystemProofSection() {
     <section className={`${styles.section} ${styles.proofSection}`} id="proof">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="본문 03의 판단을 뒷받침하는 상세 화면과 작업 흐름. 실행 가능한 Workbench, 개발 중인 Local Edit Desk, 공개 가능한 단계 레지스트리를 상용 제품이나 완전 자동화 시스템과 구분."
+          body="본문의 판단을 뒷받침하는 실제 화면과 작업 흐름입니다. 실행 가능한 Workbench, 개발 중인 편집 보조 도구, 공개 가능한 단계 기록을 구분해 정리했습니다."
           index="APPENDIX / IMPLEMENTATION"
           label="DETAILED IMPLEMENTATION PROOF"
-          title="현재 구현한 세 가지 도구와 기록의 상세 근거"
+          title="세 가지 제작 도구의 실제 근거"
         />
 
         <div className={styles.systemProofGrid}>
@@ -1970,14 +1970,80 @@ function HarnessAdoptionDiagram() {
   );
 }
 
+function ResearchValidationSection() {
+  const visuals = [
+    <VisualWorkflowReference key="visual-workflow" />,
+    <EditingGrammarEvidence key="editing-grammar" />,
+    <HarnessAdoptionDiagram key="agent-harness" />,
+  ];
+
+  return (
+    <section className={styles.researchValidationSection} id="research">
+      <Reveal className={`${styles.contentWidth} ${styles.researchValidationInner}`}>
+        <div className={styles.researchValidationIntro}>
+          <SectionHeading
+            body="공식 자료 확인 → 현재 제작 문제의 소규모 적용 → 실제 효용 검증 변화의 제작 기준 반영"
+            index="04"
+            label="RESEARCH + VALIDATION"
+            title="새 방법을 제작 기준으로 올리는 검증 루프"
+          />
+          <ol className={styles.researchValidationRoute} aria-label="새 방법 검증 순서">
+            {[
+              ["01", "발견", "새 화면·기능·작업 방식"],
+              ["02", "공식 확인", "원문·실제 화면·제약"],
+              ["03", "작게 적용", "현재 제작 문제 안의 시험"],
+              ["04", "판정", "채택·부분 채택·보류"],
+            ].map(([index, title, detail]) => (
+              <li key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></li>
+            ))}
+          </ol>
+        </div>
+
+        <div className={styles.researchValidationPages}>
+          {trendExperiments.map((item, index) => (
+            <article className={styles.researchValidationPage} id={`research-${index + 1}`} key={item.signal}>
+              <div className={styles.researchValidationMedia}>{visuals[index]}</div>
+              <aside className={styles.researchValidationMeta}>
+                <header>
+                  <span>04—0{index + 1} / {item.signal}</span>
+                  <small>{item.status}</small>
+                  <h3>{item.title}</h3>
+                  <p>CURRENT / {item.appliedAs}</p>
+                </header>
+                <dl className={styles.researchValidationEvidence}>
+                  <div><dt>발견</dt><dd>{item.discovery}</dd></div>
+                  <div><dt>공식 확인</dt><dd>{item.origin}</dd></div>
+                  <div><dt>작게 적용</dt><dd>{item.test}</dd></div>
+                  <div className={styles.researchValidationVerdict}><dt>판정</dt><dd>{item.decision}</dd></div>
+                </dl>
+                <nav aria-label={`${item.signal} 공식 자료`}>
+                  {item.sourceLinks.map(([label, href]) => (
+                    <a href={href} key={href} rel="noreferrer" target="_blank">{label} <ExternalLink size={11} /></a>
+                  ))}
+                </nav>
+              </aside>
+            </article>
+          ))}
+        </div>
+
+        <SectionHandoff
+          href="#formation"
+          label="05 / FORMATION + ITERATION"
+          title="제작을 거치며 누적된 다음 기준"
+        />
+      </Reveal>
+    </section>
+  );
+}
+
 function TrendApplicationSection() {
   return (
       <Reveal className={`${styles.contentWidth} ${styles.iterationRebuildInner}`}>
         <SectionHeading
-          body="앞에서 정의한 제작 단계와 사람 승인 구조는 한 번에 설계한 것이 아닙니다. Aurora V2의 반복 제작부터 다섯 번의 MV 제작·폐기·완성을 거치며 드러난 문제를 다음 작업의 기준으로 바꿨습니다."
-          index="04"
+          body="Aurora V2의 반복 제작부터 다섯 번의 MV 제작·폐기·완성까지, 작업에서 드러난 문제를 다음 제작의 기준으로 바꿔 왔습니다."
+          index="05"
           label="FORMATION + ITERATION / 2026.05—07"
-          title="작품을 만들 때마다, 다음 제작의 구조를 바꿨습니다."
+          title="제작을 거치며 누적된 다음 기준"
         />
 
         <nav className={styles.iterationRoute} aria-label="Production system formation route">
@@ -1998,25 +2064,25 @@ function TrendApplicationSection() {
           <article className={`${styles.iterationPage} ${styles.iterationOriginPage}`} id="origin-aurora">
             <header className={styles.iterationPageHeader}>
               <div><span>ORIGIN / AURORA V2</span><b>REPEATABLE UNIT</b></div>
-              <h3>같은 identity를 유지하면서, 콘텐츠 제작 단위를 늘릴 수 있는가.</h3>
-              <p>13명의 identity reference를 고정하고 MV와 STAGE 제작 단위로 나누면서 조사 → 선택 → 패킷 → 생성 → 사람 검토의 반복 구조가 시작됐습니다.</p>
+              <h3>같은 비주얼 아이덴티티를 유지하는 두 가지 제작 단위</h3>
+              <p>13명의 멤버 비주얼 아이덴티티를 고정하고 MV와 STAGE를 나눈 조사 → 선택 → 패킷 → 생성 → 사람 검토의 반복 구조.</p>
             </header>
             <div className={styles.auroraOriginVisual}>
               <figure><img alt="Aurora V2 M01 MV storyboard" src="/ai-exploration/aurora-v2/m01-mv-storyboard.webp" /><figcaption>M01 / MV UNIT</figcaption></figure>
               <figure><img alt="Aurora V2 M01 stage storyboard" src="/ai-exploration/aurora-v2/m01-stage-storyboard.webp" /><figcaption>M01 / STAGE UNIT</figcaption></figure>
             </div>
             <div className={styles.iterationChangeBand}>
-              <div><span>가능했던 것</span><p>identity 정보와 반복 제작 단위의 재사용</p></div>
-              <div><span>드러난 한계</span><p>창의 결정을 규칙으로 고정할수록 장면과 포즈가 비슷해짐</p></div>
-              <div className={styles.iterationChanged}><span>다음 기준</span><p>identity는 재사용하고 메시지·장면 방향은 매 콘텐츠에서 다시 판단</p></div>
+              <div><span>가능했던 것</span><p>비주얼 아이덴티티 정보와 반복 제작 단위의 재사용</p></div>
+              <div><span>드러난 한계</span><p>창의적인 결정을 규칙으로 고정할수록 장면과 포즈의 유사성</p></div>
+              <div className={styles.iterationChanged}><span>다음 기준</span><p>비주얼 아이덴티티 기준의 재사용, 메시지·장면 방향의 콘텐츠별 재판단</p></div>
             </div>
           </article>
 
           <article className={styles.iterationPage} id="iteration-root">
             <header className={styles.iterationPageHeader}>
               <div><span>01 / ROOT SIGNAL</span><b>2026.05.24 → V11 FINAL</b></div>
-              <h3>첫 전체 MV에서, 생성보다 편집 판단을 다시 찾는 일이 더 중요했습니다.</h3>
-              <p>통과한 컷도 이전 렌더에 묻어 두지 않고 원본 source와 선택 이유를 되찾을 수 있도록 source keeper·QC·handoff 기준을 만들었습니다.</p>
+              <h3>첫 전체 MV가 남긴 편집 판단 기록</h3>
+              <p>통과한 컷이 이전 렌더에 묻히지 않도록 원본 소스, 검토 기록, 다음 단계 인계 기준을 만들었습니다.</p>
             </header>
             <div className={`${styles.rootSignalCropBoard} ${styles.rootSignalEvidenceStage}`} aria-label="Root Signal storyboard and final edit evidence">
               <figure className={styles.rootTimelineEvidence}><img alt="Root Signal V11 edit timeline contact sheet" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg" /><figcaption>V11 / EDIT TIMELINE CONTACT SHEET</figcaption></figure>
@@ -2024,16 +2090,16 @@ function TrendApplicationSection() {
               <figure className={styles.rootStoryboardSecondary}><img alt="Root Signal second storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-02.webp" /><figcaption>STORYBOARD / SOURCE 02</figcaption></figure>
             </div>
             <div className={styles.iterationChangeBand}>
-              <div><span>PROBLEM</span><p>수정이 늘수록 통과 source와 선택 이유가 렌더 안에서 사라짐</p></div>
-              <div><span>REFERENCE PRINCIPLE</span><p>편집기의 source · sequence · marker · render 구조</p></div>
-              <div className={styles.iterationChanged}><span>CHANGED</span><p>원본 source 복귀 · keeper · QC · package · 다음 단계 handoff</p></div>
+              <div><span>PROBLEM</span><p>수정이 늘수록 통과한 원본과 선택 이유가 렌더 안에서 사라짐</p></div>
+              <div><span>REFERENCE PRINCIPLE</span><p>편집기의 원본 · 시퀀스 · 마커 · 렌더 구조</p></div>
+              <div className={styles.iterationChanged}><span>CHANGED</span><p>원본 복귀 · 검토 기록 · QC · 패키지 · 다음 단계 인계</p></div>
             </div>
           </article>
 
           <article className={`${styles.iterationPage} ${styles.lowArchivePage}`} id="iteration-low">
             <header className={styles.iterationPageHeader}>
               <div><span>02 / LOW</span><b>ARCHIVE ONLY / NO ACTIVE VISUAL</b></div>
-              <h3>얼굴은 유지됐지만, 비트 위치만 따른 편집은 음악과 영상이 따로 움직였습니다.</h3>
+              <h3>얼굴 기준의 유지, 기계적 비트 편집의 폐기</h3>
             </header>
             <div className={styles.lowDecisionStage}>
               <figure className={styles.lowBaselineBoard}>
@@ -2042,8 +2108,8 @@ function TrendApplicationSection() {
                 <b>ARCHIVE ONLY</b>
               </figure>
               <div className={styles.lowLearningPair}>
-                <div><span>KEPT</span><h4>FACE-ONLY REFERENCE</h4><p>얼굴은 identity anchor로 고정하고 표정·시선은 현재 장면에 맞게 생성.</p></div>
-                <div><span>REJECTED</span><h4>MECHANICAL BEAT GRID</h4><p>비트 위치만 따르지 않고 lyric·body landing·camera carry·motion continuity를 함께 검토.</p></div>
+                <div><span>KEPT</span><h4>FACE-ONLY REFERENCE</h4><p>얼굴 기준은 유지하고 표정과 시선은 현재 장면에 맞게 생성.</p></div>
+                <div><span>REJECTED</span><h4>MECHANICAL BEAT GRID</h4><p>비트 위치만 따르지 않고 가사 진입, 몸 동작의 착지, 카메라 연결과 동작의 연속성을 함께 검토.</p></div>
               </div>
             </div>
           </article>
@@ -2051,8 +2117,8 @@ function TrendApplicationSection() {
           <article className={styles.iterationPage} id="iteration-pulso">
             <header className={styles.iterationPageHeader}>
               <div><span>03 / PULSO</span><b>SECTION-BASED PRODUCTION</b></div>
-              <h3>identity, 구간 이미지, 동작, 편집을 서로 다른 검토 단위로 나눴습니다.</h3>
-              <p>곡 전체를 한 번에 자동 결정하지 않고 얼굴 기준 → 구간 keyframe → 영상 prompt → playback → edit marker를 순서대로 통과시켜 완성까지 연결했습니다.</p>
+              <h3>구간별로 분리한 생성·동작·편집 검토</h3>
+              <p>곡 전체를 한 번에 결정하지 않고 얼굴 기준 → 구간 핵심 컷 → 영상 프롬프트 → 재생 검토 → 편집 마커를 차례로 통과시켰습니다.</p>
             </header>
             <div className={styles.pulsoEvidenceStage}>
               <div className={styles.pulsoFaceStrip}>
@@ -2065,16 +2131,16 @@ function TrendApplicationSection() {
             </div>
             <div className={styles.iterationChangeBand}>
               <div><span>PROBLEM</span><p>생성·동작·편집을 한 단위에서 판단하면 수정 위치가 불명확</p></div>
-              <div><span>REFERENCE PRINCIPLE</span><p>audio-frame placement · section playback QC</p></div>
-              <div className={styles.iterationChanged}><span>CHANGED</span><p>identity → keyframe → motion → playback → edit marker의 독립 승인 단위</p></div>
+              <div><span>REFERENCE PRINCIPLE</span><p>음원·프레임 배치 · 구간 재생 QC</p></div>
+              <div className={styles.iterationChanged}><span>CHANGED</span><p>얼굴 기준 → 핵심 컷 → 모션 → 재생 검토 → 편집 마커의 독립 승인</p></div>
             </div>
           </article>
 
           <article className={`${styles.iterationPage} ${styles.leftDiscardPage}`} id="iteration-left">
             <header className={styles.iterationPageHeader}>
               <div><span>04 / LEFT IN THAT NIGHT</span><b>FORMALLY DISCARDED / 2026.07.06</b></div>
-              <h3>레퍼런스와 예쁜 이미지가 많아도, 다음 장면을 일으키는 이야기는 생기지 않았습니다.</h3>
-              <p>인물 기준과 레퍼런스 분석은 충분했지만 감정의 주인·보이는 행동·장면 인과가 잠기지 않았습니다. 더 생성하는 대신 full MV route를 폐기했습니다.</p>
+              <h3>레퍼런스보다 먼저 필요한 장면의 인과</h3>
+              <p>인물 기준과 레퍼런스 분석은 충분했지만 감정의 주체, 보이는 행동, 장면 인과가 정해지지 않았습니다. 더 생성하는 대신 전체 MV 제작을 중단했습니다.</p>
             </header>
             <div className={styles.leftEvidenceStage}>
               <figure className={styles.leftPortraitBoard}><img alt="Left in That Night upper body portrait lock board" src="/ai-exploration/iteration/left-in-that-night/upper-body-portrait-board.png" /><figcaption>IDENTITY / UPPER-BODY PORTRAIT LOCK</figcaption></figure>
@@ -2087,14 +2153,14 @@ function TrendApplicationSection() {
               <div className={styles.leftDiscardStamp}><span>NOT TOO FEW IDEAS</span><strong>NO CAUSAL SPINE</strong><small>HOLD → DISCARD</small></div>
               <div><span>PROBLEM</span><p>모티브와 공간이 쌓였지만 서로 다음 장면의 원인이 되지 못함</p></div>
               <div><span>STOP RULE</span><p>연결되지 않는다는 피드백이 반복되면 이미지 확장을 중단</p></div>
-              <div className={styles.iterationChanged}><span>CHANGED</span><p>emotional owner · concrete action · causal chain · motif job · 30s proof를 보드보다 먼저 승인</p></div>
+              <div className={styles.iterationChanged}><span>CHANGED</span><p>감정의 주체 · 구체적 행동 · 인과의 흐름 · 모티프 역할 · 30초 테스트를 보드보다 먼저 승인</p></div>
             </div>
           </article>
 
           <article className={styles.iterationPage} id="iteration-ink">
             <header className={styles.iterationPageHeader}>
               <div><span>05 / INK</span><b>MESSAGE → VISUAL SYSTEM → FINAL MASTER</b></div>
-              <h3>메시지를 먼저 고정하고, 인물·오브젝트·공간·구간이 그 메시지를 보이게 했습니다.</h3>
+              <h3>메시지에서 인물·오브젝트·공간·구간으로 이어진 시각 체계</h3>
               <p>“남이 정한 선 밖으로 계속 나아간다”는 문장에서 출발해 네 멤버와 13개 곡 구간의 행동·오브젝트·공간 변화를 연결했습니다.</p>
             </header>
             <div className={styles.inkEvolutionStage}>
@@ -2106,14 +2172,14 @@ function TrendApplicationSection() {
             <div className={styles.iterationChangeBand}>
               <div><span>LOCKED FIRST</span><p>공개 메시지 · 멤버 역할 · 구간별 행동</p></div>
               <div><span>HUMAN REVIEW</span><p>얼굴 · 인과 · 카메라 · 빛 · 다음 장면 연결</p></div>
-              <div className={styles.iterationChanged}><span>PROVED</span><p>메시지 → visual system → keyframe → section video → final master의 연결</p></div>
+              <div className={styles.iterationChanged}><span>PROVED</span><p>메시지 → 시각 체계 → 핵심 컷 → 구간 영상 → 최종 편집본의 연결</p></div>
             </div>
           </article>
 
           <article className={`${styles.iterationPage} ${styles.workbenchCurrentPage}`} id="iteration-workbench">
             <header className={styles.iterationPageHeader}>
               <div><span>CURRENT / FRONT PLANNING WORKBENCH</span><b>RUNNABLE DEVELOPMENT CHECKPOINT</b></div>
-              <h3>생성 노드를 복제하지 않고, 기획 맥락과 사람의 선택 상태를 한 화면에 모았습니다.</h3>
+              <h3>기획 맥락과 선택 상태를 모은 한 화면</h3>
               <p>앞선 프로젝트에서 잃어버렸던 메시지·레퍼런스 역할·곡 구간·후보 상태·선택 이유를 다음 이미지·영상 작업이 읽는 현재의 기획 환경입니다.</p>
             </header>
             <div className={styles.workbenchEvolutionVisual}>
@@ -2126,8 +2192,8 @@ function TrendApplicationSection() {
             </div>
             <div className={styles.workbenchReferencePrinciples}>
               <div><span>COMFYUI · FIGMA CANVAS</span><p>시각적 상태와 재사용 흐름을 참고</p></div>
-              <div><span>EDITING TOOLS</span><p>source · sequence · marker · review 단위를 참고</p></div>
-              <div><span>AGENT SKILLS · HARNESS</span><p>작은 skill · 상태 · handoff · 사람 승인 gate를 참고</p></div>
+              <div><span>EDITING TOOLS</span><p>원본 · 시퀀스 · 마커 · 검토 단위를 참고</p></div>
+              <div><span>AGENT SKILLS · HARNESS</span><p>작은 절차 · 상태 · 인계 · 사람 승인 지점을 참고</p></div>
               <div className={styles.workbenchExcluded}><span>NOT ADOPTED</span><p>기획 판단 자동 확정 · 보호 자산 외부 전송 · 자동 유료 실행</p></div>
             </div>
           </article>
@@ -2135,7 +2201,7 @@ function TrendApplicationSection() {
 
         <div className={styles.iterationConclusionRebuild}>
           <span>CURRENT STANDARD</span>
-          <p>프로젝트의 성공과 폐기를 모두 다음 제작이 읽는 기준으로 바꿉니다. 반복 작업은 구조화하고, 새로운 메시지와 결과를 바꾸는 판단은 매번 사람이 다시 합니다.</p>
+          <p>완성과 폐기의 이유를 다음 제작에 쓸 기준으로 남깁니다. 반복 작업은 구조화하되, 메시지와 결과를 바꾸는 판단은 매번 직접 내립니다.</p>
         </div>
 
         <SectionHandoff
@@ -2219,11 +2285,7 @@ function DecisionRecordSection() {
 }
 
 function ResultCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeSlide = resultSlides[activeIndex];
-  const changeSlide = (direction: -1 | 1) => {
-    setActiveIndex((current) => (current + direction + resultSlides.length) % resultSlides.length);
-  };
+  const activeSlide = resultSlides[0];
 
   return (
     <div className={styles.resultCarousel}>
@@ -2249,13 +2311,7 @@ function ResultCarousel() {
           <h3>{activeSlide.title}</h3>
           <p>{activeSlide.detail}</p>
         </div>
-        <div className={styles.resultCarouselControls}>
-          <small>{String(activeIndex + 1).padStart(2, "0")} / {String(resultSlides.length).padStart(2, "0")}</small>
-          <div>
-            <button aria-label="이전 결과 보기" onClick={() => changeSlide(-1)} type="button"><ChevronLeft size={20} /></button>
-            <button aria-label="다음 결과 보기" onClick={() => changeSlide(1)} type="button"><ChevronRight size={20} /></button>
-          </div>
-        </div>
+        <div className={styles.resultCarouselMessage}><p>{activeSlide.message}</p></div>
         <a href={activeSlide.href} rel="noopener" target="_blank">{activeSlide.platform}에서 보기 <ExternalLink size={14} /></a>
       </aside>
     </div>
@@ -2267,10 +2323,10 @@ function ValidationSection() {
     <section className={`${styles.section} ${styles.validationSection}`} id="validation">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="AI 콘텐츠 자동화 시스템으로 만든 결과 중, 완성한 Loom MV 세 편과 대표 사례 INK를 정리했습니다."
+          body="메시지와 장면 기준은 직접 정하고, 반복 준비는 AI와 도구로 줄여 완성한 결과입니다."
           index="01"
           label="AUTOMATION SYSTEM / RESULTS"
-          title="AI 콘텐츠 자동화 시스템으로 완성한 Loom MV 3편"
+          title="완성한 Loom MV 3편과 개인 spec CF 2편"
         />
 
         <ResultCarousel />
@@ -2296,7 +2352,7 @@ function ValidationSection() {
               <div className={styles.cfCopy}>
                 <div className={styles.cfMeta}><span>{item.index}</span><small>{item.label}</small></div>
                 <b>{item.status}</b>
-                <h3>{item.title}</h3>
+                <h3>{item.titleBreakAfter ? <>{item.titleBreakAfter}<br />{item.title.slice(item.titleBreakAfter.length).trimStart()}</> : item.title}</h3>
                 <p>{item.body}</p>
                 <div className={styles.intentPair}>
                   <div><span>핵심 메시지</span><strong>{item.message}</strong></div>
@@ -2324,10 +2380,10 @@ function InkOutcomeSection() {
     <section className={`${styles.section} ${styles.inkSection}`} id="ink">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="필요한 순간에만 사람이 개입하고, 기준이 정해진 반복 과정은 AI와 도구가 담당하는 최소 개입 기반 반자동화 구조."
+          body="레퍼런스 재사용과 후보 정리, 편집 준비는 시스템이 맡고 메시지·핵심 컷·최종 편집·공개 여부는 직접 판단했습니다."
           index="01B"
           label="INK · PRODUCTION SUMMARY"
-          title="반복은 시스템에 맡기고, 꼭 필요한 판단만 직접 남겼습니다."
+          title="반복은 시스템에, 핵심 판단은 사람에게"
         />
 
         <div className={styles.inkCompactMedia}>
@@ -2375,7 +2431,6 @@ function SignalDeckOutcomeSection() {
     <section className={`${styles.section} ${styles.loomSection}`} id="experience">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="멤버의 정체성, 트랙, 장면 자산과 참여 요소를 한 화면에 모은 Loom Webpage."
           index="01A"
           label="WEB EXTENSION · LOOM WEBPAGE"
           title="Loom의 세계를 다시 탐색하는 웹페이지"
@@ -2405,7 +2460,7 @@ function LoomAppendixSection() {
     <section className={`${styles.section} ${styles.loomAppendixSection}`} id="appendix-loom">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="완성 MV와 Loom Webpage 뒤에 있던 참여 가설. 공개 투표 성과와 구분한 웹페이지 구현 범위."
+          body="완성 MV와 Loom Webpage 뒤에 있던 참여 가설과, 공개 투표 성과와 구분되는 웹페이지 구현 범위를 정리했습니다."
           index="APPENDIX A"
           label="LOOM · CONTENT IP · PARTICIPATION"
           title="Loom을 콘텐츠 IP로 확장한 가설"
@@ -2461,27 +2516,17 @@ function HarnessManagementAppendix() {
     <section className={`${styles.section} ${styles.harnessAppendixSection}`} id="appendix-harness">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="실제 제작에서 드러난 문제와 공식 문서에서 확인한 방법을 작은 단위로 시험. 통과한 변화만 현재 Workbench·Harness·도구에 반영."
+          body="실제 제작에서 통과한 기준을 다음 작업이 바로 읽을 수 있도록 문서와 실행 단위로 나눠 관리합니다."
           index="APPENDIX C"
           label="HARNESS · SKILL MANAGEMENT"
-          title="새 방법을 현재 기준으로 올리는 절차"
+          title="다음 작업에 넘기는 기준 문서"
         />
-
-        <div className={styles.harnessMaintenanceLoop}>
-          <article><span>01 / WATCH</span><strong>OpenAI · xAI · Anthropic 공식 문서와 제품 변화</strong><p>agent·skill·context·tool use의 변화를 검토 후보로 수집.</p></article>
-          <i aria-hidden="true">→</i>
-          <article><span>02 / VERIFY</span><strong>원문 · 실제 화면 · 현재 제작 문제</strong><p>유행어의 즉시 채택이 아닌 공식 자료와 실제 작동 방식의 확인.</p></article>
-          <i aria-hidden="true">→</i>
-          <article><span>03 / ADAPT</span><strong>작은 skill · schema · script</strong><p>절차는 skill, 단계 사이의 데이터는 schema, 반복 실행은 script로 분리.</p></article>
-          <i aria-hidden="true">→</i>
-          <article><span>04 / TEST & PROMOTE</span><strong>소규모 테스트 · 사람 승인 · 현재 기준</strong><p>실제 작업에서 통과한 변화만 wiki와 production system의 현재 기준으로 승격.</p></article>
-        </div>
 
         <div className={styles.harnessKnowledgeMap}>
           <div className={styles.harnessKnowledgeLead}>
             <span>KNOWLEDGE MAP / 다음 세션을 위한 작업 기준</span>
-            <h3>긴 대화 대신 다음 작업이 읽을 수 있는 문서</h3>
-            <p>상위 원칙, 전체 지도, 실행 절차, 데이터 기준, 반복 스크립트, 변경 이유의 역할 분리. 같은 규칙을 여러 문서에 복제하지 않고 바뀐 단계와 관련된 문서만 함께 갱신.</p>
+            <h3>다음 작업에 넘기는 문서 구조</h3>
+            <p>상위 원칙, 전체 지도, 실행 절차, 데이터 기준, 반복 스크립트, 변경 이유를 나눠 둡니다. 같은 규칙을 여러 문서에 복제하지 않고 바뀐 단계와 연결된 문서만 함께 고칩니다.</p>
           </div>
           <div className={styles.harnessKnowledgeLayers}>
             <article><span>AUTHORITY</span><strong>AGENTS.md · policies/</strong><p>항상 지켜야 할 창작·보안·승인 경계</p></article>
@@ -2558,12 +2603,9 @@ export function AiExplorationPortfolioPage() {
         >
           <span className={styles.eyebrow}>AI RESEARCH & EXPLORATION / 2025.12—PRESENT</span>
           <h1>하나의 메시지는 어디까지<br />하나의 경험이 될 수 있을까?</h1>
-          <p>
-            하나의 메시지와 타겟, 소수의 핵심 레퍼런스에서 출발한 장면·이미지·영상·편집의 확장.
-          </p>
           <div className={styles.heroAnswer}>
             <span>CORE APPROACH</span>
-            <strong>반복 실행은 AI와 도구에, 메시지와 감각의 결정은 사람에게 남기는 AI 콘텐츠 반자동화 방식.</strong>
+            <strong>매번 기획을 다시 설명하고 프롬프트를 처음부터 쓰는 시간은 줄이되, 무엇을 말하고 어떤 장면을 남길지는 직접 결정했습니다.</strong>
           </div>
           <div className={styles.heroActions}>
             <a href="#validation">완성 결과 보기 <ArrowDown size={17} /></a>
@@ -2603,7 +2645,9 @@ export function AiExplorationPortfolioPage() {
       <ProductionHarnessSection />
       <CurrentSystemSection />
 
-      <section className={`${styles.section} ${styles.trendSection} ${styles.iterationRebuild} ${styles.handoffSection}`} id="research">
+      <ResearchValidationSection />
+
+      <section className={`${styles.section} ${styles.trendSection} ${styles.iterationRebuild} ${styles.handoffSection}`} id="formation">
         <TrendApplicationSection />
       </section>
 
@@ -2707,14 +2751,14 @@ export function AiExplorationPortfolioPage() {
       ) : null}
 
       <section className={styles.closingSection}>
-        <Reveal className={styles.contentWidth}>
+        <Reveal className={`${styles.contentWidth} ${styles.closingPage}`}>
           <span className={styles.closingLabel}>CURRENT POSITION / CONCLUSION</span>
           <h2>반복을 줄이고 메시지와 장면 선택에 집중하는 AI 콘텐츠 제작</h2>
 
           <div className={styles.brandTranslation}>
             <div className={styles.brandTranslationLead}>
               <span>FROM CONTENT TO BRAND EXPERIENCE</span>
-              <p>콘텐츠와 Loom Webpage에서 확인한 결과, 물리 공간과 리테일에 남아 있는 다음 적용 가설.</p>
+              <p>현재 확인한 콘텐츠·웹 결과와 물리 공간·리테일로 이어질 다음 적용 가설입니다.</p>
             </div>
             <div className={styles.brandTranslationRows}>
               <article><span>CONTENT</span><strong>Root Signal·Pulso·INK와 Cola·Headset을 통한 메시지와 제품 기능의 장면화.</strong></article>
@@ -2723,7 +2767,11 @@ export function AiExplorationPortfolioPage() {
               <article><span>NEXT / PHYSICAL · RETAIL</span><strong>장면 규칙을 다중 화면, 현장과 웹의 연속 경험, 공간 프로토타입으로 옮기는 다음 검증 과제.</strong></article>
             </div>
           </div>
+        </Reveal>
 
+        <Reveal className={`${styles.contentWidth} ${styles.closingPage} ${styles.closingStrengthPage}`}>
+          <span className={styles.closingLabel}>WHAT I BRING</span>
+          <h2>제작과 기록으로 이어지는 세 가지 강점</h2>
           <div className={styles.closingPoints}>
             <div><span>01</span><strong>새 기술을 제작 문제로 해석하는 관점</strong></div>
             <div><span>02</span><strong>아이디어를 콘텐츠·도구·웹 프로토타입까지 시험하는 실행력</strong></div>
@@ -2732,9 +2780,8 @@ export function AiExplorationPortfolioPage() {
 
           <div className={styles.boundaryNote}>
             <ShieldCheck size={20} />
-            <p>동일 조건의 모델 간 객관적 우열을 검증했다는 주장과 구분합니다. Workbench는 실행 가능한 개발 체크포인트, Local Edit Desk는 개발 중 보조 MVP입니다. AHEYA에는 상용 성과가 없으며 물리 공간과 리테일은 완료 실적이 아닌 다음 적용 방향입니다.</p>
+            <p>동일한 조건에서 모델 간 우열을 검증했다고 말하지 않습니다. Workbench는 실행 가능한 개발 체크포인트이고, Local Edit Desk는 개발 중인 편집 보조 도구입니다. AHEYA에는 상용 성과가 없으며 물리 공간과 리테일은 완료 실적이 아닌 다음 적용 방향입니다.</p>
           </div>
-
         </Reveal>
       </section>
 
@@ -2744,10 +2791,10 @@ export function AiExplorationPortfolioPage() {
       <section className={`${styles.section} ${styles.aheyaSection}`} id="aheya">
         <Reveal className={styles.contentWidth}>
           <SectionHeading
-            body="Loom 제작 Harness와 분리된 프로젝트. AI agent의 수행 결과 평가에서 출발해 크라우드펀딩, 스마트계약 기반 실행 기록과 수수료 구조까지 구현한 과정."
+            body="Loom 제작 Harness와 분리된 프로젝트입니다. AI 에이전트의 수행 결과 평가에서 출발해 크라우드펀딩, 스마트계약 기반 실행 기록과 수수료 구조까지 구현했습니다."
             index="APPENDIX B"
             label="AHEYA · AGENT · FUNDING · TRUST"
-            title="AI agent·펀딩·신뢰 구조의 별도 서비스 탐구"
+            title="AI 에이전트·펀딩·신뢰 구조의 별도 서비스 탐구"
           />
 
           <div className={styles.aheyaQuestionRail}>
@@ -2785,7 +2832,7 @@ export function AiExplorationPortfolioPage() {
             <div>
               <span>SEPARATE LINEAGE / AB_LUNA · 상태·인계 실험</span>
               <h3>여러 AI의 결과를 다음 작업이 읽는 상태로 정리</h3>
-              <p>Project Brief, Current State, Artifact Index, Handoff로 구분한 완료 상태, blocker, 다음 행동의 기록.</p>
+              <p>프로젝트 브리프, 현재 상태, 결과물 목록, 다음 단계 인계로 나눠 완료 상태와 막힌 지점, 다음 행동을 기록했습니다.</p>
               <EvidenceLink label="전신 구조의 실제 파일 일부" slug="ab-luna-state-handoff-lineage" />
             </div>
           </article>
