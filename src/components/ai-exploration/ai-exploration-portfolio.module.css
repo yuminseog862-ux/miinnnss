@@ -20,6 +20,287 @@
   overflow: clip;
 }
 
+/* 2026-07-18 / philosophy-led application and evidence migration */
+.page .harnessCfLane {
+  border-top: 1px solid rgba(237, 243, 240, 0.14);
+  color: #9eb5ae;
+  display: block;
+  font-size: 6.5px;
+  font-style: normal;
+  font-weight: 750;
+  letter-spacing: 0.025em;
+  margin-top: 8px;
+  padding-top: 7px;
+}
+
+.rationalePhilosophy {
+  background: #091011;
+  color: #eef3ef;
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin: 0 0 42px;
+  padding: 26px 30px;
+}
+
+.rationalePhilosophy > div {
+  align-content: center;
+  display: grid;
+  gap: 12px;
+}
+
+.rationalePhilosophy > div > span,
+.rationalePhilosophy dt {
+  color: #c8ff45;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.rationalePhilosophy > div > strong {
+  font-size: clamp(18px, 1.8vw, 25px);
+  font-weight: 520;
+  line-height: 1.42;
+  word-break: keep-all;
+}
+
+.rationalePhilosophy dl {
+  border-bottom: 1px solid rgba(237, 243, 240, 0.18);
+  border-top: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  margin: 0;
+}
+
+.rationalePhilosophy dl > div {
+  align-items: center;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  padding: 15px 0;
+}
+
+.rationalePhilosophy dl > div + div {
+  border-top: 1px solid rgba(237, 243, 240, 0.14);
+}
+
+.rationalePhilosophy dd {
+  color: #c8d3ce;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.rationaleApiMedia {
+  grid-template-rows: minmax(0, 1fr) 72px;
+}
+
+.rationaleApiEvidence {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+  min-height: 0;
+}
+
+.rationaleApiEvidence figure {
+  border: 1px solid rgba(237, 243, 240, 0.16);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 38px;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rationaleApiEvidence img,
+.rationaleApiEvidence video {
+  background: #020303;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  width: 100%;
+}
+
+.rationaleApiEvidence figcaption {
+  align-items: center;
+  color: #aab8b2;
+  display: flex;
+  font-size: 7px;
+  font-weight: 760;
+  letter-spacing: 0.045em;
+  padding: 0 11px;
+}
+
+.rationaleApiRail {
+  border-bottom: 1px solid rgba(237, 243, 240, 0.18);
+  border-top: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.rationaleApiRail > div {
+  align-content: center;
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 10px 12px;
+}
+
+.rationaleApiRail > div + div {
+  border-left: 1px solid rgba(237, 243, 240, 0.14);
+}
+
+.rationaleApiRail span {
+  color: #c8ff45;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 7px;
+}
+
+.rationaleApiRail strong {
+  color: #eef3ef;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.page #rationale-api .humanGateList {
+  grid-template-rows: repeat(4, minmax(0, auto));
+}
+
+.sourceIndexSection {
+  background: #050707;
+  color: #eef3ef;
+}
+
+.sourceIndexGrid {
+  border-top: 1px solid rgba(237, 243, 240, 0.36);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sourceIndexGrid > article {
+  border-bottom: 1px solid rgba(237, 243, 240, 0.18);
+  min-height: 250px;
+  padding: 28px 30px;
+}
+
+.sourceIndexGrid > article + article {
+  border-left: 1px solid rgba(237, 243, 240, 0.18);
+}
+
+.sourceIndexGrid header {
+  align-items: baseline;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 58px minmax(0, 1fr);
+}
+
+.sourceIndexGrid header > span {
+  color: #c8ff45;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.sourceIndexGrid h3 {
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 520;
+  line-height: 1.28;
+  margin: 0;
+}
+
+.sourceIndexGrid > article > p {
+  color: #9eaca6;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 22px 0 26px 76px;
+  max-width: 560px;
+  word-break: keep-all;
+}
+
+.sourceIndexLinks {
+  display: grid;
+  gap: 4px;
+  margin-left: 76px;
+}
+
+.sourceIndexGrid .evidenceLink {
+  margin-left: 0;
+}
+
+.sourceIndexBoundary {
+  align-items: center;
+  border-bottom: 1px solid rgba(237, 243, 240, 0.2);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: 22px 0;
+}
+
+.sourceIndexBoundary svg {
+  color: #c8ff45;
+}
+
+.sourceIndexBoundary p {
+  color: #9eaca6;
+  font-size: 11px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 840px) {
+  .rationalePhilosophy {
+    gap: 24px;
+    grid-template-columns: 1fr;
+    margin-bottom: 30px;
+    padding: 24px 20px;
+  }
+
+  .rationalePhilosophy dl > div {
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .rationaleApiMedia {
+    grid-template-rows: auto auto;
+  }
+
+  .rationaleApiEvidence {
+    grid-template-columns: 1fr;
+  }
+
+  .rationaleApiEvidence figure {
+    min-height: 280px;
+  }
+
+  .rationaleApiRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rationaleApiRail > div:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .rationaleApiRail > div:nth-child(n + 3) {
+    border-top: 1px solid rgba(237, 243, 240, 0.14);
+  }
+
+  .sourceIndexGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sourceIndexGrid > article + article {
+    border-left: 0;
+  }
+
+  .sourceIndexGrid > article {
+    min-height: 0;
+    padding: 24px 0;
+  }
+
+  .sourceIndexGrid > article > p,
+  .sourceIndexLinks {
+    margin-left: 0;
+  }
+}
+
 /* 02 v3 / 01-section visual continuity + shorter decision chapters */
 .systemSection.handoffSection {
   --line: rgba(8, 11, 10, 0.15);
@@ -21417,5 +21698,695 @@
 
   .formationMediaRail > div {
     min-width: 112px;
+  }
+}
+
+/* 03 / each tool carries its own public Skill and instruction summary. */
+.page .rationaleRebuild .rationaleSkillUse {
+  border-bottom: 1px solid rgba(8, 11, 10, 0.2);
+  border-top: 1px solid rgba(8, 11, 10, 0.2);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 18px 0 0;
+}
+
+.page .rationaleRebuild .rationaleSkillUse > div {
+  min-width: 0;
+  padding: 9px 0;
+}
+
+.page .rationaleRebuild .rationaleSkillUse > div:nth-child(even) {
+  border-left: 1px solid rgba(8, 11, 10, 0.14);
+  padding-left: 12px;
+}
+
+.page .rationaleRebuild .rationaleSkillUse > div:nth-child(n + 3) {
+  border-top: 1px solid rgba(8, 11, 10, 0.14);
+}
+
+.page .rationaleRebuild .rationaleSkillUse dt {
+  color: #536a00;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.page .rationaleRebuild .rationaleSkillUse dd {
+  color: #3e4944;
+  font-size: 8.5px;
+  line-height: 1.5;
+  margin: 7px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.page .rationaleRebuild .rationaleSkillUse dd span {
+  display: block;
+}
+
+.page .rationaleRebuild .rationaleSkillUse dd span + span {
+  margin-top: 4px;
+}
+
+.rationaleEvidenceLinks {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.page .rationaleRebuild .rationaleResultMeta .humanGateList {
+  grid-template-rows: repeat(4, minmax(0, auto));
+}
+
+@media (max-width: 840px) {
+  .page .rationaleRebuild .rationaleSkillUse {
+    grid-template-columns: 1fr;
+  }
+
+  .page .rationaleRebuild .rationaleSkillUse > div:nth-child(even) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .page .rationaleRebuild .rationaleSkillUse > div + div {
+    border-top: 1px solid rgba(8, 11, 10, 0.14);
+  }
+}
+
+/* 03–04 / editorial blue reading field with lime used as a boundary, not pale text. */
+.page .rationaleRebuild,
+.researchFormationSection {
+  --chapter-blue: #c9dceb;
+  --chapter-navy: #0c2a43;
+  --chapter-slate: #304b5d;
+  --chapter-lime: #c8ff45;
+}
+
+.page .rationaleRebuild .sectionIndex,
+.researchFormationSection .sectionIndex {
+  border-top: 4px solid var(--chapter-lime);
+  padding-top: 12px;
+}
+
+.page .rationaleRebuild .sectionIndex span,
+.researchFormationSection .sectionIndex span {
+  background: var(--chapter-lime);
+  color: var(--chapter-navy);
+  padding: 3px 6px;
+  width: fit-content;
+}
+
+.page .rationaleRebuild .sectionIndex small,
+.researchFormationSection .sectionIndex small {
+  color: var(--chapter-slate);
+}
+
+.rationalePhilosophy {
+  background: var(--chapter-blue);
+  border-bottom: 6px solid var(--chapter-lime);
+  border-top: 1px solid rgba(12, 42, 67, 0.34);
+  color: var(--chapter-navy);
+}
+
+.rationalePhilosophy > div > span {
+  background: var(--chapter-lime);
+  color: var(--chapter-navy);
+  padding: 4px 7px;
+  width: fit-content;
+}
+
+.rationalePhilosophy > div > strong,
+.rationalePhilosophy dt {
+  color: var(--chapter-navy);
+}
+
+.rationalePhilosophy dl {
+  border-bottom-color: rgba(12, 42, 67, 0.24);
+  border-top-color: rgba(12, 42, 67, 0.24);
+}
+
+.rationalePhilosophy dl > div + div {
+  border-top-color: rgba(12, 42, 67, 0.18);
+}
+
+.rationalePhilosophy dd {
+  color: var(--chapter-slate);
+}
+
+.page .rationaleRebuild .rationaleResultMeta .evidenceLink {
+  border-color: rgba(12, 42, 67, 0.34);
+  color: var(--chapter-navy);
+}
+
+.page .rationaleRebuild .rationaleResultMeta .evidenceLink span {
+  background: var(--chapter-lime);
+  color: var(--chapter-navy);
+  padding: 3px 5px;
+}
+
+.page .rationaleRebuild .rationaleResultMeta .evidenceLink :is(strong, svg) {
+  color: var(--chapter-navy);
+}
+
+.page .rationaleRebuild .sectionHandoff,
+.researchFormationSection .sectionHandoff {
+  background: var(--chapter-blue);
+  border-bottom: 6px solid var(--chapter-lime);
+  border-top: 1px solid rgba(12, 42, 67, 0.34);
+  color: var(--chapter-navy);
+}
+
+.page .rationaleRebuild .sectionHandoff:hover,
+.page .rationaleRebuild .sectionHandoff:focus-visible,
+.researchFormationSection .sectionHandoff:hover,
+.researchFormationSection .sectionHandoff:focus-visible {
+  background: #d5e5f0;
+}
+
+.page .rationaleRebuild .sectionHandoff :is(span, strong, svg),
+.researchFormationSection .sectionHandoff :is(span, strong, svg) {
+  color: var(--chapter-navy);
+}
+
+/* Annotation pass / 01 results, 02 harness, 03–04 visual evidence. */
+@media (min-width: 761px) {
+  .page .hero {
+    align-items: center;
+    height: calc(100svh - 68px);
+    max-height: 852px;
+    min-height: 520px;
+    padding-bottom: 58px;
+    padding-top: 78px;
+  }
+
+  .page .heroCopy {
+    transform: translateY(-24px);
+  }
+}
+
+.page .validationSection .resultCarousel {
+  background: transparent;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.page .validationSection .resultFilm {
+  background: #091011;
+  color: var(--text);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+}
+
+.page .validationSection .resultFilm .resultMediaStage {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+}
+
+.page .validationSection .resultFilm .resultVideoEmbed {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.page .validationSection .resultFilm .resultCarouselMeta {
+  min-height: 238px;
+  padding: 22px;
+}
+
+.page .validationSection .resultFilm .resultCarouselMeta h3 {
+  font-size: clamp(19px, 1.8vw, 25px);
+  margin-bottom: 9px;
+  margin-top: 13px;
+}
+
+.page .validationSection .resultFilm .resultCarouselMessage {
+  margin: 17px 0;
+}
+
+.page .validationSection .resultFilm .resultCarouselMessage p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page .validationSection .resultFilm .resultCarouselMeta > a {
+  margin-top: 12px;
+}
+
+.loomSignalDeckLink {
+  display: block;
+}
+
+.loomFeature figcaption {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.loomFeature figcaption > a {
+  align-items: center;
+  color: #405200;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 6px;
+}
+
+.page .rationaleRebuild .rationaleApiEvidence {
+  gap: 5px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.page .rationaleRebuild .rationaleApiEvidence figure {
+  grid-template-rows: minmax(0, 1fr) 24px;
+}
+
+.page .rationaleRebuild .rationaleApiEvidence figcaption {
+  font-size: 6.3px;
+  padding: 0 7px;
+}
+
+.page .rationaleRebuild .rationaleApiEvidence video {
+  object-fit: cover;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeEvidenceGrid {
+  gap: 0;
+  grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.55fr);
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeContactSheet {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeContactSheet > img {
+  object-fit: cover;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos {
+  gap: 0;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  height: 100%;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos video {
+  background: transparent;
+  object-fit: cover;
+}
+
+.formationMotifStack {
+  display: grid;
+  gap: 6px;
+  grid-template-rows: minmax(0, 0.72fr) minmax(0, 1.2fr) minmax(0, 0.72fr);
+  min-height: 0;
+}
+
+.systemFormationMedia .formationMotifStack img {
+  object-fit: cover;
+}
+
+.systemFormationMedia .formationMotifStack .formationMotifPortrait img {
+  object-fit: contain;
+}
+
+.systemFormationMedia .formationInkThirtySecond img {
+  object-fit: cover;
+}
+
+@media (min-width: 841px) {
+  .page .harnessProductionDeck :global(#harness-generation-a) {
+    height: auto;
+    min-height: max(calc(100svh - 68px), 536px) !important;
+    overflow: visible;
+  }
+
+  .page .harnessProductionDeck :global(#harness-generation-a) .harnessDetailScore {
+    min-height: 308px;
+  }
+
+  .page .harnessProductionDeck :global(#harness-generation-a) .harnessPhaseTrack {
+    grid-template-rows: 64px 228px;
+  }
+
+  .page .harnessProductionDeck :global(#harness-generation-a) .harnessPhaseStages {
+    height: 228px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .page .validationSection .resultCarousel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page .validationSection .resultFilm:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 840px) {
+  .page .hero {
+    align-items: center;
+    height: calc(100svh - 56px);
+    min-height: 700px;
+    padding: 72px 18px 58px;
+  }
+
+  .page .heroCopy {
+    transform: none;
+  }
+
+  .page .validationSection .resultCarousel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page .validationSection .resultFilm:last-child {
+    grid-column: auto;
+  }
+
+  .page .validationSection .resultFilm .resultCarouselMeta {
+    min-height: 270px;
+  }
+
+  .page .rationaleRebuild .rationaleApiEvidence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(170px, 1fr));
+  }
+
+  .page .rationaleRebuild .rationaleAttitudeMedia .attitudeEvidenceGrid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .page .rationaleRebuild .rationaleAttitudeMedia .attitudeContactSheet,
+  .page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(220px, auto));
+    height: auto;
+  }
+
+  .formationCausalPair {
+    grid-template-rows: minmax(620px, auto) minmax(420px, auto);
+  }
+}
+
+/* Annotation correction / clearer ownership lanes, neutral philosophy field, distinct proof assets. */
+.page .harnessProductionDeck .harnessPrincipleHuman > div {
+  counter-reset: human-principle-step;
+}
+
+.page .harnessProductionDeck .harnessPrincipleHuman p {
+  counter-increment: human-principle-step;
+  padding: 15px 18px;
+  position: relative;
+}
+
+.page .harnessProductionDeck .harnessPrincipleHuman p::before {
+  color: rgba(8, 11, 10, 0.5);
+  content: "0" counter(human-principle-step);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  font-weight: 800;
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+
+.page .harnessProductionDeck .harnessPrincipleHuman p + p {
+  border-left-color: rgba(8, 11, 10, 0.3);
+}
+
+.page .harnessProductionDeck .harnessPrincipleHuman p:nth-child(even) {
+  background: rgba(8, 11, 10, 0.055);
+}
+
+.page .rationaleRebuild .rationalePhilosophy {
+  background: transparent;
+  border-bottom: 6px solid var(--chapter-lime);
+  border-top: 1px solid rgba(12, 42, 67, 0.34);
+}
+
+.page .rationaleRebuild .rationaleResultMeta .humanGateList > div {
+  gap: 7px 14px;
+  min-height: 48px;
+  padding: 10px 8px;
+}
+
+.page .rationaleRebuild .rationaleResultMeta .humanGateList span {
+  padding-top: 2px;
+}
+
+.page .rationaleRebuild .rationaleResultMeta .humanGateList strong,
+.page .rationaleRebuild .rationaleResultMeta .humanGateList small {
+  line-height: 1.45;
+}
+
+.page .rationaleRebuild .rationaleSkillUse > div {
+  padding: 11px 12px;
+}
+
+.page .rationaleRebuild .rationaleSkillUse > div:nth-child(even) {
+  padding-left: 12px;
+}
+
+.page .rationaleRebuild .rationaleSkillUse dt {
+  line-height: 1.35;
+}
+
+.page .rationaleRebuild .rationaleSkillUse dd {
+  line-height: 1.55;
+  margin-top: 8px;
+}
+
+.formationRootTimelinePart:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.formationRootTimelinePart:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.formationRootStoryboardPrimary {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.formationRootStoryboardSecondary {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.systemFormationMedia .formationRootTimelinePart img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.formationLeftGeneratedGrid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: minmax(0, 1.08fr) repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.formationLeftGeneratedGrid > figure:first-child {
+  grid-row: 1 / 3;
+}
+
+.systemFormationMedia .formationLeftGeneratedGrid img {
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.loomVoteProof figure img {
+  background: #050707;
+  object-fit: contain;
+  object-position: center;
+}
+
+.loomVoteContext {
+  align-content: center;
+  display: grid;
+  padding: 38px 30px;
+}
+
+.loomVoteContext > span {
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.loomVoteContext > small {
+  color: var(--cyan);
+  display: block;
+  font-size: 9px;
+  margin-top: 18px;
+}
+
+.loomVoteContext h3 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.38;
+  margin: 14px 0 22px;
+  word-break: keep-all;
+}
+
+.loomVoteFacts {
+  border-top: 1px solid rgba(131, 220, 245, 0.24);
+}
+
+.loomVoteFacts p {
+  align-items: start;
+  border-bottom: 1px solid rgba(131, 220, 245, 0.18);
+  display: grid;
+  gap: 4px 12px;
+  grid-template-columns: 24px minmax(0, 1fr);
+  margin: 0;
+  padding: 13px 0;
+}
+
+.loomVoteFacts b {
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 800;
+  grid-row: 1 / 3;
+}
+
+.loomVoteFacts strong {
+  color: #e7efea;
+  font-size: 10px;
+}
+
+.loomVoteFacts span {
+  color: #98aaa3;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.loomVoteLink {
+  align-items: center;
+  border-bottom: 1px solid rgba(200, 255, 69, 0.62);
+  color: var(--green);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 750;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding: 11px 0;
+}
+
+.aheyaLinks {
+  display: grid;
+  gap: 10px;
+}
+
+.aheyaEvidenceCard {
+  align-items: start;
+  border: 1px solid rgba(237, 243, 239, 0.22);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 116px minmax(0, 1fr) auto;
+  padding: 18px;
+}
+
+.aheyaEvidenceCard > span {
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.aheyaEvidenceCard > div > strong {
+  color: #edf3ef;
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.aheyaFeature .aheyaEvidenceCard > div > p {
+  color: #9fada8;
+  font-size: 10.5px;
+  line-height: 1.55;
+  margin: 8px 0 10px;
+}
+
+.aheyaEvidenceCard > div > small {
+  color: #7f9089;
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 7.5px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.aheyaEvidenceCard > svg {
+  color: var(--green);
+}
+
+.aheyaLinks > a.aheyaEvidenceCard:last-child {
+  align-items: start;
+  border: 1px solid rgba(237, 243, 239, 0.22);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 116px minmax(0, 1fr) auto;
+  padding: 18px;
+}
+
+@media (max-width: 840px) {
+  .page .harnessProductionDeck .harnessPrincipleHuman p + p {
+    border-left: 0;
+    border-top-color: rgba(8, 11, 10, 0.3);
+  }
+
+  .page .rationaleRebuild .rationaleSkillUse > div:nth-child(even) {
+    padding-left: 12px;
+  }
+
+  .formationRootBoards {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(4, minmax(250px, auto));
+  }
+
+  .formationRootTimelinePart:first-child,
+  .formationRootTimelinePart:nth-child(2),
+  .formationRootStoryboardPrimary,
+  .formationRootStoryboardSecondary {
+    display: block;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .formationLeftGeneratedGrid {
+    min-height: 620px;
+  }
+
+  .loomVoteContext {
+    padding: 30px 22px;
+  }
+
+  .aheyaEvidenceCard {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .aheyaLinks > a.aheyaEvidenceCard:last-child {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .aheyaEvidenceCard > span {
+    grid-column: 1 / -1;
   }
 }
