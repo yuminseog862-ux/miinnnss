@@ -136,19 +136,19 @@ const rationaleSkillUses = {
       "idol-research-radar · idol-front-planning-handoff",
     ],
     contracts: "AGENTS.md · front-planning-readiness.schema.json · harness-stage-registry.yaml",
-    role: "타겟·메시지·레퍼런스 역할을 정리하고, 사람이 선택한 기준만 다음 작업에 인계",
+    role: "사람과 AI가 같은 기획·레퍼런스·후보 상태를 보고, 사람이 고른 기준만 다음 작업에 인계",
     cf: "cf/AGENTS.md · 대상·주장·콘셉트·광고 대상 근거",
   },
   api: {
     skills: ["idol-generation · idol-video-prompt"],
     contracts: "harness-stage-registry.yaml · video-prompt-manifest.schema.json",
-    role: "통과한 스토리보드의 이미지 작업 변환·승인 실행·키프레임과 구간 영상 제작",
+    role: "통과한 스토리보드를 일괄 생성하고, 컨택트시트 비교 뒤 수정할 컷만 다시 실행",
     cf: "cf/AGENTS.md · 키프레임·영상 패킷",
   },
   editing: {
     skills: ["idol-editing-qc · idol-edit-finishing-fx"],
     contracts: "edit-recipe.schema.json · edit-effect-registry.yaml",
-    role: "소스 인덱스·마커·프리뷰 준비와 실제 재생 QC·피니싱 분리",
+    role: "스토리·키프레임·오디오 마커를 읽어 러프 편집 레시피와 프리뷰를 만들고, 최종 컷 판단은 사람에게 남김",
     cf: "cf/AGENTS.md · 편집·패키지 QC",
   },
 } as const;
@@ -1678,7 +1678,7 @@ function CurrentSystemSection() {
     <section className={`${styles.section} ${styles.rationaleRebuild}`} id="rationale">
       <Reveal className={`${styles.contentWidth} ${styles.rationaleRebuildInner}`}>
         <SectionHeading
-          body="긴 제작에서 문제는 한 장을 생성하는 능력이 아니라, 처음 정한 메시지와 선택 이유를 수십 개 파일·여러 세션·다른 모델 사이에서도 유지하는 일이었습니다. 그래서 채팅형 LLM, 코딩 에이전트, 이미지·영상 모델, 로컬 편집 도구의 역할을 나눴습니다."
+          body="긴 제작에서는 반복 작업을 줄이는 것만큼, 사람과 AI가 처음 정한 메시지·레퍼런스 역할·통과 기준을 계속 함께 보는 일이 중요했습니다. 코딩 에이전트는 그 기준으로 리서치·정리·생성·1차 비교·러프 편집을 먼저 처리하고, 저는 방향이 바뀌는 선택과 최종 결과에서 개입하도록 역할을 나눴습니다."
           index="03"
           label="AI PHILOSOPHY + WHY THESE TOOLS"
           title="왜 이 도구들을 골랐고, 어디까지 맡겼는가"
@@ -1687,11 +1687,11 @@ function CurrentSystemSection() {
         <div className={styles.rationalePhilosophy}>
           <div>
             <span>CORE APPROACH / MINIMUM-INTERVENTION SEMI-AUTOMATION</span>
-            <strong>생성 속도를 높이기 전에, 사람의 판단이 사라지는 지점부터 나눴습니다.</strong>
+            <strong>사람과 AI가 같은 기준을 본 뒤, 반복은 에이전트가 먼저 처리하고 방향이 바뀌는 순간에만 제가 개입했습니다.</strong>
           </div>
           <dl>
-            <div><dt>HUMAN</dt><dd>메시지 · 레퍼런스 역할 · 장면 방향 · 후보 선택 · 최종 컷 · 공개</dd></div>
-            <div><dt>AI + TOOLS</dt><dd>리서치 보강 · 파일 인계 · API 실행 · 후보 비교 · 프리뷰 · QC 준비</dd></div>
+            <div><dt>HUMAN</dt><dd>메시지 · 레퍼런스 역할 · 장면 기준 · 후보 선택 · 최종 컷 · 공개</dd></div>
+            <div><dt>AI + TOOLS</dt><dd>리서치 정리 · 파일 인계 · API 일괄 실행 · 컨택트시트 1차 비교 · 러프 프리뷰 · QC 준비</dd></div>
           </dl>
         </div>
 
@@ -1704,10 +1704,10 @@ function CurrentSystemSection() {
               </figure>
               <div className={styles.rationaleScaleRail}>
                 {[
-                  ["50+", "CUT SCALE", "기획·생성·검토·인계를 한 번에 처리하지 않음"],
-                  ["13", "INK SECTIONS", "S00—S12를 구간별 파일과 검토 단위로 분리"],
-                  ["FILE", "SESSION HANDOFF", "Markdown·HTML·이미지·스키마로 다음 세션이 이어서 읽음"],
-                  ["NEXT", "MODEL-NEUTRAL", "향후 로컬·오픈소스 모델로 바뀌어도 계약은 유지"],
+                  ["50+", "CUT SCALE", "곡 구간·컷·후보·승인 단위로 작업을 나눔"],
+                  ["BUNDLE", "MULTI-IMAGE REVIEW", "컨택트시트로 여러 후보를 한 번에 비교"],
+                  ["SKILL", "SHARED CRITERIA", "스토리·레퍼런스·통과 기준을 반복해 설명하지 않음"],
+                  ["HUMAN", "MINIMUM INTERVENTION", "좁혀진 후보의 선택·수정·최종 승인"],
                 ].map(([index, title, detail]) => (
                   <div key={title}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                 ))}
@@ -1717,15 +1717,15 @@ function CurrentSystemSection() {
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—00 / WHY A CODING AGENT</span>
-                <h3>여러 장을 만드는 것보다, 그 다음 작업을 이어가기 위해</h3>
-                <p>LLM도 이미지를 여러 장 만들 수 있습니다. 하지만 50개가 넘는 컷을 기획하고, 생성 파일에 이름을 붙이고, 통과·보류·수정 이유를 남기고, 다음 세션과 편집으로 넘기는 일까지 한 대화에 맡기면 작업 상태가 흩어졌습니다.</p>
+                <h3>한 장씩 만들고 확인하는 시간을 줄이기 위해</h3>
+                <p>채팅형 LLM에서는 세션이 바뀔 때마다 스토리·레퍼런스·통과 기준을 다시 설명하고, 생성 결과도 한 장씩 비교해야 했습니다. 코딩 에이전트는 파일과 컨택트시트를 함께 읽어 같은 기준으로 후보를 먼저 좁히고, 다음 세션과 편집까지 작업 상태를 이어갈 수 있었습니다.</p>
               </header>
               <div className={styles.rationaleReasonGrid}>
-                <div><span>01 / SCALE</span><strong>한 번에 시키지 않고 촘촘하게 나눔</strong><p>곡 구간·컷·후보·승인 단위로 끊어야 누락과 재작업 지점을 찾을 수 있었습니다.</p></div>
-                <div><span>02 / CONTINUITY</span><strong>대화 요약보다 기준 파일을 인계</strong><p>Markdown·HTML·이미지·경로·해시를 다음 에이전트가 직접 읽게 해 수동 복사를 줄였습니다.</p></div>
-                <div><span>03 / DEPENDENCY</span><strong>모델보다 파일 계약을 먼저 남김</strong><p>현재는 상용 모델을 쓰지만, 장기적으로 실행 모델이 달라져도 기획과 검토 기록은 남도록 설계했습니다.</p></div>
+                <div><span>01 / REPEAT</span><strong>리서치부터 결과 정리까지 먼저 처리</strong><p>찾고 모으고 분류하고 프롬프트로 옮기는 반복을 곡 구간·컷·승인 단위로 나눴습니다.</p></div>
+                <div><span>02 / SAME CRITERIA</span><strong>대화 요약보다 기준 파일을 함께 읽음</strong><p>Markdown·HTML·이미지·스키마에 메시지와 선택 이유를 남겨 세션이 바뀌어도 같은 기준을 봅니다.</p></div>
+                <div><span>03 / MINIMUM INTERVENTION</span><strong>AI가 먼저 좁히고, 저는 결정만 검토</strong><p>여러 이미지를 기준과 함께 묶어 1차 비교하게 하고, 통과·보류·수정과 최종 선택은 직접 결정합니다.</p></div>
               </div>
-              <PublicSafeExcerpt source="front-planning-handoff.schema.json" title="세션을 대화가 아닌 파일로 잇는 계약">
+              <PublicSafeExcerpt source="front-planning-handoff.schema.json" title="같은 기준과 작업 상태를 다음 세션에 잇는 항목">
 {`"target": { "enum": ["luna", "sol", "terra", "grok"] },
 "scope": { "required": ["section_id", "selected_asset_ids"] },
 "sources": { "required": ["role", "path", "sha256", "required"] },
@@ -1755,11 +1755,11 @@ function CurrentSystemSection() {
               <header className={styles.rationaleResultHeader}>
                 <span>03—01 / CODEX + GROK BUILD</span>
                 <h3>한 모델의 우열이 아니라, 작업 성격에 따라 나누기 위해</h3>
-                <p>Codex는 하네스처럼 길고 복잡한 다중 파일 작업과 세부 검토를 맡기고, Grok Build는 섹션별 프롬프트 정리·반복 실행과 Imagine 연결에 사용했습니다. 둘 다 같은 파일과 사람 승인 기준을 읽게 했습니다.</p>
+                <p>Codex는 여러 문서·이미지·코드를 함께 읽어 하네스처럼 넓고 복잡한 판단을 맡겼습니다. Grok Build는 X 기반 최신 사례 탐색과 빠른 분류에 사용했고, 앞으로 리서치부터 Imagine 생성까지 Grok 경로로 더 묶는 방안을 검토하고 있습니다. 둘 다 같은 기준 파일과 사람 승인 지점을 읽습니다.</p>
               </header>
               <div className={styles.rationaleAgentRoles}>
-                <div><span>CODEX</span><strong>구조·복잡도·상세 판단</strong><p>긴 문서와 여러 파일을 함께 읽고, 하네스·Workbench·편집 도구를 업데이트하는 축.</p></div>
-                <div><span>GROK BUILD</span><strong>구간별 실행·Imagine 연결</strong><p>정보를 분류하고 짧은 작업 단위로 옮기며, 이미지·영상 생성 경로까지 이어지는 축.</p></div>
+                <div><span>CODEX</span><strong>넓은 맥락 · 복잡한 판단</strong><p>긴 문서와 여러 파일을 함께 읽고, 하네스·Workbench·편집 도구를 구체적으로 검토하고 갱신하는 축.</p></div>
+                <div><span>GROK BUILD</span><strong>리서치 · 빠른 분류 · 향후 생성 경로</strong><p>X 기반 최신 사례를 찾고 짧은 작업 단위로 분류합니다. Imagine과 연결된 생성 경로로의 확대는 현재 검토 중입니다.</p></div>
                 <div><span>RESEARCH</span><strong>X Search는 후보 탐색, 원문은 별도 확인</strong><p>X의 최신 사례에 접근하는 장점은 활용하되, 사실과 채택 여부는 공식 문서·원문으로 다시 검증합니다.</p></div>
               </div>
               <div className={styles.rationaleBenchmarkNote}>
@@ -1816,14 +1816,14 @@ feedback_creates_upstream_revision: true`}
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—02 / WORKBENCH</span>
-                <h3>기획 기준을 한 화면에 유지하기 위해</h3>
-                <p>메시지·타겟·곡 구간·레퍼런스·후보 상태를 한 화면에 놓습니다. 리서치는 후보를 보강하고, 사람이 고른 역할·장면 기준·보류 이유만 다음 작업에 남깁니다.</p>
+                <h3>AI가 무엇을 보고 판단하는지 같은 화면에서 확인하기 위해</h3>
+                <p>에이전트가 뒤에서 어떤 자료와 기준을 보고 있는지 알 수 없으면 결과만으로는 판단 과정을 확인하기 어려웠습니다. 메시지·타겟·곡 구간·레퍼런스·후보 상태를 한 화면에 놓고, 사람과 AI가 같은 기획을 보며 다음 선택을 이어가게 했습니다.</p>
               </header>
               <div className={styles.llmProblemStatement}>
                 <span>WHY IT EXISTS</span>
-                <p>세션마다 맥락을 다시 설명하면 처음 정한 메시지와 선택 이유가 조금씩 달라졌습니다.</p>
+                <p>세션이 바뀔 때마다 맥락을 다시 설명하거나, AI가 어떤 기준으로 후보를 고르는지 결과만 보고 추측해야 했습니다.</p>
                 <i aria-hidden="true">→</i>
-                <strong>Workbench는 생성기가 아니라, 사람과 AI가 같은 기획 기준을 보는 작업 환경입니다.</strong>
+                <strong>Workbench는 생성기가 아니라, 사람과 AI가 같은 자료를 보며 선택하는 작업 환경입니다.</strong>
               </div>
               <RationaleSkillUse kind="workbench" />
               <PublicSafeExcerpt source="front-planning-handoff.schema.json" title="Workbench가 다음 세션에 넘기는 항목">
@@ -1875,32 +1875,77 @@ canonical write: human or structured single writer`}
             </aside>
           </article>
 
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-multi-image-review">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia} ${styles.rationaleReviewMedia}`}>
+              <figure>
+                <img alt="INK S04 to S07 bundled keyframe review sheet" src="/ai-exploration/ink/contact-sheets/ink-s04-s07-keyframe-sheet-v3.webp" />
+                <figcaption>REVIEW BUNDLE / S04—S07 · STORY + REFERENCE CRITERIA</figcaption>
+              </figure>
+              <figure>
+                <img alt="INK S08 to S10 bundled keyframe review sheet" src="/ai-exploration/ink/contact-sheets/ink-s08-s10-keyframe-sheet-v3.webp" />
+                <figcaption>AGENT FIRST PASS / S08—S10 · SHORTLIST + REASON</figcaption>
+              </figure>
+              <div className={styles.rationaleModelRail}>
+                <span>STORYLINE · REFERENCE ROLE</span><i aria-hidden="true">→</i><span>CONTACT SHEET FIRST PASS</span><i aria-hidden="true">→</i><span>HUMAN PASS · HOLD · REVISE</span>
+              </div>
+            </div>
+
+            <aside className={styles.rationaleResultMeta}>
+              <header className={styles.rationaleResultHeader}>
+                <span>03—03B / MULTI-IMAGE REVIEW</span>
+                <h3>여러 장을 한 번에 비교하고, 저는 좁혀진 후보만 보기 위해</h3>
+                <p>코딩 에이전트에 스토리라인·레퍼런스의 역할·통과 기준과 컨택트시트를 함께 줍니다. 누락·중복·인물 일관성·장면 연결을 먼저 확인해 이유가 붙은 후보로 좁히고, 저는 그 결과에서 통과·보류·수정만 결정합니다.</p>
+              </header>
+              <div className={styles.humanGateList}>
+                {[
+                  ["01", "CRITERIA INPUT", "스토리·레퍼런스 역할·장면별 통과 기준을 함께 읽음"],
+                  ["02", "AGENT FIRST PASS", "여러 이미지를 묶어 누락·중복·연결 위험을 1차 비교"],
+                  ["03", "SHORTLIST + REASON", "왜 남기거나 제외했는지 근거와 함께 후보를 좁힘"],
+                  ["04", "HUMAN DECISION", "사람이 통과·보류·수정과 최종 사용을 결정"],
+                ].map(([index, title, detail]) => (
+                  <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
+                ))}
+              </div>
+              <PublicSafeExcerpt source="generation-review-system.md" title="컨택트시트 1차 검토에 쓰는 공개용 요약">
+{`review_input:
+  - approved_storyline
+  - reference_function
+  - generated_contact_sheet
+agent_first_pass:
+  - missing_or_duplicate
+  - scene_and_identity_risk
+  - shortlist_with_reason
+human_decision: pass | hold | revise`}
+              </PublicSafeExcerpt>
+            </aside>
+          </article>
+
           <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-api">
             <div className={`${styles.rationaleResultMedia} ${styles.rationaleApiMedia}`}>
               <div className={styles.rationaleApiEvidence}>
                 <figure>
-                  <img alt="INK approved image keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
-                  <figcaption>IMAGE API / S00—S03</figcaption>
+                  <img alt="Pulso full playback review contact sheet" src="/ai-exploration/iteration/pulso/final-preview-contact-sheet.jpg" />
+                  <figcaption>PULSO / FULL PLAYBACK REVIEW</figcaption>
                 </figure>
                 <figure>
-                  <img alt="INK S04 to S07 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s04-s07-keyframe-sheet-v3.webp" />
-                  <figcaption>IMAGE API / S04—S07</figcaption>
+                  <img alt="Pulso ending and logo quality control contact sheet" src="/ai-exploration/edit-qc/pulso-final-qc-contact-sheet.jpg" />
+                  <figcaption>PULSO / ENDING · LOGO QC</figcaption>
                 </figure>
                 <figure>
-                  <img alt="INK S08 to S10 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s08-s10-keyframe-sheet-v3.webp" />
-                  <figcaption>IMAGE API / S08—S10</figcaption>
+                  <img alt="Pulso generated section contact sheet from 16 to 28 seconds" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" />
+                  <figcaption>API OUTPUT REVIEW / 16—28S</figcaption>
                 </figure>
                 <figure>
-                  <img alt="INK S11 to S12 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s11-s12-keyframe-sheet-v3.webp" />
-                  <figcaption>IMAGE API / S11—S12</figcaption>
+                  <img alt="Pulso generated section contact sheet from 100 to 112 seconds" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112-contact-sheet.jpg" />
+                  <figcaption>API OUTPUT REVIEW / 100—112S</figcaption>
                 </figure>
                 <figure>
-                  <video controls muted playsInline preload="metadata" src="/ai-exploration/edit-qc/ink-api-output-window-01.mp4" />
-                  <figcaption>VIDEO OUTPUT / 48—60S</figcaption>
+                  <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28.mp4" />
+                  <figcaption>SECTION PLAYBACK / 16—28S</figcaption>
                 </figure>
                 <figure>
-                  <video controls muted playsInline preload="metadata" src="/ai-exploration/edit-qc/ink-api-output-window-02.mp4" />
-                  <figcaption>VIDEO OUTPUT / 112—124S</figcaption>
+                  <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112.mp4" />
+                  <figcaption>SECTION PLAYBACK / 100—112S</figcaption>
                 </figure>
               </div>
               <div className={styles.rationaleApiRail}>
@@ -1917,15 +1962,15 @@ canonical write: human or structured single writer`}
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—04 / API AUTOMATED GENERATION</span>
-                <h3>승인한 작업만 반복 실행하기 위해</h3>
-                <p>사람이 확정한 컷을 생성 형식으로 바꾸고, 승인된 범위만 이미지·영상 API로 실행합니다. 자동 생성은 후보를 늘리는 역할만 하며 방향과 통과 여부를 정하지 않습니다.</p>
+                <h3>프롬프트를 한 장씩 입력하지 않기 위해</h3>
+                <p>사람이 확정한 구간과 컷을 한 번에 이미지·영상 API로 실행하고, 결과를 컨택트시트로 모읍니다. 에이전트가 같은 장면 기준으로 실패 컷을 먼저 좁히면 필요한 컷만 다시 만들고, 통과한 자산은 바로 러프 편집으로 넘길 수 있습니다.</p>
               </header>
               <div className={styles.humanGateList}>
                 {[
-                  ["01", "PACKET", "통과한 행동·구도·카메라를 작업 형식으로 변환"],
+                  ["01", "BATCH SCOPE", "통과한 행동·구도·카메라를 여러 컷의 작업 형식으로 변환"],
                   ["02", "PAID API GATE", "사람이 승인한 범위만 유료 실행"],
-                  ["03", "KEYFRAME REVIEW", "핵심 컷의 통과·보류·재생성 결정"],
-                  ["04", "SECTION PLAYBACK", "움직임·카메라·다음 장면 연결을 재생 검토"],
+                  ["03", "CONTACT SHEET TRIAGE", "같은 기준으로 실패·중복·연결 위험을 먼저 좁힘"],
+                  ["04", "SELECTIVE RERUN + EDIT", "수정할 컷만 다시 만들고 통과 자산은 러프 편집으로 인계"],
                 ].map(([index, title, detail]) => (
                   <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                 ))}
@@ -1973,38 +2018,41 @@ contact_sheet_assembly: local_after_generation`}
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—05 / EDIT · MEDIA TOOLCHAIN</span>
-                <h3>준비보다 컷 판단에 시간을 쓰기 위해</h3>
-                <p>ffprobe·OpenCV·librosa·ffmpeg와 Python이 소스 정보·컨택트시트·마커·프리뷰·QC 자료를 준비합니다. 사람은 컷의 순서·속도·싱크·연결과 최종 마스터를 실제 재생으로 결정합니다.</p>
+                <h3>소수점 단위로 컷을 하나씩 맞추지 않기 위해</h3>
+                <p>편집 규칙을 스킬에 넣고 에이전트가 스토리·키프레임·오디오 마커를 함께 읽게 했습니다. 컷 순서와 source in/out·속도를 편집 레시피에 배치해 러프 프리뷰를 먼저 만들고, 저는 실제 재생에서 장면의 인과·음악과 동작의 연결·최종 컷을 결정합니다.</p>
               </header>
               <div className={styles.humanGateList}>
                 {[
-                  ["01", "SOURCE INTAKE", "원본·FPS·오디오·구간 상태 확인"],
-                  ["02", "CONTACT SHEET · MARKER", "비교 자료와 컷 후보 준비"],
-                  ["03", "PLAYBACK REVIEW", "음악·동작·장면 연결과 타이밍 판단"],
-                  ["04", "FINAL · QC", "통과한 편집의 마스터와 공개 범위 승인"],
+                  ["01", "SOURCE + STORY READ", "원본·스토리·키프레임과 구간별 역할을 함께 읽음"],
+                  ["02", "AUDIO · ACTION MARKER", "가사 진입·박자·동작 착지 지점을 편집 기준으로 변환"],
+                  ["03", "ROUGH ASSEMBLY · PREVIEW", "컷 순서·source in/out·속도를 배치해 짧은 프리뷰 생성"],
+                  ["04", "HUMAN PLAYBACK · FINAL", "사람이 장면 인과·싱크·연결과 최종 마스터를 결정"],
                 ].map(([index, title, detail]) => (
                   <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                 ))}
               </div>
               <RationaleSkillUse kind="editing" />
-              <PublicSafeExcerpt source="idol_edit_desk.py" title="선택 구간만 짧게 렌더하는 실제 코드">
-{`def render_preview(self):
-    start = max(0.0, output_in - 1.0)
-    end = min(total_duration, output_out + 1.0)
-    command = [
-      "--render-mode", "segments",
-      "--preview-start", f"{start:.6f}",
-      "--preview-end", f"{end:.6f}",
-    ]`}
+              <PublicSafeExcerpt source="Root Signal / final-master-recipe-v11.yaml" title="스토리·마커를 실제 컷 배치로 옮긴 편집 레시피 요약">
+{`sequence:
+  - source: r09b.mp4
+    output: 44.000-47.000
+    source_in: selected_action_start
+    speed: fit_action_to_audio_marker
+  - source: r10a-1.mp4
+    output: 69.500-75.000
+    action: speed_up
+review:
+  short_preview_before_full_render: true
+  final_cut_owner: human`}
               </PublicSafeExcerpt>
-              <EvidenceLink label="편집 Python 원문 보기" slug="idol-edit-desk-implementation" />
+              <EvidenceLink label="편집 레시피·도구 구현 근거 보기" slug="idol-edit-desk-implementation" />
             </aside>
           </article>
         </div>
 
         <div className={styles.rationaleBoundary}>
           <span>OPERATING BOUNDARY</span>
-          <p><strong>AI는 가능성을 넓히고 반복을 줄이지만, 브랜드 메시지와 결과를 바꾸는 판단은 사람이 유지합니다.</strong> 자동 유료 실행·기획 자동 확정·보호 자산 외부 전송은 현재 범위에서 제외했습니다.</p>
+          <p><strong>AI는 사람과 같은 기준 안에서 후보를 좁히고 반복 작업을 먼저 실행하지만, 메시지·선택·최종 결과를 바꾸는 판단은 사람이 유지합니다.</strong> 자동 유료 실행·기획 자동 확정·보호 자산 외부 전송은 현재 범위에서 제외했습니다.</p>
           <a href="#research">04 / 발전 과정 보기 <ArrowDown size={16} /></a>
         </div>
 
@@ -2580,6 +2628,162 @@ function ResearchValidationSection() {
 }
 
 function TrendApplicationSection() {
+  return (
+    <section className={`${styles.section} ${styles.iterationRebuild} ${styles.handoffSection}`} id="research">
+      <Reveal className={`${styles.contentWidth} ${styles.iterationRebuildInner}`}>
+        <SectionHeading
+          body="Aurora V2에서 반복 제작 단위를 만들고, 이후 트랙에서 완성·수정·폐기를 거치며 무엇이 문제였고 다음 작업의 기준을 어떻게 바꿨는지 시간순으로 정리했습니다."
+          index="04"
+          label="FORMATION + ITERATION / 2026.05—07"
+          title="문제가 다음 제작 기준을 바꾼 과정"
+        />
+
+        <nav className={styles.iterationRoute} aria-label="Production system formation route">
+          {[
+            ["origin-aurora", "ORIGIN", "AURORA V2"],
+            ["iteration-root", "01", "ROOT SIGNAL"],
+            ["iteration-pulso", "02", "PULSO"],
+            ["iteration-left", "03", "LEFT IN THAT NIGHT"],
+            ["iteration-ink", "04", "INK"],
+            ["iteration-workbench", "CURRENT", "WORKBENCH"],
+          ].map(([href, index, title]) => (
+            <a href={`#${href}`} key={href}><span>{index}</span><strong>{title}</strong></a>
+          ))}
+        </nav>
+
+        <div className={styles.iterationPages}>
+          <article className={`${styles.iterationPage} ${styles.iterationOriginPage}`} id="origin-aurora">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—00 / AURORA V2</span><b>LEGACY STARTING POINT / RETIRED ROUTE</b></div>
+              <h3>반복 제작 단위는 만들었지만, 장면까지 규칙으로 고정했습니다</h3>
+              <p>13명의 비주얼 아이덴티티를 유지하며 MV와 STAGE를 반복 제작할 수 있었습니다. 반면 장면·포즈·카메라 선택까지 규칙으로 고정하자 결과가 서로 닮아갔고, Aurora V2는 현재 제작 경로에서 제외했습니다.</p>
+            </header>
+            <div className={styles.auroraOriginVisual}>
+              <figure><img alt="Aurora V2 M01 MV storyboard" src="/ai-exploration/aurora-v2/m01-mv-storyboard.webp" /><figcaption>ACTUAL OUTPUT / M01 MV UNIT</figcaption></figure>
+              <figure><img alt="Aurora V2 M01 stage storyboard" src="/ai-exploration/aurora-v2/m01-stage-storyboard.webp" /><figcaption>ACTUAL OUTPUT / M01 STAGE UNIT</figcaption></figure>
+            </div>
+            <div className={styles.iterationChangeBand}>
+              <div><span>가능했던 것</span><p>비주얼 아이덴티티 정보와 반복 제작 단위의 재사용</p></div>
+              <div><span>문제</span><p>창작 판단까지 재사용하면서 장면과 포즈가 비슷해짐</p></div>
+              <div className={styles.iterationChanged}><span>다음 기준</span><p>인물 기준만 재사용하고, 메시지·장면·카메라는 콘텐츠마다 다시 판단</p></div>
+            </div>
+          </article>
+
+          <article className={styles.iterationPage} id="iteration-root">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—01 / ROOT SIGNAL</span><b>V2 → V11 FINAL</b></div>
+              <h3>한 번의 완성이 아니라, 수정 이유가 남는 편집으로</h3>
+              <p>첫 전체 MV를 V11까지 고치며, 렌더만 남기면 통과한 원본과 수정 이유가 사라진다는 문제를 확인했습니다. 소스·마커·레시피·프리뷰를 함께 남겨 이전 컷으로 돌아가고 다음 수정만 이어갈 수 있게 바꿨습니다.</p>
+            </header>
+            <div className={`${styles.rootSignalCropBoard} ${styles.rootSignalEvidenceStage}`} aria-label="Root Signal V11 edit evidence">
+              <figure className={styles.rootTimelineEvidence}><img alt="Root Signal V11 edit timeline contact sheet" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg" /><figcaption>V11 / FULL EDIT TIMELINE CONTACT SHEET</figcaption></figure>
+              <figure className={styles.rootEditWindowSheet}><img alt="Root Signal V11 contact sheet from 48 to 60 seconds" src="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60-contact-sheet.jpg" /><figcaption>V11 / 48—60S FRAME SHEET</figcaption></figure>
+              <figure className={styles.rootEditWindowVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60.mp4" /><figcaption>V11 / 48—60S PLAYBACK</figcaption></figure>
+            </div>
+            <div className={styles.iterationChangeBand}>
+              <div><span>문제</span><p>수정이 늘수록 통과한 원본과 선택 이유가 최종 렌더에 묻힘</p></div>
+              <div><span>실제 실험</span><p>V2—V11의 레시피·프리뷰·재생 검토를 수정 단위로 기록</p></div>
+              <div className={styles.iterationChanged}><span>바뀐 기준</span><p>완성 파일과 함께 원본 복귀 지점·수정 이유·다음 작업 인계를 남김</p></div>
+            </div>
+          </article>
+
+          <article className={styles.iterationPage} id="iteration-pulso">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—02 / PULSO</span><b>SECTION-BASED PRODUCTION</b></div>
+              <h3>전체 곡을 한 번에 고치지 않고, 구간별로 통과시키기</h3>
+              <p>Root에서 수정 이유를 남긴 뒤, Pulso에서는 수정 위치까지 분명하게 만들었습니다. 얼굴 기준·핵심 컷·영상 프롬프트·구간 재생·편집 마커를 따로 승인하고, LOW에서 폐기한 기계적 비트 그리드 대신 가사·동작·카메라 연결을 함께 봤습니다.</p>
+            </header>
+            <div className={styles.pulsoEvidenceStage}>
+              <figure className={styles.pulsoPreviewSheet}>
+                <img alt="Pulso section contact sheet from 64 to 76 seconds" src="/ai-exploration/iteration/evolution/pulso-section-window-64-76-contact-sheet.jpg" />
+                <figcaption>PULSO / 64—76S FRAME SHEET</figcaption>
+              </figure>
+              <figure className={styles.pulsoEvolutionVideo}>
+                <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-section-window-64-76.mp4" />
+                <figcaption>PULSO / 64—76S SECTION PLAYBACK</figcaption>
+              </figure>
+              <div className={styles.pulsoPacketReceipt}><span>ACTUAL PRODUCTION UNIT</span><strong>54 KEYFRAME PACKETS</strong><p>구간별 패킷 → 컨택트시트 → 재생 검토 → 필요한 구간만 복귀</p></div>
+            </div>
+            <div className={styles.iterationChangeBand}>
+              <div><span>문제</span><p>생성·동작·편집을 한 단위에서 판단하면 어디로 돌아갈지 불명확</p></div>
+              <div><span>검토 방식</span><p>비트만 맞추지 않고 가사 진입·동작 착지·카메라와 다음 장면을 함께 재생</p></div>
+              <div className={styles.iterationChanged}><span>바뀐 기준</span><p>단계별 통과 상태를 남기고 문제가 생긴 구간과 단계만 다시 실행</p></div>
+            </div>
+          </article>
+
+          <article className={`${styles.iterationPage} ${styles.leftDiscardPage}`} id="iteration-left">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—03 / LEFT IN THAT NIGHT</span><b>FORMALLY DISCARDED / RESIDUAL 30S TEST</b></div>
+              <h3>더 만드는 대신, 인과가 없으면 멈추기</h3>
+              <p>인물과 레퍼런스 후보는 충분했지만 감정의 주체·보이는 행동·다음 장면의 원인이 연결되지 않았습니다. 관련 이미지를 더 늘리지 않고 전체 MV를 중단했으며, 판단 근거로 남은 30초 테스트 일부만 기록했습니다.</p>
+            </header>
+            <div className={`${styles.leftEvidenceStage} ${styles.leftDiscardEvidenceStage}`}>
+              <figure className={styles.leftDiscardSheet}><img alt="Left in That Night discarded teaser contact sheet from 0 to 12 seconds" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12-contact-sheet.jpg" /><figcaption>RESIDUAL TEST / 00—12S FRAME SHEET</figcaption></figure>
+              <figure className={styles.leftDiscardVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12.mp4" /><figcaption>RESIDUAL TEST / 00—12S PLAYBACK</figcaption></figure>
+            </div>
+            <div className={`${styles.iterationChangeBand} ${styles.leftConclusionBand}`}>
+              <div className={styles.leftDiscardStamp}><span>NOT TOO FEW IDEAS</span><strong>NO CAUSAL SPINE</strong><small>HOLD → DISCARD</small></div>
+              <div><span>문제</span><p>모티브와 공간이 쌓였지만 서로 다음 장면의 원인이 되지 못함</p></div>
+              <div><span>중단 기준</span><p>같은 연결 문제가 반복되면 생성량을 늘리지 않고 제작을 멈춤</p></div>
+              <div className={styles.iterationChanged}><span>바뀐 기준</span><p>감정의 주체·구체적 행동·장면 인과와 30초 테스트를 대량 생성보다 먼저 승인</p></div>
+            </div>
+          </article>
+
+          <article className={styles.iterationPage} id="iteration-ink">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—04 / INK</span><b>58 KEYFRAMES · S00—S12 · FINAL MASTER</b></div>
+              <h3>이전 실패를 58개의 장면 기준과 13개 구간에 적용</h3>
+              <p>“남이 정한 선 밖으로 계속 나아간다”는 메시지에서 인물·오브젝트·공간·행동을 정하고 S00—S12로 나눴습니다. 초기의 얼굴 중심 후보는 장면의 주체와 공간 변화가 약해 다시 섞었고, 통과한 키프레임만 구간 영상과 최종 편집으로 이어갔습니다.</p>
+            </header>
+            <div className={styles.inkEvolutionStage}>
+              <figure><img alt="INK S00 to S03 keyframe sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" /><figcaption>LOCKED SYSTEM / S00—S03</figcaption></figure>
+              <figure><img alt="INK S11 to S12 keyframe sheet" src="/ai-exploration/ink/contact-sheets/ink-s11-s12-keyframe-sheet-v3.webp" /><figcaption>REVISED SUBJECT MIX / S11—S12</figcaption></figure>
+              <figure><img alt="INK final master contact sheet from 130 to 142 seconds" src="/ai-exploration/iteration/evolution/ink-final-window-130-142-contact-sheet.jpg" /><figcaption>FINAL MASTER / 130—142S FRAME SHEET</figcaption></figure>
+              <figure className={styles.inkEvolutionVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/ink-final-window-130-142.mp4" /><figcaption>FINAL MASTER / 130—142S PLAYBACK</figcaption></figure>
+            </div>
+            <div className={styles.iterationChangeBand}>
+              <div><span>먼저 고정</span><p>메시지 · 멤버 역할 · 오브젝트 · 공간 · 구간별 행동</p></div>
+              <div><span>사람이 수정</span><p>얼굴 중심 후보를 줄이고 인과·행동·공간·카메라의 비중을 다시 조정</p></div>
+              <div className={styles.iterationChanged}><span>확인한 것</span><p>같은 기준이 기획 → 키프레임 → 영상 → 편집까지 이어질 때 한 편의 흐름이 유지됨</p></div>
+            </div>
+          </article>
+
+          <article className={`${styles.iterationPage} ${styles.workbenchCurrentPage}`} id="iteration-workbench">
+            <header className={styles.iterationPageHeader}>
+              <div><span>04—05 / FRONT PLANNING WORKBENCH</span><b>CURRENT DEVELOPMENT CHECKPOINT</b></div>
+              <h3>보이지 않던 에이전트 작업을 같은 화면에서 확인하기</h3>
+              <p>트랙마다 달라졌던 메시지·레퍼런스 역할·곡 구간·후보 상태·선택 이유를 한 화면에 모았습니다. 사람과 에이전트가 같은 기획 상태를 보고, 사람이 고른 기준만 이미지·영상 생성과 편집으로 넘기는 현재의 작업 환경입니다.</p>
+            </header>
+            <div className={styles.workbenchEvolutionVisual}>
+              <figure className={styles.workbenchActualFigure}><img alt="ONE MOVE actual reference and flow planning board" src="/ai-exploration/rationale-assets/one-move-ref-flow-board-crop.png" /><figcaption>ACTUAL PROJECT / ONE MOVE REFERENCE + FLOW BOARD</figcaption></figure>
+              <figure className={styles.workbenchCurrentFigure}><img alt="Front Planning Workbench current checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
+              <figure className={styles.workbenchReferenceFigure}><img alt="ComfyUI node workflow used as visual state reference" src="/ai-exploration/workbench/comfyui-z-image-turbo-workflow-reference.png" /><figcaption>COMFYUI REFERENCE / VISUAL STATE + REUSABLE FLOW</figcaption></figure>
+            </div>
+            <div className={styles.workbenchReferencePrinciples}>
+              <div><span>SAME VIEW</span><p>사람과 AI가 같은 메시지·레퍼런스·후보 상태를 확인</p></div>
+              <div><span>COMFYUI · FIGMA CANVAS</span><p>시각적 상태와 재사용 흐름을 참고</p></div>
+              <div><span>SKILLS · HARNESS</span><p>작은 절차·상태·인계와 사람 승인 지점을 연결</p></div>
+              <div className={styles.workbenchExcluded}><span>HUMAN CONTROL</span><p>기획 자동 확정·보호 자산 외부 전송·자동 유료 실행은 제외</p></div>
+            </div>
+          </article>
+        </div>
+
+        <div className={styles.iterationConclusionRebuild}>
+          <span>CURRENT STANDARD</span>
+          <p>반복을 줄이는 데서 끝내지 않고, 사람과 AI가 같은 기준을 본 상태에서 AI가 먼저 준비하고 좁히며 사람은 방향·선택·최종 결과에 개입합니다.</p>
+        </div>
+
+        <SectionHandoff
+          href="#proof"
+          label="APPENDIX / DETAILED IMPLEMENTATION"
+          title="Workbench · Harness · Media Toolchain의 상세 근거"
+        />
+      </Reveal>
+    </section>
+  );
+}
+
+function LegacyTrendApplicationSection() {
   return (
       <Reveal className={`${styles.contentWidth} ${styles.iterationRebuildInner}`}>
         <SectionHeading
@@ -3183,7 +3387,7 @@ export function AiExplorationPortfolioPage() {
       <ProductionHarnessSection />
       <CurrentSystemSection />
 
-      <ResearchFormationSection />
+      <TrendApplicationSection />
 
       {false ? (
         <>
