@@ -22909,3 +22909,260 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* 2026-07-19 / shared-criteria rationale and track-by-track formation */
+.page .rationaleRebuild .rationaleReviewMedia figure img {
+  object-fit: contain;
+}
+
+.page .iterationRebuild .iterationRoute {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage,
+.page .iterationRebuild .pulsoEvidenceStage,
+.page .iterationRebuild .leftDiscardEvidenceStage,
+.page .iterationRebuild .inkEvolutionStage,
+.page .iterationRebuild .workbenchEvolutionVisual {
+  min-height: 610px;
+}
+
+.page .iterationRebuild :is(
+  .rootSignalEvidenceStage,
+  .pulsoEvidenceStage,
+  .leftDiscardEvidenceStage,
+  .inkEvolutionStage,
+  .workbenchEvolutionVisual
+) figure {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.page .iterationRebuild :is(
+  .rootSignalEvidenceStage,
+  .pulsoEvidenceStage,
+  .leftDiscardEvidenceStage,
+  .inkEvolutionStage,
+  .workbenchEvolutionVisual
+) :is(img, video) {
+  background: #020303;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr) !important;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage .rootTimelineEvidence {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage .rootEditWindowSheet {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage .rootEditWindowVideo {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage video {
+  object-fit: cover;
+}
+
+.page .iterationRebuild .pulsoEvidenceStage {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr) !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  padding: 10px;
+}
+
+.page .iterationRebuild .pulsoPreviewSheet {
+  align-self: stretch;
+  aspect-ratio: auto;
+  grid-column: 1;
+  grid-row: 1;
+  height: 100% !important;
+}
+
+.page .iterationRebuild .pulsoPreviewSheet img {
+  object-fit: contain;
+}
+
+.page .iterationRebuild .pulsoEvolutionVideo {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.page .iterationRebuild .pulsoEvolutionVideo video {
+  object-fit: cover;
+}
+
+.pulsoPacketReceipt {
+  align-items: center;
+  border-top: 1px solid rgba(237, 243, 239, 0.18);
+  display: grid;
+  gap: 8px 18px;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  grid-template-columns: 150px 165px minmax(0, 1fr);
+  min-height: 66px;
+  padding: 11px 14px 3px;
+}
+
+.pulsoPacketReceipt span {
+  color: #81908a;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.pulsoPacketReceipt strong {
+  color: #c8ff45;
+  font-size: 14px;
+}
+
+.pulsoPacketReceipt p {
+  color: #b9c4c0;
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.page .iterationRebuild .leftDiscardEvidenceStage {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+}
+
+.page .iterationRebuild .leftDiscardSheet,
+.page .iterationRebuild .leftDiscardVideo {
+  grid-row: 1;
+}
+
+.page .iterationRebuild .leftDiscardSheet {
+  grid-column: 1;
+}
+
+.page .iterationRebuild .leftDiscardVideo {
+  grid-column: 2;
+}
+
+.page .iterationRebuild .leftDiscardSheet img {
+  object-fit: contain;
+}
+
+.page .iterationRebuild .leftDiscardVideo video {
+  object-fit: cover;
+}
+
+.page .iterationRebuild .inkEvolutionStage {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.page .iterationRebuild .inkEvolutionStage figure,
+.page .iterationRebuild .inkEvolutionStage figure:last-child {
+  grid-column: auto;
+}
+
+.page .iterationRebuild .inkEvolutionStage img {
+  object-fit: contain;
+}
+
+.page .iterationRebuild .inkEvolutionStage video {
+  object-fit: cover;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 1.22fr) minmax(280px, 0.78fr) !important;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual .workbenchActualFigure {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual .workbenchCurrentFigure {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual .workbenchReferenceFigure {
+  align-self: stretch;
+  grid-column: 2;
+  grid-row: 2;
+  height: 100% !important;
+  margin: 0;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual img {
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 840px) {
+  .page .iterationRebuild .iterationRoute {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page .iterationRebuild .iterationRoute a:nth-child(odd):not(:first-child) {
+    border-left: 0;
+  }
+
+  .page .iterationRebuild .iterationRoute a:nth-child(n + 3) {
+    border-top: 1px solid rgba(237, 243, 239, 0.14);
+  }
+
+  .page .iterationRebuild .rootSignalEvidenceStage,
+  .page .iterationRebuild .pulsoEvidenceStage,
+  .page .iterationRebuild .leftDiscardEvidenceStage,
+  .page .iterationRebuild .inkEvolutionStage,
+  .page .iterationRebuild .workbenchEvolutionVisual {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    min-height: 0;
+  }
+
+  .page .iterationRebuild :is(
+    .rootSignalEvidenceStage,
+    .pulsoEvidenceStage,
+    .leftDiscardEvidenceStage,
+    .inkEvolutionStage,
+    .workbenchEvolutionVisual
+  ) > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: 250px !important;
+  }
+
+  .page .iterationRebuild .pulsoPacketReceipt {
+    grid-template-columns: 1fr;
+    min-height: 110px !important;
+  }
+
+  .page .iterationRebuild .inkEvolutionStage figure,
+  .page .iterationRebuild .workbenchEvolutionVisual figure {
+    min-height: 300px !important;
+  }
+}
