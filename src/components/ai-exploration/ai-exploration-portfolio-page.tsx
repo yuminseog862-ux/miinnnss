@@ -1652,29 +1652,137 @@ function RationaleSkillUse({ kind }: { kind: keyof typeof rationaleSkillUses }) 
   );
 }
 
+function PublicSafeExcerpt({
+  children,
+  source,
+  title,
+}: PropsWithChildren<{ source: string; title: string }>) {
+  return (
+    <details className={styles.rationaleExcerpt}>
+      <summary>
+        <span>PUBLIC-SAFE EXCERPT</span>
+        <strong>{title}</strong>
+        <FileCode2 aria-hidden="true" size={15} />
+      </summary>
+      <div className={styles.rationaleExcerptBody}>
+        <span>SOURCE / {source}</span>
+        <pre>{children}</pre>
+        <small>내부 전문·민감 경로·계정 정보는 제외한 실제 구조 발췌입니다.</small>
+      </div>
+    </details>
+  );
+}
+
 function CurrentSystemSection() {
   return (
     <section className={`${styles.section} ${styles.rationaleRebuild}`} id="rationale">
       <Reveal className={`${styles.contentWidth} ${styles.rationaleRebuildInner}`}>
         <SectionHeading
-          body="Workbench는 기획 기준을 유지하고, API는 승인한 작업을 반복 실행하며, 편집 도구는 비교 자료를 준비합니다. 세 도구를 쓰는 이유는 자동화 자체가 아니라 사람의 판단을 결과까지 이어가기 위해서입니다."
+          body="긴 제작에서 문제는 한 장을 생성하는 능력이 아니라, 처음 정한 메시지와 선택 이유를 수십 개 파일·여러 세션·다른 모델 사이에서도 유지하는 일이었습니다. 그래서 채팅형 LLM, 코딩 에이전트, 이미지·영상 모델, 로컬 편집 도구의 역할을 나눴습니다."
           index="03"
           label="AI PHILOSOPHY + WHY THESE TOOLS"
-          title="왜 Workbench·API·편집 도구를 쓰는가"
+          title="왜 이 도구들을 골랐고, 어디까지 맡겼는가"
         />
 
         <div className={styles.rationalePhilosophy}>
           <div>
             <span>CORE APPROACH / MINIMUM-INTERVENTION SEMI-AUTOMATION</span>
-            <strong>세 도구는 사람의 판단을 대체하지 않고, 그 판단이 반복 작업 속에서 사라지지 않게 하기 위해 사용했습니다.</strong>
+            <strong>생성 속도를 높이기 전에, 사람의 판단이 사라지는 지점부터 나눴습니다.</strong>
           </div>
           <dl>
             <div><dt>HUMAN</dt><dd>메시지 · 레퍼런스 역할 · 장면 방향 · 후보 선택 · 최종 컷 · 공개</dd></div>
-            <div><dt>AI + TOOLS</dt><dd>리서치 보강 · 맥락 정리 · API 실행 · 후보 비교 자료 · 프리뷰 · QC 준비</dd></div>
+            <div><dt>AI + TOOLS</dt><dd>리서치 보강 · 파일 인계 · API 실행 · 후보 비교 · 프리뷰 · QC 준비</dd></div>
           </dl>
         </div>
 
         <div className={styles.rationalePages}>
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-scale">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleScaleMedia}`}>
+              <figure className={styles.rationaleScaleGallery}>
+                <img alt="Actual Grok Imagine candidate gallery preserved in the IDOL harness" src="/ai-exploration/rationale-assets/grok-imagine-gallery-2026-06-19.png" />
+                <figcaption>HARNESS SOURCE / GROK IMAGINE CANDIDATE GALLERY · 2026.06.19</figcaption>
+              </figure>
+              <div className={styles.rationaleScaleRail}>
+                {[
+                  ["50+", "CUT SCALE", "기획·생성·검토·인계를 한 번에 처리하지 않음"],
+                  ["13", "INK SECTIONS", "S00—S12를 구간별 파일과 검토 단위로 분리"],
+                  ["FILE", "SESSION HANDOFF", "Markdown·HTML·이미지·스키마로 다음 세션이 이어서 읽음"],
+                  ["NEXT", "MODEL-NEUTRAL", "향후 로컬·오픈소스 모델로 바뀌어도 계약은 유지"],
+                ].map(([index, title, detail]) => (
+                  <div key={title}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
+                ))}
+              </div>
+            </div>
+
+            <aside className={styles.rationaleResultMeta}>
+              <header className={styles.rationaleResultHeader}>
+                <span>03—00 / WHY A CODING AGENT</span>
+                <h3>여러 장을 만드는 것보다, 그 다음 작업을 이어가기 위해</h3>
+                <p>LLM도 이미지를 여러 장 만들 수 있습니다. 하지만 50개가 넘는 컷을 기획하고, 생성 파일에 이름을 붙이고, 통과·보류·수정 이유를 남기고, 다음 세션과 편집으로 넘기는 일까지 한 대화에 맡기면 작업 상태가 흩어졌습니다.</p>
+              </header>
+              <div className={styles.rationaleReasonGrid}>
+                <div><span>01 / SCALE</span><strong>한 번에 시키지 않고 촘촘하게 나눔</strong><p>곡 구간·컷·후보·승인 단위로 끊어야 누락과 재작업 지점을 찾을 수 있었습니다.</p></div>
+                <div><span>02 / CONTINUITY</span><strong>대화 요약보다 기준 파일을 인계</strong><p>Markdown·HTML·이미지·경로·해시를 다음 에이전트가 직접 읽게 해 수동 복사를 줄였습니다.</p></div>
+                <div><span>03 / DEPENDENCY</span><strong>모델보다 파일 계약을 먼저 남김</strong><p>현재는 상용 모델을 쓰지만, 장기적으로 실행 모델이 달라져도 기획과 검토 기록은 남도록 설계했습니다.</p></div>
+              </div>
+              <PublicSafeExcerpt source="front-planning-handoff.schema.json" title="세션을 대화가 아닌 파일로 잇는 계약">
+{`"target": { "enum": ["luna", "sol", "terra", "grok"] },
+"scope": { "required": ["section_id", "selected_asset_ids"] },
+"sources": { "required": ["role", "path", "sha256", "required"] },
+"session_boundary": {
+  "transcript_included": { "const": false },
+  "canonical_write_authority": "founder_or_structured_single_writer_only"
+}`}
+              </PublicSafeExcerpt>
+            </aside>
+          </article>
+
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-agent-routing">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleAgentMedia}`}>
+              <figure>
+                <img alt="Timecoded contact sheet of generated clips from the actual IDOL harness" src="/ai-exploration/rationale-assets/grok-contact-sheet-timecoded-2026-06-19.png" />
+                <figcaption>ACTUAL REVIEW MATERIAL / TIMECODED GENERATED CLIP SHEET</figcaption>
+              </figure>
+              <div className={styles.rationaleAgentFileRail} aria-label="File first agent handoff">
+                <div><span>01</span><strong>PLAN · SOURCE</strong><small>기획·원본·선택 기준</small></div><i aria-hidden="true">→</i>
+                <div><span>02</span><strong>AGENT ROUTE</strong><small>복잡도와 작업 단위에 맞춰 배분</small></div><i aria-hidden="true">→</i>
+                <div><span>03</span><strong>ARTIFACT</strong><small>파일·시트·프리뷰로 반환</small></div><i aria-hidden="true">→</i>
+                <div className={styles.rationaleAgentHuman}><span>04</span><strong>HUMAN REVIEW</strong><small>통과·보류·수정 결정</small></div>
+              </div>
+            </div>
+
+            <aside className={styles.rationaleResultMeta}>
+              <header className={styles.rationaleResultHeader}>
+                <span>03—01 / CODEX + GROK BUILD</span>
+                <h3>한 모델의 우열이 아니라, 작업 성격에 따라 나누기 위해</h3>
+                <p>Codex는 하네스처럼 길고 복잡한 다중 파일 작업과 세부 검토를 맡기고, Grok Build는 섹션별 프롬프트 정리·반복 실행과 Imagine 연결에 사용했습니다. 둘 다 같은 파일과 사람 승인 기준을 읽게 했습니다.</p>
+              </header>
+              <div className={styles.rationaleAgentRoles}>
+                <div><span>CODEX</span><strong>구조·복잡도·상세 판단</strong><p>긴 문서와 여러 파일을 함께 읽고, 하네스·Workbench·편집 도구를 업데이트하는 축.</p></div>
+                <div><span>GROK BUILD</span><strong>구간별 실행·Imagine 연결</strong><p>정보를 분류하고 짧은 작업 단위로 옮기며, 이미지·영상 생성 경로까지 이어지는 축.</p></div>
+                <div><span>RESEARCH</span><strong>X Search는 후보 탐색, 원문은 별도 확인</strong><p>X의 최신 사례에 접근하는 장점은 활용하되, 사실과 채택 여부는 공식 문서·원문으로 다시 검증합니다.</p></div>
+              </div>
+              <div className={styles.rationaleBenchmarkNote}>
+                <span>EXTERNAL CHECK / 2026.07</span>
+                <p>Artificial Analysis의 동일 코딩 에이전트 비교에서는 Grok Build가 더 적은 토큰과 낮은 API 비용을 보였지만, 작업 시간은 Codex가 더 짧았습니다. 따라서 ‘Grok이 무조건 빠르다’가 아니라, 제 작업에서 반복 분류·이관에 맞았다는 판단으로 씁니다.</p>
+                <div>
+                  <a href="https://artificialanalysis.ai/agents/coding-agents/comparisons/codex-vs-grok-build" rel="noreferrer" target="_blank">Agent 비교 <ExternalLink size={11} /></a>
+                  <a href="https://artificialanalysis.ai/models/comparisons/grok-4-5-vs-grok-4-3" rel="noreferrer" target="_blank">환각 지표 확인 <ExternalLink size={11} /></a>
+                </div>
+                <small>Grok 4.5의 지식 정확도는 높아졌지만 환각률도 4.3보다 높게 측정됐습니다. ‘Grok은 환각이 낮다’는 선택 근거로 사용하지 않습니다.</small>
+              </div>
+              <PublicSafeExcerpt source="harness-stage-registry.yaml" title="기계 검증과 창작 판단을 나눈 기준">
+{`deterministic_authority:
+  - schema_types_enums
+  - identifiers_order_and_exact_coverage
+contextual_llm_authority:
+  - story_relationship_and_emotional_causality
+  - visible_action_expression_light_and_camera_read
+feedback_creates_upstream_revision: true`}
+              </PublicSafeExcerpt>
+            </aside>
+          </article>
+
           <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-repeat">
             <div className={`${styles.rationaleResultMedia} ${styles.rationalePlanningMedia}`}>
               <div className={styles.rationaleEvidenceColumn}>
@@ -1707,7 +1815,7 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—01 / WORKBENCH</span>
+                <span>03—02 / WORKBENCH</span>
                 <h3>기획 기준을 한 화면에 유지하기 위해</h3>
                 <p>메시지·타겟·곡 구간·레퍼런스·후보 상태를 한 화면에 놓습니다. 리서치는 후보를 보강하고, 사람이 고른 역할·장면 기준·보류 이유만 다음 작업에 남깁니다.</p>
               </header>
@@ -1718,10 +1826,52 @@ function CurrentSystemSection() {
                 <strong>Workbench는 생성기가 아니라, 사람과 AI가 같은 기획 기준을 보는 작업 환경입니다.</strong>
               </div>
               <RationaleSkillUse kind="workbench" />
+              <PublicSafeExcerpt source="front-planning-handoff.schema.json" title="Workbench가 다음 세션에 넘기는 항목">
+{`target: luna | sol | terra | grok
+scope: section_id + selected_asset_ids
+sources: plan + canvas + shared_context + reference_intake
+return: compact record only when useful
+canonical write: human or structured single writer`}
+              </PublicSafeExcerpt>
               <div className={styles.rationaleEvidenceLinks}>
                 <EvidenceLink label="Workbench 실제 구조 보기" slug="front-planning-workbench-checkpoint" />
                 <EvidenceLink label="Harness 인계 기준 보기" slug="idol-harness-stage-registry" />
               </div>
+            </aside>
+          </article>
+
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-model-routing">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia}`}>
+              <figure>
+                <img alt="INK S07 approved keyframe review contact sheet from the harness" src="/ai-exploration/ink/contact-sheets/section-S07-v2-inserts-part-01.webp" />
+                <figcaption>GPT IMAGE 2 / S07 APPROVED KEYFRAME REVIEW</figcaption>
+              </figure>
+              <figure>
+                <img alt="INK S08 approved keyframe review contact sheet from the harness" src="/ai-exploration/ink/contact-sheets/section-S08-v2-inserts-part-01.webp" />
+                <figcaption>GPT IMAGE 2 / S08 APPROVED KEYFRAME REVIEW</figcaption>
+              </figure>
+              <div className={styles.rationaleModelRail}>
+                <span>KEY STILL · IDENTITY · DETAIL</span><i aria-hidden="true">→</i><span>APPROVED FRAME</span><i aria-hidden="true">→</i><span>IMAGE-TO-VIDEO</span>
+              </div>
+            </div>
+
+            <aside className={styles.rationaleResultMeta}>
+              <header className={styles.rationaleResultHeader}>
+                <span>03—03 / IMAGE + VIDEO MODEL ROUTING</span>
+                <h3>장면마다 필요한 생성 능력이 달랐기 때문에</h3>
+                <p>모델을 하나로 고정하지 않았습니다. 프로젝트에서 얼굴·지시 정밀도가 중요한 핵심 이미지는 GPT Image 2, 빠른 후보 탐색은 Grok Imagine Image, 통과한 이미지를 짧은 영상으로 옮기는 일은 Grok Imagine Video 1.5에 배분했습니다.</p>
+              </header>
+              <div className={styles.rationaleModelRoles}>
+                <div><span>GPT IMAGE 2</span><strong>KEY STILL · IDENTITY · DETAIL</strong><p>공식 문서의 고정밀 이미지 입력·지시 이행 특성과 프로젝트 테스트를 근거로 핵심 프레임에 사용.</p><a href="https://developers.openai.com/api/docs/models/gpt-image-2" rel="noreferrer" target="_blank">공식 모델 문서 <ExternalLink size={11} /></a></div>
+                <div><span>GROK IMAGINE IMAGE</span><strong>FAST CANDIDATE ROUTE</strong><p>에이전트와 같은 xAI 경로에서 후보를 빠르게 늘리고 비교하는 보조 생성 축.</p><a href="https://docs.x.ai/developers/pricing" rel="noreferrer" target="_blank">공식 가격·모델 <ExternalLink size={11} /></a></div>
+                <div><span>GROK IMAGINE VIDEO 1.5</span><strong>IMAGE → VIDEO</strong><p>통과한 프레임을 480p·720p·1080p의 짧은 영상 작업으로 옮기는 현재 기본 경로.</p><a href="https://docs.x.ai/developers/models/grok-imagine-video-1.5" rel="noreferrer" target="_blank">공식 모델 문서 <ExternalLink size={11} /></a></div>
+                <div><span>KLING · SEEDANCE</span><strong>OPTIONAL, NOT REJECTED</strong><p>열등해서 제외한 것이 아닙니다. 더 긴 컷·다른 움직임 품질이 필요할 때 검토하되, 현재 기본 경로는 에이전트·API·파일 인계 효율을 우선했습니다.</p></div>
+              </div>
+              <div className={styles.rationaleModelReceipt}>
+                <span>PRICE RECEIPT / XAI · 2026.07</span>
+                <p>Imagine 표준 이미지는 $0.02/장, Video 1.5는 480p $0.08/s · 720p $0.14/s · 1080p $0.25/s. 가격은 선택 기준 중 하나이며, 실제 통과율과 재생 검토 비용은 별도로 봅니다.</p>
+              </div>
+              <div className={styles.rationaleCfRoute}><span>PERSONAL SPEC CF</span><p>Cola·Headset도 별도 CF 시스템이 아니라, 같은 이미지 보드 → 영상 생성 → 사람 검토·편집 경계 안에서 제작했습니다.</p></div>
             </aside>
           </article>
 
@@ -1766,7 +1916,7 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—02 / API AUTOMATED GENERATION</span>
+                <span>03—04 / API AUTOMATED GENERATION</span>
                 <h3>승인한 작업만 반복 실행하기 위해</h3>
                 <p>사람이 확정한 컷을 생성 형식으로 바꾸고, 승인된 범위만 이미지·영상 API로 실행합니다. 자동 생성은 후보를 늘리는 역할만 하며 방향과 통과 여부를 정하지 않습니다.</p>
               </header>
@@ -1781,6 +1931,16 @@ function CurrentSystemSection() {
                 ))}
               </div>
               <RationaleSkillUse kind="api" />
+              <PublicSafeExcerpt source="PULSO / 02B-prompt-packets.yaml" title="실제 API 제출 패킷의 실행 경계">
+{`expected_keyframe_packet_count: 54
+current_packet_count: 54
+paid_generation_gate: requires_founder_paid_approval
+default_route:
+  model: gpt-image-2
+  quality: medium
+  size: 1536x864
+contact_sheet_assembly: local_after_generation`}
+              </PublicSafeExcerpt>
               <EvidenceLink label="이미지·영상 API 패킷 구조 보기" slug="pulso-api-submission-packet" />
             </aside>
           </article>
@@ -1812,7 +1972,7 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—03 / EDIT · MEDIA TOOLCHAIN</span>
+                <span>03—05 / EDIT · MEDIA TOOLCHAIN</span>
                 <h3>준비보다 컷 판단에 시간을 쓰기 위해</h3>
                 <p>ffprobe·OpenCV·librosa·ffmpeg와 Python이 소스 정보·컨택트시트·마커·프리뷰·QC 자료를 준비합니다. 사람은 컷의 순서·속도·싱크·연결과 최종 마스터를 실제 재생으로 결정합니다.</p>
               </header>
@@ -1827,6 +1987,16 @@ function CurrentSystemSection() {
                 ))}
               </div>
               <RationaleSkillUse kind="editing" />
+              <PublicSafeExcerpt source="idol_edit_desk.py" title="선택 구간만 짧게 렌더하는 실제 코드">
+{`def render_preview(self):
+    start = max(0.0, output_in - 1.0)
+    end = min(total_duration, output_out + 1.0)
+    command = [
+      "--render-mode", "segments",
+      "--preview-start", f"{start:.6f}",
+      "--preview-end", f"{end:.6f}",
+    ]`}
+              </PublicSafeExcerpt>
               <EvidenceLink label="편집 Python 원문 보기" slug="idol-edit-desk-implementation" />
             </aside>
           </article>
@@ -1841,7 +2011,7 @@ function CurrentSystemSection() {
         <SectionHandoff
           href="#research"
           label="04 / RESEARCH + SYSTEM FORMATION"
-          title="현재 제작 구조가 작업을 거치며 만들어진 과정"
+          title="선택한 방식이 실제 작업을 거치며 바뀐 과정"
         />
       </Reveal>
     </section>
@@ -2058,7 +2228,15 @@ function SystemProofSection() {
 function EvidenceIndexSection() {
   const sources = [
     {
-      index: "03—01",
+      index: "03—00—01",
+      title: "Coding Agent · Model Routing",
+      detail: "대화 대신 파일을 인계하고 Codex·Grok Build의 역할을 나눈 실제 계약과 외부 검증 자료.",
+      links: [
+        { label: "Harness 인계 근거 보기", slug: "idol-harness-stage-registry" },
+      ],
+    },
+    {
+      index: "03—02",
       title: "Workbench · Research · Handoff",
       detail: "기획 기준·리서치·레퍼런스 역할·선택 상태를 한 화면에 모으고 다음 작업에 인계한 구현과 단계 기록.",
       links: [
@@ -2067,15 +2245,15 @@ function EvidenceIndexSection() {
       ],
     },
     {
-      index: "03—02",
+      index: "03—03—04",
       title: "이미지·영상 생성 · API",
       detail: "스토리보드·패킷·유료 실행 승인·키프레임·구간 재생 검토를 나눈 실제 제작 기록.",
       links: [
-        { label: "API 생성 적용 근거 보기", slug: "pulso-front-planning-readiness" },
+        { label: "API 생성 적용 근거 보기", slug: "pulso-api-submission-packet" },
       ],
     },
     {
-      index: "03—03",
+      index: "03—05",
       title: "편집 · Media Toolchain",
       detail: "소스 인덱스·컨택트시트·마커·프리뷰·QC 준비와 사람의 재생 판단을 분리한 구현 범위.",
       links: [
@@ -2088,7 +2266,7 @@ function EvidenceIndexSection() {
     <section className={`${styles.section} ${styles.proofSection} ${styles.sourceIndexSection}`} id="proof">
       <Reveal className={styles.contentWidth}>
         <SectionHeading
-          body="세 도구 안에 표시한 Skill 전문 대신, 실제 화면과 결과물로 이어졌는지 확인할 수 있는 자료만 정리했습니다."
+          body="03에는 Skill·Schema·코드의 공개 가능한 일부를 바로 붙였고, 여기에는 실제 화면과 결과물로 이어졌는지 다시 확인할 수 있는 자료만 모았습니다."
           index="APPENDIX / EVIDENCE INDEX"
           label="APPLICATION EVIDENCE + DISCLOSURE"
           title="03·04의 공개 가능한 적용 근거"
@@ -2110,7 +2288,7 @@ function EvidenceIndexSection() {
 
         <div className={styles.sourceIndexBoundary}>
           <ShieldCheck size={18} />
-          <p>내부 Skill·Schema·운영 문서와 프롬프트 전문은 공개하지 않습니다. 대신 사용한 문서명과 역할, 실제 화면, 적용 결과, 확인 가능한 범위를 구분해 제공합니다.</p>
+          <p>내부 Skill·Schema·운영 문서와 프롬프트 전문은 공개하지 않습니다. 대신 사용한 문서명·역할·공개용 원문 발췌, 실제 화면, 적용 결과, 확인 가능한 범위를 구분해 제공합니다.</p>
         </div>
       </Reveal>
     </section>
@@ -2220,7 +2398,10 @@ function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[numbe
           <div className={styles.formationPulsoFaces}>
             {pulsoFaceAssets.slice(0, 8).map((face) => <figure key={face.label}><img alt={`Pulso ${face.label} visual identity`} src={face.src} /><figcaption>{face.label}</figcaption></figure>)}
           </div>
-          <figure className={styles.formationPulsoPreview}><img alt="Pulso final playback review contact sheet" src="/ai-exploration/iteration/pulso/final-preview-contact-sheet.jpg" /><figcaption>PULSO / FINAL PLAYBACK REVIEW</figcaption></figure>
+          <div className={styles.formationPulsoReviewSheets}>
+            <figure className={styles.formationPulsoPreview}><img alt="Pulso final playback review contact sheet" src="/ai-exploration/iteration/pulso/final-preview-contact-sheet.jpg" /><figcaption>PULSO / FINAL PLAYBACK REVIEW</figcaption></figure>
+            <figure className={styles.formationPulsoPreview}><img alt="Pulso ending and logo quality-control contact sheet from the production harness" src="/ai-exploration/edit-qc/pulso-final-qc-contact-sheet.jpg" /><figcaption>HARNESS SOURCE / ENDING · LOGO QC</figcaption></figure>
+          </div>
         </div>
         <div className={styles.formationMediaRail}>
           {[
@@ -2288,10 +2469,10 @@ function ResearchFormationSection() {
       <Reveal className={`${styles.contentWidth} ${styles.researchFormationInner}`}>
         <div className={styles.researchFormationIntro}>
           <SectionHeading
-            body="Workbench·리서치·API 생성·편집이 실제 작업의 문제와 폐기·완성을 거치며 현재 구조로 연결된 과정입니다."
+            body="03에서 설명한 도구를 다시 소개하지 않습니다. Workbench·리서치·API 생성·편집이라는 선택이 실제 작업의 문제·폐기·완성을 거치며 어떻게 현재 기준으로 바뀌었는지 보여줍니다."
             index="04"
             label="RESEARCH + SYSTEM FORMATION"
-            title="현재 제작 구조가 작업을 거치며 만들어진 과정"
+            title="선택한 방식이 실제 작업을 거치며 바뀐 과정"
           />
           <nav className={styles.researchFormationRoute} aria-label="제작 시스템 형성 과정">
             {systemFormationCases.map((item) => (
@@ -2325,7 +2506,7 @@ function ResearchFormationSection() {
         <SectionHandoff
           href="#proof"
           label="APPENDIX / EVIDENCE + DISCLOSURE"
-          title="03·04의 공개 가능한 적용 근거"
+          title="03·04에서 본 선택과 변화의 공개 가능한 근거"
         />
       </Reveal>
     </section>
