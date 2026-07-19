@@ -22,6 +22,7 @@ import styles from "./ai-exploration-portfolio.module.css";
 
 const AHEYA_ARCHIVE_URL = "https://github.com/aheyabaraya/aheya-public-archive";
 const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
+const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
 
 const portfolioNavigation = [
   ["validation", "결과"],
@@ -49,24 +50,24 @@ const resultSlides = [
     href: "https://www.youtube.com/watch?v=TyONE0lKI2s",
   },
   {
-    id: "root-signal",
-    label: "02 / LOOM MV",
-    title: "ROOT SIGNAL / FULL MASTER",
-    detail: "첫 번째 완성 MV",
-    message: "흩어진 신호가 하나의 흐름으로 이어지는 순간",
-    platform: "YOUTUBE",
-    videoId: "DUyCAFHZ7X0",
-    href: "https://www.youtube.com/watch?v=DUyCAFHZ7X0",
-  },
-  {
     id: "pulso",
-    label: "03 / LOOM MV",
+    label: "02 / LOOM MV",
     title: "PULSO / FINAL MASTER",
     detail: "구간별 제작·재생 검토를 적용한 MV",
     message: "서로 다른 박자가 하나의 장면으로 이어지는 순간",
     platform: "YOUTUBE",
     videoId: "0vV4CXL3_Qk",
     href: "https://www.youtube.com/watch?v=0vV4CXL3_Qk",
+  },
+  {
+    id: "root-signal",
+    label: "03 / LOOM MV",
+    title: "ROOT SIGNAL / FULL MASTER",
+    detail: "첫 번째 완성 MV",
+    message: "흩어진 신호가 하나의 흐름으로 이어지는 순간",
+    platform: "YOUTUBE",
+    videoId: "DUyCAFHZ7X0",
+    href: "https://www.youtube.com/watch?v=DUyCAFHZ7X0",
   },
 ] as const;
 
@@ -128,15 +129,29 @@ const currentSystemCases = [
   },
 ] as const;
 
-const structuredPromptFields = [
-  ["01", "CONTENT / SECTION", "곡과 구간, 이번 작업의 완료 범위"],
-  ["02", "IDENTITY ANCHOR", "유지할 멤버의 비주얼 아이덴티티"],
-  ["03", "REFERENCE FUNCTION", "레퍼런스마다 가져올 역할"],
-  ["04", "SCENE · ACTION · CAMERA", "레퍼런스의 행동·구도·카메라 활용"],
-  ["05", "AVOID / GUARD", "반복·왜곡·금지 조건"],
-  ["06", "HUMAN REVIEW", "사람이 확인할 통과 기준"],
-  ["07", "NEXT HANDOFF", "결과물과 다음 작업"],
-] as const;
+const rationaleSkillUses = {
+  workbench: {
+    skills: [
+      "idol-front-planning-director · idol-mv-director",
+      "idol-research-radar · idol-front-planning-handoff",
+    ],
+    contracts: "AGENTS.md · front-planning-readiness.schema.json · harness-stage-registry.yaml",
+    role: "타겟·메시지·레퍼런스 역할을 정리하고, 사람이 선택한 기준만 다음 작업에 인계",
+    cf: "cf/AGENTS.md · 대상·주장·콘셉트·광고 대상 근거",
+  },
+  api: {
+    skills: ["idol-generation · idol-video-prompt"],
+    contracts: "harness-stage-registry.yaml · video-prompt-manifest.schema.json",
+    role: "통과한 스토리보드의 이미지 작업 변환·승인 실행·키프레임과 구간 영상 제작",
+    cf: "cf/AGENTS.md · 키프레임·영상 패킷",
+  },
+  editing: {
+    skills: ["idol-editing-qc · idol-edit-finishing-fx"],
+    contracts: "edit-recipe.schema.json · edit-effect-registry.yaml",
+    role: "소스 인덱스·마커·프리뷰 준비와 실제 재생 QC·피니싱 분리",
+    cf: "cf/AGENTS.md · 편집·패키지 QC",
+  },
+} as const;
 
 const pulsoFaceAssets = Array.from({ length: 13 }, (_, index) => ({
   label: `M${String(index + 1).padStart(2, "0")}`,
@@ -294,69 +309,60 @@ const trendExperiments = [
 
 const systemFormationCases = [
   {
-    id: "prompt-origin",
+    id: "planning-workbench",
     index: "04—01",
-    period: "AURORA V2 / BEFORE ROOT SIGNAL",
-    title: "구조화된 프롬프트의 시작",
-    status: "PREVIOUS WORK → CURRENT RULE",
-    problem: "멤버 비주얼은 유지됐지만 장면과 포즈가 반복되는 문제",
-    inquiry: "이전 작업에서 통과한 프롬프트 비교. 좋은 결과에 반복된 CONTENT · IDENTITY · REFERENCE · SCENE · REVIEW 다섯 항목 확인",
-    applied: "멤버 비주얼 아이덴티티의 재사용, 메시지·행동·구도의 콘텐츠별 재작성",
-    result: "02A 스토리보드와 02B 프롬프트 패킷으로 이어진 첫 기준",
-    evidenceLabel: "Aurora V2 구조 근거",
-    evidenceSlug: "aurora-v1-to-v2-archive-map",
-  },
-  {
-    id: "root-edit-harness",
-    index: "04—02",
-    period: "ROOT SIGNAL / V11 FINAL",
-    title: "판단 기록을 남기는 편집·Harness 구조",
-    status: "PROBLEM → ANALYSIS → BUILD",
-    problem: "수정이 쌓일수록 통과한 원본과 선택 이유가 이전 렌더 안에서 사라지는 문제",
-    inquiry: "Premiere Pro의 소스·시퀀스·마커·렌더 구조 분석. X에서 본 GPT Image 2 다중 이미지 스토리보드 사례를 바탕으로 기획안·프롬프트·프레임을 함께 읽는 편집 가능성 검토",
-    applied: "Harness에 단계·승인·복귀 지점 기록. ffmpeg·ffprobe·Python으로 프레임 인덱스·컨택트시트·마커·프리뷰 자동 준비",
-    result: "스토리보드 순서의 러프 편집 준비. 원본 in/out·속도·싱크·cutpoint는 사람의 재생 검토",
-    evidenceLabel: "Media Toolchain 구현 근거",
-    evidenceSlug: "idol-edit-desk-implementation",
-  },
-  {
-    id: "api-playback",
-    index: "04—03",
-    period: "AFTER ROOT / LOW → PULSO",
-    title: "API 이후 더 중요해진 구간별 재생 판단",
-    status: "STRUCTURED API + PLAYBACK REVIEW",
-    problem: "손으로 반복 작성하는 생성 요청과, LOW에서 확인한 ‘비트 위치만 맞춰서는 음악과 영상이 이어지지 않는’ 문제",
-    inquiry: "Aurora에서 확인한 좋은 프롬프트 구조의 02A → 02B 고정 항목화. Root 이후 GPT Image 2 API 패킷과 사전 승인 단계 도입",
-    applied: "Pulso에서 구간별 02B 패킷 · 키프레임 후보 · 영상 프롬프트 · 실제 재생 검토 분리",
-    result: "API는 승인 후보의 반복 실행, 사람은 유료 실행·핵심 컷·구간 통과 판단",
-    evidenceLabel: "Pulso 구간 제작 근거",
-    evidenceSlug: "pulso-front-planning-readiness",
-  },
-  {
-    id: "causal-spine",
-    index: "04—04",
-    period: "LEFT IN THAT NIGHT → INK",
-    title: "장면 인과를 먼저 잠그는 기준",
-    status: "DISCARD → REPLAN → FINAL MASTER",
-    problem: "레퍼런스와 모티프는 많지만 감정의 주체·보이는 행동·다음 장면의 이유가 없었던 Left in That Night",
-    inquiry: "더 생성하는 대신 전체 MV 경로 폐기. ‘무슨 장면이 다음 장면을 일으키는가’부터 재검토",
-    applied: "INK에서 공개 메시지 → 멤버 역할 → 오브젝트·공간 → 곡 구간별 행동 순서로 기획",
-    result: "메시지에서 핵심 컷·구간 영상·최종 마스터까지 이어진 시각 체계",
-    evidenceLabel: null,
-    evidenceSlug: null,
-  },
-  {
-    id: "workbench",
-    index: "04—05",
-    period: "AFTER INK → ONE MOVE / CURRENT",
-    title: "ONE MOVE에 적용 중인 Front Planning Workbench",
-    status: "REFERENCE → PROTOTYPE → CURRENT USE",
-    problem: "기획이 선명해진 뒤에도 메시지·레퍼런스 역할·곡 구간·후보 상태가 여러 문서와 세션에 흩어지는 문제",
-    inquiry: "ComfyUI의 연결·재사용 방식과 Grok Imagine Agent의 대화형 후보 확장을 참고해, 기획 맥락과 선택 상태를 한 화면에서 다루는 방법 탐색",
-    applied: "메시지·타깃·레퍼런스·구간 흐름·선택 이유를 한 캔버스에 모은 Workbench 구현",
-    result: "ONE MOVE의 실제 Front Planning 적용. Workbench는 기획·검토, Harness는 생성·수정·인계 담당",
+    route: "PLANNING · WORKBENCH",
+    period: "AURORA V2 → AB_AURORA → ONE MOVE",
+    title: "기획 맥락을 Workbench로 모으기까지",
+    status: "REPEATED CONTEXT → VISIBLE DECISION SURFACE",
+    problem: "프로젝트가 길어질수록 처음 정한 메시지·레퍼런스 역할·선택 이유가 문서와 AI 세션 사이에서 흩어지는 문제",
+    inquiry: "AURORA V2의 반복 제작 단위와 AB_AURORA의 방향 선택 흐름, ComfyUI의 연결 방식과 Figma의 시각 상태 관리를 대조했습니다.",
+    applied: "메시지·타겟·곡 구간·레퍼런스·후보 상태를 한 화면에 두고, 선택한 기준만 다음 제작 단계가 읽도록 Workbench를 구현했습니다.",
+    result: "ONE MOVE에서 실제 기획에 사용하는 Workbench. 사람은 기획과 선택을 맡고 Harness는 승인·생성·수정·인계를 담당합니다.",
     evidenceLabel: "Workbench 구현 근거",
     evidenceSlug: "front-planning-workbench-checkpoint",
+  },
+  {
+    id: "research-harness",
+    index: "04—02",
+    route: "RESEARCH · HARNESS",
+    period: "AURORA V2 → LEFT IN THAT NIGHT → INK",
+    title: "리서치와 레퍼런스를 장면 기준으로 바꾸기까지",
+    status: "MORE REFERENCES → CLEAR REFERENCE FUNCTION",
+    problem: "레퍼런스와 모티프를 많이 모아도 장면의 주체·행동·인과가 정해지지 않으면 결과가 연결되지 않는 문제",
+    inquiry: "AURORA V2의 구조화된 프롬프트를 출발점으로 삼고, Left in That Night의 폐기 이유와 INK의 메시지·행동·공간 연결을 비교했습니다.",
+    applied: "레퍼런스마다 유지할 identity, 장면에서 맡을 기능, 카메라·행동 적용 범위와 제외 조건을 기록하고 변경된 판단은 원래 단계로 돌려보냈습니다.",
+    result: "리서치는 방향을 대신 정하지 않고 후보를 보강합니다. 선택한 역할과 장면 기준만 09–16단계를 거쳐 다음 작업에 남습니다.",
+    evidenceLabel: "Harness 단계 근거",
+    evidenceSlug: "idol-harness-stage-registry",
+  },
+  {
+    id: "api-production",
+    index: "04—03",
+    route: "IMAGE · VIDEO API",
+    period: "ROOT SIGNAL → PULSO → INK",
+    title: "이미지·영상 생성을 API와 구간 검토로 나누기까지",
+    status: "STRUCTURED API + PLAYBACK REVIEW",
+    problem: "손으로 생성 요청을 반복하고, 한 번에 긴 영상을 만들수록 어느 구간에서 방향이 달라졌는지 찾기 어려운 문제",
+    inquiry: "Root Signal 이후 이미지 생성 요청을 구조화하고, LOW와 PULSO에서 비트 위치보다 동작의 착지·카메라 연결·장면 인과가 중요하다는 점을 확인했습니다.",
+    applied: "14–16단계의 스토리보드·패킷, 17단계의 유료 실행 승인, 18–19단계의 이미지 후보 검토, 20–22단계의 구간 영상·재생 검토를 분리했습니다.",
+    result: "API는 승인된 작업의 반복 실행을 맡고, 사람은 유료 실행·핵심 컷·움직임·구간 통과를 판단합니다.",
+    evidenceLabel: "API 제출용 패킷·보류 상태",
+    evidenceSlug: "pulso-api-submission-packet",
+  },
+  {
+    id: "editing",
+    index: "04—04",
+    route: "EDIT · TOOLCHAIN",
+    period: "ROOT SIGNAL → PULSO → CURRENT",
+    title: "편집 준비와 최종 컷 판단을 분리하기까지",
+    status: "MANUAL PREP → MEDIA TOOLCHAIN + HUMAN PLAYBACK",
+    problem: "수정이 쌓일수록 통과한 원본과 선택 이유가 렌더 안에서 사라지고, 반복 분석과 프리뷰 준비가 실제 컷 판단보다 길어지는 문제",
+    inquiry: "Premiere Pro의 소스·시퀀스·마커·렌더 구조를 분석하고 Root Signal과 PULSO의 실제 편집·재생 검토 기록을 비교했습니다.",
+    applied: "ffprobe·OpenCV·librosa·ffmpeg와 Python으로 소스 인덱스·컨택트시트·마커·프리뷰·QC를 준비하는 Media Toolchain을 분리했습니다.",
+    result: "도구는 비교 자료와 러프 편집 준비를 맡고, source in/out·속도·싱크·cutpoint와 최종 마스터는 실제 재생으로 결정합니다.",
+    evidenceLabel: "Media Toolchain 구현 근거",
+    evidenceSlug: "idol-edit-desk-implementation",
   },
 ] as const;
 
@@ -508,13 +514,13 @@ const harnessPhases = [
       {
         index: "11",
         title: "MV·퍼포먼스 디렉션",
-        humanGate: "CREATIVE LOCK",
+        humanGate: null,
         details: ["멤버 행동·퍼포먼스·카메라 경로 설계", "구간별 시작·사건·도착 연결"],
       },
       {
         index: "12",
         title: "비주얼 시스템 락",
-        humanGate: "CREATIVE LOCK",
+        humanGate: null,
         details: ["의상·오브젝트·공간·빛 규칙 통합", "01 Direction Map 확정"],
       },
     ],
@@ -526,23 +532,23 @@ const harnessPhases = [
     detail: "커버리지 · 스토리보드 · 이미지 검토",
     stages: [
       { index: "13", title: "생성 커버리지 플랜", humanGate: null, details: ["곡 구간별 필요한 컷과 역할 정의", "원본 연결과 출력 경로 설정"] },
-      { index: "14", title: "컷·키프레임 스토리보드", humanGate: "STORYBOARD REVIEW", details: ["핵심 컷·삽입 컷·전환 컷 배치", "장면 인과와 앞뒤 프레임 연결"] },
-      { index: "15", title: "스토리보드 리뷰", humanGate: "STORYBOARD REVIEW", details: ["장면 범위·인물 기준·인과 검토", "통과한 곡 구간만 프롬프트로 전달"] },
-      { index: "16", title: "이미지 프롬프트 컴파일", humanGate: null, details: ["곡 구간·레퍼런스·카메라·행동을 프롬프트로 작성", "작업 목록·경로·형식 사전 점검"] },
+      { index: "14", title: "컷·키프레임 스토리보드", humanGate: null, details: ["11–12단계의 장면 의미·카메라 방향 유지", "컷별 행동·구도·카메라·앞뒤 프레임 확정"] },
+      { index: "15", title: "스토리보드 리뷰", humanGate: "STORYBOARD REVIEW", details: ["장면 범위·인물 기준·인과 검토", "11–12단계의 연출 방향을 바꾸지 않았는지 확인"] },
+      { index: "16", title: "이미지 프롬프트 컴파일", humanGate: null, details: ["14–15단계에서 통과한 내용을 생성 형식으로 변환", "새 장면·구도·카메라를 임의로 추가하지 않음"] },
       { index: "17", title: "이미지 생성 릴리스 게이트", humanGate: "PAID GENERATION", details: ["유료 실행 범위와 묶음 확인", "사람이 승인한 작업만 실행 대기열로 전달"] },
-      { index: "18", title: "키프레임 생성", humanGate: "PAID GENERATION", details: ["승인 작업 실행", "결과·파일 식별값·작업 기록 회수"] },
+      { index: "18", title: "키프레임 생성", humanGate: null, details: ["승인 작업 실행", "결과·파일 식별값·작업 기록 회수"] },
       { index: "19", title: "생성 키프레임 리뷰", humanGate: "GENERATED ASSET REVIEW", details: ["컨택트시트 비교", "통과·보류·재생성 결정"] },
     ],
   },
   {
     id: "motion",
     index: "06",
-    title: "MOTION PRODUCTION",
-    detail: "오디오 배치 · 모션 · 재생 검토",
+    title: "VIDEO PRODUCTION",
+    detail: "영상 생성 · 구간 재생 · 리뷰",
     stages: [
       { index: "20", title: "오디오-프레임 배치", humanGate: null, details: ["선택 음원 구간과 시작 프레임 연결", "앞뒤 곡 구간의 타이밍 연결"] },
-      { index: "21", title: "모션 디렉션과 프롬프팅", humanGate: "PLAYBACK REVIEW", details: ["카메라 경로·동작·도착 프레임 작성", "영상 프롬프트 작업 목록 검증"] },
-      { index: "22", title: "모션 플레이백 리뷰", humanGate: "PLAYBACK REVIEW", details: ["실제 구간 영상 재생", "통과한 원본만 편집 단계로 인계"] },
+      { index: "21", title: "영상 디렉션과 프롬프팅", humanGate: null, details: ["카메라 경로·동작·도착 프레임 작성", "영상 프롬프트 작업 목록 검증"] },
+      { index: "22", title: "생성 영상 리뷰", humanGate: "PLAYBACK REVIEW", details: ["실제 생성 영상을 구간별 재생", "통과한 원본만 편집 단계로 인계"] },
     ],
   },
   {
@@ -551,7 +557,7 @@ const harnessPhases = [
     title: "EDIT & FINISH",
     detail: "편집 · 피니싱 · QC",
     stages: [
-      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "PLAYBACK QC", details: ["스토리보드의 컷 순서대로 러프 편집 준비", "원본 in/out·속도·오디오 싱크·연결 검토", "통과·수정·14—15단계 복귀 결정"] },
+      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "PLAYBACK QC", details: ["스토리보드 및 Front Planning 순서대로 러프 편집", "원본 in/out·속도·오디오 싱크·연결 검토", "통과 및 수정 검토"] },
       { index: "24", title: "피니싱 FX", humanGate: "EDIT REVIEW", details: ["통과한 컷에 효과 적용", "코덱·프레임·오디오·납품 상태 확인"] },
     ],
   },
@@ -585,6 +591,7 @@ const harnessFamilies = [
     stage: "12 STAGES",
     human: "메시지 · 곡 · 연출 기준",
     output: "01 DIRECTION MAP",
+    cf: "SPEC CF · 대상 · Claim · Concept",
     links: [
       ["A", "DISCOVERY + SONG", "#harness-planning-a"],
       ["B", "CREATIVE + DIRECTION", "#harness-planning-b"],
@@ -596,11 +603,12 @@ const harnessFamilies = [
     label: "GENERATION",
     phase: "PHASE 05—06",
     stage: "10 STAGES",
-    human: "스토리보드 · 판단 · 재생 검토",
+    human: "이미지 및 영상 생성과 검토",
     output: "REVIEWED SECTION VIDEO",
+    cf: "SPEC CF · Keyframe · Video Packet",
     links: [
       ["A", "KEYFRAME", "#harness-generation-a"],
-      ["B", "MOTION", "#harness-generation-b"],
+      ["B", "VIDEO GENERATION + REVIEW", "#harness-generation-b"],
     ],
   },
   {
@@ -611,6 +619,7 @@ const harnessFamilies = [
     stage: "2 STAGES",
     human: "타이밍 · 연결 · 마스터 승인",
     output: "APPROVED MASTER",
+    cf: "SPEC CF · Edit · Package QC",
     links: [["A", "EDIT & FINISH", "#harness-edit"]],
   },
   {
@@ -621,6 +630,7 @@ const harnessFamilies = [
     stage: "4 STAGES",
     human: "공개 · 외부 실행 · 학습 승격",
     output: "PROMOTED MEMORY",
+    cf: "SPEC CF · Variant · Approval",
     links: [["A", "RELEASE + LEARNING", "#harness-release"]],
   },
 ] as const;
@@ -651,9 +661,9 @@ const harnessChapters = [
     phaseIds: ["creative", "direction"],
     handoffs: [
       ["INPUT", "Selected Audio Evidence"],
-      ["LOCK", "00 · 00A"],
-      ["DIRECTION", "01 Direction Map"],
-      ["NEXT", "05 Keyframe Production"],
+      ["LOCK", "06–08 Creative + Song"],
+      ["DIRECTION", "09–12 Direction Map"],
+      ["NEXT", "13–19 Keyframe Production"],
     ],
     human: "메시지 · 핵심 콘셉트 · MV·퍼포먼스 · 시각 체계 확정",
     returnPath: "기획 판단이 바뀌면 해당 기획 단계로 복귀",
@@ -666,11 +676,11 @@ const harnessChapters = [
     body: "장면 범위와 스토리보드를 먼저 확정하고, 통과한 곡 구간만 이미지로 만들어 컨택트시트에서 비교합니다.",
     phaseIds: ["keyframe"],
     handoffs: [
-      ["INPUT", "01 Direction Map"],
-      ["COVERAGE", "Generation Plan"],
-      ["STORYBOARD", "Passed Keyframe Plan"],
-      ["KEYFRAME", "Approved Frames"],
-      ["NEXT", "06 Motion Production"],
+      ["INPUT", "09–12 Direction Map"],
+      ["COVERAGE", "13 Generation Plan"],
+      ["STORYBOARD", "14–15 Passed Storyboard"],
+      ["KEYFRAME", "18–19 Approved Frames"],
+      ["NEXT", "20–22 Video Production"],
     ],
     human: "스토리보드 · 유료 생성 · 핵심 컷 통과·보류·재생성",
     returnPath: "보류·거절된 이미지는 스토리보드·프롬프트·생성 단계로 복귀",
@@ -678,7 +688,7 @@ const harnessChapters = [
   {
     id: "generation-b",
     index: "02—03B",
-    label: "GENERATION / MOTION",
+    label: "GENERATION / VIDEO",
     title: "통과한 핵심 컷의 구간 영상화",
     body: "선택 음원과 핵심 컷을 맞추고 카메라·동작·장면 연결을 정리한 뒤, 직접 재생해 통과한 구간만 편집에 넘깁니다.",
     phaseIds: ["motion"],
@@ -688,8 +698,8 @@ const harnessChapters = [
       ["PLAYBACK", "Reviewed Section Video"],
       ["NEXT", "07 Edit & Finish"],
     ],
-    human: "모션 방향 · 생성 구간 · 구간 재생 검토",
-    returnPath: "보류된 영상은 핵심 컷·영상 프롬프트·모션 단계로 복귀",
+    human: "영상 방향 · 생성 구간 · 구간 재생 검토",
+    returnPath: "보류된 영상은 핵심 컷·영상 프롬프트·영상 생성 단계로 복귀",
   },
   {
     id: "edit",
@@ -875,8 +885,8 @@ const schemaConnection = [
 
 const evidenceLogic: Record<string, [string, string]> = {
   "front-planning-workbench-checkpoint": [
-    "이 Markdown checkpoint는 구현된 화면, 로컬 계약 테스트, 실제 제품 클라이언트 통과, 아직 수락되지 않은 조건을 구분합니다.",
-    "실행 가능한 화면이 있다는 사실과 실제 곡·규모·품질 조건을 통과했다는 주장을 분리하는 기준으로 사용합니다.",
+    "이 Python 원문은 선택된 로컬 레퍼런스가 경로·해시·캔버스 계약을 통과한 뒤에만 revision에 반영되는 구조를 보여줍니다.",
+    "Workbench가 창작 판단을 자동 확정하는 도구가 아니라, 사람이 고른 기획 맥락을 안전하게 유지·인계하는 작업 환경이라는 근거입니다.",
   ],
   "idol-edit-desk-implementation": [
     "이 Python 파일은 영상 길이·마커·파형·클립을 같은 타임라인에 놓고, 선택한 구간만 프리뷰로 렌더합니다.",
@@ -951,13 +961,21 @@ function SectionHeading({
   );
 }
 
-function EvidenceLink({ slug, label = "근거 파일 일부 보기" }: { slug: string; label?: string }) {
+function EvidenceLink({
+  slug,
+  label = "근거 파일 일부 보기",
+  badgeLabel,
+}: {
+  slug: string;
+  label?: string;
+  badgeLabel?: string;
+}) {
   const source = getEvidenceSource(slug);
   if (!source) return null;
 
   return (
     <Link className={styles.evidenceLink} href={`/ai-exploration/motion-bank/${slug}`}>
-      <span>{getEvidenceDisclosureLabel(source)}</span>
+      <span>{badgeLabel ?? getEvidenceDisclosureLabel(source)}</span>
       <strong>{label}</strong>
       <ArrowRight size={15} />
     </Link>
@@ -1119,6 +1137,7 @@ function HarnessSummaryScore() {
               <span>{family.stage}</span>
               <p><i aria-hidden="true" />HUMAN / {family.human}</p>
               <em>{family.output}</em>
+              <small className={styles.harnessCfLane}>{family.cf}</small>
               <nav aria-label={`${family.label} 상세 페이지`}>
                 {family.links.map(([index, label, href]) => (
                   <a href={href} key={href}><small>{index}</small><strong>{label}</strong><ArrowRight aria-hidden="true" size={11} /></a>
@@ -1608,16 +1627,52 @@ function CurrentSystemCasePage({ activeCase }: { activeCase: (typeof currentSyst
   );
 }
 
+function RationaleSkillUse({ kind }: { kind: keyof typeof rationaleSkillUses }) {
+  const item = rationaleSkillUses[kind];
+
+  return (
+    <dl className={styles.rationaleSkillUse}>
+      <div>
+        <dt>USED SKILLS</dt>
+        <dd>{item.skills.map((skill) => <span key={skill}>{skill}</span>)}</dd>
+      </div>
+      <div>
+        <dt>INSTRUCTION · CONTRACT</dt>
+        <dd>{item.contracts}</dd>
+      </div>
+      <div>
+        <dt>USED FOR</dt>
+        <dd>{item.role}</dd>
+      </div>
+      <div>
+        <dt>PERSONAL SPEC CF</dt>
+        <dd>{item.cf}</dd>
+      </div>
+    </dl>
+  );
+}
+
 function CurrentSystemSection() {
   return (
     <section className={`${styles.section} ${styles.rationaleRebuild}`} id="rationale">
       <Reveal className={`${styles.contentWidth} ${styles.rationaleRebuildInner}`}>
         <SectionHeading
-          body="기획 보드, 단계 인계, 재생 검토가 실제 작업에서 어떻게 쓰이는지 세 가지 화면으로 확인합니다."
+          body="Workbench는 기획 기준을 유지하고, API는 승인한 작업을 반복 실행하며, 편집 도구는 비교 자료를 준비합니다. 세 도구를 쓰는 이유는 자동화 자체가 아니라 사람의 판단을 결과까지 이어가기 위해서입니다."
           index="03"
-          label="ACTUAL APPLICATION"
-          title="현재 제작에서 쓰는 세 가지 적용 방식"
+          label="AI PHILOSOPHY + WHY THESE TOOLS"
+          title="왜 Workbench·API·편집 도구를 쓰는가"
         />
+
+        <div className={styles.rationalePhilosophy}>
+          <div>
+            <span>CORE APPROACH / MINIMUM-INTERVENTION SEMI-AUTOMATION</span>
+            <strong>세 도구는 사람의 판단을 대체하지 않고, 그 판단이 반복 작업 속에서 사라지지 않게 하기 위해 사용했습니다.</strong>
+          </div>
+          <dl>
+            <div><dt>HUMAN</dt><dd>메시지 · 레퍼런스 역할 · 장면 방향 · 후보 선택 · 최종 컷 · 공개</dd></div>
+            <div><dt>AI + TOOLS</dt><dd>리서치 보강 · 맥락 정리 · API 실행 · 후보 비교 자료 · 프리뷰 · QC 준비</dd></div>
+          </dl>
+        </div>
 
         <div className={styles.rationalePages}>
           <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-repeat">
@@ -1633,16 +1688,16 @@ function CurrentSystemSection() {
                   </figure>
                   <div className={styles.planningVideoFigure}>
                     <video controls muted playsInline preload="metadata" src="/ai-exploration/rationale-assets/one-move-planning-last-5s.mp4" />
-                    <div><span>ACTUAL WORKFLOW / LAST 5 SEC</span><p>사용자가 제공한 화면 기록의 마지막 5초.</p></div>
+                    <div><span>ACTUAL WORKFLOW / LAST 5 SEC</span><p>ONE MOVE의 실제 기획 작업 기록.</p></div>
                   </div>
                 </div>
 
                 <div className={styles.repeatTaskRail}>
                   {[
-                    ["01", "RESEARCH", "곡·메시지·월드 전환 문제 조사"],
-                    ["02", "COLLECT", "영상 프레임과 인물별 레퍼런스 수집"],
-                    ["03", "MAP", "각 레퍼런스의 기능과 카메라 축 연결"],
-                    ["04", "LOCK", "구간 흐름과 사람 승인 기준 고정"],
+                    ["06", "FRONT PLANNING", "메시지·타겟·곡 구간 통합"],
+                    ["09", "RESEARCH", "리서치와 레퍼런스 후보 보강"],
+                    ["10", "REFERENCE LOCK", "역할·적용 구간·보류 이유 결정"],
+                    ["11–12", "DIRECTION HANDOFF", "선택한 연출·비주얼 기준 전달"],
                   ].map(([index, title, detail]) => (
                     <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                   ))}
@@ -1652,47 +1707,81 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—01 / ONE MOVE · PLANNING</span>
-                <h3>반복 준비를 줄이는 하나의 기획 보드</h3>
-                <p>별도 제작 사례 ONE MOVE에서 레퍼런스를 인물·카메라 축·세계 전환·곡 구간의 역할로 나누고, 생성 전에 장면 흐름과 충돌을 확인하며 기획했습니다.</p>
+                <span>03—01 / WORKBENCH</span>
+                <h3>기획 기준을 한 화면에 유지하기 위해</h3>
+                <p>메시지·타겟·곡 구간·레퍼런스·후보 상태를 한 화면에 놓습니다. 리서치는 후보를 보강하고, 사람이 고른 역할·장면 기준·보류 이유만 다음 작업에 남깁니다.</p>
               </header>
               <div className={styles.llmProblemStatement}>
-                <span>LLM ONLY</span>
-                <p>세션마다 맥락을 다시 설명하고 같은 명령을 실행해야 했습니다.</p>
+                <span>WHY IT EXISTS</span>
+                <p>세션마다 맥락을 다시 설명하면 처음 정한 메시지와 선택 이유가 조금씩 달라졌습니다.</p>
                 <i aria-hidden="true">→</i>
-                <strong>문제는 생성 속도가 아니라, 판단 전에 반복되는 준비였습니다.</strong>
+                <strong>Workbench는 생성기가 아니라, 사람과 AI가 같은 기획 기준을 보는 작업 환경입니다.</strong>
+              </div>
+              <RationaleSkillUse kind="workbench" />
+              <div className={styles.rationaleEvidenceLinks}>
+                <EvidenceLink label="Workbench 실제 구조 보기" slug="front-planning-workbench-checkpoint" />
+                <EvidenceLink label="Harness 인계 기준 보기" slug="idol-harness-stage-registry" />
               </div>
             </aside>
           </article>
 
-          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-structure">
-            <div className={`${styles.rationaleResultMedia} ${styles.rationaleSchemaMedia}`}>
-              <div className={styles.schemaFieldList} role="table" aria-label="Structured prompt schema fields">
-                <div className={styles.schemaFieldHeading}>
-                  <span>STRUCTURED PROMPT / SCHEMA ONLY</span>
-                  <p>생성문 전체가 아니라, 단계 사이에 넘기는 7개 항목만 표시합니다.</p>
-                </div>
-                {structuredPromptFields.map(([index, field, detail]) => (
-                  <div className={styles.schemaField} key={field} role="row">
-                    <span>{index}</span><strong>{field}</strong><small>{detail}</small>
-                  </div>
-                ))}
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-api">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleApiMedia}`}>
+              <div className={styles.rationaleApiEvidence}>
+                <figure>
+                  <img alt="INK approved image keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
+                  <figcaption>IMAGE API / S00—S03</figcaption>
+                </figure>
+                <figure>
+                  <img alt="INK S04 to S07 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s04-s07-keyframe-sheet-v3.webp" />
+                  <figcaption>IMAGE API / S04—S07</figcaption>
+                </figure>
+                <figure>
+                  <img alt="INK S08 to S10 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s08-s10-keyframe-sheet-v3.webp" />
+                  <figcaption>IMAGE API / S08—S10</figcaption>
+                </figure>
+                <figure>
+                  <img alt="INK S11 to S12 keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s11-s12-keyframe-sheet-v3.webp" />
+                  <figcaption>IMAGE API / S11—S12</figcaption>
+                </figure>
+                <figure>
+                  <video controls muted playsInline preload="metadata" src="/ai-exploration/edit-qc/ink-api-output-window-01.mp4" />
+                  <figcaption>VIDEO OUTPUT / 48—60S</figcaption>
+                </figure>
+                <figure>
+                  <video controls muted playsInline preload="metadata" src="/ai-exploration/edit-qc/ink-api-output-window-02.mp4" />
+                  <figcaption>VIDEO OUTPUT / 112—124S</figcaption>
+                </figure>
+              </div>
+              <div className={styles.rationaleApiRail}>
+                {[
+                  ["12", "DIRECTION"],
+                  ["14–15", "STORYBOARD"],
+                  ["16–17", "PACKET · APPROVE"],
+                  ["18–19", "IMAGE · REVIEW"],
+                  ["20–22", "VIDEO · PLAYBACK"],
+                ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
               </div>
             </div>
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—02 / HANDOFF CONTRACT</span>
-                <h3>다음 작업에 넘기는 7개 인계 기준</h3>
-                <p>긴 생성문을 매번 다시 쓰지 않고 제작 맥락과 검토 기준만 같은 구조로 전달합니다.</p>
+                <span>03—02 / API AUTOMATED GENERATION</span>
+                <h3>승인한 작업만 반복 실행하기 위해</h3>
+                <p>사람이 확정한 컷을 생성 형식으로 바꾸고, 승인된 범위만 이미지·영상 API로 실행합니다. 자동 생성은 후보를 늘리는 역할만 하며 방향과 통과 여부를 정하지 않습니다.</p>
               </header>
-              <div className={styles.compactPromptHandoff}>
-                <div><span>LOCK</span><strong>메시지 · 멤버 비주얼 아이덴티티 · 레퍼런스 역할</strong></div>
-                <i aria-hidden="true">→</i>
-                <div><span>GENERATE</span><strong>필드 기반 이미지·영상 패킷</strong></div>
-                <i aria-hidden="true">→</i>
-                <div><span>REVIEW</span><strong>후보 비교 · 선택 이유 · 다음 작업</strong></div>
+              <div className={styles.humanGateList}>
+                {[
+                  ["01", "PACKET", "통과한 행동·구도·카메라를 작업 형식으로 변환"],
+                  ["02", "PAID API GATE", "사람이 승인한 범위만 유료 실행"],
+                  ["03", "KEYFRAME REVIEW", "핵심 컷의 통과·보류·재생성 결정"],
+                  ["04", "SECTION PLAYBACK", "움직임·카메라·다음 장면 연결을 재생 검토"],
+                ].map(([index, title, detail]) => (
+                  <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
+                ))}
               </div>
+              <RationaleSkillUse kind="api" />
+              <EvidenceLink label="이미지·영상 API 패킷 구조 보기" slug="pulso-api-submission-packet" />
             </aside>
           </article>
 
@@ -1700,20 +1789,20 @@ function CurrentSystemSection() {
             <div className={`${styles.rationaleResultMedia} ${styles.rationaleAttitudeMedia}`}>
               <div className={styles.attitudeEvidenceGrid}>
                 <figure className={styles.attitudeContactSheet}>
-                  <img alt="ATTITUDE ZLV final master section contact sheet" src="/ai-exploration/rationale-assets/attitude-zlv-a58-final-contact-sheet.jpg" />
+                  <img alt="INK final master edit review contact sheet" src="/ai-exploration/edit-qc/ink-final-master-edit-contact-sheet.jpg" />
                   <figcaption>
-                    <span>JELLOVERSE / ACTUAL FINAL MV</span>
-                    <strong>ATTITUDE ZLV A58 / FINAL 92 SEC</strong>
-                    <p>구간 영상과 수정안을 하나의 타임라인으로 연결한 승인된 최종 편집본.</p>
+                    <span>INK / FINAL EDIT REVIEW SHEET</span>
+                    <strong>FINAL MASTER / 25-FRAME EXTRACTION</strong>
+                    <p>최종 마스터에서 소스 순서와 구간 연결을 다시 확인한 공개용 편집 시트.</p>
                   </figcaption>
                 </figure>
                 <div className={styles.attitudeSectionVideos}>
                   {[
-                    ["FINAL MASTER", "/ai-exploration/rationale-assets/attitude-zlv-a58-final-90s.mp4", "/ai-exploration/rationale-assets/attitude-zlv-a58-final-poster.jpg"],
-                    ["SECTION 03", "/ai-exploration/rationale-assets/attitude-zlv-section-03.mp4", "/ai-exploration/rationale-assets/attitude-zlv-section-03-poster.jpg"],
-                  ].map(([label, src, poster]) => (
+                    ["EDIT WINDOW / 26—38S", "/ai-exploration/edit-qc/ink-final-edit-window-01.mp4"],
+                    ["EDIT WINDOW / 82—94S", "/ai-exploration/edit-qc/ink-final-edit-window-02.mp4"],
+                  ].map(([label, src]) => (
                     <figure key={label}>
-                      <video controls playsInline poster={poster} preload="metadata" src={src} />
+                      <video controls playsInline preload="metadata" src={src} />
                       <figcaption>{label}</figcaption>
                     </figure>
                   ))}
@@ -1723,33 +1812,36 @@ function CurrentSystemSection() {
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
-                <span>03—03 / MEDIA TOOLCHAIN → HUMAN GATE</span>
-                <h3>컨택트시트·구간 프리뷰·완성본의 재생 검토</h3>
-                <p>별도 제작 사례 ATTITUDE의 컨택트시트·구간 프리뷰·완성본입니다. 도구는 비교 자료를 준비하고, 사람은 실제 재생으로 연결·타이밍·통과 여부를 판단했습니다.</p>
+                <span>03—03 / EDIT · MEDIA TOOLCHAIN</span>
+                <h3>준비보다 컷 판단에 시간을 쓰기 위해</h3>
+                <p>ffprobe·OpenCV·librosa·ffmpeg와 Python이 소스 정보·컨택트시트·마커·프리뷰·QC 자료를 준비합니다. 사람은 컷의 순서·속도·싱크·연결과 최종 마스터를 실제 재생으로 결정합니다.</p>
               </header>
               <div className={styles.humanGateList}>
                 {[
-                  ["01", "KEYFRAME SELECTION", "어떤 후보를 기준 컷으로 삼을지"],
-                  ["02", "PLAYBACK REVIEW", "움직임과 다음 컷이 이어지는지"],
-                  ["03", "FINAL / RELEASE", "최종 마스터와 공개 여부"],
+                  ["01", "SOURCE INTAKE", "원본·FPS·오디오·구간 상태 확인"],
+                  ["02", "CONTACT SHEET · MARKER", "비교 자료와 컷 후보 준비"],
+                  ["03", "PLAYBACK REVIEW", "음악·동작·장면 연결과 타이밍 판단"],
+                  ["04", "FINAL · QC", "통과한 편집의 마스터와 공개 범위 승인"],
                 ].map(([index, title, detail]) => (
                   <div key={index}><span>{index}</span><strong>{title}</strong><small>{detail}</small></div>
                 ))}
               </div>
+              <RationaleSkillUse kind="editing" />
+              <EvidenceLink label="편집 Python 원문 보기" slug="idol-edit-desk-implementation" />
             </aside>
           </article>
         </div>
 
         <div className={styles.rationaleBoundary}>
           <span>OPERATING BOUNDARY</span>
-          <p><strong>Workbench는 생성기가 아니라 기획·검토 환경입니다.</strong> 생성 API가 기획 판단이나 공개 결정을 대신 실행하지 않습니다.</p>
-          <a href="#proof">부록 / 상세 구현 근거 <ArrowDown size={16} /></a>
+          <p><strong>AI는 가능성을 넓히고 반복을 줄이지만, 브랜드 메시지와 결과를 바꾸는 판단은 사람이 유지합니다.</strong> 자동 유료 실행·기획 자동 확정·보호 자산 외부 전송은 현재 범위에서 제외했습니다.</p>
+          <a href="#research">04 / 발전 과정 보기 <ArrowDown size={16} /></a>
         </div>
 
         <SectionHandoff
           href="#research"
           label="04 / RESEARCH + SYSTEM FORMATION"
-          title="문제를 발견하고 제작 구조로 바꾼 과정"
+          title="현재 제작 구조가 작업을 거치며 만들어진 과정"
         />
       </Reveal>
     </section>
@@ -1845,7 +1937,7 @@ function SystemProofSection() {
               <div className={styles.generationContractJobs}>
                 <article>
                   <span>IMAGE JOB / 02B</span>
-                  <strong>01 Direction Map → 02B Prompt Packets</strong>
+                  <strong>12 Direction Map → 14–15 Passed Storyboard → 16 Prompt Packets</strong>
                   <ol>{imagePromptStructure.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ol>
                 </article>
                 <div className={styles.generationContractGate}>
@@ -1963,6 +2055,68 @@ function SystemProofSection() {
   );
 }
 
+function EvidenceIndexSection() {
+  const sources = [
+    {
+      index: "03—01",
+      title: "Workbench · Research · Handoff",
+      detail: "기획 기준·리서치·레퍼런스 역할·선택 상태를 한 화면에 모으고 다음 작업에 인계한 구현과 단계 기록.",
+      links: [
+        { label: "Workbench 적용 근거 보기", slug: "front-planning-workbench-checkpoint" },
+        { label: "Harness 인계 근거 보기", slug: "idol-harness-stage-registry" },
+      ],
+    },
+    {
+      index: "03—02",
+      title: "이미지·영상 생성 · API",
+      detail: "스토리보드·패킷·유료 실행 승인·키프레임·구간 재생 검토를 나눈 실제 제작 기록.",
+      links: [
+        { label: "API 생성 적용 근거 보기", slug: "pulso-front-planning-readiness" },
+      ],
+    },
+    {
+      index: "03—03",
+      title: "편집 · Media Toolchain",
+      detail: "소스 인덱스·컨택트시트·마커·프리뷰·QC 준비와 사람의 재생 판단을 분리한 구현 범위.",
+      links: [
+        { label: "편집 도구 적용 근거 보기", slug: "idol-edit-desk-implementation" },
+      ],
+    },
+  ] as const;
+
+  return (
+    <section className={`${styles.section} ${styles.proofSection} ${styles.sourceIndexSection}`} id="proof">
+      <Reveal className={styles.contentWidth}>
+        <SectionHeading
+          body="세 도구 안에 표시한 Skill 전문 대신, 실제 화면과 결과물로 이어졌는지 확인할 수 있는 자료만 정리했습니다."
+          index="APPENDIX / EVIDENCE INDEX"
+          label="APPLICATION EVIDENCE + DISCLOSURE"
+          title="03·04의 공개 가능한 적용 근거"
+        />
+
+        <div className={styles.sourceIndexGrid}>
+          {sources.map((source) => (
+            <article key={source.index}>
+              <header><span>{source.index}</span><h3>{source.title}</h3></header>
+              <p>{source.detail}</p>
+              <div className={styles.sourceIndexLinks}>
+                {source.links.map((link) => (
+                  <EvidenceLink badgeLabel="검증 자료" key={link.slug} label={link.label} slug={link.slug} />
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className={styles.sourceIndexBoundary}>
+          <ShieldCheck size={18} />
+          <p>내부 Skill·Schema·운영 문서와 프롬프트 전문은 공개하지 않습니다. 대신 사용한 문서명과 역할, 실제 화면, 적용 결과, 확인 가능한 범위를 구분해 제공합니다.</p>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 function VisualWorkflowReference() {
   return (
     <div className={styles.adoptionVisual}>
@@ -2038,33 +2192,14 @@ function HarnessAdoptionDiagram() {
 }
 
 function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[number]["id"] }) {
-  if (id === "prompt-origin") {
-    return (
-      <div className={styles.formationAuroraEvidence}>
-        <div className={styles.formationOriginPair}>
-          <figure><img alt="Aurora V2 M01 MV storyboard" src="/ai-exploration/aurora-v2/m01-mv-storyboard.webp" /><figcaption>M01 / MV UNIT</figcaption></figure>
-          <figure><img alt="Aurora V2 M01 stage storyboard" src="/ai-exploration/aurora-v2/m01-stage-storyboard.webp" /><figcaption>M01 / STAGE UNIT</figcaption></figure>
-        </div>
-        <div className={styles.formationMediaRail}>
-          {[
-            ["01", "CONTENT / SECTION"],
-            ["02", "IDENTITY"],
-            ["03", "REFERENCE ROLE"],
-            ["04", "SCENE · CAMERA"],
-            ["05", "HUMAN REVIEW"],
-          ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
-        </div>
-      </div>
-    );
-  }
-
-  if (id === "root-edit-harness") {
+  if (id === "editing") {
     return (
       <div className={styles.formationRootEvidence}>
         <div className={styles.formationRootBoards}>
-          <figure className={styles.formationRootTimeline}><img alt="Root Signal V11 final edit contact sheet" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg" /><figcaption>V11 FINAL / EDIT TIMELINE</figcaption></figure>
-          <figure><img alt="Root Signal first storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-01.webp" /><figcaption>STORYBOARD / 01—04</figcaption></figure>
-          <figure><img alt="Root Signal second storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-02.webp" /><figcaption>STORYBOARD / 05—08</figcaption></figure>
+          <figure className={styles.formationRootTimelinePart}><img alt="Root Signal V11 final edit contact sheet first half" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet-01.jpg" /><figcaption>V11 FINAL / EDIT TIMELINE · 01</figcaption></figure>
+          <figure className={styles.formationRootTimelinePart}><img alt="Root Signal V11 final edit contact sheet second half" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet-02.jpg" /><figcaption>V11 FINAL / EDIT TIMELINE · 02</figcaption></figure>
+          <figure className={styles.formationRootStoryboardPrimary}><img alt="Root Signal first storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-01.webp" /><figcaption>STORYBOARD / 01—04</figcaption></figure>
+          <figure className={styles.formationRootStoryboardSecondary}><img alt="Root Signal second storyboard board" src="/ai-exploration/iteration/root-signal/storyboard-sheet-02.webp" /><figcaption>STORYBOARD / 05—08</figcaption></figure>
         </div>
         <div className={styles.formationMediaRail}>
           {[
@@ -2078,7 +2213,7 @@ function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[numbe
     );
   }
 
-  if (id === "api-playback") {
+  if (id === "api-production") {
     return (
       <div className={styles.formationApiEvidence}>
         <div className={styles.formationPulsoStage}>
@@ -2089,29 +2224,39 @@ function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[numbe
         </div>
         <div className={styles.formationMediaRail}>
           {[
-            ["01", "02A STORYBOARD"],
-            ["02", "02B API PACKET"],
-            ["03", "KEYFRAME · MOTION"],
-            ["04", "SECTION PLAYBACK"],
+            ["14–15", "STORYBOARD"],
+            ["16–17", "PACKET · APPROVAL"],
+            ["18–19", "KEYFRAME REVIEW"],
+            ["20–22", "VIDEO · REVIEW"],
           ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
         </div>
       </div>
     );
   }
 
-  if (id === "causal-spine") {
+  if (id === "research-harness") {
     return (
       <div className={styles.formationCausalEvidence}>
         <div className={styles.formationCausalPair}>
-          <figure><img alt="Left in That Night character visual board" src="/ai-exploration/iteration/left-in-that-night/upper-body-portrait-board.png" /><figcaption>LEFT / CHARACTER VISUAL · DISCARDED ROUTE</figcaption></figure>
-          <figure><img alt="INK approved keyframe contact sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" /><figcaption>INK / APPROVED KEYFRAME REVIEW</figcaption></figure>
+          <div className={styles.formationLeftGeneratedGrid}>
+            {[
+              ["M01 · SAEYAN", "/ai-exploration/iteration/left-in-that-night/generated-m01-saeyan.png"],
+              ["M03 · YEUL", "/ai-exploration/iteration/left-in-that-night/generated-m03-yeul.png"],
+              ["M04 · LUA", "/ai-exploration/iteration/left-in-that-night/generated-m04-lua.png"],
+              ["M05 · FAYE", "/ai-exploration/iteration/left-in-that-night/generated-m05-faye.png"],
+              ["M09 · ARIA", "/ai-exploration/iteration/left-in-that-night/generated-m09-aria.png"],
+            ].map(([label, src]) => (
+              <figure key={label}><img alt={`Left in That Night generated portrait ${label}`} src={src} /><figcaption>LEFT / GENERATED · {label}</figcaption></figure>
+            ))}
+          </div>
+          <figure className={styles.formationInkThirtySecond}><img alt="INK final master contact sheet around thirty seconds" src="/ai-exploration/edit-qc/ink-final-30s-contact-sheet.jpg" /><figcaption>INK / FINAL MASTER 26—38S · 12-FRAME REVIEW SHEET</figcaption></figure>
         </div>
         <div className={styles.formationMediaRail}>
           {[
-            ["01", "MESSAGE"],
-            ["02", "ACTION · OBJECT"],
-            ["03", "SECTION CAUSE"],
-            ["04", "FINAL MASTER"],
+            ["01", "RESEARCH"],
+            ["02", "REFERENCE FUNCTION"],
+            ["03", "SCENE · CAUSE"],
+            ["04", "HARNESS RULE"],
           ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
         </div>
       </div>
@@ -2143,14 +2288,14 @@ function ResearchFormationSection() {
       <Reveal className={`${styles.contentWidth} ${styles.researchFormationInner}`}>
         <div className={styles.researchFormationIntro}>
           <SectionHeading
-            body="문제 → 탐구·분석 → 직접 만든 것 → 다음 작업에 남긴 기준"
+            body="Workbench·리서치·API 생성·편집이 실제 작업의 문제와 폐기·완성을 거치며 현재 구조로 연결된 과정입니다."
             index="04"
             label="RESEARCH + SYSTEM FORMATION"
-            title="문제를 발견하고 제작 구조로 바꾼 과정"
+            title="현재 제작 구조가 작업을 거치며 만들어진 과정"
           />
           <nav className={styles.researchFormationRoute} aria-label="제작 시스템 형성 과정">
             {systemFormationCases.map((item) => (
-              <a href={`#research-${item.id}`} key={item.id}><span>{item.index}</span><strong>{item.period.split(" /")[0]}</strong></a>
+              <a href={`#research-${item.id}`} key={item.id}><span>{item.index}</span><strong>{item.route}</strong></a>
             ))}
           </nav>
         </div>
@@ -2179,8 +2324,8 @@ function ResearchFormationSection() {
 
         <SectionHandoff
           href="#proof"
-          label="APPENDIX / DETAILED IMPLEMENTATION"
-          title="Workbench · Harness · Media Toolchain의 상세 근거"
+          label="APPENDIX / EVIDENCE + DISCLOSURE"
+          title="03·04의 공개 가능한 적용 근거"
         />
       </Reveal>
     </section>
@@ -2349,7 +2494,7 @@ function TrendApplicationSection() {
             <div className={styles.iterationChangeBand}>
               <div><span>PROBLEM</span><p>생성·동작·편집을 한 단위에서 판단하면 수정 위치가 불명확</p></div>
               <div><span>REFERENCE PRINCIPLE</span><p>음원·프레임 배치 · 구간 재생 QC</p></div>
-              <div className={styles.iterationChanged}><span>CHANGED</span><p>얼굴 기준 → 핵심 컷 → 모션 → 재생 검토 → 편집 마커의 독립 승인</p></div>
+              <div className={styles.iterationChanged}><span>CHANGED</span><p>얼굴 기준 → 핵심 컷 → 영상 생성 → 재생 검토 → 편집 마커의 독립 승인</p></div>
             </div>
           </article>
 
@@ -2502,35 +2647,28 @@ function DecisionRecordSection() {
 }
 
 function ResultCarousel() {
-  const activeSlide = resultSlides[0];
-
   return (
     <div className={styles.resultCarousel}>
-      <div className={styles.resultMediaStage}>
-        <motion.div
-          animate={{ opacity: 1, y: 0 }}
-          className={styles.resultMediaMotion}
-          initial={false}
-          key={activeSlide.id}
-          transition={{ duration: 0.28, ease: "easeOut" }}
-        >
-          <YouTubeEmbed
-            className={styles.resultVideoEmbed}
-            title={`${activeSlide.title} public ${activeSlide.platform} embed`}
-            videoId={activeSlide.videoId}
-          />
-        </motion.div>
-      </div>
-
-      <aside className={styles.resultCarouselMeta}>
-        <div>
-          <span>{activeSlide.label}</span>
-          <h3>{activeSlide.title}</h3>
-          <p>{activeSlide.detail}</p>
-        </div>
-        <div className={styles.resultCarouselMessage}><p>{activeSlide.message}</p></div>
-        <a href={activeSlide.href} rel="noopener" target="_blank">{activeSlide.platform}에서 보기 <ExternalLink size={14} /></a>
-      </aside>
+      {resultSlides.map((slide) => (
+        <article className={styles.resultFilm} key={slide.id}>
+          <div className={styles.resultMediaStage}>
+            <YouTubeEmbed
+              className={styles.resultVideoEmbed}
+              title={`${slide.title} public ${slide.platform} embed`}
+              videoId={slide.videoId}
+            />
+          </div>
+          <div className={styles.resultCarouselMeta}>
+            <div>
+              <span>{slide.label}</span>
+              <h3>{slide.title}</h3>
+              <p>{slide.detail}</p>
+            </div>
+            <div className={styles.resultCarouselMessage}><p>{slide.message}</p></div>
+            <a href={slide.href} rel="noopener" target="_blank">{slide.platform}에서 보기 <ExternalLink size={14} /></a>
+          </div>
+        </article>
+      ))}
     </div>
   );
 }
@@ -2654,8 +2792,10 @@ function SignalDeckOutcomeSection() {
         />
         <div className={styles.loomFeature}>
           <figure>
-            <img alt="Loom Signal Deck main page" src="/ai-exploration/signal-deck/loom-signal-deck-home.png" />
-            <figcaption>LOOM WEBPAGE / LOOM SIGNAL DECK</figcaption>
+            <a className={styles.loomSignalDeckLink} href={LOOM_SIGNAL_DECK_URL} rel="noopener" target="_blank">
+              <img alt="Loom Signal Deck main page" src="/ai-exploration/signal-deck/loom-signal-deck-home.png" />
+            </a>
+            <figcaption><span>LOOM WEBPAGE</span><a href={LOOM_SIGNAL_DECK_URL} rel="noopener" target="_blank">LOOM SIGNAL DECK <ExternalLink size={12} /></a></figcaption>
           </figure>
           <div className={styles.loomExperienceList}>
             {loomExperience.map(([label, body]) => (
@@ -2701,21 +2841,21 @@ function LoomAppendixSection() {
           <article><span>04 / NEXT CONTENT</span><strong>검토한 방향의 다음 콘텐츠 후보</strong><p>참여 신호를 그대로 사용하지 않고 확인한 방향만 다음 제작 후보로 전달.</p></article>
         </div>
 
-        <div className={styles.loomVoteProof}>
+        <div className={styles.loomVoteProof} id="appendix-loom-vote">
           <figure>
-            <img alt="Loom Signal Deck webpage" src="/ai-exploration/signal-deck/loom-signal-deck-home.png" />
-            <figcaption>LOOM SIGNAL DECK / CONTENT ARCHIVE + PARTICIPATION ENTRY</figcaption>
+            <img alt="Actual Loom Signal Deck vote page" src="/ai-exploration/signal-deck/loom-signal-deck-vote.png" />
+            <figcaption>LOOM SIGNAL DECK / ACTUAL VOTE PAGE</figcaption>
           </figure>
-          <div className={styles.votePrototypeCard}>
-            <span>HARNE VOTE / 멤버 선택 투표 · 웹페이지 구현</span>
-            <small>M01 · SAEYAN</small>
-            <h3>Saeyan이 먼저 열어 볼 다음 장면은?</h3>
-            <div>
-              <span>PRISM SIGNAL</span>
-              <span>RAIN-GLASS MEMORY</span>
-              <span>FIRST LIGHT HOOK</span>
+          <div className={styles.loomVoteContext}>
+            <span>ACTUAL IMPLEMENTATION / LOOM SIGNAL DECK</span>
+            <small>/VOTE · LOCAL PROTOTYPE</small>
+            <h3>실제 투표 화면에 두 가지 선택 흐름을 구현</h3>
+            <div className={styles.loomVoteFacts}>
+              <p><b>01</b><strong>NEXT TRACK</strong><span>트랙 단서를 남기고 다음 멤버 또는 조합을 선택</span></p>
+              <p><b>02</b><strong>IDENTITY THREAD</strong><span>멤버별 다음 비주얼·서사 방향을 선택</span></p>
+              <p><b>03</b><strong>LOCAL RECEIPT</strong><span>브라우저에 선택을 저장하고 사람의 최종 검토와 분리</span></p>
             </div>
-            <p><strong>LOCAL RECEIPT</strong> 선택은 이 브라우저에만 저장. 공개 결과나 자동 제작 명령과 구분.</p>
+            <a className={styles.loomVoteLink} href="https://loom-signal-deck.vercel.app/vote" rel="noreferrer" target="_blank">실제 투표 페이지 열기 <ExternalLink size={14} /></a>
           </div>
         </div>
 
@@ -2998,7 +3138,7 @@ export function AiExplorationPortfolioPage() {
         </Reveal>
       </section>
 
-      <SystemProofSection />
+      <EvidenceIndexSection />
       <LoomAppendixSection />
 
       <section className={`${styles.section} ${styles.aheyaSection}`} id="aheya">
@@ -3032,10 +3172,34 @@ export function AiExplorationPortfolioPage() {
               <p>
                 기술 가설과 시장 가설을 분리해야 한다는 결과였습니다. 기능 추가보다 누가 왜 공통 구조를 필요로 하는지, 더 단순한 대안이 이미 있는지를 먼저 확인하는 기준을 남겼습니다.
               </p>
-              <div className={styles.aheyaLinks}>
-                <EvidenceLink label="OpenClaw Yui 실행 흐름 보기" slug="aheya-openclaw-orchestration-flow" />
-                <EvidenceLink label="Solidity 공개 코드 보기" slug="aheya-evm-funding-registry" />
-                <a href={AHEYA_ARCHIVE_URL} rel="noreferrer" target="_blank">AHEYA 공개 아카이브 <ExternalLink size={14} /></a>
+              <div className={styles.aheyaLinks} id="aheya-evidence">
+                {[
+                  ["01 / AGENT EXECUTION", "aheya-openclaw-orchestration-flow", "OpenClaw Yui 실행 흐름"],
+                  ["02 / SMART CONTRACT", "aheya-evm-funding-registry", "Solidity 공개 코드"],
+                ].map(([index, slug, title]) => {
+                  const source = getEvidenceSource(slug);
+                  if (!source) return null;
+                  return (
+                    <Link className={styles.aheyaEvidenceCard} href={`/ai-exploration/motion-bank/${slug}`} key={slug}>
+                      <span>{index}</span>
+                      <div>
+                        <strong>{title}</strong>
+                        <p>{source.description}</p>
+                        <small>{source.fileName} · {source.state}</small>
+                      </div>
+                      <ArrowRight size={16} />
+                    </Link>
+                  );
+                })}
+                <a className={styles.aheyaEvidenceCard} href={AHEYA_ARCHIVE_URL} rel="noreferrer" target="_blank">
+                  <span>03 / PUBLIC ARCHIVE</span>
+                  <div>
+                    <strong>AHEYA 공개 아카이브</strong>
+                    <p>서비스 화면, 스마트계약, 실행 기록을 함께 확인할 수 있는 공개 저장소입니다.</p>
+                    <small>PUBLIC REPOSITORY · IMPLEMENTATION ARCHIVE</small>
+                  </div>
+                  <ExternalLink size={16} />
+                </a>
               </div>
             </div>
           </div>

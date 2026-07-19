@@ -317,28 +317,116 @@ automation:
   never promote this run motif as a default`,
   },
   {
+    slug: "pulso-api-submission-packet",
+    collection: "harness",
+    returnAnchor: "system",
+    system: "PULSO / PREPARED API EXPORT PACKET",
+    period: "2026.06.14 / LOCAL EXPORT · NOT SUBMITTED",
+    fileName: "api-prompts-v1.jsonl + video-prompt-stub.yaml",
+    fileType: "JSONL·YAML 원문 일부",
+    state: "IMAGE PREPARED · VIDEO EMPTY STUB · SUBMISSION HELD",
+    description: "Pulso에서 실제 API 요청 형식으로 내보낸 이미지 패킷과, 선택 이미지 이후 작성하도록 만든 영상 프롬프트 양식을 함께 보여줍니다. 남아 있는 기록상 유료 API 제출 완료 자료는 아니므로 준비·보류 상태를 그대로 표시합니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "실제 로컬 export와 video-prompt stub에서 필드와 한 작업의 문장 일부만 선별했습니다. 전체 프롬프트·로컬 경로·멤버 이미지 경로는 줄였으며 계정 정보와 인증값은 포함하지 않습니다. 원문의 NOT SUBMITTED 경계는 유지했습니다.",
+    excerpt: `IMAGE API EXPORT / api-prompts-v1.jsonl
+packet_id: PKT_C01_M01_INTRO_CHEST
+cut_id: C01_S00_INTRO_PRIVATE_SPARK
+model: gpt-image-2
+quality: medium
+size: 1536x864
+image_inputs:
+  - member_code: M01
+    face_reference: [LOCAL ASSET PATH REDACTED]
+prompt_excerpt:
+  identity_reference_rule: attached face reference preserves
+    identity only; expression follows this cut
+  scene_intent: folded flag at chest height; one visible breath;
+    red-blue light crosses the cheek-paint mark
+  camera: 16:9 tight chest-and-face frame; face on one third;
+    hands and folded flag remain readable
+  action_cue: capture the in-progress screen event,
+    not a centered static poster pose
+  avoid: official marks · readable text · copied personas ·
+    warped hands or limbs
+
+VIDEO PROMPT FORM / video-prompt-stub.yaml
+schema_version: idol_03v_minimal_video_prompt_stub.v1
+status: prompt_not_authored_image_selection_only
+frame_id: PKT_C01_M01_FLAG_FACEPAINT_PULSE
+frame_role: canonical_02b_packet_frame
+minimal_video_prompt_form:
+  duration_seconds: ""
+  source_image_role: ""
+  motion_intent: ""
+  subject_action: ""
+  camera_motion: ""
+  continuity_in: ""
+  continuity_out: ""
+  avoid: ""
+note: fill only after the founder selects candidate images;
+  do not author full video prompt prose here
+
+submission_boundary:
+  local_export_prepared: true
+  paid_api_submission_record_found: false`,
+  },
+  {
     slug: "front-planning-workbench-checkpoint",
     collection: "workbench",
     returnAnchor: "system",
     system: "IDOL / FRONT PLANNING WORKBENCH",
     period: "2026.07 / RUNNABLE DEVELOPMENT CHECKPOINT",
-    fileName: "workbench-checkpoint.md",
-    fileType: "Markdown 원문 일부",
-    state: "NATIVE APP / REAL-SONG PILOT NOT ACCEPTED",
-    description: "실제 구현·검증 문서에서 주장 수준을 구분한 기준을 그대로 선별했습니다.",
-    excerptKind: "verbatim-selection",
-    disclosureNote: "원문 Evidence Standard 구간입니다. 모델 세션 ID, 내부 테스트 상세, 환경 정보는 공개하지 않습니다.",
-    excerpt: `This record separates four kinds of claim:
+    fileName: "workbench.py",
+    fileType: "Python 원문 일부",
+    state: "PATH SAFE · CONTRACT VALIDATED · ATOMIC WRITE",
+    description: "Front Planning Workbench가 선택된 로컬 레퍼런스를 검증하고 캔버스 revision에 반영한 뒤, 검증을 다시 통과한 상태만 원자적으로 저장하는 실제 핵심 구동 코드입니다.",
+    excerptKind: "redacted-selection",
+    disclosureNote: "실제 workbench.py에서 경로 보호, reference intake preflight, revision 기록과 원자적 저장 부분만 선별했습니다. 계정 정보·세션 식별자·로컬 절대 경로는 포함하지 않습니다.",
+    excerpt: `def ensure_repo_relative(path_value: str) -> Path:
+    relative = Path(path_value)
+    if relative.is_absolute() or ".." in relative.parts:
+        raise ContractError(
+            "path must be repository-relative without '..'"
+        )
+    resolved = (REPO_ROOT / relative).resolve()
+    try:
+        resolved.relative_to(REPO_ROOT.resolve())
+    except ValueError as exc:
+        raise ContractError("path escapes repository") from exc
+    return resolved
 
-1. implemented — the route exists in executable code;
-2. hermetic pass — the route passed a fake/local
-   contract test without consuming provider usage;
-3. subscription-native pass — the route ran through
-   the installed product client; and
-4. not yet accepted — a real-song or scale/quality
-   condition remains.
+def apply_reference_intake(args: argparse.Namespace) -> int:
+    canvas_path = ensure_repo_relative(args.canvas)
+    intake_path = ensure_repo_relative(args.intake)
+    canvas = load_json(canvas_path)
+    intake = load_json(intake_path)
 
-It does not describe a scaffold as production-complete.`,
+    canvas_errors = validate_canvas(canvas, check_files=True)
+    intake_errors = validate_reference_intake(
+        intake, check_files=True
+    )
+    if canvas_errors or intake_errors:
+        raise ContractError("reference intake preflight failed")
+    if canvas["run"] != intake["run"]:
+        raise ContractError(
+            "reference intake run does not match the target canvas"
+        )
+
+    # selected candidates are hashed, assigned to known sections,
+    # and added without deciding their creative meaning.
+
+    canvas["pending_reconciliation"]["dirty"] = True
+    canvas["revision"] = {
+        "number": next_revision,
+        "updated_at": utc_now(),
+        "content_digest": "",
+        "parent_digest": previous_digest,
+    }
+    canvas = stamp_canvas_digest(canvas)
+    errors = validate_canvas(canvas, check_files=True)
+    if errors:
+        raise ContractError("canvas validation failed")
+    atomic_write_json(canvas_path, canvas)`,
   },
   {
     slug: "ink-output-registry",
@@ -448,23 +536,34 @@ boundary: analysis never locks creative cut timing`,
     system: "IDOL / LOCAL EDIT DESK",
     period: "2026.07 / WORKING MVP",
     fileName: "idol_edit_desk.py",
-    fileType: "Python 편집 발췌",
+    fileType: "Python 원문 발췌",
     state: "SOURCE · TIMELINE · MARKERS · PREVIEW",
-    description: "Premiere와 CapCut의 작업 방식을 참고해 만든 로컬 편집 보조 앱에서 소스 분석, 타임라인 표시, 선택 구간 렌더링을 담당하는 실제 함수만 선별했습니다.",
+    description: "Premiere와 CapCut의 작업 방식을 참고해 만든 로컬 편집 보조 앱에서 소스 길이 확인, 컷별 타임라인 재계산, 마커·파형 표시와 선택 구간 프리뷰 렌더를 담당하는 실제 함수만 선별했습니다.",
     excerptKind: "redacted-selection",
     disclosureNote: "실제 Python 구현에서 핵심 함수와 호출 관계만 편집했습니다. 로컬 작업 경로, 파일 이름, 예외 로그와 전체 UI 코드는 포함하지 않습니다.",
-    excerpt: `def probe_video_duration(path: Path) -> float:
-    proc = subprocess.run([
-        "ffprobe", "-v", "error",
-        "-show_entries", "format=duration",
-        "-of", "json", str(path),
-    ], capture_output=True, text=True)
-    payload = json.loads(proc.stdout or "{}")
-    duration = float(payload.get("format", {}).get("duration") or 0)
-    if duration > 0:
-        return duration
+    excerpt: `def recalculate_timeline(self) -> None:
+    cursor = 0.0
+    for row in self.timeline:
+        source_in = max(0.0, float(row.get("source_in", 0.0)))
+        source_out = max(
+            source_in,
+            float(row.get("source_out", source_in)),
+        )
+        output_duration = max(
+            MIN_DURATION,
+            float(row.get("output_duration", source_out - source_in)),
+        )
+        source_duration = max(0.0, source_out - source_in)
+        row["output_in"] = round(cursor, 6)
+        row["output_duration"] = round(output_duration, 6)
+        cursor += output_duration
+        row["output_out"] = round(cursor, 6)
+        row["speed_factor"] = round(
+            source_duration / output_duration, 6
+        ) if output_duration else 1.0
 
 def draw_timeline(self) -> None:
+    self.canvas.delete("all")
     self.draw_work_area()
     self.draw_markers_lane()
     self.draw_waveform()
@@ -473,8 +572,16 @@ def draw_timeline(self) -> None:
     self.draw_clips()
 
 def render_preview(self) -> None:
+    if not self.recipe_path or self.selected_index is None:
+        return
     self.save_draft()
-    # range, output path, and command construction omitted
+    row = self.timeline[self.selected_index]
+    start = max(0.0, float(row.get("output_in", 0.0)) - 1.0)
+    end = min(
+        self.total_duration,
+        float(row.get("output_out", 0.0)) + 1.0,
+    )
+    # local paths and command arguments omitted
     threading.Thread(
         target=self._render_worker,
         args=(cmd, out),
