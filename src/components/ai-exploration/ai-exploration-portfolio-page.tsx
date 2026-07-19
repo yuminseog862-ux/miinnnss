@@ -1940,11 +1940,11 @@ human_decision: pass | hold | revise`}
                   <figcaption>API OUTPUT REVIEW / 100—112S</figcaption>
                 </figure>
                 <figure>
-                  <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28.mp4" />
+                  <video controls muted playsInline poster="/ai-exploration/iteration/evolution/pulso-api-window-16-28-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28.mp4" />
                   <figcaption>SECTION PLAYBACK / 16—28S</figcaption>
                 </figure>
                 <figure>
-                  <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112.mp4" />
+                  <video controls muted playsInline poster="/ai-exploration/iteration/evolution/pulso-api-window-100-112-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112.mp4" />
                   <figcaption>SECTION PLAYBACK / 100—112S</figcaption>
                 </figure>
               </div>
@@ -2678,7 +2678,7 @@ function TrendApplicationSection() {
             <div className={`${styles.rootSignalCropBoard} ${styles.rootSignalEvidenceStage}`} aria-label="Root Signal V11 edit evidence">
               <figure className={styles.rootTimelineEvidence}><img alt="Root Signal V11 edit timeline contact sheet" src="/ai-exploration/edit-qc/root-signal-v11-contact-sheet.jpg" /><figcaption>V11 / FULL EDIT TIMELINE CONTACT SHEET</figcaption></figure>
               <figure className={styles.rootEditWindowSheet}><img alt="Root Signal V11 contact sheet from 48 to 60 seconds" src="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60-contact-sheet.jpg" /><figcaption>V11 / 48—60S FRAME SHEET</figcaption></figure>
-              <figure className={styles.rootEditWindowVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60.mp4" /><figcaption>V11 / 48—60S PLAYBACK</figcaption></figure>
+              <figure className={styles.rootEditWindowVideo}><video controls muted playsInline poster="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/root-signal-v11-edit-window-48-60.mp4" /><figcaption>V11 / 48—60S PLAYBACK</figcaption></figure>
             </div>
             <div className={styles.iterationChangeBand}>
               <div><span>문제</span><p>수정이 늘수록 통과한 원본과 선택 이유가 최종 렌더에 묻힘</p></div>
@@ -2699,7 +2699,7 @@ function TrendApplicationSection() {
                 <figcaption>PULSO / 64—76S FRAME SHEET</figcaption>
               </figure>
               <figure className={styles.pulsoEvolutionVideo}>
-                <video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/pulso-section-window-64-76.mp4" />
+                <video controls muted playsInline poster="/ai-exploration/iteration/evolution/pulso-section-window-64-76-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/pulso-section-window-64-76.mp4" />
                 <figcaption>PULSO / 64—76S SECTION PLAYBACK</figcaption>
               </figure>
               <div className={styles.pulsoPacketReceipt}><span>ACTUAL PRODUCTION UNIT</span><strong>54 KEYFRAME PACKETS</strong><p>구간별 패킷 → 컨택트시트 → 재생 검토 → 필요한 구간만 복귀</p></div>
@@ -2719,7 +2719,7 @@ function TrendApplicationSection() {
             </header>
             <div className={`${styles.leftEvidenceStage} ${styles.leftDiscardEvidenceStage}`}>
               <figure className={styles.leftDiscardSheet}><img alt="Left in That Night discarded teaser contact sheet from 0 to 12 seconds" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12-contact-sheet.jpg" /><figcaption>RESIDUAL TEST / 00—12S FRAME SHEET</figcaption></figure>
-              <figure className={styles.leftDiscardVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12.mp4" /><figcaption>RESIDUAL TEST / 00—12S PLAYBACK</figcaption></figure>
+              <figure className={styles.leftDiscardVideo}><video controls muted playsInline poster="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12.mp4" /><figcaption>RESIDUAL TEST / 00—12S PLAYBACK</figcaption></figure>
             </div>
             <div className={`${styles.iterationChangeBand} ${styles.leftConclusionBand}`}>
               <div className={styles.leftDiscardStamp}><span>NOT TOO FEW IDEAS</span><strong>NO CAUSAL SPINE</strong><small>HOLD → DISCARD</small></div>
@@ -2739,7 +2739,7 @@ function TrendApplicationSection() {
               <figure><img alt="INK S00 to S03 keyframe sheet" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" /><figcaption>LOCKED SYSTEM / S00—S03</figcaption></figure>
               <figure><img alt="INK S11 to S12 keyframe sheet" src="/ai-exploration/ink/contact-sheets/ink-s11-s12-keyframe-sheet-v3.webp" /><figcaption>REVISED SUBJECT MIX / S11—S12</figcaption></figure>
               <figure><img alt="INK final master contact sheet from 130 to 142 seconds" src="/ai-exploration/iteration/evolution/ink-final-window-130-142-contact-sheet.jpg" /><figcaption>FINAL MASTER / 130—142S FRAME SHEET</figcaption></figure>
-              <figure className={styles.inkEvolutionVideo}><video controls muted playsInline preload="metadata" src="/ai-exploration/iteration/evolution/ink-final-window-130-142.mp4" /><figcaption>FINAL MASTER / 130—142S PLAYBACK</figcaption></figure>
+              <figure className={styles.inkEvolutionVideo}><video controls muted playsInline poster="/ai-exploration/iteration/evolution/ink-final-window-130-142-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/ink-final-window-130-142.mp4" /><figcaption>FINAL MASTER / 130—142S PLAYBACK</figcaption></figure>
             </div>
             <div className={styles.iterationChangeBand}>
               <div><span>먼저 고정</span><p>메시지 · 멤버 역할 · 오브젝트 · 공간 · 구간별 행동</p></div>
