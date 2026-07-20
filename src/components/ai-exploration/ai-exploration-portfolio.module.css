@@ -23166,3 +23166,199 @@
     min-height: 300px !important;
   }
 }
+
+/* 2026-07-20 / annotation follow-up: clearer gates, evidence, and media roles. */
+.page .harnessProductionDeck .harnessPrincipleLanes > section > span {
+  padding-left: 4px;
+}
+
+.page .harnessProductionDeck .harnessDetailScore .harnessPhaseStages li.harnessStageControl::before {
+  background: #070a09;
+  border-color: #91a09b;
+  box-shadow: none;
+}
+
+.page .harnessProductionDeck .harnessDetailScore .harnessPhaseStages li em.harnessControlLabel {
+  background: transparent;
+  border: 1px solid rgba(237, 243, 240, 0.34);
+  color: #9eb5ae;
+  letter-spacing: 0.05em;
+}
+
+.page .rationaleRebuild .planningVideoFigure img {
+  align-self: center;
+  background: #030504;
+  display: block;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  width: 100%;
+}
+
+.rationaleOfficialEvidence {
+  border-bottom: 1px solid rgba(12, 42, 67, 0.24);
+  border-top: 1px solid rgba(12, 42, 67, 0.24);
+  display: grid;
+  margin-top: 14px;
+}
+
+.rationaleOfficialEvidence > header {
+  align-items: center;
+  background: var(--chapter-blue);
+  border-bottom: 4px solid var(--chapter-lime);
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 11px;
+}
+
+.rationaleOfficialEvidence > header span {
+  color: #536a00;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.rationaleOfficialEvidence > header small {
+  color: var(--chapter-slate);
+  font-size: 7px;
+}
+
+.rationaleOfficialEvidence > a {
+  display: grid;
+  gap: 5px 12px;
+  grid-template-columns: 126px minmax(0, 1fr);
+  padding: 10px 0;
+}
+
+.rationaleOfficialEvidence > a + a {
+  border-top: 1px solid rgba(12, 42, 67, 0.14);
+}
+
+.rationaleOfficialEvidence > a strong {
+  color: #26312c;
+  font-size: 9px;
+}
+
+.rationaleOfficialEvidence > a p {
+  color: #58635e;
+  font-size: 8.5px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.rationaleOfficialEvidence > a small {
+  color: #536a00;
+  font-size: 7px;
+  grid-column: 2;
+}
+
+.page .rationaleRebuild .rationaleReviewCandidateFigure img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.page .rationaleRebuild .rationaleApiEvidence {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.page .iterationRebuild .rootSignalEvidenceStage .rootTimelineEvidence img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.page .iterationRebuild .workbenchEvolutionVisual .workbenchCurrentFigure video {
+  object-fit: contain;
+}
+
+@media (max-width: 840px) {
+  .rationaleOfficialEvidence > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .rationaleOfficialEvidence > a {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rationaleOfficialEvidence > a small {
+    grid-column: auto;
+  }
+}
+
+/* 2026-07-20 / Left in That Night: identity was stable; reference roles were not. */
+.page .iterationRebuild .leftDiscardEvidenceStage {
+  grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr) !important;
+  grid-template-rows: 148px repeat(2, minmax(0, 1fr)) !important;
+  min-height: 790px;
+}
+
+.leftIdentityStrip {
+  display: grid;
+  gap: 8px;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.page .iterationRebuild .leftIdentityStrip figure,
+.page .iterationRebuild .leftMixedOutputGrid figure {
+  height: 100%;
+  min-height: 0;
+}
+
+.page .iterationRebuild .leftIdentityStrip img {
+  object-fit: cover !important;
+  object-position: center 22%;
+}
+
+.page .iterationRebuild .leftIdentityStrip figcaption,
+.page .iterationRebuild .leftMixedOutputGrid figcaption {
+  bottom: 9px;
+  font-size: 6.5px;
+  left: 10px;
+}
+
+.leftMixedOutputGrid {
+  display: grid;
+  gap: 8px;
+  grid-column: 1;
+  grid-row: 2 / 4;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+}
+
+.page .iterationRebuild .leftMixedOutputGrid img {
+  object-fit: cover !important;
+}
+
+.page .iterationRebuild .leftDiscardEvidenceStage .leftDiscardSheet {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.page .iterationRebuild .leftDiscardEvidenceStage .leftDiscardVideo {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+@media (max-width: 840px) {
+  .page .iterationRebuild .leftDiscardEvidenceStage {
+    min-height: 0;
+  }
+
+  .page .iterationRebuild .leftDiscardEvidenceStage .leftIdentityStrip {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: 260px !important;
+  }
+
+  .page .iterationRebuild .leftDiscardEvidenceStage .leftMixedOutputGrid {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: 460px !important;
+  }
+}
