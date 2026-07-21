@@ -20,7 +20,6 @@ import {
 
 import styles from "./ai-exploration-portfolio.module.css";
 
-const AHEYA_ARCHIVE_URL = "https://github.com/aheyabaraya/aheya-public-archive";
 const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
 
@@ -1734,12 +1733,28 @@ function CurrentSystemSection() {
             </aside>
           </article>
 
-          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-agent-routing">
-            <div className={`${styles.rationaleResultMedia} ${styles.rationaleAgentMedia}`}>
-              <figure>
-                <img alt="Timecoded contact sheet of generated clips from the actual IDOL harness" src="/ai-exploration/rationale-assets/grok-contact-sheet-timecoded-2026-06-19.png" />
-                <figcaption>ACTUAL REVIEW MATERIAL / TIMECODED GENERATED CLIP SHEET</figcaption>
-              </figure>
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage} ${styles.rationaleAgentRoutePage}`} id="rationale-agent-routing">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleAgentMedia} ${styles.rationaleAgentRouteOnly}`}>
+              <div className={styles.rationaleAgentOfficialGrid}>
+                <figure className={styles.rationaleAgentOfficialFigure}>
+                  <a href="https://openai.com/index/introducing-upgrades-to-codex/" rel="noreferrer" target="_blank">
+                    <img alt="OpenAI official chart showing GPT-5-Codex token use adapting to task complexity" src="/ai-exploration/rationale-assets/codex-complexity-efficiency-official-2025.jpg" />
+                  </a>
+                  <figcaption className={styles.rationaleEvidenceCaption}>
+                    <span>OPENAI / COMPLEXITY → TOKEN USE</span>
+                    <a href="https://openai.com/index/introducing-upgrades-to-codex/" rel="noreferrer" target="_blank">공식 원문 <ExternalLink size={10} /></a>
+                  </figcaption>
+                </figure>
+                <figure className={styles.rationaleAgentOfficialFigure}>
+                  <a href="https://x.ai/news/grok-4-5" rel="noreferrer" target="_blank">
+                    <img alt="SpaceXAI official Grok 4.5 token-efficiency chart and Grok Build research description" src="/ai-exploration/rationale-assets/grok-build-efficiency-official-2026.jpg" />
+                  </a>
+                  <figcaption className={styles.rationaleEvidenceCaption}>
+                    <span>SPACEXAI / SPEED · EFFICIENCY · WEB RESEARCH</span>
+                    <a href="https://x.ai/news/grok-4-5" rel="noreferrer" target="_blank">공식 원문 <ExternalLink size={10} /></a>
+                  </figcaption>
+                </figure>
+              </div>
               <div className={styles.rationaleAgentFileRail} aria-label="File first agent handoff">
                 <div><span>01</span><strong>PLAN · SOURCE</strong><small>기획·원본·선택 기준</small></div><i aria-hidden="true">→</i>
                 <div><span>02</span><strong>AGENT ROUTE</strong><small>복잡도와 작업 단위에 맞춰 배분</small></div><i aria-hidden="true">→</i>
@@ -1760,13 +1775,13 @@ function CurrentSystemSection() {
                 <div><span>RESEARCH</span><strong>X Search는 후보 탐색, 원문은 별도 확인</strong><p>X의 최신 사례에 접근하는 장점은 활용하되, 사실과 채택 여부는 공식 문서·원문으로 다시 검증합니다.</p></div>
               </div>
               <div className={styles.rationaleBenchmarkNote}>
-                <span>EXTERNAL CHECK / 2026.07</span>
-                <p>Artificial Analysis의 동일 코딩 에이전트 비교에서는 Grok Build가 더 적은 토큰과 낮은 API 비용을 보였지만, 작업 시간은 Codex가 더 짧았습니다. 따라서 ‘Grok이 무조건 빠르다’가 아니라, 제 작업에서 반복 분류·이관에 맞았다는 판단으로 씁니다.</p>
+                <span>OFFICIAL SOURCE CHECK / 2025—2026</span>
+                <p>OpenAI는 GPT‑5‑Codex가 단순 작업에서는 토큰을 줄이고 복잡한 작업에서는 더 오래 추론한다고 설명합니다. SpaceXAI는 Grok 4.5의 80 TPS·토큰 효율과 Grok Build의 웹 리서치 활용을 함께 제시합니다. 이 수치는 우열표가 아니라 제 작업을 ‘넓고 복잡한 판단’과 ‘빠른 탐색·분류’로 나눈 근거입니다.</p>
                 <div>
-                  <a href="https://artificialanalysis.ai/agents/coding-agents/comparisons/codex-vs-grok-build" rel="noreferrer" target="_blank">Agent 비교 <ExternalLink size={11} /></a>
-                  <a href="https://artificialanalysis.ai/models/comparisons/grok-4-5-vs-grok-4-3" rel="noreferrer" target="_blank">환각 지표 확인 <ExternalLink size={11} /></a>
+                  <a href="https://openai.com/index/introducing-upgrades-to-codex/" rel="noreferrer" target="_blank">OpenAI 원문 <ExternalLink size={11} /></a>
+                  <a href="https://x.ai/news/grok-4-5" rel="noreferrer" target="_blank">SpaceXAI 원문 <ExternalLink size={11} /></a>
                 </div>
-                <small>Grok 4.5의 지식 정확도는 높아졌지만 환각률도 4.3보다 높게 측정됐습니다. ‘Grok은 환각이 낮다’는 선택 근거로 사용하지 않습니다.</small>
+                <small>서로 다른 회사가 각자 공개한 자료라 직접 성능 비교에는 쓰지 않고, 작업 배분의 방향만 설명합니다.</small>
               </div>
               <PublicSafeExcerpt source="harness-stage-registry.yaml" title="기계 검증과 창작 판단을 나눈 기준">
 {`deterministic_authority:
@@ -1785,15 +1800,33 @@ feedback_creates_upstream_revision: true`}
               <div className={styles.rationaleEvidenceColumn}>
                 <div className={styles.planningEvidenceStage}>
                   <figure className={styles.planningBoardFigure}>
-                    <img alt="ONE MOVE reference connection and flow planning board crop" src="/ai-exploration/rationale-assets/one-move-ref-flow-board-crop.png" />
+                    <img alt="ONE MOVE master rules table from the reference and flow board" src="/ai-exploration/rationale-assets/one-move-flow-rules-table-crop.png" />
                     <figcaption>
-                      <span>ONE MOVE / REFERENCE MAP + FLOW BOARD</span>
+                      <span>ONE MOVE / MASTER RULES TABLE</span>
                       <a href="/ai-exploration/one-move/run/review/front-planning/0715-one-move-ref-flow-board-v1.html" rel="noreferrer" target="_blank">전체 HTML 보기 <ExternalLink size={12} /></a>
                     </figcaption>
                   </figure>
                   <div className={styles.planningVideoFigure}>
-                    <img alt="Front Planning Workbench shared planning view" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
-                    <div><span>WORKBENCH / CURRENT SHARED VIEW</span><p>사람과 AI가 함께 보는 기획 상태.</p></div>
+                    <div className={styles.planningVideoPair}>
+                      {[
+                        {
+                          label: "OPENING / 00—04S",
+                          poster: "/ai-exploration/rationale-assets/one-move-planning-opening-4s-poster.png",
+                          src: "/ai-exploration/rationale-assets/one-move-planning-opening-4s.m4v",
+                        },
+                        {
+                          label: "HANDOFF / FINAL 04S",
+                          poster: "/ai-exploration/rationale-assets/one-move-planning-handoff-4s-poster.png",
+                          src: "/ai-exploration/rationale-assets/one-move-planning-handoff-4s.m4v",
+                        },
+                      ].map(({ label, poster, src }) => (
+                        <figure key={label}>
+                          <video controls muted playsInline poster={poster} preload="metadata" src={src} />
+                          <figcaption>{label}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                    <div><span>WORKBENCH / OPENING → HANDOFF</span><p>같은 29초 녹화의 시작과 마지막 4초를 나란히 두고, 기획 화면이 후보·에이전트 반환 상태로 바뀌는 과정을 확인.</p></div>
                   </div>
                 </div>
 
@@ -1837,18 +1870,28 @@ canonical write: human or structured single writer`}
             </aside>
           </article>
 
-          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-model-routing">
-            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia}`}>
-              <figure>
-                <img alt="INK S07 approved keyframe review contact sheet from the harness" src="/ai-exploration/ink/contact-sheets/section-S07-v2-inserts-part-01.webp" />
-                <figcaption>GPT IMAGE 2 / S07 APPROVED KEYFRAME REVIEW</figcaption>
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage} ${styles.rationaleModelRoutePage}`} id="rationale-model-routing">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia} ${styles.rationaleModelDocsMedia}`}>
+              <figure className={styles.rationaleModelDocPrimary}>
+                <a href="https://developers.openai.com/api/docs/models/gpt-image-2" rel="noreferrer" target="_blank">
+                  <img alt="Official OpenAI GPT Image 2 capability and input-output table" src="/ai-exploration/rationale-assets/gpt-image-2-official-doc-crop-2026-07-20.png" />
+                </a>
+                <figcaption>OPENAI OFFICIAL DOC / GPT IMAGE 2</figcaption>
               </figure>
               <figure>
-                <img alt="INK S08 approved keyframe review contact sheet from the harness" src="/ai-exploration/ink/contact-sheets/section-S08-v2-inserts-part-01.webp" />
-                <figcaption>GPT IMAGE 2 / S08 APPROVED KEYFRAME REVIEW</figcaption>
+                <a href="https://docs.x.ai/developers/models/grok-imagine-image" rel="noreferrer" target="_blank">
+                  <img alt="Official xAI Grok Imagine Image modality and pricing table" src="/ai-exploration/rationale-assets/grok-imagine-image-official-doc-crop-2026-07-20.png" />
+                </a>
+                <figcaption>XAI OFFICIAL DOC / GROK IMAGINE IMAGE</figcaption>
+              </figure>
+              <figure>
+                <a href="https://docs.x.ai/developers/models/grok-imagine-video-1.5" rel="noreferrer" target="_blank">
+                  <img alt="Official xAI Grok Imagine Video 1.5 modality and pricing table" src="/ai-exploration/rationale-assets/grok-imagine-video-official-doc-crop-2026-07-20.png" />
+                </a>
+                <figcaption>XAI OFFICIAL DOC / GROK IMAGINE VIDEO 1.5</figcaption>
               </figure>
               <div className={styles.rationaleModelRail}>
-                <span>KEY STILL · IDENTITY · DETAIL</span><i aria-hidden="true">→</i><span>APPROVED FRAME</span><i aria-hidden="true">→</i><span>IMAGE-TO-VIDEO</span>
+                <span>OFFICIAL CAPABILITY</span><i aria-hidden="true">→</i><span>PROJECT TEST</span><i aria-hidden="true">→</i><span>SCENE ROUTE</span>
               </div>
             </div>
 
@@ -1870,23 +1913,29 @@ canonical write: human or structured single writer`}
                 <a href="https://docs.x.ai/developers/models/grok-imagine-image" rel="noreferrer" target="_blank"><strong>GROK IMAGINE IMAGE</strong><p>텍스트·이미지 → 이미지 · 1K/2K 출력 $0.02/장</p><small>PROJECT / 빠른 후보 생성과 비교</small></a>
                 <a href="https://docs.x.ai/developers/pricing" rel="noreferrer" target="_blank"><strong>GROK IMAGINE VIDEO 1.5</strong><p>이미지 → 영상 · 480p $0.08/s · 720p $0.14/s · 1080p $0.25/s</p><small>PROJECT / 통과한 프레임의 짧은 영상화</small></a>
               </div>
-              <div className={styles.rationaleModelReceipt}>
-                <span>PRICE RECEIPT / XAI · 2026.07</span>
-                <p>Imagine 표준 이미지는 $0.02/장, Video 1.5는 480p $0.08/s · 720p $0.14/s · 1080p $0.25/s. 가격은 선택 기준 중 하나이며, 실제 통과율과 재생 검토 비용은 별도로 봅니다.</p>
-              </div>
               <div className={styles.rationaleCfRoute}><span>PERSONAL SPEC CF</span><p>Cola·Headset도 별도 CF 시스템이 아니라, 같은 이미지 보드 → 영상 생성 → 사람 검토·편집 경계 안에서 제작했습니다.</p></div>
             </aside>
           </article>
 
-          <article className={`${styles.rationalePage} ${styles.rationaleResultPage}`} id="rationale-multi-image-review">
-            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia} ${styles.rationaleReviewMedia}`}>
-              <figure>
-                <img alt="INK S04 to S07 bundled keyframe review sheet" src="/ai-exploration/ink/contact-sheets/ink-s04-s07-keyframe-sheet-v3.webp" />
-                <figcaption>REVIEW BUNDLE / S04—S07 · STORY + REFERENCE CRITERIA</figcaption>
+          <article className={`${styles.rationalePage} ${styles.rationaleResultPage} ${styles.rationaleReviewPage}`} id="rationale-multi-image-review">
+            <div className={`${styles.rationaleResultMedia} ${styles.rationaleModelMedia} ${styles.rationaleReviewMedia} ${styles.rationaleReviewEvidenceMedia}`}>
+              <figure className={styles.rationaleReviewContactFigure}>
+                <a className={styles.rationaleReviewImageLink} href="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" rel="noreferrer" target="_blank">
+                  <img alt="INK final master 16-frame edit review contact sheet" src="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" />
+                </a>
+                <figcaption className={styles.rationaleReviewCaption}>
+                  <span>INK / 16-FRAME FINAL EDIT REVIEW</span>
+                  <a href="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" rel="noreferrer" target="_blank">FULL SHEET <ExternalLink size={10} /></a>
+                </figcaption>
               </figure>
-              <figure className={styles.rationaleReviewCandidateFigure}>
-                <img alt="ONE MOVE review-only key visual candidate comparison sheet" src="/ai-exploration/rationale-assets/one-move-key-visual-candidates.png" />
-                <figcaption>ONE MOVE / REVIEW-ONLY KEY VISUAL CANDIDATES</figcaption>
+              <figure className={styles.rationaleReviewContactFigure}>
+                <a className={styles.rationaleReviewImageLink} href="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" rel="noreferrer" target="_blank">
+                  <img alt="PULSO 16-to-28-second API output review contact sheet" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" />
+                </a>
+                <figcaption className={styles.rationaleReviewCaption}>
+                  <span>PULSO / 16—28S API OUTPUT REVIEW</span>
+                  <a href="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" rel="noreferrer" target="_blank">FULL SHEET <ExternalLink size={10} /></a>
+                </figcaption>
               </figure>
               <div className={styles.rationaleModelRail}>
                 <span>STORYLINE · REFERENCE ROLE</span><i aria-hidden="true">→</i><span>BUNDLED VISUAL FIRST PASS</span><i aria-hidden="true">→</i><span>HUMAN PASS · HOLD · REVISE</span>
@@ -1927,30 +1976,26 @@ human_decision: pass | hold | revise`}
             <div className={`${styles.rationaleResultMedia} ${styles.rationaleApiMedia}`}>
               <div className={styles.rationaleApiEvidence}>
                 <figure>
-                  <img alt="Pulso full playback review contact sheet" src="/ai-exploration/iteration/pulso/final-preview-contact-sheet.jpg" />
-                  <figcaption>PULSO / FULL PLAYBACK REVIEW</figcaption>
+                  <img alt="INK final master 16-frame edit review contact sheet" src="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" />
+                  <figcaption>INK / FINAL MASTER · 16-FRAME REVIEW</figcaption>
                 </figure>
-                <figure>
-                  <img alt="Pulso generated section contact sheet from 16 to 28 seconds" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" />
-                  <figcaption>API OUTPUT REVIEW / 16—28S</figcaption>
-                </figure>
-                <figure>
-                  <img alt="Pulso generated section contact sheet from 100 to 112 seconds" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112-contact-sheet.jpg" />
-                  <figcaption>API OUTPUT REVIEW / 100—112S</figcaption>
-                </figure>
-                <figure>
-                  <video controls muted playsInline poster="/ai-exploration/iteration/evolution/pulso-api-window-100-112-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/pulso-api-window-100-112.mp4" />
-                  <figcaption>SECTION PLAYBACK / 100—112S</figcaption>
-                </figure>
-              </div>
-              <div className={styles.rationaleApiRail}>
-                {[
-                  ["12", "DIRECTION"],
-                  ["14–15", "STORYBOARD"],
-                  ["16–17", "PACKET · APPROVE"],
-                  ["18–19", "IMAGE · REVIEW"],
-                  ["20–22", "VIDEO · PLAYBACK"],
-                ].map(([index, label]) => <div key={index}><span>{index}</span><strong>{label}</strong></div>)}
+                <div className={styles.rationalePacketOriginal}>
+                  <header><span>PULSO / 02B-PROMPT-PACKETS.YAML</span><strong>ORIGINAL PACKET FIELDS</strong></header>
+                  <div className={styles.rationalePacketFieldGrid}>
+                    <div><span>PACKET · TRACE</span><pre>{`packet_id: PKT_C01_M01_INTRO_CHEST
+cut_id: C01_S00_INTRO_PRIVATE_SPARK
+generation_lane: mv_lane
+output_role: adaptive_keyframe
+source_time_range: 0:00-0:08
+identity_input: attach_no_mic_face_ref
+face_visible: true`}</pre></div>
+                    <div><span>RENDER TARGET</span><pre>{`render_prompt_mode: single_keyframe_16_9
+aspect_ratio: '16:9'
+size: 1536x864`}</pre></div>
+                    <div><span>REVIEW ASSEMBLY</span><pre>{`assembly: local_after_generation
+preferred_group_size: 3`}</pre></div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1971,16 +2016,6 @@ human_decision: pass | hold | revise`}
                 ))}
               </div>
               <RationaleSkillUse kind="api" />
-              <PublicSafeExcerpt source="PULSO / 02B-prompt-packets.yaml" title="실제 API 제출 패킷의 실행 경계">
-{`expected_keyframe_packet_count: 54
-current_packet_count: 54
-paid_generation_gate: requires_founder_paid_approval
-default_route:
-  model: gpt-image-2
-  quality: medium
-  size: 1536x864
-contact_sheet_assembly: local_after_generation`}
-              </PublicSafeExcerpt>
               <EvidenceLink label="이미지·영상 API 패킷 구조 보기" slug="pulso-api-submission-packet" />
             </aside>
           </article>
@@ -1989,17 +2024,17 @@ contact_sheet_assembly: local_after_generation`}
             <div className={`${styles.rationaleResultMedia} ${styles.rationaleAttitudeMedia}`}>
               <div className={styles.attitudeEvidenceGrid}>
                 <figure className={styles.attitudeContactSheet}>
-                  <img alt="INK final master 16-frame edit review sheet" src="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" />
+                  <img alt="One-second interval contact sheet made from the edit-window and ring-seal clips shown at right" src="/ai-exploration/edit-qc/ink-edit-windows-1s-contact-sheet.jpg" />
                   <figcaption>
-                    <span>INK / FINAL EDIT REVIEW SHEET</span>
-                    <strong>FINAL MASTER / 16-FRAME REVIEW</strong>
-                    <p>최종 마스터의 주요 구간을 재생 순서대로 추출해 장면 전환과 전체 흐름을 한 화면에서 검토했습니다.</p>
+                    <span>INK / EDIT + RING SEAL FRAME SHEET</span>
+                    <strong>1 SEC INTERVAL / 17-FRAME REVIEW</strong>
+                    <p>우측 두 영상의 실제 재생 구간을 1초 간격으로 뽑아 동작 전환과 링 착지를 한 화면에서 비교했습니다.</p>
                   </figcaption>
                 </figure>
                 <div className={styles.attitudeSectionVideos}>
                   {[
                     ["EDIT WINDOW / 26—38S", "/ai-exploration/edit-qc/ink-final-edit-window-01.mp4"],
-                    ["EDIT WINDOW / 82—94S", "/ai-exploration/edit-qc/ink-final-edit-window-02.mp4"],
+                    ["RING SEAL / SOURCE CLIP 5S", "/ai-exploration/edit-qc/ink-final-ring-seal-window-12-18.mp4"],
                   ].map(([label, src]) => (
                     <figure key={label}>
                       <video controls playsInline preload="metadata" src={src} />
@@ -2627,7 +2662,7 @@ function TrendApplicationSection() {
     <section className={`${styles.section} ${styles.iterationRebuild} ${styles.handoffSection}`} id="research">
       <Reveal className={`${styles.contentWidth} ${styles.iterationRebuildInner}`}>
         <SectionHeading
-          body="Aurora V2에서 반복 제작 단위를 만들고, 이후 트랙에서 완성·수정·폐기를 거치며 무엇이 문제였고 다음 작업의 기준을 어떻게 바꿨는지 시간순으로 정리했습니다."
+          body="Aurora V2 이후 실제 제작에서 드러난 문제와, 그 문제 때문에 바꾼 기준만 시간순으로 정리했습니다."
           index="04"
           label="FORMATION + ITERATION / 2026.05—07"
           title="문제가 다음 제작 기준을 바꾼 과정"
@@ -2640,7 +2675,7 @@ function TrendApplicationSection() {
             ["iteration-pulso", "02", "PULSO"],
             ["iteration-left", "03", "LEFT IN THAT NIGHT"],
             ["iteration-ink", "04", "INK"],
-            ["iteration-workbench", "CURRENT", "WORKBENCH"],
+            ["iteration-current", "CURRENT", "CURRENT STANDARD"],
           ].map(([href, index, title]) => (
             <a href={`#${href}`} key={href}><span>{index}</span><strong>{title}</strong></a>
           ))}
@@ -2713,15 +2748,11 @@ function TrendApplicationSection() {
               <p>Glee의 군중 전개, 교차로와 코트 라인, 오렌지 음료, 마이크를 배구공처럼 주고받는 동작을 한 기획에 함께 넣었습니다. AI는 눈에 띄는 요소를 한 흐름 안에서 섞었고, 각 레퍼런스가 어느 장면에서 어떤 역할만 해야 하는지 제가 충분히 나누지 않은 것이 원인이었습니다. 요소는 많아졌지만 하나의 감정과 이야기로 이어지지 않아 전체 MV를 중단하고 30초 테스트만 남겼습니다.</p>
             </header>
             <div className={`${styles.leftEvidenceStage} ${styles.leftDiscardEvidenceStage}`}>
-              <div className={styles.leftIdentityStrip} aria-label="Left in That Night five-member generated identity portraits">
-                {[
-                  ["SAEYAN", "/ai-exploration/iteration/left-in-that-night/generated-m01-saeyan-preview.jpg"],
-                  ["YEUL", "/ai-exploration/iteration/left-in-that-night/generated-m03-yeul-preview.jpg"],
-                  ["LUA", "/ai-exploration/iteration/left-in-that-night/generated-m04-lua-preview.jpg"],
-                  ["FAYE", "/ai-exploration/iteration/left-in-that-night/generated-m05-faye-preview.jpg"],
-                  ["ARIA", "/ai-exploration/iteration/left-in-that-night/generated-m09-aria-preview.jpg"],
-                ].map(([label, src]) => <figure key={label}><img alt={`Left in That Night ${label} generated portrait`} src={src} /><figcaption>{label} / IDENTITY</figcaption></figure>)}
-              </div>
+              <figure className={styles.leftUpperBodyContactSheet}>
+                <a href="/ai-exploration/iteration/left-in-that-night/upper-body-portrait-board.png" rel="noreferrer" target="_blank">
+                  <img alt="Left in That Night five-member upper-body identity contact sheet" src="/ai-exploration/iteration/left-in-that-night/upper-body-portrait-board.png" />
+                </a>
+              </figure>
               <div className={styles.leftMixedOutputGrid} aria-label="Generated outputs showing mixed reference motifs">
                 {[
                   ["ORANGE · TIME OBJECT", "/ai-exploration/iteration/left-in-that-night/generated-scene-orange-table-preview.jpg"],
@@ -2730,8 +2761,6 @@ function TrendApplicationSection() {
                   ["BAND · CROWD PERFORMANCE", "/ai-exploration/iteration/left-in-that-night/generated-scene-band-performance-preview.jpg"],
                 ].map(([label, src]) => <figure key={label}><img alt={`Left in That Night generated output: ${label}`} src={src} /><figcaption>{label}</figcaption></figure>)}
               </div>
-              <figure className={styles.leftDiscardSheet}><img alt="Left in That Night discarded teaser contact sheet from 0 to 12 seconds" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12-contact-sheet.jpg" /><figcaption>RESIDUAL TEST / 00—12S FRAME SHEET</figcaption></figure>
-              <figure className={styles.leftDiscardVideo}><video controls muted playsInline poster="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12-poster.jpg" preload="metadata" src="/ai-exploration/iteration/evolution/left-discarded-teaser-window-00-12.mp4" /><figcaption>RESIDUAL TEST / 00—12S PLAYBACK</figcaption></figure>
             </div>
             <div className={`${styles.iterationChangeBand} ${styles.leftConclusionBand}`}>
               <div className={styles.leftDiscardStamp}><span>REFERENCE INPUTS</span><strong>MIXED WITHOUT ROLES</strong><small>HOLD → DISCARD</small></div>
@@ -2760,29 +2789,11 @@ function TrendApplicationSection() {
             </div>
           </article>
 
-          <article className={`${styles.iterationPage} ${styles.workbenchCurrentPage}`} id="iteration-workbench">
-            <header className={styles.iterationPageHeader}>
-              <div><span>04—05 / FRONT PLANNING WORKBENCH</span><b>CURRENT DEVELOPMENT CHECKPOINT</b></div>
-              <h3>보이지 않던 에이전트 작업을 같은 화면에서 확인하기</h3>
-              <p>트랙마다 달라졌던 메시지·레퍼런스 역할·곡 구간·후보 상태·선택 이유를 한 화면에 모았습니다. 사람과 에이전트가 같은 기획 상태를 보고, 사람이 고른 기준만 이미지·영상 생성과 편집으로 넘기는 현재의 작업 환경입니다.</p>
-            </header>
-            <div className={styles.workbenchEvolutionVisual}>
-              <figure className={styles.workbenchActualFigure}><img alt="ONE MOVE actual reference and flow planning board" src="/ai-exploration/rationale-assets/one-move-ref-flow-board-crop.png" /><figcaption>ACTUAL PROJECT / ONE MOVE REFERENCE + FLOW BOARD</figcaption></figure>
-              <figure className={styles.workbenchCurrentFigure}><video controls muted playsInline poster="/ai-exploration/rationale-assets/one-move-planning-last-5s-poster.jpg" preload="metadata" src="/ai-exploration/rationale-assets/one-move-planning-last-4s.m4v" /><figcaption>LOCAL APPLICATION / LAST 4 SEC</figcaption></figure>
-              <figure className={styles.workbenchReferenceFigure}><img alt="ComfyUI node workflow used as visual state reference" src="/ai-exploration/workbench/comfyui-z-image-turbo-workflow-reference.png" /><figcaption>COMFYUI REFERENCE / VISUAL STATE + REUSABLE FLOW</figcaption></figure>
-            </div>
-            <div className={styles.workbenchReferencePrinciples}>
-              <div><span>SAME VIEW</span><p>사람과 AI가 같은 메시지·레퍼런스·후보 상태를 확인</p></div>
-              <div><span>COMFYUI · FIGMA CANVAS</span><p>시각적 상태와 재사용 흐름을 참고</p></div>
-              <div><span>SKILLS · HARNESS</span><p>작은 절차·상태·인계와 사람 승인 지점을 연결</p></div>
-              <div className={styles.workbenchExcluded}><span>HUMAN CONTROL</span><p>기획 자동 확정·보호 자산 외부 전송·자동 유료 실행은 제외</p></div>
-            </div>
-          </article>
         </div>
 
-        <div className={styles.iterationConclusionRebuild}>
+        <div className={styles.iterationConclusionRebuild} id="iteration-current">
           <span>CURRENT STANDARD</span>
-          <p>반복을 줄이는 데서 끝내지 않고, 사람과 AI가 같은 기준을 본 상태에서 AI가 먼저 준비하고 좁히며 사람은 방향·선택·최종 결과에 개입합니다.</p>
+          <p>인물 기준은 재사용하되 메시지와 장면은 다시 판단하고, 통과한 구간은 이어받되 문제가 생긴 단계만 되돌아갑니다. 레퍼런스는 역할과 적용 구간을 먼저 정하고, 최종 방향·선택·결과는 사람이 결정합니다.</p>
         </div>
 
         <SectionHandoff
@@ -3530,90 +3541,12 @@ export function AiExplorationPortfolioPage() {
 
           <div className={styles.boundaryNote}>
             <ShieldCheck size={20} />
-            <p>동일한 조건에서 모델 간 우열을 검증했다고 말하지 않습니다. Workbench는 실행 가능한 개발 체크포인트이고, Local Edit Desk는 개발 중인 편집 보조 도구입니다. AHEYA에는 상용 성과가 없으며 물리 공간과 리테일은 완료 실적이 아닌 다음 적용 방향입니다.</p>
+            <p>동일한 조건에서 모델 간 우열을 검증했다고 말하지 않습니다. Workbench는 실행 가능한 개발 체크포인트이고, Local Edit Desk는 개발 중인 편집 보조 도구입니다. 물리 공간과 리테일은 완료 실적이 아닌 다음 적용 방향입니다.</p>
           </div>
         </Reveal>
       </section>
 
       <EvidenceIndexSection />
-      <LoomAppendixSection />
-
-      <section className={`${styles.section} ${styles.aheyaSection}`} id="aheya">
-        <Reveal className={styles.contentWidth}>
-          <SectionHeading
-            body="Loom 제작 Harness와 분리된 프로젝트입니다. AI 에이전트의 수행 결과 평가에서 출발해 크라우드펀딩, 스마트계약 기반 실행 기록과 수수료 구조까지 구현했습니다."
-            index="APPENDIX B"
-            label="AHEYA · AGENT · FUNDING · TRUST"
-            title="AI 에이전트·펀딩·신뢰 구조의 별도 서비스 탐구"
-          />
-
-          <div className={styles.aheyaQuestionRail}>
-            <article><span>01 / EVALUATION</span><strong>AI agent의 수행 결과와 신뢰 기록</strong></article>
-            <i aria-hidden="true">→</i>
-            <article><span>02 / FUNDING</span><strong>AI 프로젝트를 위한 공통 펀딩 구조</strong></article>
-            <i aria-hidden="true">→</i>
-            <article><span>03 / BLOCKCHAIN</span><strong>수수료와 실행 기록의 스마트계약 처리</strong></article>
-          </div>
-
-          <div className={styles.aheyaFeature}>
-            <img alt="AHEYA crowdfunding and trust service prototype" src="/aheya/aheyabaraya-homepage-2026-04-28.png" />
-            <div>
-              <span>AHEYA / SMART CONTRACT · SERVICE PROTOTYPE</span>
-              <h3>구현 가능성과 시장 필요의 분리</h3>
-              <p>
-                AI agent의 작업 결과를 평가하고 기록하는 Trust 구조에서 시작했습니다. AI builder 프로젝트의 크라우드펀딩, Solidity 스마트계약, wallet, 외부 인프라를 구현하고 Yui에서는 후보 탐색·계획·실행·엄격한 검토·기록을 agent가 이어 가는 방식을 시험했습니다.
-              </p>
-              <p>
-                각 창작자와 서비스가 결제를 독립적으로 붙일 수 있는 현실을 충분히 반영하지 못해 공통 펀딩·결제 레이어의 필요를 과대평가했습니다. 약 2~3주간 X에서 직접 접촉했으나 유효한 시장 반응을 얻지 못했고, 유지 비용과 외부 환경을 고려해 프로젝트를 중단했습니다.
-              </p>
-              <p>
-                기술 가설과 시장 가설을 분리해야 한다는 결과였습니다. 기능 추가보다 누가 왜 공통 구조를 필요로 하는지, 더 단순한 대안이 이미 있는지를 먼저 확인하는 기준을 남겼습니다.
-              </p>
-              <div className={styles.aheyaLinks} id="aheya-evidence">
-                {[
-                  ["01 / AGENT EXECUTION", "aheya-openclaw-orchestration-flow", "OpenClaw Yui 실행 흐름"],
-                  ["02 / SMART CONTRACT", "aheya-evm-funding-registry", "Solidity 공개 코드"],
-                ].map(([index, slug, title]) => {
-                  const source = getEvidenceSource(slug);
-                  if (!source) return null;
-                  return (
-                    <Link className={styles.aheyaEvidenceCard} href={`/ai-exploration/motion-bank/${slug}`} key={slug}>
-                      <span>{index}</span>
-                      <div>
-                        <strong>{title}</strong>
-                        <p>{source.description}</p>
-                        <small>{source.fileName} · {source.state}</small>
-                      </div>
-                      <ArrowRight size={16} />
-                    </Link>
-                  );
-                })}
-                <a className={styles.aheyaEvidenceCard} href={AHEYA_ARCHIVE_URL} rel="noreferrer" target="_blank">
-                  <span>03 / PUBLIC ARCHIVE</span>
-                  <div>
-                    <strong>AHEYA 공개 아카이브</strong>
-                    <p>서비스 화면, 스마트계약, 실행 기록을 함께 확인할 수 있는 공개 저장소입니다.</p>
-                    <small>PUBLIC REPOSITORY · IMPLEMENTATION ARCHIVE</small>
-                  </div>
-                  <ExternalLink size={16} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <article className={styles.optionalExploration}>
-            <img alt="AB LUNA state and handoff exploration" src="/ab-luna/source-assets/abluna-4.webp" />
-            <div>
-              <span>SEPARATE LINEAGE / AB_LUNA · 상태·인계 실험</span>
-              <h3>여러 AI의 결과를 다음 작업이 읽는 상태로 정리</h3>
-              <p>프로젝트 브리프, 현재 상태, 결과물 목록, 다음 단계 인계로 나눠 완료 상태와 막힌 지점, 다음 행동을 기록했습니다.</p>
-              <EvidenceLink label="전신 구조의 실제 파일 일부" slug="ab-luna-state-handoff-lineage" />
-            </div>
-          </article>
-        </Reveal>
-      </section>
-
-      <HarnessManagementAppendix />
 
       <footer className={styles.footer}>
         <div>

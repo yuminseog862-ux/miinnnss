@@ -23050,27 +23050,6 @@
   grid-template-rows: minmax(0, 1fr) !important;
 }
 
-.page .iterationRebuild .leftDiscardSheet,
-.page .iterationRebuild .leftDiscardVideo {
-  grid-row: 1;
-}
-
-.page .iterationRebuild .leftDiscardSheet {
-  grid-column: 1;
-}
-
-.page .iterationRebuild .leftDiscardVideo {
-  grid-column: 2;
-}
-
-.page .iterationRebuild .leftDiscardSheet img {
-  object-fit: contain;
-}
-
-.page .iterationRebuild .leftDiscardVideo video {
-  object-fit: cover;
-}
-
 .page .iterationRebuild .inkEvolutionStage {
   display: grid;
   gap: 8px;
@@ -23289,32 +23268,38 @@
 
 /* 2026-07-20 / Left in That Night: identity was stable; reference roles were not. */
 .page .iterationRebuild .leftDiscardEvidenceStage {
-  grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr) !important;
-  grid-template-rows: 148px repeat(2, minmax(0, 1fr)) !important;
-  min-height: 790px;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: 230px minmax(0, 1fr) !important;
+  min-height: 650px;
 }
 
-.leftIdentityStrip {
-  display: grid;
-  gap: 8px;
-  grid-column: 1 / -1;
+.leftUpperBodyContactSheet {
+  grid-column: 1;
   grid-row: 1;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   min-height: 0;
 }
 
-.page .iterationRebuild .leftIdentityStrip figure,
+.leftUpperBodyContactSheet::after {
+  display: none;
+}
+
+.leftUpperBodyContactSheet > a {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page .iterationRebuild .leftUpperBodyContactSheet img {
+  object-fit: contain !important;
+  object-position: center;
+}
+
 .page .iterationRebuild .leftMixedOutputGrid figure {
   height: 100%;
   min-height: 0;
 }
 
-.page .iterationRebuild .leftIdentityStrip img {
-  object-fit: cover !important;
-  object-position: center 22%;
-}
-
-.page .iterationRebuild .leftIdentityStrip figcaption,
 .page .iterationRebuild .leftMixedOutputGrid figcaption {
   bottom: 9px;
   font-size: 6.5px;
@@ -23325,7 +23310,7 @@
   display: grid;
   gap: 8px;
   grid-column: 1;
-  grid-row: 2 / 4;
+  grid-row: 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   min-height: 0;
@@ -23335,30 +23320,523 @@
   object-fit: cover !important;
 }
 
-.page .iterationRebuild .leftDiscardEvidenceStage .leftDiscardSheet {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.page .iterationRebuild .leftDiscardEvidenceStage .leftDiscardVideo {
-  grid-column: 2;
-  grid-row: 3;
-}
-
 @media (max-width: 840px) {
   .page .iterationRebuild .leftDiscardEvidenceStage {
+    grid-template-rows: 160px 460px !important;
     min-height: 0;
   }
 
-  .page .iterationRebuild .leftDiscardEvidenceStage .leftIdentityStrip {
+  .page .iterationRebuild .leftDiscardEvidenceStage .leftUpperBodyContactSheet {
     grid-column: 1 !important;
     grid-row: auto !important;
-    min-height: 260px !important;
+    min-height: 160px !important;
   }
 
   .page .iterationRebuild .leftDiscardEvidenceStage .leftMixedOutputGrid {
     grid-column: 1 !important;
     grid-row: auto !important;
     min-height: 460px !important;
+  }
+}
+
+/* 2026-07-20 / 03 evidence hierarchy: source captures first, with moderate reading height. */
+.rationaleAgentRouteOnly {
+  grid-template-rows: minmax(0, 1fr) 88px;
+}
+
+.rationaleAgentMetricsFigure {
+  grid-template-rows: minmax(0, 1fr) 34px !important;
+}
+
+.rationaleAgentMetricsFigure > a,
+.rationaleModelDocsMedia figure > a {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page .rationaleRebuild .rationaleAgentMetricsFigure img {
+  background: #fff;
+  object-fit: contain;
+}
+
+.rationaleEvidenceCaption {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rationaleEvidenceCaption > a {
+  align-items: center;
+  color: #c8ff45;
+  display: inline-flex;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.rationaleModelDocsMedia {
+  gap: 7px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1.15fr) minmax(0, 0.9fr) 48px;
+}
+
+.rationaleModelDocsMedia > figure {
+  min-height: 0;
+}
+
+.rationaleModelDocsMedia .rationaleModelDocPrimary {
+  grid-column: 1 / -1;
+}
+
+.page .rationaleRebuild .rationaleModelDocsMedia figure img {
+  background: #050707;
+  object-fit: contain;
+  object-position: center;
+}
+
+.rationaleReviewEvidenceMedia {
+  gap: 7px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) 48px;
+}
+
+.rationaleReviewEvidenceMedia > .rationaleModelRail {
+  grid-column: 1 / -1;
+}
+
+.rationaleReviewEvidenceMedia > figure {
+  border: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 30px;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rationaleReviewImageLink {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page .rationaleRebuild .rationaleReviewEvidenceMedia figure img {
+  background: #050707;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.rationaleReviewContactFigure figcaption {
+  align-items: center;
+  color: #9eaca6;
+  display: flex;
+  font-size: 7px;
+  font-weight: 780;
+  letter-spacing: 0.045em;
+  padding: 0 10px;
+}
+
+.rationaleReviewCaption {
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.rationaleReviewCaption > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rationaleReviewCaption > a {
+  align-items: center;
+  color: #c8ff45;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 5px;
+  text-decoration: none;
+}
+
+.page .rationaleRebuild .rationaleApiEvidence {
+  gap: 7px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 340px minmax(0, 1fr);
+}
+
+.page .rationaleRebuild .rationaleApiMedia {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.page .rationaleRebuild .rationaleApiEvidence :is(img, video) {
+  background: #050707;
+  object-fit: contain;
+  object-position: center;
+}
+
+.rationalePacketOriginal {
+  border: 1px solid rgba(237, 243, 240, 0.18);
+  color: #eef3ef;
+  display: grid;
+  grid-template-rows: 42px minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rationalePacketOriginal > header {
+  align-items: center;
+  border-bottom: 1px solid rgba(237, 243, 240, 0.18);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.rationalePacketOriginal > header span,
+.rationalePacketFieldGrid span {
+  color: #c8ff45;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.rationalePacketOriginal > header strong {
+  color: #eef3ef;
+  font-size: 8px;
+}
+
+.rationalePacketFieldGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 0.8fr));
+  min-height: 0;
+}
+
+.rationalePacketFieldGrid > div {
+  align-content: start;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+}
+
+.rationalePacketFieldGrid > div + div {
+  border-left: 1px solid rgba(237, 243, 240, 0.14);
+}
+
+.rationalePacketFieldGrid pre {
+  color: #aab7b1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 7.4px;
+  line-height: 1.55;
+  margin: 0;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningEvidenceStage {
+  gap: 8px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) 185px;
+  min-height: 0;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningBoardFigure {
+  grid-row: 2;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure {
+  grid-row: 1;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) 44px;
+  min-height: 0;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure img {
+  align-self: stretch;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure > div {
+  align-content: center;
+  border-left: 0;
+  border-top: 1px solid rgba(237, 243, 239, 0.17);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 9px 12px;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure p {
+  margin: 0;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeEvidenceGrid {
+  grid-template-columns: minmax(0, 1.34fr) minmax(230px, 0.66fr);
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeContactSheet > img {
+  background: #050707;
+  object-fit: contain;
+}
+
+@media (min-width: 841px) {
+  .page .rationaleRebuild .rationaleResultPage {
+    min-height: 660px !important;
+  }
+
+  .page .rationaleRebuild .rationaleResultMedia {
+    min-height: 612px;
+  }
+
+  .page .rationaleRebuild :is(
+    .rationaleScaleMedia,
+    .rationaleAgentRouteOnly
+  ) {
+    align-self: start;
+    height: 590px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia {
+    align-self: start;
+    height: 620px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleModelDocsMedia {
+    align-self: start;
+    height: 640px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleReviewEvidenceMedia {
+    align-self: start;
+    height: 350px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleApiMedia {
+    align-self: start;
+    height: 525px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleAttitudeMedia {
+    align-self: start;
+    height: 420px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 840px) {
+  .page .rationaleRebuild .rationaleResultMeta {
+    padding: 24px 0;
+  }
+
+  .page .rationaleRebuild .rationaleScaleGallery {
+    min-height: 260px;
+  }
+
+  .rationaleAgentRouteOnly {
+    grid-template-rows: auto auto;
+  }
+
+  .page .rationaleRebuild .rationaleAgentMetricsFigure {
+    min-height: 300px;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia .planningEvidenceStage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 300px 210px;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia .planningBoardFigure,
+  .page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure {
+    height: auto;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) 48px;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure > div {
+    border-left: 0;
+    border-top: 1px solid rgba(237, 243, 239, 0.17);
+  }
+
+  .page .rationaleRebuild .rationaleModelDocsMedia {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(3, 250px) auto;
+  }
+
+  .page .rationaleRebuild .rationaleModelDocsMedia .rationaleModelDocPrimary {
+    grid-column: auto;
+  }
+
+  .page .rationaleRebuild .rationaleModelDocsMedia > figure {
+    height: 250px;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleReviewEvidenceMedia {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, 230px) auto;
+  }
+
+  .page .rationaleRebuild .rationaleReviewEvidenceMedia > figure {
+    height: auto;
+    min-height: 0;
+  }
+
+  .page .rationaleRebuild .rationaleApiEvidence {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 220px auto;
+  }
+
+  .page .rationaleRebuild .rationaleApiEvidence figure {
+    min-height: 0;
+  }
+
+  .rationalePacketFieldGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rationalePacketFieldGrid > div + div {
+    border-left: 0;
+    border-top: 1px solid rgba(237, 243, 240, 0.14);
+  }
+
+  .page .rationaleRebuild .rationaleAttitudeMedia .attitudeSectionVideos {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(210px, auto));
+  }
+}
+
+/* 2026-07-21 / annotation pass: official routing proof, paired workbench clips, exact edit frames. */
+.rationaleAgentOfficialGrid {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  min-height: 0;
+}
+
+.rationaleAgentOfficialFigure {
+  border: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 34px;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.rationaleAgentOfficialFigure > a {
+  background: #030504;
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page .rationaleRebuild .rationaleAgentOfficialFigure img {
+  background: #030504;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+
+.rationaleAgentOfficialFigure .rationaleEvidenceCaption {
+  border-top: 1px solid rgba(237, 243, 240, 0.16);
+  font-size: 6.5px;
+  gap: 8px;
+  padding: 0 9px;
+}
+
+.rationaleAgentOfficialFigure .rationaleEvidenceCaption > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rationaleAgentOfficialFigure .rationaleEvidenceCaption > a {
+  flex: 0 0 auto;
+}
+
+.page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure > .planningVideoPair {
+  align-content: center;
+  background: #050807;
+  border: 0;
+  display: grid;
+  gap: 7px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 0;
+  padding: 0;
+}
+
+.planningVideoPair figure {
+  background: #07100e;
+  border: 1px solid rgba(237, 243, 239, 0.16);
+  display: grid;
+  grid-template-rows: auto 26px;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.page .rationaleRebuild .planningVideoPair video {
+  aspect-ratio: 2698 / 1446;
+  background: #07100e;
+  display: block;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  width: 100%;
+}
+
+.planningVideoPair figcaption {
+  align-items: center;
+  border-top: 1px solid rgba(237, 243, 239, 0.14);
+  color: #c8ff45;
+  display: flex;
+  font-size: 6.5px;
+  font-weight: 760;
+  letter-spacing: 0.05em;
+  padding: 0 9px;
+}
+
+.page .rationaleRebuild .rationaleAttitudeMedia .attitudeContactSheet > img {
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 840px) {
+  .rationaleAgentOfficialGrid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, 280px);
+  }
+
+  .page .rationaleRebuild .rationaleAgentRouteOnly {
+    grid-template-rows: auto auto;
+  }
+
+  .page .rationaleRebuild .rationalePlanningMedia .planningVideoFigure > .planningVideoPair {
+    gap: 5px;
+  }
+
+  .planningVideoPair figcaption {
+    font-size: 5.8px;
+    padding: 0 6px;
   }
 }

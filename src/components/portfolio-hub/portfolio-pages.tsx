@@ -6,7 +6,7 @@ import { getProject, projects, resumeProfile, type PortfolioProject } from "@/li
 
 const navItems = [
   { href: "/", label: "Portfolio" },
-  { href: "/ai-exploration", label: "Exploration" },
+  { href: "/ai-exploration", label: "Process" },
   { href: "/content-performance", label: "Metrics" },
   { href: "/deck/loom", label: "Loom" },
   { href: "/deck/musinsa", label: "Musinsa" },
@@ -178,14 +178,14 @@ export function MasterHubPage() {
         <Link className={styles.explorationRoute} href="/ai-exploration">
           <div className={styles.explorationRouteCopy}>
             <span className={styles.sectionLabel}>Process Portfolio</span>
-            <h2>AI Exploration</h2>
-            <p>새로운 AI를 실제 제작의 문제에 적용하고, 성공과 실패에서 얻은 판단을 다음 실험에 남긴 과정입니다.</p>
+            <h2>AI Production System</h2>
+            <p>기획·생성·편집·검토를 네 개의 Harness로 연결하고, 실제 제작의 성공과 실패에서 바뀐 기준까지 정리했습니다.</p>
             <span className={styles.explorationRouteAction}>
-              탐구 과정 보기 <ArrowRight size={16} />
+              제작 시스템 보기 <ArrowRight size={16} />
             </span>
           </div>
           <div className={styles.explorationRouteMedia}>
-            <img alt="INK music video keyframe exploration" src="/ai-exploration/ink/contact-sheets/ink-s00-s03-keyframe-sheet-v2.webp" />
+            <img alt="Four-stage public-facing AI production Harness map" src="/loom-deck/workflow/02-harness.png" />
           </div>
         </Link>
       </section>
