@@ -67,7 +67,6 @@ const portfolioNavigation = [
   ["harness", "제작 방식"],
   ["rationale", "실제 적용"],
   ["research", "탐구·형성"],
-  ["proof", "부록"],
 ] as const;
 
 const executiveProofs = [
@@ -2342,84 +2341,14 @@ function SystemProofSection() {
   );
 }
 
-function EvidenceIndexSection() {
-  const sources = [
-    {
-      index: "03—00—01",
-      title: "Coding Agent · Model Routing",
-      detail: "대화 대신 파일을 인계하고 Codex·Grok Build의 역할을 나눈 실제 계약과 외부 검증 자료.",
-      links: [
-        { label: "Harness 인계 근거 보기", slug: "idol-harness-stage-registry" },
-      ],
-    },
-    {
-      index: "03—02",
-      title: "Workbench · Research · Handoff",
-      detail: "기획 기준·리서치·레퍼런스 역할·선택 상태를 한 화면에 모으고 다음 작업에 인계한 구현과 단계 기록.",
-      links: [
-        { label: "Workbench 적용 근거 보기", slug: "front-planning-workbench-checkpoint" },
-        { label: "Harness 인계 근거 보기", slug: "idol-harness-stage-registry" },
-      ],
-    },
-    {
-      index: "03—03—04",
-      title: "이미지·영상 생성 · API",
-      detail: "스토리보드·패킷·유료 실행 승인·키프레임·구간 재생 검토를 나눈 실제 제작 기록.",
-      links: [
-        { label: "API 생성 적용 근거 보기", slug: "pulso-api-submission-packet" },
-      ],
-    },
-    {
-      index: "03—05",
-      title: "편집 · Media Toolchain",
-      detail: "소스 인덱스·컨택트시트·마커·프리뷰·QC 준비와 사람의 재생 판단을 분리한 구현 범위.",
-      links: [
-        { label: "편집 도구 적용 근거 보기", slug: "idol-edit-desk-implementation" },
-      ],
-    },
-  ] as const;
-
-  return (
-    <section className={`${styles.section} ${styles.proofSection} ${styles.sourceIndexSection}`} id="proof">
-      <Reveal className={styles.contentWidth}>
-        <SectionHeading
-          body="03에는 Skill·Schema·코드의 공개 가능한 일부를 바로 붙였고, 여기에는 실제 화면과 결과물로 이어졌는지 다시 확인할 수 있는 자료만 모았습니다."
-          index="APPENDIX / EVIDENCE INDEX"
-          label="APPLICATION EVIDENCE + DISCLOSURE"
-          title="03·04의 공개 가능한 적용 근거"
-        />
-
-        <div className={styles.sourceIndexGrid}>
-          {sources.map((source) => (
-            <article key={source.index}>
-              <header><span>{source.index}</span><h3>{source.title}</h3></header>
-              <p>{source.detail}</p>
-              <div className={styles.sourceIndexLinks}>
-                {source.links.map((link) => (
-                  <EvidenceLink badgeLabel="검증 자료" key={link.slug} label={link.label} slug={link.slug} />
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className={styles.sourceIndexBoundary}>
-          <ShieldCheck size={18} />
-          <p>내부 Skill·Schema·운영 문서와 프롬프트 전문은 공개하지 않습니다. 대신 사용한 문서명·역할·공개용 원문 발췌, 실제 화면, 적용 결과, 확인 가능한 범위를 구분해 제공합니다.</p>
-        </div>
-      </Reveal>
-    </section>
-  );
-}
-
 function PublicLinksSection() {
   return (
-    <section aria-labelledby="public-links-title" className={`${styles.section} ${styles.publicLinksSection}`}>
+    <section aria-labelledby="public-links-title" className={`${styles.section} ${styles.publicLinksSection}`} id="explore">
       <Reveal className={`${styles.contentWidth} ${styles.publicLinksLayout}`}>
         <header className={styles.publicLinksHeading}>
-          <span>LIVE OUTPUTS / LINKS</span>
-          <h2 id="public-links-title">작업이 실제로 공개된 곳</h2>
-          <p>소셜 계정과 Loom Signal Deck의 주요 페이지를 한곳에서 확인할 수 있습니다.</p>
+          <span>PUBLIC LINKS</span>
+          <h2 id="public-links-title">EXPLORE</h2>
+          <p>Loom의 공개 영상과 소셜 계정, Signal Deck을 직접 확인할 수 있습니다.</p>
         </header>
 
         <nav aria-label="AI Exploration public links" className={styles.publicLinksList}>
@@ -2855,11 +2784,6 @@ function TrendApplicationSection() {
           </article>
 
         </div>
-        <SectionHandoff
-          href="#proof"
-          label="APPENDIX / DETAILED IMPLEMENTATION"
-          title="Workbench · Harness · Media Toolchain의 상세 근거"
-        />
       </Reveal>
     </section>
   );
@@ -3591,8 +3515,6 @@ export function AiExplorationPortfolioPage() {
           </div>
         </Reveal>
       </section>
-
-      <EvidenceIndexSection />
 
       <PublicLinksSection />
 
