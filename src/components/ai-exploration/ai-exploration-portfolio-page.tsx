@@ -23,6 +23,45 @@ import styles from "./ai-exploration-portfolio.module.css";
 const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
 
+const publicDestinations = [
+  {
+    group: "SOCIAL / TIKTOK",
+    title: "@loom_mm",
+    detail: "Loom 멤버와 트랙을 짧은 영상으로 확장한 숏폼 기록",
+    href: LOOM_TIKTOK_URL,
+  },
+  {
+    group: "SOCIAL / YOUTUBE",
+    title: "@aheya-b",
+    detail: "Root Signal · Pulso · INK의 공개 영상 아카이브",
+    href: "https://www.youtube.com/@aheya-b",
+  },
+  {
+    group: "SOCIAL / X",
+    title: "@minnns_aheya",
+    detail: "AHEYA에서 시작한 AI 탐구와 제작 과정 기록",
+    href: "https://x.com/minnns_aheya",
+  },
+  {
+    group: "LOOM SIGNAL DECK / MAIN",
+    title: "Loom Signal Deck",
+    detail: "멤버 · 트랙 · 영상 · 참여 흐름을 모은 Loom 웹페이지",
+    href: LOOM_SIGNAL_DECK_URL,
+  },
+  {
+    group: "LOOM SIGNAL DECK / VOTE",
+    title: "Vote",
+    detail: "다음 트랙과 멤버의 방향을 선택하는 참여 프로토타입",
+    href: `${LOOM_SIGNAL_DECK_URL}/vote`,
+  },
+  {
+    group: "LOOM SIGNAL DECK / CF",
+    title: "CF",
+    detail: "Loom 멤버를 활용한 개인 비공식 spec commercial 아카이브",
+    href: `${LOOM_SIGNAL_DECK_URL}/cf`,
+  },
+] as const;
+
 const portfolioNavigation = [
   ["validation", "결과"],
   ["harness", "제작 방식"],
@@ -2373,6 +2412,33 @@ function EvidenceIndexSection() {
   );
 }
 
+function PublicLinksSection() {
+  return (
+    <section aria-labelledby="public-links-title" className={`${styles.section} ${styles.publicLinksSection}`}>
+      <Reveal className={`${styles.contentWidth} ${styles.publicLinksLayout}`}>
+        <header className={styles.publicLinksHeading}>
+          <span>LIVE OUTPUTS / LINKS</span>
+          <h2 id="public-links-title">작업이 실제로 공개된 곳</h2>
+          <p>소셜 계정과 Loom Signal Deck의 주요 페이지를 한곳에서 확인할 수 있습니다.</p>
+        </header>
+
+        <nav aria-label="AI Exploration public links" className={styles.publicLinksList}>
+          {publicDestinations.map((destination) => (
+            <a href={destination.href} key={destination.href} rel="noopener noreferrer" target="_blank">
+              <span>{destination.group}</span>
+              <div>
+                <strong>{destination.title}</strong>
+                <p>{destination.detail}</p>
+              </div>
+              <ExternalLink aria-hidden="true" size={18} />
+            </a>
+          ))}
+        </nav>
+      </Reveal>
+    </section>
+  );
+}
+
 function VisualWorkflowReference() {
   return (
     <div className={styles.adoptionVisual}>
@@ -3527,6 +3593,8 @@ export function AiExplorationPortfolioPage() {
       </section>
 
       <EvidenceIndexSection />
+
+      <PublicLinksSection />
 
       <footer className={styles.footer}>
         <div>
