@@ -22916,7 +22916,7 @@
 }
 
 .page .iterationRebuild .iterationRoute {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .page .iterationRebuild .rootSignalEvidenceStage,
@@ -23143,6 +23143,101 @@
   .page .iterationRebuild .inkEvolutionStage figure,
   .page .iterationRebuild .workbenchEvolutionVisual figure {
     min-height: 300px !important;
+  }
+}
+
+/* 2026-07-21 / one-page recruiter conclusion */
+.closingPageSingle {
+  align-content: center;
+  gap: 0;
+  grid-template-rows: auto auto auto auto;
+  min-height: calc(100svh - 68px);
+  padding: 46px 0 40px;
+}
+
+.page .closingPageSingle h2 {
+  font-size: clamp(30px, 2.6vw, 40px);
+  line-height: 1.14;
+  margin: 13px 0 0;
+  max-width: none;
+  white-space: normal;
+}
+
+.closingAnswer {
+  color: #273500;
+  font-size: 15px;
+  font-weight: 620;
+  line-height: 1.55;
+  margin: 15px 0 0;
+  max-width: 980px;
+  word-break: keep-all;
+}
+
+.closingPageSingle .brandTranslation {
+  gap: 40px;
+  grid-template-columns: minmax(210px, 0.46fr) minmax(0, 1.54fr);
+  margin-top: 30px;
+  padding-top: 18px;
+}
+
+.closingPageSingle .brandTranslationLead p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 11px;
+}
+
+.closingPageSingle .brandTranslationLead small {
+  color: #4a5e00;
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.55;
+  margin-top: 14px;
+}
+
+.closingPageSingle .brandTranslationRows article {
+  gap: 20px;
+  grid-template-columns: 170px minmax(0, 1fr);
+  padding: 11px 0;
+}
+
+.closingPageSingle .brandTranslationRows strong {
+  font-size: 13px;
+  line-height: 1.48;
+}
+
+@media (max-width: 840px) {
+  .closingPageSingle {
+    min-height: 0;
+    padding: 74px 0 70px;
+  }
+
+  .page .closingPageSingle h2 {
+    font-size: clamp(31px, 9.2vw, 40px);
+    line-height: 1.17;
+  }
+
+  .closingAnswer {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .closingPageSingle .brandTranslation {
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 38px;
+    padding-top: 24px;
+  }
+
+  .closingPageSingle .brandTranslationRows article {
+    display: grid;
+    gap: 9px;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 18px 0;
+  }
+
+  .closingPageSingle .brandTranslationRows strong {
+    margin-top: 0;
   }
 }
 
