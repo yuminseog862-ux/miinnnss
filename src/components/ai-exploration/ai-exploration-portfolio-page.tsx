@@ -2675,7 +2675,6 @@ function TrendApplicationSection() {
             ["iteration-pulso", "02", "PULSO"],
             ["iteration-left", "03", "LEFT IN THAT NIGHT"],
             ["iteration-ink", "04", "INK"],
-            ["iteration-current", "CURRENT", "CURRENT STANDARD"],
           ].map(([href, index, title]) => (
             <a href={`#${href}`} key={href}><span>{index}</span><strong>{title}</strong></a>
           ))}
@@ -2790,12 +2789,6 @@ function TrendApplicationSection() {
           </article>
 
         </div>
-
-        <div className={styles.iterationConclusionRebuild} id="iteration-current">
-          <span>CURRENT STANDARD</span>
-          <p>인물 기준은 재사용하되 메시지와 장면은 다시 판단하고, 통과한 구간은 이어받되 문제가 생긴 단계만 되돌아갑니다. 레퍼런스는 역할과 적용 구간을 먼저 정하고, 최종 방향·선택·결과는 사람이 결정합니다.</p>
-        </div>
-
         <SectionHandoff
           href="#proof"
           label="APPENDIX / DETAILED IMPLEMENTATION"
@@ -3512,36 +3505,23 @@ export function AiExplorationPortfolioPage() {
       ) : null}
 
       <section className={styles.closingSection}>
-        <Reveal className={`${styles.contentWidth} ${styles.closingPage}`}>
-          <span className={styles.closingLabel}>CURRENT POSITION / CONCLUSION</span>
-          <h2>반복을 줄이고 메시지와 장면 선택에 집중하는 AI 콘텐츠 제작</h2>
+        <Reveal className={`${styles.contentWidth} ${styles.closingPage} ${styles.closingPageSingle}`}>
+          <span className={styles.closingLabel}>AI RESEARCH & EXPLORATION / CONCLUSION</span>
+          <h2>하나의 메시지는 어디까지 하나의 경험이 될 수 있을까?</h2>
+          <p className={styles.closingAnswer}>AI가 사람의 판단을 대신하는 것이 아니라, 같은 의도와 기준을 공유하며 표현의 가능성을 넓히는 제작 방식을 탐구했습니다.</p>
 
           <div className={styles.brandTranslation}>
             <div className={styles.brandTranslationLead}>
-              <span>FROM CONTENT TO BRAND EXPERIENCE</span>
-              <p>현재 확인한 콘텐츠·웹 결과와 물리 공간·리테일로 이어질 다음 적용 가설입니다.</p>
+              <span>FROM EXPLORATION TO BRAND EXPERIENCE</span>
+              <p>새 기술을 기능 목록으로 소비하지 않고, 실제 제작의 문제에 적용해 선택과 실패의 이유를 다음 실험으로 연결했습니다.</p>
+              <small>확인하지 않은 가능성은 성과로 말하지 않고, 다음 실험 과제로 구분합니다.</small>
             </div>
             <div className={styles.brandTranslationRows}>
-              <article><span>CONTENT</span><strong>Root Signal·Pulso·INK와 Cola·Headset을 통한 메시지와 제품 기능의 장면화.</strong></article>
-              <article><span>WEB EXPERIENCE</span><strong>Loom의 멤버·트랙·콘텐츠와 참여 요소를 모은 Loom Webpage.</strong></article>
-              <article><span>CONTENT-BASED SPACE</span><strong>INK의 빛·오브젝트·인물 동선과 Headset 미술관의 소리 규칙으로 확인한 콘텐츠 안의 공간 연출.</strong></article>
-              <article><span>NEXT / PHYSICAL · RETAIL</span><strong>장면 규칙을 다중 화면, 현장과 웹의 연속 경험, 공간 프로토타입으로 옮기는 다음 검증 과제.</strong></article>
+              <article><span>EXPLORE · TEST</span><strong>새 AI 도구를 제작 문제에 맞춰 비교하고, 성공과 실패의 이유를 다음 실험 기준으로 바꿨습니다.</strong></article>
+              <article><span>MAKE · SELECT</span><strong>Loom MV 3편·개인 spec CF 2편·웹 프로토타입을 만들며 메시지·장면·최종 선택은 사람이 맡았습니다.</strong></article>
+              <article><span>ARCHIVE · SHARE</span><strong>Workbench·Harness·컨택트시트에 입력·결과·통과·보류 이유를 남겨 다른 사람이 검토하고 이어받을 수 있게 했습니다.</strong></article>
+              <article><span>NEXT · APPLY</span><strong>다음 프로젝트에서도 기술보다 해결할 문제를 먼저 정하고, 작게 시험해 확인한 방식만 실제 제작으로 확장하겠습니다.</strong></article>
             </div>
-          </div>
-        </Reveal>
-
-        <Reveal className={`${styles.contentWidth} ${styles.closingPage} ${styles.closingStrengthPage}`}>
-          <span className={styles.closingLabel}>WHAT I BRING</span>
-          <h2>제작과 기록으로 이어지는 세 가지 강점</h2>
-          <div className={styles.closingPoints}>
-            <div><span>01</span><strong>새 기술을 제작 문제로 해석하는 관점</strong></div>
-            <div><span>02</span><strong>아이디어를 콘텐츠·도구·웹 프로토타입까지 시험하는 실행력</strong></div>
-            <div><span>03</span><strong>채택·보류·폐기 이유를 다음 기준으로 남기는 기록 방식</strong></div>
-          </div>
-
-          <div className={styles.boundaryNote}>
-            <ShieldCheck size={20} />
-            <p>동일한 조건에서 모델 간 우열을 검증했다고 말하지 않습니다. Workbench는 실행 가능한 개발 체크포인트이고, Local Edit Desk는 개발 중인 편집 보조 도구입니다. 물리 공간과 리테일은 완료 실적이 아닌 다음 적용 방향입니다.</p>
           </div>
         </Reveal>
       </section>
