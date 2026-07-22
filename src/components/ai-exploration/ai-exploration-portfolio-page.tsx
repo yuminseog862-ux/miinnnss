@@ -55,9 +55,9 @@ const publicDestinations = [
     href: `${LOOM_SIGNAL_DECK_URL}/vote`,
   },
   {
-    group: "LOOM SIGNAL DECK / CF",
-    title: "CF",
-    detail: "Loom 멤버를 활용한 개인 비공식 spec commercial 아카이브",
+    group: "LOOM SIGNAL DECK / SPEC COMMERCIAL",
+    title: "Spec Commercial",
+    detail: "Loom 멤버를 활용한 개인 비공식 Spec Commercial 아카이브",
     href: `${LOOM_SIGNAL_DECK_URL}/cf`,
   },
 ] as const;
@@ -71,7 +71,7 @@ const portfolioNavigation = [
 
 const executiveProofs = [
   ["01", "MV / 3편", "Root Signal · Pulso · INK"],
-  ["02", "PERSONAL SPEC CF / 2편", "Cola · Headset · unofficial"],
+  ["02", "PERSONAL SPEC COMMERCIAL / 2편", "Cola · Headset · unofficial"],
   ["03", "LOCAL WEB / 1개", "Loom Signal Deck"],
 ];
 
@@ -174,19 +174,19 @@ const rationaleSkillUses = {
     ],
     contracts: "AGENTS.md · front-planning-readiness.schema.json · harness-stage-registry.yaml",
     role: "사람과 AI가 같은 기획·레퍼런스·후보 상태를 보고, 사람이 고른 기준만 다음 작업에 인계",
-    cf: "cf/AGENTS.md · 대상·주장·콘셉트·광고 대상 근거",
+    cf: "SPEC COMMERCIAL · 대상·주장·콘셉트·광고 대상 근거",
   },
   api: {
     skills: ["idol-generation · idol-video-prompt"],
     contracts: "harness-stage-registry.yaml · video-prompt-manifest.schema.json",
     role: "통과한 스토리보드를 일괄 생성하고, 컨택트시트 비교 뒤 수정할 컷만 다시 실행",
-    cf: "cf/AGENTS.md · 키프레임·영상 패킷",
+    cf: "SPEC COMMERCIAL · 키프레임·영상 패킷",
   },
   editing: {
     skills: ["idol-editing-qc · idol-edit-finishing-fx"],
     contracts: "edit-recipe.schema.json · edit-effect-registry.yaml",
     role: "스토리·키프레임·오디오 마커를 읽어 러프 편집 레시피와 프리뷰를 만들고, 최종 컷 판단은 사람에게 남김",
-    cf: "cf/AGENTS.md · 편집·패키지 QC",
+    cf: "SPEC COMMERCIAL · 편집·패키지 QC",
   },
 } as const;
 
@@ -453,7 +453,7 @@ const productionStoryStages = [
     flow: ["최종 마스터", "파생본", "메타데이터", "플랫폼별 공개 준비"],
     automation: "리사이즈 · 인코딩 · 패키징 · 업로드 큐",
     human: "플랫폼 · 게시물 · 공개 여부 승인",
-    output: "MV · CF · 플랫폼 파생본",
+    output: "MV · Spec Commercial · 플랫폼 파생본",
   },
 ] as const;
 
@@ -628,7 +628,7 @@ const harnessFamilies = [
     stage: "12 STAGES",
     human: "메시지 · 곡 · 연출 기준",
     output: "01 DIRECTION MAP",
-    cf: "SPEC CF · 대상 · Claim · Concept",
+    cf: "SPEC COMMERCIAL · 대상 · Claim · Concept",
     links: [
       ["A", "DISCOVERY + SONG", "#harness-planning-a"],
       ["B", "CREATIVE + DIRECTION", "#harness-planning-b"],
@@ -642,7 +642,7 @@ const harnessFamilies = [
     stage: "10 STAGES",
     human: "이미지 및 영상 생성과 검토",
     output: "REVIEWED SECTION VIDEO",
-    cf: "SPEC CF · Keyframe · Video Packet",
+    cf: "SPEC COMMERCIAL · Keyframe · Video Packet",
     links: [
       ["A", "KEYFRAME", "#harness-generation-a"],
       ["B", "VIDEO GENERATION + REVIEW", "#harness-generation-b"],
@@ -656,7 +656,7 @@ const harnessFamilies = [
     stage: "2 STAGES",
     human: "타이밍 · 연결 · 마스터 승인",
     output: "APPROVED MASTER",
-    cf: "SPEC CF · Edit · Package QC",
+    cf: "SPEC COMMERCIAL · Edit · Package QC",
     links: [["A", "EDIT & FINISH", "#harness-edit"]],
   },
   {
@@ -667,7 +667,7 @@ const harnessFamilies = [
     stage: "4 STAGES",
     human: "공개 · 외부 실행 · 학습 승격",
     output: "PROMOTED MEMORY",
-    cf: "SPEC CF · Variant · Approval",
+    cf: "SPEC COMMERCIAL · Variant · Approval",
     links: [["A", "RELEASE + LEARNING", "#harness-release"]],
   },
 ] as const;
@@ -844,7 +844,7 @@ const editingStructure = [
 
 const releaseStructure = [
   ["01", "PACKAGE", "마스터 · cutdown · short 파생본의 원본 계보"],
-  ["02", "TEMPLATE", "MV · CF · section clip별 메타데이터 형식"],
+  ["02", "TEMPLATE", "MV · Spec Commercial · section clip별 메타데이터 형식"],
   ["03", "RELEASE QUEUE", "메시지 · 설명 · 태그 · 미디어 경로"],
   ["04", "PREFLIGHT", "파일 · 해시 · 제목 · 플랫폼 필수값"],
   ["05", "HUMAN APPROVAL", "승인 파일만 API 초안 · 업로드 단계로 전달"],
@@ -1690,7 +1690,7 @@ function RationaleSkillUse({ kind }: { kind: keyof typeof rationaleSkillUses }) 
         <dd>{item.role}</dd>
       </div>
       <div>
-        <dt>PERSONAL SPEC CF</dt>
+        <dt>PERSONAL SPEC COMMERCIAL</dt>
         <dd>{item.cf}</dd>
       </div>
     </dl>
@@ -1951,7 +1951,7 @@ canonical write: human or structured single writer`}
                 <a href="https://docs.x.ai/developers/models/grok-imagine-image" rel="noreferrer" target="_blank"><strong>GROK IMAGINE IMAGE</strong><p>텍스트·이미지 → 이미지 · 1K/2K 출력 $0.02/장</p><small>PROJECT / 빠른 후보 생성과 비교</small></a>
                 <a href="https://docs.x.ai/developers/pricing" rel="noreferrer" target="_blank"><strong>GROK IMAGINE VIDEO 1.5</strong><p>이미지 → 영상 · 480p $0.08/s · 720p $0.14/s · 1080p $0.25/s</p><small>PROJECT / 통과한 프레임의 짧은 영상화</small></a>
               </div>
-              <div className={styles.rationaleCfRoute}><span>PERSONAL SPEC CF</span><p>Cola·Headset도 별도 CF 시스템이 아니라, 같은 이미지 보드 → 영상 생성 → 사람 검토·편집 경계 안에서 제작했습니다.</p></div>
+              <div className={styles.rationaleCfRoute}><span>PERSONAL SPEC COMMERCIAL</span><p>Cola·Headset도 별도 Spec Commercial 시스템이 아니라, 같은 이미지 보드 → 영상 생성 → 사람 검토·편집 경계 안에서 제작했습니다.</p></div>
             </aside>
           </article>
 
@@ -2278,7 +2278,7 @@ function SystemProofSection() {
               </ol>
               <div className={styles.workflowOutcomes}>
                 <span className={styles.workflowHold}><Undo2 size={14} /> 보류·재편집·재생성 → Workbench</span>
-                <span className={styles.workflowPass}>통과 → Loom MV · 개인 spec CF</span>
+                <span className={styles.workflowPass}>통과 → Loom MV · 개인 비공식 Spec Commercial</span>
               </div>
             </div>
           </article>
@@ -3072,13 +3072,13 @@ function ValidationSection() {
           body="메시지와 장면 기준은 직접 정하고, 반복 준비는 AI와 도구로 줄여 완성한 결과입니다."
           index="01"
           label="AUTOMATION SYSTEM / RESULTS"
-          title="완성한 Loom MV 3편과 개인 spec CF 2편"
+          title="완성한 Loom MV 3편과 개인 비공식 Spec Commercial 2편"
         />
 
         <ResultCarousel />
 
         <div className={styles.cfIntro}>
-          <span>LOOM MEMBER CF / PERSONAL SPEC</span>
+          <span>LOOM MEMBER SPEC COMMERCIAL</span>
           <p>
             같은 Loom 멤버를 짧은 제품 광고 안에 넣었습니다. 제품이 배경에 놓인 소품이 아니라, 장면을 움직이는 이유가 되도록 만들었습니다.
           </p>
@@ -3114,7 +3114,7 @@ function ValidationSection() {
 
         <div className={styles.specBoundary}>
           <ShieldCheck size={20} />
-          <p>Cola와 Headset은 Loom 멤버를 활용해 개인적으로 만든 비공식 spec commercial입니다. 실제 브랜드 협업이나 공식 캠페인, 성과 사례가 아닙니다.</p>
+          <p>Cola와 Headset은 Loom 멤버를 활용해 개인적으로 만든 비공식 Spec Commercial입니다. 실제 브랜드 협업이나 공식 캠페인, 성과 사례가 아닙니다.</p>
         </div>
       </Reveal>
     </section>
@@ -3372,7 +3372,7 @@ export function AiExplorationPortfolioPage() {
           <div className={styles.executiveLead}>
             <span>COMPLETED OUTPUTS</span>
             <p>
-              Loom MV 3편 · 개인 비공식 spec CF 2편 · Loom Webpage 1개
+              Loom MV 3편 · 개인 비공식 Spec Commercial 2편 · Loom Webpage 1개
             </p>
           </div>
           <div className={styles.executiveProofs}>
@@ -3508,7 +3508,7 @@ export function AiExplorationPortfolioPage() {
             </div>
             <div className={styles.brandTranslationRows}>
               <article><span>EXPLORE · TEST</span><strong>새 AI 도구를 제작 문제에 맞춰 비교하고, 성공과 실패의 이유를 다음 실험 기준으로 바꿨습니다.</strong></article>
-              <article><span>MAKE · SELECT</span><strong>Loom MV 3편·개인 spec CF 2편·웹 프로토타입을 만들며 메시지·장면·최종 선택은 사람이 맡았습니다.</strong></article>
+              <article><span>MAKE · SELECT</span><strong>Loom MV 3편·개인 비공식 Spec Commercial 2편·웹 프로토타입을 만들며 메시지·장면·최종 선택은 사람이 맡았습니다.</strong></article>
               <article><span>ARCHIVE · SHARE</span><strong>Workbench·Harness·컨택트시트에 입력·결과·통과·보류 이유를 남겨 다른 사람이 검토하고 이어받을 수 있게 했습니다.</strong></article>
               <article><span>NEXT · APPLY</span><strong>다음 프로젝트에서도 기술보다 해결할 문제를 먼저 정하고, 작게 시험해 확인한 방식만 실제 제작으로 확장하겠습니다.</strong></article>
             </div>

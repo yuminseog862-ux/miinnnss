@@ -113,9 +113,9 @@ export const projects: PortfolioProject[] = [
     accent: "violet",
     headline: "AI 아이돌 IP를 앨범/트랙 단위 콘텐츠 제품과 최소 개입형 production harness로 구조화한 프로젝트",
     abstract:
-      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, 3개의 track music video를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, CF 콘셉트, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-Suno 음악 제작-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
+      "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, 3개의 track music video를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, Spec Commercial, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-Suno 음악 제작-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
     finalResult:
-      "Loom 최신 웹페이지, 3개의 track music video board, 13명 멤버 identity, CF concept lane, Harne vote identity flow, storyboard/video prompt/output registry, social publishing loop를 하나의 AI creative production 사례로 구성",
+      "Loom 최신 웹페이지, 3개의 track music video board, 13명 멤버 identity, Spec Commercial lane, Harne vote identity flow, storyboard/video prompt/output registry, social publishing loop를 하나의 AI creative production 사례로 구성",
     media: {
       src: "/loom-deck/saeyan-spotlight.png",
       alt: "Loom M01 Saeyan representative spotlight",
@@ -123,20 +123,20 @@ export const projects: PortfolioProject[] = [
       href: "https://loom-signal-deck.vercel.app",
     },
     keyContents: [
-      "역할: Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 정의하고 3개의 track music video 방향, 멤버 identity, CF concept lane, 투표 경험을 기획",
+      "역할: Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 정의하고 3개의 track music video 방향, 멤버 identity, Spec Commercial lane, 투표 경험을 기획",
       "제작 흐름: LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집 흐름 구성",
-      "산출물: 최신 Loom 웹에서 홈, 멤버 아카이브, 트랙 뮤직비디오, 스토리보드, CF 숏폼 영상, Harne 투표를 탐색 가능한 콘텐츠 구조로 구성",
+      "산출물: 최신 Loom 웹에서 홈, 멤버 아카이브, 트랙 뮤직비디오, 스토리보드, Spec Commercial 숏폼 영상, Harne 투표를 탐색 가능한 콘텐츠 구조로 구성",
     ],
     deckLinks: [
       {
         label: "Loom Webpage",
         href: "https://loom-signal-deck.vercel.app",
-        description: "3개의 track music video, member archive, CF, Harne vote UX를 확인하는 공개 웹 페이지",
+        description: "3개의 track music video, member archive, Spec Commercial, Harne vote UX를 확인하는 공개 웹 페이지",
       },
       {
-        label: "CF",
+        label: "Spec Commercial",
         href: "https://loom-signal-deck.vercel.app/cf",
-        description: "Loom CF 콘셉트 페이지로 바로 이동",
+        description: "Loom Spec Commercial 페이지로 바로 이동",
       },
       {
         label: "Metrics",
@@ -166,7 +166,7 @@ export const projects: PortfolioProject[] = [
       "3개의 track music video 곡 해석, 멤버 파트, storyboard, video prompt, output registry, SNS loop 설계",
       "LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 반복 가능한 production harness 구축",
     ],
-    outputs: ["updated Loom web proof surface", "3 track music video production", "CF concept lane", "Harne vote identity flow", "LLM/coding agent/API production harness", "Grok Imagine/CapCut/Codex video workflow"],
+    outputs: ["updated Loom web proof surface", "3 track music video production", "Spec Commercial concept lane", "Harne vote identity flow", "LLM/coding agent/API production harness", "Grok Imagine/CapCut/Codex video workflow"],
     resumeLine:
       "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 정의하고, 최신 Loom 웹에 Root Signal/Pulso track board, 멤버 아카이브, Harne vote identity flow를 구성. LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집으로 이어지는 최소 개입형 production harness 구축",
   },
