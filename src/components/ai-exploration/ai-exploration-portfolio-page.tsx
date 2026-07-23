@@ -1303,6 +1303,36 @@ function ProductionHarnessSection() {
           </section>
         </div>
 
+        <section className={styles.harnessNow} aria-labelledby="harness-now-title">
+          <header className={styles.harnessNowHeader}>
+            <span>NOW / HARNESS UPDATE · 2026.07</span>
+            <strong>STATUS / IN PROGRESS</strong>
+          </header>
+
+          <div className={styles.harnessNowLead}>
+            <div>
+              <span>CURRENT FOCUS</span>
+              <h3 id="harness-now-title">반복되는 준비·비교·인계 시간을 줄이는 업데이트</h3>
+            </div>
+            <p>현재는 더 많은 결과를 자동으로 만드는 단계가 아니라, 브리프에서 후보 비교·검토 인계, 프리뷰·QC 준비로 이어지는 반복 작업을 더 짧고 선명하게 만드는 중입니다.</p>
+          </div>
+
+          <dl className={styles.harnessNowDetails}>
+            <div>
+              <dt>UPDATING</dt>
+              <dd>기획 → 후보 → 검토 → 프리뷰·QC 준비의 연결 속도와 인계 효율</dd>
+            </div>
+            <div>
+              <dt>KEPT</dt>
+              <dd>메시지·장면 방향·후보 선택·통과·보류·공개 결정의 사람 판단</dd>
+            </div>
+            <div>
+              <dt>VERIFY NEXT</dt>
+              <dd>실제 제작 run에서 준비·인계 시간이 줄어도 검토 기준이 흐려지지 않는지 확인</dd>
+            </div>
+          </dl>
+        </section>
+
         <div className={styles.systemDepthLink}>
           <span>NEXT / ACTUAL APPLICATION</span>
           <p>Workbench, Harness, Media Toolchain이 실제 기획·인계·재생 검토에서 쓰이는 방식.</p>
