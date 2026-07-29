@@ -22,6 +22,7 @@ import styles from "./ai-exploration-portfolio.module.css";
 
 const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
+const CURRENT_WORKBENCH_IMAGE = "/ai-exploration/workbench/one-move-front-planning-workbench-clean-2026-07-29.png";
 
 const publicDestinations = [
   {
@@ -259,7 +260,7 @@ const formationJourney = [
     test: "Grok Imagine의 대화형 생성, ComfyUI의 연결 방식, Figma의 캔버스를 참고한 메시지·레퍼런스·곡 구간·후보 상태의 한 화면 배치.",
     finding: "생성 전에 레퍼런스의 역할, 장면 순서, 보류 이유가 보일 때 처음 정한 방향 안에서의 후보 확장.",
     change: "Workbench는 기획 입력, Harness는 승인·생성·수정·인계를 맡는 역할 분리.",
-    image: "/ai-exploration/workbench/front-planning-workbench-demo.png",
+    image: CURRENT_WORKBENCH_IMAGE,
     evidenceSlug: "front-planning-workbench-checkpoint",
   },
 ] as const;
@@ -459,161 +460,117 @@ const productionStoryStages = [
 
 const harnessPhases = [
   {
-    id: "discovery",
+    id: "song-evidence",
     index: "01",
-    title: "DISCOVERY",
-    detail: "브리프 · 방향 탐색",
+    title: "SONG EVIDENCE",
+    detail: "루트 · 곡 · 오디오 근거",
     stages: [
       {
         index: "01",
-        title: "크리에이티브 루트 탐색",
-        humanGate: "ROUTE SELECTION",
-        details: ["브리프·레퍼런스의 제작 방향 정립", "복수의 크리에이티브 루트 탐색", "사람이 다음 루트 선택"],
+        title: "루트 탐색",
+        humanGate: null,
+        details: ["브리프와 레퍼런스에서 제작 루트 조사", "복수 방향의 근거와 제외 조건 기록"],
       },
-    ],
-  },
-  {
-    id: "song",
-    index: "02",
-    title: "SONG DEVELOPMENT",
-    detail: "곡 설계 · 분석 · 화면 연결",
-    stages: [
       {
         index: "02",
         title: "곡 방향 설계",
-        humanGate: "ROUTE SELECTION",
-        details: ["메시지를 곡 스타일·가사·제외 표현으로 분리", "곡 후보의 생성 범위와 제외 기준 설정"],
+        humanGate: null,
+        details: ["메시지를 곡 스타일·가사·제외 표현으로 변환", "후보 제작 조건과 비교 기준 준비"],
       },
       {
         index: "03",
         title: "후보 트랙 분석",
-        humanGate: null,
-        details: ["레퍼런스 곡의 훅·구간 역할 분석", "후보별 유지·변경 근거 기록"],
+        humanGate: "TRACK SELECTION",
+        details: ["후보별 훅·구간·가사 기능 비교", "직접 청취해 선택 트랙 확정"],
       },
       {
         index: "04",
-        title: "리듬-투-스크린 맵",
+        title: "오디오 리듬 근거 맵",
         humanGate: null,
-        details: ["곡 구간·훅·보컬 진입점 추출", "장면 전환점과 동작 후보 연결"],
+        details: ["실제 오디오의 구간·리듬·압력 변화 추출", "화면·동작·편집 질문으로 전달"],
       },
       {
         index: "05",
-        title: "트랙 연속성 보드",
-        humanGate: null,
-        details: ["가사·모티프·밀도 변화 표시", "다음 장면과 편집 시간축 전달"],
+        title: "곡 프로덕션 락",
+        humanGate: "PASS · HOLD · REJECT",
+        details: ["선택 음원·가사·구간 타이밍 고정", "Front Planning 시작 조건 확정"],
       },
     ],
   },
   {
-    id: "creative",
-    index: "03",
-    title: "CREATIVE LOCK",
-    detail: "메시지 · 콘셉트 · 곡 확정",
+    id: "front-planning",
+    index: "02",
+    title: "FRONT PLANNING",
+    detail: "Workbench · reference · whole-film spine",
     stages: [
       {
         index: "06",
-        title: "프런트 플래닝 통합",
-        humanGate: null,
-        details: ["타겟·메시지·레퍼런스 통합", "스토리라인·장면 상태·전환 정리"],
+        title: "Front Planning 통합",
+        humanGate: "PASS · HOLD · REJECT",
+        details: [
+          "Workbench에서 타겟·메시지·레퍼런스 후보와 상태 비교",
+          "HTML review board에서 같은 근거·상태를 읽기 전용으로 검토",
+          "멤버·구간 배치와 전체 영상의 진행을 확정",
+        ],
       },
+    ],
+  },
+  {
+    id: "still-direction",
+    index: "03",
+    title: "DIRECTION + STORYBOARD",
+    detail: "구간 연출 · 코어컷 · 스토리보드 검토",
+    stages: [
       {
         index: "07",
-        title: "크리에이티브 코어 락",
-        humanGate: "CREATIVE LOCK",
-        details: ["인물·오브젝트·공간의 역할 확정", "제외 기준과 사람 승인 지점 기록"],
+        title: "구간 디렉션 확장",
+        humanGate: null,
+        details: ["Front Planning의 구간별 행동·연기·공간 확장", "정지 화면의 카메라·구도·전환 설계"],
       },
       {
         index: "08",
-        title: "곡 프로덕션 락",
-        humanGate: "SONG LOCK",
-        details: ["선택 음원과 가사 방향 확정", "다음 단계의 시작 조건 확정"],
+        title: "코어컷·키프레임 설계",
+        humanGate: null,
+        details: ["구간 안의 편집 가능한 코어컷 분리", "각 컷의 1..N 키프레임과 reference binding 작성"],
       },
-    ],
-  },
-  {
-    id: "direction",
-    index: "04",
-    title: "MV DIRECTION",
-    detail: "레퍼런스 · 퍼포먼스 · 비주얼 방향",
-    stages: [
       {
         index: "09",
-        title: "디렉션 레퍼런스 마이닝",
-        humanGate: null,
-        details: ["추가 레퍼런스 리서치와 장면 기능·카메라·빛 추출", "직접 사용·변형·제외 구분 후 조합 추가"],
-      },
-      {
-        index: "10",
-        title: "레퍼런스 프래그먼트 락",
-        humanGate: null,
-        details: ["핵심 장면 조각과 레퍼런스 연결", "출처·역할·적용 구간 기록"],
-      },
-      {
-        index: "11",
-        title: "MV·퍼포먼스 디렉션",
-        humanGate: null,
-        details: ["멤버 행동·퍼포먼스·카메라 경로 설계", "구간별 시작·사건·도착 연결"],
-      },
-      {
-        index: "12",
-        title: "비주얼 시스템 락",
-        humanGate: null,
-        details: ["의상·오브젝트·공간·빛 규칙 통합", "01 Direction Map 확정"],
+        title: "스토리보드 리뷰",
+        humanGate: "PASS · HOLD · REJECT",
+        details: ["HTML board에서 순서·구도·인과·reference 역할 검토", "통과한 스토리보드만 이미지 작업으로 인계"],
       },
     ],
   },
   {
-    id: "keyframe",
+    id: "section-realization",
+    index: "04",
+    title: "SECTION REALIZATION",
+    detail: "이미지 · 오디오 배치 · 영상 재생 검토",
+    stages: [
+      { index: "10", title: "이미지 프롬프트 번역", humanGate: null, details: ["통과한 02A를 실행 가능한 자연어 프롬프트로 번역", "새 장면·구도·카메라를 임의로 추가하지 않음"] },
+      { index: "11", title: "이미지 생성 승인", humanGate: null, controlGate: "PAID GENERATION APPROVAL", details: ["섹션·첨부·실행 범위 확인", "명시적으로 승인된 작업만 실행"] },
+      { index: "12", title: "키프레임 생성", humanGate: null, details: ["승인된 한 개 키프레임 단위 실행", "결과·식별값·작업 기록 회수"] },
+      { index: "13", title: "생성 키프레임 리뷰", humanGate: "PASS · HOLD · REJECT", details: ["컨택트시트와 원본 픽셀 비교", "통과·보류·재생성 범위 결정"] },
+      { index: "14", title: "오디오-프레임 배치", humanGate: null, details: ["통과한 픽셀을 실제 오디오 타이밍에 배치", "이 단계에서는 시간축 카메라를 작성하지 않음"] },
+      { index: "15", title: "영상 모션 디렉션", humanGate: null, details: ["03V에서 동작·속도·시간축 카메라 경로 작성", "스토리보드와 원본 프레임의 순서 유지"] },
+      { index: "16", title: "영상 재생 리뷰", humanGate: "PASS · HOLD · REJECT", details: ["실제 생성 영상을 구간별 재생", "통과한 원본만 편집 단계로 인계"] },
+    ],
+  },
+  {
+    id: "edit-and-master",
     index: "05",
-    title: "KEYFRAME PRODUCTION",
-    detail: "커버리지 · 스토리보드 · 이미지 검토",
+    title: "EDIT + MASTER",
+    detail: "편집 · 피니싱 · 마스터 패키지",
     stages: [
-      { index: "13", title: "생성 커버리지 플랜", humanGate: null, details: ["곡 구간별 필요한 컷과 역할 정의", "원본 연결과 출력 경로 설정"] },
-      { index: "14", title: "컷·키프레임 스토리보드", humanGate: null, details: ["11–12단계의 장면 의미·카메라 방향 유지", "컷별 행동·구도·카메라·앞뒤 프레임 확정"] },
-      { index: "15", title: "스토리보드 리뷰", humanGate: "STORYBOARD REVIEW", details: ["장면 범위·인물 기준·인과 검토", "11–12단계의 연출 방향을 바꾸지 않았는지 확인"] },
-      { index: "16", title: "이미지 프롬프트 컴파일", humanGate: null, details: ["14–15단계에서 통과한 내용을 생성 형식으로 변환", "새 장면·구도·카메라를 임의로 추가하지 않음"] },
-      { index: "17", title: "이미지 생성 실행 승인", humanGate: null, controlGate: "PAID EXECUTION", details: ["유료 실행 범위와 묶음 확인", "승인된 작업만 실행 대기열로 전달"] },
-      { index: "18", title: "키프레임 생성", humanGate: null, details: ["승인 작업 실행", "결과·파일 식별값·작업 기록 회수"] },
-      { index: "19", title: "생성 키프레임 리뷰", humanGate: "GENERATED ASSET REVIEW", details: ["컨택트시트 비교", "통과·보류·재생성 결정"] },
-    ],
-  },
-  {
-    id: "motion",
-    index: "06",
-    title: "VIDEO PRODUCTION",
-    detail: "영상 생성 · 구간 재생 · 리뷰",
-    stages: [
-      { index: "20", title: "오디오-프레임 배치", humanGate: null, details: ["선택 음원 구간과 시작 프레임 연결", "앞뒤 곡 구간의 타이밍 연결"] },
-      { index: "21", title: "영상 디렉션과 프롬프팅", humanGate: null, details: ["카메라 경로·동작·도착 프레임 작성", "영상 프롬프트 작업 목록 검증"] },
-      { index: "22", title: "생성 영상 리뷰", humanGate: "PLAYBACK REVIEW", details: ["실제 생성 영상을 구간별 재생", "통과한 원본만 편집 단계로 인계"] },
-    ],
-  },
-  {
-    id: "edit",
-    index: "07",
-    title: "EDIT & FINISH",
-    detail: "편집 · 피니싱 · QC",
-    stages: [
-      { index: "23", title: "편집 어셈블리·플레이백 QC", humanGate: "PLAYBACK QC", details: ["스토리보드 및 Front Planning 순서대로 러프 편집", "원본 in/out·속도·오디오 싱크·연결 검토", "통과 및 수정 검토"] },
-      { index: "24", title: "피니싱 FX", humanGate: "EDIT REVIEW", details: ["통과한 컷에 효과 적용", "코덱·프레임·오디오·납품 상태 확인"] },
-    ],
-  },
-  {
-    id: "release",
-    index: "08",
-    title: "RELEASE & LEARNING",
-    detail: "패키지 · 공개 · 기록 · 학습",
-    stages: [
-      { index: "25", title: "마스터 패키지·릴리스 플랜", humanGate: "PUBLIC RELEASE", details: ["숏폼의 원본 계보 확인", "공개 계획과 메타데이터 형식"] },
-      { index: "26", title: "퍼블리싱 기록", humanGate: "EXTERNAL ACTION", details: ["플랫폼 초안·문구·미디어 경로", "외부 실행 전 명시적 승인"] },
-      { index: "27", title: "성과 리뷰", humanGate: null, details: ["플랫폼 반응은 관찰 자료로만 사용", "다음 검토 후보만 기록"] },
-      { index: "28", title: "검증 학습 승격", humanGate: "CREATIVE LOCK", details: ["개선점 확인", "AGENTS.md · Skill · Harness 구조 업데이트"] },
+      { index: "17", title: "편집 어셈블리·재생 QC", humanGate: "PASS · HOLD · REJECT", details: ["통과한 구간 영상의 source in/out·순서·속도 배치", "오디오 싱크·인과·연결을 실제 재생으로 판단"] },
+      { index: "18", title: "피니싱·이펙트", humanGate: "PASS · HOLD · REJECT", details: ["통과한 편집에 효과와 마감 적용", "프레임·오디오·납품 상태 확인"] },
+      { index: "19", title: "마스터 패키지", humanGate: "PASS · HOLD · REJECT", details: ["승인된 마스터와 패키지 계보 정리", "외부 공개는 별도의 사람 승인 후 진행"] },
     ],
   },
 ] as const;
 
 const harnessControls = [
-  ["SEMANTIC STAGE", "28개 세부 작업 단위와 담당 범위"],
+  ["SEMANTIC STAGE", "19개 활성 작업 단위와 담당 범위"],
   ["기준 결과물", "각 stage가 다음 작업에 넘기는 하나의 기준 파일"],
   ["HUMAN GATE", "생성 · 다음 단계 · 공개 전 사람의 승인"],
   ["수정 경로", "바뀐 결정은 원래 단계로 복귀"],
@@ -623,154 +580,117 @@ const harnessFamilies = [
   {
     id: "planning",
     index: "01",
-    label: "PLANNING",
-    phase: "PHASE 01—04",
-    stage: "12 STAGES",
-    human: "메시지 · 곡 · 연출 기준",
-    output: "01 DIRECTION MAP",
-    cf: "SPEC COMMERCIAL · 대상 · Claim · Concept",
-    links: [
-      ["A", "DISCOVERY + SONG", "#harness-planning-a"],
-      ["B", "CREATIVE + DIRECTION", "#harness-planning-b"],
-    ],
+    label: "SONG / FRONT PLAN",
+    phase: "PHASE 01—02",
+    stage: "6 ACTIVE STAGES",
+    human: "선택 곡 · 메시지 · 레퍼런스 · 전체 진행",
+    output: "FRONT PLANNING PASS",
+    note: "WORKBENCH → HTML REVIEW → HUMAN GATE",
+    links: [["DETAIL", "SONG EVIDENCE + FRONT PLANNING", "#harness-planning"]],
   },
   {
-    id: "generation",
+    id: "direction",
     index: "02",
-    label: "GENERATION",
-    phase: "PHASE 05—06",
-    stage: "10 STAGES",
-    human: "이미지 및 영상 생성과 검토",
-    output: "REVIEWED SECTION VIDEO",
-    cf: "SPEC COMMERCIAL · Keyframe · Video Packet",
-    links: [
-      ["A", "KEYFRAME", "#harness-generation-a"],
-      ["B", "VIDEO GENERATION + REVIEW", "#harness-generation-b"],
-    ],
+    label: "DIRECTION",
+    phase: "PHASE 03",
+    stage: "3 ACTIVE STAGES",
+    human: "구간 연출 · 코어컷 · 스토리보드",
+    output: "PASSED STORYBOARD",
+    note: "01 → 02A → HTML STORYBOARD REVIEW",
+    links: [["DETAIL", "DIRECTION + STORYBOARD", "#harness-direction"]],
   },
   {
-    id: "edit",
+    id: "realization",
     index: "03",
-    label: "EDIT",
-    phase: "PHASE 07",
-    stage: "2 STAGES",
-    human: "타이밍 · 연결 · 마스터 승인",
-    output: "APPROVED MASTER",
-    cf: "SPEC COMMERCIAL · Edit · Package QC",
-    links: [["A", "EDIT & FINISH", "#harness-edit"]],
+    label: "REALIZATION",
+    phase: "PHASE 04",
+    stage: "7 ACTIVE STAGES",
+    human: "유료 생성 · 핵심 컷 · 영상 재생",
+    output: "REVIEWED SECTION VIDEO",
+    note: "02B → KEYFRAME REVIEW → 03V REVIEW",
+    links: [["DETAIL", "IMAGE + MOTION REALIZATION", "#harness-realization"]],
   },
   {
-    id: "release",
+    id: "edit-master",
     index: "04",
-    label: "RELEASE",
-    phase: "PHASE 08",
-    stage: "4 STAGES",
-    human: "공개 · 외부 실행 · 학습 승격",
-    output: "PROMOTED MEMORY",
-    cf: "SPEC COMMERCIAL · Variant · Approval",
-    links: [["A", "RELEASE + LEARNING", "#harness-release"]],
+    label: "EDIT / MASTER",
+    phase: "PHASE 05",
+    stage: "3 ACTIVE STAGES",
+    human: "재생 QC · 피니싱 · 마스터",
+    output: "APPROVED MASTER PACKAGE",
+    note: "PUBLIC RELEASE / SEPARATE HUMAN APPROVAL",
+    links: [["DETAIL", "EDIT + MASTER PACKAGE", "#harness-edit-master"]],
   },
 ] as const;
 
 const harnessChapters = [
   {
-    id: "planning-a",
-    index: "02—02A",
-    label: "PLANNING / DISCOVERY + SONG",
-    title: "브리프에서 제작 루트와 곡의 시간축까지",
-    body: "브리프와 레퍼런스에서 제작 방향을 찾고, 곡 후보를 직접 들어 선택한 음원만 다음 기획으로 넘깁니다.",
-    phaseIds: ["discovery", "song"],
+    id: "planning",
+    index: "02—02",
+    label: "HARNESS 01 / SONG + FRONT PLANNING",
+    title: "실제 곡의 근거에서 Founder가 검토할 전체 방향까지",
+    body: "선택 음원과 오디오 근거를 먼저 고정한 뒤, Workbench에서 타겟·메시지·레퍼런스 후보를 비교하고 HTML review board로 같은 근거와 상태를 확인합니다.",
+    phaseIds: ["song-evidence", "front-planning"],
     handoffs: [
       ["INPUT", "브리프 · 레퍼런스"],
-      ["DISCOVERY", "Selected Creative Route"],
-      ["SONG", "Selected Audio Evidence"],
-      ["NEXT", "03 Creative Lock"],
+      ["SONG", "Selected Audio + 00A Lock"],
+      ["WORKBENCH", "Target · Message · References"],
+      ["HTML REVIEW", "Front Planning Evidence"],
+      ["OUTPUT", "Front Planning PASS"],
     ],
-    human: "제작 루트 선택 · 곡 후보 청취 · 선택 음원 확정",
-    returnPath: "루트나 곡 판단이 바뀌면 해당 판단 단계로 복귀",
+    human: "트랙 선택 · 메시지 · 레퍼런스 역할 · 전체 영상 진행 PASS/HOLD/REJECT",
+    returnPath: "곡 근거가 바뀌면 00A, 기획 판단이 바뀌면 Front Planning으로 복귀",
   },
   {
-    id: "planning-b",
-    index: "02—02B",
-    label: "PLANNING / CREATIVE + DIRECTION",
-    title: "메시지와 제작 방향을 확정하는 Direction Map",
-    body: "타겟과 메시지, 인물·오브젝트·공간·카메라 기준을 하나의 제작 지도에 모아 다음 단계의 기준으로 확정합니다.",
-    phaseIds: ["creative", "direction"],
+    id: "direction",
+    index: "02—03",
+    label: "HARNESS 02 / DIRECTION + STORYBOARD",
+    title: "통과한 전체 방향을 구간·코어컷·키프레임으로 구체화",
+    body: "Front Planning의 방향을 바꾸지 않고 구간별 행동과 정지 카메라를 확장해, 편집 가능한 코어컷과 검토 가능한 스토리보드로 만듭니다.",
+    phaseIds: ["still-direction"],
     handoffs: [
-      ["INPUT", "Selected Audio Evidence"],
-      ["LOCK", "06–08 Creative + Song"],
-      ["DIRECTION", "09–12 Direction Map"],
-      ["NEXT", "13–19 Keyframe Production"],
+      ["INPUT", "Front Planning PASS"],
+      ["01", "Section Direction"],
+      ["02A", "Core Cuts + Keyframes"],
+      ["HTML REVIEW", "Storyboard Decision"],
+      ["OUTPUT", "Passed Storyboard"],
     ],
-    human: "메시지 · 핵심 콘셉트 · MV·퍼포먼스 · 시각 체계 확정",
-    returnPath: "기획 판단이 바뀌면 해당 기획 단계로 복귀",
+    human: "구간 연출 · 코어컷 범위 · 스토리보드 PASS/HOLD/REJECT",
+    returnPath: "보류 범위에 따라 01 구간 디렉션 또는 02A 스토리보드로 복귀",
   },
   {
-    id: "generation-a",
-    index: "02—03A",
-    label: "GENERATION / KEYFRAME",
-    title: "Direction Map에서 검토 가능한 핵심 컷까지",
-    body: "장면 범위와 스토리보드를 먼저 확정하고, 통과한 곡 구간만 이미지로 만들어 컨택트시트에서 비교합니다.",
-    phaseIds: ["keyframe"],
-    handoffs: [
-      ["INPUT", "09–12 Direction Map"],
-      ["COVERAGE", "13 Generation Plan"],
-      ["STORYBOARD", "14–15 Passed Storyboard"],
-      ["KEYFRAME", "18–19 Approved Frames"],
-      ["NEXT", "20–22 Video Production"],
-    ],
-    human: "스토리보드 · 유료 생성 · 핵심 컷 통과·보류·재생성",
-    returnPath: "보류·거절된 이미지는 스토리보드·프롬프트·생성 단계로 복귀",
-  },
-  {
-    id: "generation-b",
-    index: "02—03B",
-    label: "GENERATION / VIDEO",
-    title: "통과한 핵심 컷의 구간 영상화",
-    body: "선택 음원과 핵심 컷을 맞추고 카메라·동작·장면 연결을 정리한 뒤, 직접 재생해 통과한 구간만 편집에 넘깁니다.",
-    phaseIds: ["motion"],
-    handoffs: [
-      ["INPUT", "Approved Frames"],
-      ["PROMPT", "03V Video Prompt"],
-      ["PLAYBACK", "Reviewed Section Video"],
-      ["NEXT", "07 Edit & Finish"],
-    ],
-    human: "영상 방향 · 생성 구간 · 구간 재생 검토",
-    returnPath: "보류된 영상은 핵심 컷·영상 프롬프트·영상 생성 단계로 복귀",
-  },
-  {
-    id: "edit",
+    id: "realization",
     index: "02—04",
-    label: "EDIT HARNESS",
-    title: "분석 자료와 재생 판단의 분리",
-    body: "스토리보드 순서로 만든 러프 편집과 비교 자료는 Harness와 도구가 준비하고, 실제 source in/out·속도·싱크·연결은 직접 재생해 통과 여부를 판단합니다.",
-    phaseIds: ["edit"],
+    label: "HARNESS 03 / IMAGE + MOTION REALIZATION",
+    title: "통과한 스토리보드를 실제 이미지와 구간 영상으로 검증",
+    body: "02A를 이미지 프롬프트로 번역하고 승인된 범위만 생성합니다. 통과한 픽셀을 오디오에 배치한 뒤 03V가 시간축 카메라와 동작을 작성하고 실제 재생으로 검토합니다.",
+    phaseIds: ["section-realization"],
+    handoffs: [
+      ["INPUT", "Passed Storyboard"],
+      ["02B", "Image Prompt + Paid Gate"],
+      ["PIXELS", "Reviewed Keyframes"],
+      ["03V", "Motion + Camera Route"],
+      ["OUTPUT", "Reviewed Section Video"],
+    ],
+    human: "유료 실행 · 생성 키프레임 · 영상 재생 PASS/HOLD/REJECT",
+    returnPath: "이미지는 02B/키프레임, 움직임은 오디오 배치/03V의 가장 작은 범위로 복귀",
+  },
+  {
+    id: "edit-master",
+    index: "02—05",
+    label: "HARNESS 04 / EDIT + MASTER",
+    title: "구간 영상을 실제 재생 판단과 승인된 마스터 패키지로 연결",
+    body: "도구는 소스·마커·프리뷰와 QC 자료를 준비하고, 사람은 source in/out·속도·싱크·장면 연결·피니싱과 최종 마스터를 실제 재생으로 판단합니다.",
+    phaseIds: ["edit-and-master"],
     handoffs: [
       ["INPUT", "Reviewed Section Video"],
-      ["ASSEMBLY", "Edit Recipe"],
-      ["PLAYBACK", "Playback-passed Edit"],
-      ["FINISH", "FX · Delivery QC"],
+      ["04", "Edit + Playback QC"],
+      ["04FX", "Finishing + Effects"],
+      ["05", "Master Package"],
       ["OUTPUT", "Approved Master"],
     ],
-    human: "source in/out · 타이밍 · 싱크 · 통과·복귀 · 마스터 승인",
-    returnPath: "순서 문제는 14—15단계, 움직임 문제는 21—22단계로 복귀",
-  },
-  {
-    id: "release",
-    index: "02—05",
-    label: "RELEASE HARNESS",
-    title: "공개 범위와 다음 제작 기준의 확정",
-    body: "승인된 마스터의 공개 패키지와 기록을 준비하고, 외부 공개와 다음 제작 기준 반영은 직접 승인한 범위에서만 진행합니다.",
-    phaseIds: ["release"],
-    handoffs: [
-      ["INPUT", "Approved Master"],
-      ["PACKAGE", "Release Plan"],
-      ["PUBLISH", "Publishing Record"],
-      ["ANALYZE", "Performance Review"],
-      ["LEARN", "Promoted Memory"],
-    ],
-    human: "공개 범위 · 외부 실행 · 다음 제작 기준 반영",
-    returnPath: "승인 전 외부 실행은 차단하고, 변경된 결정은 패키지·공개 단계로 복귀",
+    human: "편집 재생 · 피니싱 · 마스터 PASS/HOLD/REJECT · 공개 별도 승인",
+    returnPath: "장면 문제는 03V, 편집 문제는 04, 마감 문제는 04FX로 복귀",
   },
 ] as const;
 
@@ -1173,7 +1093,7 @@ function HarnessPhaseTrack({
 
 function HarnessSummaryScore() {
   return (
-    <div className={styles.harnessFamilyScore} aria-label="4개 Harness와 8개 제작 phase, 28개 세부 작업 단계">
+    <div className={styles.harnessFamilyScore} aria-label="4개 Harness로 묶은 5개 제작 phase와 19개 활성 작업 단계">
       <div className={styles.harnessFamilyPath}>
         {harnessFamilies.map((family) => (
             <article key={family.id}>
@@ -1182,7 +1102,7 @@ function HarnessSummaryScore() {
               <span>{family.stage}</span>
               <p><i aria-hidden="true" />HUMAN / {family.human}</p>
               <em>{family.output}</em>
-              <small className={styles.harnessCfLane}>{family.cf}</small>
+              <small className={styles.harnessFamilyNote}>{family.note}</small>
               <nav aria-label={`${family.label} 상세 페이지`}>
                 {family.links.map(([index, label, href]) => (
                   <a href={href} key={href}><small>{index}</small><strong>{label}</strong><ArrowRight aria-hidden="true" size={11} /></a>
@@ -1247,14 +1167,14 @@ function ProductionHarnessSection() {
             <header className={styles.harnessSummaryHeading}>
               <div className={styles.harnessPageFolio}><span>02—01</span><small>HARNESS SUMMARY</small></div>
               <div className={styles.harnessSummaryCopy}>
-                <p>SUMMARY / PRODUCTION HARNESS</p>
+                <p>SUMMARY / ACTIVE HARNESS · REGISTRY V3</p>
                 <h2>네 개의 Harness로 이어지는 한 편의 제작</h2>
-                <small>반복 작업은 자동화하고, 다음 단계로 넘길 기준은 사람이 확정합니다.</small>
+                <small>현재의 5개 canonical phase를 네 개의 작업 Harness로 묶었습니다. 이전 8 phases / 28 stages와 00·01A·02 활성 라벨은 기록으로만 남고, 현재 제작은 19개 활성 stage를 따릅니다.</small>
               </div>
-              <div className={styles.harnessSummaryStats} aria-label="8개 phase와 28개 세부 작업 단계">
-                <span><strong>08</strong><small>PHASES</small></span>
+              <div className={styles.harnessSummaryStats} aria-label="5개 phase와 19개 활성 작업 단계">
+                <span><strong>05</strong><small>PHASES</small></span>
                 <i aria-hidden="true" />
-                <span><strong>28</strong><small>WORK STAGES</small></span>
+                <span><strong>19</strong><small>ACTIVE STAGES</small></span>
               </div>
             </header>
 
@@ -1303,24 +1223,59 @@ function ProductionHarnessSection() {
           </section>
         </div>
 
-        <section className={styles.harnessNow} aria-labelledby="harness-now-title">
+        <section className={styles.harnessNow} aria-labelledby="harness-now-title" id="harness-update">
           <header className={styles.harnessNowHeader}>
-            <span>NOW / HARNESS UPDATE · 2026.07</span>
-            <strong>STATUS / IN PROGRESS</strong>
+            <span>VERSION LOG / REVIEW SURFACE UPDATE · 2026.07.28</span>
+            <strong>SURFACE V2 / CURRENT</strong>
           </header>
 
           <div className={styles.harnessNowLead}>
             <div>
-              <span>CURRENT FOCUS</span>
-              <h3 id="harness-now-title">반복되는 준비·비교·인계 시간을 줄이는 업데이트</h3>
+              <span>WHAT CHANGED</span>
+              <h3 id="harness-now-title">검토용 HTML만 남기던 흐름에서, Workbench가 판단 앞단으로 들어왔습니다.</h3>
             </div>
-            <p>현재는 더 많은 결과를 자동으로 만드는 단계가 아니라, 브리프에서 후보 비교·검토 인계, 프리뷰·QC 준비로 이어지는 반복 작업을 더 짧고 선명하게 만드는 중입니다.</p>
+            <p>HTML board를 없앤 것이 아닙니다. Workbench는 레퍼런스 후보와 상태를 비교하는 작업면, HTML board는 같은 근거를 읽기 전용으로 함께 보는 review output으로 역할을 나눴습니다.</p>
+          </div>
+
+          <div className={styles.harnessVersionRoute}>
+            <ol className={styles.harnessVersionList} aria-label="Production Harness version history">
+              <li className={styles.harnessVersionArchived}>
+                <header><span>V1 / PREVIOUS</span><strong>ARCHIVED FORMAT</strong></header>
+                <h4>HTML REVIEW BOARD</h4>
+                <p>작업 뒤에 레퍼런스·근거·상태를 모아 검토하는 읽기 전용 보드.</p>
+                <small>LIMIT / 후보를 고르는 앞단의 비교 과정은 보드 밖에 남음</small>
+              </li>
+              <li className={styles.harnessVersionCurrent}>
+                <header><span>V2 / 2026.07.28</span><strong>CURRENT</strong></header>
+                <h4>WORKBENCH + HTML REVIEW</h4>
+                <p>Workbench에서 후보를 먼저 비교하고, HTML review board가 같은 근거와 상태를 검토용으로 이어받는 구조.</p>
+                <small>CHANGE / 비교 과정과 검토 인계를 하나의 버전 흐름으로 연결</small>
+              </li>
+            </ol>
+
+            <figure className={styles.harnessWorkbenchFigure}>
+              <img
+                alt="ONE MOVE Front Planning Workbench에 세 개의 레퍼런스 후보가 보이는 실제 화면"
+                loading="lazy"
+                src={CURRENT_WORKBENCH_IMAGE}
+              />
+              <figcaption>
+                <span>ACTUAL RUN / ONE MOVE · S01 REFERENCE CANDIDATES</span>
+                <strong>03 VISIBLE REFERENCES · NO FINAL SELECTION</strong>
+              </figcaption>
+            </figure>
+
+            <ol className={styles.harnessCurrentFlow} aria-label="Current Workbench and HTML review flow">
+              <li><span>01 / WORKBENCH</span><strong>레퍼런스 후보와 역할·상태 비교</strong></li>
+              <li><span>02 / HTML REVIEW</span><strong>같은 근거를 읽기 전용 보드로 함께 확인</strong></li>
+              <li><span>03 / HUMAN GATE</span><strong>PASS · HOLD · REJECT와 다음 행동 결정</strong></li>
+            </ol>
           </div>
 
           <dl className={styles.harnessNowDetails}>
             <div>
               <dt>UPDATING</dt>
-              <dd>기획 → 후보 → 검토 → 프리뷰·QC 준비의 연결 속도와 인계 효율</dd>
+              <dd>레퍼런스 후보 비교 → HTML 검토 → 다음 단계 인계의 연결</dd>
             </div>
             <div>
               <dt>KEPT</dt>
@@ -1393,7 +1348,7 @@ function LegacyProductionHarnessSection() {
               />
               <div className={styles.productionEvidenceLayout}>
                 <figure className={styles.productionPageMedia}>
-                  <img src="/ai-exploration/workbench/front-planning-workbench-demo.png" alt="곡 후보에서 장면의 시간축까지" loading="lazy" />
+                  <img src={CURRENT_WORKBENCH_IMAGE} alt="ONE MOVE 레퍼런스 후보에서 장면의 시간축까지" loading="lazy" />
                 </figure>
                 <ProductionProcessListV2 items={songStructure} />
               </div>
@@ -1592,7 +1547,7 @@ function LegacyProductionHarnessSection() {
 
           <div className={styles.productionProof}>
             <details className={styles.productionAppendix}>
-              <summary><span>DETAIL MAP / ALWAYS OPEN</span><strong>HARNESS / PRODUCTION FRAME</strong><p>8개 제작 phase 아래의 28개 semantic stage에 담당, 기준 결과물, 사람 승인, 수정 경로를 지정합니다.</p></summary>
+              <summary><span>DETAIL MAP / ALWAYS OPEN</span><strong>HARNESS / PRODUCTION FRAME</strong><p>5개 제작 phase 아래의 19개 활성 stage에 담당, 기준 결과물, 사람 승인, 수정 경로를 지정합니다.</p></summary>
               <div className={styles.harnessArchitecture}>
                 <div className={styles.phaseRail} aria-label="IDOL production system phase flow">
                   {harnessPhases.map((phase, phaseIndex) => <article key={phase.index}><span>{phase.index}</span><strong>{phase.title}</strong><small>{phase.detail}</small>{phaseIndex < harnessPhases.length - 1 ? <i aria-hidden="true">→</i> : null}</article>)}
@@ -1649,8 +1604,8 @@ function CurrentSystemCasePage({ activeCase }: { activeCase: (typeof currentSyst
         <div className={styles.currentSystemVisualMotion}>
           {activeCase.id === "planning" ? (
             <figure className={styles.currentSystemHeroFigure}>
-              <img alt="Front Planning Workbench current implementation" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
-              <figcaption><span>CURRENT CHECKPOINT</span><strong>FRONT PLANNING WORKBENCH</strong></figcaption>
+              <img alt="ONE MOVE Front Planning Workbench current implementation" src={CURRENT_WORKBENCH_IMAGE} />
+              <figcaption><span>ACTUAL RUN / 2026.07.28</span><strong>ONE MOVE · FRONT PLANNING WORKBENCH</strong></figcaption>
             </figure>
           ) : null}
 
@@ -2186,7 +2141,7 @@ function SystemProofSection() {
               <EvidenceLink label="Workbench 구현 근거 보기" slug="front-planning-workbench-checkpoint" />
               <EvidenceLogicNote slug="front-planning-workbench-checkpoint" />
             </div>
-            <img alt="Front Planning Workbench runnable checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
+            <img alt="ONE MOVE Front Planning Workbench runnable checkpoint" src={CURRENT_WORKBENCH_IMAGE} />
             <div className={`${styles.workflowDiagram} ${styles.workbenchLoopDiagram}`}>
               <div className={styles.workflowDiagramHeading}>
                 <span>기획 → 이미지 후보 선택</span>
@@ -2315,7 +2270,7 @@ function SystemProofSection() {
 
           <article className={styles.registryProof}>
             <div className={styles.proofCopy}>
-              <span>8 PHASES / 28 STAGES</span>
+              <span>5 PHASES / 19 ACTIVE STAGES</span>
               <h3>작업이 멈춰도 다시 시작할 지점의 기록</h3>
               <p>
                 각 단계의 입력, 결과물, 담당, 승인, 돌아갈 지점을 레지스트리에 기록합니다. 문제 발생 시 앞선 결정을 임의로 바꾸지 않고 해당 결정을 맡은 단계로 복귀합니다.
@@ -2406,7 +2361,7 @@ function VisualWorkflowReference() {
         <figcaption>REFERENCE / COMFYUI NODE WORKFLOW</figcaption>
       </figure>
       <figure className={styles.localUiFigure}>
-        <img alt="Front Planning Workbench canvas and session interface" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
+        <img alt="ONE MOVE Front Planning Workbench canvas and session interface" src={CURRENT_WORKBENCH_IMAGE} />
         <figcaption>LOCAL APPLICATION / FRONT PLANNING WORKBENCH</figcaption>
       </figure>
     </div>
@@ -2550,7 +2505,7 @@ function SystemFormationVisual({ id }: { id: (typeof systemFormationCases)[numbe
   return (
     <div className={styles.formationWorkbenchEvidence}>
       <div className={styles.formationWorkbenchGrid}>
-        <figure className={styles.formationWorkbenchMain}><img alt="Front Planning Workbench current checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
+        <figure className={styles.formationWorkbenchMain}><img alt="ONE MOVE Front Planning Workbench current checkpoint" src={CURRENT_WORKBENCH_IMAGE} /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
         <figure><img alt="ComfyUI workflow used as a reusable visual-state reference" src="/ai-exploration/workbench/comfyui-z-image-turbo-workflow-reference.png" /><figcaption>REFERENCE / COMFYUI FLOW</figcaption></figure>
         <figure><video controls muted playsInline poster="/ai-exploration/rationale-assets/one-move-planning-last-5s-poster.jpg" preload="metadata" src="/ai-exploration/rationale-assets/one-move-planning-last-5s.mp4" /><figcaption>ONE MOVE / CURRENT USE</figcaption></figure>
       </div>
@@ -2970,7 +2925,7 @@ function LegacyTrendApplicationSection() {
                 <video controls muted playsInline poster="/ai-exploration/rationale-assets/one-move-planning-last-5s-poster.jpg" preload="metadata" src="/ai-exploration/rationale-assets/one-move-planning-last-5s.mp4" />
                 <figcaption>ACTUAL WORKFLOW / LAST 5 SEC</figcaption>
               </figure>
-              <figure className={styles.workbenchCurrentFigure}><img alt="Front Planning Workbench current checkpoint" src="/ai-exploration/workbench/front-planning-workbench-demo.png" /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
+              <figure className={styles.workbenchCurrentFigure}><img alt="ONE MOVE Front Planning Workbench current checkpoint" src={CURRENT_WORKBENCH_IMAGE} /><figcaption>LOCAL APPLICATION / CURRENT CHECKPOINT</figcaption></figure>
               <figure className={styles.workbenchReferenceFigure}><img alt="ComfyUI node workflow used as visual state reference" src="/ai-exploration/workbench/comfyui-z-image-turbo-workflow-reference.png" /><figcaption>REFERENCE / VISUAL STATE + REUSABLE FLOW</figcaption></figure>
             </div>
             <div className={styles.workbenchReferencePrinciples}>
