@@ -21,7 +21,7 @@
 }
 
 /* 2026-07-18 / philosophy-led application and evidence migration */
-.page .harnessCfLane {
+.page .harnessFamilyNote {
   border-top: 1px solid rgba(237, 243, 240, 0.14);
   color: #9eb5ae;
   display: block;
@@ -24158,6 +24158,159 @@
   word-break: keep-all;
 }
 
+.harnessVersionRoute {
+  margin-top: 34px;
+}
+
+.harnessVersionList {
+  border-bottom: 1px solid var(--line-strong);
+  border-top: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.harnessVersionList > li {
+  min-height: 188px;
+  padding: 20px 22px 18px;
+}
+
+.harnessVersionList > li + li {
+  border-left: 1px solid var(--line-strong);
+}
+
+.harnessVersionList header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.harnessVersionList header span,
+.harnessVersionList header strong,
+.harnessVersionList small {
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+}
+
+.harnessVersionList h4 {
+  font-size: clamp(18px, 1.65vw, 25px);
+  font-weight: 560;
+  letter-spacing: -0.035em;
+  margin: 31px 0 0;
+}
+
+.harnessVersionList p {
+  font-size: 11px;
+  line-height: 1.58;
+  margin: 10px 0 0;
+  max-width: 540px;
+  word-break: keep-all;
+}
+
+.harnessVersionList small {
+  display: block;
+  line-height: 1.5;
+  margin-top: 25px;
+}
+
+.harnessVersionArchived {
+  color: var(--muted);
+}
+
+.harnessVersionArchived strong {
+  border: 1px solid var(--line-strong);
+  padding: 5px 7px;
+}
+
+.harnessVersionCurrent {
+  background: var(--harness-ink);
+  color: #edf3f0;
+}
+
+.harnessVersionCurrent header span,
+.harnessVersionCurrent small {
+  color: #aebbb7;
+}
+
+.harnessVersionCurrent header strong {
+  background: var(--harness-human);
+  color: var(--harness-ink);
+  padding: 6px 8px;
+}
+
+.harnessWorkbenchFigure {
+  background: var(--harness-ink);
+  margin: 26px 0 0;
+  overflow: hidden;
+  padding: 10px 10px 0;
+}
+
+.harnessWorkbenchFigure img {
+  aspect-ratio: 1354 / 724;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.harnessWorkbenchFigure figcaption {
+  align-items: center;
+  color: #aebbb7;
+  display: flex;
+  font-size: 7px;
+  font-weight: 700;
+  justify-content: space-between;
+  letter-spacing: 0.08em;
+  min-height: 38px;
+  padding: 0 4px;
+}
+
+.harnessWorkbenchFigure figcaption strong {
+  color: var(--harness-human);
+  font-size: inherit;
+}
+
+.harnessCurrentFlow {
+  border-bottom: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.harnessCurrentFlow li {
+  min-height: 84px;
+  padding: 15px 18px;
+}
+
+.harnessCurrentFlow li + li {
+  border-left: 1px solid var(--line);
+}
+
+.harnessCurrentFlow span,
+.harnessCurrentFlow strong {
+  display: block;
+}
+
+.harnessCurrentFlow span {
+  color: var(--muted);
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.harnessCurrentFlow strong {
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.5;
+  margin-top: 16px;
+  word-break: keep-all;
+}
+
 .harnessNowDetails {
   border-top: 1px solid var(--line);
   display: grid;
@@ -24210,6 +24363,59 @@
 
   .harnessNowLead > p {
     margin-top: 22px;
+  }
+
+  .harnessVersionRoute {
+    margin-top: 28px;
+  }
+
+  .harnessVersionList {
+    display: block;
+  }
+
+  .harnessVersionList > li {
+    min-height: 0;
+    padding: 20px 16px;
+  }
+
+  .harnessVersionList > li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .harnessVersionList h4 {
+    margin-top: 26px;
+  }
+
+  .harnessVersionList small {
+    margin-top: 20px;
+  }
+
+  .harnessWorkbenchFigure {
+    margin-top: 20px;
+    padding: 6px 6px 0;
+  }
+
+  .harnessWorkbenchFigure figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    min-height: 54px;
+  }
+
+  .harnessCurrentFlow {
+    display: block;
+  }
+
+  .harnessCurrentFlow li {
+    min-height: 0;
+    padding: 16px 0;
+  }
+
+  .harnessCurrentFlow li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
   }
 
   .harnessNowDetails {

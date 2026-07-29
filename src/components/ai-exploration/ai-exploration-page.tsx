@@ -817,7 +817,7 @@ export function AiExplorationPage() {
         <img
           alt="IDOL Front Planning Workbench development demo"
           className={styles.heroImage}
-          src="/ai-exploration/workbench/front-planning-workbench-demo.png"
+          src="/ai-exploration/workbench/one-move-front-planning-workbench-clean-2026-07-29.png"
         />
         <div className={styles.heroShade} />
         <motion.div
@@ -1028,7 +1028,7 @@ export function AiExplorationPage() {
               </div>
             </div>
             <figure className={styles.workbenchFigure}>
-              <img alt="Front Planning Workbench native development demo" src="/ai-exploration/workbench/front-planning-workbench-demo.png" />
+              <img alt="ONE MOVE Front Planning Workbench current run" src="/ai-exploration/workbench/one-move-front-planning-workbench-clean-2026-07-29.png" />
               <figcaption>Development demo board. 실제 곡의 최종 선택이나 production acceptance 화면이 아닙니다.</figcaption>
             </figure>
           </div>
