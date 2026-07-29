@@ -23,6 +23,12 @@ import styles from "./ai-exploration-portfolio.module.css";
 const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
 const CURRENT_WORKBENCH_IMAGE = "/ai-exploration/workbench/one-move-front-planning-workbench-clean-2026-07-29.png";
+const HUMAN_SELECTION_MAP_IMAGE = "/ai-exploration/workbench/founder-selection-map-sanitized-2026-07-29.png";
+const HUMAN_SELECTION_REFERENCE_IMAGES = [
+  "/ai-exploration/workbench/founder-selection-reference-01-2026-07-29.png",
+  "/ai-exploration/workbench/founder-selection-reference-02-2026-07-29.png",
+  "/ai-exploration/workbench/founder-selection-reference-03-2026-07-29.png",
+] as const;
 
 const publicDestinations = [
   {
@@ -509,7 +515,7 @@ const harnessPhases = [
         humanGate: "PASS · HOLD · REJECT",
         details: [
           "Workbench에서 타겟·메시지·레퍼런스 후보와 상태 비교",
-          "HTML review board에서 같은 근거·상태를 읽기 전용으로 검토",
+          "HTML review board에서 같은 근거를 확인하고 PASS/HOLD/REJECT와 수정 메모 기록",
           "멤버·구간 배치와 전체 영상의 진행을 확정",
         ],
       },
@@ -1158,6 +1164,99 @@ function HarnessChapterPage({ chapter }: { chapter: (typeof harnessChapters)[num
   );
 }
 
+const humanSelectionTargets = [
+  {
+    id: "reference-01",
+    image: HUMAN_SELECTION_REFERENCE_IMAGES[0],
+    label: "01 / REFERENCE DIRECTION",
+    detail: "WARM / TACTILE",
+  },
+  {
+    id: "reference-02",
+    image: HUMAN_SELECTION_REFERENCE_IMAGES[1],
+    label: "02 / REFERENCE DIRECTION",
+    detail: "COLLECTED / EXPRESSIVE",
+  },
+  {
+    id: "reference-03",
+    image: HUMAN_SELECTION_REFERENCE_IMAGES[2],
+    label: "03 / REFERENCE DIRECTION",
+    detail: "SOFT-TECH / PRECISE",
+  },
+] as const;
+
+type HumanSelectionDecision = "PASS" | "HOLD" | "REJECT";
+
+function HumanSelectionReviewSurface() {
+  const [decisions, setDecisions] = useState<Record<string, HumanSelectionDecision>>({});
+  const decisionCount = Object.keys(decisions).length;
+
+  const selectDecision = (targetId: string, decision: HumanSelectionDecision) => {
+    setDecisions((current) => {
+      const next = { ...current };
+
+      if (decision === "PASS") {
+        Object.entries(next).forEach(([id, currentDecision]) => {
+          if (currentDecision === "PASS" && id !== targetId) delete next[id];
+        });
+      }
+
+      next[targetId] = decision;
+      return next;
+    });
+  };
+
+  return (
+    <article className={styles.harnessSelectionBoard}>
+      <header>
+        <div>
+          <span>02 / HTML REVIEW BOARD</span>
+          <strong>HUMAN SELECTION</strong>
+        </div>
+        <small>BRAND DETAILS REMOVED</small>
+      </header>
+
+      <div className={styles.harnessSelectionRows}>
+        {humanSelectionTargets.map((target) => (
+          <section key={target.id}>
+            <img alt={`${target.detail} 레퍼런스 방향 요약`} loading="lazy" src={target.image} />
+            <div>
+              <span>{target.label}</span>
+              <strong>{target.detail}</strong>
+            </div>
+            <div className={styles.harnessSelectionActions} aria-label={`${target.detail} 선택`}>
+              {(["PASS", "HOLD", "REJECT"] as const).map((decision) => (
+                <button
+                  aria-pressed={decisions[target.id] === decision}
+                  key={decision}
+                  onClick={() => selectDecision(target.id, decision)}
+                  type="button"
+                >
+                  {decision}
+                </button>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <figure>
+        <img
+          alt="브랜드 고유 내용을 제거한 사람 선택용 레퍼런스 결정 지도"
+          loading="lazy"
+          src={HUMAN_SELECTION_MAP_IMAGE}
+        />
+        <figcaption>OVERVIEW / 선택 이후 공간·모션 항목으로 검토 범위 확장</figcaption>
+      </figure>
+
+      <footer>
+        <span>PORTFOLIO EXCERPT · 선택은 이 화면 밖의 제작 단계를 자동 승인하지 않음</span>
+        <strong>{decisionCount} / {humanSelectionTargets.length} DECIDED · DEMO ONLY</strong>
+      </footer>
+    </article>
+  );
+}
+
 function ProductionHarnessSection() {
   return (
     <section className={`${styles.section} ${styles.systemSection} ${styles.handoffSection}`} id="harness">
@@ -1225,16 +1324,12 @@ function ProductionHarnessSection() {
 
         <section className={styles.harnessNow} aria-labelledby="harness-now-title" id="harness-update">
           <header className={styles.harnessNowHeader}>
-            <span>VERSION LOG / REVIEW SURFACE UPDATE · 2026.07.28</span>
-            <strong>SURFACE V2 / CURRENT</strong>
+            <span>VERSION LOG / REVIEW SURFACE UPDATE · 2026.07.29</span>
+            <strong>SURFACE V2.1 / CURRENT</strong>
           </header>
 
           <div className={styles.harnessNowLead}>
-            <div>
-              <span>WHAT CHANGED</span>
-              <h3 id="harness-now-title">검토용 HTML만 남기던 흐름에서, Workbench가 판단 앞단으로 들어왔습니다.</h3>
-            </div>
-            <p>HTML board를 없앤 것이 아닙니다. Workbench는 레퍼런스 후보와 상태를 비교하는 작업면, HTML board는 같은 근거를 읽기 전용으로 함께 보는 review output으로 역할을 나눴습니다.</p>
+            <h3 id="harness-now-title">레퍼런스 비교와 사람의 선택</h3>
           </div>
 
           <div className={styles.harnessVersionRoute}>
@@ -1242,33 +1337,41 @@ function ProductionHarnessSection() {
               <li className={styles.harnessVersionArchived}>
                 <header><span>V1 / PREVIOUS</span><strong>ARCHIVED FORMAT</strong></header>
                 <h4>HTML REVIEW BOARD</h4>
-                <p>작업 뒤에 레퍼런스·근거·상태를 모아 검토하는 읽기 전용 보드.</p>
+                <p>작업 뒤에 레퍼런스·근거·상태를 모아 확인하던 후행 검토 보드.</p>
                 <small>LIMIT / 후보를 고르는 앞단의 비교 과정은 보드 밖에 남음</small>
               </li>
               <li className={styles.harnessVersionCurrent}>
-                <header><span>V2 / 2026.07.28</span><strong>CURRENT</strong></header>
-                <h4>WORKBENCH + HTML REVIEW</h4>
-                <p>Workbench에서 후보를 먼저 비교하고, HTML review board가 같은 근거와 상태를 검토용으로 이어받는 구조.</p>
-                <small>CHANGE / 비교 과정과 검토 인계를 하나의 버전 흐름으로 연결</small>
+                <header><span>V2.1 / 2026.07.29</span><strong>CURRENT</strong></header>
+                <h4>WORKBENCH + HUMAN SELECTION</h4>
+                <p>Workbench에서 후보를 먼저 정리하고, HTML review board가 같은 근거를 선택과 수정 요청이 가능한 결정 화면으로 이어받는 구조.</p>
+                <small>CHANGE / 비교 과정·사람 선택·수정 인계를 하나의 버전 흐름으로 연결</small>
               </li>
             </ol>
 
-            <figure className={styles.harnessWorkbenchFigure}>
-              <img
-                alt="ONE MOVE Front Planning Workbench에 세 개의 레퍼런스 후보가 보이는 실제 화면"
-                loading="lazy"
-                src={CURRENT_WORKBENCH_IMAGE}
-              />
-              <figcaption>
-                <span>ACTUAL RUN / ONE MOVE · S01 REFERENCE CANDIDATES</span>
-                <strong>03 VISIBLE REFERENCES · NO FINAL SELECTION</strong>
-              </figcaption>
-            </figure>
+            <div className={styles.harnessReviewSurfaces}>
+              <figure className={styles.harnessWorkbenchFigure}>
+                <header>
+                  <span>01 / FRONT PLANNING WORKBENCH</span>
+                  <strong>PREPARE CANDIDATES</strong>
+                </header>
+                <img
+                  alt="ONE MOVE Front Planning Workbench에 세 개의 레퍼런스 후보가 보이는 실제 화면"
+                  loading="lazy"
+                  src={CURRENT_WORKBENCH_IMAGE}
+                />
+                <figcaption>
+                  <span>ACTUAL RUN / ONE MOVE · S01 REFERENCE CANDIDATES</span>
+                  <strong>03 VISIBLE REFERENCES · NO FINAL SELECTION</strong>
+                </figcaption>
+              </figure>
+
+              <HumanSelectionReviewSurface />
+            </div>
 
             <ol className={styles.harnessCurrentFlow} aria-label="Current Workbench and HTML review flow">
-              <li><span>01 / WORKBENCH</span><strong>레퍼런스 후보와 역할·상태 비교</strong></li>
-              <li><span>02 / HTML REVIEW</span><strong>같은 근거를 읽기 전용 보드로 함께 확인</strong></li>
-              <li><span>03 / HUMAN GATE</span><strong>PASS · HOLD · REJECT와 다음 행동 결정</strong></li>
+              <li><span>01 / PREPARE</span><strong>Workbench에서 레퍼런스 후보와 역할·상태 정리</strong></li>
+              <li><span>02 / DECIDE</span><strong>HTML board에서 PASS · HOLD · REJECT와 수정 메모 기록</strong></li>
+              <li><span>03 / RETURN</span><strong>결정 영수증을 원래 제작 단계의 다음 행동으로 인계</strong></li>
             </ol>
           </div>
 

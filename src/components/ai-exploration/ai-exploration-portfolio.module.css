@@ -24111,11 +24111,10 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .harnessNowHeader > span,
-.harnessNowLead > div > span,
 .harnessNowDetails dt {
   color: var(--muted);
   font-size: 8px;
@@ -24133,10 +24132,7 @@
 }
 
 .harnessNowLead {
-  align-items: end;
-  display: grid;
-  gap: 36px;
-  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
+  display: block;
 }
 
 .harnessNowLead h3 {
@@ -24144,22 +24140,12 @@
   font-weight: 520;
   letter-spacing: -0.045em;
   line-height: 1.16;
-  margin: 13px 0 0;
-  max-width: 600px;
-  word-break: keep-all;
-}
-
-.harnessNowLead > p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-  margin: 0 0 2px;
-  max-width: 460px;
+  margin: 0;
   word-break: keep-all;
 }
 
 .harnessVersionRoute {
-  margin-top: 34px;
+  margin-top: 22px;
 }
 
 .harnessVersionList {
@@ -24173,8 +24159,8 @@
 }
 
 .harnessVersionList > li {
-  min-height: 188px;
-  padding: 20px 22px 18px;
+  min-height: 136px;
+  padding: 14px 18px 13px;
 }
 
 .harnessVersionList > li + li {
@@ -24199,13 +24185,13 @@
   font-size: clamp(18px, 1.65vw, 25px);
   font-weight: 560;
   letter-spacing: -0.035em;
-  margin: 31px 0 0;
+  margin: 17px 0 0;
 }
 
 .harnessVersionList p {
   font-size: 11px;
   line-height: 1.58;
-  margin: 10px 0 0;
+  margin: 7px 0 0;
   max-width: 540px;
   word-break: keep-all;
 }
@@ -24213,7 +24199,7 @@
 .harnessVersionList small {
   display: block;
   line-height: 1.5;
-  margin-top: 25px;
+  margin-top: 12px;
 }
 
 .harnessVersionArchived {
@@ -24241,11 +24227,47 @@
   padding: 6px 8px;
 }
 
+.harnessReviewSurfaces {
+  background: var(--line-strong);
+  border: 1px solid var(--line-strong);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  margin-top: 26px;
+}
+
 .harnessWorkbenchFigure {
   background: var(--harness-ink);
-  margin: 26px 0 0;
+  margin: 0;
   overflow: hidden;
-  padding: 10px 10px 0;
+  padding: 0;
+}
+
+.harnessWorkbenchFigure > header,
+.harnessSelectionBoard > header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.harnessWorkbenchFigure > header span,
+.harnessWorkbenchFigure > header strong,
+.harnessSelectionBoard > header span,
+.harnessSelectionBoard > header strong,
+.harnessSelectionBoard > header small {
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessWorkbenchFigure > header span {
+  color: #aebbb7;
+}
+
+.harnessWorkbenchFigure > header strong {
+  color: var(--harness-human);
 }
 
 .harnessWorkbenchFigure img {
@@ -24264,11 +24286,148 @@
   font-weight: 700;
   justify-content: space-between;
   letter-spacing: 0.08em;
-  min-height: 38px;
-  padding: 0 4px;
+  min-height: 46px;
+  padding: 0 14px;
 }
 
 .harnessWorkbenchFigure figcaption strong {
+  color: var(--harness-human);
+  font-size: inherit;
+}
+
+.harnessSelectionBoard {
+  background: #f2f0e9;
+  color: #17202a;
+  min-width: 0;
+}
+
+.harnessSelectionBoard > header {
+  border-bottom: 1px solid #d7d9d7;
+}
+
+.harnessSelectionBoard > header > div {
+  display: grid;
+  gap: 3px;
+}
+
+.harnessSelectionBoard > header span {
+  color: #69717b;
+}
+
+.harnessSelectionBoard > header small {
+  border: 1px solid #b9bcb9;
+  color: #69717b;
+  padding: 5px 7px;
+}
+
+.harnessSelectionBoard > figure {
+  background: #e5e2da;
+  border-top: 1px solid #d7d9d7;
+  margin: 0;
+  padding: 8px 8px 7px;
+}
+
+.harnessSelectionBoard > figure img {
+  height: 118px;
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+}
+
+.harnessSelectionBoard > figure figcaption {
+  color: #69717b;
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  padding: 7px 4px 0;
+}
+
+.harnessSelectionRows {
+  border-top: 1px solid #d7d9d7;
+}
+
+.harnessSelectionRows > section {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 72px minmax(0, 1fr) auto;
+  min-height: 72px;
+  padding: 8px 10px;
+}
+
+.harnessSelectionRows > section + section {
+  border-top: 1px solid #d7d9d7;
+}
+
+.harnessSelectionRows > section > img {
+  background: #e5e2da;
+  height: 48px;
+  object-fit: cover;
+  object-position: left top;
+  width: 72px;
+}
+
+.harnessSelectionRows > section > div:first-child {
+  display: grid;
+  gap: 5px;
+}
+
+.harnessSelectionRows span {
+  color: #69717b;
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessSelectionRows strong {
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.harnessSelectionActions {
+  display: flex;
+  gap: 4px;
+}
+
+.harnessSelectionActions button {
+  background: transparent;
+  border: 1px solid #9da19e;
+  color: #4d555d;
+  cursor: pointer;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  min-width: 38px;
+  padding: 7px 6px;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.harnessSelectionActions button:hover {
+  border-color: #17202a;
+}
+
+.harnessSelectionActions button[aria-pressed="true"] {
+  background: #17202a;
+  border-color: #17202a;
+  color: var(--harness-human);
+}
+
+.harnessSelectionBoard > footer {
+  align-items: center;
+  background: #17202a;
+  color: #aebbb7;
+  display: flex;
+  font-size: 7px;
+  font-weight: 750;
+  justify-content: space-between;
+  letter-spacing: 0.07em;
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.harnessSelectionBoard > footer strong {
   color: var(--harness-human);
   font-size: inherit;
 }
@@ -24366,7 +24525,7 @@
   }
 
   .harnessVersionRoute {
-    margin-top: 28px;
+    margin-top: 20px;
   }
 
   .harnessVersionList {
@@ -24375,7 +24534,7 @@
 
   .harnessVersionList > li {
     min-height: 0;
-    padding: 20px 16px;
+    padding: 15px 16px;
   }
 
   .harnessVersionList > li + li {
@@ -24384,16 +24543,33 @@
   }
 
   .harnessVersionList h4 {
-    margin-top: 26px;
+    margin-top: 18px;
   }
 
   .harnessVersionList small {
+    margin-top: 12px;
+  }
+
+  .harnessReviewSurfaces {
+    display: block;
     margin-top: 20px;
   }
 
+  .harnessSelectionBoard {
+    border-top: 1px solid var(--line-strong);
+  }
+
   .harnessWorkbenchFigure {
-    margin-top: 20px;
-    padding: 6px 6px 0;
+    padding: 0;
+  }
+
+  .harnessWorkbenchFigure > header,
+  .harnessSelectionBoard > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    min-height: 58px;
   }
 
   .harnessWorkbenchFigure figcaption {
@@ -24402,6 +24578,39 @@
     gap: 5px;
     justify-content: center;
     min-height: 54px;
+  }
+
+  .harnessSelectionRows > section {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr);
+    padding: 14px 12px;
+  }
+
+  .harnessSelectionRows > section > img {
+    height: 52px;
+    width: 74px;
+  }
+
+  .harnessSelectionActions {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+  }
+
+  .harnessSelectionActions button {
+    flex: 1;
+  }
+
+  .harnessSelectionBoard > figure img {
+    height: 132px;
+  }
+
+  .harnessSelectionBoard > footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    min-height: 58px;
   }
 
   .harnessCurrentFlow {
