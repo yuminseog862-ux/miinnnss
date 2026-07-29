@@ -23493,10 +23493,10 @@
 .rationaleReviewEvidenceMedia {
   gap: 7px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr) 48px;
+  grid-template-rows: minmax(0, 1fr) 76px;
 }
 
-.rationaleReviewEvidenceMedia > .rationaleModelRail {
+.rationaleReviewEvidenceMedia > .rationaleReviewMetricsRail {
   grid-column: 1 / -1;
 }
 
@@ -23553,6 +23553,65 @@
   flex: 0 0 auto;
   gap: 5px;
   text-decoration: none;
+}
+
+.rationaleReviewMetricsRail {
+  border: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  min-height: 0;
+}
+
+.rationaleReviewMetricsRail > div {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: auto minmax(0, 1fr);
+  min-width: 0;
+  padding: 10px 12px;
+}
+
+.rationaleReviewMetricsRail > div + div {
+  border-left: 1px solid rgba(237, 243, 240, 0.14);
+}
+
+.rationaleReviewMetricsRail dt {
+  color: #c8ff45;
+  font-size: clamp(16px, 1.5vw, 23px);
+  font-weight: 820;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+}
+
+.rationaleReviewMetricsRail dd {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  min-width: 0;
+}
+
+.rationaleReviewMetricsRail dd strong {
+  color: #eef3ef;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+.rationaleReviewMetricsRail dd span {
+  color: #7f8e88;
+  font-size: 7px;
+  line-height: 1.25;
+}
+
+.rationaleReviewMetricBoundary {
+  border-left: 2px solid rgba(200, 255, 69, 0.64);
+  color: #91a09b;
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 16px 0 0;
+  padding-left: 10px;
 }
 
 .page .rationaleRebuild .rationaleApiEvidence {
@@ -23790,6 +23849,19 @@
   .page .rationaleRebuild .rationaleReviewEvidenceMedia > figure {
     height: auto;
     min-height: 0;
+  }
+
+  .rationaleReviewMetricsRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rationaleReviewMetricsRail > div:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid rgba(237, 243, 240, 0.14);
+  }
+
+  .rationaleReviewMetricsRail > div:nth-child(4) {
+    border-top: 1px solid rgba(237, 243, 240, 0.14);
   }
 
   .page .rationaleRebuild .rationaleApiEvidence {
