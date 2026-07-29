@@ -125,6 +125,7 @@ export const projects: PortfolioProject[] = [
     keyContents: [
       "역할: Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠/IP 제품으로 정의하고 3개의 track music video 방향, 멤버 identity, Spec Commercial lane, 투표 경험을 기획",
       "제작 흐름: LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집 흐름 구성",
+      "검토 단위: Pulso 54개 키프레임 패킷을 구간별로 나누고, INK/Pulso의 12–16프레임 컨택트시트와 3개 단위 정밀 비교로 수정할 컷만 다시 실행",
       "산출물: 최신 Loom 웹에서 홈, 멤버 아카이브, 트랙 뮤직비디오, 스토리보드, Spec Commercial 숏폼 영상, Harne 투표를 탐색 가능한 콘텐츠 구조로 구성",
     ],
     deckLinks: [

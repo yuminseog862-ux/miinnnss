@@ -2050,7 +2050,7 @@ canonical write: human or structured single writer`}
                   <img alt="INK final master 16-frame edit review contact sheet" src="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" />
                 </a>
                 <figcaption className={styles.rationaleReviewCaption}>
-                  <span>INK / 16-FRAME FINAL EDIT REVIEW</span>
+                  <span>INK / 16 FRAMES · FINAL EDIT REVIEW</span>
                   <a href="/ai-exploration/edit-qc/ink-final-master-edit-review-16-frame.jpg" rel="noreferrer" target="_blank">FULL SHEET <ExternalLink size={10} /></a>
                 </figcaption>
               </figure>
@@ -2059,21 +2059,37 @@ canonical write: human or structured single writer`}
                   <img alt="PULSO 16-to-28-second API output review contact sheet" src="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" />
                 </a>
                 <figcaption className={styles.rationaleReviewCaption}>
-                  <span>PULSO / 16—28S API OUTPUT REVIEW</span>
+                  <span>PULSO / 12 FRAMES · 16—28S API OUTPUT REVIEW</span>
                   <a href="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" rel="noreferrer" target="_blank">FULL SHEET <ExternalLink size={10} /></a>
                 </figcaption>
               </figure>
-              <div className={styles.rationaleModelRail}>
-                <span>STORYLINE · REFERENCE ROLE</span><i aria-hidden="true">→</i><span>BUNDLED VISUAL FIRST PASS</span><i aria-hidden="true">→</i><span>HUMAN PASS · HOLD · REVISE</span>
-              </div>
+              <dl className={styles.rationaleReviewMetricsRail} aria-label="실제 제작 검토 단위">
+                <div>
+                  <dt>54</dt>
+                  <dd><strong>KEYFRAME PACKETS</strong><span>Pulso 전체 제작 단위</span></dd>
+                </div>
+                <div>
+                  <dt>12–16</dt>
+                  <dd><strong>FRAMES / SHEET</strong><span>한 화면의 1차 연결 검토</span></dd>
+                </div>
+                <div>
+                  <dt>3</dt>
+                  <dd><strong>FOCUS GROUP</strong><span>후보 정밀 비교 단위</span></dd>
+                </div>
+                <div>
+                  <dt>SELECTIVE</dt>
+                  <dd><strong>RERUN</strong><span>수정할 컷만 재실행</span></dd>
+                </div>
+              </dl>
             </div>
 
             <aside className={styles.rationaleResultMeta}>
               <header className={styles.rationaleResultHeader}>
                 <span>03—03B / MULTI-IMAGE REVIEW</span>
-                <h3>여러 장을 한 번에 비교하고, 판단할 후보를 좁히기 위해</h3>
-                <p>코딩 에이전트에 스토리라인·레퍼런스의 역할·통과 기준과 후보 비교 시트를 함께 줍니다. 누락·중복·인물 일관성·장면 연결을 먼저 확인해 이유가 붙은 후보로 좁히고, 사람은 그 결과에서 통과·보류·수정을 결정합니다.</p>
+                <h3>54개 패킷을 한 장씩 보지 않고, 수정할 컷만 좁히기 위해</h3>
+                <p>Pulso의 54개 키프레임 패킷을 구간별로 나누고, 12–16프레임 컨택트시트에서 누락·중복·인물 일관성·장면 연결을 먼저 확인했습니다. 정밀 비교는 3개 단위로 좁히고, 사람은 통과·보류·수정과 최종 사용을 결정합니다.</p>
               </header>
+              <p className={styles.rationaleReviewMetricBoundary}>검토량은 실제 패킷과 시트 기준입니다. 시간 단축률은 아직 계측하지 않아 표시하지 않았습니다.</p>
               <div className={styles.humanGateList}>
                 {[
                   ["01", "CRITERIA INPUT", "스토리·레퍼런스 역할·장면별 통과 기준을 함께 읽음"],
