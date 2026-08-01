@@ -7,6 +7,12 @@ export type PortfolioProject = {
   route: string;
   accent: "ice" | "aqua" | "green" | "violet" | "orange";
   headline: string;
+  homeHeadline?: string;
+  homeResult?: string;
+  homeKeyContents?: string[];
+  homeOutputsLabel?: string;
+  homeOutputs?: string[];
+  homeReadout?: { label: string; value: string }[];
   abstract: string;
   finalResult: string;
   media: {
@@ -38,9 +44,9 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "타깃을 먼저 읽고,\nMV와 CF를 제작합니다.",
+  headline: "메시지를 설계하는 MV·CF",
   subline:
-    "IDOL·Loom을 중심으로 타깃과 메시지를 먼저 조사하고, 호응 가능성이 높은 레퍼런스를 고른 뒤 MV와 Commercial Film을 하네스 기반 워크플로우로 제작합니다.",
+    "타깃·메시지·레퍼런스를 설계해 MV·CF 제작과 검수를 Harness flow로 연결합니다.",
   profile:
     "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다. 무신사 AI 광고제에서는 캠페인 콘셉트를 30초 광고 흐름으로 구체화했고, Loom에서는 13명 AI 아이돌 IP를 Root Signal, Pulso 트랙과 멤버 아카이브·Harne 투표가 있는 웹페이지로 연결했으며, ADSB에서는 브랜드 무드와 피드백을 AI 숏폼 제작 흐름으로 옮겼습니다. AHEYA는 Product/GTM 메시지를 공개 채널 콘텐츠와 시각 자산으로 풀어낸 보조 사례이고, SFTI-CMU는 감정 콘텐츠와 시각 정체성 아이디어를 영문 초록/포스터형 자료로 구조화한 리서치 커뮤니케이션 보조 사례입니다.",
   competencies: [
@@ -62,6 +68,7 @@ export const projects: PortfolioProject[] = [
     route: "/deck/musinsa",
     accent: "ice",
     headline: "무신사 무진장 AI 광고제 브리프를 다양성 메시지의 30초 팀 숏폼 광고로 전환한 프로젝트",
+    homeHeadline: "다양성 메시지를 30초 AI 숏폼 광고로 전환",
     abstract:
       "3인 팀 작업에서 서브기획과 제작 과정을 리딩하며 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지가 먼저 읽히도록 영상 구조를 설계. Seedance 2.0, Kling, Grok 기반 생성 결과를 검토하며 다양한 인물과 스타일을 통해 무진장을 더 넓은 패션 경험으로 보여주는 30초 광고 제출본 제작",
     finalResult:
@@ -112,14 +119,16 @@ export const projects: PortfolioProject[] = [
     route: "/deck/loom",
     accent: "violet",
     headline: "AI 아이돌 IP를 앨범/트랙 단위 콘텐츠 제품과 최소 개입형 production harness로 구조화한 프로젝트",
+    homeHeadline: "AI 아이돌 IP를 MV·CF 콘텐츠와 Harness로 연결",
+    homeResult: "13명 AI 아이돌 IP를 3개 track MV, 1개 Spec Commercial, 참여형 웹 경험으로 연결",
     abstract:
       "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, 3개의 track music video를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, Spec Commercial, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-Suno 음악 제작-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
     finalResult:
       "Loom 최신 웹페이지, 3개의 track music video board, 13명 멤버 identity, Spec Commercial lane, Harne vote identity flow, storyboard/video prompt/output registry, social publishing loop를 하나의 AI creative production 사례로 구성",
     media: {
-      src: "/loom-deck/saeyan-spotlight.png",
-      alt: "Loom M01 Saeyan representative spotlight",
-      label: "M01 Saeyan representative spotlight",
+      src: "/ai-exploration/signal-deck/loom-signal-deck-home.png",
+      alt: "Current Loom Signal Deck home page with the member signal map and Saeyan profile",
+      label: "Loom Signal Deck · current home page",
       href: "https://loom-signal-deck.vercel.app",
     },
     keyContents: [
@@ -127,6 +136,18 @@ export const projects: PortfolioProject[] = [
       "제작 흐름: LLM 기획, Suno 음악 제작, coding agent 자동화 프롬프트 생성, API 기반 제작 루프, Grok Imagine 영상화, CapCut·Codex 편집 흐름 구성",
       "검토 단위: Pulso 54개 키프레임 패킷을 구간별로 나누고, INK/Pulso의 12–16프레임 컨택트시트와 3개 단위 정밀 비교로 수정할 컷만 다시 실행",
       "산출물: 최신 Loom 웹에서 홈, 멤버 아카이브, 트랙 뮤직비디오, 스토리보드, Spec Commercial 숏폼 영상, Harne 투표를 탐색 가능한 콘텐츠 구조로 구성",
+    ],
+    homeKeyContents: [
+      "13명 AI 아이돌 IP·3개 track MV 방향과 멤버 identity 기획",
+      "LLM 기획부터 음악·영상 제작·편집까지 production harness 구성",
+      "웹페이지·Spec Commercial·Harne 투표로 공개 콘텐츠 구조 확장",
+    ],
+    homeOutputsLabel: "Production Count",
+    homeOutputs: ["MV · 3", "CF · 1"],
+    homeReadout: [
+      { label: "Role", value: "IP content system · AI creative production" },
+      { label: "Scope", value: "13명 IP · 트랙·멤버·참여형 웹 경험" },
+      { label: "Output", value: "3 track MV · 1 CF" },
     ],
     deckLinks: [
       {
@@ -143,11 +164,6 @@ export const projects: PortfolioProject[] = [
         label: "Metrics",
         href: "/content-performance#loom-metrics",
         description: "Loom/Pulso TikTok·YouTube 대표 성과 지표로 이동",
-      },
-      {
-        label: "제작 과정 보기",
-        href: "/loom-workflow",
-        description: "Loom/Pulso의 곡 기준, 후보 생성, 편집 확인 자료를 보는 페이지",
       },
     ],
     socialLinks: [
@@ -180,6 +196,7 @@ export const projects: PortfolioProject[] = [
     route: "/deck/adsb",
     accent: "green",
     headline: "브랜드 무드를 15초 AI 숏폼 제작 흐름으로 전환한 프로젝트",
+    homeHeadline: "브랜드 무드를 15초 AI 숏폼으로 실행",
     abstract:
       "ADSB 산학공동연구에서 dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드와 제작 반복, 피드백 반영 흐름으로 연결. 전체 브랜드 성과가 아니라 AI 숏폼 제작 실행의 증거로 배치",
     finalResult:
@@ -230,6 +247,7 @@ export const projects: PortfolioProject[] = [
     route: "/deck/aheya",
     accent: "aqua",
     headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",
+    homeHeadline: "공개 아이디어를 초기 반응 흐름으로 구조화",
     abstract:
       "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, 외부 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
     finalResult:
@@ -312,6 +330,7 @@ export const projects: PortfolioProject[] = [
     route: "/deck/sfti",
     accent: "aqua",
     headline: "감정 콘텐츠와 시각 정체성 아이디어를 영어 초록과 포스터형 자료로 구체화한 리서치 커뮤니케이션 보조 사례",
+    homeHeadline: "감정 콘텐츠 아이디어를 리서치 커뮤니케이션으로 구체화",
     abstract:
       "SFTI-CMU는 자소서 본문에서 앞세우는 MUSINSA, ADSB, Loom을 대체하는 메인 성과가 아니라, 추상적인 AI-generated emotional content 아이디어를 niche fashion brand의 콘텐츠 확장 한계와 identity-based visual clustering 관점으로 좁혀 외부 독자가 읽을 수 있는 English abstract와 poster-style structure로 만든 보조 사례입니다.",
     finalResult:
