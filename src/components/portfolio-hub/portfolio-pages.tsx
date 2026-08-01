@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ExternalLink, Layers, Music2, Route, Twitter, Youtube } from "lucide-react";
 import { ExpandableMediaFigure } from "./expandable-media";
+import { HarnessMediaFigure } from "./harness-media";
 import styles from "./portfolio-hub.module.css";
 import { getProject, projects, resumeProfile, type PortfolioProject } from "@/lib/portfolio-hub/content";
 
@@ -132,84 +133,91 @@ function ProjectMediaFigure({ project }: { project: PortfolioProject }) {
   );
 }
 
-const featuredHeroMedia = [
+const heroSignalPath = [
+  { number: "01", label: "타깃 조사", detail: "반응 맥락" },
+  { number: "02", label: "메시지", detail: "전달할 핵심" },
+  { number: "03", label: "레퍼런스", detail: "호응 가능성" },
+  { number: "04", label: "MV / CF", detail: "제작 · 검수" },
+] as const;
+
+const harnessKeyContents = [
+  "방향 정리: 타깃·메시지·레퍼런스·동작 타이밍·창작 핵심",
+  "생성 설계: MV/안무 설계·이미지 생성 계획·스토리보드·이미지 프롬프트",
+  "실행 게이트와 검증·승인: 준비물 목록, 실행 전 점검, 결과 리뷰",
+  "편집·게시 기록: 영상 프롬프트, 편집 설계, 최종 패키지, 게시 계획과 산출물 등록",
+] as const;
+
+const featuredHeroOutputs = [
   {
-    type: "youtube" as const,
+    id: "loom-rena-eyewear",
     eyebrow: "LOOM CF / RENA EYEWEAR",
     title: "Different gazes meet",
-    description: "Loom Bouquet CF · public YouTube output",
     src: "https://www.youtube.com/embed/br8NKQIHjOQ?rel=0&modestbranding=1",
     href: "https://youtube.com/shorts/br8NKQIHjOQ?si=EpdZugwGNbmVoVQH",
+    details: [
+      ["Product", "Rena eyewear"],
+      ["Message", "Different gazes meet"],
+      ["Format", "20s CF"],
+    ],
     stats: [
       ["Views", "1,180"],
       ["Likes", "9"],
-      ["Length", "20s"],
-    ],
-  },
-  {
-    type: "video" as const,
-    eyebrow: "IDOL / CF HARNESS",
-    title: "Process capture",
-    description: "Screen recording cut · harness review and production context",
-    src: "/loom-deck/media/harness-process-capture-full-cut.mp4",
-    stats: [
-      ["Source", "06:57 full"],
-      ["Removed", "06:13–06:20"],
-      ["Output", "17.1s / 24×"],
     ],
   },
 ] as const;
 
-function FeaturedHeroMedia() {
+function FeaturedHeroOutput() {
   return (
-    <div className={styles.heroMediaGrid} aria-label="Featured Loom and Harness media">
-      {featuredHeroMedia.map((media) => (
-        <article className={styles.heroMediaCard} key={media.title}>
-          <div className={`${styles.heroMediaViewport} ${media.type === "youtube" ? styles.heroMediaShort : styles.heroMediaScreen}`}>
-            {media.type === "youtube" ? (
+    <section className={styles.heroOutput} aria-labelledby="featured-output-title">
+      <div className={styles.heroOutputHeader}>
+        <span className={styles.sectionLabel}>Featured outputs</span>
+        <span>공개 표시 기준 스냅샷</span>
+      </div>
+      <div className={styles.heroOutputList}>
+        {featuredHeroOutputs.map((output, index) => (
+          <article className={styles.heroOutputItem} key={output.id}>
+            <div className={styles.heroOutputFilm}>
               <iframe
-                className={styles.heroMediaEmbed}
-                src={media.src}
-                title={`${media.eyebrow} — ${media.title}`}
+                className={styles.heroOutputEmbed}
+                src={output.src}
+                title={`${output.eyebrow} — ${output.title}`}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
               />
-            ) : (
-              <video
-                className={styles.heroMediaVideo}
-                src={media.src}
-                controls
-                playsInline
-                preload="metadata"
-                aria-label={`${media.eyebrow} — ${media.title}`}
-              />
-            )}
-          </div>
-          <div className={styles.heroMediaMeta}>
-            <div>
-              <span className={styles.sectionLabel}>{media.eyebrow}</span>
-              <h2>{media.title}</h2>
-              <p>{media.description}</p>
             </div>
-            <div className={styles.heroMediaStats} aria-label={`${media.title} metrics`}>
-              {media.stats.map(([label, value]) => (
-                <span key={label}>
-                  <small>{label}</small>
-                  <strong>{value}</strong>
-                </span>
-              ))}
+            <div className={styles.heroOutputCopy}>
+              <div>
+                <span className={styles.sectionLabel}>{output.eyebrow}</span>
+                <h2 id={index === 0 ? "featured-output-title" : undefined}>{output.title}</h2>
+                <dl className={styles.heroOutputContext} aria-label={`${output.title} project context`}>
+                  {output.details.map(([label, value]) => (
+                    <div key={label}>
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <div className={styles.heroOutputFooter}>
+                <dl className={styles.heroOutputStats} aria-label={`${output.title} public metrics`}>
+                  {output.stats.map(([label, value]) => (
+                    <div key={label}>
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <a className={styles.heroOutputSource} href={output.href} target="_blank" rel="noreferrer">
+                  공개 결과물 열기 <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
-            {"href" in media && media.href ? (
-              <a className={styles.heroMediaSource} href={media.href} target="_blank" rel="noreferrer">
-                Open public output <ExternalLink size={14} />
-              </a>
-            ) : null}
-          </div>
-        </article>
-      ))}
-    </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -220,7 +228,7 @@ export function Shell({ children, wide = false }: { children: React.ReactNode; w
         <nav className={styles.nav} aria-label="Portfolio navigation">
           <Link className={styles.brand} href="/">
             <span className={styles.brandMark} />
-            Portfolio
+            YUMINSEOK
           </Link>
           <div className={styles.navLinks}>
             {navItems.map((item) => (
@@ -232,52 +240,84 @@ export function Shell({ children, wide = false }: { children: React.ReactNode; w
         </nav>
         {children}
         <footer className={styles.footer}>
-          Public AI creative portfolio for short-form, IP content, and service prototype work.
+          YUMINSEOK / TARGET-LED MV · CF CONTENT PRODUCTION / HARNESS FLOW
         </footer>
       </div>
     </main>
   );
 }
 
-export function MasterHubPage() {
+function HarnessFeature() {
   return (
-    <Shell wide>
-      <section className={`${styles.hero} ${styles.masterHero}`}>
-        <div className={`${styles.heroText} ${styles.caseTitleBlock}`}>
-          <span className={styles.sectionLabel}>AI CONTENT PRODUCTION / IDOL · LOOM</span>
-          <h1>{resumeProfile.headline}</h1>
-          <p className={styles.heroSubline}>{resumeProfile.subline}</p>
-          <div className={styles.heroSignals} aria-label="Primary production formats">
-            <span><strong>MV</strong><small>Long-form</small></span>
-            <span><strong>CF</strong><small>Short-form</small></span>
-            <span><strong>Research first</strong><small>Target · Message · Reference</small></span>
+    <section className={styles.harnessFeature}>
+      <div className={styles.caseBoard}>
+        <div className={styles.caseText}>
+          <div className={styles.caseTitleBlock}>
+            <span className={styles.projectLabel}>Process Portfolio</span>
+            <h2 className={styles.harnessFeatureTitle}>IDOL / CF Harness</h2>
+            <p className={styles.caseHeadline}>타깃과 메시지, 호응 가능성이 높은 레퍼런스를 먼저 조사하고, 그 결과를 MV와 Commercial Film 제작 워크플로우로 연결합니다.</p>
+            <p className={styles.caseResult}>방향 정리부터 생성 설계, 실행 게이트, 편집·게시 기록까지 단계별 산출물과 검증 지점을 하나의 제작 구조로 연결합니다.</p>
           </div>
-          <div className={styles.heroActions}>
-            <Link className={styles.primaryLink} href="#project-routes">
-              대표 작업 보기 <Layers size={16} />
-            </Link>
-            <Link className={styles.secondaryLink} href="/ai-exploration">
-              하네스 작업 방식 <ArrowRight size={16} />
+          <div className={styles.outcomeBody}>
+            <div>
+              <span className={styles.copyLabel}>Key Contents</span>
+              <ul className={styles.keyList}>
+                {harnessKeyContents.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className={styles.deckLinks}>
+            <Link className={styles.primaryLink} href="/ai-exploration">
+              하네스 작업 방식 보기 <ArrowRight size={16} />
             </Link>
           </div>
         </div>
-        <FeaturedHeroMedia />
-      </section>
+        <HarnessMediaFigure />
+      </div>
+    </section>
+  );
+}
 
-      <section className={styles.explorationFeature}>
-        <Link className={styles.explorationRoute} href="/ai-exploration">
-          <div className={styles.explorationRouteCopy}>
-            <span className={styles.sectionLabel}>Process Portfolio</span>
-            <h2>IDOL / CF Harness</h2>
-            <p>타깃과 메시지, 호응 가능성이 높은 레퍼런스를 먼저 조사하고, 그 결과를 MV와 Commercial Film 제작 워크플로우로 연결합니다.</p>
-            <span className={styles.explorationRouteAction}>
-              하네스 작업 방식 보기 <ArrowRight size={16} />
-            </span>
+export function MasterHubPage() {
+  const [loomProject, ...remainingProjects] = visibleProjects;
+
+  return (
+    <Shell wide>
+      <section className={`${styles.hero} ${styles.masterHero}`}>
+        <div className={styles.heroText}>
+          <span className={styles.sectionLabel}>TARGET-LED CONTENT PRODUCTION / IDOL · CF</span>
+          <h1 className={styles.heroTitle}>
+            {resumeProfile.headline.replace(/\n/g, " ")}
+          </h1>
+          <p className={styles.heroSubline} aria-label={resumeProfile.subline}>
+            <span className={styles.heroSublineDesktop}>{resumeProfile.subline}</span>
+            <span className={styles.heroSublineMobile}>타깃·메시지 → MV·CF Harness</span>
+          </p>
+          <div className={styles.heroFlowHeader}>
+            <span>Harness flow</span>
+            <strong>Research → Message → Reference → Production · Review</strong>
           </div>
-          <div className={styles.explorationRouteMedia}>
-            <img alt="Four-stage public-facing AI production Harness map" src="/loom-deck/workflow/02-harness.png" />
+          <ol className={styles.signalPath} aria-label="IDOL and CF production workflow">
+            {heroSignalPath.map((step) => (
+              <li key={step.number}>
+                <span>{step.number}</span>
+                <strong>{step.label}</strong>
+                <small>{step.detail}</small>
+              </li>
+            ))}
+          </ol>
+          <div className={styles.heroActions}>
+            <Link className={styles.heroPrimaryAction} href="#project-routes">
+              대표 작업 보기 <Layers size={16} />
+            </Link>
+            <Link className={styles.heroSecondaryAction} href="/ai-exploration">
+              Harness flow 보기 <ArrowRight size={16} />
+            </Link>
           </div>
-        </Link>
+        </div>
+        <FeaturedHeroOutput />
       </section>
 
       <section className={styles.section} id="project-routes">
@@ -286,16 +326,18 @@ export function MasterHubPage() {
           <h2>대표 프로젝트</h2>
           <p>기획 의도, 제작 범위, 검토 기준과 결과물은 각 프로젝트 페이지에서 이어집니다.</p>
         </div>
-        <ProjectOutcomeList />
+        <ProjectOutcomeList projectsToRender={loomProject ? [loomProject] : []} />
+        <HarnessFeature />
+        <ProjectOutcomeList projectsToRender={remainingProjects} />
       </section>
     </Shell>
   );
 }
 
-function ProjectOutcomeList() {
+function ProjectOutcomeList({ projectsToRender }: { projectsToRender: PortfolioProject[] }) {
   return (
     <div className={styles.outcomeList}>
-      {visibleProjects.map((project) => (
+      {projectsToRender.map((project) => (
         <article className={`${styles.outcomeCard} ${styles[project.accent]}`} key={project.slug}>
           <div className={styles.caseBoard}>
             <div className={styles.caseText}>
@@ -303,26 +345,39 @@ function ProjectOutcomeList() {
                 <span className={styles.projectLabel}>{project.role}</span>
                 <strong className={styles.caseCode}>{project.title}</strong>
                 <h3>{project.shortTitle}</h3>
-                <p className={styles.caseHeadline}>{project.headline}</p>
-                <p className={styles.caseResult}>{project.finalResult}</p>
+                <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
+                <p className={styles.caseResult}>{project.homeResult ?? project.finalResult}</p>
               </div>
               <div className={styles.outcomeBody}>
-                <div>
-                  <span className={styles.copyLabel}>Key Contents</span>
-                  <ul className={styles.keyList}>
-                    {project.keyContents.map((item) => (
-                      <li key={item}>{item}</li>
+                {project.homeReadout ? (
+                  <dl className={styles.projectReadout} aria-label={`${project.shortTitle} project summary`}>
+                    {project.homeReadout.map((item) => (
+                      <div key={item.label}>
+                        <dt>{item.label}</dt>
+                        <dd>{item.value}</dd>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-                <div>
-                  <span className={styles.copyLabel}>Final Outputs</span>
-                  <div className={styles.outputList}>
-                    {project.outputs.map((output) => (
-                      <span key={output}>{output}</span>
-                    ))}
-                  </div>
-                </div>
+                  </dl>
+                ) : (
+                  <>
+                    <div>
+                      <span className={styles.copyLabel}>Key Contents</span>
+                      <ul className={styles.keyList}>
+                        {(project.homeKeyContents ?? project.keyContents).map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <span className={styles.copyLabel}>{project.homeOutputsLabel ?? "Final Outputs"}</span>
+                      <div className={styles.outputList}>
+                        {(project.homeOutputs ?? project.outputs).map((output) => (
+                          <span key={output}>{output}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
                 <ProjectSocialLinks project={project} />
               </div>
               <div className={styles.deckLinks}>
