@@ -44,9 +44,10 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "메시지를 설계하는 MV·CF",
-  subline:
-    "타깃·메시지·레퍼런스를 설계해 MV·CF 제작과 검수를 Harness flow로 연결합니다.",
+  headline: "MV · CF HARNESS FLOW / AI CONTENT DIRECTION",
+  homeAbout:
+    "패션·브랜드·엔터테인먼트 맥락에서 타깃의 반응과 메시지를 읽고, 장면 설계부터 AI 제작·검수까지 연결합니다.",
+  homeFocus: "AI 콘텐츠 기획·제작 · 패션·브랜드·엔터테인먼트 콘텐츠",
   profile:
     "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다. 무신사 AI 광고제에서는 캠페인 콘셉트를 30초 광고 흐름으로 구체화했고, Loom에서는 13명 AI 아이돌 IP를 Root Signal, Pulso 트랙과 멤버 아카이브·Harne 투표가 있는 웹페이지로 연결했으며, ADSB에서는 브랜드 무드와 피드백을 AI 숏폼 제작 흐름으로 옮겼습니다. AHEYA는 Product/GTM 메시지를 공개 채널 콘텐츠와 시각 자산으로 풀어낸 보조 사례이고, SFTI-CMU는 감정 콘텐츠와 시각 정체성 아이디어를 영문 초록/포스터형 자료로 구조화한 리서치 커뮤니케이션 보조 사례입니다.",
   competencies: [
@@ -69,6 +70,11 @@ export const projects: PortfolioProject[] = [
     accent: "ice",
     headline: "무신사 무진장 AI 광고제 브리프를 다양성 메시지의 30초 팀 숏폼 광고로 전환한 프로젝트",
     homeHeadline: "다양성 메시지를 30초 AI 숏폼 광고로 전환",
+    homeReadout: [
+      { label: "Role", value: "Sub-planning · storyboard · generation review" },
+      { label: "Scope", value: "다양성 메시지 기반 30초 팀 광고" },
+      { label: "Output", value: "30s final ad · storyboard" },
+    ],
     abstract:
       "3인 팀 작업에서 서브기획과 제작 과정을 리딩하며 `편견을 벗다, 다양성을 입다, 무진장을 만나다` 메시지가 먼저 읽히도록 영상 구조를 설계. Seedance 2.0, Kling, Grok 기반 생성 결과를 검토하며 다양한 인물과 스타일을 통해 무진장을 더 넓은 패션 경험으로 보여주는 30초 광고 제출본 제작",
     finalResult:
@@ -120,7 +126,7 @@ export const projects: PortfolioProject[] = [
     accent: "violet",
     headline: "AI 아이돌 IP를 앨범/트랙 단위 콘텐츠 제품과 최소 개입형 production harness로 구조화한 프로젝트",
     homeHeadline: "AI 아이돌 IP를 MV·CF 콘텐츠와 Harness로 연결",
-    homeResult: "13명 AI 아이돌 IP를 3개 track MV, 1개 Spec Commercial, 참여형 웹 경험으로 연결",
+    homeResult: "13명 AI 아이돌 IP를 3개 track MV, 3개 CF, 참여형 웹 경험으로 연결",
     abstract:
       "Loom을 13명 AI 아이돌 그룹이자 Harne 참여형 콘텐츠 제품으로 보고, 3개의 track music video를 앨범/트랙 단위 영상 제작 흐름과 공개 웹 경험으로 설계. 멤버 아카이브, 트랙/스토리보드, Spec Commercial, Harne 투표를 통해 IP 탐색과 참여 구조를 확장하고, LLM 기획-Suno 음악 제작-coding agent 자동화 프롬프트-API 기반 제작 루프를 구축",
     finalResult:
@@ -143,11 +149,11 @@ export const projects: PortfolioProject[] = [
       "웹페이지·Spec Commercial·Harne 투표로 공개 콘텐츠 구조 확장",
     ],
     homeOutputsLabel: "Production Count",
-    homeOutputs: ["MV · 3", "CF · 1"],
+    homeOutputs: ["MV · 3", "CF · 3"],
     homeReadout: [
       { label: "Role", value: "IP content system · AI creative production" },
       { label: "Scope", value: "13명 IP · 트랙·멤버·참여형 웹 경험" },
-      { label: "Output", value: "3 track MV · 1 CF" },
+      { label: "Output", value: "3 track MV · 3 CF" },
     ],
     deckLinks: [
       {
@@ -197,6 +203,11 @@ export const projects: PortfolioProject[] = [
     accent: "green",
     headline: "브랜드 무드를 15초 AI 숏폼 제작 흐름으로 전환한 프로젝트",
     homeHeadline: "브랜드 무드를 15초 AI 숏폼으로 실행",
+    homeReadout: [
+      { label: "Role", value: "Shotboard · AI production · feedback revision" },
+      { label: "Scope", value: "브랜드 무드 기반 15초 숏폼" },
+      { label: "Output", value: "15s shotboard · execution record" },
+    ],
     abstract:
       "ADSB 산학공동연구에서 dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드와 제작 반복, 피드백 반영 흐름으로 연결. 전체 브랜드 성과가 아니라 AI 숏폼 제작 실행의 증거로 배치",
     finalResult:
@@ -248,6 +259,11 @@ export const projects: PortfolioProject[] = [
     accent: "aqua",
     headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",
     homeHeadline: "공개 아이디어를 초기 반응 흐름으로 구조화",
+    homeReadout: [
+      { label: "Role", value: "Message framing · response-flow design" },
+      { label: "Scope", value: "공개 아이디어의 초기 반응 설계" },
+      { label: "Output", value: "event map · prototype deck" },
+    ],
     abstract:
       "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, 외부 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
     finalResult:
@@ -331,6 +347,11 @@ export const projects: PortfolioProject[] = [
     accent: "aqua",
     headline: "감정 콘텐츠와 시각 정체성 아이디어를 영어 초록과 포스터형 자료로 구체화한 리서치 커뮤니케이션 보조 사례",
     homeHeadline: "감정 콘텐츠 아이디어를 리서치 커뮤니케이션으로 구체화",
+    homeReadout: [
+      { label: "Role", value: "Research framing · English abstract" },
+      { label: "Scope", value: "감정 콘텐츠와 시각 정체성 리서치" },
+      { label: "Output", value: "abstract · poster · revision evidence" },
+    ],
     abstract:
       "SFTI-CMU는 자소서 본문에서 앞세우는 MUSINSA, ADSB, Loom을 대체하는 메인 성과가 아니라, 추상적인 AI-generated emotional content 아이디어를 niche fashion brand의 콘텐츠 확장 한계와 identity-based visual clustering 관점으로 좁혀 외부 독자가 읽을 수 있는 English abstract와 poster-style structure로 만든 보조 사례입니다.",
     finalResult:

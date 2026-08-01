@@ -24,6 +24,37 @@ const LOOM_TIKTOK_URL = "https://www.tiktok.com/@loom_mm";
 const LOOM_SIGNAL_DECK_URL = "https://loom-signal-deck.vercel.app";
 const CURRENT_WORKBENCH_IMAGE = "/ai-exploration/workbench/one-move-front-planning-workbench-clean-2026-07-29.png";
 const HUMAN_SELECTION_MAP_IMAGE = "/ai-exploration/workbench/founder-selection-map-sanitized-2026-07-29.png";
+const BLENDER_COMPOSITION_FILES = [
+  {
+    id: "stage-current",
+    label: "무대 현재값",
+    detail: "현재 무대의 카메라 위치와 프레이밍",
+    fileName: "idol-stage-wide-current-v1.blend",
+    href: "/ai-exploration/harness-evidence/stage-camera-rig-v1/idol-stage-wide-current-v1.blend",
+  },
+  {
+    id: "camera-extension-default",
+    label: "확장 기본값",
+    detail: "확장 카메라 rig의 기본 조정값",
+    fileName: "add-camera-rigs-extension-default.blend",
+    href: "/ai-exploration/harness-evidence/stage-camera-rig-v1/add-camera-rigs-extension-default.blend",
+  },
+] as const;
+const PUBG_CF60_BOARD_URL = "/ai-exploration/cf/pubg-cf60/storyboard-prompt-index.html";
+const PUBG_CF60_BOARD_POSTER = "/ai-exploration/cf/pubg-cf60/CF_JOB_02_storyboard.png";
+const PUBG_CF60_PROMPT_PREVIEW = `Use @Image1 as storyboard map; @Image2 F03, @Image3 F04, @Image4 F05.
+Animate F03→F04→F05 in order. Vertical 9:16, 4K, photoreal live-action game-teaser commercial.
+
+Motion:
+F03: Aircraft cabin scale holds Seira inside the transport pressure.
+F04: Seira tightens readiness; harness and glove read as pre-jump commitment.
+F05: Jump-light countdown snaps; body stays ready for exit.
+
+Camera:
+Ultrawide cabin scale compresses into high three-quarter readiness, then into countdown tightness.
+
+Keep:
+Seira aircraft/freefall/canopy/landing ownership; no readable PUBG HUD or generated typography.`;
 const HUMAN_SELECTION_REFERENCE_IMAGES = [
   "/ai-exploration/workbench/founder-selection-reference-01-2026-07-29.png",
   "/ai-exploration/workbench/founder-selection-reference-02-2026-07-29.png",
@@ -543,7 +574,7 @@ const harnessPhases = [
         index: "09",
         title: "스토리보드 리뷰",
         humanGate: "PASS · HOLD · REJECT",
-        details: ["HTML board에서 순서·구도·인과·reference 역할 검토", "통과한 스토리보드만 이미지 작업으로 인계"],
+        details: ["HTML board에서 컷 순서·구도·카메라·동작·reference 역할·영상화 조건 검토", "통과한 보드만 keyframe과 영상화 prompt 작업으로 인계"],
       },
     ],
   },
@@ -716,10 +747,11 @@ const imagePromptStructure = [
 ];
 
 const videoPromptStructure = [
-  "통과한 keyframe",
+  "ordered keyframe · source order",
   "camera route · frame connection",
-  "motion · action",
-  "구간 길이 · 다음 컷과의 인과",
+  "motion · action · diegetic cue",
+  "duration · endpoint · next-cut causality",
+  "keep / exclude constraints",
 ];
 
 const planningStructure = [
@@ -1257,6 +1289,34 @@ function HumanSelectionReviewSurface() {
   );
 }
 
+function BlenderCompositionHandoff() {
+  return (
+    <section className={styles.harnessCompositionHandoff} aria-labelledby="composition-handoff-title">
+      <header>
+        <span>02 / COMPOSE</span>
+        <strong>HUMAN-ADJUSTED INPUT</strong>
+      </header>
+      <div className={styles.harnessCompositionHandoffBody}>
+        <div className={styles.harnessCompositionCopy}>
+          <span>AFTER REFERENCE SELECTION</span>
+          <h4 id="composition-handoff-title">이미지 생성 전, 구도를 조정합니다.</h4>
+          <p>레퍼런스 비교와 사람의 선택 뒤, 무대의 카메라 위치·화각·프레이밍을 Blender에서 조정해 이미지 생성 시 수정할 구도를 명확히 인계합니다.</p>
+        </div>
+        <div className={styles.harnessCompositionFiles} aria-label="Blender 구도 조정 파일">
+          {BLENDER_COMPOSITION_FILES.map((file) => (
+            <a download={file.fileName} href={file.href} key={file.id}>
+              <span>BLENDER FILE</span>
+              <strong>{file.label}</strong>
+              <small>{file.detail}</small>
+              <em>DOWNLOAD <ArrowDown aria-hidden="true" size={12} /></em>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ProductionHarnessSection() {
   return (
     <section className={`${styles.section} ${styles.systemSection} ${styles.handoffSection}`} id="harness">
@@ -1368,9 +1428,45 @@ function ProductionHarnessSection() {
               <HumanSelectionReviewSurface />
             </div>
 
+            <BlenderCompositionHandoff />
+
+            <figure className={styles.harnessBoardAttachment}>
+              <header>
+                <span>03 / VIDEO PREFLIGHT BOARD</span>
+                <strong>ATTACHED ARTIFACT</strong>
+              </header>
+              <div className={styles.harnessBoardAttachmentBody}>
+                <a className={styles.harnessBoardAttachmentVisual} href={PUBG_CF60_BOARD_URL} rel="noreferrer" target="_blank">
+                  <img src={PUBG_CF60_BOARD_POSTER} alt="PUBG CF60 영상화 직전 스토리보드 보드" loading="lazy" />
+                </a>
+                <div className={styles.harnessBoardAttachmentPrompt}>
+                  <header>
+                    <span>PASTE-READY PROMPT</span>
+                    <strong>CF_JOB_02 / F03–F05</strong>
+                  </header>
+                  <pre>{PUBG_CF60_PROMPT_PREVIEW}</pre>
+                  <small>전체 프롬프트와 10개 작업 단위는 HTML 보드에서 확인</small>
+                </div>
+              </div>
+              <figcaption className={styles.harnessBoardAttachmentCaption}>
+                <span>VIDEO / PRE-FLIGHT BOARD</span>
+                <h4>영상화 직전 설계 보드</h4>
+                <p>10개 작업 단위마다 스토리보드, 프레임 순서, 카메라, 동작, 시간과 제약 조건을 묶어 생성 전에 검토할 수 있도록 정리한 실제 첨부 보드입니다.</p>
+                <div className={styles.harnessBoardAttachmentMeta}>
+                  <span>10 JOBS</span>
+                  <span>F01–F21</span>
+                  <span>FAN-MADE / UNOFFICIAL</span>
+                </div>
+                <a className={styles.harnessBoardAttachmentLink} href={PUBG_CF60_BOARD_URL} rel="noreferrer" target="_blank">
+                  전체 HTML 보드 보기 <ExternalLink aria-hidden="true" size={14} />
+                </a>
+              </figcaption>
+            </figure>
+
             <ol className={styles.harnessCurrentFlow} aria-label="Current Workbench and HTML review flow">
               <li><span>01 / PREPARE</span><strong>Workbench에서 레퍼런스 후보와 역할·상태 정리</strong></li>
               <li><span>02 / DECIDE</span><strong>HTML board에서 PASS · HOLD · REJECT와 수정 메모 기록</strong></li>
+              <li><span>02A / COMPOSE</span><strong>Blender에서 카메라·화각·프레이밍을 조정해 이미지 생성 수정 조건으로 인계</strong></li>
               <li><span>03 / RETURN</span><strong>결정 영수증을 원래 제작 단계의 다음 행동으로 인계</strong></li>
             </ol>
           </div>
@@ -2061,6 +2157,21 @@ canonical write: human or structured single writer`}
                 <figcaption className={styles.rationaleReviewCaption}>
                   <span>PULSO / 12 FRAMES · 16—28S API OUTPUT REVIEW</span>
                   <a href="/ai-exploration/iteration/evolution/pulso-api-window-16-28-contact-sheet.jpg" rel="noreferrer" target="_blank">FULL SHEET <ExternalLink size={10} /></a>
+                </figcaption>
+              </figure>
+              <figure className={styles.rationaleReviewCapture}>
+                <video
+                  aria-label="54개 패킷의 프레임 분석과 타임라인 검수 과정 화면 녹화"
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  src="/loom-deck/media/harness-process-capture-full-cut.mp4"
+                />
+                <figcaption>
+                  <span>HARNESS REVIEW CAPTURE</span>
+                  <p>전체 작업 녹화에서 6:13–6:20 구간을 제외하고 빠르게 압축한 검토 기록입니다.</p>
+                  <small>17.1s EDIT</small>
                 </figcaption>
               </figure>
               <dl className={styles.rationaleReviewMetricsRail} aria-label="실제 제작 검토 단위">

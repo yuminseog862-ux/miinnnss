@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PUBG CF60 · Storyboard &amp; Prompt Index</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b0d10; --panel:#14191e; --line:#2a323b; --text:#f3f5f6; --muted:#9aa5ad; --accent:#7ce0a3; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: Inter, Pretendard, system-ui, sans-serif; }
+    header { padding:28px clamp(18px,4vw,48px); border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(11,13,16,.94); backdrop-filter:blur(16px); z-index:5; }
+    h1 { margin:0 0 8px; letter-spacing:-.03em; }
+    .sub { color:var(--muted); line-height:1.5; }
+    main { width:min(1200px,100%); margin:0 auto; padding:28px clamp(16px,3vw,40px) 80px; display:flex; flex-direction:column; gap:28px; }
+    .job { border:1px solid var(--line); border-radius:18px; background:var(--panel); padding:18px 18px 22px; }
+    h2 { margin:0 0 6px; font-size:22px; }
+    h3 { margin:16px 0 8px; font-size:14px; color:var(--accent); letter-spacing:.04em; text-transform:uppercase; }
+    .meta { color:var(--muted); margin:0 0 12px; }
+    .grid { display:grid; grid-template-columns: minmax(240px, 420px) 1fr; gap:18px; }
+    @media (max-width:900px) { .grid { grid-template-columns:1fr; } }
+    img { width:100%; height:auto; border-radius:12px; border:1px solid var(--line); background:#000; }
+    pre { white-space:pre-wrap; background:#0a0c0e; border:1px solid var(--line); border-radius:12px; padding:14px; font:12.5px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .path, code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12px; color:var(--muted); }
+    .path { overflow-wrap:anywhere; }
+    ol { margin:0; padding-left:18px; line-height:1.55; }
+    .pack { border:1px solid var(--line); border-radius:18px; background:var(--panel); padding:16px 18px; }
+    footer { padding:20px clamp(18px,4vw,48px) 40px; color:var(--muted); border-top:1px solid var(--line); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PUBG CF60 · Storyboard &amp; Prompt Index</h1>
+    <p class="sub">10 jobs · ordered frames F01–F21 · camera / motion / constraint handoff · authoring only, no video generation.<br>
+    Fan-made, unofficial storyboard and prompt board for a PUBG CF60 concept.</p>
+  </header>
+  <main>
+    <section class="pack">
+      <h2>Board components</h2>
+      <p class="meta">스토리보드 · ordered frames · 멤버 비주얼 기준을 영상화 전 검토 단위로 묶었습니다.</p>
+      <ul>
+        <li><a href="original-frames-f01-f21/index.html">original-frames-f01-f21/</a> — F01–F21 원본</li>
+        <li><a href="member-visual-boards/ALL__character-boards-v3-2x2.png">member-visual-boards/</a> — PUBG CF 멤버별 보드</li>
+      </ul>
+      <h3>Member boards</h3>
+      <ul><li><a href="member-visual-boards/M06_ERYN__member-key-visual-v1.png">M06_ERYN__member-key-visual-v1.png</a></li><li><a href="member-visual-boards/M12_SEIRA__member-key-visual-v1.png">M12_SEIRA__member-key-visual-v1.png</a></li><li><a href="member-visual-boards/M02_SEORIN__member-key-visual-v1.png">M02_SEORIN__member-key-visual-v1.png</a></li><li><a href="member-visual-boards/M13_SHION__member-key-visual-v1.png">M13_SHION__member-key-visual-v1.png</a></li><li><a href="member-visual-boards/M06_ERYN__character-board-v3.png">M06_ERYN__character-board-v3.png</a></li><li><a href="member-visual-boards/M12_SEIRA__character-board-v3.png">M12_SEIRA__character-board-v3.png</a></li><li><a href="member-visual-boards/M02_SEORIN__character-board-v3.png">M02_SEORIN__character-board-v3.png</a></li><li><a href="member-visual-boards/M13_SHION__character-board-v3.png">M13_SHION__character-board-v3.png</a></li><li><a href="member-visual-boards/ALL__character-boards-v3-2x2.png">ALL__character-boards-v3-2x2.png</a></li></ul>
+    </section>
+
+<section class="job">
+  <h2>CF_JOB_01 · Eryn loads first, then mortar fires upward</h2>
+  <p class="meta">Frames: F02 → F01 · duration 3.0s · storyboard sha256 <code>072bc3f1316e3620…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_01_storyboard.png"><img src="CF_JOB_01_storyboard.png" alt="CF_JOB_01" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_01</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F02</code> CF_BRANCH_01_02 — <a href="original-frames-f01-f21/F02__CF_BRANCH_01_02.png">F02__CF_BRANCH_01_02.png</a></li><li><code>F01</code> CF_BRANCH_01_01 — <a href="original-frames-f01-f21/F01__CF_BRANCH_01_01.png">F01__CF_BRANCH_01_01.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F02, @Image3 F01. Animate F02→F01 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F02: Eryn alone loads the shell into the upright Mortar first; glove pressure seats the round and the tube accepts it. Synchronized diegetic sound: glove friction, shell seating thump, tube resonance.
+hard cut
+@Image3 F01: From the loaded Mortar mouth the shell fires straight upward; ash and pressure pulse at the rim as the round clears the tube skyward. Synchronized diegetic sound: tube resonance bloom, compact launch impact, shell air-cut rising.
+
+Camera: Mid operator angle holds on the sole-operator load, then hard-cuts to a near-axial low tube macro that tracks the upward launch.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Eryn as sole Mortar operator; upright deployed Mortar geometry; Paramo ash ground; summer tactical styling and M06 identity; no second loader; no readable PUBG HUD, generated logos or generated typography; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_02 · Aircraft scale, Seira readiness and countdown</h2>
+  <p class="meta">Frames: F03 → F04 → F05 · duration 4.0s · storyboard sha256 <code>bf729beddacddc7a…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_02_storyboard.png"><img src="CF_JOB_02_storyboard.png" alt="CF_JOB_02" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_02</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F03</code> CF_BRANCH_02_01 — <a href="original-frames-f01-f21/F03__CF_BRANCH_02_01.png">F03__CF_BRANCH_02_01.png</a></li><li><code>F04</code> CF_BRANCH_02_02 — <a href="original-frames-f01-f21/F04__CF_BRANCH_02_02.png">F04__CF_BRANCH_02_02.png</a></li><li><code>F05</code> CF_BRANCH_02_03 — <a href="original-frames-f01-f21/F05__CF_BRANCH_02_03.png">F05__CF_BRANCH_02_03.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F03, @Image3 F04, @Image4 F05. Animate F03→F04→F05 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F03: Aircraft cabin scale holds Seira inside the transport pressure. Synchronized diegetic sound: engine pressure, cabin rattle.
+hard cut
+@Image3 F04: Seira tightens readiness; harness and glove read as pre-jump commitment. Synchronized diegetic sound: buckle click, glove tap on harness.
+hard cut
+@Image4 F05: Jump-light countdown snaps; body stays ready for exit. Synchronized diegetic sound: jump-light response click, ramp wind under the bay.
+
+Camera: Ultrawide cabin scale compresses into high three-quarter readiness, then into countdown tightness without losing Seira ownership.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_03 · 04-06s interference, freefall and cap-loss vertical fall</h2>
+  <p class="meta">Frames: F06 → F07 → F08 · duration 4.5s · storyboard sha256 <code>973de201c3bbfb7d…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_03_storyboard.png"><img src="CF_JOB_03_storyboard.png" alt="CF_JOB_03" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_03</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F06</code> CF_BRANCH_03_01 — <a href="original-frames-f01-f21/F06__CF_BRANCH_03_01.png">F06__CF_BRANCH_03_01.png</a></li><li><code>F07</code> CF_BRANCH_03_02 — <a href="original-frames-f01-f21/F07__CF_BRANCH_03_02.png">F07__CF_BRANCH_03_02.png</a></li><li><code>F08</code> CF_BRANCH_03_03 — <a href="original-frames-f01-f21/F08__CF_BRANCH_03_03.png">F08__CF_BRANCH_03_03.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F06, @Image3 F07, @Image4 F08. Animate F06→F07→F08 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F06: Signal field breaks and orientation fails for the locked 04-06s interference window. Synchronized diegetic sound: signal crackle into near-mute, relay click.
+hard cut
+@Image3 F07: Seira freefalls through open sky; body and cloth answer wind. Synchronized diegetic sound: wind surge, fabric snap.
+hard cut
+@Image4 F08: Cap leaves her head and the fall axis becomes vertical. Synchronized diegetic sound: cap-release flap, denser freefall wind.
+
+Camera: Broken signal space hard-cuts into freefall sky, then into a stricter vertical fall axis on cap-loss.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_04 · Seorin focus-ring ownership into veiled high-oblique finger-gun</h2>
+  <p class="meta">Frames: F09 → F10 · duration 3.5s · storyboard sha256 <code>c26d94460702ff0b…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_04_storyboard.png"><img src="CF_JOB_04_storyboard.png" alt="CF_JOB_04" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_04</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F09</code> CF_BRANCH_04_01 — <a href="original-frames-f01-f21/F09__CF_BRANCH_04_01.png">F09__CF_BRANCH_04_01.png</a></li><li><code>F10</code> CF_BRANCH_04_02 — <a href="original-frames-f01-f21/F10__CF_BRANCH_04_02.png">F10__CF_BRANCH_04_02.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F09, @Image3 F10. Animate F09→F10 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F09: Gloved fingers settle the focus ring beside Seorin&#x27;s veiled side profile. Synchronized diegetic sound: focus-ring click, quiet breath.
+hard cut
+@Image3 F10: Shoulder-elbow-wrist swing finishes into a one-index skyward finger-gun under reverse high-oblique camera. Synchronized diegetic sound: arm-cloth cut, glove stop, rooftop air under the hand.
+
+Camera: Quiet side optic axis hard-cuts into target-side reverse high-oblique beyond the fingertip.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_05 · Uncovered low-side wind-driven Seorin angle</h2>
+  <p class="meta">Frames: F11 · duration 2.5s · storyboard sha256 <code>ce339d92954b1417…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_05_storyboard.png"><img src="CF_JOB_05_storyboard.png" alt="CF_JOB_05" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_05</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F11</code> CF_BRANCH_04_06 — <a href="original-frames-f01-f21/F11__CF_BRANCH_04_06.png">F11__CF_BRANCH_04_06.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F11. Animate F11 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F11: Uncovered Seorin holds the one-index skyward finger-gun while long black hair blows strongly sideways and backward; no veil morph. Synchronized diegetic sound: strong rooftop crosswind through long hair, glove hold, cloth flap.
+
+Camera: Stay locked on low opposite-side three-quarter; hard-cut in from veiled command and hard-cut out to scope.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_06 · Paramo scope lock, grid tear into Haven canopy, shell ascent</h2>
+  <p class="meta">Frames: F12 → F13 → F14 · duration 4.5s · storyboard sha256 <code>628a9fe346c103a3…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_06_storyboard.png"><img src="CF_JOB_06_storyboard.png" alt="CF_JOB_06" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_06</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F12</code> CF_BRANCH_04_03 — <a href="original-frames-f01-f21/F12__CF_BRANCH_04_03.png">F12__CF_BRANCH_04_03.png</a></li><li><code>F13</code> CF_BRANCH_04_04 — <a href="original-frames-f01-f21/F13__CF_BRANCH_04_04.png">F13__CF_BRANCH_04_04.png</a></li><li><code>F14</code> CF_BRANCH_04_05 — <a href="original-frames-f01-f21/F14__CF_BRANCH_04_05.png">F14__CF_BRANCH_04_05.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F12, @Image3 F13, @Image4 F14. Animate F12→F13→F14 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F12: Spotter Scope settles on Paramo smoke and the rising shell path; no friendly body in glass. Synchronized diegetic sound: optic entry, focus lock.
+dry grid tear
+@Image3 F13: Dry grid tear resets the optic and reacquires a separate Haven canopy lock. Synchronized diegetic sound: dry grid tear, second lock click.
+hard cut
+@Image4 F14: Physical shell accelerates upward through Paramo sky. Synchronized diegetic sound: shell air-cut, pressure whoosh.
+
+Camera: Eye-height optic lock tears into a second optic state, then hard-cuts to extreme-low physical shell ascent on the same skyward vector.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_07 · Shion stair entry into upper-landing high-angle pre-shot aim</h2>
+  <p class="meta">Frames: F15 → F16 · duration 3.5s · storyboard sha256 <code>b72f49277d6872ac…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_07_storyboard.png"><img src="CF_JOB_07_storyboard.png" alt="CF_JOB_07" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_07</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F15</code> CF_BRANCH_05_01 — <a href="original-frames-f01-f21/F15__CF_BRANCH_05_01.png">F15__CF_BRANCH_05_01.png</a></li><li><code>F16</code> CF_BRANCH_05_02 — <a href="original-frames-f01-f21/F16__CF_BRANCH_05_02.png">F16__CF_BRANCH_05_02.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F15, @Image3 F16. Animate F15→F16 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F15: Shion climbs the Haven stair with rifle ready. Synchronized diegetic sound: boot grit on stair, rail ring.
+hard cut
+@Image3 F16: From the upper landing, high-angle aim locks with muzzle rising past the offset lens before the single shot. Synchronized diegetic sound: stock settle, breath hold before shot.
+
+Camera: Climbing side/entry angle hard-cuts to steep upper-landing high angle looking down the stair.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_08 · Holographic-sight recovery into two-zone mechanical object relay</h2>
+  <p class="meta">Frames: F17 → F18 · duration 3.5s · storyboard sha256 <code>9ed974eb1f021ea0…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_08_storyboard.png"><img src="CF_JOB_08_storyboard.png" alt="CF_JOB_08" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_08</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F17</code> CF_BRANCH_05_03 — <a href="original-frames-f01-f21/F17__CF_BRANCH_05_03.png">F17__CF_BRANCH_05_03.png</a></li><li><code>F18</code> CF_BRANCH_05_04 — <a href="original-frames-f01-f21/F18__CF_BRANCH_05_04.png">F18__CF_BRANCH_05_04.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F17, @Image3 F18. Animate F17→F18 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F17: Holographic sight recovers after exactly one controlled shot; empty safe axis only. Synchronized diegetic sound: one controlled shot, casing, wall dust, sight-lock click.
+hard cut
+@Image3 F18: Two-zone mechanical object relay continues the shot consequence without multi-fire. Synchronized diegetic sound: mechanical object relay impacts across two zones.
+
+Camera: Sight POV recovers, then hard-cuts into object-relay coverage that shows consequence without another shooter POV.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_09 · Seira landing approach into exactly four endpoint locks</h2>
+  <p class="meta">Frames: F19 → F20 · duration 4.0s · storyboard sha256 <code>9f4dbcb499ba6f5d…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_09_storyboard.png"><img src="CF_JOB_09_storyboard.png" alt="CF_JOB_09" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_09</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F19</code> CF_BRANCH_06_01 — <a href="original-frames-f01-f21/F19__CF_BRANCH_06_01.png">F19__CF_BRANCH_06_01.png</a></li><li><code>F20</code> CF_BRANCH_06_02 — <a href="original-frames-f01-f21/F20__CF_BRANCH_06_02.png">F20__CF_BRANCH_06_02.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F19, @Image3 F20. Animate F19→F20 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F19: Seira completes landing approach under canopy wind and ground contact. Synchronized diegetic sound: canopy wind, gravel impact, buckle release.
+hard cut
+@Image3 F20: Exactly four endpoint locks resolve the squad field without extra cast. Synchronized diegetic sound: four concise endpoint locks, short mechanical stops.
+
+Camera: Landing approach coverage hard-cuts into a wider endpoint field that locks four positions.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+<section class="job">
+  <h2>CF_JOB_10 · Low afterimage decay and clean title-safe field</h2>
+  <p class="meta">Frames: F21 · duration 2.5s · storyboard sha256 <code>74ae8362bb8f4ebe…</code></p>
+  <div class="grid">
+    <div>
+      <h3>Storyboard (@Image1)</h3>
+      <a href="CF_JOB_10_storyboard.png"><img src="CF_JOB_10_storyboard.png" alt="CF_JOB_10" loading="lazy"></a>
+      <p class="path"><code>CF60 / storyboard / CF_JOB_10</code></p>
+    </div>
+    <div>
+      <h3>Ordered frames (@Image2+)</h3>
+      <ol><li><code>F21</code> CF_BRANCH_07_01 — <a href="original-frames-f01-f21/F21__CF_BRANCH_07_01.png">F21__CF_BRANCH_07_01.png</a></li></ol>
+      <h3>Paste-ready prompt</h3>
+      <pre>Use @Image1 as storyboard map; @Image2 F21. Animate F21 in order. Vertical 9:16, 4K, high quality, high detail, photoreal live-action game-teaser commercial. Fast commercial pace and dynamic camera movement where required.
+
+Motion:
+@Image2 F21: Low afterimage decays into a clean title-safe field; no generated typography inside the video. Synchronized diegetic sound: rooftop-wind decay and restrained mechanical tail only.
+
+Camera: Hold the low afterimage and let density decay without inventing text or logos.
+
+Keep: current PUBG CF grade; photoreal live-action commercial treatment; I DON&#x27;T BARGAIN-derived tactile texture/tone only as already bound; Dark Arts opening grammar and 04–06s interference where present; Paramo and Haven as separated map states; Seira aircraft/freefall/canopy/landing ownership; Seorin scope and body-command route; Shion Haven stair and exactly one controlled shot; Eryn sole Mortar operator; summer tactical/swimwear-street styling and current-title member identities; no actual gun for Seorin; no friendly target inside a scope; no readable PUBG HUD, generated logos or generated typography; final message text only in CF70 post; fan-made end treatment with no official partnership claim.</pre>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer>
+    Paste-ready prompts omit Timing / Exclude / Engine causality / Endpoint / Success criteria blocks. Diegetic sound is inside Motion lines. This public board documents video preflight authoring only; no official PUBG partnership or completed video is claimed.
+  </footer>
+</body>
+</html>
