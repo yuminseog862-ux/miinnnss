@@ -132,6 +132,87 @@ function ProjectMediaFigure({ project }: { project: PortfolioProject }) {
   );
 }
 
+const featuredHeroMedia = [
+  {
+    type: "youtube" as const,
+    eyebrow: "LOOM CF / RENA EYEWEAR",
+    title: "Different gazes meet",
+    description: "Loom Bouquet CF · public YouTube output",
+    src: "https://www.youtube.com/embed/br8NKQIHjOQ?rel=0&modestbranding=1",
+    href: "https://youtube.com/shorts/br8NKQIHjOQ?si=EpdZugwGNbmVoVQH",
+    stats: [
+      ["Views", "1,180"],
+      ["Likes", "9"],
+      ["Length", "20s"],
+    ],
+  },
+  {
+    type: "video" as const,
+    eyebrow: "IDOL / CF HARNESS",
+    title: "Process capture",
+    description: "Screen recording cut · harness review and production context",
+    src: "/loom-deck/media/harness-process-capture-full-cut.mp4",
+    stats: [
+      ["Source", "06:57 full"],
+      ["Removed", "06:13–06:20"],
+      ["Output", "17.1s / 24×"],
+    ],
+  },
+] as const;
+
+function FeaturedHeroMedia() {
+  return (
+    <div className={styles.heroMediaGrid} aria-label="Featured Loom and Harness media">
+      {featuredHeroMedia.map((media) => (
+        <article className={styles.heroMediaCard} key={media.title}>
+          <div className={`${styles.heroMediaViewport} ${media.type === "youtube" ? styles.heroMediaShort : styles.heroMediaScreen}`}>
+            {media.type === "youtube" ? (
+              <iframe
+                className={styles.heroMediaEmbed}
+                src={media.src}
+                title={`${media.eyebrow} — ${media.title}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+              />
+            ) : (
+              <video
+                className={styles.heroMediaVideo}
+                src={media.src}
+                controls
+                playsInline
+                preload="metadata"
+                aria-label={`${media.eyebrow} — ${media.title}`}
+              />
+            )}
+          </div>
+          <div className={styles.heroMediaMeta}>
+            <div>
+              <span className={styles.sectionLabel}>{media.eyebrow}</span>
+              <h2>{media.title}</h2>
+              <p>{media.description}</p>
+            </div>
+            <div className={styles.heroMediaStats} aria-label={`${media.title} metrics`}>
+              {media.stats.map(([label, value]) => (
+                <span key={label}>
+                  <small>{label}</small>
+                  <strong>{value}</strong>
+                </span>
+              ))}
+            </div>
+            {"href" in media && media.href ? (
+              <a className={styles.heroMediaSource} href={media.href} target="_blank" rel="noreferrer">
+                Open public output <ExternalLink size={14} />
+              </a>
+            ) : null}
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 export function Shell({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
   return (
     <main className={styles.page}>
@@ -161,27 +242,36 @@ export function Shell({ children, wide = false }: { children: React.ReactNode; w
 export function MasterHubPage() {
   return (
     <Shell wide>
-      <section className={styles.hero}>
+      <section className={`${styles.hero} ${styles.masterHero}`}>
         <div className={`${styles.heroText} ${styles.caseTitleBlock}`}>
-          <span className={styles.sectionLabel}>Portfolio</span>
+          <span className={styles.sectionLabel}>AI CONTENT PRODUCTION / IDOL · LOOM</span>
           <h1>{resumeProfile.headline}</h1>
-          <p className={`${styles.caseHeadline} ${styles.heroSubline}`}>{resumeProfile.subline}</p>
+          <p className={styles.heroSubline}>{resumeProfile.subline}</p>
+          <div className={styles.heroSignals} aria-label="Primary production formats">
+            <span><strong>MV</strong><small>Long-form</small></span>
+            <span><strong>CF</strong><small>Short-form</small></span>
+            <span><strong>Research first</strong><small>Target · Message · Reference</small></span>
+          </div>
           <div className={styles.heroActions}>
             <Link className={styles.primaryLink} href="#project-routes">
-              프로젝트 보기 <Layers size={16} />
+              대표 작업 보기 <Layers size={16} />
+            </Link>
+            <Link className={styles.secondaryLink} href="/ai-exploration">
+              하네스 작업 방식 <ArrowRight size={16} />
             </Link>
           </div>
         </div>
+        <FeaturedHeroMedia />
       </section>
 
       <section className={styles.explorationFeature}>
         <Link className={styles.explorationRoute} href="/ai-exploration">
           <div className={styles.explorationRouteCopy}>
             <span className={styles.sectionLabel}>Process Portfolio</span>
-            <h2>AI Production System</h2>
-            <p>기획·생성·편집·검토를 네 개의 Harness로 연결하고, 실제 제작의 성공과 실패에서 바뀐 기준까지 정리했습니다.</p>
+            <h2>IDOL / CF Harness</h2>
+            <p>타깃과 메시지, 호응 가능성이 높은 레퍼런스를 먼저 조사하고, 그 결과를 MV와 Commercial Film 제작 워크플로우로 연결합니다.</p>
             <span className={styles.explorationRouteAction}>
-              제작 시스템 보기 <ArrowRight size={16} />
+              하네스 작업 방식 보기 <ArrowRight size={16} />
             </span>
           </div>
           <div className={styles.explorationRouteMedia}>
@@ -192,8 +282,9 @@ export function MasterHubPage() {
 
       <section className={styles.section} id="project-routes">
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Portfolio Links</span>
-          <h2>Projects</h2>
+          <span className={styles.sectionLabel}>Selected Work</span>
+          <h2>대표 프로젝트</h2>
+          <p>기획 의도, 제작 범위, 검토 기준과 결과물은 각 프로젝트 페이지에서 이어집니다.</p>
         </div>
         <ProjectOutcomeList />
       </section>
