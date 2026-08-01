@@ -270,17 +270,22 @@ export function MasterHubPage() {
     <Shell wide>
       <section className={`${styles.hero} ${styles.masterHero}`}>
         <div className={styles.heroText}>
-          <h1 className={`${styles.heroTitle} ${styles.heroSystemTitle}`}>
-            {resumeProfile.headline.replace(/\n/g, " ")}
+          <span className={styles.heroSystemEyebrow}>AI CONTENT PRODUCTION / IDOL · CF</span>
+          <h1 className={`${styles.heroTitle} ${styles.heroHarnessTitle}`}>
+            {resumeProfile.headline}
           </h1>
+          <p className={styles.heroMessageSupport}>
+            {resumeProfile.heroStatementLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </p>
+          <SelectedWorkIndex />
           <Link className={styles.heroWorkLink} href="#project-routes">
-            Selected Work 보기 <ArrowRight size={16} />
+            대표 작업 보기 <ArrowRight size={16} />
           </Link>
         </div>
         <FeaturedHeroOutput />
       </section>
-
-      <SelectedWorkIndex />
 
       <section className={styles.section} id="project-routes">
         <div className={styles.sectionHeader}>
