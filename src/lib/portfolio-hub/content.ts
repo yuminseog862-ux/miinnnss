@@ -38,9 +38,9 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "AI Creative Portfolio",
+  headline: "타깃을 먼저 읽고,\nMV와 CF를 제작합니다.",
   subline:
-    "AI를 활용해 콘텐츠의 의도와 사용자에게 남길 인상을 숏폼 훅, 장면 흐름, 이미지·영상 콘텐츠로 기획하고 제작해 온 AI Creative 포트폴리오입니다.",
+    "IDOL·Loom을 중심으로 타깃과 메시지를 먼저 조사하고, 호응 가능성이 높은 레퍼런스를 고른 뒤 MV와 Commercial Film을 하네스 기반 워크플로우로 제작합니다.",
   profile:
     "브랜드·제품·IP 아이디어를 숏폼 영상, 이미지/음악 콘텐츠, 콘텐츠형 서비스 프로토타입으로 구현해왔습니다. 무신사 AI 광고제에서는 캠페인 콘셉트를 30초 광고 흐름으로 구체화했고, Loom에서는 13명 AI 아이돌 IP를 Root Signal, Pulso 트랙과 멤버 아카이브·Harne 투표가 있는 웹페이지로 연결했으며, ADSB에서는 브랜드 무드와 피드백을 AI 숏폼 제작 흐름으로 옮겼습니다. AHEYA는 Product/GTM 메시지를 공개 채널 콘텐츠와 시각 자산으로 풀어낸 보조 사례이고, SFTI-CMU는 감정 콘텐츠와 시각 정체성 아이디어를 영문 초록/포스터형 자료로 구조화한 리서치 커뮤니케이션 보조 사례입니다.",
   competencies: [

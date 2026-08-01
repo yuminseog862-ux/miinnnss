@@ -81,22 +81,182 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  min-height: 0;
-  padding: 30px 0 34px;
+  gap: 34px;
+  min-height: auto;
+  padding: clamp(52px, 8vw, 108px) 0 clamp(48px, 7vw, 86px);
 }
 
 .heroText {
-  align-content: end;
+  align-content: start;
+  max-width: 920px;
+  padding-top: clamp(28px, 5vw, 72px);
 }
 
 .heroText h1 {
-  font-size: 76px;
-  line-height: 0.95;
-  white-space: nowrap;
+  max-width: 640px;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.94;
+  white-space: pre-line;
+  letter-spacing: -0.055em;
 }
 
 .heroSubline {
+  max-width: 760px;
+  margin: 2px 0 0;
+  color: rgba(239, 244, 247, 0.72);
+  font-size: clamp(15px, 1.45vw, 19px);
+  line-height: 1.7;
+}
+
+.heroSignals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.heroSignals span {
+  display: grid;
+  flex: 1 1 0;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 14px 16px 14px 0;
+}
+
+.heroSignals span + span {
+  padding-left: 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.heroSignals strong {
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.heroSignals small {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  color: rgba(239, 244, 247, 0.5);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-overflow: ellipsis;
   white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.heroMediaGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: 16px;
+  width: min(100%, 1120px);
+}
+
+.heroMediaCard {
+  display: grid;
+  min-width: 0;
+  border: 1px solid rgba(230, 238, 242, 0.14);
+  background: rgba(7, 12, 14, 0.82);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.24);
+}
+
+.heroMediaViewport {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(135deg, rgba(145, 199, 220, 0.08), transparent 48%),
+    #010202;
+}
+
+.heroMediaEmbed,
+.heroMediaVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.heroMediaShort .heroMediaEmbed {
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 9 / 16;
+}
+
+.heroMediaVideo {
+  object-fit: contain;
+}
+
+.heroMediaMeta {
+  display: grid;
+  gap: 18px;
+  padding: 18px 20px 20px;
+  border-top: 1px solid rgba(230, 238, 242, 0.12);
+}
+
+.heroMediaMeta h2 {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.heroMediaMeta p {
+  margin: 8px 0 0;
+  color: rgba(239, 244, 247, 0.58);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.heroMediaStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(230, 238, 242, 0.12);
+  border-bottom: 1px solid rgba(230, 238, 242, 0.12);
+}
+
+.heroMediaStats span {
+  display: grid;
+  gap: 4px;
+  padding: 11px 10px 10px 0;
+}
+
+.heroMediaStats span + span {
+  padding-left: 10px;
+  border-left: 1px solid rgba(230, 238, 242, 0.12);
+}
+
+.heroMediaStats small {
+  color: rgba(239, 244, 247, 0.44);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroMediaStats strong {
+  color: var(--loom-cyan);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.heroMediaSource {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  color: #d6ff43;
+  font-size: 11px;
+  font-weight: 850;
+  text-decoration: none;
 }
 
 .heroActions,
@@ -344,19 +504,24 @@
 
 .outcomeList {
   display: grid;
-  gap: 14px;
+  gap: 0;
 }
 
 .outcomeCard {
   display: grid;
   gap: 22px;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  background:
-    radial-gradient(circle at 94% 0%, var(--project-glow), transparent 26%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.022)),
-    rgba(255, 255, 255, 0.035);
+  padding: 42px 0 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+}
+
+.outcomeCard:first-child {
+  border-top-color: rgba(214, 255, 67, 0.34);
+}
+
+.outcomeCard .caseMedia {
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .caseBoard {
@@ -390,6 +555,13 @@
 .caseTitleBlock h1,
 .caseTitleBlock h3 {
   white-space: nowrap;
+}
+
+.masterHero .caseTitleBlock h1 {
+  max-width: 640px;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.94;
+  white-space: pre-line;
 }
 
 .caseTitleBlock h1 {
@@ -2155,6 +2327,14 @@
 
   .heroSubline {
     font-size: clamp(13px, 3.4vw, 16px);
+  }
+
+  .heroMediaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroMediaShort .heroMediaEmbed {
+    max-height: 100%;
   }
 
   .caseTitleBlock h3 {
