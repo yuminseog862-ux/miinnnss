@@ -23614,6 +23614,43 @@
   padding-left: 10px;
 }
 
+.rationaleReviewCapture {
+  border-top: 1px solid rgba(8, 11, 10, 0.2);
+  margin: 18px 0 0;
+  padding-top: 10px;
+}
+
+.rationaleReviewCapture > video {
+  aspect-ratio: 1118 / 1036;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.rationaleReviewCapture figcaption {
+  align-items: start;
+  display: grid;
+  gap: 8px 10px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  margin-top: 9px;
+}
+
+.rationaleReviewCapture figcaption > span,
+.rationaleReviewCapture figcaption > small {
+  color: #536a00;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.rationaleReviewCapture figcaption > p {
+  color: #58635e;
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .page .rationaleRebuild .rationaleApiEvidence {
   gap: 7px;
   grid-template-columns: minmax(0, 1fr);
@@ -24308,6 +24345,301 @@
   margin-top: 26px;
 }
 
+.harnessCompositionHandoff {
+  background: var(--harness-ink);
+  border: 1px solid var(--line-strong);
+  margin: 18px 0 0;
+  overflow: hidden;
+}
+
+.harnessCompositionHandoff > header {
+  align-items: center;
+  border-bottom: 1px solid var(--line-strong);
+  display: flex;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 14px;
+}
+
+.harnessCompositionHandoff > header :is(span, strong),
+.harnessCompositionCopy > span,
+.harnessCompositionFiles > a > span,
+.harnessCompositionFiles em {
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessCompositionHandoff > header > span,
+.harnessCompositionCopy > span,
+.harnessCompositionFiles > a > span,
+.harnessCompositionFiles small {
+  color: #aebbb7;
+}
+
+.harnessCompositionHandoff > header > strong,
+.harnessCompositionFiles em {
+  color: var(--harness-human);
+}
+
+.harnessCompositionHandoffBody {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+}
+
+.harnessCompositionCopy {
+  display: grid;
+  align-content: center;
+  padding: 18px;
+}
+
+.harnessCompositionCopy h4 {
+  color: #edf3f0;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 540;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  margin: 16px 0 0;
+  word-break: keep-all;
+}
+
+.harnessCompositionCopy p {
+  color: #aebbb7;
+  font-size: 11px;
+  line-height: 1.62;
+  margin: 10px 0 0;
+  word-break: keep-all;
+}
+
+.harnessCompositionFiles {
+  border-left: 1px solid var(--line-strong);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.harnessCompositionFiles > a {
+  color: #edf3f0;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 154px;
+  padding: 16px;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.harnessCompositionFiles > a + a {
+  border-left: 1px solid var(--line-strong);
+}
+
+.harnessCompositionFiles > a:hover,
+.harnessCompositionFiles > a:focus-visible {
+  background: #111815;
+  outline: none;
+}
+
+.harnessCompositionFiles > a > strong {
+  font-size: 14px;
+  font-weight: 680;
+  letter-spacing: -0.03em;
+  margin-top: 18px;
+  word-break: keep-all;
+}
+
+.harnessCompositionFiles small {
+  align-self: start;
+  font-size: 9px;
+  line-height: 1.48;
+  margin-top: 6px;
+  word-break: keep-all;
+}
+
+.harnessCompositionFiles em {
+  align-items: center;
+  display: inline-flex;
+  font-style: normal;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+.harnessBoardAttachment {
+  background: var(--harness-ink);
+  border: 1px solid var(--line-strong);
+  margin: 18px 0 0;
+  overflow: hidden;
+}
+
+.harnessBoardAttachment > header {
+  align-items: center;
+  border-bottom: 1px solid var(--line-strong);
+  display: flex;
+  justify-content: space-between;
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.harnessBoardAttachment > header span,
+.harnessBoardAttachment > header strong {
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessBoardAttachment > header span {
+  color: #aebbb7;
+}
+
+.harnessBoardAttachment > header strong {
+  color: var(--harness-human);
+}
+
+.harnessBoardAttachmentBody {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+}
+
+.harnessBoardAttachmentVisual {
+  align-items: center;
+  background: #080b0d;
+  display: flex;
+  justify-content: center;
+  min-height: 420px;
+  overflow: hidden;
+  padding: 18px 0;
+  text-decoration: none;
+}
+
+.harnessBoardAttachmentVisual img {
+  display: block;
+  max-height: 560px;
+  object-fit: contain;
+  transition: opacity 180ms ease, transform 240ms ease;
+  width: 100%;
+}
+
+.harnessBoardAttachmentVisual:hover img {
+  opacity: 0.88;
+  transform: scale(1.012);
+}
+
+.harnessBoardAttachmentPrompt {
+  background: #0a0d0f;
+  border-left: 1px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 18px;
+}
+
+.harnessBoardAttachmentPrompt header {
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(174, 187, 183, 0.24);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 14px;
+}
+
+.harnessBoardAttachmentPrompt header span,
+.harnessBoardAttachmentPrompt header strong {
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessBoardAttachmentPrompt header span {
+  color: var(--harness-human);
+}
+
+.harnessBoardAttachmentPrompt header strong {
+  color: #aebbb7;
+}
+
+.harnessBoardAttachmentPrompt pre {
+  color: #dbe4e0;
+  flex: 1;
+  font: 11px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace;
+  margin: 16px 0 14px;
+  max-height: 450px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.harnessBoardAttachmentPrompt small {
+  border-top: 1px solid rgba(174, 187, 183, 0.24);
+  color: #aebbb7;
+  font-size: 9px;
+  line-height: 1.5;
+  padding-top: 12px;
+}
+
+.harnessBoardAttachmentCaption {
+  align-self: center;
+  border-top: 1px solid var(--harness-human);
+  margin: 0 18px;
+  padding: 18px 0 24px;
+}
+
+.harnessBoardAttachmentCaption > span {
+  color: var(--harness-human);
+  display: block;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessBoardAttachmentCaption h4 {
+  color: #edf3f0;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 520;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  margin: 20px 0 0;
+  word-break: keep-all;
+}
+
+.harnessBoardAttachmentCaption p {
+  color: #aebbb7;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+  max-width: 480px;
+  word-break: keep-all;
+}
+
+.harnessBoardAttachmentMeta {
+  border-top: 1px solid rgba(174, 187, 183, 0.24);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 22px;
+  padding-top: 12px;
+}
+
+.harnessBoardAttachmentMeta span {
+  color: #aebbb7;
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+.harnessBoardAttachmentLink {
+  align-items: center;
+  border-bottom: 1px solid var(--harness-human);
+  color: #edf3f0;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 750;
+  gap: 7px;
+  margin-top: 22px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+.harnessBoardAttachmentLink:hover {
+  color: var(--harness-human);
+}
+
 .harnessWorkbenchFigure {
   background: var(--harness-ink);
   margin: 0;
@@ -24507,7 +24839,7 @@
 .harnessCurrentFlow {
   border-bottom: 1px solid var(--line-strong);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   list-style: none;
   margin: 0;
   padding: 0;
@@ -24627,6 +24959,73 @@
     margin-top: 20px;
   }
 
+  .harnessCompositionHandoff > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    min-height: 58px;
+  }
+
+  .harnessCompositionHandoffBody {
+    display: block;
+  }
+
+  .harnessCompositionCopy {
+    padding: 18px 14px;
+  }
+
+  .harnessCompositionFiles {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .harnessCompositionFiles > a {
+    min-height: 0;
+    padding: 15px 14px;
+  }
+
+  .harnessCompositionFiles > a + a {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .harnessCompositionFiles > a > strong {
+    margin-top: 12px;
+  }
+
+  .harnessBoardAttachment > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    min-height: 58px;
+  }
+
+  .harnessBoardAttachmentBody {
+    display: block;
+  }
+
+  .harnessBoardAttachmentVisual {
+    min-height: 0;
+    padding: 12px 0;
+  }
+
+  .harnessBoardAttachmentPrompt {
+    border-left: 0;
+    border-top: 1px solid var(--line-strong);
+  }
+
+  .harnessBoardAttachmentPrompt pre {
+    max-height: none;
+  }
+
+  .harnessBoardAttachmentCaption {
+    margin-right: 0;
+    padding: 18px 14px 24px;
+  }
+
   .harnessSelectionBoard {
     border-top: 1px solid var(--line-strong);
   }
@@ -24712,5 +25111,465 @@
   .harnessNowDetails > div + div {
     border-left: 0;
     border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 840px) {
+  .rationaleReviewCapture figcaption {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .rationaleReviewCapture figcaption > small {
+    grid-column: 2;
+  }
+}
+
+/* 02 / VERSION LOG: show the revision as a readable decision record, not another dense system panel. */
+.page .systemSection.handoffSection .harnessNow {
+  width: min(1120px, 92%);
+  padding: 54px 0 64px;
+}
+
+.harnessNowHeader {
+  border-bottom: 1px solid rgba(174, 187, 183, 0.28);
+  margin-bottom: 38px;
+  padding-bottom: 14px;
+}
+
+.harnessNowHeader > span,
+.harnessNowDetails dt {
+  color: #aebbb7;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+
+.harnessNowHeader > strong {
+  font-size: 8px;
+  padding: 8px 10px;
+}
+
+.harnessNowLead {
+  max-width: 780px;
+}
+
+.harnessNowLead h3 {
+  color: #edf3f0;
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 540;
+  letter-spacing: -0.052em;
+  line-height: 1.08;
+}
+
+.harnessVersionRoute {
+  margin-top: 38px;
+}
+
+.harnessVersionList {
+  grid-template-columns: minmax(0, 0.46fr) minmax(0, 1.54fr);
+}
+
+.harnessVersionList > li {
+  min-height: 178px;
+  padding: 20px 24px 18px;
+}
+
+.harnessVersionList h4 {
+  margin-top: 24px;
+}
+
+.harnessVersionList p {
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 10px;
+}
+
+.harnessVersionList small {
+  font-size: 8px;
+  line-height: 1.55;
+  margin-top: 16px;
+}
+
+.harnessVersionArchived {
+  background: rgba(174, 187, 183, 0.035);
+}
+
+.harnessVersionArchived h4 {
+  color: #c2cbc7;
+  font-size: clamp(16px, 1.42vw, 21px);
+}
+
+.harnessVersionArchived p,
+.harnessVersionArchived small {
+  color: #899692;
+}
+
+.harnessVersionCurrent {
+  box-shadow: inset 3px 0 0 var(--harness-human);
+}
+
+.harnessVersionCurrent h4 {
+  font-size: clamp(25px, 2.48vw, 36px);
+  line-height: 1.12;
+}
+
+.harnessVersionCurrent p {
+  color: #d8e2dd;
+  max-width: 620px;
+}
+
+.harnessReviewSurfaces {
+  grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+  margin-top: 16px;
+}
+
+.harnessWorkbenchFigure > header,
+.harnessSelectionBoard > header {
+  min-height: 52px;
+  padding: 0 18px;
+}
+
+.harnessWorkbenchFigure > header :is(span, strong),
+.harnessSelectionBoard > header :is(span, strong, small) {
+  font-size: 8px;
+}
+
+.harnessWorkbenchFigure figcaption {
+  font-size: 8px;
+  min-height: 50px;
+  padding: 0 18px;
+}
+
+.harnessSelectionRows > section {
+  gap: 12px;
+  grid-template-columns: 80px minmax(0, 1fr) auto;
+  min-height: 76px;
+  padding: 9px 14px;
+}
+
+.harnessSelectionRows > section > img {
+  height: 52px;
+  width: 80px;
+}
+
+.harnessSelectionRows span,
+.harnessSelectionBoard > figure figcaption {
+  font-size: 8px;
+}
+
+.harnessSelectionRows strong {
+  font-size: 11px;
+}
+
+.harnessSelectionActions button {
+  font-size: 8px;
+  min-width: 42px;
+  padding: 8px 7px;
+}
+
+.harnessSelectionBoard > figure {
+  padding: 10px 10px 9px;
+}
+
+.harnessSelectionBoard > figure img {
+  height: 132px;
+}
+
+.harnessSelectionBoard > footer {
+  font-size: 8px;
+  min-height: 50px;
+  padding: 0 18px;
+}
+
+.harnessCompositionHandoff,
+.harnessBoardAttachment {
+  margin-top: 26px;
+}
+
+.harnessCompositionHandoff > header,
+.harnessBoardAttachment > header {
+  min-height: 50px;
+  padding: 0 18px;
+}
+
+.harnessCompositionHandoff > header :is(span, strong),
+.harnessBoardAttachment > header :is(span, strong) {
+  font-size: 8px;
+}
+
+.harnessCompositionCopy {
+  padding: 24px;
+}
+
+.harnessCompositionCopy h4 {
+  font-size: clamp(23px, 2.1vw, 30px);
+  margin-top: 18px;
+}
+
+.harnessCompositionCopy p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.harnessCompositionFiles > a {
+  min-height: 178px;
+  padding: 20px;
+}
+
+.harnessCompositionFiles > a > strong {
+  font-size: 16px;
+  margin-top: 22px;
+}
+
+.harnessCompositionFiles small {
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.harnessBoardAttachmentBody {
+  gap: 0;
+  grid-template-columns: minmax(0, 1.1fr) minmax(330px, 0.9fr);
+}
+
+.harnessBoardAttachmentVisual {
+  min-height: 340px;
+  padding: 0;
+}
+
+.harnessBoardAttachmentVisual img {
+  max-height: 480px;
+}
+
+.harnessBoardAttachmentPrompt {
+  padding: 24px;
+}
+
+.harnessBoardAttachmentPrompt pre {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 20px 0 18px;
+}
+
+.harnessBoardAttachmentCaption {
+  margin: 0 24px;
+  padding: 24px 0 30px;
+}
+
+.harnessBoardAttachmentCaption > span,
+.harnessBoardAttachmentMeta span {
+  font-size: 8px;
+}
+
+.harnessBoardAttachmentCaption h4 {
+  font-size: clamp(28px, 2.7vw, 38px);
+  margin-top: 22px;
+}
+
+.harnessBoardAttachmentCaption p {
+  font-size: 13px;
+  line-height: 1.72;
+  margin-top: 14px;
+  max-width: 620px;
+}
+
+.harnessBoardAttachmentMeta {
+  margin-top: 26px;
+  padding-top: 14px;
+}
+
+.harnessBoardAttachmentLink {
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.harnessNowDetails {
+  margin-top: 38px;
+}
+
+.harnessNowDetails > div {
+  min-height: 132px;
+  padding: 22px 24px 20px;
+}
+
+.harnessNowDetails dd {
+  font-size: 14px;
+  line-height: 1.62;
+  margin-top: 24px;
+}
+
+@media (max-width: 840px) {
+  .page .systemSection.handoffSection .harnessNow {
+    padding: 38px 0 44px;
+    width: 100%;
+  }
+
+  .harnessNowHeader {
+    margin-bottom: 28px;
+    padding-bottom: 12px;
+  }
+
+  .harnessNowLead h3 {
+    font-size: clamp(31px, 9.4vw, 42px);
+    line-height: 1.13;
+  }
+
+  .harnessVersionRoute {
+    margin-top: 28px;
+  }
+
+  .harnessVersionList > li {
+    padding: 18px 16px;
+  }
+
+  .harnessVersionList h4 {
+    margin-top: 18px;
+  }
+
+  .harnessVersionCurrent h4 {
+    font-size: 27px;
+  }
+
+  .harnessReviewSurfaces {
+    margin-top: 14px;
+  }
+
+  .harnessWorkbenchFigure > header,
+  .harnessSelectionBoard > header,
+  .harnessCompositionHandoff > header,
+  .harnessBoardAttachment > header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .harnessSelectionRows > section {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .harnessSelectionActions {
+    grid-column: 1 / -1;
+  }
+
+  .harnessSelectionBoard > footer {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .harnessCompositionHandoff,
+  .harnessBoardAttachment {
+    margin-top: 20px;
+  }
+
+  .harnessCompositionCopy,
+  .harnessCompositionFiles > a,
+  .harnessBoardAttachmentPrompt {
+    padding: 18px 14px;
+  }
+
+  .harnessCompositionFiles > a {
+    min-height: 0;
+  }
+
+  .harnessBoardAttachmentVisual {
+    min-height: 0;
+  }
+
+  .harnessBoardAttachmentCaption {
+    margin: 0 14px;
+    padding: 20px 0 26px;
+  }
+
+  .harnessNowDetails {
+    margin-top: 30px;
+  }
+
+  .harnessNowDetails > div {
+    padding: 20px 0;
+  }
+
+  .harnessNowDetails dd {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+}
+
+/* 03 / review capture belongs to the proof plane, not the explanatory column. */
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewEvidenceMedia {
+  align-self: start;
+  height: 612px;
+  grid-template-rows: 178px minmax(0, 1fr) 72px;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture {
+  background: #060908;
+  border: 1px solid rgba(237, 243, 240, 0.18);
+  display: grid;
+  gap: 0;
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.42fr) minmax(212px, 0.58fr);
+  grid-row: 2;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture > video {
+  aspect-ratio: auto;
+  background: transparent;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption {
+  align-items: flex-start;
+  background: #0c2a43;
+  border-left: 1px solid rgba(201, 220, 235, 0.25);
+  color: #e6f0f5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption > span,
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption > small {
+  color: var(--chapter-lime);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption > p {
+  color: #d2e0e8;
+  font-size: 12px;
+  line-height: 1.62;
+  margin: 0;
+}
+
+.page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewEvidenceMedia > .rationaleReviewMetricsRail {
+  grid-row: 3;
+}
+
+@media (max-width: 840px) {
+  .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewEvidenceMedia {
+    height: auto;
+    grid-template-rows: 160px auto auto;
+  }
+
+  .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 220px auto;
+  }
+
+  .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption {
+    border-left: 0;
+    border-top: 1px solid rgba(201, 220, 235, 0.25);
+    gap: 8px;
+    padding: 16px;
   }
 }
