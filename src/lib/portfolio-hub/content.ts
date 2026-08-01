@@ -45,6 +45,10 @@ export type PortfolioProject = {
 
 export const resumeProfile = {
   headline: "MV · CF HARNESS FLOW / AI CONTENT DIRECTION",
+  heroStatementLines: [
+    "타깃이 어디에서 멈추고 무엇을 기억해야 하는지 정한 뒤,",
+    "Harness 워크플로우로 AI 기반 MV·CF 콘텐츠를 만듭니다.",
+  ],
   homeAbout:
     "패션·브랜드·엔터테인먼트 맥락에서 타깃의 반응과 메시지를 읽고, 장면 설계부터 AI 제작·검수까지 연결합니다.",
   homeFocus: "AI 콘텐츠 기획·제작 · 패션·브랜드·엔터테인먼트 콘텐츠",

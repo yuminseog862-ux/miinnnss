@@ -124,6 +124,58 @@
   line-height: 1.14;
 }
 
+.heroSystemEyebrow {
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heroHarnessTitle {
+  max-width: 1160px;
+  color: #f8fbfc;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(30px, 3.35vw, 46px);
+  font-weight: 850;
+  letter-spacing: 0.012em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.heroMessageTitle {
+  display: grid;
+  gap: 0;
+  max-width: 1160px;
+  color: #f8fbfc;
+  font-size: clamp(32px, 3.35vw, 52px);
+  letter-spacing: -0.07em;
+  line-height: 1.08;
+  white-space: normal;
+}
+
+.heroMessageTitle > span {
+  display: block;
+}
+
+.heroMessageSupport {
+  display: grid;
+  gap: 0;
+  max-width: 1080px;
+  margin: 2px 0 0;
+  color: rgba(232, 242, 246, 0.72);
+  font-size: clamp(17px, 1.7vw, 24px);
+  font-weight: 760;
+  letter-spacing: -0.05em;
+  line-height: 1.35;
+}
+
+.heroMessageSupport > span {
+  display: block;
+}
+
 .heroSubline {
   max-width: none;
   margin: 0;
@@ -3031,6 +3083,31 @@
   .heroSystemTitle {
     font-size: clamp(11px, 3.2vw, 22px);
     letter-spacing: 0.012em;
+  }
+
+  .heroSystemEyebrow {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+  }
+
+  .heroHarnessTitle {
+    max-width: 100%;
+    overflow: hidden;
+    font-size: clamp(22px, 5.8vw, 30px);
+    letter-spacing: 0.012em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .heroMessageTitle {
+    font-size: clamp(25px, 7vw, 36px);
+    letter-spacing: -0.07em;
+    line-height: 1.08;
+  }
+
+  .heroMessageSupport {
+    font-size: clamp(13px, 3.8vw, 18px);
+    line-height: 1.35;
   }
 
   .heroSubline {
