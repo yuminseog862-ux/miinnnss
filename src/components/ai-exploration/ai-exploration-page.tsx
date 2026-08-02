@@ -968,6 +968,11 @@ export function AiExplorationPage() {
                 <p>
                   {channelPerformanceSnapshot.contentCases[0].metrics} 공개 수치에는 TikTok admin audience 데이터나 인과 분석이 없으므로, 채널·콘텐츠 신호로만 해석합니다.
                 </p>
+                <p>
+                  <Link href="/content-performance#learning-loop">
+                    Content Learning Loop 상세 보기
+                  </Link>
+                </p>
               </div>
             </div>
             <div className={styles.channelLearningSteps}>

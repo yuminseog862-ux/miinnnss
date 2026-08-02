@@ -25524,9 +25524,9 @@
 
 .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption {
   align-items: flex-start;
-  background: #0c2a43;
-  border-left: 1px solid rgba(201, 220, 235, 0.25);
-  color: #e6f0f5;
+  background: linear-gradient(145deg, #0d1512 0%, #060807 100%);
+  border-left: 1px solid rgba(200, 255, 69, 0.38);
+  color: #edf2ee;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -25544,7 +25544,7 @@
 }
 
 .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption > p {
-  color: #d2e0e8;
+  color: #c2ccc6;
   font-size: 12px;
   line-height: 1.62;
   margin: 0;
@@ -25568,7 +25568,7 @@
 
   .page .rationaleRebuild :global(#rationale-multi-image-review) .rationaleReviewCapture figcaption {
     border-left: 0;
-    border-top: 1px solid rgba(201, 220, 235, 0.25);
+    border-top: 1px solid rgba(200, 255, 69, 0.38);
     gap: 8px;
     padding: 16px;
   }
