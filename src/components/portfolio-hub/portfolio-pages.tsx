@@ -3,12 +3,13 @@ import { ArrowRight, CheckCircle2, ExternalLink, Music2, Route, Twitter, Youtube
 import { ExpandableMediaFigure } from "./expandable-media";
 import { HarnessMediaFigure } from "./harness-media";
 import styles from "./portfolio-hub.module.css";
+import { contentLearningCase } from "@/lib/portfolio-hub/content-learning";
 import { getProject, projects, resumeProfile, type PortfolioProject } from "@/lib/portfolio-hub/content";
 
 const navItems = [
   { href: "/#project-routes", label: "Work" },
   { href: "/#harness", label: "Process" },
-  { href: "/content-performance", label: "Metrics" },
+  { href: "/content-performance#learning-loop", label: "Learning" },
   { href: "/#about", label: "About" },
 ];
 
@@ -263,6 +264,37 @@ function HarnessFeature() {
   );
 }
 
+function ContentLearningTeaser() {
+  const teaser = contentLearningCase.teaser;
+
+  return (
+    <section className={styles.learningTeaser} id="content-learning" aria-labelledby="content-learning-title">
+      <div className={styles.learningTeaserCopy}>
+        <span className={styles.projectLabel}>{teaser.label}</span>
+        <h2 id="content-learning-title">{teaser.title}</h2>
+        <p>{teaser.connectLine}</p>
+        <dl className={styles.learningTeaserFacts}>
+          <div>
+            <dt>창작 타깃</dt>
+            <dd>{teaser.targetLine}</dd>
+          </div>
+          <div>
+            <dt>발견한 간극</dt>
+            <dd>{teaser.gapLine}</dd>
+          </div>
+        </dl>
+      </div>
+      <div className={styles.learningTeaserAside}>
+        <span>Signal → Scene</span>
+        <strong>반응 신호를 다음 메시지·컷 설계로 되돌린 학습 사례</strong>
+        <Link className={styles.primaryLink} href={teaser.ctaHref}>
+          {teaser.ctaLabel} <ArrowRight size={16} />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 export function MasterHubPage() {
   const [loomProject, ...remainingPrimaryProjects] = primaryProjects;
 
@@ -295,6 +327,7 @@ export function MasterHubPage() {
         </div>
         <ProjectOutcomeList projectsToRender={loomProject ? [loomProject] : []} />
         <HarnessFeature />
+        <ContentLearningTeaser />
         <ProjectOutcomeList projectsToRender={remainingPrimaryProjects} />
       </section>
 

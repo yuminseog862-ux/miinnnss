@@ -171,9 +171,9 @@ export const projects: PortfolioProject[] = [
         description: "Loom Spec Commercial 페이지로 바로 이동",
       },
       {
-        label: "Metrics",
-        href: "/content-performance#loom-metrics",
-        description: "Loom/Pulso TikTok·YouTube 대표 성과 지표로 이동",
+        label: "Content Learning",
+        href: "/content-performance#learning-loop",
+        description: "반응 신호를 다음 메시지·컷 설계로 연결한 Content Learning Loop",
       },
     ],
     socialLinks: [

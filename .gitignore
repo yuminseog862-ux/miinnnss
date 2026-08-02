@@ -12,3 +12,4 @@ pnpm-workspace.yaml
 tmp/
 archive/unused-media/
 tsconfig.tsbuildinfo
+secrets/

@@ -2413,6 +2413,1936 @@
   font-size: 11px;
 }
 
+/* —— Content Learning Loop —— */
+/* Portfolio key color: cyan lead, ice text, violet for “next”, amber for not-exposed */
+
+.learningHero,
+.learningSnapshotBand,
+.learningStageStack,
+.learningMessageStrip,
+.learningDecisionBand,
+.learningEvidenceStack,
+.learningNextCore {
+  --learn-accent: var(--loom-cyan);
+  --learn-accent-hot: #b6e0ef;
+  --learn-accent-dim: rgba(145, 199, 220, 0.16);
+  --learn-accent-line: rgba(145, 199, 220, 0.38);
+  --learn-violet: var(--loom-violet);
+  --learn-violet-dim: rgba(170, 181, 255, 0.14);
+  --learn-amber: #f2b15c;
+  --learn-panel: linear-gradient(
+    165deg,
+    rgba(145, 199, 220, 0.07) 0%,
+    rgba(255, 255, 255, 0.035) 42%,
+    rgba(255, 255, 255, 0.018) 100%
+  );
+  --learn-panel-edge: rgba(230, 238, 242, 0.11);
+  --learn-ink: #f4f8fa;
+  --learn-mute: rgba(232, 242, 246, 0.62);
+}
+
+.learningHero {
+  padding: 44px 0 28px;
+}
+
+.learningHeroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.68fr) minmax(280px, 0.32fr);
+  gap: 26px;
+  align-items: end;
+}
+
+.learningHeroSolo {
+  display: grid;
+  gap: 16px;
+  max-width: none;
+  width: 100%;
+}
+
+/* Core route: 처음에 → 바꾼 것 → 다음 과제 + V1–V3 */
+.learningRouteFlow {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+  padding: 18px 18px 20px;
+  border: 1px solid var(--learn-accent-line, rgba(145, 199, 220, 0.34));
+  border-radius: 12px;
+  background:
+    linear-gradient(105deg, rgba(145, 199, 220, 0.12), transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(170, 181, 255, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  box-shadow:
+    0 0 0 1px rgba(145, 199, 220, 0.06),
+    0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+.learningRouteFlowHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px 18px;
+}
+
+.learningRouteFlowHead > div {
+  display: grid;
+  gap: 6px;
+}
+
+.learningRouteFlowTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(18px, 2.1vw, 26px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.learningRouteFlowHead p {
+  margin: 0;
+  color: var(--learn-mute, rgba(239, 244, 247, 0.62));
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.learningRouteTrack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1.08fr) 28px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningRouteStep {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+  padding: 16px 15px 15px;
+  border: 1px solid var(--learn-panel-edge, rgba(230, 238, 242, 0.12));
+  border-top: 3px solid rgba(145, 199, 220, 0.55);
+  border-radius: 10px;
+  background: var(--learn-panel, rgba(255, 255, 255, 0.03));
+}
+
+.learningRouteStep[data-step="before"] {
+  border-top-color: rgba(184, 190, 198, 0.72);
+}
+
+.learningRouteStep[data-step="changed"] {
+  border-top-color: rgba(145, 199, 220, 0.92);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(145, 199, 220, 0.12), transparent 48%),
+    var(--learn-panel, rgba(255, 255, 255, 0.03));
+}
+
+.learningRouteStep[data-step="next"] {
+  border-color: rgba(170, 181, 255, 0.36);
+  border-top-color: var(--learn-violet, #aab5ff);
+  background:
+    radial-gradient(circle at 10% 0%, var(--learn-violet-dim, rgba(170, 181, 255, 0.16)), transparent 50%),
+    var(--learn-panel, rgba(255, 255, 255, 0.03));
+  box-shadow: 0 0 28px rgba(170, 181, 255, 0.08);
+}
+
+.learningRouteMeta {
+  display: grid;
+  gap: 5px;
+}
+
+.learningRouteVersion {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(145, 199, 220, 0.4);
+  background: linear-gradient(180deg, rgba(145, 199, 220, 0.22), rgba(145, 199, 220, 0.08));
+  color: #e8f6fb;
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 18px rgba(145, 199, 220, 0.22);
+}
+
+.learningRouteStep[data-step="before"] .learningRouteVersion {
+  border-color: rgba(184, 190, 198, 0.4);
+  background: linear-gradient(180deg, rgba(184, 190, 198, 0.18), rgba(184, 190, 198, 0.06));
+  color: #e6eaef;
+  box-shadow: none;
+}
+
+.learningRouteStep[data-step="next"] .learningRouteVersion {
+  border-color: rgba(170, 181, 255, 0.5);
+  background: linear-gradient(180deg, rgba(170, 181, 255, 0.28), rgba(170, 181, 255, 0.1));
+  color: #e8ebff;
+  box-shadow: 0 0 18px rgba(170, 181, 255, 0.28);
+}
+
+.learningRouteIndex {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.learningRouteStep[data-step="before"] .learningRouteIndex {
+  color: rgba(214, 220, 228, 0.78);
+}
+
+.learningRouteStep[data-step="next"] .learningRouteIndex {
+  color: #c8ceff;
+}
+
+.learningRouteMeta strong {
+  color: #ffffff;
+  font-size: clamp(16px, 1.4vw, 19px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.learningRouteMeta em {
+  color: rgba(169, 212, 227, 0.9);
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 820;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+.learningRouteStep[data-step="next"] .learningRouteMeta em {
+  color: #c8ceff;
+}
+
+.learningRouteStep > p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.84);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningRouteNowNote {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(145, 199, 220, 0.18);
+  background: rgba(145, 199, 220, 0.07);
+  color: rgba(239, 244, 247, 0.8);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.learningRouteNowNote span {
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.learningRouteStep > small {
+  color: var(--learn-mute, rgba(239, 244, 247, 0.55));
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 780;
+}
+
+.learningRouteArrow {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0;
+  color: rgba(145, 199, 220, 0.85);
+  position: relative;
+}
+
+.learningRouteArrowLine {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(145, 199, 220, 0.45),
+    transparent
+  );
+  opacity: 0.55;
+}
+
+.learningRouteArrow svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(145, 199, 220, 0.35));
+}
+
+.learningHeroCopy {
+  display: grid;
+  gap: 14px;
+}
+
+.learningHeroCopy h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(40px, 6.2vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.learningHeroLine {
+  max-width: 920px;
+  margin: 0;
+  color: var(--learn-accent-hot, var(--loom-ice));
+  font-size: clamp(17px, 1.55vw, 22px);
+  font-weight: 760;
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+.learningHeroBody {
+  max-width: 920px;
+  margin: 0;
+  color: var(--learn-mute, rgba(239, 244, 247, 0.72));
+  font-size: clamp(14px, 1.15vw, 16px);
+  line-height: 1.7;
+}
+
+.learningThesisAside {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  padding: 20px;
+  border: 1px solid rgba(145, 199, 220, 0.22);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(145, 199, 220, 0.14), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.learningThesisLine {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.learningThesisLine strong {
+  color: #ffffff;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.learningThesisLine span {
+  color: rgba(169, 212, 227, 0.9);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.learningThesisGap {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.72);
+  font-size: 13px;
+  line-height: 1.55;
+  padding-top: 10px;
+  border-top: 1px solid rgba(230, 238, 242, 0.1);
+}
+
+.learningThesisAlign {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningThesisAlign em {
+  color: var(--loom-cyan);
+  font-style: normal;
+  font-weight: 900;
+  margin-right: 6px;
+}
+
+.learningThesisRules {
+  display: grid;
+  gap: 6px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningThesisRules li {
+  color: rgba(239, 244, 247, 0.58);
+  font-size: 12px;
+  font-weight: 820;
+  line-height: 1.4;
+  padding-left: 12px;
+  border-left: 2px solid rgba(145, 199, 220, 0.4);
+}
+
+/* Thin V1–V3 strip */
+.learningMessageStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--learn-accent-line, rgba(230, 238, 242, 0.12));
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(145, 199, 220, 0.06), transparent 60%),
+    rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 0 1px rgba(145, 199, 220, 0.04);
+}
+
+.learningMessageStep {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-left: 1px solid rgba(145, 199, 220, 0.12);
+  background: transparent;
+  transition: background 160ms ease;
+}
+
+.learningMessageStep:first-child {
+  border-left: 0;
+}
+
+.learningMessageStep:hover {
+  background: rgba(145, 199, 220, 0.05);
+}
+
+.learningMessageStep header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.learningMessageStep header span {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 18px rgba(145, 199, 220, 0.35);
+}
+
+.learningMessageStepArrow {
+  color: rgba(145, 199, 220, 0.7);
+}
+
+.learningMessageStep strong {
+  color: rgba(169, 212, 227, 0.72);
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.02em;
+}
+
+.learningMessageStep p {
+  margin: 0;
+  color: var(--learn-ink, #ffffff);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.learningMessageStep small {
+  color: var(--learn-mute, rgba(239, 244, 247, 0.52));
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.learningSignature {
+  padding-top: 8px;
+}
+
+/* Compact channel snapshot at page top */
+.learningSnapshotBand {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--learn-accent-line, rgba(230, 238, 242, 0.12));
+  border-radius: 8px;
+  background:
+    linear-gradient(110deg, rgba(145, 199, 220, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  box-shadow:
+    0 0 0 1px rgba(145, 199, 220, 0.04),
+    0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+.learningSnapshotHead {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  color: var(--learn-accent-hot, var(--loom-cyan));
+}
+
+.learningSnapshotHead strong {
+  display: block;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.learningSnapshotHead span {
+  display: block;
+  margin-top: 2px;
+  color: var(--learn-mute, rgba(239, 244, 247, 0.55));
+  font-size: 11px;
+  font-weight: 780;
+  line-height: 1.4;
+}
+
+.learningSnapshotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.learningSnapshotGrid article {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(145, 199, 220, 0.12);
+}
+
+.learningSnapshotGrid span {
+  color: rgba(169, 212, 227, 0.92);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningSnapshotGrid strong {
+  color: var(--learn-accent-hot, #ffffff);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  text-shadow: 0 0 24px rgba(145, 199, 220, 0.22);
+}
+
+.learningSnapshotGrid p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.55);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* Vertical stages — no horizontal slide */
+.learningStageStack {
+  display: grid;
+  gap: 28px;
+}
+
+.learningStageBlock {
+  display: grid;
+  gap: 14px;
+  scroll-margin-top: 96px;
+}
+
+.learningStageHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.learningStageHeader > span {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  padding-top: 4px;
+  text-shadow: 0 0 20px rgba(145, 199, 220, 0.4);
+}
+
+.learningStageHeader h3 {
+  margin: 0 0 6px;
+  color: var(--learn-ink, #ffffff);
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.learningStageHeader p {
+  margin: 0;
+  color: var(--learn-mute, rgba(239, 244, 247, 0.7));
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 760px;
+}
+
+.learningStageBlock[id="stage-now"] .learningStageHeader > span {
+  color: #c8ceff;
+  text-shadow: 0 0 20px rgba(170, 181, 255, 0.35);
+}
+
+.learningStageBlock[id="stage-before"] .learningStageHeader > span {
+  color: var(--loom-steel);
+  text-shadow: none;
+}
+
+.learningStageBlock[id="stage-adjust"] .learningStageHeader > span {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+}
+
+.learningAdjustLevers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningAdjustLevers li {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(145, 199, 220, 0.35);
+  color: var(--learn-accent-hot, rgba(232, 242, 246, 0.9));
+  font-size: 12px;
+  font-weight: 820;
+  background: linear-gradient(180deg, rgba(145, 199, 220, 0.14), rgba(145, 199, 220, 0.05));
+}
+
+.learningStageCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.learningNextCore {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 18px 20px;
+  border: 1px solid rgba(170, 181, 255, 0.34);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(170, 181, 255, 0.16), transparent 46%),
+    radial-gradient(circle at 100% 100%, rgba(145, 199, 220, 0.1), transparent 40%),
+    rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 32px rgba(170, 181, 255, 0.08);
+}
+
+.learningNextCore h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(18px, 2vw, 24px);
+  letter-spacing: -0.03em;
+}
+
+.learningNextCore p {
+  margin: 0;
+  max-width: 820px;
+  color: rgba(239, 244, 247, 0.78);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.learningSceneCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  border: 1px solid rgba(230, 238, 242, 0.12);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(145, 199, 220, 0.11), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.016));
+  overflow: hidden;
+  scroll-margin-top: 96px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.learningSceneCard:hover {
+  border-color: rgba(145, 199, 220, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(145, 199, 220, 0.08),
+    0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.learningSceneCard[data-platform="YouTube"] {
+  border-color: rgba(145, 199, 220, 0.26);
+}
+
+.learningSceneCard[data-platform="TikTok"] {
+  border-color: rgba(230, 238, 242, 0.12);
+}
+
+/* Expanded card: video | headline metrics | detail/hypothesis panel (one unit) */
+.learningSceneCardBody {
+  display: grid;
+  grid-template-columns: minmax(176px, 220px) minmax(210px, 0.34fr) minmax(0, 1fr);
+  align-items: stretch;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.learningSceneCardAside {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px 14px 14px 12px;
+  border-left: 1px solid rgba(145, 199, 220, 0.16);
+  background:
+    linear-gradient(180deg, rgba(145, 199, 220, 0.07), transparent 36%),
+    rgba(0, 0, 0, 0.16);
+}
+
+.learningSceneAsideLabel {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.learningSceneCardAside .learningMetricRow {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.learningSceneCardAside .learningSceneRail {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 10px;
+}
+
+.learningSceneCardAside .learningSceneArrow {
+  display: none;
+}
+
+.learningSceneCardAside .learningSceneStep {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(230, 238, 242, 0.08);
+}
+
+.learningSceneCardAside .learningSceneStep:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Media column fills card height; embed covers with center crop (no empty void) */
+.learningSceneCardMedia {
+  display: block;
+  position: relative;
+  min-width: 0;
+  min-height: 360px;
+  background: #050708;
+  border-right: 1px solid rgba(230, 238, 242, 0.1);
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.learningSceneCardMediaInner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Fill column: scale 9:16 frame to cover height+width */
+.learningSceneCardMediaInner iframe {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%);
+}
+
+/*
+ * TikTok official embed includes chrome (top/bottom UI).
+ * Overscale and re-center so the subject sits in frame.
+ */
+.learningSceneCardMedia[data-platform="TikTok"] .learningSceneCardMediaInner iframe {
+  width: 128%;
+  height: 150%;
+  transform: translate(-50%, -47%);
+}
+
+.learningSceneCardMedia[data-platform="YouTube"] .learningSceneCardMediaInner iframe {
+  /* Shorts fill: slightly tall crop so letterbox doesn't dominate */
+  width: 100%;
+  height: 118%;
+  transform: translate(-50%, -50%);
+}
+
+.learningSceneCardCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  min-height: 100%;
+  padding: 12px 12px 12px 14px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(230, 238, 242, 0.08);
+}
+
+.learningSceneCardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  align-items: center;
+  color: rgba(239, 244, 247, 0.52);
+  font-size: 10px;
+  font-weight: 820;
+}
+
+.learningRankLabel {
+  color: #061014;
+  background: linear-gradient(180deg, #dff3fa, var(--loom-cyan));
+  border-radius: 999px;
+  padding: 2px 7px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 0 14px rgba(145, 199, 220, 0.4);
+}
+
+.learningSceneCardCopy h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.learningSceneCardDate {
+  color: rgba(239, 244, 247, 0.45);
+  font-size: 11px;
+  font-weight: 780;
+}
+
+.learningSceneCardCopy > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-size: 11px;
+  font-weight: 860;
+  text-decoration: none;
+}
+
+.learningSceneCardCopy > a:hover {
+  color: #ffffff;
+}
+
+/* Vertical metric stack fills right column snugly */
+.learningSceneHeadlineMetrics {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 2px 0 0;
+  flex: 1 1 auto;
+  align-content: start;
+}
+
+.learningSceneHeadlineMetrics div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(145, 199, 220, 0.08), rgba(0, 0, 0, 0.22));
+  border: 1px solid rgba(145, 199, 220, 0.12);
+}
+
+.learningSceneHeadlineMetrics dt {
+  color: rgba(169, 212, 227, 0.72);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningSceneHeadlineMetrics dd {
+  margin: 0;
+  color: var(--learn-accent-hot, #ffffff);
+  font-size: 15px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  text-align: right;
+  text-shadow: 0 0 16px rgba(145, 199, 220, 0.28);
+}
+
+.learningSceneOneLiner {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.72);
+  font-size: 11px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.learningSceneDetail {
+  margin-top: auto;
+  border-top: 1px solid rgba(145, 199, 220, 0.14);
+  padding-top: 6px;
+}
+
+.learningSceneDetail > summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-size: 11px;
+  font-weight: 880;
+  letter-spacing: 0.02em;
+  padding: 4px 0;
+}
+
+.learningSceneDetail > summary:hover {
+  color: #ffffff;
+}
+
+.learningSceneDetail > summary::-webkit-details-marker {
+  display: none;
+}
+
+.learningSceneDetail > summary::before {
+  content: "▸ ";
+  color: var(--loom-cyan);
+}
+
+.learningSceneDetail[open] > summary::before {
+  content: "▾ ";
+}
+
+.learningSceneDetailBody {
+  display: grid;
+  gap: 10px;
+  padding: 4px 0 2px;
+  max-height: min(52vh, 420px);
+  overflow: auto;
+}
+
+/* Archive Top 10: left TikTok / right YouTube */
+.learningArchiveColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.learningArchiveColumn {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(230, 238, 242, 0.1);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.learningArchiveColumn > header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--loom-cyan);
+}
+
+.learningArchiveColumn > header div {
+  display: grid;
+  gap: 2px;
+}
+
+.learningArchiveColumn > header strong {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.learningArchiveColumn > header span {
+  color: rgba(239, 244, 247, 0.52);
+  font-size: 11px;
+  font-weight: 820;
+}
+
+.learningArchiveList {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningArchiveList li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(230, 238, 242, 0.08);
+}
+
+.learningArchiveList li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.learningArchiveRank {
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 900;
+  padding-top: 3px;
+}
+
+.learningArchiveList a {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.learningArchiveList a:hover {
+  color: var(--loom-ice);
+}
+
+.learningArchiveList p {
+  margin: 4px 0 0;
+  color: rgba(239, 244, 247, 0.5);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.learningArchiveList dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.learningArchiveList dl div {
+  display: grid;
+  gap: 2px;
+}
+
+.learningArchiveList dt {
+  color: rgba(239, 244, 247, 0.42);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningArchiveList dd {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.88);
+  font-size: 12px;
+  font-weight: 880;
+  font-variant-numeric: tabular-nums;
+}
+
+.learningDetails {
+  border: 1px solid rgba(145, 199, 220, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(145, 199, 220, 0.05), transparent 40%),
+    rgba(255, 255, 255, 0.02);
+  padding: 0 16px 16px;
+  scroll-margin-top: 96px;
+}
+
+.learningDetails > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 880;
+  letter-spacing: -0.02em;
+}
+
+.learningDetails > summary::-webkit-details-marker {
+  display: none;
+}
+
+.learningDetails > summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  transition: transform 120ms ease;
+}
+
+.learningDetails[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.learningDetails > summary span {
+  color: rgba(169, 212, 227, 0.9);
+  font-size: 12px;
+  font-weight: 820;
+}
+
+.learningEvidenceStack {
+  display: grid;
+  gap: 12px;
+}
+
+.learningDecisionBand {
+  display: grid;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(145, 199, 220, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(120deg, rgba(145, 199, 220, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+}
+
+.learningDecisionBand > div p {
+  margin: 8px 0 0;
+  max-width: 820px;
+  color: var(--learn-mute, rgba(239, 244, 247, 0.68));
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningDecisionStrip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningDecisionStrip li {
+  display: grid;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(145, 199, 220, 0.08), rgba(0, 0, 0, 0.22));
+  border: 1px solid rgba(145, 199, 220, 0.14);
+}
+
+.learningDecisionStrip span {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.learningDecisionStrip strong {
+  color: rgba(239, 244, 247, 0.9);
+  font-size: 12px;
+  font-weight: 820;
+  line-height: 1.35;
+}
+
+.learningTargetBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr) auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.learningAnchor {
+  scroll-margin-top: 96px;
+}
+
+.learningTargetCard {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(145, 199, 220, 0.1), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.learningTargetCard[data-tone="gap"] {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(242, 177, 92, 0.12), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.learningTargetCard[data-tone="align"] {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(145, 199, 220, 0.18), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  border-color: rgba(145, 199, 220, 0.28);
+}
+
+.learningTargetCard strong {
+  color: #ffffff;
+  font-size: clamp(18px, 1.8vw, 24px);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.learningTargetCard p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.7);
+  font-size: 13px;
+  line-height: 1.58;
+}
+
+.learningTargetGap {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 6px;
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.learningMessageRail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  position: relative;
+}
+
+.learningMessageCard {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.018));
+}
+
+.learningMessageCard header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.learningMessageCard header span {
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.learningMessageCard header em {
+  color: rgba(239, 244, 247, 0.5);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 820;
+  letter-spacing: 0.02em;
+}
+
+.learningMessageCard h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.learningMessageCard > p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.7);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.learningMessageCard dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-top: 4px;
+  border-top: 1px solid rgba(230, 238, 242, 0.1);
+}
+
+.learningMessageCard dl div {
+  display: grid;
+  gap: 3px;
+}
+
+.learningMessageCard dt {
+  color: rgba(239, 244, 247, 0.48);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.learningMessageCard dd {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.82);
+  font-size: 13px;
+  font-weight: 820;
+  line-height: 1.4;
+}
+
+.learningMessageConnector {
+  display: none;
+}
+
+.learningSignalStack {
+  display: grid;
+  gap: 28px;
+}
+
+.learningPlatformRail {
+  display: grid;
+  gap: 14px;
+  padding: 4px 0 0;
+}
+
+.learningPlatformRailHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(145, 199, 220, 0.22);
+}
+
+.learningPlatformRailHeader > svg {
+  color: var(--loom-cyan);
+  margin-top: 2px;
+}
+
+.learningPlatformRailHeader strong {
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.learningPlatformRailHeader p {
+  margin: 6px 0 0;
+  color: rgba(239, 244, 247, 0.62);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningObservationList {
+  display: grid;
+  gap: 16px;
+}
+
+.learningObservationCard {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(145, 199, 220, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+  scroll-margin-top: 96px;
+}
+
+.learningObservationHeader {
+  display: grid;
+  gap: 8px;
+}
+
+.learningObservationMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  color: rgba(239, 244, 247, 0.55);
+  font-size: 11px;
+  font-weight: 820;
+}
+
+.learningPlatformPill {
+  color: #061014;
+  background: linear-gradient(180deg, #b6e0ef, var(--loom-cyan));
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  box-shadow: 0 0 12px rgba(145, 199, 220, 0.35);
+}
+
+.learningSceneCard[data-platform="YouTube"] .learningPlatformPill {
+  background: linear-gradient(180deg, #c5cbff, #aab5ff);
+  box-shadow: 0 0 12px rgba(170, 181, 255, 0.28);
+}
+
+.learningObservationHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.learningObservationHeader a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  color: var(--loom-cyan);
+  font-size: 12px;
+  font-weight: 860;
+  text-decoration: none;
+}
+
+.learningSourceLine {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.48);
+  font-size: 11px;
+  font-weight: 780;
+}
+
+.learningMetricRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, auto));
+  gap: 10px;
+  margin: 0;
+  width: fit-content;
+}
+
+.learningMetricRow div {
+  display: grid;
+  gap: 4px;
+  min-width: 88px;
+  padding: 10px 12px;
+  border: 1px solid rgba(230, 238, 242, 0.1);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.learningMetricRow dt {
+  color: rgba(239, 244, 247, 0.5);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.learningMetricRow dd {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Signature: Signal-to-Scene rail */
+.learningSceneRail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.05fr) auto minmax(0, 0.95fr);
+  gap: 10px;
+  align-items: stretch;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(145, 199, 220, 0.18);
+  background:
+    linear-gradient(90deg, rgba(145, 199, 220, 0.06), transparent 28%, transparent 72%, rgba(170, 181, 255, 0.05)),
+    rgba(0, 0, 0, 0.28);
+}
+
+.learningSceneStep {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.learningSceneStep > svg {
+  color: var(--loom-cyan);
+}
+
+.learningSceneStep > span {
+  color: rgba(169, 212, 227, 0.95);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.learningSceneStep p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.78);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningSceneStep ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learningSceneStep li {
+  position: relative;
+  padding-left: 12px;
+  color: rgba(239, 244, 247, 0.78);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.learningSceneStep li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--loom-cyan);
+}
+
+.learningSceneArrow {
+  display: grid;
+  place-items: center;
+  color: rgba(145, 199, 220, 0.7);
+  padding-top: 18px;
+}
+
+.learningNextCheck {
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 2px solid rgba(145, 199, 220, 0.5);
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.55;
+  background: rgba(145, 199, 220, 0.04);
+}
+
+.learningNextCheck strong {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--loom-ice);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningCutFlowPending {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border: 1px dashed rgba(230, 238, 242, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.learningCutFlowPending p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.58);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.learningCutFlowPending code {
+  color: var(--loom-cyan);
+  font-size: 11px;
+}
+
+.learningCutFlowCompare {
+  display: grid;
+  gap: 14px;
+}
+
+.learningFilmStrip {
+  display: grid;
+  gap: 10px;
+}
+
+.learningFilmFrames {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.learningFilmFrames figure {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  min-width: 0;
+}
+
+.learningFilmFrames img,
+.learningFilmPlaceholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #060808;
+  border: 1px solid rgba(230, 238, 242, 0.1);
+}
+
+.learningFilmFrames figcaption {
+  display: grid;
+  gap: 3px;
+}
+
+.learningFilmFrames figcaption strong {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.learningFilmFrames figcaption span {
+  color: rgba(239, 244, 247, 0.55);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.learningDecisionLoop {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.learningDecisionLoop li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 16px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.016));
+}
+
+.learningDecisionLoop li > span {
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.learningDecisionLoop h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.learningDecisionLoop p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.68);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.learningStudioBoard {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.learningCountryTableWrap {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.learningAdminGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.learningAdminCard {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 16px;
+  border: 1px dashed rgba(230, 238, 242, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.learningAdminCard > span {
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: rgba(242, 177, 92, 0.95);
+  border: 1px solid rgba(242, 177, 92, 0.35);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.learningAdminCard h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.learningAdminCard p {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.62);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.learningAdminFillNote {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border-left: 2px solid rgba(145, 199, 220, 0.45);
+  color: rgba(239, 244, 247, 0.62);
+  font-size: 12px;
+  line-height: 1.55;
+  background: rgba(145, 199, 220, 0.04);
+}
+
+.learningAggregateGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.learningAggregateCard {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid rgba(230, 238, 242, 0.13);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.016));
+}
+
+.learningAggregateCard > span {
+  color: var(--loom-cyan);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.learningAggregateCard strong {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.learningAggregateCard dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.learningAggregateCard dl div {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.learningAggregateCard dt {
+  color: rgba(239, 244, 247, 0.48);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningAggregateCard dd {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.learningMetricsTableBlock {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.learningMetricsTableHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.learningMetricsTableHeader h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.learningMetricsTableHeader span {
+  color: rgba(169, 212, 227, 0.88);
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.learningNotExposed {
+  color: var(--learn-amber, rgba(242, 177, 92, 0.92)) !important;
+  font-size: 11px !important;
+  font-weight: 820 !important;
+  white-space: nowrap;
+}
+
+/* Section labels on learning page keep cyan lead */
+.learningHero .sectionLabel,
+.learningStageBlock .sectionLabel,
+.learningNextCore .sectionLabel,
+.learningDecisionBand .sectionLabel,
+.learningSnapshotHead strong + span {
+  color: var(--learn-accent-hot, var(--loom-cyan));
+}
+
+/* Home teaser for Content Learning Loop */
+.learningTeaser {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-4) 0 var(--space-5);
+  border-top: 1px solid rgba(145, 199, 220, 0.28);
+  border-bottom: 1px solid rgba(230, 238, 242, 0.12);
+}
+
+.learningTeaserCopy {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.learningTeaserCopy h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.learningTeaserCopy p {
+  margin: 0;
+  color: rgba(232, 242, 246, 0.72);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.learningTeaserFacts {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+}
+
+.learningTeaserFacts div {
+  display: grid;
+  gap: 3px;
+}
+
+.learningTeaserFacts dt {
+  color: rgba(239, 244, 247, 0.48);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.learningTeaserFacts dd {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.82);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.learningTeaserAside {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  padding: 18px;
+  border: 1px solid rgba(145, 199, 220, 0.22);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(145, 199, 220, 0.14), transparent 48%),
+    rgba(255, 255, 255, 0.03);
+}
+
+.learningTeaserAside span {
+  color: rgba(169, 212, 227, 0.9);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.learningTeaserAside strong {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
 .performanceHero {
   padding: 44px 0 28px;
 }
@@ -2869,6 +4799,39 @@
   text-transform: uppercase;
 }
 
+/* Expanded cards: stack media+copy over aside when width is tight */
+@media (max-width: 1100px) {
+  .learningSceneCardBody {
+    grid-template-columns: minmax(160px, 200px) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .learningSceneCardMedia {
+    grid-row: 1;
+    min-height: 320px;
+  }
+
+  .learningSceneCardCopy {
+    grid-row: 1;
+    border-right: 0;
+  }
+
+  .learningSceneCardAside {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid rgba(145, 199, 220, 0.16);
+  }
+
+  .learningRouteTrack {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .learningRouteArrow {
+    display: none;
+  }
+}
+
 @media (max-width: 980px) {
   .hero,
   .harnessFeature,
@@ -2881,6 +4844,19 @@
   .performanceCaseGrid,
   .performanceEmbedGrid,
   .performanceTwoColumn,
+  .learningHeroGrid,
+  .learningTargetBoard,
+  .learningMessageRail,
+  .learningMessageStrip,
+  .learningSceneRail,
+  .learningArchiveColumns,
+  .learningDecisionLoop,
+  .learningDecisionStrip,
+  .learningAdminGrid,
+  .learningAggregateGrid,
+  .learningStudioBoard,
+  .learningTeaser,
+  .learningFilmFrames,
   .projectHeroGrid,
   .sftiHero,
   .outcomeBody,
@@ -2971,11 +4947,109 @@
     white-space: nowrap;
   }
 
+  .learningHeroCopy h1 {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
   .caseTitleBlock h1,
   .performanceHeroCopy h1,
+  .learningHeroCopy h1,
   .projectHero > h1,
   .sftiHeroCopy h1 {
     font-size: 42px;
+  }
+
+  .learningTargetGap {
+    justify-items: start;
+    grid-auto-flow: column;
+    align-items: center;
+    padding: 2px 0;
+  }
+
+  .learningSceneRail {
+    grid-template-columns: 1fr;
+  }
+
+  .learningSceneArrow {
+    padding-top: 0;
+    transform: rotate(90deg);
+    justify-self: start;
+  }
+
+  .learningFilmFrames {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow-x: auto;
+  }
+
+  .learningObservationMeta {
+    gap: 6px 10px;
+  }
+
+  .learningTeaser {
+    grid-template-columns: 1fr;
+  }
+
+  .learningAggregateCard dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .learningAdminGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .learningStageCards {
+    grid-template-columns: 1fr;
+  }
+
+  .learningRouteTrack {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .learningRouteArrow {
+    display: none;
+  }
+
+  .learningRouteArrowLine {
+    display: none;
+  }
+
+  .learningSceneCardBody {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .learningSceneCardMedia {
+    min-height: 360px;
+    height: min(62vw, 420px);
+    border-right: 0;
+    border-bottom: 1px solid rgba(230, 238, 242, 0.1);
+  }
+
+  .learningSceneCardCopy {
+    border-right: 0;
+    border-bottom: 1px solid rgba(230, 238, 242, 0.08);
+  }
+
+  .learningSceneCardMedia[data-platform="TikTok"] .learningSceneCardMediaInner iframe {
+    width: 128%;
+    height: 150%;
+    transform: translate(-50%, -47%);
+  }
+
+  .learningSceneCardAside {
+    border-left: 0;
+    border-top: 1px solid rgba(145, 199, 220, 0.16);
+  }
+
+  .learningSnapshotGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .learningArchiveList dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .heroSubline {
