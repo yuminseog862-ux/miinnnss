@@ -145,63 +145,109 @@ const harnessKeyContents = [
   "편집·게시 기록: 영상 프롬프트, 편집 설계, 최종 패키지, 게시 계획과 산출물 등록",
 ] as const;
 
-const featuredHeroOutputs = [
+/** Hero featured case: Content Learning Loop + top-2 public Shorts by views */
+const featuredLearningClips = [
   {
-    id: "loom-rena-eyewear",
-    eyebrow: "LOOM CF / RENA EYEWEAR",
-    title: "Different gazes meet",
-    src: "https://www.youtube.com/embed/br8NKQIHjOQ?rel=0&modestbranding=1",
-    href: "https://youtube.com/shorts/br8NKQIHjOQ?si=EpdZugwGNbmVoVQH",
-    details: [
-      ["Product", "Rena eyewear"],
-      ["Message", "Different gazes meet"],
-      ["Format", "20s CF"],
-    ],
-    stats: [
-      ["Views", "1,180"],
-      ["Likes", "9"],
-    ],
+    id: "xNfAkfhipSE",
+    platform: "YouTube" as const,
+    title: "Loom · They look at each other #Shorts",
+    embedSrc: "https://www.youtube.com/embed/xNfAkfhipSE?rel=0&modestbranding=1",
+    href: "https://www.youtube.com/shorts/xNfAkfhipSE",
+    views: "2,493",
+    likes: "22",
+  },
+  {
+    id: "rxwn61IROQc",
+    platform: "YouTube" as const,
+    title: "Loom · Rena · One chosen color starts the day #Shorts",
+    embedSrc: "https://www.youtube.com/embed/rxwn61IROQc?rel=0&modestbranding=1",
+    href: "https://www.youtube.com/shorts/rxwn61IROQc",
+    views: "1,114",
+    likes: "11",
   },
 ] as const;
 
-function FeaturedHeroOutput() {
+/** Same caseBoard stack as Loom / Harness — not a hero side-panel. */
+function ContentLearningCase() {
+  const teaser = contentLearningCase.teaser;
+  const messageStages = contentLearningCase.messageStages;
+
   return (
-    <section className={styles.heroProof} aria-labelledby="featured-output-title">
-      {featuredHeroOutputs.map((output, index) => (
-        <article className={styles.heroProofItem} key={output.id}>
-          <header className={styles.heroProofHeader}>
-            <div>
-              <span className={styles.sectionLabel}>{output.eyebrow}</span>
-              <h2 id={index === 0 ? "featured-output-title" : undefined}>{output.title}</h2>
-            </div>
-            <a className={styles.heroProofSource} href={output.href} target="_blank" rel="noreferrer">
-              YouTube Shorts 열기 <ExternalLink size={14} />
-            </a>
-          </header>
-          <div className={styles.heroProofStage}>
-            <div className={styles.heroProofFilm}>
-              <iframe
-                className={styles.heroProofEmbed}
-                src={output.src}
-                title={`${output.eyebrow} — ${output.title}`}
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-              />
-            </div>
+    <article
+      className={`${styles.outcomeCard} ${styles.learningCase}`}
+      id="content-learning"
+      aria-labelledby="content-learning-title"
+    >
+      <div className={styles.caseBoard}>
+        <div className={styles.caseText}>
+          <div className={styles.caseTitleBlock}>
+            <span className={styles.projectLabel}>{teaser.label}</span>
+            <h3 id="content-learning-title">Content Learning</h3>
+            <p className={styles.caseHeadline}>{teaser.title}</p>
+            <p className={styles.caseResult}>{teaser.resultLine}</p>
           </div>
-          <dl className={styles.heroProofRail} aria-label={`${output.title} project context and public metrics`}>
-            {[...output.details, ...output.stats].map(([label, value]) => (
-              <div key={label}>
-                <dt>{label}</dt>
-                <dd>{value}</dd>
+
+          <div className={styles.outcomeBody}>
+            <dl className={styles.projectReadout} aria-label="Learning emphasis">
+              {teaser.homeReadout.map((item) => (
+                <div key={item.label}>
+                  <dt>{item.label}</dt>
+                  <dd>{item.value}</dd>
+                </div>
+              ))}
+              {messageStages.map((stage) => (
+                <div key={stage.version}>
+                  <dt>{stage.version}</dt>
+                  <dd>
+                    <strong className={styles.heroLearningFactTitle}>
+                      {stage.title}
+                      <span className={styles.heroLearningFactCode}> · {stage.code}</span>
+                    </strong>
+                    <span className={styles.heroLearningFactBody}>{stage.focus}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className={styles.deckLinks}>
+            <Link className={styles.primaryLink} href={teaser.ctaHref}>
+              {teaser.ctaLabel} <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+
+        <div className={styles.heroLearningMediaBoard} aria-label="Top ranked learning clips">
+          {featuredLearningClips.map((clip, index) => (
+            <figure className={styles.heroLearningClip} key={clip.id}>
+              <div className={styles.heroLearningFilm}>
+                <iframe
+                  className={styles.heroLearningEmbed}
+                  src={clip.embedSrc}
+                  title={clip.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
-            ))}
-          </dl>
-        </article>
-      ))}
-    </section>
+              <figcaption className={styles.heroLearningClipMeta}>
+                <span>
+                  TOP {index + 1} · {clip.platform}
+                </span>
+                <strong>{clip.title}</strong>
+                <p>
+                  {clip.views} views · {clip.likes} likes
+                </p>
+                <a href={clip.href} target="_blank" rel="noreferrer">
+                  원문 열기 <ExternalLink size={13} />
+                </a>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -264,37 +310,6 @@ function HarnessFeature() {
   );
 }
 
-function ContentLearningTeaser() {
-  const teaser = contentLearningCase.teaser;
-
-  return (
-    <section className={styles.learningTeaser} id="content-learning" aria-labelledby="content-learning-title">
-      <div className={styles.learningTeaserCopy}>
-        <span className={styles.projectLabel}>{teaser.label}</span>
-        <h2 id="content-learning-title">{teaser.title}</h2>
-        <p>{teaser.connectLine}</p>
-        <dl className={styles.learningTeaserFacts}>
-          <div>
-            <dt>창작 타깃</dt>
-            <dd>{teaser.targetLine}</dd>
-          </div>
-          <div>
-            <dt>발견한 간극</dt>
-            <dd>{teaser.gapLine}</dd>
-          </div>
-        </dl>
-      </div>
-      <div className={styles.learningTeaserAside}>
-        <span>Signal → Scene</span>
-        <strong>반응 신호를 다음 메시지·컷 설계로 되돌린 학습 사례</strong>
-        <Link className={styles.primaryLink} href={teaser.ctaHref}>
-          {teaser.ctaLabel} <ArrowRight size={16} />
-        </Link>
-      </div>
-    </section>
-  );
-}
-
 export function MasterHubPage() {
   const [loomProject, ...remainingPrimaryProjects] = primaryProjects;
 
@@ -316,7 +331,6 @@ export function MasterHubPage() {
             대표 작업 보기 <ArrowRight size={16} />
           </Link>
         </div>
-        <FeaturedHeroOutput />
       </section>
 
       <section className={styles.section} id="project-routes">
@@ -325,9 +339,16 @@ export function MasterHubPage() {
           <h2>대표 프로젝트</h2>
           <p>역할·범위·결과물만 먼저 읽고, 상세 케이스로 이동할 수 있습니다.</p>
         </div>
-        <ProjectOutcomeList projectsToRender={loomProject ? [loomProject] : []} />
-        <HarnessFeature />
-        <ContentLearningTeaser />
+        {/*
+          Narrative stack (tight caseBoard strip):
+          Loom (IP product) → Content Learning (signal→scene) → Harness (production system)
+          Learning is not first: method follows the product it measures.
+        */}
+        <div className={styles.caseStack}>
+          <ProjectOutcomeList projectsToRender={loomProject ? [loomProject] : []} />
+          <ContentLearningCase />
+          <HarnessFeature />
+        </div>
         <ProjectOutcomeList projectsToRender={remainingPrimaryProjects} />
       </section>
 
@@ -340,6 +361,8 @@ export function MasterHubPage() {
         <ProjectOutcomeList projectsToRender={supportingProjects} />
       </section>
 
+      <PublicSurfacesSection />
+
       <PortfolioAbout />
     </Shell>
   );
@@ -347,10 +370,77 @@ export function MasterHubPage() {
 
 const selectedWorkIndex = [
   { number: "01", title: "Loom", detail: "AI IP · 3 MV / 3 CF", href: "#project-loom" },
-  { number: "02", title: "Harness", detail: "Research → production QA", href: "#harness" },
-  { number: "03", title: "MUSINSA", detail: "30s team ad", href: "#project-musinsa" },
-  { number: "04", title: "ADSB", detail: "15s short-form", href: "#project-adsb" },
+  { number: "02", title: "Learning", detail: "Signal → next cut", href: "#content-learning" },
+  { number: "03", title: "Harness", detail: "Research → production QA", href: "#harness" },
+  { number: "04", title: "MUSINSA", detail: "30s team ad", href: "#project-musinsa" },
+  { number: "05", title: "ADSB", detail: "15s short-form", href: "#project-adsb" },
 ] as const;
+
+/**
+ * Public surfaces — handles verified live:
+ * TikTok @loom_mm · YouTube @Loom-idol-m (alias @aheya-b, display Loom-m) · X @minnns_aheya
+ */
+const publicSurfaces = [
+  {
+    group: "SOCIAL / TIKTOK",
+    title: "@loom_mm",
+    detail: "Loom 멤버·트랙 숏폼 기록",
+    href: "https://www.tiktok.com/@loom_mm",
+  },
+  {
+    group: "SOCIAL / YOUTUBE",
+    title: "@Loom-idol-m",
+    detail: "Loom-m · Root Signal · Pulso · INK",
+    href: "https://www.youtube.com/@Loom-idol-m",
+  },
+  {
+    group: "SOCIAL / X",
+    title: "@minnns_aheya",
+    detail: "AI 탐구·제작 과정 기록",
+    href: "https://x.com/minnns_aheya",
+  },
+  {
+    group: "SIGNAL DECK / MAIN",
+    title: "Loom Signal Deck",
+    detail: "멤버 · 트랙 · 영상 · 참여 흐름",
+    href: "https://loom-signal-deck.vercel.app",
+  },
+  {
+    group: "SIGNAL DECK / VOTE",
+    title: "Vote",
+    detail: "다음 트랙·멤버 방향 투표",
+    href: "https://loom-signal-deck.vercel.app/vote",
+  },
+  {
+    group: "SIGNAL DECK / CF",
+    title: "Spec Commercial",
+    detail: "개인 비공식 Spec Commercial 아카이브",
+    href: "https://loom-signal-deck.vercel.app/cf",
+  },
+] as const;
+
+function PublicSurfacesSection() {
+  return (
+    <section className={`${styles.section} ${styles.publicSurfacesSection}`} id="public-surfaces">
+      <nav aria-label="Public social and Signal Deck links" className={styles.publicSurfacesGrid}>
+        {publicSurfaces.map((item) => (
+          <a
+            className={styles.publicSurfaceCard}
+            href={item.href}
+            key={item.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <span>{item.group}</span>
+            <strong>{item.title}</strong>
+            <small>{item.detail}</small>
+            <ExternalLink aria-hidden="true" size={14} />
+          </a>
+        ))}
+      </nav>
+    </section>
+  );
+}
 
 function SelectedWorkIndex() {
   return (

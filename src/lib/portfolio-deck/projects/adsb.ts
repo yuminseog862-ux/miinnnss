@@ -4,23 +4,24 @@ export const adsbSlides = [
   {
     no: 30,
     section: "ADSB",
-    title: "ADSB Overview",
-    label: "Second Main Case",
+    title: "ADSB AI-assisted Short-form Execution",
+    label: "2025 Industry–Academia Collaboration",
     accent: "violet",
     variant: "evidence",
-    intent: "ADSB를 AHEYA의 부록이 아니라 두 번째 메인 콘텐츠 크리에이션 케이스로 소개한다.",
+    intent: "ADSB를 브랜드 리서치와 피드백 반영을 바탕으로 한 독립적인 AI 숏폼 제작 사례로 소개한다.",
     claim:
-      "Andersson Bell 산학공동연구에서 dog-and-ball hook, prompt direction, image-to-video iteration으로 정리한 AI short-form creative direction case",
+      "Andersson Bell 브랜드 무드를 dog-and-ball hook과 고정 앵글 장면 규칙으로 좁히고, 후보 비교와 피드백 반영을 15초 숏폼으로 연결한 제작 사례",
     include: [
-      "Summary: 생성형 AI 기반 fashion short-form creative direction case",
-      "Period: 2025.09.01-2025.11.07 산학공동연구",
-      "My Role: dog-and-ball hook, motif rule, prompt direction, motion direction, image-to-video iteration",
-      "Boundary: 전체 브랜드 전략, 캠페인 성과, 최종 retouching 단독 기여는 주장하지 않음",
+      "Program: 생성형 AI기반 패션 브랜드 VIRTUAL CONTENT 개발",
+      "Period: 2025.09.01-2025.11.07",
+      "Role: brand research, shotboard, AI frame/motion direction, feedback revision",
+      "Boundary: 브랜드 전략 성과, 공식 캠페인, 최종 retouching 단독 기여는 주장하지 않음",
     ],
     slots: [
-      "Role: dog-and-ball hook / prompt & motion direction",
+      "Context: 2025 산학공동연구 · Andersson Bell",
+      "Role: brand research / shotboard / frame & motion direction",
       "Tools: Midjourney / Gemini / Nano Banana / Kling",
-      "Output: generated frames / Instagram Reel / short-form execution",
+      "Output: candidate frames / final Instagram Reel / revision record",
     ],
     media: { src: "/adsb/adsb-cover.webp", alt: "ADSB cover visual", label: "Final visual direction" },
     links: [
@@ -31,25 +32,25 @@ export const adsbSlides = [
       },
     ],
     note:
-      "핵심은 전체 브랜드 전략 소유가 아니라, 공유된 브랜드 reading을 dog-and-ball hook과 video-ready prompt/motion direction으로 좁힌 제작 판단이다.",
+      "핵심은 전체 브랜드 전략 소유가 아니라, 공유된 브랜드 해석을 dog-and-ball hook과 영상화 가능한 장면·움직임 방향으로 좁힌 제작 판단이다.",
   },
   {
     no: 32,
     section: "ADSB",
-    title: "Mood / Audience Insight",
-    label: "Mood Insight",
+    title: "Mood & First-frame Direction",
+    label: "Brand Reading",
     accent: "amber",
     variant: "matrix",
     custom: "portfolioMediaFocus",
-    intent: "ADSB를 감각적 취향이 아니라 브랜드 톤과 숏폼 소비 방식의 해석 결과로 보여준다.",
+    intent: "브랜드 톤을 첫 프레임의 모티프와 장면 규칙으로 번역한 과정을 보여준다.",
     claim:
-      "Mutated Mundane, 신호등, 횡단보도, 도시적 고정 앵글을 dog-and-ball motif와 연결해 첫 프레임의 읽힘을 높인 방향",
+      "Mutated Mundane, 신호등, 횡단보도, 도시적 고정 앵글을 dog-and-ball motif와 연결해 첫 프레임에서 모티프가 읽히도록 정리한 방향",
     include: ["Mutated Mundane", "Dog-and-ball hook", "Urban restraint", "First-frame readability"],
     slots: [
       "Mutated Mundane",
       "dog-and-ball hook",
       "fixed-angle urban sequence",
-      "Audience first-frame rule",
+      "First-frame rule",
     ],
     table: {
       headers: ["분석 요소", "본 내용", "콘텐츠 반영"],
@@ -114,7 +115,7 @@ export const adsbSlides = [
     custom: "portfolioCriteriaCards",
     intent: "AI를 단순 생성 도구가 아니라 제작 워크플로우로 활용한 방식을 단계별로 보여준다.",
     claim:
-      "AI was used as a workflow for brand mood, generated frames, motion testing, and feedback revision -- not as standalone asset generation proof.",
+      "브랜드 리서치 → 후보 프레임 제작·비교 → motion test → 피드백 반영으로 이어지는 AI-assisted 숏폼 제작 흐름",
     include: [
       "Brand reading",
       "Generated frames",
@@ -124,11 +125,11 @@ export const adsbSlides = [
       "Final retouching ownership은 주장하지 않음",
     ],
     slots: [
-      "Toolchain map",
-      "Image-to-video workflow",
-      "Correction rule: brand fit, impact, tone, cut flow",
-      "Feedback loop: report -> visual direction -> video",
-      "Final asset package",
+      "Production flow",
+      "Image-to-video test",
+      "Revision criteria: brand fit, impact, tone, cut flow",
+      "Feedback: report → visual direction → video",
+      "Output: candidate frames → final Reel",
     ],
     process: [
       "Brand reading",
@@ -142,14 +143,14 @@ export const adsbSlides = [
       rows: [
         ["Brand Reading", "공유된 브랜드 무드를 dog-and-ball hook과 urban fixed-angle rule로 압축", "creative direction"],
         ["Generated Frames", "Midjourney / Gemini / Nano Banana로 후보 frame을 만들고 비교", "frame options"],
-        ["Frame Adjustment", "subject, object, camera, lighting, negative constraint를 보정", "image readiness"],
+        ["Frame Adjustment", "객체·구도·배경·화면 배치를 조정", "image readiness"],
         ["Motion Test", "Kling으로 움직임과 컷 흐름이 유지되는지 테스트", "video readiness"],
         ["Feedback Revision", "피드백을 취향 코멘트가 아니라 다음 production rule로 반영", "revision loop"],
       ],
     },
     media: { src: "/adsb/adsb-production.webp", alt: "ADSB production workflow board", label: "Production workflow" },
     note:
-      "AI was used as a workflow for brand mood, generated frames, motion testing, and feedback revision -- not as standalone asset generation proof.",
+      "AI는 단독 이미지 생성 증거가 아니라, 브랜드 무드 해석·후보 비교·영상화·피드백 반영을 잇는 제작 흐름으로 활용했다.",
   },
   {
     no: 35,
@@ -235,27 +236,27 @@ export const adsbSlides = [
   {
     no: 37,
     section: "ADSB",
-    title: "Final Submission Poster",
-    label: "Public Output",
+    title: "2025 Conference Submission Poster",
+    label: "Public Context Evidence",
     accent: "cyan",
     variant: "evidence",
-    intent: "ADSB 최종 제출 PPT 포스터를 공개 가능한 산출물 증거로 보여준다.",
+    intent: "2025 한국의류산업학회 추계학술대회 제출 포스터를 공개 가능한 맥락 증거로 보여준다.",
     claim:
-      "한국의류산업학회 추계학술대회 제출용 PPT 포스터를 이름·소속 라인 제거 후 공개용 산출물로 정리",
+      "2025 한국의류산업학회 추계학술대회 제출 포스터 「생성형 AI 기반 패션산업 산학협력의 새로운 패러다임 - 앤더슨벨 (Andersson Bell) 콘텐츠 제작 사례」의 공개용 버전",
     include: [
-      "Final submission PPT poster",
-      "AI-assisted fashion content production case",
-      "Author and affiliation names removed for public portfolio use",
+      "2025 한국의류산업학회 추계학술대회 포스터",
+      "생성형 AI기반 패션 브랜드 VIRTUAL CONTENT 개발",
+      "공개 포트폴리오용으로 저자·소속 라인 제외",
     ],
     slots: [
-      "Source: one-page ADSB PPT poster from the school project archive",
-      "Public version: author and affiliation name lines removed",
-      "Portfolio use: conference-style poster evidence for the AI-assisted production case",
+      "Source: 2025 한국의류산업학회 추계학술대회 제출 포스터",
+      "Context: Andersson Bell 산학공동연구",
+      "Public version: 저자·소속 라인 제외",
     ],
     media: {
       src: "/adsb/adsb-final-poster-public.png",
       alt: "Public version of the ADSB final submission PPT poster with author and affiliation name lines removed.",
-      label: "Final PPT poster / public version",
+      label: "2025 conference poster / public version",
     },
     note:
       "원본 PPT 포스터의 저자·소속 이름 라인은 공개 포트폴리오에서 제외하고, 산학협력 콘텐츠 제작 사례의 포스터 본문만 남긴다.",

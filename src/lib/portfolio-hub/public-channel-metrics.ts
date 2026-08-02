@@ -1,8 +1,9 @@
 /**
  * Public + admin channel metrics for Content Learning Loop.
- * - TikTok: yt-dlp public metadata (2026-08-02)
+ * - TikTok: yt-dlp public metadata (2026-08-02) + Creator Analytics CSV export
  * - YouTube: Analytics API v2 OAuth (2026-08-02) + public metadata fallback
  *
+ * Source CSV/JSON archive: public/content-learning/loom/metrics/
  * averageViewPercentage is YouTube Studio "Average percentage viewed".
  * Shorts can exceed 100% when replays are counted — not a binary completion rate.
  */
@@ -73,25 +74,189 @@ export type ChannelCountryRow = {
 
 export const publicMetricsPack = {
   measuredAt: "2026-08-02",
-  measuredAtLabel: "2026-08-02 · YouTube Analytics OAuth + TikTok public meta",
-  window: {"label": "Studio/공개 관찰 창 (2026-06-07 ~ 2026-08-02)", "from": "2026-06-07", "to": "2026-08-02", "note": "YouTube Analytics OAuth 창. TikTok은 공개 메타 재측정."},
-  source: {"tiktok": "yt-dlp tiktokuser channel extract + per-video public metadata", "youtube": "YouTube Analytics API v2 (OAuth owner) + yt-dlp public metadata fallback"},
+  measuredAtLabel: "2026-08-02 · YT Analytics API + TT Creator export + public meta",
+  window: {
+    label: "Studio/공개 관찰 창 (2026-06-07 ~ 2026-08-02)",
+    from: "2026-06-07",
+    to: "2026-08-02",
+    note: "YouTube Analytics OAuth 창. TikTok은 공개 메타 + Creator Analytics CSV(Overview/Viewers/Content).",
+  },
+  source: {
+    tiktok:
+      "yt-dlp public metadata + TikTok Creator Analytics export (Content/Overview/Viewers) archived under /content-learning/loom/metrics/tiktok-creator-analytics/",
+    youtube:
+      "YouTube Analytics API v2 (OAuth owner) + yt-dlp public fallback; CSV/JSON under /content-learning/loom/metrics/youtube-analytics-api/",
+  },
+  sourceArchive: {
+    root: "/content-learning/loom/metrics/",
+    manifest: "/content-learning/loom/metrics/MANIFEST.json",
+    readme: "/content-learning/loom/metrics/README.md",
+    tiktok: [
+      "/content-learning/loom/metrics/tiktok-creator-analytics/Content_clean_2026-08-02.csv",
+      "/content-learning/loom/metrics/tiktok-creator-analytics/Overview_clean_2026-07-04_to_2026-07-31.csv",
+      "/content-learning/loom/metrics/tiktok-creator-analytics/Viewers_clean_2026-06-03_to_2026-07-31.csv",
+      "/content-learning/loom/metrics/tiktok-creator-analytics/tiktok-admin-summary.json",
+    ],
+    youtube: [
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube_channel_totals_2026-06-07_to_2026-08-02.csv",
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube_channel_countries_2026-06-07_to_2026-08-02.csv",
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube_posts_analytics_2026-06-07_to_2026-08-02.csv",
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube_video_totals_raw_2026-06-07_to_2026-08-02.csv",
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube_video_countries_raw_2026-06-07_to_2026-08-02.csv",
+      "/content-learning/loom/metrics/youtube-analytics-api/youtube-admin-merged.json",
+    ],
+  },
   adminAnalyticsBoundary: {
-    availableViaPublicApi: ["views", "likes", "comments", "shares", "saves (TikTok public)", "duration", "publish date", "like/engagement rates (derived)", "YouTube Analytics: averageViewDuration, averageViewPercentage, country", "YouTube channel followers snapshot"],
+    availableViaPublicApi: [
+      "views",
+      "likes",
+      "comments",
+      "shares",
+      "saves (TikTok public)",
+      "duration",
+      "publish date",
+      "like/engagement rates (derived)",
+      "YouTube Analytics: averageViewDuration, averageViewPercentage, country",
+      "YouTube channel followers snapshot",
+      "TikTok Creator export: Content views/likes, Overview daily views, Viewers new/returning",
+    ],
     notExposedViaPublicApi: [
-      { key: "tiktokCountries", label: "TikTok 시청 국가 / 지역", reason: "TikTok Creator Analytics 로그인·export 필요. 공개 API·OAuth 경로 미연결.", status: "not-exposed" as const },
-      { key: "tiktokCompletion", label: "TikTok 완주율 / 평균 시청", reason: "TikTok admin analytics 전용. 아직 export 없음.", status: "not-exposed" as const },
-      { key: "audienceGender", label: "시청자 성별 (양 플랫폼)", reason: "YouTube Analytics 연령/성별 리포트는 별도 dimension·임계치 조건. 이번 호출 범위 미포함.", status: "not-exposed" as const },
-      { key: "audienceAge", label: "시청자 연령대 (양 플랫폼)", reason: "관리자 audience 리포트 별도 조회 필요. 이번 범위 미포함.", status: "not-exposed" as const },
-      { key: "trafficSource", label: "유입 경로", reason: "Studio insight 전용. 이번 범위 미포함.", status: "not-exposed" as const },
+      {
+        key: "tiktokCountries",
+        label: "TikTok 시청 국가 / 지역",
+        reason: "Creator Analytics Content/Overview/Viewers export에 국가 필드 없음.",
+        status: "not-exposed" as const,
+      },
+      {
+        key: "tiktokCompletion",
+        label: "TikTok 완주율 / 평균 시청",
+        reason: "이번 CSV export에 없음. 영상별 완주/평균 시청 리포트 추가 필요.",
+        status: "not-exposed" as const,
+      },
+      {
+        key: "audienceGender",
+        label: "시청자 성별 (양 플랫폼)",
+        reason: "YouTube ageGroup/gender dimension·TikTok 인구통계 export 미포함.",
+        status: "not-exposed" as const,
+      },
+      {
+        key: "audienceAge",
+        label: "시청자 연령대 (양 플랫폼)",
+        reason: "관리자 audience 리포트 별도 조회/export 필요.",
+        status: "not-exposed" as const,
+      },
+      {
+        key: "trafficSource",
+        label: "유입 경로",
+        reason: "Studio insight 전용. 이번 범위 미포함.",
+        status: "not-exposed" as const,
+      },
     ] satisfies AdminAnalyticsSlot[],
-    howToFillLater: "TikTok Creator Analytics export를 public/content-learning/loom/metrics/ 에 넣으면 TikTok 국가·완주 슬롯을 채운다. YouTube 성별/연령은 Analytics ageGroup/gender dimension 추가 조회 시 반영.",
+    howToFillLater:
+      "국가·완주·성별/연령은 추가 Creator/Studio audience export 또는 Analytics dimension 조회 시 채운다. 원본 CSV는 /content-learning/loom/metrics/ 에 보관.",
     youtubeStudio: {
       channelId: "UCH_8Zw7ggdGO8bSor4_B-ig",
-      range: {"start": "2026-06-07", "end": "2026-08-02"},
-      totals: {"views": 5907, "likes": 49, "comments": 0, "shares": 10, "estimatedMinutesWatched": 624, "averageViewDuration": 20, "averageViewPercentage": 67.25, "subscribersGained": 10},
-      topCountries: [{"country": "KR", "views": 1318, "sharePct": 40.9, "avgWatchSec": 11, "avgViewPercentage": 56.14}, {"country": "UZ", "views": 423, "sharePct": 13.1, "avgWatchSec": 8, "avgViewPercentage": 91.15}, {"country": "JP", "views": 290, "sharePct": 9.0, "avgWatchSec": 7, "avgViewPercentage": 78.77}, {"country": "ID", "views": 218, "sharePct": 6.8, "avgWatchSec": 10, "avgViewPercentage": 107.48}, {"country": "IQ", "views": 142, "sharePct": 4.4, "avgWatchSec": 10, "avgViewPercentage": 149.27}, {"country": "SY", "views": 118, "sharePct": 3.7, "avgWatchSec": 6, "avgViewPercentage": 110.86}, {"country": "DZ", "views": 115, "sharePct": 3.6, "avgWatchSec": 8, "avgViewPercentage": 161.37}, {"country": "MM", "views": 110, "sharePct": 3.4, "avgWatchSec": 7, "avgViewPercentage": 67.29}, {"country": "KG", "views": 85, "sharePct": 2.6, "avgWatchSec": 8, "avgViewPercentage": 69.08}, {"country": "VN", "views": 80, "sharePct": 2.5, "avgWatchSec": 6, "avgViewPercentage": 63.53}] satisfies ChannelCountryRow[],
-      note: "averageViewPercentage can exceed 100% on Shorts (replays). Not a single-pass completion claim.",
+      range: { start: "2026-06-07", end: "2026-08-02" },
+      totals: {
+        views: 5907,
+        likes: 49,
+        comments: 0,
+        shares: 10,
+        estimatedMinutesWatched: 624,
+        averageViewDuration: 20,
+        averageViewPercentage: 67.25,
+        subscribersGained: 10,
+      },
+      topCountries: [
+        { country: "KR", views: 1318, sharePct: 40.9, avgWatchSec: 11, avgViewPercentage: 56.14 },
+        { country: "UZ", views: 423, sharePct: 13.1, avgWatchSec: 8, avgViewPercentage: 91.15 },
+        { country: "JP", views: 290, sharePct: 9.0, avgWatchSec: 7, avgViewPercentage: 78.77 },
+        { country: "ID", views: 218, sharePct: 6.8, avgWatchSec: 10, avgViewPercentage: 107.48 },
+        { country: "IQ", views: 142, sharePct: 4.4, avgWatchSec: 10, avgViewPercentage: 149.27 },
+        { country: "SY", views: 118, sharePct: 3.7, avgWatchSec: 6, avgViewPercentage: 110.86 },
+        { country: "DZ", views: 115, sharePct: 3.6, avgWatchSec: 8, avgViewPercentage: 161.37 },
+        { country: "MM", views: 110, sharePct: 3.4, avgWatchSec: 7, avgViewPercentage: 67.29 },
+        { country: "KG", views: 85, sharePct: 2.6, avgWatchSec: 8, avgViewPercentage: 69.08 },
+        { country: "VN", views: 80, sharePct: 2.5, avgWatchSec: 6, avgViewPercentage: 63.53 },
+      ] satisfies ChannelCountryRow[],
+      note: "averageViewPercentage can exceed 100% on Shorts (replays). Not a single-pass completion claim. CSV: /content-learning/loom/metrics/youtube-analytics-api/",
+      sourceFiles: [
+        "/content-learning/loom/metrics/youtube-analytics-api/youtube_channel_totals_2026-06-07_to_2026-08-02.csv",
+        "/content-learning/loom/metrics/youtube-analytics-api/youtube_channel_countries_2026-06-07_to_2026-08-02.csv",
+        "/content-learning/loom/metrics/youtube-analytics-api/youtube_posts_analytics_2026-06-07_to_2026-08-02.csv",
+      ],
+    },
+    tiktokStudio: {
+      handleExportLabel: "loom_idol_m",
+      handlesNote:
+        "Creator Analytics export labels loom_idol_m; public posts align with @loom_mm video IDs.",
+      measuredAt: "2026-08-02",
+      source: "TikTok Creator Analytics CSV export (Content / Overview / Viewers)",
+      archivePath: "/content-learning/loom/metrics/tiktok-creator-analytics/",
+      overview: {
+        range: { start: "2026-07-04", end: "2026-07-31" },
+        totals: { videoViews: 2191, profileViews: 27, likes: 29, comments: 0, shares: 1 },
+        peakDays: [
+          { date: "2026-07-30", videoViews: 953, profileViews: 7, likes: 19, comments: 0, shares: 0 },
+          { date: "2026-07-31", videoViews: 554, profileViews: 2, likes: 7, comments: 0, shares: 0 },
+          { date: "2026-07-24", videoViews: 70, profileViews: 2, likes: 0, comments: 0, shares: 0 },
+          { date: "2026-07-05", videoViews: 61, profileViews: 0, likes: 0, comments: 0, shares: 0 },
+          { date: "2026-07-04", videoViews: 57, profileViews: 5, likes: 0, comments: 0, shares: 0 },
+          { date: "2026-07-19", videoViews: 56, profileViews: 3, likes: 0, comments: 0, shares: 0 },
+          { date: "2026-07-27", videoViews: 41, profileViews: 1, likes: 1, comments: 0, shares: 0 },
+          { date: "2026-07-16", videoViews: 40, profileViews: 0, likes: 1, comments: 0, shares: 0 },
+          { date: "2026-07-28", videoViews: 33, profileViews: 0, likes: 0, comments: 0, shares: 0 },
+          { date: "2026-07-23", videoViews: 31, profileViews: 0, likes: 0, comments: 0, shares: 0 },
+        ],
+      },
+      viewers: {
+        range: { start: "2026-06-03", end: "2026-07-31" },
+        label: "Long multi-month activity window (Creator export; not full calendar 365 filled days)",
+        totals: { totalViewersSum: 9437, newViewersSum: 7031, returningViewersSum: 2406 },
+        peakDays: [
+          { date: "2026-06-25", totalViewers: 2263, newViewers: 2115, returningViewers: 148, newSharePct: 93.5 },
+          { date: "2026-06-18", totalViewers: 1263, newViewers: 752, returningViewers: 511, newSharePct: 59.5 },
+          { date: "2026-06-26", totalViewers: 1249, newViewers: 1115, returningViewers: 134, newSharePct: 89.3 },
+          { date: "2026-06-16", totalViewers: 935, newViewers: 641, returningViewers: 294, newSharePct: 68.6 },
+          { date: "2026-06-17", totalViewers: 812, newViewers: 468, returningViewers: 344, newSharePct: 57.6 },
+          { date: "2026-07-31", totalViewers: 808, newViewers: 618, returningViewers: 190, newSharePct: 76.5 },
+          { date: "2026-06-19", totalViewers: 604, newViewers: 273, returningViewers: 331, newSharePct: 45.2 },
+          { date: "2026-06-20", totalViewers: 246, newViewers: 102, returningViewers: 144, newSharePct: 41.5 },
+          { date: "2026-06-24", totalViewers: 193, newViewers: 128, returningViewers: 65, newSharePct: 66.3 },
+          { date: "2026-06-05", totalViewers: 136, newViewers: 114, returningViewers: 22, newSharePct: 83.8 },
+        ],
+      },
+      topContent: [
+        { id: "7668260819439848725", title: "Loom · Bouquet CF Different gazes meet", publishedAt: "2026-07-30", views: 906, likes: 19, comments: 0, shares: 0 },
+        { id: "7654903498840198420", title: "ink-solo#grokai #aiidol #kpop #virtualidol #ink", publishedAt: "2026-06-24", views: 629, likes: 13, comments: 0, shares: 0 },
+        { id: "7642330107624934676", title: "M04 lua stage #Grok #ai #aiidol #kpop", publishedAt: "2026-05-21", views: 596, likes: 12, comments: 0, shares: 0 },
+        { id: "7642332420485745941", title: "#Grok M01 stage 새얀 #ai #aiidol #kpop", publishedAt: "2026-05-21", views: 495, likes: 9, comments: 0, shares: 0 },
+        { id: "7642929683620810005", title: "#Grok", publishedAt: "2026-05-23", views: 432, likes: 15, comments: 0, shares: 0 },
+        { id: "7642319743843749141", title: "M02 stage #Grok #ai #aivideo #aiidol #kpop", publishedAt: "2026-05-21", views: 410, likes: 8, comments: 0, shares: 0 },
+        { id: "7668688515911208212", title: "One quiet click — closed weave, open proof", publishedAt: "2026-07-31", views: 397, likes: 5, comments: 0, shares: 0 },
+        { id: "7642334391234055444", title: "#Grok M06 이린 mv #run #aiidol #kpop #ai", publishedAt: "2026-05-21", views: 333, likes: 8, comments: 0, shares: 0 },
+        { id: "7627379475621121301", title: "#Grok #aheya #ai #aiart", publishedAt: "2026-04-11", views: 266, likes: 5, comments: 0, shares: 0 },
+        { id: "7642323655300599060", title: "#Grok M02 mv seorin #ai #aivideo #aiidol #kpop", publishedAt: "2026-05-21", views: 211, likes: 7, comments: 0, shares: 0 },
+      ],
+      /** Same column shell as YouTube country table — values not in Creator CSV. */
+      dimensionSlots: [
+        { dimension: "Country / region", status: "not exposed", note: "Creator Content/Overview/Viewers CSV 미포함" },
+        { dimension: "Avg watch / completion", status: "not exposed", note: "영상별 완주·평균 시청 export 별도 필요" },
+        { dimension: "Gender", status: "not exposed", note: "Audience 인구통계 export 미포함" },
+        { dimension: "Age", status: "not exposed", note: "Audience 인구통계 export 미포함" },
+      ],
+      notInExport: ["completionRate", "avgWatch", "country", "gender", "age"],
+      signalNotes: [
+        "Overview 피크(2026-07-30 · 953 / 07-31 · 554)와 Bouquet CF·훅 게시의 시기 정렬",
+        "Viewers 피크(2026-06-25 · 2,263)와 6월 중순–말 숏 훅·ink 구간 활동의 중첩",
+        "국가·완주·연령/성별: 이번 Creator CSV에 없음 · 표 슬롯 not exposed 유지",
+      ],
+      sourceFiles: [
+        "/content-learning/loom/metrics/tiktok-creator-analytics/Content_clean_2026-08-02.csv",
+        "/content-learning/loom/metrics/tiktok-creator-analytics/Overview_clean_2026-07-04_to_2026-07-31.csv",
+        "/content-learning/loom/metrics/tiktok-creator-analytics/Viewers_clean_2026-06-03_to_2026-07-31.csv",
+      ],
+      note: "Reaction signals only. New/returning viewers are not completion or conversion claims. Country table slot mirrors YouTube layout; fill when Audience geography export is available.",
     },
   },
   tiktok: {
