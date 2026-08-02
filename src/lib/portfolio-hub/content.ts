@@ -173,7 +173,7 @@ export const projects: PortfolioProject[] = [
       {
         label: "Content Learning",
         href: "/content-performance#learning-loop",
-        description: "반응 신호를 다음 메시지·컷 설계로 연결한 Content Learning Loop",
+        description: "반응 신호의 다음 메시지·컷 설계 연결 · Content Learning Loop",
       },
     ],
     socialLinks: [
@@ -201,21 +201,21 @@ export const projects: PortfolioProject[] = [
     slug: "adsb",
     title: "ADSB AI-assisted Short-form Execution",
     shortTitle: "ADSB",
-    role: "AI Creative, Short-form Execution, Production Workflow",
-    period: "2025.09-2026.04",
+    role: "Brand Research, Shotboard, AI Frame/Motion Direction, Feedback Revision",
+    period: "2025.09.01-2025.11.07",
     route: "/deck/adsb",
     accent: "green",
-    headline: "브랜드 무드를 15초 AI 숏폼 제작 흐름으로 전환한 프로젝트",
-    homeHeadline: "브랜드 무드를 15초 AI 숏폼으로 실행",
+    headline: "브랜드 무드를 15초 AI 숏폼의 훅·장면 흐름으로 구체화한 산학공동연구",
+    homeHeadline: "브랜드 무드를 15초 AI 숏폼의 훅·장면 흐름으로 구체화",
     homeReadout: [
-      { label: "Role", value: "Shotboard · AI production · feedback revision" },
-      { label: "Scope", value: "브랜드 무드 기반 15초 숏폼" },
-      { label: "Output", value: "15s shotboard · execution record" },
+      { label: "Role", value: "Brand research · shotboard · frame/motion direction" },
+      { label: "Scope", value: "2025 산학공동연구 · 15초 AI short-form" },
+      { label: "Output", value: "15s final Reel · planning/revision record" },
     ],
     abstract:
-      "ADSB 산학공동연구에서 dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드와 제작 반복, 피드백 반영 흐름으로 연결. 전체 브랜드 성과가 아니라 AI 숏폼 제작 실행의 증거로 배치",
+      "2025 산학공동연구에서 Andersson Bell의 브랜드 무드를 dog-and-ball hook과 urban fixed-angle sequence로 좁히고, 이미지·영상 후보 비교와 실무 피드백 반영을 거쳐 15초 AI 숏폼으로 구체화한 제작 사례입니다. 브랜드 전략·캠페인 성과가 아닌 제작 판단과 수정 기록에 초점을 둡니다.",
     finalResult:
-      "브랜드 mood reading, 15초 shotboard, 제작 반복, feedback revision을 AI creative execution 사례로 구성",
+      "브랜드 리서치 → 15초 shotboard → 이미지·영상 후보 비교 → 피드백 반영 → 최종 Instagram Reel로 이어지는 AI 숏폼 실행 사례",
     media: {
       src: "/adsb/adsb-cover.webp",
       alt: "ADSB AI short-form execution",
@@ -228,9 +228,9 @@ export const projects: PortfolioProject[] = [
       },
     },
     keyContents: [
-      "dog-and-ball hook과 urban fixed-angle sequence 중심의 숏폼 기획",
-      "Midjourney/Gemini/Nano Banana/Kling 기반 이미지 생성과 피드백 반영 반복",
-      "브랜드 성과가 아니라 AI 숏폼 제작 실행 증거로 배치",
+      "Andersson Bell 브랜드 리서치를 dog-and-ball hook과 urban fixed-angle sequence로 압축",
+      "Midjourney/Gemini/Nano Banana/Kling 기반 후보 제작과 이미지-to-영상 테스트",
+      "피드백을 장면·모티프·컷 흐름의 수정 기준으로 반영한 15초 숏폼 실행",
     ],
     deckLinks: [
       {
@@ -245,13 +245,13 @@ export const projects: PortfolioProject[] = [
       },
     ],
     bullets: [
-      "dog-and-ball hook과 urban fixed-angle sequence를 중심으로 브랜드 무드를 15초 숏폼 샷보드로 전환",
-      "Midjourney/Gemini/Nano Banana/Kling 기반 이미지 생성과 피드백 반영 반복",
-      "hook, shotboard, short-form execution workflow 관점의 AI creative execution 사례 구성",
+      "브랜드 리서치를 dog-and-ball hook과 urban fixed-angle sequence 중심의 15초 shotboard로 전환",
+      "이미지·영상 후보를 비교하고 피드백을 반영해 모티프·컷 흐름을 수정",
+      "브랜드 전략 성과가 아닌 AI-assisted short-form execution의 제작 증거로 구성",
     ],
-    outputs: ["15s short-form shotboard", "AI short-form execution", "feedback revision loop"],
+    outputs: ["15초 최종 Instagram Reel", "shotboard·후보 프레임", "피드백 반영 기록"],
     resumeLine:
-      "ADSB 15초 AI 숏폼 제작 프로세스를 브랜드 reading, shotboard, AI creative execution 관점에서 구조화",
+      "Andersson Bell 산학공동연구에서 브랜드 리서치, 15초 shotboard, AI 이미지·영상 후보 비교, 피드백 반영을 통해 AI 숏폼 제작 흐름을 구체화",
   },
   {
     slug: "aheya",

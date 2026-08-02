@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-08-02",
+  "purpose": "Source evidence for Content Learning Loop — TikTok Creator Analytics exports + YouTube Analytics API snapshots as CSV/JSON originals.",
+  "paths": {
+    "tiktok": "tiktok-creator-analytics/",
+    "youtube": "youtube-analytics-api/"
+  },
+  "tiktok": {
+    "originalZips": "tiktok-creator-analytics/originals/",
+    "rawCsvFromZips": "tiktok-creator-analytics/csv/",
+    "cleanedCsv": [
+      "tiktok-creator-analytics/Content_clean_2026-08-02.csv",
+      "tiktok-creator-analytics/Overview_clean_2026-07-04_to_2026-07-31.csv",
+      "tiktok-creator-analytics/Viewers_clean_2026-06-03_to_2026-07-31.csv"
+    ],
+    "summaryJson": "tiktok-creator-analytics/tiktok-admin-summary.json",
+    "notes": "Viewers_365d_export_mostly_empty.zip retained but not used (undefined future days). Long window Viewers (2) used as multi-month history."
+  },
+  "youtube": {
+    "range": {
+      "start": "2026-06-07",
+      "end": "2026-08-02"
+    },
+    "channelId": "UCH_8Zw7ggdGO8bSor4_B-ig",
+    "csv": [
+      "youtube-analytics-api/youtube_channel_totals_2026-06-07_to_2026-08-02.csv",
+      "youtube-analytics-api/youtube_channel_countries_2026-06-07_to_2026-08-02.csv",
+      "youtube-analytics-api/youtube_posts_analytics_2026-06-07_to_2026-08-02.csv",
+      "youtube-analytics-api/youtube_video_totals_raw_2026-06-07_to_2026-08-02.csv",
+      "youtube-analytics-api/youtube_video_countries_raw_2026-06-07_to_2026-08-02.csv"
+    ],
+    "json": [
+      "youtube-analytics-api/youtube-analytics-admin.raw.json",
+      "youtube-analytics-api/youtube-admin-merged.json"
+    ],
+    "source": "YouTube Analytics API v2 OAuth (owner) measured 2026-08-02"
+  },
+  "boundary": {
+    "tiktokStillNotExposed": [
+      "completion",
+      "avgWatch",
+      "country",
+      "gender",
+      "age"
+    ],
+    "youtubeStillNotExposed": [
+      "gender",
+      "age"
+    ]
+  }
+}

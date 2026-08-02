@@ -1,0 +1,992 @@
+{
+  "measuredAt": "2026-08-02",
+  "handleExportLabel": "loom_idol_m",
+  "handlesNote": "Creator Analytics export labels loom_idol_m; public posts align with @loom_mm video IDs.",
+  "source": "TikTok Creator Analytics CSV export (Content / Overview / Viewers)",
+  "archivePath": "public/content-learning/loom/metrics/tiktok-creator-analytics/",
+  "notInExport": [
+    "completionRate",
+    "avgWatch",
+    "country",
+    "gender",
+    "age"
+  ],
+  "content": {
+    "exportFile": "csv/Content_export_2026-08-02_primary__Content.csv",
+    "postCount": 14,
+    "posts": [
+      {
+        "id": "7668260819439848725",
+        "title": "Loom · Bouquet CF Different gazes meet — and a new sense completes. Made with Loom harness: Grok plan → GPT image → Grok Imagine → edit on Grok Build. Music: Suno. Full process + prompts on X. AI-made with Grok and GPT. https://loom-signal-deck.vercel.app/ #AI #AIIdol #Kpop #VirtualIdol #eyewear",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7668260819439848725",
+        "postTime": "July 30",
+        "publishedAt": "2026-07-30",
+        "views": 906,
+        "likes": 19,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7654903498840198420",
+        "title": "ink-solo#grokai #aiidol #kpop #virtualidol #ink",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7654903498840198420",
+        "postTime": "June 24",
+        "publishedAt": "2026-06-24",
+        "views": 629,
+        "likes": 13,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642330107624934676",
+        "title": "M04 lua stage #Grok #ai #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642330107624934676",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 596,
+        "likes": 12,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642332420485745941",
+        "title": "#Grok M01 stage 새얀 #ai #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642332420485745941",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 495,
+        "likes": 9,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642929683620810005",
+        "title": "#Grok",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642929683620810005",
+        "postTime": "May 23",
+        "publishedAt": "2026-05-23",
+        "views": 432,
+        "likes": 15,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642319743843749141",
+        "title": "M02 stage #Grok #ai #aivideo #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642319743843749141",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 410,
+        "likes": 8,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7668688515911208212",
+        "title": "One quiet click — closed weave, open proof. Loom. #AI #AIIdol #Kpop #VirtualIdol #Loom",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7668688515911208212",
+        "postTime": "July 31",
+        "publishedAt": "2026-07-31",
+        "views": 397,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642334391234055444",
+        "title": "#Grok M06 이린 mv #run #aiidol #kpop #ai",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642334391234055444",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 333,
+        "likes": 8,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7627379475621121301",
+        "title": "#Grok #aheya #ai #aiart",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7627379475621121301",
+        "postTime": "April 11",
+        "publishedAt": "2026-04-11",
+        "views": 266,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642323655300599060",
+        "title": "#Grok M02 mv seorin #ai #aivideo #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642323655300599060",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 211,
+        "likes": 7,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7668675022940015892",
+        "title": "#loom",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7668675022940015892",
+        "postTime": "July 31",
+        "publishedAt": "2026-07-31",
+        "views": 204,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642322056196967701",
+        "title": "M01 mv saeyan#Grok #ai #aivideo #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642322056196967701",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 198,
+        "likes": 7,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642333620027575573",
+        "title": "M05 faye mv #Grok #aiidol #kpop #aivideo",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642333620027575573",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 180,
+        "likes": 4,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642902100430572821",
+        "title": "#Grok M05 faye#aiidol #kpop #ai",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642902100430572821",
+        "postTime": "May 23",
+        "publishedAt": "2026-05-23",
+        "views": 151,
+        "likes": 3,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      }
+    ],
+    "topByViews": [
+      {
+        "id": "7668260819439848725",
+        "title": "Loom · Bouquet CF Different gazes meet — and a new sense completes. Made with Loom harness: Grok plan → GPT image → Grok Imagine → edit on Grok Build. Music: Suno. Full process + prompts on X. AI-made with Grok and GPT. https://loom-signal-deck.vercel.app/ #AI #AIIdol #Kpop #VirtualIdol #eyewear",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7668260819439848725",
+        "postTime": "July 30",
+        "publishedAt": "2026-07-30",
+        "views": 906,
+        "likes": 19,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7654903498840198420",
+        "title": "ink-solo#grokai #aiidol #kpop #virtualidol #ink",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7654903498840198420",
+        "postTime": "June 24",
+        "publishedAt": "2026-06-24",
+        "views": 629,
+        "likes": 13,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642330107624934676",
+        "title": "M04 lua stage #Grok #ai #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642330107624934676",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 596,
+        "likes": 12,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642332420485745941",
+        "title": "#Grok M01 stage 새얀 #ai #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642332420485745941",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 495,
+        "likes": 9,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642929683620810005",
+        "title": "#Grok",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642929683620810005",
+        "postTime": "May 23",
+        "publishedAt": "2026-05-23",
+        "views": 432,
+        "likes": 15,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642319743843749141",
+        "title": "M02 stage #Grok #ai #aivideo #aiidol #kpop",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642319743843749141",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 410,
+        "likes": 8,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7668688515911208212",
+        "title": "One quiet click — closed weave, open proof. Loom. #AI #AIIdol #Kpop #VirtualIdol #Loom",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7668688515911208212",
+        "postTime": "July 31",
+        "publishedAt": "2026-07-31",
+        "views": 397,
+        "likes": 5,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      },
+      {
+        "id": "7642334391234055444",
+        "title": "#Grok M06 이린 mv #run #aiidol #kpop #ai",
+        "url": "https://www.tiktok.com/@loom_idol_m/video/7642334391234055444",
+        "postTime": "May 21",
+        "publishedAt": "2026-05-21",
+        "views": 333,
+        "likes": 8,
+        "comments": 0,
+        "shares": 0,
+        "exportMeasuredAt": "2026-08-02"
+      }
+    ]
+  },
+  "overview": {
+    "exportFile": "csv/Overview_2026-07-04_to_2026-07-31__Overview.csv",
+    "range": {
+      "start": "2026-07-04",
+      "end": "2026-07-31"
+    },
+    "days": [
+      {
+        "date": "2026-07-04",
+        "videoViews": 57,
+        "profileViews": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-05",
+        "videoViews": 61,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-06",
+        "videoViews": 8,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-07",
+        "videoViews": 17,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-08",
+        "videoViews": 18,
+        "profileViews": 1,
+        "likes": 1,
+        "comments": 0,
+        "shares": 1
+      },
+      {
+        "date": "2026-07-09",
+        "videoViews": 21,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-10",
+        "videoViews": 16,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-11",
+        "videoViews": 11,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-12",
+        "videoViews": 21,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-13",
+        "videoViews": 20,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-14",
+        "videoViews": 10,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-15",
+        "videoViews": 9,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-16",
+        "videoViews": 40,
+        "profileViews": 0,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-17",
+        "videoViews": 23,
+        "profileViews": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-18",
+        "videoViews": 17,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-19",
+        "videoViews": 56,
+        "profileViews": 3,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-20",
+        "videoViews": 16,
+        "profileViews": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-21",
+        "videoViews": 11,
+        "profileViews": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-22",
+        "videoViews": 24,
+        "profileViews": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-23",
+        "videoViews": 31,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-24",
+        "videoViews": 70,
+        "profileViews": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-25",
+        "videoViews": 12,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-26",
+        "videoViews": 25,
+        "profileViews": 1,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-27",
+        "videoViews": 41,
+        "profileViews": 1,
+        "likes": 1,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-28",
+        "videoViews": 33,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-29",
+        "videoViews": 16,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-30",
+        "videoViews": 953,
+        "profileViews": 7,
+        "likes": 19,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-31",
+        "videoViews": 554,
+        "profileViews": 2,
+        "likes": 7,
+        "comments": 0,
+        "shares": 0
+      }
+    ],
+    "peakDays": [
+      {
+        "date": "2026-07-30",
+        "videoViews": 953,
+        "profileViews": 7,
+        "likes": 19,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-31",
+        "videoViews": 554,
+        "profileViews": 2,
+        "likes": 7,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-24",
+        "videoViews": 70,
+        "profileViews": 2,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-05",
+        "videoViews": 61,
+        "profileViews": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      {
+        "date": "2026-07-04",
+        "videoViews": 57,
+        "profileViews": 5,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      }
+    ],
+    "totals": {
+      "videoViews": 2191,
+      "profileViews": 27,
+      "likes": 29,
+      "comments": 0,
+      "shares": 1
+    }
+  },
+  "viewers": {
+    "exportFile": "csv/Viewers_long_window_2026-06-03_to_2026-07-31__Viewers.csv",
+    "label": "Long window (activity days from Creator Analytics; includes multi-month history)",
+    "range": {
+      "start": "2026-06-03",
+      "end": "2026-07-31"
+    },
+    "days": [
+      {
+        "date": "2026-06-03",
+        "totalViewers": 11,
+        "newViewers": 9,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-06-04",
+        "totalViewers": 5,
+        "newViewers": 3,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-06-05",
+        "totalViewers": 136,
+        "newViewers": 114,
+        "returningViewers": 22
+      },
+      {
+        "date": "2026-06-06",
+        "totalViewers": 136,
+        "newViewers": 114,
+        "returningViewers": 22
+      },
+      {
+        "date": "2026-06-07",
+        "totalViewers": 77,
+        "newViewers": 61,
+        "returningViewers": 16
+      },
+      {
+        "date": "2026-06-08",
+        "totalViewers": 15,
+        "newViewers": 13,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-06-09",
+        "totalViewers": 18,
+        "newViewers": 15,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-06-10",
+        "totalViewers": 4,
+        "newViewers": 3,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-06-11",
+        "totalViewers": 14,
+        "newViewers": 11,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-06-12",
+        "totalViewers": 19,
+        "newViewers": 15,
+        "returningViewers": 4
+      },
+      {
+        "date": "2026-06-13",
+        "totalViewers": 15,
+        "newViewers": 12,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-06-14",
+        "totalViewers": 24,
+        "newViewers": 16,
+        "returningViewers": 8
+      },
+      {
+        "date": "2026-06-15",
+        "totalViewers": 23,
+        "newViewers": 18,
+        "returningViewers": 5
+      },
+      {
+        "date": "2026-06-16",
+        "totalViewers": 935,
+        "newViewers": 641,
+        "returningViewers": 294
+      },
+      {
+        "date": "2026-06-17",
+        "totalViewers": 812,
+        "newViewers": 468,
+        "returningViewers": 344
+      },
+      {
+        "date": "2026-06-18",
+        "totalViewers": 1263,
+        "newViewers": 752,
+        "returningViewers": 511
+      },
+      {
+        "date": "2026-06-19",
+        "totalViewers": 604,
+        "newViewers": 273,
+        "returningViewers": 331
+      },
+      {
+        "date": "2026-06-20",
+        "totalViewers": 246,
+        "newViewers": 102,
+        "returningViewers": 144
+      },
+      {
+        "date": "2026-06-21",
+        "totalViewers": 32,
+        "newViewers": 22,
+        "returningViewers": 10
+      },
+      {
+        "date": "2026-06-22",
+        "totalViewers": 23,
+        "newViewers": 12,
+        "returningViewers": 11
+      },
+      {
+        "date": "2026-06-23",
+        "totalViewers": 11,
+        "newViewers": 10,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-06-24",
+        "totalViewers": 193,
+        "newViewers": 128,
+        "returningViewers": 65
+      },
+      {
+        "date": "2026-06-25",
+        "totalViewers": 2263,
+        "newViewers": 2115,
+        "returningViewers": 148
+      },
+      {
+        "date": "2026-06-26",
+        "totalViewers": 1249,
+        "newViewers": 1115,
+        "returningViewers": 134
+      },
+      {
+        "date": "2026-06-27",
+        "totalViewers": 20,
+        "newViewers": 13,
+        "returningViewers": 7
+      },
+      {
+        "date": "2026-06-28",
+        "totalViewers": 21,
+        "newViewers": 15,
+        "returningViewers": 6
+      },
+      {
+        "date": "2026-06-29",
+        "totalViewers": 16,
+        "newViewers": 11,
+        "returningViewers": 5
+      },
+      {
+        "date": "2026-06-30",
+        "totalViewers": 12,
+        "newViewers": 9,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-01",
+        "totalViewers": 14,
+        "newViewers": 7,
+        "returningViewers": 7
+      },
+      {
+        "date": "2026-07-02",
+        "totalViewers": 24,
+        "newViewers": 14,
+        "returningViewers": 10
+      },
+      {
+        "date": "2026-07-03",
+        "totalViewers": 21,
+        "newViewers": 17,
+        "returningViewers": 4
+      },
+      {
+        "date": "2026-07-04",
+        "totalViewers": 26,
+        "newViewers": 15,
+        "returningViewers": 11
+      },
+      {
+        "date": "2026-07-05",
+        "totalViewers": 28,
+        "newViewers": 22,
+        "returningViewers": 6
+      },
+      {
+        "date": "2026-07-06",
+        "totalViewers": 22,
+        "newViewers": 14,
+        "returningViewers": 8
+      },
+      {
+        "date": "2026-07-07",
+        "totalViewers": 12,
+        "newViewers": 11,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-07-08",
+        "totalViewers": 12,
+        "newViewers": 11,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-07-09",
+        "totalViewers": 10,
+        "newViewers": 7,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-10",
+        "totalViewers": 15,
+        "newViewers": 11,
+        "returningViewers": 4
+      },
+      {
+        "date": "2026-07-11",
+        "totalViewers": 13,
+        "newViewers": 10,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-12",
+        "totalViewers": 10,
+        "newViewers": 5,
+        "returningViewers": 5
+      },
+      {
+        "date": "2026-07-13",
+        "totalViewers": 9,
+        "newViewers": 6,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-14",
+        "totalViewers": 12,
+        "newViewers": 10,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-07-15",
+        "totalViewers": 9,
+        "newViewers": 7,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-07-16",
+        "totalViewers": 9,
+        "newViewers": 8,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-07-17",
+        "totalViewers": 10,
+        "newViewers": 8,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-07-18",
+        "totalViewers": 15,
+        "newViewers": 12,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-19",
+        "totalViewers": 11,
+        "newViewers": 8,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-20",
+        "totalViewers": 15,
+        "newViewers": 11,
+        "returningViewers": 4
+      },
+      {
+        "date": "2026-07-21",
+        "totalViewers": 15,
+        "newViewers": 12,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-22",
+        "totalViewers": 6,
+        "newViewers": 5,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-07-23",
+        "totalViewers": 11,
+        "newViewers": 11,
+        "returningViewers": 0
+      },
+      {
+        "date": "2026-07-24",
+        "totalViewers": 16,
+        "newViewers": 14,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-07-25",
+        "totalViewers": 10,
+        "newViewers": 5,
+        "returningViewers": 5
+      },
+      {
+        "date": "2026-07-26",
+        "totalViewers": 8,
+        "newViewers": 7,
+        "returningViewers": 1
+      },
+      {
+        "date": "2026-07-27",
+        "totalViewers": 15,
+        "newViewers": 11,
+        "returningViewers": 4
+      },
+      {
+        "date": "2026-07-28",
+        "totalViewers": 22,
+        "newViewers": 19,
+        "returningViewers": 3
+      },
+      {
+        "date": "2026-07-29",
+        "totalViewers": 20,
+        "newViewers": 15,
+        "returningViewers": 5
+      },
+      {
+        "date": "2026-07-30",
+        "totalViewers": 12,
+        "newViewers": 10,
+        "returningViewers": 2
+      },
+      {
+        "date": "2026-07-31",
+        "totalViewers": 808,
+        "newViewers": 618,
+        "returningViewers": 190
+      }
+    ],
+    "peakDays": [
+      {
+        "date": "2026-06-25",
+        "totalViewers": 2263,
+        "newViewers": 2115,
+        "returningViewers": 148
+      },
+      {
+        "date": "2026-06-18",
+        "totalViewers": 1263,
+        "newViewers": 752,
+        "returningViewers": 511
+      },
+      {
+        "date": "2026-06-26",
+        "totalViewers": 1249,
+        "newViewers": 1115,
+        "returningViewers": 134
+      },
+      {
+        "date": "2026-06-16",
+        "totalViewers": 935,
+        "newViewers": 641,
+        "returningViewers": 294
+      },
+      {
+        "date": "2026-06-17",
+        "totalViewers": 812,
+        "newViewers": 468,
+        "returningViewers": 344
+      },
+      {
+        "date": "2026-07-31",
+        "totalViewers": 808,
+        "newViewers": 618,
+        "returningViewers": 190
+      },
+      {
+        "date": "2026-06-19",
+        "totalViewers": 604,
+        "newViewers": 273,
+        "returningViewers": 331
+      },
+      {
+        "date": "2026-06-20",
+        "totalViewers": 246,
+        "newViewers": 102,
+        "returningViewers": 144
+      }
+    ],
+    "totals": {
+      "totalViewersSum": 9437,
+      "newViewersSum": 7031,
+      "returningViewersSum": 2406
+    }
+  },
+  "signalNotes": [
+    "Overview peak 2026-07-30 (953 video views) and 2026-07-31 (554) align with Bouquet CF / hook posts.",
+    "Viewers peak 2026-06-25 (2263) and mid-June cluster align with short-hook / ink-period activity.",
+    "Completion % and country not present in these CSVs — keep not-exposed."
+  ]
+}

@@ -1,0 +1,55 @@
+artifact_type: cf_character_board_review_candidate_set
+cf_id: CF_LOL_IONIA_PERFUME_001
+created: '2026-08-02'
+status: review_candidate
+canonical_stage_truth: false
+founder_selection: pending
+generation_surface: built_in_image_gen_preview
+view_order:
+- face_only
+- upper_body
+- full_body
+boards:
+- lane_id: AHRI_SOFT
+  member_code: M05
+  identity_reference:
+    path: assets/members/M05/face-only-reference.png
+    sha256: ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105
+    role: face_and_hair_identity_only
+  output:
+    path: runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png
+    sha256: 091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf
+  visual_review:
+    status: pixels_inspected
+    disposition: review_candidate
+    notes: Three stacked views; modern pearl/ivory stage styling; no official game marks, weapon, or microphone visible.
+- lane_id: AKALI_EDGE
+  member_code: M02
+  identity_reference:
+    path: assets/members/M02/face-only-reference.png
+    sha256: 846184b3a69ee493ddf6b6c8b1f232bdc18c67fd35870bb4e725dc462ddc7097
+    role: face_and_hair_identity_only
+  output:
+    path: runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png
+    sha256: b8639ed54600608c0becf8f82a5aac0ddef02bf48d66953cab4a9f94d0571341
+  visual_review:
+    status: pixels_inspected
+    disposition: review_candidate
+    notes: Three stacked views; modern black/magenta stage tailoring; no official game marks, weapon, or microphone visible.
+- lane_id: IRELIA_BALANCE
+  member_code: M07
+  identity_reference:
+    path: assets/members/M07/face-only-reference.png
+    sha256: 688983bdab6e18617dba72f8ff73e0f0fda4384ba2d7660f86a3470e1f6280f7
+    role: face_and_hair_identity_only
+  output:
+    path: runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png
+    sha256: 39470add64bdce89cc04bd4b5aace3a83e5bc9e5374a8d416c32d0fdd2bf1e9c
+  visual_review:
+    status: pixels_inspected
+    disposition: review_candidate
+    notes: Three stacked views; modern ivory/champagne/pale-aqua stage tailoring; no official game marks, weapon, or microphone visible.
+boundaries:
+- Styling is an original modern stage translation, not a champion face, costume, or official collaboration claim.
+- These boards are review references only and do not replace CF40, CF50, Founder selection, or CF60/CF70 approval.
+- Do not promote any board into canonical member or CF50 truth without the smallest Founder selection and downstream hash revalidation.

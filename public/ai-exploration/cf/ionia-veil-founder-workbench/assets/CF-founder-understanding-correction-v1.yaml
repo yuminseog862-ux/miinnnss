@@ -1,0 +1,32 @@
+schema_version: cf_founder_understanding_correction.v1
+cf_id: CF_LOL_IONIA_PERFUME_001
+status: active
+date: '2026-08-02'
+human_memo_path: cf/runs/CF_LOL_IONIA_PERFUME_001/research/CF-founder-understanding-correction-v1.md
+corrected_understanding:
+  stage_proof: Sequential stage FX, floor change, and rear-screen/world change like
+    six Ionia example stills
+  action_blend: Chanel YT fabric/run action flow layered with Minju/BV1 stage body
+    actions
+  bottle_glass: Whole stage reads through bottle glass; Founder will supply glass
+    treatment still
+  camera: Always follow subject dynamically even when motion is slow
+  selection_order:
+  - core_cuts
+  - champion_visual_refs
+  - member_boards_later
+  phase_d: not_truth
+locks:
+  stage_sequential_world_change: true
+  action_blend_yt_fabric_run_plus_minju_stage: true
+  bottle_glass_read_pending_founder_image: true
+  camera_always_follows_subject_dynamically: true
+  core_cut_founder_select_before_member_visuals: true
+style_board_dispositions:
+  style-bottle-stage-audience-v1: keep_provisional_shell_look
+  style-hand-glass-ownership-v1: excluded_founder_remake
+  style-scent-open-action-v1: excluded
+  style-ionia-layer-switch-v1: excluded_founder_revise_background
+  style-three-lane-balance-v1: discarded
+  style-bottle-read-end-v1: excluded_founder_remake
+board_layout: member_first_then_core_cuts_in_order_reference_clusters

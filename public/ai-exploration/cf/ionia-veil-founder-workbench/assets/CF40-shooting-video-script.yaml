@@ -1,0 +1,2093 @@
+schema_version: '3.1'
+cf_id: CF_LOL_IONIA_PERFUME_001
+date: '2026-08-01'
+status: approved_for_keyframe_board
+source_files:
+  cf10_subject_brief: runs/CF_LOL_IONIA_PERFUME_001/research/CF10-subject-brief.yaml
+  cf20_flow_research: runs/CF_LOL_IONIA_PERFUME_001/research/CF20-ad-flow-research.yaml
+  cf30_route_lab: runs/CF_LOL_IONIA_PERFUME_001/research/CF30-route-lab.yaml
+  member_assets:
+  - M05
+  - M02
+  - M07
+front_planning_carry:
+  cf10_spine_source: runs/CF_LOL_IONIA_PERFUME_001/research/CF10-subject-brief.yaml#/front_planning_spine
+  cf30_selected_route_source: runs/CF_LOL_IONIA_PERFUME_001/research/CF30-route-lab.yaml#/route_candidates/0
+  long_to_short_compression: Ionia bottle-stage scent field at front_planning_carry.long_to_short_compression
+  camera_variety_plan: Ionia bottle-stage scent field at front_planning_carry.camera_variety_plan
+  generation_surface_policy: CF50 owns one vertical 9:16 motion-anchor frame and one five-item model-authored
+    prompt packet per Branch Cut. Existing twelve selected pixels remain evidence. Stop before any new
+    image generation or CF60.
+reference_authority_carry:
+  contract_version: cf40_reference_authority_carry.v2
+  source_cf30_main_reference_route:
+    path: runs/CF_LOL_IONIA_PERFUME_001/research/CF30-route-lab.yaml
+    sha256: 5caa38e473969e58291212f00c45a925cbf93bf7062ca009af01e97aec2f6d15
+  governing_main_reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+  main_phase_order:
+  - CFMAINPH_SPACE_ENTRY
+  - CFMAINPH_OBJECT_PEAK
+  - CFMAINPH_HAND_OWNERSHIP
+  - CFMAINPH_BODY_SCALE
+  - CFMAINPH_HAND_PEAK
+  - CFMAINPH_AFTERMATH_WIDEN
+  supporting_detail_reference_ids:
+  - CFSUB_YT_ACTION_ONLY
+  - CFSUB_IONIA_WORLD
+  - CFSUB_SKIN_STYLE
+  founder_visual_background_lock: preserve_founder_subject_visual_and_background_world_expand_only_commercial_action_camera_coverage_cut_edit_and_recall
+  added_core_or_branch_rule: add_only_missing_commercial_proof_reaction_transition_packshot_cta_or_distinct_screen_coverage_without_reordering_governing_main_phases
+  conflict_rule: main_reference_wins_unless_verified_subject_truth_safety_claim_output_constraint_or_explicit_founder_lock_requires_hold
+ad_contract:
+  duration_seconds: 25
+  one_sentence_ad: When her body opens the scent, the glass stage becomes her soft Ionia.
+  subject_proof_rule: Body action must open veil; Ionia layer is consequence; stage-as-bottle end without
+    freestanding product-bottle prop.
+  subject_engine_rule: Member body action is the scent-open engine; if removed, world switch and payoff
+    collapse.
+  memory_signal: Stage shell readable as perfume bottle afterimage plus residual soft veil
+  cta_or_recall: Concept-collab brand/scent recall only
+cut_architecture:
+  core_cut_rule: one_parent_commercial_event_action_effect_condition_or_dramatic_beat
+  branch_cut_rule: one_independently_framed_and_generatable_realization_that_reveals_or_extends_its_parent_core_event
+  temporal_anchor_rule: start_end_and_hold_are_optional_motion_roles_never_cut_identity_or_branch_justification
+  timing_policy: Seven Core Cut windows preserve the passed thirty seconds. Branch Cuts are coverage anchors
+    inside those windows, not fixed equal-duration slots; CF70 will retime actual motion.
+  visual_reset_rule: Every adjacent Branch Cut changes at least one of height, distance, direction, angle,
+    placement, depth, crop, object state or background.
+  same_setup_exception: Ionia bottle-stage scent field at cut_architecture.same_setup_exception
+  background_variety_plan: Ionia bottle-stage scent field at cut_architecture.background_variety_plan
+  edit_rhythm: Cut on hand-ownership contact and body-open impact; accelerate through Ionia layer inserts;
+    breathe on multi-member balance and quiet bottle-read end.
+  main_phase_order:
+  - CFMAINPH_SPACE_ENTRY
+  - CFMAINPH_OBJECT_PEAK
+  - CFMAINPH_HAND_OWNERSHIP
+  - CFMAINPH_BODY_SCALE
+  - CFMAINPH_HAND_PEAK
+  - CFMAINPH_AFTERMATH_WIDEN
+  coverage_function_plan:
+  - establishing
+  - subject_or_product_proof
+  - action_or_contact
+  - pov_or_benefit
+  - reaction
+  - payoff
+  - packshot_or_cta
+  - transition_bridge
+  camera_diversity_policy: preserve_the_main_camera_grammar_then_add_commercial_coverage_with_distinct_height_distance_direction_angle_depth_crop_and_movement_functions
+core_cuts:
+- core_cut_id: CF_CORE_01
+  order_index: 1
+  time_range: 00.0-01.8
+  duration_seconds: 1.8
+  timing_basis: 'Estimated from commercial readability of: Audience and glass bottle-stage appear; scent
+    rule not open yet'
+  ad_function: stop_hook
+  commercial_event: Audience and glass bottle-stage appear; scent rule not open yet
+  viewer_read: Audience and glass bottle-stage appear; scent rule not open yet
+  subject_proof: Bottle-stage shell and audience bowl readable before magic
+  engine_causality:
+    subject_trigger: Stage and audience established
+    environment_or_system_reaction: No spirit rule yet
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Audience and glass bottle-stage appear; scent rule not open yet
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_SPACE_ENTRY
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings: []
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_01; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: bottle-stage small center
+      camera_height: very_high_overhead
+      shot_scale_distance: extreme_wide
+      camera_direction: steep_high_oblique_down
+      camera_angle: high_oblique
+      depth_design: audience points near; / far bowl rings
+      subject_space_composition: bottle-stage small center
+      crop_negative_space: large upper black void
+      lens_feel: wide_arena_documentary
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_01_01
+      camera_role: Extreme high wide names glass bottle-stage and audience bowl first.
+      relationship_to_anchor: First space of film
+    - branch_cut_id: CF_BRANCH_01_02
+      camera_role: Closer three-quarter reads glass wall thickness as bottle silhouette without face magic.
+      relationship_to_anchor: Tighter shell read than 01_01
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Scale may widen from extreme high wide to three-quarter shell read; height may
+      drop toward audience-eye on glass wall thickness without adding freestanding product bottle props
+      or mic stands; soft residual mist planes may enter without reordering the main action axis.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_01_01
+    order_index: 1
+    realization_function: insert
+    distinct_screen_contribution: Extreme high wide names glass bottle-stage and audience bowl first.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Dark arena of purple audience LEDs; translucent glass bottle-stage shell center;
+      soft pink interior floor; no solo face.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: extreme_wide
+      camera_height: very_high_overhead
+      camera_direction: steep_high_oblique_down
+      camera_angle: high_oblique
+      lens_or_distance_read: wide_arena_documentary
+      subject_placement: bottle-stage small center
+      crop_or_negative_space: large upper black void
+      foreground_depth: audience points near
+      background_depth: far bowl rings
+      movement: hold
+      movement_reason: Let space read before any action.
+    variation_from_previous:
+      changed_axes:
+      - background_or_object_state
+      - shot_scale
+      - camera_height
+      commercial_reason: First space of film
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Glass bottle-stage set and audience field
+      subject_state_or_pose: No solo pose; environment is the subject
+      visible_action_or_hold: Hold stage geometry and crowd lights without scent magic
+      object_or_environment_response: Crowd field steady; glass shell fixed
+      endpoint: Stage and audience established
+      tone_guard: Not a product bottle table shot; not a ranked HUD open.
+    still_frame_plan:
+      screen_truth: High wide glass bottle-stage in arena bowl with no rule change yet
+      must_preserve:
+      - glass shell
+      - audience points
+      - no face-led subject
+      - no freestanding product bottle
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold space open
+      camera_route: Static high wide
+      subject_route: Environment holds
+      object_or_environment_route: Glass and crowd stable
+      static_or_camera_only_exclusion: Not empty beauty without stage read
+    edit_use: Cut or push once stage-as-bottle reads
+  - branch_cut_id: CF_BRANCH_01_02
+    order_index: 2
+    realization_function: event_phase
+    distinct_screen_contribution: Closer three-quarter reads glass wall thickness as bottle silhouette
+      without face magic.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Same arena tighter on curved glass wall and pink floor; audience soft distant.
+    composition_reset:
+    - shot_scale
+    - camera_direction
+    - subject_size
+    - object_state
+    - sound_or_edit
+    camera_plan:
+      shot_scale: medium_wide
+      camera_height: high_lower_than_prior
+      camera_direction: high_three_quarter_to_stage
+      camera_angle: high_three_quarter
+      lens_or_distance_read: slightly_compressed_stage
+      subject_placement: glass shell dominates midframe
+      crop_or_negative_space: dark upper sides
+      foreground_depth: glass ridges near
+      background_depth: crowd soft far
+      movement: slow_push_optional
+      movement_reason: Approach shell ownership.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - camera_height
+      - camera_direction
+      commercial_reason: Tighter shell read than 01_01
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Glass shell and stage floor
+      subject_state_or_pose: Still set
+      visible_action_or_hold: Hold readable bottle silhouette of the stage
+      object_or_environment_response: Light spill on glass ridges
+      endpoint: Shell form owned
+      tone_guard: No freestanding product bottle prop.
+    still_frame_plan:
+      screen_truth: Three-quarter glass shell reads as bottle-stage form
+      must_preserve:
+      - curved glass
+      - pink floor
+      - no face lead
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Optional slow push into shell
+      camera_route: Lower high three-quarter
+      subject_route: Shell grows in frame
+      object_or_environment_route: Specular tracks on glass
+      static_or_camera_only_exclusion: Not a logo insert
+    edit_use: Proceed to hand/glass ownership
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Audience and glass bottle-stage appear; scent rule not open yet
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_02
+  order_index: 2
+  time_range: 01.8-04.0
+  duration_seconds: 2.2
+  timing_basis: 'Estimated from commercial readability of: Glass or hand ownership without freestanding
+    perfume bottle prop'
+  ad_function: transition
+  commercial_event: Glass or hand ownership without freestanding perfume bottle prop
+  viewer_read: Glass or hand ownership without freestanding perfume bottle prop
+  subject_proof: Hands own glass ridge or scent-ready gesture
+  engine_causality:
+    subject_trigger: Hands contact glass or collarbone plane
+    environment_or_system_reaction: Ownership ready for scent-open
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Glass or hand ownership without freestanding perfume bottle prop
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_OBJECT_PEAK
+    - CFMAINPH_HAND_OWNERSHIP
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings: []
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_02; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: hands and glass centered
+      camera_height: eye_height
+      shot_scale_distance: medium_close
+      camera_direction: frontal_slight_low
+      camera_angle: slight_low
+      depth_design: hands sharp; / pink soft
+      subject_space_composition: hands and glass centered
+      crop_negative_space: soft pink sides
+      lens_feel: portrait_tele_shallow
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_02_01
+      camera_role: Two hands own glass edge instead of a product bottle prop.
+      relationship_to_anchor: Ownership MCU
+    - branch_cut_id: CF_BRANCH_02_02
+      camera_role: Wrist near collarbone is scent-ready body ownership before full open.
+      relationship_to_anchor: Asymmetric vs 02_01
+    - branch_cut_id: CF_BRANCH_02_03
+      camera_role: Extreme macro fingertips on glass ridges prove material ownership without bottle prop.
+      relationship_to_anchor: Macro insert
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Camera may range from ultra-wide stage shell scale to high seated close and wrist
+      insert as long as glass-ridge ownership, hand contact, and scent-ready chronology remain legible.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_02_01
+    order_index: 1
+    realization_function: viewpoint_change
+    distinct_screen_contribution: Two hands own glass edge instead of a product bottle prop.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_OBJECT_PEAK
+      - CFMAINPH_HAND_OWNERSHIP
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Shallow pink LED field; sharp glass wall edge; no free product bottle.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - color_light
+    camera_plan:
+      shot_scale: medium_close
+      camera_height: eye_height
+      camera_direction: frontal_slight_low
+      camera_angle: slight_low
+      lens_or_distance_read: portrait_tele_shallow
+      subject_placement: hands and glass centered
+      crop_or_negative_space: soft pink sides
+      foreground_depth: hands sharp
+      background_depth: pink soft
+      movement: hold
+      movement_reason: Lock ownership micro-read.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      commercial_reason: Ownership MCU
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Loom primary hands on glass
+      subject_state_or_pose: Upright torso cropped; hands on glass ridge
+      visible_action_or_hold: Two-hand gather hold owning glass surface
+      object_or_environment_response: Glass fixed with ridge specular
+      endpoint: Glass owned by hands
+      tone_guard: Not mic grip; not product bottle uncap.
+    still_frame_plan:
+      screen_truth: Hands own glass ridge without freestanding bottle
+      must_preserve:
+      - hands
+      - glass ridge
+      - no product bottle
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold gather
+      camera_route: Static MCU
+      subject_route: Hands stay stacked
+      object_or_environment_route: Specular steady
+      static_or_camera_only_exclusion: Not beauty face close without ownership
+    edit_use: Split to free-hand ready
+  - branch_cut_id: CF_BRANCH_02_02
+    order_index: 2
+    realization_function: subject_response
+    distinct_screen_contribution: Wrist near collarbone is scent-ready body ownership before full open.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_OBJECT_PEAK
+      - CFMAINPH_HAND_OWNERSHIP
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Soft pink shallow stage; glass bokeh; skin oil readable.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    camera_plan:
+      shot_scale: medium_close
+      camera_height: eye_height
+      camera_direction: side_profile_three_quarter
+      camera_angle: eye_level
+      lens_or_distance_read: 85mm_feel
+      subject_placement: wrist and collarbone center
+      crop_or_negative_space: open soft BG
+      foreground_depth: wrist sharp
+      background_depth: shoulder soft
+      movement: hold
+      movement_reason: Show asymmetric hand route.
+    variation_from_previous:
+      changed_axes:
+      - camera_direction
+      - subject_placement
+      commercial_reason: Asymmetric vs 02_01
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Primary wrist and collarbone
+      subject_state_or_pose: Chin slight lift; free hand near clavicle
+      visible_action_or_hold: Wrist turns into ready hold
+      object_or_environment_response: Air still; no full veil yet
+      endpoint: Body ready to open scent
+      tone_guard: Not combat pose; not product spray tutorial only.
+    still_frame_plan:
+      screen_truth: Wrist-collarbone ready hold without full veil
+      must_preserve:
+      - wrist path
+      - no product bottle
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Small wrist turn into hold
+      camera_route: Profile static
+      subject_route: Wrist settles near clavicle
+      object_or_environment_route: Air quiet
+      static_or_camera_only_exclusion: Not empty pose
+    edit_use: Macro material insert then open
+  - branch_cut_id: CF_BRANCH_02_03
+    order_index: 3
+    realization_function: event_phase
+    distinct_screen_contribution: Extreme macro fingertips on glass ridges prove material ownership without
+      bottle prop.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_OBJECT_PEAK
+      - CFMAINPH_HAND_OWNERSHIP
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Glass ridges and cyan-pink specular only; face out of frame.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - object_state
+    - sound_or_edit
+    camera_plan:
+      shot_scale: extreme_macro
+      camera_height: glass_ridge_height
+      camera_direction: near_axial_into_glass
+      camera_angle: near_axial
+      lens_or_distance_read: macro_very_shallow
+      subject_placement: fingertips on glass circle
+      crop_or_negative_space: deep black lower field
+      foreground_depth: ridge and skin oil
+      background_depth: hall dissolve
+      movement: tiny_push_hold
+      movement_reason: Micro contact proof.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - camera_direction
+      commercial_reason: Macro insert
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Fingertips and glass material
+      subject_state_or_pose: Contact millimeters on ridge
+      visible_action_or_hold: Hold micro contact
+      object_or_environment_response: Specular glints respond
+      endpoint: Material owned
+      tone_guard: Not product bottle cap macro.
+    still_frame_plan:
+      screen_truth: Macro fingertips on glass ridges only
+      must_preserve:
+      - skin oil
+      - glass ridge
+      - no face
+      - no product bottle
+      temporal_use: hold_or_insert
+    motion_handoff:
+      motion_route: Hold contact
+      camera_route: Micro push stop
+      subject_route: Fingertips fixed
+      object_or_environment_route: Glint holds
+      static_or_camera_only_exclusion: Not abstract texture without contact
+    edit_use: Cut to scent-open action
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Glass or hand ownership without freestanding perfume bottle prop
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_03
+  order_index: 3
+  time_range: 04.0-07.4
+  duration_seconds: 3.4
+  timing_basis: 'Estimated from commercial readability of: Body-action scent-open proves engine via neck,
+    wrist-air, then arm peak'
+  ad_function: visual_reset
+  commercial_event: Body-action scent-open proves engine via neck, wrist-air, then arm peak
+  viewer_read: Body-action scent-open proves engine via neck, wrist-air, then arm peak
+  subject_proof: Veil only along body-action path; actions bound to hub youtube:2Y2dsNu_-js units ACT_U1/U2/U5
+    with anchor paths/hashes.
+  engine_causality:
+    subject_trigger: Neck or wrist body action
+    environment_or_system_reaction: Thin veil opens along path
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Body-action scent-open proves engine via neck, wrist-air, then
+      arm peak
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_HAND_OWNERSHIP
+    - CFMAINPH_BODY_SCALE
+    - CFMAINPH_HAND_PEAK
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings:
+    - reference_id: CFSUB_YT_ACTION_ONLY
+      detail_scope: object_behavior_detail
+      application: Observable body route/contact/timing for scent-open only.
+      may_change_main_flow: false
+    - reference_id: CFSUB_SKIN_STYLE
+      detail_scope: wardrobe_or_styling_detail
+      application: Ahri/Akali/Irelia top2-inspired Loom styling only; no champion face clone.
+      may_change_main_flow: false
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_03; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: face and hand path center
+      camera_height: eye_height
+      shot_scale_distance: medium
+      camera_direction: frontal_slight_low
+      camera_angle: slight_low
+      depth_design: hand path; / glass soft
+      subject_space_composition: face and hand path center
+      crop_negative_space: hair top in
+      lens_feel: 50-85mm_portrait
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_03_01
+      camera_role: Neck/collarbone action opens scent; thin veil only along hand path.
+      relationship_to_anchor: Primary ACT_U1
+    - branch_cut_id: CF_BRANCH_03_02
+      camera_role: Wrist-air secondary scent proof between wrist and breath.
+      relationship_to_anchor: ACT_U2
+    - branch_cut_id: CF_BRANCH_03_03
+      camera_role: Full-body arm-peak after open; body scale owns the engine.
+      relationship_to_anchor: ACT_U5 body scale
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Depth may flatten then restore; views may reverse from below to above when the
+      neck/wrist open path remains readable and the veil response is unmistakable.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_03_01
+    order_index: 1
+    realization_function: transition
+    distinct_screen_contribution: Neck/collarbone action opens scent; thin veil only along hand path.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_HAND_OWNERSHIP
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      - reference_id: CFSUB_YT_ACTION_ONLY
+        detail_scope: object_behavior_detail
+        application: Hand/wrist open at skin plane from YT t00; transfer action only. Source source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t00.png
+          sha256=08fe98197a9b118d2ec6ccc00f1b5a474d55bea69673e22b136a4127172fbb35. unit=ACT_U1_HAND_WRIST_OPEN.
+          No face/logo/wardrobe transfer.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Glass bottle-stage interior; soft pink-purple blossom light; audience outside soft.
+    composition_reset:
+    - background
+    - camera_direction
+    - object_state
+    - color_light
+    - sound_or_edit
+    camera_plan:
+      shot_scale: medium
+      camera_height: eye_height
+      camera_direction: frontal_slight_low
+      camera_angle: slight_low
+      lens_or_distance_read: 50-85mm_portrait
+      subject_placement: face and hand path center
+      crop_or_negative_space: hair top in
+      foreground_depth: hand path
+      background_depth: glass soft
+      movement: hold_on_peak_of_gesture
+      movement_reason: Read engine fire.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - movement
+      commercial_reason: Primary ACT_U1
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Loom primary in Ahri-soft styling lane
+      subject_state_or_pose: Chin lifted; free hand on collarbone
+      visible_action_or_hold: Hand/wrist opens scent at skin plane [bound ACT_U1_HAND_WRIST_OPEN from youtube:2Y2dsNu_-js
+        t00]
+      object_or_environment_response: Thin spirit veil forms only along hand path
+      endpoint: Scent path open
+      tone_guard: Fail if veil opens without hand action; no freestanding product bottle required.
+    still_frame_plan:
+      screen_truth: Collarbone hand action with path-limited veil inside glass stage
+      must_preserve:
+      - hand on collarbone
+      - path veil
+      - glass stage
+      - Loom styling not champion face
+      - action_unit_ACT_U1_HAND_WRIST_OPEN
+      - no_source_face_transfer
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hand rises to collarbone and holds
+      camera_route: Static MCU-medium
+      subject_route: Chin lifts with hand
+      object_or_environment_route: Veil grows along path only
+      static_or_camera_only_exclusion: Not beauty still without action
+    edit_use: Wrist-air then arm peak
+  - branch_cut_id: CF_BRANCH_03_02
+    order_index: 2
+    realization_function: event_phase
+    distinct_screen_contribution: Wrist-air secondary scent proof between wrist and breath.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_HAND_OWNERSHIP
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_YT_ACTION_ONLY
+        detail_scope: object_behavior_detail
+        application: Raised hand/wrist-air from YT t20; transfer action only. Source source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t20.png
+          sha256=e657ab21b015edb4e0d77d3b412bc427e5a33ea117c25b731b33dc2ec2515afb. unit=ACT_U2_WRIST_AIR.
+          No face/logo/wardrobe transfer.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Same interior; tighter wrist-to-face air corridor.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    camera_plan:
+      shot_scale: close_up
+      camera_height: eye_height
+      camera_direction: three_quarter_to_face
+      camera_angle: eye_level
+      lens_or_distance_read: tele_shallow
+      subject_placement: wrist left face right
+      crop_or_negative_space: soft glass bokeh
+      foreground_depth: wrist
+      background_depth: face soft-sharp
+      movement: hold
+      movement_reason: Isolate breath path.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - subject_placement
+      commercial_reason: ACT_U2
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Primary wrist and breath plane
+      subject_state_or_pose: Wrist turned near nose/mouth plane
+      visible_action_or_hold: Controlled wrist-air hold [bound ACT_U2_WRIST_AIR from youtube:2Y2dsNu_-js
+        t20]
+      object_or_environment_response: Veil micro-responds between wrist and breath
+      endpoint: Secondary open proof
+      tone_guard: Not product aerosol hero alone.
+    still_frame_plan:
+      screen_truth: Wrist near face with micro veil between
+      must_preserve:
+      - wrist-face gap
+      - veil micro
+      - no product bottle
+      - action_unit_ACT_U2_WRIST_AIR
+      - no_source_face_transfer
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Wrist turns into hold
+      camera_route: Static CU
+      subject_route: Wrist settles
+      object_or_environment_route: Air answers
+      static_or_camera_only_exclusion: Not empty beauty
+    edit_use: Arm peak scale
+  - branch_cut_id: CF_BRANCH_03_03
+    order_index: 3
+    realization_function: object_or_spatial_consequence
+    distinct_screen_contribution: Full-body arm-peak after open; body scale owns the engine.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_HAND_OWNERSHIP
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      - reference_id: CFSUB_YT_ACTION_ONLY
+        detail_scope: object_behavior_detail
+        application: Arm peak + fabric air from YT t30; transfer action only. Source source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t30.png
+          sha256=91f507717abdfcf590eeaf2940c79239571ddd6f8ddcff28e5d73a01f4549f4a. unit=ACT_U5_ARM_PEAK.
+          No face/logo/wardrobe transfer.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Full glass stage interior with soft pink wall; blossom floor pattern.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: medium_full
+      camera_height: chest_height
+      camera_direction: frontal_three_quarter
+      camera_angle: slight_low
+      lens_or_distance_read: 35-50mm
+      subject_placement: full body mid-frame arm high
+      crop_or_negative_space: floor lower third
+      foreground_depth: body
+      background_depth: stage wall
+      movement: hold_peak
+      movement_reason: Show body scale peak.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - camera_height
+      commercial_reason: ACT_U5 body scale
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Primary full body
+      subject_state_or_pose: One arm raised high silhouette
+      visible_action_or_hold: Arm-peak hold after scent open [bound ACT_U5_ARM_PEAK from youtube:2Y2dsNu_-js
+        t30]
+      object_or_environment_response: Stage spots pin raised hand; residual veil near path
+      endpoint: Peak readable
+      tone_guard: Not fight pose; not product bottle raise.
+    still_frame_plan:
+      screen_truth: Full-body raised arm peak with residual path veil
+      must_preserve:
+      - raised arm
+      - full body
+      - stage continuity
+      - action_unit_ACT_U5_ARM_PEAK
+      - no_source_face_transfer
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Arm reaches peak and holds
+      camera_route: Static medium-full
+      subject_route: Body stable under arm
+      object_or_environment_route: Light pins hand
+      static_or_camera_only_exclusion: Not dance break without engine residual
+    edit_use: Begin Ionia layer switch
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Body-action scent-open proves engine via neck, wrist-air, then arm peak
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_04
+  order_index: 4
+  time_range: 07.4-15.2
+  duration_seconds: 7.8
+  timing_basis: 'Estimated from commercial readability of: Ionia interior and exterior layers switch as
+    support dress of opened scent'
+  ad_function: subject_proof
+  commercial_event: Ionia interior and exterior layers switch as support dress of opened scent
+  viewer_read: Ionia interior and exterior layers switch as support dress of opened scent
+  subject_proof: Layer change only after open path exists
+  engine_causality:
+    subject_trigger: Opened scent path
+    environment_or_system_reaction: Soft Ionia interior/exterior dress
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Ionia interior and exterior layers switch as support dress of
+      opened scent
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_BODY_SCALE
+    - CFMAINPH_AFTERMATH_WIDEN
+    - CFMAINPH_SPACE_ENTRY
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings:
+    - reference_id: CFSUB_IONIA_WORLD
+      detail_scope: environment_detail
+      application: Soft Ionia material/light/space dress only.
+      may_change_main_flow: false
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_04; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: idol silhouette left-third interior depth right
+      camera_height: eye_height
+      shot_scale_distance: medium_wide
+      camera_direction: into_stage_interior
+      camera_angle: eye_level
+      depth_design: glass rim; / interior forest soft
+      subject_space_composition: idol silhouette left-third interior depth right
+      crop_negative_space: glass rim edges
+      lens_feel: 35mm
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_04_01
+      camera_role: Interior soft Ionia dress appears inside bottle-stage because scent opened.
+      relationship_to_anchor: Interior first
+    - branch_cut_id: CF_BRANCH_04_02
+      camera_role: Overhead through glass ceiling into blossom floor patterns.
+      relationship_to_anchor: Axis flip
+    - branch_cut_id: CF_BRANCH_04_06
+      camera_role: Inside POV out curved glass to exterior soft Ionia landscape.
+      relationship_to_anchor: Outward axis
+    - branch_cut_id: CF_BRANCH_04_03
+      camera_role: Worm-eye up glass walls with rising veil streams and petals.
+      relationship_to_anchor: Extreme low
+    - branch_cut_id: CF_BRANCH_04_04
+      camera_role: Tight glass-window insert of exterior landscape panel only.
+      relationship_to_anchor: Insert
+    - branch_cut_id: CF_BRANCH_04_05
+      camera_role: Side track along glass wall with horizontal veil stream.
+      relationship_to_anchor: Lateral unique
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Body, profile, and glass-stage POV may change scale and axis when each view preserves
+      the scent-open vector and clearly separates interior bottle-stage from audience exterior.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_04_01
+    order_index: 1
+    realization_function: subject_response
+    distinct_screen_contribution: Interior soft Ionia dress appears inside bottle-stage because scent
+      opened.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Interior soft temple-forest pink-lavender inside glass; exterior still dim.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    camera_plan:
+      shot_scale: medium_wide
+      camera_height: eye_height
+      camera_direction: into_stage_interior
+      camera_angle: eye_level
+      lens_or_distance_read: 35mm
+      subject_placement: idol silhouette left-third interior depth right
+      crop_or_negative_space: glass rim edges
+      foreground_depth: glass rim
+      background_depth: interior forest soft
+      movement: hold
+      movement_reason: Read interior dress.
+    variation_from_previous:
+      changed_axes:
+      - background_or_object_state
+      - camera_direction
+      commercial_reason: Interior first
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Primary in opened interior
+      subject_state_or_pose: Standing calm in opened air
+      visible_action_or_hold: Hold presence as interior dress reads
+      object_or_environment_response: Ionia materials bloom only inside opened path
+      endpoint: Interior layer readable
+      tone_guard: Layer must not appear without prior open.
+    still_frame_plan:
+      screen_truth: Interior Ionia dress inside glass after open
+      must_preserve:
+      - interior materials
+      - glass rim
+      - open-path causality
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold presence
+      camera_route: Static medium-wide
+      subject_route: Body calm
+      object_or_environment_route: Interior soft details settle
+      static_or_camera_only_exclusion: Not unmotivated world swap
+    edit_use: Overhead spatial
+  - branch_cut_id: CF_BRANCH_04_02
+    order_index: 2
+    realization_function: event_phase
+    distinct_screen_contribution: Overhead through glass ceiling into blossom floor patterns.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Glass ceiling, blossom floor, optional tiny human scale.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - sound_or_edit
+    camera_plan:
+      shot_scale: extreme_wide
+      camera_height: zenith_overhead
+      camera_direction: straight_down
+      camera_angle: top_down
+      lens_or_distance_read: wide_overhead
+      subject_placement: floor pattern center
+      crop_or_negative_space: circular glass rim
+      foreground_depth: ceiling rim
+      background_depth: floor pattern
+      movement: hold
+      movement_reason: Spatial rule change.
+    variation_from_previous:
+      changed_axes:
+      - camera_height
+      - camera_angle
+      commercial_reason: Axis flip
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Stage floor pattern system
+      subject_state_or_pose: No required face
+      visible_action_or_hold: Hold overhead spatial read
+      object_or_environment_response: Blossom pattern fully readable
+      endpoint: Spatial layer owned
+      tone_guard: Not map HUD.
+    still_frame_plan:
+      screen_truth: Top-down blossom floor through glass rim
+      must_preserve:
+      - top-down axis
+      - floor pattern
+      - glass rim
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold overhead
+      camera_route: Zenith static
+      subject_route: Optional micro figure still
+      object_or_environment_route: Pattern holds
+      static_or_camera_only_exclusion: Not random graphic
+    edit_use: Exterior POV
+  - branch_cut_id: CF_BRANCH_04_06
+    order_index: 3
+    realization_function: viewpoint_change
+    distinct_screen_contribution: Inside POV out curved glass to exterior soft Ionia landscape.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Curved glass reflections; exterior soft hills and blossom trees.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - object_state
+    - sound_or_edit
+    camera_plan:
+      shot_scale: medium
+      camera_height: eye_height
+      camera_direction: outward_through_glass
+      camera_angle: eye_level
+      lens_or_distance_read: 35mm
+      subject_placement: landscape center through glass
+      crop_or_negative_space: glass curvature edges
+      foreground_depth: glass surface
+      background_depth: exterior landscape
+      movement: hold
+      movement_reason: Exterior layer.
+    variation_from_previous:
+      changed_axes:
+      - camera_direction
+      - background_or_object_state
+      commercial_reason: Outward axis
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Exterior landscape through glass
+      subject_state_or_pose: No face required
+      visible_action_or_hold: Hold exterior layer read
+      object_or_environment_response: Landscape holds soft daylight contrast
+      endpoint: Outside layer readable
+      tone_guard: Not travel ad without scent causality.
+    still_frame_plan:
+      screen_truth: Looking out curved glass to soft exterior Ionia
+      must_preserve:
+      - glass curve
+      - exterior soft world
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold look-out
+      camera_route: Static outward
+      subject_route: None
+      object_or_environment_route: Exterior steady
+      static_or_camera_only_exclusion: Not stock landscape without glass
+    edit_use: Worm-eye veil
+  - branch_cut_id: CF_BRANCH_04_03
+    order_index: 4
+    realization_function: viewpoint_change
+    distinct_screen_contribution: Worm-eye up glass walls with rising veil streams and petals.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      - reference_id: CFSUB_YT_ACTION_ONLY
+        detail_scope: object_behavior_detail
+        application: Body route/contact/timing for scent-open only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Vertical glass walls, rising soft veil, pink petals, spots above.
+    composition_reset:
+    - background
+    - camera_direction
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: medium_wide
+      camera_height: ground_level
+      camera_direction: up_the_walls
+      camera_angle: extreme_low
+      lens_or_distance_read: 24-35mm_wide
+      subject_placement: vertical glass and veil dominate
+      crop_or_negative_space: spots top
+      foreground_depth: floor
+      background_depth: lights high
+      movement: hold
+      movement_reason: Vertical consequence.
+    variation_from_previous:
+      changed_axes:
+      - camera_angle
+      - camera_height
+      commercial_reason: Extreme low
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Veil and glass vertical system
+      subject_state_or_pose: Optional tiny silhouette at base
+      visible_action_or_hold: Rising veil hold
+      object_or_environment_response: Petals and mist travel upward because open path exists
+      endpoint: Vertical open consequence
+      tone_guard: Not fireworks without scent cause.
+    still_frame_plan:
+      screen_truth: Low angle rising veil inside glass walls
+      must_preserve:
+      - extreme low
+      - rising veil
+      - glass walls
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Veil rises and holds
+      camera_route: Static low
+      subject_route: Optional base still
+      object_or_environment_route: Petals lift
+      static_or_camera_only_exclusion: Not pure VFX plate
+    edit_use: Window insert
+  - branch_cut_id: CF_BRANCH_04_04
+    order_index: 5
+    realization_function: object_or_spatial_consequence
+    distinct_screen_contribution: Tight glass-window insert of exterior landscape panel only.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Framed glass panel with exterior soft landscape; no people.
+    composition_reset:
+    - background
+    - camera_direction
+    - object_state
+    - color_light
+    - sound_or_edit
+    camera_plan:
+      shot_scale: close_up
+      camera_height: panel_center_height
+      camera_direction: square_to_panel
+      camera_angle: flat_frontal
+      lens_or_distance_read: macro_ish_shallow
+      subject_placement: panel fills frame
+      crop_or_negative_space: thin black matte edges
+      foreground_depth: panel surface
+      background_depth: landscape in panel
+      movement: hold
+      movement_reason: Insert detail.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      commercial_reason: Insert
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Glass panel and exterior vista
+      subject_state_or_pose: Static insert
+      visible_action_or_hold: Hold panel readability
+      object_or_environment_response: Landscape soft detail sharp in panel
+      endpoint: Insert complete
+      tone_guard: Not product label insert.
+    still_frame_plan:
+      screen_truth: Glass panel insert of exterior Ionia landscape
+      must_preserve:
+      - panel frame
+      - exterior detail
+      - no product bottle
+      temporal_use: hold_or_insert
+    motion_handoff:
+      motion_route: Hold insert
+      camera_route: Static CU
+      subject_route: None
+      object_or_environment_route: Panel steady
+      static_or_camera_only_exclusion: Not random nature stock
+    edit_use: Lateral track
+  - branch_cut_id: CF_BRANCH_04_05
+    order_index: 6
+    realization_function: object_or_spatial_consequence
+    distinct_screen_contribution: Side track along glass wall with horizontal veil stream.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_SPACE_ENTRY
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Long glass wall, horizontal soft veil ribbon, audience points far.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - object_state
+    camera_plan:
+      shot_scale: medium_wide
+      camera_height: chest_height
+      camera_direction: lateral_along_wall
+      camera_angle: eye_level
+      lens_or_distance_read: 35mm_tracking_feel
+      subject_placement: wall diagonal across frame
+      crop_or_negative_space: leading space right
+      foreground_depth: wall near
+      background_depth: crowd far
+      movement: side_track_to_hold
+      movement_reason: Lateral grammar unique in set.
+    variation_from_previous:
+      changed_axes:
+      - camera_direction
+      - movement
+      commercial_reason: Lateral unique
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Horizontal veil along glass
+      subject_state_or_pose: Idol silhouette optional mid
+      visible_action_or_hold: Veil streams laterally then holds
+      object_or_environment_response: Wall reflections streak lightly
+      endpoint: Lateral open consequence
+      tone_guard: Not chase action.
+    still_frame_plan:
+      screen_truth: Lateral glass wall with horizontal veil stream
+      must_preserve:
+      - lateral axis
+      - veil stream
+      - glass wall
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Veil streams then holds
+      camera_route: Side track stop
+      subject_route: Optional silhouette drifts soft
+      object_or_environment_route: Reflections streak
+      static_or_camera_only_exclusion: Not empty pan
+    edit_use: To multi-member balance
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Ionia interior and exterior layers switch as support dress of opened scent
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_05
+  order_index: 5
+  time_range: 15.2-21.5
+  duration_seconds: 6.3
+  timing_basis: 'Estimated from commercial readability of: Two to three Loom women balance presence on
+    opened air; relation not fight'
+  ad_function: subject_proof
+  commercial_event: Two to three Loom women balance presence on opened air; relation not fight
+  viewer_read: Two to three Loom women balance presence on opened air; relation not fight
+  subject_proof: Shared residual veil between members
+  engine_causality:
+    subject_trigger: Opened air exists
+    environment_or_system_reaction: Multi-body balance spacing
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Two to three Loom women balance presence on opened air; relation
+      not fight
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_BODY_SCALE
+    - CFMAINPH_HAND_PEAK
+    - CFMAINPH_AFTERMATH_WIDEN
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings:
+    - reference_id: CFSUB_SKIN_STYLE
+      detail_scope: wardrobe_or_styling_detail
+      application: Ahri/Akali/Irelia top2-inspired Loom styling only; no champion face clone.
+      may_change_main_flow: false
+    - reference_id: CFSUB_IONIA_WORLD
+      detail_scope: environment_detail
+      application: Soft Ionia material/light/space dress only.
+      may_change_main_flow: false
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_05; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: three figures triangular midframe
+      camera_height: chest_height
+      shot_scale_distance: medium_full
+      camera_direction: frontal_slight_high
+      camera_angle: slight_high
+      depth_design: nearest member; / stage wall
+      subject_space_composition: three figures triangular midframe
+      crop_negative_space: floor visible
+      lens_feel: 35mm
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_05_01
+      camera_role: Three women mid-wide balance presence on opened air; relation not fight.
+      relationship_to_anchor: Three-body base
+    - branch_cut_id: CF_BRANCH_05_02
+      camera_role: Closer two-to-three body relation with eye-line between members.
+      relationship_to_anchor: Closer relation
+    - branch_cut_id: CF_BRANCH_05_03
+      camera_role: Edge-lane member profile toward companions; balance not duel.
+      relationship_to_anchor: Single profile
+    - branch_cut_id: CF_BRANCH_05_04
+      camera_role: Overhead triangular three-body spacing on stage floor after balance holds.
+      relationship_to_anchor: Overhead multi
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Height may climb from ankle to waist to eye, and the final relay may become an
+      object macro, provided the glass-ridge direction, hand ownership, and safe continuity remain clear.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_05_01
+    order_index: 1
+    realization_function: event_phase
+    distinct_screen_contribution: Three women mid-wide balance presence on opened air; relation not fight.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      - CFMAINPH_AFTERMATH_WIDEN
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Glass bottle-stage interior with residual soft veil; pink-purple ceremony light.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - color_light
+    camera_plan:
+      shot_scale: medium_full
+      camera_height: chest_height
+      camera_direction: frontal_slight_high
+      camera_angle: slight_high
+      lens_or_distance_read: 35mm
+      subject_placement: three figures triangular midframe
+      crop_or_negative_space: floor visible
+      foreground_depth: nearest member
+      background_depth: stage wall
+      movement: hold
+      movement_reason: Read three-body relation.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      commercial_reason: Three-body base
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: M05 Faye soft lane, M02 Seorin edge lane, M07 Rena balance lane
+      subject_state_or_pose: Standing relation spacing; no combat poses
+      visible_action_or_hold: Shared breath hold on opened air
+      object_or_environment_response: Residual veil links the three
+      endpoint: Balance readable
+      tone_guard: Not fight coverage; not lineup beauty only without veil residual.
+    still_frame_plan:
+      screen_truth: Three Loom members triangular balance with residual veil
+      must_preserve:
+      - three members
+      - relation spacing
+      - residual veil
+      - no combat
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold shared breath
+      camera_route: Static medium-full
+      subject_route: Spacing stable
+      object_or_environment_route: Veil links
+      static_or_camera_only_exclusion: Ionia bottle-stage scent field at core_cuts.branch_cuts.motion_handoff.static_or_camera_only_exclusion
+    edit_use: Closer relation
+  - branch_cut_id: CF_BRANCH_05_02
+    order_index: 2
+    realization_function: viewpoint_change
+    distinct_screen_contribution: Closer two-to-three body relation with eye-line between members.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      - CFMAINPH_AFTERMATH_WIDEN
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Same stage; tighter negative space between faces and shoulders.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: medium
+      camera_height: eye_height
+      camera_direction: between_two_profiles
+      camera_angle: eye_level
+      lens_or_distance_read: 50mm
+      subject_placement: two profiles opposing third soft BG
+      crop_or_negative_space: tight shoulders
+      foreground_depth: near profiles
+      background_depth: third soft
+      movement: hold
+      movement_reason: Relation insert.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - camera_direction
+      commercial_reason: Closer relation
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Two primary relation plus third soft
+      subject_state_or_pose: Facing each other not camera
+      visible_action_or_hold: Quiet recognition hold
+      object_or_environment_response: Veil residual between faces
+      endpoint: Relation proof
+      tone_guard: Not kiss-cam; not fight stare-down.
+    still_frame_plan:
+      screen_truth: Opposing profiles with residual veil between
+      must_preserve:
+      - two profiles
+      - veil residual
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold recognition
+      camera_route: Static medium
+      subject_route: Eye-line stable
+      object_or_environment_route: Veil soft between
+      static_or_camera_only_exclusion: Not pure beauty dual close
+    edit_use: Edge profile
+  - branch_cut_id: CF_BRANCH_05_03
+    order_index: 3
+    realization_function: viewpoint_change
+    distinct_screen_contribution: Edge-lane member profile toward companions; balance not duel.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      - CFMAINPH_AFTERMATH_WIDEN
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Soft stage; companions out of focus background.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: close_medium
+      camera_height: eye_height
+      camera_direction: strict_side_profile
+      camera_angle: eye_level
+      lens_or_distance_read: 85mm
+      subject_placement: profile left-third looking right
+      crop_or_negative_space: open right negative space
+      foreground_depth: profile
+      background_depth: companions soft
+      movement: hold
+      movement_reason: Single-lane identity.
+    variation_from_previous:
+      changed_axes:
+      - camera_direction
+      - shot_scale
+      commercial_reason: Single profile
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: M02 edge-lane styled member
+      subject_state_or_pose: Profile gaze to off-frame companions
+      visible_action_or_hold: Hold recognition look
+      object_or_environment_response: Cloth edge settles
+      endpoint: Edge lane readable
+      tone_guard: Not champion face clone; not duel.
+    still_frame_plan:
+      screen_truth: Edge-lane profile looking to companions
+      must_preserve:
+      - profile
+      - companion BG soft
+      - Loom styling
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold look
+      camera_route: Static profile
+      subject_route: Gaze fixed off-frame
+      object_or_environment_route: Cloth settles
+      static_or_camera_only_exclusion: Not beauty headshot only
+    edit_use: Overhead triangle
+  - branch_cut_id: CF_BRANCH_05_04
+    order_index: 4
+    realization_function: aftermath
+    distinct_screen_contribution: Overhead triangular three-body spacing on stage floor after balance
+      holds.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_BODY_SCALE
+      - CFMAINPH_HAND_PEAK
+      - CFMAINPH_AFTERMATH_WIDEN
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings:
+      - reference_id: CFSUB_SKIN_STYLE
+        detail_scope: wardrobe_or_styling_detail
+        application: Loom styling lanes only; no champion face clone.
+        may_change_main_flow: false
+      - reference_id: CFSUB_IONIA_WORLD
+        detail_scope: environment_detail
+        application: Soft Ionia space/light dress only.
+        may_change_main_flow: false
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Floor blossom pattern; three bodies as triangle; residual veil web.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_direction
+    - object_state
+    - sound_or_edit
+    camera_plan:
+      shot_scale: wide
+      camera_height: high_overhead
+      camera_direction: straight_down
+      camera_angle: top_down
+      lens_or_distance_read: wide_high
+      subject_placement: triangle of three bodies center
+      crop_or_negative_space: circular stage crop
+      foreground_depth: none
+      background_depth: floor pattern
+      movement: hold
+      movement_reason: Spatial aftermath.
+    variation_from_previous:
+      changed_axes:
+      - camera_height
+      - camera_angle
+      commercial_reason: Overhead multi
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Three members as spatial constellation
+      subject_state_or_pose: Standing triangle
+      visible_action_or_hold: Hold spacing proof
+      object_or_environment_response: Floor pattern frames the triangle
+      endpoint: Spatial balance aftermath
+      tone_guard: Not formation dance diagram.
+    still_frame_plan:
+      screen_truth: Top-down triangle of three on blossom floor
+      must_preserve:
+      - triangle spacing
+      - floor pattern
+      - three members
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold spacing
+      camera_route: Static overhead
+      subject_route: Triangle stable
+      object_or_environment_route: Floor holds
+      static_or_camera_only_exclusion: Not graphic overlay
+    edit_use: Bottle-read afterimage
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Two to three Loom women balance presence on opened air; relation not fight
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_06
+  order_index: 6
+  time_range: 21.5-27.5
+  duration_seconds: 6.0
+  timing_basis: 'Estimated from commercial readability of: Stage-as-bottle afterimage packshot-equivalent;
+    not a handheld product bottle prop'
+  ad_function: identity_or_brand_memory
+  commercial_event: Stage-as-bottle afterimage packshot-equivalent; not a handheld product bottle prop
+  viewer_read: Stage-as-bottle afterimage packshot-equivalent; not a handheld product bottle prop
+  subject_proof: Shell reads as bottle memory with residual mist
+  engine_causality:
+    subject_trigger: Proof complete
+    environment_or_system_reaction: Residual mist settles in shell
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Stage-as-bottle afterimage packshot-equivalent; not a handheld
+      product bottle prop
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_AFTERMATH_WIDEN
+    - CFMAINPH_OBJECT_PEAK
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings: []
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_06; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: bottle-stage silhouette fills vertical
+      camera_height: audience_eye_or_slight_low
+      shot_scale_distance: extreme_wide
+      camera_direction: frontal_to_stage_shell
+      camera_angle: slight_low
+      depth_design: audience; / lights high
+      subject_space_composition: bottle-stage silhouette fills vertical
+      crop_negative_space: audience lower third
+      lens_feel: wide_ceremonial
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_06_01
+      camera_role: Wide stage shell reads as perfume-bottle silhouette with audience; not handheld product
+        prop.
+      relationship_to_anchor: Wide bottle-read
+    - branch_cut_id: CF_BRANCH_06_02
+      camera_role: Macro curved stage-glass residual mist; abstract bottle-read material still not freestanding
+        product prop.
+      relationship_to_anchor: Macro residual
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: The stage shell may convert into a quiet title-safe bottle-read afterimage if the
+      endpoint objects and the open center remain readable.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_06_01
+    order_index: 1
+    realization_function: object_or_spatial_consequence
+    distinct_screen_contribution: Wide stage shell reads as perfume-bottle silhouette with audience; not
+      handheld product prop.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_OBJECT_PEAK
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Arena audience; giant translucent stage shell as bottle volume; residual mist inside;
+      members soft silhouettes optional.
+    composition_reset:
+    - background
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - subject_size
+    - object_state
+    camera_plan:
+      shot_scale: extreme_wide
+      camera_height: audience_eye_or_slight_low
+      camera_direction: frontal_to_stage_shell
+      camera_angle: slight_low
+      lens_or_distance_read: wide_ceremonial
+      subject_placement: bottle-stage silhouette fills vertical
+      crop_or_negative_space: audience lower third
+      foreground_depth: audience
+      background_depth: lights high
+      movement: hold
+      movement_reason: Packshot-equivalent via stage.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      commercial_reason: Wide bottle-read
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Stage-as-bottle set and audience
+      subject_state_or_pose: Members optional soft silhouettes inside
+      visible_action_or_hold: Hold bottle-read composition
+      object_or_environment_response: Residual mist settles inside shell
+      endpoint: Bottle-read memory
+      tone_guard: 'Forbidden: freestanding product bottle on black table as only end.'
+    still_frame_plan:
+      screen_truth: Wide arena stage shell reads as bottle afterimage with audience
+      must_preserve:
+      - stage shell silhouette
+      - audience
+      - residual mist
+      - no handheld product bottle
+      temporal_use: ordered_motion_anchor
+    motion_handoff:
+      motion_route: Hold afterimage
+      camera_route: Static wide
+      subject_route: Silhouettes soft hold
+      object_or_environment_route: Mist settles
+      static_or_camera_only_exclusion: Not product ecommerce packshot
+    edit_use: Macro residual then endcard
+  - branch_cut_id: CF_BRANCH_06_02
+    order_index: 2
+    realization_function: aftermath
+    distinct_screen_contribution: Macro curved stage-glass residual mist; abstract bottle-read material
+      still not freestanding product prop.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_AFTERMATH_WIDEN
+      - CFMAINPH_OBJECT_PEAK
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Curved stage glass only; residual spirit mist; no handheld bottle; no black product
+      table.
+    composition_reset:
+    - shot_scale
+    - camera_height
+    - camera_direction
+    - object_state
+    - sound_or_edit
+    camera_plan:
+      shot_scale: extreme_macro
+      camera_height: mid_glass_height
+      camera_direction: tangent_to_curve
+      camera_angle: slight_oblique
+      lens_or_distance_read: macro_shallow
+      subject_placement: curve and mist dominate
+      crop_or_negative_space: edge falloff dark
+      foreground_depth: glass
+      background_depth: mist
+      movement: hold
+      movement_reason: Material afterimage.
+    variation_from_previous:
+      changed_axes:
+      - shot_scale
+      - camera_direction
+      commercial_reason: Macro residual
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Glass wall material and residual mist
+      subject_state_or_pose: No people required
+      visible_action_or_hold: Hold residual afterimage
+      object_or_environment_response: Mist clings to inner glass
+      endpoint: Material memory
+      tone_guard: Not product bottle hero on black.
+    still_frame_plan:
+      screen_truth: Macro stage-glass curve with residual mist only
+      must_preserve:
+      - curved stage glass
+      - mist
+      - no freestanding product bottle
+      temporal_use: hold_or_insert
+    motion_handoff:
+      motion_route: Hold mist cling
+      camera_route: Static macro
+      subject_route: None
+      object_or_environment_route: Mist soft settles
+      static_or_camera_only_exclusion: Not product glassware still life
+    edit_use: Endcard
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Stage-as-bottle afterimage packshot-equivalent; not a handheld product bottle prop
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+- core_cut_id: CF_CORE_07
+  order_index: 7
+  time_range: 27.5-30.0
+  duration_seconds: 2.5
+  timing_basis: 'Estimated from commercial readability of: Concept-collab endcard hold on stage-as-bottle
+    composition'
+  ad_function: packshot_or_final_recall
+  commercial_event: Concept-collab endcard hold on stage-as-bottle composition
+  viewer_read: Concept-collab endcard hold on stage-as-bottle composition
+  subject_proof: Quiet title space without official collab language or product prop
+  engine_causality:
+    subject_trigger: Memory held
+    environment_or_system_reaction: Quiet settle
+    proof_that_subject_caused_it: World or relation change follows body or stage action order, not free
+      decoration.
+    new_story_or_commercial_information: Concept-collab endcard hold on stage-as-bottle composition
+  reference_authority:
+    origin: main_reference_direct
+    main_phase_ids:
+    - CFMAINPH_AFTERMATH_WIDEN
+    main_surface_ids: []
+    main_flow_preservation: Preserve BV1 space→object→hand→body→peak→widen; no reorder with support.
+    supporting_detail_bindings: []
+    protected_main_elements:
+    - phase_order
+    - glass_bottle_stage_continuity
+    - no_MINJU_face_mic_LCK
+    - no_freestanding_product_bottle_engine
+    commercial_expansion_reason: null
+  camera_coverage_plan:
+    contract_version: core_camera_coverage.v1
+    spatial_anchor_and_axis: Glass bottle-stage continuous place for CF_CORE_07; scale follows main BV1
+      progression.
+    anchor_view:
+      camera_position_in_space: stage shell upper-center; empty lower third
+      camera_height: slight_low_audience
+      shot_scale_distance: wide
+      camera_direction: frontal_to_stage
+      camera_angle: slight_low
+      depth_design: audience soft; / stage
+      subject_space_composition: stage shell upper-center; empty lower third
+      crop_negative_space: safe empty lower third
+      lens_feel: wide_still
+    branch_camera_roles:
+    - branch_cut_id: CF_BRANCH_07_01
+      camera_role: Quiet stage-as-bottle hold with dark lower third for concept-collab title; no physical
+        product bottle prop; no Riot marks.
+      relationship_to_anchor: Endcard
+    protected_continuity: Glass bottle-stage continuous; no freestanding product bottle prop required;
+      female cast when members visible.
+    allowed_variation: Only afterimage intensity and decay may vary; the graphic plane and title-safe
+      field remain fixed.
+    creative_variation_rule: branch_cuts_may_depart_broadly_from_the_anchor_including_height_distance_direction_angle_axis_depth_placement_crop_lens_and_viewpoint_when_each_departure_adds_new_screen_information_and_preserves_or_explicitly_resets_continuity
+    forbidden_collapse: Do not repeat one beauty setup; do not require freestanding product bottle as
+      engine.
+    exact_branch_camera_owner: each_branch_cut_camera_plan_is_authoritative_anchor_guides_coverage_without_forcing_one_fixed_view
+  branch_cuts:
+  - branch_cut_id: CF_BRANCH_07_01
+    order_index: 1
+    realization_function: packshot_or_cta
+    distinct_screen_contribution: Quiet stage-as-bottle hold with dark lower third for concept-collab
+      title; no physical product bottle prop; no Riot marks.
+    reference_binding:
+      origin: main_reference_direct
+      main_phase_ids:
+      - CFMAINPH_AFTERMATH_WIDEN
+      main_surface_ids: []
+      main_flow_preservation: Preserve main phase order; support fills declared scopes only.
+      supporting_detail_bindings: []
+      protected_main_elements:
+      - phase_order
+      - glass_bottle_stage
+      - no_product_bottle_engine
+      - no_MINJU_identity
+      commercial_expansion_reason: null
+    background_state: Bottle-stage silhouette on stage; audience lights soft; large dark lower third clean
+      for title; residual veil faint.
+    composition_reset:
+    - background
+    - shot_scale
+    - object_state
+    - text_overlay
+    - sound_or_edit
+    camera_plan:
+      shot_scale: wide
+      camera_height: slight_low_audience
+      camera_direction: frontal_to_stage
+      camera_angle: slight_low
+      lens_or_distance_read: wide_still
+      subject_placement: stage shell upper-center; empty lower third
+      crop_or_negative_space: safe empty lower third
+      foreground_depth: audience soft
+      background_depth: stage
+      movement: hold
+      movement_reason: Endcard hold.
+    variation_from_previous:
+      changed_axes:
+      - subject_placement
+      - crop_or_negative_space
+      commercial_reason: Endcard
+      deliberate_repeat_exception: null
+    action_plan:
+      visible_subject: Stage-as-bottle memory and empty title space
+      subject_state_or_pose: No new member action
+      visible_action_or_hold: Hold for concept-collab endcard
+      object_or_environment_response: Mist almost settled
+      endpoint: Concept-collab end
+      tone_guard: No freestanding product bottle prop; no Riot logo; no price.
+    still_frame_plan:
+      screen_truth: Wide stage-as-bottle with empty lower third for fan-made title
+      must_preserve:
+      - stage shell not product prop
+      - empty lower third
+      - no Riot marks
+      temporal_use: hold_or_insert
+    motion_handoff:
+      motion_route: Hold end
+      camera_route: Static wide
+      subject_route: None new
+      object_or_environment_route: Mist almost gone
+      static_or_camera_only_exclusion: Not black void product bottle packshot
+    edit_use: End
+  sound_text_plan: Soft air, breath, glass, crowd hush as fits; no on-screen text until concept-collab
+    endcard only.
+  edit_trigger: Concept-collab endcard hold on stage-as-bottle composition
+  next_core_cut_reason: Advance the scent-engine commercial chain to the next governing event
+  failure_conditions:
+  - Body action removed but magic continues
+  - Freestanding product bottle becomes required engine
+  - Ranked HUD or fight grammar
+  - Official Riot partnership language
+script_qc:
+  subject_proof_in_first_two_seconds: true
+  brand_or_memory_signal_repeats: true
+  visual_resets_checked: true
+  same_background_not_default: true
+  every_core_cut_is_a_governing_event: true
+  every_branch_cut_has_distinct_screen_contribution: true
+  start_end_labels_are_not_cut_identity: true
+  branch_frames_are_video_ready: true
+  next_cut_reasons_are_commercial: true
+  not_mv_or_beauty_reel: true
+  subject_engine_causality_preserved: true
+  each_cut_adds_story_or_commercial_information: true
+  front_planning_spine_preserved: true
+  main_reference_phase_order_preserved: true
+  supporting_references_stay_in_detail_scope: true
+  every_core_cut_has_governing_camera_coverage: true
+  core_camera_anchor_is_not_a_default_frame: true
+  camera_coverage_varies_by_commercial_function: true
+  same_composition_is_not_the_default: true
+  generation_surface_not_locked_to_seedance: true
+  claim_safety_preserved: true
+handoff_decision:
+  may_continue_to_cf50: true
+  reason: Ionia bottle-stage scent field at handoff_decision.reason
+  required_next_inputs: []

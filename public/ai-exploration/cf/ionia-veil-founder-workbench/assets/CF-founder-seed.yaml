@@ -1,0 +1,226 @@
+schema_version: cf_founder_seed.v2
+cf_id: CF_LOL_IONIA_PERFUME_001
+date: '2026-08-01'
+status: ready_for_autonomous_expansion
+founder_sequence_control:
+  path: runs/CF_LOL_IONIA_PERFUME_001/research/CF-founder-sequence-control.yaml
+  sha256: 12b3a3c7f73f0efd85e4ea45f2573d3e1b2f5a6249c6a9e92ce106163f6099cd
+  schema_version: idol_founder_sequence_control.v1
+  lane: cf_code
+  status: passed
+  founder_decision: pass
+  projection_authorized: true
+founder_input:
+  verbatim_request: 'GOAL MODE CF_LOL_IONIA_PERFUME_001: no physical perfume bottle; stage-as-glass-bottle;
+    body action scent engine; main BV1 1:40-3:44; YT action-only; Ahri/Akali/Irelia top2 styling; Open
+    the scent. Open her world.; 08 target lock; concept collab; CF-ALL CF00-CF50 then Phase D stills.'
+  advertised_subject: Fictional Ionia perfume / scent concept (IONIA VEIL working name) — fan-made concept
+    collab; no physical bottle prop required
+  one_line_direction: Open the scent. Open her world.
+  target_duration_seconds: 25
+  target_stage: CF50
+  autonomous_expansion_authorized: true
+  external_research_authorized: true
+  unresolved_inputs: []
+main_reference:
+  reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+  source_identity: bilibili:BV1vPndzSEn2 selected ceremony stage grammar 1:40-3:44
+  source_path_or_url: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/videos/BV1vPndzSEn2.mp4
+  source_sha256: 9f1af0c76dd306401c1d06a93df11f7c02d50599ce21e9ad33dbb48d9085d164
+  selection_authority: founder_selected_exact_surface
+  selection_reason: Founder locked BV1vPndzSEn2 range 1:40-3:44 as governing main sequence grammar for
+    this CF.
+  selection_mode: main_sequence_direct
+  selected_range_or_surface: 1:40-3:44 (100.000-224.000s) Layer B anchors B1-B7
+  selected_derivatives:
+  - surface_id: CFMAINSURF_B1_SPACE
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png
+    sha256: 97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51
+    order_index: 1
+    source_time_or_locator: 108s B1 space petal column
+    phase_id: CFMAINPH_SPACE_ENTRY
+  - surface_id: CFMAINSURF_B2_OBJECT
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t120.png
+    sha256: 61bbd9d966639693082e19adeda5002b5f911c42b4ff552c6fcf3ed11110d72e
+    order_index: 2
+    source_time_or_locator: 120s B2 lotus object peak
+    phase_id: CFMAINPH_OBJECT_PEAK
+  - surface_id: CFMAINSURF_B3_HAND_A
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t145.png
+    sha256: 60b85dacc398f7ec16c91651697f8c312b160316cb2ed012979969198a3baf93
+    order_index: 3
+    source_time_or_locator: 145s B3 two-hand gather
+    phase_id: CFMAINPH_HAND_OWNERSHIP
+  - surface_id: CFMAINSURF_B4_HAND_B
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t152.png
+    sha256: 24bb14f89cc6229a1342a6af4ae25bf6aae64edfd00f66041fa402051e504885
+    order_index: 4
+    source_time_or_locator: 152s B4 free-hand split
+    phase_id: CFMAINPH_HAND_OWNERSHIP
+  - surface_id: CFMAINSURF_B5_BODY
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t180.png
+    sha256: 6d0501c23c67c65d2461ab5c3ef426b460d5bb75a3c2ccc57694e81398bcd6bc
+    order_index: 5
+    source_time_or_locator: 180s B5 full-body arm route
+    phase_id: CFMAINPH_BODY_SCALE
+  - surface_id: CFMAINSURF_B6_HAND_PEAK
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t192.png
+    sha256: 27703830ba332990458aa5e4ba8fb8c59b4e493b991ac9ffbdeb6ec63557a21e
+    order_index: 6
+    source_time_or_locator: 192s B6 high hand peak
+    phase_id: CFMAINPH_HAND_PEAK
+  - surface_id: CFMAINSURF_B7_WIDEN
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t212.png
+    sha256: 62a301b294975615b478ef99fa9d7049cf8f07745c928cca9087a385966349ed
+    order_index: 7
+    source_time_or_locator: 212s B7 lateral + widen
+    phase_id: CFMAINPH_AFTERMATH_WIDEN
+  ordered_phases:
+  - phase_id: CFMAINPH_SPACE_ENTRY
+    phase_role: entry
+    observable_action_or_state: Extreme high wide arena/stage bowl; petal/light column; audience field;
+      no face-led subject.
+    camera_or_composition_grammar: Very high overhead / steep high-oblique; stage small in frame; purple/pink
+      light family.
+    transition_or_endpoint: Descend scale toward object peak.
+  - phase_id: CFMAINPH_OBJECT_PEAK
+    phase_role: impact
+    observable_action_or_state: Large stage-center object fully readable before solo face ownership.
+    camera_or_composition_grammar: High three-quarter medium-wide object scale; object centered.
+    transition_or_endpoint: Approach human ownership scale.
+  - phase_id: CFMAINPH_HAND_OWNERSHIP
+    phase_role: contact
+    observable_action_or_state: Two-hand gather then free-hand split owns the center plane.
+    camera_or_composition_grammar: Eye-height medium close-up; hands and face plane centered; shallow
+      pink field.
+    transition_or_endpoint: Open to full-body scale.
+  - phase_id: CFMAINPH_BODY_SCALE
+    phase_role: proof
+    observable_action_or_state: Full-body mid-wide with raised arm route on stage.
+    camera_or_composition_grammar: Mid-wide frontal/slight three-quarter; body readable against stage
+      wall.
+    transition_or_endpoint: Tighten to hand peak.
+  - phase_id: CFMAINPH_HAND_PEAK
+    phase_role: payoff
+    observable_action_or_state: Free hand high silhouette peak.
+    camera_or_composition_grammar: Closer silhouette; hard stage spots; high hand dominates.
+    transition_or_endpoint: Widen aftermath.
+  - phase_id: CFMAINPH_AFTERMATH_WIDEN
+    phase_role: endpoint
+    observable_action_or_state: Lateral arm extension and scale return toward field/audience.
+    camera_or_composition_grammar: Widen; fabric/field; ceremony afterimage.
+    transition_or_endpoint: Hold memory of stage-as-world.
+  governing_fields:
+  - phase_order
+  - scene_progression
+  - action_route
+  - camera_axis_route
+  - subject_placement
+  - composition_crop_negative_space
+  - transition_grammar
+  - climax_and_endpoint
+  protected_elements:
+  - space before object before hand before body before peak before widen
+  - object-before-face ownership
+  - hand ownership before full body peak
+  - stage continuous place
+  - no MINJU face/mic/LCK marks transfer
+  replaceable_elements:
+  - source performer identity
+  - mic prop (rebind to scent gesture / glass)
+  - exact lotus mesh
+  - LCK venue branding
+  - physical perfume bottle prop (forbidden as required engine)
+supporting_references:
+- reference_id: CFSUB_YT_ACTION_ONLY
+  source_identity: YouTube 2Y2dsNu_-js Gabrielle Chanel film — action only
+  source_path_or_url: source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/videos/2Y2dsNu_-js.mp4
+  source_sha256: f627d921ba8ea90ebe64c1afc07bd157c6d0b1ec7f8cf415b3529c77bdffa229
+  selected_range_or_surface: 0-60s action units ACT_U1..U6; anchors t00/t20/t30/t40/t50
+  target_main_phase_ids:
+  - CFMAINPH_HAND_OWNERSHIP
+  - CFMAINPH_BODY_SCALE
+  - CFMAINPH_HAND_PEAK
+  allowed_detail_scopes:
+  - object_behavior_detail
+  - wardrobe_or_styling_detail
+  detail_application: Inject neck/wrist/arm-peak/walk body routes from hub first-read as scent-open engine
+    only; never replace main phase order.
+  may_change_main_phase_order: false
+  may_override_main_action_route: false
+  may_override_main_camera_axis: false
+  may_move_main_climax: false
+  conflict_rule: main_reference_wins_unless_verified_subject_truth_safety_claim_output_constraint_or_explicit_founder_lock_requires_hold
+- reference_id: CFSUB_IONIA_WORLD
+  source_identity: Ionia / Spirit Blossom soft world support materials
+  source_path_or_url: runs/CF_LOL_IONIA_PERFUME_001/research/pre-automation/04-ionia-world-usable-truth-v1.md
+  source_sha256: bb9d64caa12cb91721ff68a99194ec17fffd61622dc52ed6093f6f30c1cc0c3c
+  selected_range_or_surface: soft spirit material/light/space notes
+  target_main_phase_ids:
+  - CFMAINPH_SPACE_ENTRY
+  - CFMAINPH_OBJECT_PEAK
+  - CFMAINPH_AFTERMATH_WIDEN
+  allowed_detail_scopes:
+  - environment_detail
+  - lighting_or_color_detail
+  - material_or_surface_behavior
+  detail_application: Dress bottle-stage interior and exterior-through-glass Ionia layers only.
+  may_change_main_phase_order: false
+  may_override_main_action_route: false
+  may_override_main_camera_axis: false
+  may_move_main_climax: false
+  conflict_rule: main_reference_wins_unless_verified_subject_truth_safety_claim_output_constraint_or_explicit_founder_lock_requires_hold
+- reference_id: CFSUB_SKIN_STYLE
+  source_identity: Ahri/Akali/Irelia Top2 popular-skin styling research
+  source_path_or_url: runs/CF_LOL_IONIA_PERFUME_001/research/phase-a/skin-top2-ahri-akali-irelia-v1.md
+  source_sha256: af7112342d8fa1fe9d05278247dfdcdf93325dcd63e0cd02afc37b9c675822f1
+  selected_range_or_surface: AHRI_SOFT / AKALI_EDGE / IRELIA_BALANCE lanes
+  target_main_phase_ids:
+  - CFMAINPH_BODY_SCALE
+  - CFMAINPH_HAND_PEAK
+  - CFMAINPH_AFTERMATH_WIDEN
+  allowed_detail_scopes:
+  - wardrobe_or_styling_detail
+  - lighting_or_color_detail
+  detail_application: Apply Loom-safe styling lanes only; no champion face clone.
+  may_change_main_phase_order: false
+  may_override_main_action_route: false
+  may_override_main_camera_axis: false
+  may_move_main_climax: false
+  conflict_rule: main_reference_wins_unless_verified_subject_truth_safety_claim_output_constraint_or_explicit_founder_lock_requires_hold
+visual_background_lock:
+  founder_owns_subject_visual: true
+  founder_owns_background_world: true
+  subject_visual_sources:
+  - Fictional IONIA VEIL scent concept without mandatory physical bottle prop
+  - Loom member identity with Ahri/Akali/Irelia top2-skin-inspired styling lanes
+  background_world_sources:
+  - Stage-as-glass-bottle set with audience outside
+  - Ionia soft spirit / Spirit Blossom material dress as interior-exterior layers
+  - Main BV1 stage ceremony grammar
+  locked_elements:
+  - no_physical_perfume_bottle_prop_required
+  - stage_as_glass_bottle
+  - audience_outside_looking_in
+  - body_action_is_scent_engine
+  - female_only_cast
+  - concept_collab_claim_only
+  - photoreal_idb_class
+  - nine_sixteen_shortform
+  director_may_expand:
+  - commercial_argument
+  - subject_proof
+  - action_and_world_reaction
+  - camera_coverage
+  - cut_architecture
+  - edit_rhythm
+  - packshot_and_cta
+authority_rules:
+  main_drives_flow: main_reference_is_the_governing_source_for_order_action_camera_composition_transition_climax_and_endpoint
+  supporting_refs_fill_details: supporting_references_apply_only_to_declared_phases_and_detail_scopes_and_never_average_or_replace_main_flow
+  conflict_rule: main_reference_wins_unless_verified_subject_truth_safety_claim_output_constraint_or_explicit_founder_lock_requires_hold
+  unresolved_conflict_action: hold_only_the_affected_scope_and_request_the_smallest_founder_decision
+handoff_decision:
+  may_start_cf_all: true
+  reason: FSC passed; main BV1 derivatives bound with hashes; supporting scopes declared; unresolved_inputs
+    empty; Founder authorized CF-ALL through CF50.

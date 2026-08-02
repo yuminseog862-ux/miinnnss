@@ -56,7 +56,7 @@ export const channelPerformanceSnapshot = {
       target:
         "창작 타깃 가설: 20대 초반 여성. (공개 API에 연령·성별·국가 인구통계 없음. 실제 시청자 인구통계로 표기하지 않음.)",
       intent:
-        "AI 아이돌 IP를 트랙·핵심 영상·TikTok 클립·YouTube 공개 표면으로 운영하며, 반응 신호를 다음 메시지·컷 설계 가설로 되돌린다.",
+        "AI 아이돌 IP의 트랙·핵심 영상·TikTok 클립·YouTube 공개 표면 운영 · 반응 신호의 다음 메시지·컷 설계 가설 환류",
       role:
         "IP 구조, 트랙/멤버/영상 흐름, AI 제작 루프, 게시 경로, 채널 신호 정리. 메시지·타깃 정렬·컷 구조의 최종 판단은 사람이 한다.",
       metrics:

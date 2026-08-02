@@ -62,10 +62,18 @@ function observationViews(observation: SignalObservation): number {
 function embedForObservation(observation: SignalObservation): EmbedSpec {
   if (observation.platform === "TikTok") {
     const id = getLastPathSegment(observation.postUrl);
+    // player/v1 is tighter than embed/v2 (less white card chrome); CSS crops residual UI
+    const params = new URLSearchParams({
+      music_info: "0",
+      description: "0",
+      rel: "0",
+      native_context_menu: "0",
+      closed_caption: "0",
+    });
     return {
       platform: "TikTok",
       href: observation.postUrl,
-      src: `https://www.tiktok.com/embed/v2/${id}`,
+      src: `https://www.tiktok.com/player/v1/${id}?${params.toString()}`,
       title: observation.postTitle,
     };
   }
@@ -83,21 +91,11 @@ function PlatformIcon({ platform }: { platform: string }) {
   return <Youtube size={16} />;
 }
 
-function headlineMetrics(observation: SignalObservation) {
-  const preferred =
-    observation.platform === "YouTube"
-      ? ["Views", "Likes", "Avg view %", "Avg watch"]
-      : ["Views", "Likes", "Shares", "Saves", "Eng. rate"];
-  const byLabel = new Map(observation.metrics.map((metric) => [metric.label, metric]));
-  return preferred
-    .map((label) => byLabel.get(label))
-    .filter((metric): metric is { label: string; value: string } => Boolean(metric))
-    .slice(0, 4);
-}
-
 export function ChannelPerformancePage() {
   const learning = contentLearningCase;
   const studio = publicMetricsPack.adminAnalyticsBoundary.youtubeStudio;
+  const tiktokStudio = publicMetricsPack.adminAnalyticsBoundary.tiktokStudio;
+  const sourceArchive = publicMetricsPack.sourceArchive;
   const byId = new Map(
     learning.signalRails.flatMap((rail) =>
       rail.observations.map((observation) => [observation.id, observation] as const),
@@ -159,7 +157,7 @@ export function ChannelPerformancePage() {
           <span className={styles.sectionLabel}>{learning.projectLabel}</span>
           <h1>{learning.pageTitle}</h1>
           <p className={styles.learningHeroLine}>{learning.heroLine}</p>
-          <p className={styles.learningHeroBody}>{learning.heroBody}</p>
+          <p className={`${styles.learningHeroBody} ${styles.learningLineBreakText}`}>{learning.heroBody}</p>
 
           {/* Core routing: 처음에 → 바꾼 것 → 다음 과제, co-labeled with message V1–V3 */}
           <div className={styles.learningRouteFlow} id="message-learning" aria-label="Learning route">
@@ -168,17 +166,23 @@ export function ChannelPerformancePage() {
                 <span className={styles.sectionLabel}>Core route</span>
                 <h2 className={styles.learningRouteFlowTitle}>처음에 → 바꾼 것 → 다음 과제</h2>
               </div>
-              <p>메시지 학습 단계 V1 · V2 · V3 와 같은 축으로 병기</p>
+              <p>메시지 학습 축 V1 · V2 · V3 병기</p>
             </div>
             <ol className={styles.learningRouteTrack}>
               <li className={styles.learningRouteStep} data-step="before">
                 <div className={styles.learningRouteMeta}>
-                  <span className={styles.learningRouteVersion}>V1</span>
-                  <span className={styles.learningRouteIndex}>01 · 처음에</span>
+                  <div className={styles.learningRouteMetaTop}>
+                    <span className={styles.learningRouteVersion}>V1</span>
+                    <span className={styles.learningRouteIndex}>01 · 처음에</span>
+                  </div>
                   <strong>{learning.messageStages[0].code}</strong>
                   <em>{learning.messageStages[0].title}</em>
                 </div>
-                <p>{learning.arcSummary.before}</p>
+                <ul className={styles.learningRouteBodyList}>
+                  {splitNounLines(learning.arcSummary.before).map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
                 <small>{learning.messageStages[0].question}</small>
               </li>
               <li className={styles.learningRouteArrow} aria-hidden="true">
@@ -187,15 +191,26 @@ export function ChannelPerformancePage() {
               </li>
               <li className={styles.learningRouteStep} data-step="changed">
                 <div className={styles.learningRouteMeta}>
-                  <span className={styles.learningRouteVersion}>V2</span>
-                  <span className={styles.learningRouteIndex}>02 · 바꾼 것</span>
+                  <div className={styles.learningRouteMetaTop}>
+                    <span className={styles.learningRouteVersion}>V2</span>
+                    <span className={styles.learningRouteIndex}>02 · 바꾼 것</span>
+                  </div>
                   <strong>{learning.messageStages[1].code}</strong>
                   <em>{learning.messageStages[1].title}</em>
                 </div>
-                <p>{learning.arcSummary.changed}</p>
-                <p className={styles.learningRouteNowNote}>
-                  <span>지금은</span> {learning.arcSummary.now}
-                </p>
+                <ul className={styles.learningRouteBodyList}>
+                  {splitNounLines(learning.arcSummary.changed).map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <div className={styles.learningRouteNowNote}>
+                  <span>지금은</span>
+                  <ul className={styles.learningRouteBodyList}>
+                    {splitNounLines(learning.arcSummary.now).map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
                 <small>{learning.messageStages[1].question}</small>
               </li>
               <li className={styles.learningRouteArrow} aria-hidden="true">
@@ -204,12 +219,18 @@ export function ChannelPerformancePage() {
               </li>
               <li className={styles.learningRouteStep} data-step="next">
                 <div className={styles.learningRouteMeta}>
-                  <span className={styles.learningRouteVersion}>V3</span>
-                  <span className={styles.learningRouteIndex}>03 · 다음 과제</span>
+                  <div className={styles.learningRouteMetaTop}>
+                    <span className={styles.learningRouteVersion}>V3</span>
+                    <span className={styles.learningRouteIndex}>03 · 다음 과제</span>
+                  </div>
                   <strong>{learning.messageStages[2].code}</strong>
                   <em>{learning.messageStages[2].title}</em>
                 </div>
-                <p>{learning.arcSummary.next}</p>
+                <ul className={styles.learningRouteBodyList}>
+                  {splitNounLines(learning.arcSummary.next).map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
                 <small>{learning.messageStages[2].question}</small>
               </li>
             </ol>
@@ -232,8 +253,7 @@ export function ChannelPerformancePage() {
           <span className={styles.sectionLabel}>Signal-to-Scene</span>
           <h2>현재 · 이전 · 조정</h2>
           <p>
-            카드는 세로로 쌓입니다. 한 장은 영상 · 핵심 숫자 · 옆의 상세 지표·가설이 붙어 확장된 한 덩어리입니다.
-            플랫폼은 합산하지 않습니다.
+            세로 카드 스택 · 한 장 단위 영상·상세 지표·가설의 동일 바탕 배치 · 플랫폼 비합산
           </p>
         </div>
 
@@ -253,9 +273,16 @@ export function ChannelPerformancePage() {
               >
                 <header className={styles.learningStageHeader}>
                   <span>{stage.marker}</span>
-                  <div>
+                  <div className={styles.learningStageTitleBlock}>
                     <h3 id={`stage-title-${stage.id}`}>{stage.title}</h3>
-                    <p>{stage.body}</p>
+                    <p className={styles.learningStageSubline}>
+                      <span className={styles.learningStageSubtitle}>{stage.subtitle}</span>
+                      <span className={styles.learningStageSubSep} aria-hidden="true">
+                        {" "}
+                        —{" "}
+                      </span>
+                      <span className={styles.learningStageDescription}>{stage.description}</span>
+                    </p>
                   </div>
                 </header>
 
@@ -287,12 +314,21 @@ export function ChannelPerformancePage() {
 
         <div className={styles.learningNextCore} id="next-core">
           <span className={styles.sectionLabel}>Next core</span>
-          <h3>훅은 얼추, 다음은 훅에서 이어지는 영상</h3>
-          <p>{learning.arcSummary.next}</p>
-          <p>
-            V2(훅)에서 초반 시청 신호는 보이지만, V3(메시지 continuity)—훅 이후 핵심 장면이 같은 메시지를 증명하며
-            이어지게 만드는 일—이 다음 설계 과제다. 초반 신호만으로 훅 성공을 단정하지 않는다.
-          </p>
+          <h3>훅 정착 이후 · 훅–메시지 연속 영상</h3>
+          <ul className={styles.learningSceneStepList}>
+            {splitNounLines(learning.arcSummary.next).map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+          <ul className={styles.learningSceneStepList}>
+            {[
+              "V2(Hook) 초반 시청 신호의 가시화",
+              "V3(Message continuity) 훅 이후 핵심 장면의 동일 메시지 증명·연속 시청 설계",
+              "초반 신호만의 훅 성공 단정 배제",
+            ].map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -300,7 +336,7 @@ export function ChannelPerformancePage() {
         <div className={styles.learningDecisionBand}>
           <div>
             <span className={styles.sectionLabel}>Measurement & Decision</span>
-            <p>{learning.measurementNote}</p>
+            <p className={styles.learningLineBreakText}>{learning.measurementNote}</p>
           </div>
           <ol className={styles.learningDecisionStrip}>
             {learning.decisionLoop.map((step, index) => (
@@ -317,19 +353,22 @@ export function ChannelPerformancePage() {
         <div className={styles.sectionHeader}>
           <span className={styles.sectionLabel}>Evidence</span>
           <h2>근거 · 아카이브</h2>
-          <p>Studio 국가 표와 공개 Top 10. 좌 TikTok · 우 YouTube.</p>
+          <p>
+            YouTube · TikTok 동일 양식(요약 카드 + 표 가로 슬라이드). 원본 CSV:{" "}
+            <a href={sourceArchive.root}>/content-learning/loom/metrics/</a>
+          </p>
         </div>
 
         <div className={styles.learningEvidenceStack}>
           <details className={styles.learningDetails} id="viewer-analytics" open>
             <summary>
-              YouTube Studio · 국가 · 평균 시청
+              YouTube Analytics · 국가 · 게시물
               <span>{studio ? `${studio.range.start} → ${studio.range.end}` : "—"}</span>
             </summary>
             {studio ? (
               <div className={styles.learningStudioBoard}>
                 <article className={styles.learningAggregateCard}>
-                  <span>Channel window</span>
+                  <span>YouTube channel window</span>
                   <strong>
                     {formatMetricCount(studio.totals.views)} views · avg view{" "}
                     {formatMetricPct(studio.totals.averageViewPercentage)}
@@ -357,29 +396,288 @@ export function ChannelPerformancePage() {
                     </div>
                   </dl>
                   <p className={styles.learningAdminFillNote}>{studio.note}</p>
+                  <p className={styles.learningAdminFillNote}>
+                    CSV ·{" "}
+                    {studio.sourceFiles.map((href, index) => (
+                      <span key={href}>
+                        {index > 0 ? " · " : null}
+                        <a href={href}>{href.split("/").pop()}</a>
+                      </span>
+                    ))}
+                  </p>
                 </article>
-                <div className={styles.learningCountryTableWrap}>
+
+                <div className={styles.learningTableRail} aria-label="YouTube tables horizontal scroll">
+                  <div className={styles.learningTableSlide}>
+                    <header>
+                      <span>01</span>
+                      <strong>Country</strong>
+                      <em>Analytics country dimension</em>
+                    </header>
+                    <div className={styles.performanceTableShell}>
+                      <table className={styles.performanceTable}>
+                        <thead>
+                          <tr>
+                            <th>Country</th>
+                            <th>Views</th>
+                            <th>Share</th>
+                            <th>Avg watch</th>
+                            <th>Avg view %</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {studio.topCountries.map((row) => (
+                            <tr key={row.country}>
+                              <td>
+                                <strong>{row.country}</strong>
+                              </td>
+                              <td>{formatMetricCount(row.views)}</td>
+                              <td>{formatMetricPct(row.sharePct)}</td>
+                              <td>{row.avgWatchSec != null ? `${row.avgWatchSec}s` : "—"}</td>
+                              <td>{formatMetricPct(row.avgViewPercentage)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div className={styles.learningTableSlide}>
+                    <header>
+                      <span>02</span>
+                      <strong>Posts</strong>
+                      <em>Top by views · Analytics window</em>
+                    </header>
+                    <div className={styles.performanceTableShell}>
+                      <table className={styles.performanceTable}>
+                        <thead>
+                          <tr>
+                            <th>Title</th>
+                            <th>Published</th>
+                            <th>Views</th>
+                            <th>Avg watch</th>
+                            <th>Avg view %</th>
+                            <th>Top country</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {publicMetricsPack.youtube.posts.slice(0, 10).map((row) => (
+                            <tr key={row.id}>
+                              <td>
+                                <strong>{row.title}</strong>
+                              </td>
+                              <td>{row.publishedAt}</td>
+                              <td>{formatMetricCount(row.views)}</td>
+                              <td>{row.avgWatchSec != null ? `${row.avgWatchSec}s` : "—"}</td>
+                              <td>{formatMetricPct(row.avgViewDurationPct)}</td>
+                              <td>
+                                {row.topCountries?.[0]
+                                  ? `${row.topCountries[0].country} ${formatMetricPct(row.topCountries[0].sharePct)}`
+                                  : "—"}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
+          </details>
+
+          <details className={styles.learningDetails} id="tiktok-creator-export" open>
+            <summary>
+              TikTok Creator · Overview · Viewers · Content
+              <span>
+                {tiktokStudio.overview.range.start} → {tiktokStudio.viewers.range.end}
+              </span>
+            </summary>
+            <div className={styles.learningStudioBoard}>
+              <article className={styles.learningAggregateCard}>
+                <span>TikTok channel window</span>
+                <strong>
+                  {formatMetricCount(tiktokStudio.overview.totals.videoViews)} video views ·{" "}
+                  {formatMetricCount(tiktokStudio.overview.totals.likes)} likes
+                </strong>
+                <dl>
+                  <div>
+                    <dt>Profile views</dt>
+                    <dd>{formatMetricCount(tiktokStudio.overview.totals.profileViews)}</dd>
+                  </div>
+                  <div>
+                    <dt>Peak day</dt>
+                    <dd>
+                      {tiktokStudio.overview.peakDays[0]?.date} ·{" "}
+                      {formatMetricCount(tiktokStudio.overview.peakDays[0]?.videoViews)}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Viewers window</dt>
+                    <dd>
+                      {tiktokStudio.viewers.range.start} → {tiktokStudio.viewers.range.end}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>New / Returning</dt>
+                    <dd>
+                      {formatMetricCount(tiktokStudio.viewers.totals.newViewersSum)} /{" "}
+                      {formatMetricCount(tiktokStudio.viewers.totals.returningViewersSum)}
+                    </dd>
+                  </div>
+                </dl>
+                <p className={styles.learningAdminFillNote}>
+                  {tiktokStudio.handlesNote}
+                  {"\n"}
+                  {tiktokStudio.note}
+                </p>
+                <p className={styles.learningAdminFillNote}>
+                  CSV ·{" "}
+                  {tiktokStudio.sourceFiles.map((href, index) => (
+                    <span key={href}>
+                      {index > 0 ? " · " : null}
+                      <a href={href}>{href.split("/").pop()}</a>
+                    </span>
+                  ))}
+                </p>
+              </article>
+
+              <div className={styles.learningTableRail} aria-label="TikTok tables horizontal scroll">
+                <div className={styles.learningTableSlide}>
+                  <header>
+                    <span>01</span>
+                    <strong>Country / dimension</strong>
+                    <em>YouTube 동일 슬롯 · export 미포함 시 not exposed</em>
+                  </header>
                   <div className={styles.performanceTableShell}>
                     <table className={styles.performanceTable}>
                       <thead>
                         <tr>
-                          <th>Country</th>
+                          <th>Dimension</th>
+                          <th>Status</th>
+                          <th>Note</th>
                           <th>Views</th>
                           <th>Share</th>
-                          <th>Avg watch</th>
-                          <th>Avg view %</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {studio.topCountries.map((row) => (
-                          <tr key={row.country}>
+                        {tiktokStudio.dimensionSlots.map((row) => (
+                          <tr key={row.dimension}>
                             <td>
-                              <strong>{row.country}</strong>
+                              <strong>{row.dimension}</strong>
                             </td>
+                            <td>{row.status}</td>
+                            <td>{row.note}</td>
+                            <td>—</td>
+                            <td>—</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className={styles.learningTableSlide}>
+                  <header>
+                    <span>02</span>
+                    <strong>Overview days</strong>
+                    <em>일별 채널 뷰 · Creator Overview</em>
+                  </header>
+                  <div className={styles.performanceTableShell}>
+                    <table className={styles.performanceTable}>
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Video views</th>
+                          <th>Profile</th>
+                          <th>Likes</th>
+                          <th>Comments</th>
+                          <th>Shares</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tiktokStudio.overview.peakDays.map((row) => (
+                          <tr key={row.date}>
+                            <td>
+                              <strong>{row.date}</strong>
+                            </td>
+                            <td>{formatMetricCount(row.videoViews)}</td>
+                            <td>{formatMetricCount(row.profileViews)}</td>
+                            <td>{formatMetricCount(row.likes)}</td>
+                            <td>{formatMetricCount(row.comments)}</td>
+                            <td>{formatMetricCount(row.shares)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className={styles.learningTableSlide}>
+                  <header>
+                    <span>03</span>
+                    <strong>Viewers</strong>
+                    <em>New / Returning · long window</em>
+                  </header>
+                  <div className={styles.performanceTableShell}>
+                    <table className={styles.performanceTable}>
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Total</th>
+                          <th>New</th>
+                          <th>Returning</th>
+                          <th>New share</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tiktokStudio.viewers.peakDays.map((row) => (
+                          <tr key={row.date}>
+                            <td>
+                              <strong>{row.date}</strong>
+                            </td>
+                            <td>{formatMetricCount(row.totalViewers)}</td>
+                            <td>{formatMetricCount(row.newViewers)}</td>
+                            <td>{formatMetricCount(row.returningViewers)}</td>
+                            <td>
+                              {row.newSharePct != null ? formatMetricPct(row.newSharePct) : "—"}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className={styles.learningTableSlide}>
+                  <header>
+                    <span>04</span>
+                    <strong>Content</strong>
+                    <em>게시물 단위 · Creator Content export</em>
+                  </header>
+                  <div className={styles.performanceTableShell}>
+                    <table className={styles.performanceTable}>
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th>Published</th>
+                          <th>Views</th>
+                          <th>Likes</th>
+                          <th>Comments</th>
+                          <th>Shares</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {tiktokStudio.topContent.map((row) => (
+                          <tr key={row.id}>
+                            <td>
+                              <strong>{row.title}</strong>
+                            </td>
+                            <td>{row.publishedAt}</td>
                             <td>{formatMetricCount(row.views)}</td>
-                            <td>{formatMetricPct(row.sharePct)}</td>
-                            <td>{row.avgWatchSec != null ? `${row.avgWatchSec}s` : "—"}</td>
-                            <td>{formatMetricPct(row.avgViewPercentage)}</td>
+                            <td>{formatMetricCount(row.likes)}</td>
+                            <td>{formatMetricCount(row.comments)}</td>
+                            <td>{formatMetricCount(row.shares)}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -387,10 +685,48 @@ export function ChannelPerformancePage() {
                   </div>
                 </div>
               </div>
-            ) : null}
-            <p className={styles.learningAdminFillNote}>
-              TikTok 국가·완주 · 연령/성별: not exposed. {publicMetricsPack.adminAnalyticsBoundary.howToFillLater}
-            </p>
+            </div>
+            <ul className={styles.learningSignalNotes}>
+              {tiktokStudio.signalNotes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          </details>
+
+          <details className={styles.learningDetails} id="source-csv-archive" open>
+            <summary>
+              원본 CSV · JSON 첨부
+              <span>{sourceArchive.root}</span>
+            </summary>
+            <div className={styles.learningSourceArchive}>
+              <p>
+                365일/장기 Viewers zip, Overview, Content 원본 zip과 YouTube API 스냅샷 CSV를 모두{" "}
+                <a href={sourceArchive.manifest}>MANIFEST.json</a> 기준으로 보관했습니다. OAuth 토큰·client secret은
+                포함하지 않습니다.
+              </p>
+              <div className={styles.learningSourceArchiveCols}>
+                <div>
+                  <strong>TikTok</strong>
+                  <ul>
+                    {sourceArchive.tiktok.map((href) => (
+                      <li key={href}>
+                        <a href={href}>{href.replace(sourceArchive.root, "")}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <strong>YouTube</strong>
+                  <ul>
+                    {sourceArchive.youtube.map((href) => (
+                      <li key={href}>
+                        <a href={href}>{href.replace(sourceArchive.root, "")}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </details>
 
           <details className={styles.learningDetails} id="archive-top10" open>
@@ -411,13 +747,19 @@ export function ChannelPerformancePage() {
         <div>
           <strong>Recommended wording</strong>
           <p>
-            “공개 채널 수치는 제품 전환이 아니라 콘텐츠 훅, 메시지 구조, 시각 자산, 게시 흐름에 대한 반응 신호로
-            해석했고, 최종 메시지·컷 판단은 사람이 했습니다.”
+            “공개 채널 수치의 제품 전환 비주장 · 콘텐츠 훅·메시지 구조·시각 문법·게시 흐름에 대한 반응 신호 해석 · 메시지·컷의 최종 인간 판단.”
           </p>
         </div>
       </section>
     </Shell>
   );
+}
+
+function splitNounLines(text: string) {
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
 }
 
 function SignalSceneCard({
@@ -428,11 +770,13 @@ function SignalSceneCard({
   rankLabel?: string;
 }) {
   const embed = embedForObservation(observation);
-  const headlines = headlineMetrics(observation);
+  const signalLines = splitNounLines(observation.observedSignal);
+  const hypothesisLines = splitNounLines(observation.workingHypothesis);
+  const nextCheckLines = splitNounLines(observation.nextCheck);
 
   return (
     <article className={styles.learningSceneCard} id={observation.id} data-platform={observation.platform}>
-      {/* Expanded single card: media | headline metrics | detail panel */}
+      {/* One surface: media + content (metrics strip fills the right void) */}
       <div className={styles.learningSceneCardBody}>
         <div className={styles.learningSceneCardMedia} data-platform={embed.platform}>
           <div className={styles.learningSceneCardMediaInner}>
@@ -447,72 +791,84 @@ function SignalSceneCard({
           </div>
         </div>
 
-        <div className={styles.learningSceneCardCopy}>
-          <div className={styles.learningSceneCardMeta}>
-            <span className={styles.learningPlatformPill}>{observation.platform}</span>
-            {rankLabel ? <span className={styles.learningRankLabel}>{rankLabel}</span> : null}
-            <span>{observation.duration}</span>
-          </div>
-          <h3>{observation.postTitle}</h3>
-          <span className={styles.learningSceneCardDate}>{observation.publishedAt}</span>
-          <a href={observation.postUrl} target="_blank" rel="noreferrer">
-            원문 열기 <ExternalLink size={13} />
-          </a>
+        <div className={styles.learningSceneCardMain}>
+          <header className={styles.learningSceneCardHead}>
+            <div className={styles.learningSceneCardMeta}>
+              <span className={styles.learningPlatformPill}>{observation.platform}</span>
+              {rankLabel ? <span className={styles.learningRankLabel}>{rankLabel}</span> : null}
+              <span>{observation.duration}</span>
+            </div>
+            <h3>{observation.postTitle}</h3>
+            <div className={styles.learningSceneCardHeadRow}>
+              <span className={styles.learningSceneCardDate}>{observation.publishedAt}</span>
+              <a href={observation.postUrl} target="_blank" rel="noreferrer">
+                원문 열기 <ExternalLink size={13} />
+              </a>
+            </div>
+          </header>
 
-          <dl className={styles.learningSceneHeadlineMetrics} aria-label="Headline metrics">
-            {headlines.map((metric) => (
-              <div key={metric.label}>
-                <dt>{metric.label}</dt>
-                <dd>{metric.value}</dd>
+          <section className={styles.learningMetricStripBlock} aria-label="상세 지표">
+            <div className={styles.learningMetricStripHead}>
+              <span className={styles.learningSceneAsideLabel}>상세 지표</span>
+              <span className={styles.learningSourceLine}>지표 출처 · {observation.metricSource}</span>
+            </div>
+            <dl className={styles.learningMetricStrip}>
+              {observation.metrics.map((metric) => (
+                <div key={metric.label}>
+                  <dt>{metric.label}</dt>
+                  <dd>{metric.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
+          <section className={styles.learningSceneHypothesis} aria-label="가설">
+            <span className={styles.learningSceneAsideLabel}>신호 · 가설 · 변경</span>
+            <div className={styles.learningSceneRail}>
+              <div className={styles.learningSceneStep}>
+                <Eye size={16} />
+                <span>관찰 신호</span>
+                <ul className={styles.learningSceneStepList}>
+                  {signalLines.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </dl>
-
-          <p className={styles.learningSceneOneLiner}>{observation.observedSignal}</p>
-        </div>
-
-        <aside className={styles.learningSceneCardAside} aria-label="상세 지표 및 가설">
-          <span className={styles.learningSceneAsideLabel}>상세 지표 · 가설</span>
-          <dl className={styles.learningMetricRow}>
-            {observation.metrics.map((metric) => (
-              <div key={metric.label}>
-                <dt>{metric.label}</dt>
-                <dd>{metric.value}</dd>
+              <div className={styles.learningSceneArrow} aria-hidden="true">
+                <ArrowRight size={14} />
               </div>
-            ))}
-          </dl>
-          <p className={styles.learningSourceLine}>지표 출처 · {observation.metricSource}</p>
-          <div className={styles.learningSceneRail}>
-            <div className={styles.learningSceneStep}>
-              <Eye size={16} />
-              <span>관찰한 신호</span>
-              <p>{observation.observedSignal}</p>
+              <div className={styles.learningSceneStep}>
+                <Target size={16} />
+                <span>작업 가설</span>
+                <ul className={styles.learningSceneStepList}>
+                  {hypothesisLines.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.learningSceneArrow} aria-hidden="true">
+                <ArrowRight size={14} />
+              </div>
+              <div className={styles.learningSceneStep}>
+                <span>변경 요소</span>
+                <ul className={styles.learningSceneStepList}>
+                  {observation.changedElements.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className={styles.learningSceneArrow} aria-hidden="true">
-              <ArrowRight size={14} />
-            </div>
-            <div className={styles.learningSceneStep}>
-              <Target size={16} />
-              <span>작업 가설</span>
-              <p>{observation.workingHypothesis}</p>
-            </div>
-            <div className={styles.learningSceneArrow} aria-hidden="true">
-              <ArrowRight size={14} />
-            </div>
-            <div className={styles.learningSceneStep}>
-              <span>바꾼 요소</span>
-              <ul>
-                {observation.changedElements.map((item) => (
-                  <li key={item}>{item}</li>
+            <div className={styles.learningNextCheck}>
+              <strong>다음 검증</strong>
+              <ul className={styles.learningSceneStepList}>
+                {nextCheckLines.map((line) => (
+                  <li key={line}>{line}</li>
                 ))}
               </ul>
             </div>
-          </div>
-          <p className={styles.learningNextCheck}>
-            <strong>다음 검증</strong> {observation.nextCheck}
-          </p>
-          {observation.cutFlow ? <CutFlowCompareBlock cutFlow={observation.cutFlow} /> : null}
-        </aside>
+            {observation.cutFlow ? <CutFlowCompareBlock cutFlow={observation.cutFlow} /> : null}
+          </section>
+        </div>
       </div>
     </article>
   );

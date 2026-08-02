@@ -1,0 +1,1370 @@
+{
+  "measuredAt": "2026-08-02",
+  "source": "YouTube Analytics API v2 + YouTube Data API v3 (OAuth)",
+  "channelId": "UCH_8Zw7ggdGO8bSor4_B-ig",
+  "range": {
+    "start": "2026-06-07",
+    "end": "2026-08-02"
+  },
+  "channelTotals": {
+    "kind": "youtubeAnalytics#resultTable",
+    "columnHeaders": [
+      {
+        "name": "views",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "likes",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "comments",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "shares",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "estimatedMinutesWatched",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "averageViewDuration",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "averageViewPercentage",
+        "columnType": "METRIC",
+        "dataType": "FLOAT"
+      },
+      {
+        "name": "subscribersGained",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      }
+    ],
+    "rows": [
+      [
+        5907,
+        49,
+        0,
+        10,
+        624,
+        20,
+        67.25,
+        10
+      ]
+    ]
+  },
+  "channelTotalsRows": [
+    {
+      "views": 5907,
+      "likes": 49,
+      "comments": 0,
+      "shares": 10,
+      "estimatedMinutesWatched": 624,
+      "averageViewDuration": 20,
+      "averageViewPercentage": 67.25,
+      "subscribersGained": 10
+    }
+  ],
+  "channelCountry": {
+    "kind": "youtubeAnalytics#resultTable",
+    "columnHeaders": [
+      {
+        "name": "country",
+        "columnType": "DIMENSION",
+        "dataType": "STRING"
+      },
+      {
+        "name": "views",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "estimatedMinutesWatched",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "averageViewDuration",
+        "columnType": "METRIC",
+        "dataType": "INTEGER"
+      },
+      {
+        "name": "averageViewPercentage",
+        "columnType": "METRIC",
+        "dataType": "FLOAT"
+      }
+    ],
+    "rows": [
+      [
+        "KR",
+        1318,
+        74,
+        11,
+        56.14
+      ],
+      [
+        "UZ",
+        423,
+        22,
+        8,
+        91.15
+      ],
+      [
+        "JP",
+        290,
+        12,
+        7,
+        78.77
+      ],
+      [
+        "ID",
+        218,
+        9,
+        10,
+        107.48
+      ],
+      [
+        "IQ",
+        142,
+        7,
+        10,
+        149.27
+      ],
+      [
+        "SY",
+        118,
+        5,
+        6,
+        110.86
+      ],
+      [
+        "DZ",
+        115,
+        4,
+        8,
+        161.37
+      ],
+      [
+        "MM",
+        110,
+        5,
+        7,
+        67.29
+      ],
+      [
+        "KG",
+        85,
+        5,
+        8,
+        69.08
+      ],
+      [
+        "VN",
+        80,
+        2,
+        6,
+        63.53
+      ],
+      [
+        "IN",
+        71,
+        4,
+        11,
+        107.06
+      ],
+      [
+        "MA",
+        69,
+        2,
+        6,
+        123.12
+      ],
+      [
+        "TH",
+        67,
+        3,
+        11,
+        99.38
+      ],
+      [
+        "EG",
+        61,
+        2,
+        7,
+        156.47
+      ],
+      [
+        "KZ",
+        55,
+        1,
+        4,
+        81.94
+      ]
+    ]
+  },
+  "channelCountryRows": [
+    {
+      "country": "KR",
+      "views": 1318,
+      "estimatedMinutesWatched": 74,
+      "averageViewDuration": 11,
+      "averageViewPercentage": 56.14
+    },
+    {
+      "country": "UZ",
+      "views": 423,
+      "estimatedMinutesWatched": 22,
+      "averageViewDuration": 8,
+      "averageViewPercentage": 91.15
+    },
+    {
+      "country": "JP",
+      "views": 290,
+      "estimatedMinutesWatched": 12,
+      "averageViewDuration": 7,
+      "averageViewPercentage": 78.77
+    },
+    {
+      "country": "ID",
+      "views": 218,
+      "estimatedMinutesWatched": 9,
+      "averageViewDuration": 10,
+      "averageViewPercentage": 107.48
+    },
+    {
+      "country": "IQ",
+      "views": 142,
+      "estimatedMinutesWatched": 7,
+      "averageViewDuration": 10,
+      "averageViewPercentage": 149.27
+    },
+    {
+      "country": "SY",
+      "views": 118,
+      "estimatedMinutesWatched": 5,
+      "averageViewDuration": 6,
+      "averageViewPercentage": 110.86
+    },
+    {
+      "country": "DZ",
+      "views": 115,
+      "estimatedMinutesWatched": 4,
+      "averageViewDuration": 8,
+      "averageViewPercentage": 161.37
+    },
+    {
+      "country": "MM",
+      "views": 110,
+      "estimatedMinutesWatched": 5,
+      "averageViewDuration": 7,
+      "averageViewPercentage": 67.29
+    },
+    {
+      "country": "KG",
+      "views": 85,
+      "estimatedMinutesWatched": 5,
+      "averageViewDuration": 8,
+      "averageViewPercentage": 69.08
+    },
+    {
+      "country": "VN",
+      "views": 80,
+      "estimatedMinutesWatched": 2,
+      "averageViewDuration": 6,
+      "averageViewPercentage": 63.53
+    },
+    {
+      "country": "IN",
+      "views": 71,
+      "estimatedMinutesWatched": 4,
+      "averageViewDuration": 11,
+      "averageViewPercentage": 107.06
+    },
+    {
+      "country": "MA",
+      "views": 69,
+      "estimatedMinutesWatched": 2,
+      "averageViewDuration": 6,
+      "averageViewPercentage": 123.12
+    },
+    {
+      "country": "TH",
+      "views": 67,
+      "estimatedMinutesWatched": 3,
+      "averageViewDuration": 11,
+      "averageViewPercentage": 99.38
+    },
+    {
+      "country": "EG",
+      "views": 61,
+      "estimatedMinutesWatched": 2,
+      "averageViewDuration": 7,
+      "averageViewPercentage": 156.47
+    },
+    {
+      "country": "KZ",
+      "views": 55,
+      "estimatedMinutesWatched": 1,
+      "averageViewDuration": 4,
+      "averageViewPercentage": 81.94
+    }
+  ],
+  "videos": {
+    "xNfAkfhipSE": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "xNfAkfhipSE",
+            2493,
+            22,
+            0,
+            1,
+            182,
+            17,
+            342.49
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "JP",
+            224,
+            5,
+            116.64000000000001
+          ],
+          [
+            "UZ",
+            211,
+            7,
+            154.51
+          ],
+          [
+            "ID",
+            144,
+            11,
+            227.64
+          ],
+          [
+            "KR",
+            139,
+            7,
+            142.48
+          ],
+          [
+            "DZ",
+            115,
+            8,
+            161.37
+          ],
+          [
+            "IQ",
+            114,
+            12,
+            245.86999999999998
+          ],
+          [
+            "SY",
+            82,
+            6,
+            133.76
+          ],
+          [
+            "VN",
+            80,
+            6,
+            120.7
+          ],
+          [
+            "MA",
+            69,
+            6,
+            123.12
+          ],
+          [
+            "EG",
+            61,
+            7,
+            156.47
+          ]
+        ]
+      }
+    },
+    "br8NKQIHjOQ": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "br8NKQIHjOQ",
+            1031,
+            7,
+            0,
+            0,
+            75,
+            11,
+            56.47
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "KR",
+            429,
+            10,
+            53.36
+          ],
+          [
+            "ID",
+            74,
+            9,
+            47.41
+          ],
+          [
+            "JP",
+            53,
+            11,
+            57.89
+          ],
+          [
+            "MM",
+            45,
+            10,
+            53.5
+          ],
+          [
+            "TW",
+            38,
+            15,
+            79.55
+          ],
+          [
+            "UZ",
+            27,
+            7,
+            36.9
+          ],
+          [
+            "KG",
+            24,
+            7,
+            39.85
+          ]
+        ]
+      }
+    },
+    "rxwn61IROQc": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "rxwn61IROQc",
+            1114,
+            11,
+            0,
+            1,
+            61,
+            10,
+            119.01000000000002
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "UZ",
+            157,
+            8,
+            95.68
+          ],
+          [
+            "KG",
+            38,
+            8,
+            90.94
+          ],
+          [
+            "SY",
+            36,
+            7,
+            84.35
+          ],
+          [
+            "MN",
+            28,
+            7,
+            85.54
+          ],
+          [
+            "MM",
+            21,
+            6,
+            71.67
+          ],
+          [
+            "JP",
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "4-18kkZFh18": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      }
+    },
+    "l2cJP7Q9I8I": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "l2cJP7Q9I8I",
+            355,
+            1,
+            0,
+            0,
+            21,
+            12,
+            53.56000000000001
+          ]
+        ]
+      },
+      "byCountry": {
+        "error": "<HttpError 500 when requesting https://youtubeanalytics.googleapis.com/v2/reports?ids=channel%3D%3DUCH_8Zw7ggdGO8bSor4_B-ig&startDate=2026-06-07&endDate=2026-08-02&metrics=views%2CaverageViewDuration%2CaverageViewPercentage&dimensions=country&filters=video%3D%3Dl2cJP7Q9I8I&sort=-views&maxResults=10&alt=json returned \"Internal error encountered.\". Details: \"[{'message': 'Internal error encountered.', 'domain': 'global', 'reason': 'backendError'}]\">",
+        "videoId": "l2cJP7Q9I8I"
+      }
+    },
+    "SDRlYNohEiE": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "SDRlYNohEiE",
+            199,
+            2,
+            0,
+            0,
+            8,
+            11,
+            56.11000000000001
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "KR",
+            146,
+            8,
+            42.99
+          ]
+        ]
+      }
+    },
+    "j3XvEYwlApE": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "j3XvEYwlApE",
+            193,
+            1,
+            0,
+            0,
+            28,
+            111,
+            310.96
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "KR",
+            181,
+            10,
+            28.53
+          ]
+        ]
+      }
+    },
+    "TyONE0lKI2s": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "TyONE0lKI2s",
+            93,
+            3,
+            0,
+            1,
+            90,
+            58,
+            36.21
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      }
+    },
+    "vvw8DdTrFtA": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      }
+    },
+    "DUyCAFHZ7X0": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "DUyCAFHZ7X0",
+            44,
+            1,
+            0,
+            1,
+            50,
+            68,
+            41.42
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      }
+    },
+    "0vV4CXL3_Qk": {
+      "metrics": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "video",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "likes",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "comments",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "shares",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "estimatedMinutesWatched",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": [
+          [
+            "0vV4CXL3_Qk",
+            37,
+            0,
+            0,
+            0,
+            34,
+            55,
+            34.48
+          ]
+        ]
+      },
+      "byCountry": {
+        "kind": "youtubeAnalytics#resultTable",
+        "columnHeaders": [
+          {
+            "name": "country",
+            "columnType": "DIMENSION",
+            "dataType": "STRING"
+          },
+          {
+            "name": "views",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewDuration",
+            "columnType": "METRIC",
+            "dataType": "INTEGER"
+          },
+          {
+            "name": "averageViewPercentage",
+            "columnType": "METRIC",
+            "dataType": "FLOAT"
+          }
+        ],
+        "rows": []
+      }
+    }
+  }
+}

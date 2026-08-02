@@ -1,0 +1,22 @@
+schema_version: cf_founder_intervention_receipt.v1
+cf_id: CF_LOL_IONIA_PERFUME_001
+intervention_id: FI-2026-08-02-STYLE-BOARD-DISPOSITION-V1
+date: '2026-08-02'
+status: captured_applied_to_board
+founder_verbatim_summary:
+- Style · hand/glass ownership — exclude; Founder will make glass-bottle-stage touch
+  feel separately.
+- Style · scent-open action — exclude.
+- Style · Ionia layer switch — style feel OK but background wrong; Founder will revise.
+- Style · three-lane balance — discard level.
+- Style · bottle-read end — Founder will remake.
+- 'Rebuild board to IDOL HTML core-cut visual-ref pattern: members first, then core
+  cuts in order with reference clusters only.'
+style_board_dispositions:
+  style-bottle-stage-audience-v1: keep_provisional_shell_look
+  style-hand-glass-ownership-v1: excluded_founder_remake
+  style-scent-open-action-v1: excluded
+  style-ionia-layer-switch-v1: excluded_founder_revise_background
+  style-three-lane-balance-v1: discarded
+  style-bottle-read-end-v1: excluded_founder_remake
+board_layout: member_first_then_core_cuts_in_order_reference_clusters

@@ -1,0 +1,490 @@
+{
+  "measuredAt": "2026-08-02",
+  "source": "YouTube Analytics API v2 OAuth + public yt-dlp",
+  "range": {
+    "start": "2026-06-07",
+    "end": "2026-08-02"
+  },
+  "channelId": "UCH_8Zw7ggdGO8bSor4_B-ig",
+  "channelTotals": {
+    "views": 5907,
+    "likes": 49,
+    "comments": 0,
+    "shares": 10,
+    "estimatedMinutesWatched": 624,
+    "averageViewDuration": 20,
+    "averageViewPercentage": 67.25,
+    "subscribersGained": 10
+  },
+  "channelCountries": [
+    {
+      "country": "KR",
+      "views": 1318,
+      "sharePct": 40.9,
+      "avgWatchSec": 11,
+      "avgViewPercentage": 56.14
+    },
+    {
+      "country": "UZ",
+      "views": 423,
+      "sharePct": 13.1,
+      "avgWatchSec": 8,
+      "avgViewPercentage": 91.15
+    },
+    {
+      "country": "JP",
+      "views": 290,
+      "sharePct": 9.0,
+      "avgWatchSec": 7,
+      "avgViewPercentage": 78.77
+    },
+    {
+      "country": "ID",
+      "views": 218,
+      "sharePct": 6.8,
+      "avgWatchSec": 10,
+      "avgViewPercentage": 107.48
+    },
+    {
+      "country": "IQ",
+      "views": 142,
+      "sharePct": 4.4,
+      "avgWatchSec": 10,
+      "avgViewPercentage": 149.27
+    },
+    {
+      "country": "SY",
+      "views": 118,
+      "sharePct": 3.7,
+      "avgWatchSec": 6,
+      "avgViewPercentage": 110.86
+    },
+    {
+      "country": "DZ",
+      "views": 115,
+      "sharePct": 3.6,
+      "avgWatchSec": 8,
+      "avgViewPercentage": 161.37
+    },
+    {
+      "country": "MM",
+      "views": 110,
+      "sharePct": 3.4,
+      "avgWatchSec": 7,
+      "avgViewPercentage": 67.29
+    },
+    {
+      "country": "KG",
+      "views": 85,
+      "sharePct": 2.6,
+      "avgWatchSec": 8,
+      "avgViewPercentage": 69.08
+    },
+    {
+      "country": "VN",
+      "views": 80,
+      "sharePct": 2.5,
+      "avgWatchSec": 6,
+      "avgViewPercentage": 63.53
+    }
+  ],
+  "posts": [
+    {
+      "id": "xNfAkfhipSE",
+      "platform": "YouTube",
+      "title": "Loom · They look at each other #Shorts",
+      "url": "https://www.youtube.com/shorts/xNfAkfhipSE",
+      "publishedAt": "2026-07-30",
+      "measuredAt": "2026-08-02",
+      "duration": "4",
+      "durationSec": 4,
+      "mediaType": "short",
+      "views": 2493,
+      "likes": 22,
+      "comments": 0,
+      "shares": 1,
+      "saves": null,
+      "likeRatePct": 0.88,
+      "saveRatePct": null,
+      "shareRatePct": 0.04,
+      "engagementRatePct": 0.88,
+      "completionRatePct": 342.49,
+      "avgWatchSec": 17,
+      "avgViewDurationPct": 342.49,
+      "topCountries": [
+        {
+          "country": "JP",
+          "sharePct": 9.0
+        },
+        {
+          "country": "UZ",
+          "sharePct": 8.5
+        },
+        {
+          "country": "ID",
+          "sharePct": 5.8
+        },
+        {
+          "country": "KR",
+          "sharePct": 5.6
+        },
+        {
+          "country": "DZ",
+          "sharePct": 4.6
+        }
+      ],
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "br8NKQIHjOQ",
+      "platform": "YouTube",
+      "title": "Loom · Bouquet CF · Different gazes meet #Shorts",
+      "url": "https://www.youtube.com/shorts/br8NKQIHjOQ",
+      "publishedAt": "2026-07-30",
+      "measuredAt": "2026-08-02",
+      "duration": "19",
+      "durationSec": 19,
+      "mediaType": "short",
+      "views": 1031,
+      "likes": 7,
+      "comments": 0,
+      "shares": 0,
+      "saves": null,
+      "likeRatePct": 0.68,
+      "saveRatePct": null,
+      "shareRatePct": 0.0,
+      "engagementRatePct": 0.68,
+      "completionRatePct": 56.47,
+      "avgWatchSec": 11,
+      "avgViewDurationPct": 56.47,
+      "topCountries": [
+        {
+          "country": "KR",
+          "sharePct": 41.6
+        },
+        {
+          "country": "ID",
+          "sharePct": 7.2
+        },
+        {
+          "country": "JP",
+          "sharePct": 5.1
+        },
+        {
+          "country": "MM",
+          "sharePct": 4.4
+        },
+        {
+          "country": "TW",
+          "sharePct": 3.7
+        }
+      ],
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "rxwn61IROQc",
+      "platform": "YouTube",
+      "title": "Loom · Rena · One chosen color starts the day #Shorts",
+      "url": "https://www.youtube.com/shorts/rxwn61IROQc",
+      "publishedAt": "2026-07-29",
+      "measuredAt": "2026-08-02",
+      "duration": "8",
+      "durationSec": 8,
+      "mediaType": "short",
+      "views": 1114,
+      "likes": 11,
+      "comments": 0,
+      "shares": 1,
+      "saves": null,
+      "likeRatePct": 0.99,
+      "saveRatePct": null,
+      "shareRatePct": 0.09,
+      "engagementRatePct": 0.99,
+      "completionRatePct": 119.01,
+      "avgWatchSec": 10,
+      "avgViewDurationPct": 119.01,
+      "topCountries": [
+        {
+          "country": "UZ",
+          "sharePct": 14.1
+        },
+        {
+          "country": "KG",
+          "sharePct": 3.4
+        },
+        {
+          "country": "SY",
+          "sharePct": 3.2
+        },
+        {
+          "country": "MN",
+          "sharePct": 2.5
+        },
+        {
+          "country": "MM",
+          "sharePct": 1.9
+        }
+      ],
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "4-18kkZFh18",
+      "platform": "YouTube",
+      "title": "Four Routes. One Squad. | Loom #Shorts",
+      "url": "https://www.youtube.com/shorts/4-18kkZFh18",
+      "publishedAt": "2026-08-01",
+      "measuredAt": "2026-08-02",
+      "duration": "34",
+      "durationSec": 34,
+      "mediaType": "short",
+      "views": 601,
+      "likes": 10,
+      "comments": null,
+      "shares": null,
+      "saves": null,
+      "likeRatePct": 1.66,
+      "saveRatePct": null,
+      "shareRatePct": null,
+      "engagementRatePct": 1.66,
+      "completionRatePct": null,
+      "avgWatchSec": null,
+      "avgViewDurationPct": null,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "yt-dlp public metadata only"
+    },
+    {
+      "id": "l2cJP7Q9I8I",
+      "platform": "YouTube",
+      "title": "Loom - World Cup Pulso / Section S03 - hidden pulse hook #Shorts",
+      "url": "https://www.youtube.com/shorts/l2cJP7Q9I8I",
+      "publishedAt": "2026-06-18",
+      "measuredAt": "2026-08-02",
+      "duration": "22",
+      "durationSec": 22,
+      "mediaType": "short",
+      "views": 355,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0,
+      "saves": null,
+      "likeRatePct": 0.28,
+      "saveRatePct": null,
+      "shareRatePct": 0.0,
+      "engagementRatePct": 0.28,
+      "completionRatePct": 53.56,
+      "avgWatchSec": 12,
+      "avgViewDurationPct": 53.56,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "SDRlYNohEiE",
+      "platform": "YouTube",
+      "title": "Loom Ink AI K-pop Idol - Mask Hook #Shorts",
+      "url": "https://www.youtube.com/shorts/SDRlYNohEiE",
+      "publishedAt": "2026-07-04",
+      "measuredAt": "2026-08-02",
+      "duration": "19",
+      "durationSec": 19,
+      "mediaType": "short",
+      "views": 199,
+      "likes": 2,
+      "comments": 0,
+      "shares": 0,
+      "saves": null,
+      "likeRatePct": 1.01,
+      "saveRatePct": null,
+      "shareRatePct": 0.0,
+      "engagementRatePct": 1.01,
+      "completionRatePct": 56.11,
+      "avgWatchSec": 11,
+      "avgViewDurationPct": 56.11,
+      "topCountries": [
+        {
+          "country": "KR",
+          "sharePct": 73.4
+        }
+      ],
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "j3XvEYwlApE",
+      "platform": "YouTube",
+      "title": "Loom - World Cup Pulso / Clip 01 - opening route #Shorts",
+      "url": "https://www.youtube.com/shorts/j3XvEYwlApE",
+      "publishedAt": "2026-06-15",
+      "measuredAt": "2026-08-02",
+      "duration": "35",
+      "durationSec": 35,
+      "mediaType": "short",
+      "views": 193,
+      "likes": 1,
+      "comments": 0,
+      "shares": 0,
+      "saves": null,
+      "likeRatePct": 0.52,
+      "saveRatePct": null,
+      "shareRatePct": 0.0,
+      "engagementRatePct": 0.52,
+      "completionRatePct": 310.96,
+      "avgWatchSec": 111,
+      "avgViewDurationPct": 310.96,
+      "topCountries": [
+        {
+          "country": "KR",
+          "sharePct": 93.8
+        }
+      ],
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "TyONE0lKI2s",
+      "platform": "YouTube",
+      "title": "Loom - Ink | AI K-pop Idol Music Video",
+      "url": "https://www.youtube.com/watch?v=TyONE0lKI2s",
+      "publishedAt": "2026-07-02",
+      "measuredAt": "2026-08-02",
+      "duration": "2:42",
+      "durationSec": 162,
+      "mediaType": "video",
+      "views": 93,
+      "likes": 3,
+      "comments": 0,
+      "shares": 1,
+      "saves": null,
+      "likeRatePct": 3.23,
+      "saveRatePct": null,
+      "shareRatePct": 1.08,
+      "engagementRatePct": 3.23,
+      "completionRatePct": 36.21,
+      "avgWatchSec": 58,
+      "avgViewDurationPct": 36.21,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "vvw8DdTrFtA",
+      "platform": "YouTube",
+      "title": "One quiet click — closed weave, open proof | Loom #Shorts",
+      "url": "https://www.youtube.com/shorts/vvw8DdTrFtA",
+      "publishedAt": "2026-07-31",
+      "measuredAt": "2026-08-02",
+      "duration": "12",
+      "durationSec": 12,
+      "mediaType": "short",
+      "views": 63,
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "saves": null,
+      "likeRatePct": null,
+      "saveRatePct": null,
+      "shareRatePct": null,
+      "engagementRatePct": null,
+      "completionRatePct": null,
+      "avgWatchSec": null,
+      "avgViewDurationPct": null,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "yt-dlp public metadata only"
+    },
+    {
+      "id": "DUyCAFHZ7X0",
+      "platform": "YouTube",
+      "title": "Loom Track 01 - Root Signal (Full Master)",
+      "url": "https://www.youtube.com/watch?v=DUyCAFHZ7X0",
+      "publishedAt": "2026-05-29",
+      "measuredAt": "2026-08-02",
+      "duration": "2:44",
+      "durationSec": 164,
+      "mediaType": "video",
+      "views": 44,
+      "likes": 1,
+      "comments": 0,
+      "shares": 1,
+      "saves": null,
+      "likeRatePct": 2.27,
+      "saveRatePct": null,
+      "shareRatePct": 2.27,
+      "engagementRatePct": 2.27,
+      "completionRatePct": 41.42,
+      "avgWatchSec": 68,
+      "avgViewDurationPct": 41.42,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    },
+    {
+      "id": "lzzDanDgsA8",
+      "platform": "YouTube",
+      "title": "Loom - World Cup Pulso / Section S02 - #Shorts",
+      "url": "https://www.youtube.com/shorts/lzzDanDgsA8",
+      "publishedAt": "2026-06-18",
+      "measuredAt": "2026-08-02",
+      "duration": "11",
+      "durationSec": 11,
+      "mediaType": "short",
+      "views": 49,
+      "likes": null,
+      "comments": null,
+      "shares": null,
+      "saves": null,
+      "likeRatePct": null,
+      "saveRatePct": null,
+      "shareRatePct": null,
+      "engagementRatePct": null,
+      "completionRatePct": null,
+      "avgWatchSec": null,
+      "avgViewDurationPct": null,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "yt-dlp public metadata only"
+    },
+    {
+      "id": "0vV4CXL3_Qk",
+      "platform": "YouTube",
+      "title": "Pulso ✨ AURORA-M AI Idol",
+      "url": "https://www.youtube.com/watch?v=0vV4CXL3_Qk",
+      "publishedAt": "2026-06-17",
+      "measuredAt": "2026-08-02",
+      "duration": "2:39",
+      "durationSec": 159,
+      "mediaType": "video",
+      "views": 37,
+      "likes": 0,
+      "comments": 0,
+      "shares": 0,
+      "saves": null,
+      "likeRatePct": 0.0,
+      "saveRatePct": null,
+      "shareRatePct": 0.0,
+      "engagementRatePct": 0.0,
+      "completionRatePct": 34.48,
+      "avgWatchSec": 55,
+      "avgViewDurationPct": 34.48,
+      "topCountries": null,
+      "audienceGender": null,
+      "audienceAge": null,
+      "sourceAnalytics": "YouTube Analytics API v2 (OAuth)"
+    }
+  ]
+}

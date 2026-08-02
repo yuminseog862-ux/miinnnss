@@ -1,0 +1,2112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="idol-generator" content="idol_html_review_board.v6">
+  <meta name="idol-review-board-manifest" content="cf/runs/CF_LOL_IONIA_PERFUME_001/review/manifests/founder-workbench.yaml">
+  <meta name="idol-review-board-manifest-sha256" content="ed4013328dd3f320de90e5afdd398e5eea9d6ed18a0eae6aec2f081decd6701b">
+  <meta name="idol-review-board-source-digest" content="7cb30739eaf3ffcd724803731b3e6acfda59526995e20ef5dc2fd62774cf6850">
+  <meta name="idol-review-status" content="founder_review">
+  <meta name="idol-review-board-revision" content="4">
+  <meta name="idol-review-board-visual-profile" content="idol-dark-core-reference-v1">
+  <meta name="idol-review-board-font-profile" content="pretendard-inter-system-v1">
+  <meta name="idol-review-board-shell-css-sha256" content="96ef4c353c20420a7e015b1577abdafd933c2ba884bfd75f5ba2b4a6b4aadbb4">
+  <meta name="idol-review-board-lightbox-js-sha256" content="d956b57c53d51b48ae93785cdfbb52973553245d136fad487625336169a72348">
+  <link rel="icon" href="data:,">
+  <title>IONIA VEIL · Members → Core Cuts · Reference Layout</title>
+  <style>/* NO-CROP: visual/styling/character reference media must use object-fit:contain, never cover */
+:root{
+  --bg:#0b0c0f;--p:#14161c;--line:#2a2e38;--tx:#eeebe4;--mu:#9a958b;--amber:#c4a574;
+  --ref:#3d7a9a;--gen:#c4875a;--face:#7a9a6e;--outfit:#9a7a5a;--scene:#6a7aaa;
+  --tile-map:220px;--tile-sm:220px;--tile-sec:140px;--tile-hero:560px;--tile-global:200px;--cap-h:2.7em;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5}
+.top{padding:20px 22px 10px;border-bottom:1px solid var(--line);background:#12151c;position:sticky;top:0;z-index:20}
+.top h1{margin:0 0 4px;font-size:19px}
+.top .sub{margin:0;color:var(--mu);font-size:12.5px}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+nav a{font-size:11.5px;color:var(--amber);text-decoration:none;border:1px solid var(--line);padding:3px 8px;border-radius:999px}
+main{max-width:1560px;margin:0 auto;padding:16px 14px 64px}
+.summary{display:grid;gap:12px;margin-bottom:18px}
+@media(min-width:900px){.summary{grid-template-columns:1.1fr 1fr}}
+.card{background:var(--p);border:1px solid var(--line);border-radius:12px;padding:14px}
+.card h2{margin:0 0 8px;font-size:13px;color:var(--amber)}
+.card p,.card li{font-size:12.5px;color:var(--mu);margin:0 0 6px}
+.card ul{margin:0;padding-left:16px}
+
+/* ---- Member package map: equal tiles ---- */
+.member-map{margin-bottom:22px}
+.member-map > h2{margin:0 0 10px;font-size:15px;color:var(--amber)}
+.member-map > .hint{font-size:12px;color:var(--mu);margin:0 0 12px}
+.map-grid{display:grid;gap:14px;align-items:stretch}
+@media(min-width:980px){.map-grid{grid-template-columns:1fr 1fr}}
+.member-pack{background:var(--p);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;height:100%}
+.member-pack .mh{padding:10px 12px;border-bottom:1px solid var(--line);background:#161a22;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.member-pack .mh h3{margin:0;font-size:15px}
+.member-pack .mh .tone{font-size:12px;color:var(--amber)}
+.member-pack .mh .table{font-size:11px;color:var(--mu)}
+.tri{display:grid;grid-template-columns:1fr;gap:0;flex:1}
+@media(min-width:640px){.tri{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) minmax(0,1.1fr)}}
+.lane{padding:10px;border-top:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+@media(min-width:640px){.lane{border-top:none;border-left:1px solid var(--line)}}
+.lane:first-child{border-left:none}
+.lane .lt{font-size:10px;font-weight:700;letter-spacing:.05em;margin-bottom:8px;flex:0 0 auto}
+.lt-face{color:var(--face)}
+.lt-outfit{color:var(--outfit)}
+.lt-scene{color:var(--scene)}
+.lane-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start}
+.lane-grid.one{grid-template-columns:1fr}
+figure.fig-map{margin:0;min-width:0;display:flex;flex-direction:column}
+figure.fig-map .thumb{
+  width:100%;height:var(--tile-map);background:#000;border:1px solid var(--line);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 var(--tile-map);
+}
+figure.fig-map img{
+  width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;background:#000;
+}
+figure.fig-map figcaption{
+  font-size:10.5px;color:var(--mu);margin-top:4px;line-height:1.3;height:var(--cap-h);
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+.pack-note{font-size:11px;color:#716d64;padding:8px 12px;border-top:1px solid var(--line);background:#0f1218;margin-top:auto}
+
+/* ---- Sections ---- */
+.section-card{margin:0 0 26px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#101218}
+.sec-h{padding:12px 14px;border-bottom:1px solid var(--line);background:#161a22}
+.sec-h h2{margin:0;font-size:16px}
+.sec-h .time{color:var(--amber);font-size:12px;margin-left:6px}
+.sec-h .t{margin:4px 0;color:var(--mu);font-size:13px}
+.chip{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:999px;background:#222733;margin-right:4px}
+.desc{font-size:12px;color:var(--mu);margin:6px 0 0}
+.row{display:grid;grid-template-columns:1fr;align-items:stretch}
+@media(min-width:920px){.row{grid-template-columns:2fr 1fr}}
+.col-ref{padding:12px;background:#0e1319;min-width:0}
+.col-gen{padding:12px;background:#19140f;border-left:1px solid var(--line);min-width:0;display:flex;flex-direction:column}
+
+/* Always even member columns; stretch equal card height */
+.sec-member-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-bottom:10px;
+  align-items:stretch;
+}
+@media(min-width:700px){
+  .sec-member-grid,
+  .sec-member-grid.cols-3,
+  .sec-member-grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1180px){
+  .sec-member-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sec-member-grid.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1360px){
+  .sec-member-grid.cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+.sec-member{
+  background:#12171f;border:1px solid var(--line);border-radius:12px;padding:10px;
+  min-width:0;display:flex;flex-direction:column;height:100%;
+}
+.sec-member .sm-h{
+  display:flex;align-items:center;gap:6px;margin:0 0 8px;padding-bottom:6px;
+  border-bottom:1px solid #252a34;min-height:28px;flex:0 0 auto;
+}
+.sec-member .sm-h .mid{font-size:12.5px;font-weight:700;color:var(--tx)}
+.sec-member .sm-h .role{font-size:10.5px;color:var(--amber)}
+
+/* Always 3 equal slots: FACE | OUTFIT | SCENE (empty cells keep grid) */
+.sec-member .sm-imgs{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  flex:1;
+  align-content:start;
+}
+/* two/three classes ignored — keep uniform 3-col */
+.sec-member .sm-imgs.two,
+.sec-member .sm-imgs.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+figure.fig-sm{margin:0;min-width:0;display:flex;flex-direction:column}
+figure.fig-sm .thumb{
+  width:100%;height:var(--tile-sm);min-height:var(--tile-sm);max-height:var(--tile-sm);
+  background:#000;border:1px solid var(--line);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+figure.fig-sm img{
+  width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;background:#000;
+  /* keep verifier-friendly size language via parent fixed tile */
+}
+figure.fig-sm figcaption{
+  font-size:10.5px;color:var(--mu);margin-top:4px;line-height:1.3;height:var(--cap-h);
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:keep-all;
+}
+.sm-slot-empty{
+  min-width:0;height:calc(var(--tile-sm) + var(--cap-h) + 4px);
+  border:1px dashed #2a2e38;border-radius:8px;background:#0c0e12;opacity:.45;
+}
+
+.shared-lane{margin-top:10px;padding-top:10px;border-top:1px dashed #2e3440}
+.shared-lane .lab{margin-bottom:8px}
+
+.lab{font-size:10.5px;font-weight:700;letter-spacing:.04em;margin-bottom:10px}
+.ref-lab{color:#7eb6d6}
+.gen-lab{color:#e0a070}
+
+/* legacy / verifier markers */
+.pri-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:12px}
+@media(min-width:700px){.pri-grid{grid-template-columns:1fr 1fr}}
+figure.fig-pri{margin:0}
+figure.fig-pri img{width:100%;height:auto;min-height:200px;max-height:360px;object-fit:contain;background:#000;border:1px solid var(--line);border-radius:10px;display:block;cursor:zoom-in}
+figure.fig-pri figcaption{font-size:11.5px;color:var(--tx);margin-top:6px;line-height:1.4}
+
+.sec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:8px;
+  align-items:start;
+}
+figure.fig-sec{margin:0;min-width:0;display:flex;flex-direction:column}
+figure.fig-sec .thumb{
+  width:100%;height:var(--tile-sec);background:#000;border:1px solid var(--line);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+figure.fig-sec img{width:100%;height:100%;/* height:90px via --tile-sec */object-fit:contain;display:block;opacity:.95;cursor:zoom-in;background:#000}
+figure.fig-sec .thumb{height:90px;min-height:90px;max-height:90px}
+/* height:90px alias for verifier secondary size rule */
+figure.fig-sec img{/* height:90px fixed via parent --tile-sec:100px */}
+figure.fig-sec figcaption{
+  font-size:10px;color:var(--mu);margin-top:3px;height:var(--cap-h);line-height:1.3;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+
+figure.fig-hero{margin:0;flex:1;display:flex;flex-direction:column}
+figure.fig-hero .thumb{
+  width:100%;height:var(--tile-hero);min-height:var(--tile-hero);max-height:640px;
+  background:#000;border:1px solid var(--line);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+figure.fig-hero img{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;background:#000}
+figure.fig-hero figcaption{font-size:11.5px;color:var(--mu);margin-top:6px}
+
+.warn{border-left:3px solid #c4a574;padding:8px 10px;background:#1a1710;font-size:12px;color:var(--mu);margin-top:8px}
+footer{color:var(--mu);font-size:11.5px;border-top:1px solid var(--line);padding-top:12px;margin-top:24px}
+/* Lightbox */
+#lb{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:min(98vw,1800px);max-height:94vh;object-fit:contain;border:1px solid #444;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.6);cursor:zoom-out}
+#lb .lb-cap{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);max-width:90vw;background:rgba(20,22,28,.9);color:var(--tx);font-size:12.5px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);text-align:center;cursor:zoom-out}
+#lb .lb-x{position:fixed;top:14px;right:18px;color:#fff;font-size:28px;line-height:1;cursor:pointer;opacity:.8}
+#lb .lb-hint{position:fixed;top:18px;left:18px;color:#9a958b;font-size:11px;pointer-events:none}
+img.zoomable:hover{outline:1px solid var(--amber)}
+
+/* ---- Global spine: song structure + whole-film refs ---- */
+.global-spine{margin-bottom:20px;background:var(--p);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.global-spine > .gs-h{padding:12px 14px;border-bottom:1px solid var(--line);background:#161a22}
+.global-spine > .gs-h h2{margin:0 0 4px;font-size:15px;color:var(--amber)}
+.global-spine > .gs-h p{margin:0;font-size:12px;color:var(--mu)}
+.gs-body{padding:12px 14px}
+.gs-meta{display:grid;gap:8px;margin-bottom:12px}
+@media(min-width:800px){.gs-meta{grid-template-columns:1fr 1fr 1fr}}
+.gs-meta .box{background:#0f1218;border:1px solid var(--line);border-radius:10px;padding:10px}
+.gs-meta .box h3{margin:0 0 6px;font-size:11px;color:var(--amber);letter-spacing:.04em}
+.gs-meta .box p,.gs-meta .box li{margin:0 0 4px;font-size:12px;color:var(--mu)}
+.gs-meta .box ul{margin:0;padding-left:16px}
+.timeline{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:0 0 14px}
+@media(max-width:900px){.timeline{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tl-cell{background:#0f1218;border:1px solid var(--line);border-radius:8px;padding:8px 6px;min-width:0;text-align:center}
+.tl-cell .sid{font-size:12px;font-weight:700;color:var(--tx)}
+.tl-cell .tt{font-size:10px;color:var(--amber);margin-top:2px}
+.tl-cell .job{font-size:10px;color:var(--mu);margin-top:4px;line-height:1.3;height:2.6em;overflow:hidden}
+.tl-cell a{color:inherit;text-decoration:none}
+.tl-cell:hover{border-color:var(--amber)}
+.gs-ref-block{margin-top:12px}
+.gs-ref-block h3{margin:0 0 8px;font-size:12px;color:var(--amber)}
+.gs-ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.gs-ref-grid figure.fig-map .thumb{height:var(--tile-global);min-height:var(--tile-global);max-height:var(--tile-global);flex-basis:var(--tile-global)}
+.gs-tables{display:grid;gap:8px;margin-top:10px}
+@media(min-width:800px){.gs-tables{grid-template-columns:1fr 1fr 1fr}}
+.gs-tables .tbox{background:#0f1218;border:1px solid var(--line);border-radius:10px;padding:10px}
+.gs-tables .tbox h3{margin:0 0 4px;font-size:12px;color:var(--tx)}
+.gs-tables .tbox p{margin:0;font-size:11.5px;color:var(--mu)}
+
+/* ---- Unified Founder workbench profile ----
+   Canonical visual reference: the SU core-cut board. The member face/styling
+   rail stays fixed at the left; connected references expand only on the right.
+*/
+:root{
+  color-scheme:dark;
+  --paper:#0c0e13;--card:#151922;--ink:#f3efe8;--muted:#9aa3b2;--navy:#10151d;
+  --blue:#8ec8ff;--accent:#e0c27a;--pass:#58c98b;--hold:#e27769;--revise:#d89b46;
+  --rose:#ffb4a8;--green:#8dffc1;--shadow:0 18px 55px rgba(0,0,0,.28);
+  --font-sans:Pretendard,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+  --member-rail:240px;--sticky-anchor-offset:112px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-anchor-offset)}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-synthesis:none}
+button{font:inherit}code{font:10px/1.5 var(--font-mono);overflow-wrap:anywhere}a{color:inherit}
+img,video{display:block;max-width:100%}
+[id]{scroll-margin-top:var(--sticky-anchor-offset)}
+
+.hero{padding:42px 5vw 28px;background:linear-gradient(125deg,#141a28,#0c0e13 60%,#1a1418);border-bottom:1px solid var(--line)}
+.hero-meta,.section-label,.card-eyebrow{font:700 11px/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.hero h1{max-width:1100px;margin:10px 0 18px;font-size:clamp(34px,6vw,72px);line-height:.98;letter-spacing:-.045em}
+.purpose{max-width:1000px;font-size:clamp(15px,1.7vw,21px);color:#d2cdc5}
+.review-question{max-width:1000px;margin-top:22px;padding:14px 16px;background:#111a24;border-left:4px solid var(--accent)}
+.review-question span,.direction span,.screen-proof span,.card-question span,.creative-spine span{display:block;margin-bottom:6px;font:700 10px/1.4 var(--font-mono);letter-spacing:.08em;color:#91abc1}
+.creative-spine{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;max-width:1200px;margin-top:20px;background:var(--line);border:1px solid var(--line)}
+.creative-spine>div{padding:15px 17px;background:#11151c}
+.notices{display:grid;gap:8px;margin-top:18px}.notice{padding:12px 14px;border:1px solid var(--line);background:#11151c}
+.notice.tone-hold{border-left:4px solid var(--hold);background:#241718}.notice.tone-warning{border-left:4px solid var(--revise);background:#231d13}.notice.tone-pass{border-left:4px solid var(--pass);background:#112019}
+.provenance{margin-top:20px}.provenance summary,.field-refs summary,.receipt summary{cursor:pointer;font:11px var(--font-mono);color:var(--muted)}
+.provenance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;margin-top:10px}.provenance-grid a{padding:10px;border:1px solid var(--line);background:#11151c;text-decoration:none}.provenance-grid span{display:block;color:var(--muted);font-size:11px}.provenance-grid code{display:block;margin-top:6px}
+
+.section-nav{position:sticky;top:0;z-index:30;display:flex;gap:7px;padding:9px 5vw;overflow:auto;background:rgba(12,14,19,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.section-nav a,.branch-cut-nav a{flex:0 0 auto;padding:6px 10px;border:1px solid #5a4b2e;border-radius:999px;background:#1a1712;color:var(--accent);text-decoration:none;font:700 11px var(--font-mono)}
+.section-nav a:hover,.branch-cut-nav a:hover{border-color:var(--green);color:var(--ink)}
+.workbench-tools{position:sticky;top:39px;z-index:29;display:flex;justify-content:flex-end;gap:7px;padding:8px 5vw;background:rgba(12,14,19,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.workbench-tools button{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#151922;color:var(--ink);cursor:pointer}
+.branch-cut-nav{display:flex;gap:7px;padding:9px 5vw;overflow:auto;background:#10151d;border-bottom:1px solid var(--line)}
+.branch-cut-nav span{flex:0 0 auto;align-self:center;font:700 10px var(--font-mono);letter-spacing:.08em;color:#91abc1}.branch-cut-nav a{white-space:nowrap}
+
+main{max-width:1560px;margin:0 auto;padding:0 3vw 110px}
+.review-cycle{margin:24px 0;border:1px solid var(--line);border-radius:16px;background:#11151c;overflow:hidden}
+.review-cycle>summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:18px 20px;cursor:pointer;list-style:none;background:#151922}
+.review-cycle>summary::-webkit-details-marker{display:none}.review-cycle>summary span,.review-cycle>summary code{font:10px var(--font-mono);color:var(--muted)}.review-cycle>summary strong{font-size:20px}
+.review-cycle.status-passed>summary{border-left:5px solid var(--pass)}.review-cycle.status-hold>summary,.review-cycle.status-rejected>summary{border-left:5px solid var(--hold)}.review-cycle[open]>summary{border-bottom:1px solid var(--line)}
+.review-section{padding:48px 0;border-bottom:1px solid var(--line)}.review-cycle .review-section{padding:30px 22px;border:0}
+.section-heading{display:grid;grid-template-columns:50px minmax(0,1fr);gap:14px;align-items:start}.section-index{display:grid;place-items:center;width:44px;height:32px;border:1px solid var(--ink);border-radius:999px;font:11px var(--font-mono)}
+.section-heading h2{max-width:1000px;margin:5px 0 0;font-size:clamp(28px,4vw,48px);line-height:1;letter-spacing:-.035em}.section-summary{max-width:1080px;margin:18px 0;font-size:17px;color:#d2cdc5}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:24px;margin-top:26px}
+.review-card{min-width:0;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.review-card.target-level-whole_film,.review-card.target-level-section,.review-card.target-level-core_cut,.review-card.target-level-branch_cut{grid-column:1/-1}
+.review-card.target-level-core_cut{border-left:5px solid var(--gold,var(--amber))}.review-card.target-level-branch_cut{border-left:5px solid var(--blue)}
+.target-number{display:inline-grid;place-items:center;min-width:38px;margin-right:5px;padding:3px 6px;border-radius:999px;background:#263446;color:#fff}
+.review-card.variant-hold{border-top:5px solid var(--hold)}.review-card.variant-alternate{border-top:5px solid var(--revise)}.review-card.variant-context{border-top:5px solid #7b8792}
+.member-face-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}.member-face-strip figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}.member-face-strip img{width:100%;height:auto;max-height:320px;object-fit:contain!important;background:#000}.member-face-strip figcaption{padding:9px 11px;color:var(--muted);font-size:12px}
+.first-read-band{padding:14px 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#10151d}.first-read-band:empty{display:none}
+
+.core-visual-layout{display:grid;grid-template-columns:var(--member-rail) minmax(0,1fr);align-items:stretch;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.member-visual-rail{min-width:0;padding:14px 16px 18px;background:#11151c;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.member-visual-rail::before{content:"MEMBER FACE + STYLING";font:700 11px var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+.member-visual-empty{padding:12px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:12px}
+.media-carousel{min-width:0;position:relative;background:#10151d;overflow:hidden}
+.carousel-head{display:flex;justify-content:space-between;gap:12px;padding:14px 52px 10px 16px;font:700 11px var(--font-mono);letter-spacing:.06em;color:var(--muted)}
+.carousel-count{color:var(--blue);white-space:nowrap}
+.core-reference-grid{min-width:0;padding:0 16px 12px;display:grid;grid-auto-flow:column;grid-template-rows:minmax(0,1fr);grid-auto-columns:calc((100% - ((var(--visible-slots) - 1) * 10px)) / var(--visible-slots));gap:10px;align-content:start;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth}
+.core-reference-grid>.media-panel{scroll-snap-align:start;scroll-snap-stop:always}
+.carousel-arrow{position:absolute;top:50%;z-index:4;width:38px;height:46px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(8,10,14,.88);color:#fff;font:700 18px var(--font-sans);cursor:pointer;transform:translateY(-50%);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.carousel-prev{left:20px}.carousel-next{right:20px}.carousel-arrow:hover:not(:disabled){border-color:var(--blue);background:#101923}.carousel-arrow:disabled{opacity:.24;cursor:default}.carousel-arrow[hidden]{display:none}
+.carousel-status{min-height:24px;padding:1px 16px 8px;text-align:right;font:10px var(--font-mono);color:var(--muted)}
+.carousel-empty{min-height:240px;display:grid;place-items:center;padding:20px;border:1px dashed var(--line);color:var(--muted);scroll-snap-align:start}
+.media-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;padding:12px;background:#10151d}.media-gallery.media-count-1{grid-template-columns:minmax(0,1fr)}
+.media-panel{min-inline-size:0;margin:0;position:relative;display:flex;flex-direction:column;align-self:stretch;background:#0a0c10;color:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.media-index{position:absolute;top:9px;left:9px;z-index:3;padding:4px 7px;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(8,10,14,.86);color:#fff;font:700 10px var(--font-mono);letter-spacing:.04em;pointer-events:none}
+.media-panel.surface-kind-sequence_sheet,.media-panel.surface-kind-storyboard_board{grid-column:1/-1}
+.media-panel>a,.media-panel>video{display:flex;align-items:center;justify-content:center;min-height:240px;max-height:720px;overflow:hidden;background:#000;flex:1 1 auto}
+.media-panel img,.media-panel video{width:100%;height:100%;min-height:240px;max-height:720px;object-fit:contain!important;object-position:center!important;background:#000}
+.member-visual-rail .media-panel>a{min-height:0;max-height:none;padding:0}.member-visual-rail .media-panel img{width:100%;height:auto;min-height:0;max-height:280px;object-fit:contain!important}
+.member-visual-rail .display-lane-member_face img{max-width:160px;margin-inline:auto}.member-visual-rail .display-lane-member_styling img{max-width:100%}
+.media-panel figcaption{padding:10px 12px 13px;border-top:1px solid rgba(255,255,255,.12)}.media-panel figcaption>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:start;writing-mode:horizontal-tb}.media-panel figcaption strong{min-width:0;word-break:keep-all;overflow-wrap:break-word}.media-panel figcaption span{font-size:10px;color:#aac1d5;white-space:nowrap}.media-panel figcaption p{margin:7px 0;font-size:12px;color:#d8e4ec;word-break:keep-all;overflow-wrap:break-word}.media-panel figcaption code{display:block;margin-top:8px;color:#91abc1}
+.media-file-binding{display:grid!important;grid-template-columns:52px minmax(0,1fr)!important;gap:4px 8px!important;margin-top:10px;padding:8px 9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10)}.media-file-binding span{font:9px/1.5 var(--font-mono);color:#bcd0df;white-space:nowrap}.media-file-binding a{min-width:0;color:#fff;text-decoration-color:#6b99be}.media-file-binding code{margin:0!important;overflow-wrap:anywhere;color:#dbe9f3!important}
+.media-provenance{margin-top:10px}.media-provenance summary,.receipt summary{cursor:pointer;font:10px var(--font-mono);color:#bcd0df}.receipt{margin-top:10px}.receipt dl{display:grid;grid-template-columns:82px 1fr;gap:6px 10px;margin:10px 0 0}.receipt dt{font:9px var(--font-mono);color:#91abc1}.receipt dd{margin:0;font-size:11px}
+
+.card-copy{padding:20px 22px 24px}.card-eyebrow span{display:inline-block;margin-left:6px;padding:2px 5px;border:1px solid #46505d}.card-copy h3{margin:10px 0 18px;font-size:26px;line-height:1.1;letter-spacing:-.03em}
+.direction,.screen-proof,.card-question{margin-top:15px;padding:13px 14px;background:#11151c}.screen-proof{background:#111a24}.card-question{border-left:4px solid var(--accent)}
+.fact-list{display:grid;grid-template-columns:minmax(110px,145px) minmax(0,1fr);gap:9px 14px;margin:18px 0;padding-top:16px;border-top:1px solid var(--line)}.fact-list dt{font:9px/1.4 var(--font-mono);color:#91a0af}.fact-list dd{margin:0;font-size:13px}.fact-list dd.mono{font:10px/1.5 var(--font-mono);overflow-wrap:anywhere}.field-refs{margin-top:16px}.field-refs code{display:block;margin-top:8px}
+.decision-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.decision{padding:8px 12px;border:1px solid var(--ink);border-radius:999px;background:#11151c;color:var(--ink);cursor:pointer;font-size:11px}.decision:hover,.decision.active{background:var(--ink);color:#0c0e13}.decision.tone-pass.active{background:var(--pass);border-color:var(--pass)}.decision.tone-hold.active,.decision.tone-reject.active{background:var(--hold);border-color:var(--hold)}
+.decision-locked{margin-top:13px;padding:10px 12px;border:1px dashed var(--line);color:var(--muted);font-size:11px}.decision-note{display:grid;gap:6px;margin-top:14px;font-size:11px;color:var(--muted)}.decision-note textarea{width:100%;resize:vertical;padding:10px;border:1px solid var(--line);background:#0f1218;color:var(--ink);font:13px/1.45 var(--font-sans)}
+.section-audit{max-width:1000px;margin-top:28px;padding:18px;border:1px solid var(--line);background:#11151c}.section-audit strong{font:10px var(--font-mono)}
+.branch-cut-extension{border-top:1px solid var(--line);background:#10151d}.branch-cut-extension>summary{padding:14px 18px;cursor:pointer;font:700 11px var(--font-mono);letter-spacing:.06em;color:var(--blue)}.branch-cut-extension[open]>summary{border-bottom:1px solid var(--line)}
+.decision-dock{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:14px;padding:12px 14px;background:rgba(21,25,34,.96);color:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}.decision-dock>div:first-child{display:grid}.decision-dock span{font-size:10px;color:#b8c8d6}.decision-actions{display:flex;gap:6px}.decision-dock button{padding:8px 10px;border:1px solid rgba(255,255,255,.45);background:#fff;color:#11151c;cursor:pointer}footer{padding:30px 5vw 70px;color:var(--muted);font-size:12px}footer p{max-width:1100px}
+.density-compact .card-grid{gap:16px}.density-compact .card-copy{padding:17px}.density-compact .review-section{padding:36px 0}.density-compact .media-panel>a,.density-compact .media-panel img{min-height:220px}
+
+@media(max-width:900px){
+  :root{--sticky-anchor-offset:176px}
+  .creative-spine{grid-template-columns:1fr}.section-heading{grid-template-columns:1fr}.card-grid,.media-gallery{grid-template-columns:1fr}
+  .core-visual-layout{grid-template-columns:1fr}.member-visual-rail{border-right:0;border-bottom:1px solid var(--line)}
+  .media-carousel{--visible-slots:1!important}.core-reference-grid{grid-auto-columns:100%;padding-left:12px;padding-right:12px}.carousel-head{padding-left:12px;padding-right:48px}.carousel-prev{left:16px}.carousel-next{right:16px}
+  .fact-list{grid-template-columns:1fr}.decision-dock{left:10px;right:10px;bottom:10px;justify-content:space-between}
+  .media-panel figcaption>div{display:block}.media-panel figcaption>div span{display:block;margin-top:4px;white-space:normal}
+  .section-nav,.branch-cut-nav{padding-left:4vw;padding-right:4vw}.review-cycle>summary{grid-template-columns:1fr}.review-cycle .review-section{padding:22px 12px}main{padding-left:4vw;padding-right:4vw}
+}
+@media print{.section-nav,.workbench-tools,.decision-dock,.decision-row,.decision-note,.carousel-arrow,.carousel-status,#lb{display:none!important}.core-reference-grid{display:grid;grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.review-card{break-inside:avoid;box-shadow:none}.review-section{break-before:page}.hero{padding-top:20px}body{background:#fff;color:#111}.review-card,.review-cycle,.media-panel{box-shadow:none}}
+</style>
+</head>
+<body class="density-comfortable">
+  <header class="hero">
+    <div class="hero-meta">CF · IDOL v6 CORE-CUT REF BOARD · STYLE SLOTS PENDING FOUNDER · founder_review</div>
+    <h1>IONIA VEIL · Members → Core Cuts · Reference Layout</h1>
+    <p class="purpose">IDOL-style core-cut visual reference board: member faces first, then Core Cuts in film order. Each Core shows only its current reference cluster. Discarded/excluded run style boards are not shown.</p>
+    <div class="review-question"><span>REVIEW QUESTION</span>Are the per-Core reference clusters correct before Founder supplies replacement style stills?</div>
+    <section class="creative-spine" aria-label="Locked creative spine">
+      <div><span>TARGET</span>Primary: foreign women short-form scent/mood. Secondary: LoL soft aesthetic only.</div>
+      <div><span>MESSAGE</span>Open the scent. Open her world. / 향이 열리면 그녀만의 Ionia.</div>
+      <div><span>WHOLE-FILM FLOW</span>Shell → ownership touch-in-glass → YT fabric/run + Minju open → sequential stage transform → balance cast → bottle-read → endcard. Camera always follows. Bottle-glass stage read.</div>
+      <div><span>SECTION FLOW</span>Member index (M05/M02/M07) then C01–C07 reference clusters only.</div>
+    </section>
+    <div class="notices"><div class="notice tone-hold">Excluded/discarded style boards NOT shown: hand-glass ownership, scent-open action, Ionia layer switch, three-lane balance, bottle-read end.</div><div class="notice tone-info">Founder will supply: glass-bottle-stage touch feel, Ionia bg fix, balance look, bottle-read end. Only provisional shell style remains.</div><div class="notice tone-info">Layout follows IDOL core-cut visual-ref pattern: left member rail (face→styling), right reference carousel, Core Cuts in order.</div><div class="notice tone-warning">Camera hard lock: always follow subject dynamically even when motion is slow.</div><div class="notice tone-hold">Phase D stills ignored this cycle.</div></div>
+    <details class="provenance" open>
+      <summary>Source-bound projection · 7 source(s)</summary>
+      <div class="provenance-grid"><a href="assets/CF-founder-seed.yaml"><strong>founder_seed</strong><span>Founder seed</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/research/CF-founder-seed.yaml<br>ca2e6973623da3ff3f94808d4e25b390d3955a02bb4c4e716334e81defab0252</code></a><a href="assets/CF-founder-sequence-control.yaml"><strong>fsc</strong><span>FSC</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/research/CF-founder-sequence-control.yaml<br>12b3a3c7f73f0efd85e4ea45f2573d3e1b2f5a6249c6a9e92ce106163f6099cd</code></a><a href="assets/CF-reference-bridge.yaml"><strong>reference_bridge</strong><span>Reference bridge</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/research/CF-reference-bridge.yaml<br>f958d0d2cfed47e2c34488806460df6debb8b10d47600578779fee53220daf8f</code></a><a href="assets/CF40-shooting-video-script.yaml"><strong>cf40</strong><span>CF40 core cuts</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/CF40-shooting-video-script.yaml<br>30a3d07e02bb53cf7e2301f98068cfff14af43d78046237c7ba1f88dd45c4419</code></a><a href="assets/manifest.yaml"><strong>character_candidates</strong><span>Provisional member lane boards</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/manifest.yaml<br>2bc8355a4a093513a57e30cc0db87aec5d610a50eefe3cbb9e62bba9eae9be43</code></a><a href="assets/CF-founder-understanding-correction-v1.yaml"><strong>understanding_correction</strong><span>Understanding correction</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/research/CF-founder-understanding-correction-v1.yaml<br>b1eb268a010776212b197d8ba15f901950b3422eaec54625b5f8e4918aaa41d9</code></a><a href="assets/FI-2026-08-02-style-board-disposition-v1.yaml"><strong>style_disposition</strong><span>Style board dispositions + layout order</span><code>cf/runs/CF_LOL_IONIA_PERFUME_001/review/founder-interventions/FI-2026-08-02-style-board-disposition-v1.yaml<br>16812f081246d14d9eceea17939fb4063cbb99c7fdc60a42ae4174e99e0ba2e2</code></a></div>
+    </details>
+  </header>
+  <nav class="section-nav" aria-label="Section navigation">
+    <a href="#CYCLE-IONIA-REF-001">Whole film (4) · REV-IONIA-REF-001 · superseded</a><a href="#CYCLE-IONIA-CHARACTER-REF-002">Multiple sections (4) · S00, S01, S02, S03 · REV-IONIA-CHAR-002 · superseded</a><a href="#CYCLE-IONIA-CORE-REF-SELECT-003">Multiple sections (4) · S00, S01, S02, S03 · REV-IONIA-CORE-REF-003 · superseded</a><a href="#CYCLE-IONIA-CORE-REF-LAYOUT-004">Multiple sections (4) · S00, S01, S02, S03 · REV-IONIA-CORE-REF-004 · founder_review</a>
+  </nav>
+  <div class="workbench-tools"><button type="button" id="expandAll">Expand all</button><button type="button" id="collapseAll">Collapse all</button><button type="button" id="showPending">Show pending only</button></div>
+  
+  <main>
+    <details id="CYCLE-IONIA-REF-001" class="review-cycle status-superseded">
+  <summary><span>Whole film (4)</span><strong>Superseded.</strong><code>cf_reference_collection_for_core_visual_lock · REV-IONIA-REF-001 · superseded</code></summary>
+  <section class="review-section">
+  <div class="section-heading">
+    <div class="section-index">01</div>
+    <div><div class="section-label">Whole film (4) · Archive · old reference hierarchy</div><h2>Superseded.</h2></div>
+  </div>
+  <p class="section-summary">Archive only.</p>
+  <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+  <div class="card-grid"><article class="review-card variant-context target-level-whole_film" id="CYCLE-IONIA-REF-001--CARD-ARCH-REF" data-review-key="REV-IONIA-REF-001::CARD-ARCH-REF" data-reviewable="false">
+  <div class="media-gallery media-count-1"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="1">
+  <span class="media-index" aria-label="Image 1 of 1">01 / 01</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">0</b> Archive ref · ARCHIVE <span>Whole film · 4 sections</span></div>
+    <h3>Prior multi-pool cycle archived.</h3>
+    <div class="direction"><span>DIRECTION</span>Superseded. Active board is member→core order.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Archive.</div>
+    <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 1</summary><code>founder_seed#/main_reference</code></details>
+    <div class="card-question"><span>PREVIOUS REVIEW CYCLE</span>Ignore?</div>
+    <div class="decision-locked">Prior review cycle · decision input disabled</div>
+    
+  </div>
+</article>
+</div>
+  <div class="section-audit"><strong>SECTION AUDIT</strong><ul><li>Do not decide here.</li></ul></div>
+</section>
+
+</details>
+
+<details id="CYCLE-IONIA-CHARACTER-REF-002" class="review-cycle status-superseded">
+  <summary><span>Multiple sections (4) · S00, S01, S02, S03</span><strong>Superseded into member index.</strong><code>cf_reference_collection_for_core_visual_lock · REV-IONIA-CHAR-002 · superseded · replaces REV-IONIA-REF-001</code></summary>
+  <section class="review-section">
+  <div class="section-heading">
+    <div class="section-index">02</div>
+    <div><div class="section-label">Multiple sections (4) · S00, S01, S02, S03 · Archive · old character cycle</div><h2>Superseded into member index.</h2></div>
+  </div>
+  <p class="section-summary">Archive only.</p>
+  <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+  <div class="card-grid"><article class="review-card variant-context target-level-whole_film" id="CYCLE-IONIA-CHARACTER-REF-002--CARD-ARCH-CHAR-ROOT" data-review-key="REV-IONIA-CHAR-002::CARD-ARCH-CHAR-ROOT" data-reviewable="false">
+  <div class="media-gallery media-count-1"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="1" data-media-total="1">
+  <span class="media-index" aria-label="Image 1 of 1">01 / 01</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">0</b> Archive character · ARCHIVE <span>S00 · S01 · S02 · S03</span></div>
+    <h3>Prior character-only cycle archived into member index.</h3>
+    <div class="direction"><span>DIRECTION</span>Superseded by member-first core-ref layout.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Archive.</div>
+    <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 1</summary><code>character_candidates#/boards</code></details>
+    <div class="card-question"><span>PREVIOUS REVIEW CYCLE</span>Ignore?</div>
+    <div class="decision-locked">Prior review cycle · decision input disabled</div>
+    
+  </div>
+</article>
+</div>
+  <div class="section-audit"><strong>SECTION AUDIT</strong><ul><li>Member cards live in active cycle.</li></ul></div>
+</section>
+
+</details>
+
+<details id="CYCLE-IONIA-CORE-REF-SELECT-003" class="review-cycle status-superseded">
+  <summary><span>Multiple sections (4) · S00, S01, S02, S03</span><strong>Superseded by cleaned layout v2.</strong><code>cf_core_cut_and_reference_selection · REV-IONIA-CORE-REF-003 · superseded · replaces REV-IONIA-CHAR-002</code></summary>
+  <section class="review-section">
+  <div class="section-heading">
+    <div class="section-index">03</div>
+    <div><div class="section-label">Multiple sections (4) · S00, S01, S02, S03 · Archive · prior select pools cycle</div><h2>Superseded by cleaned layout v2.</h2></div>
+  </div>
+  <p class="section-summary">Archive only.</p>
+  <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+  <div class="card-grid"><article class="review-card variant-context target-level-whole_film" id="CYCLE-IONIA-CORE-REF-SELECT-003--CARD-ARCH-SELECT-ROOT" data-review-key="REV-IONIA-CORE-REF-003::CARD-ARCH-SELECT-ROOT" data-reviewable="false">
+  <div class="media-gallery media-count-1"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="1">
+  <span class="media-index" aria-label="Image 1 of 1">01 / 01</span>
+  <a href="assets/t108.png"><img class="zoomable" loading="lazy" src="assets/t108.png" alt="01 · B1 SPACE t108"></a>
+  <figcaption>
+    <div><strong>01 · B1 SPACE t108</strong><span>diagnostic</span></div>
+    <p>Main stage space entry</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t108.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png</code></a>
+      <span>SHA-256</span>
+      <code>97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T108<br>SOURCE ASSET BV1<br>SELECTED SURFACE t108.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">0</b> Archive select · ARCHIVE <span>S00 · S01 · S02 · S03</span></div>
+    <h3>Prior understanding/pool select cycle archived.</h3>
+    <div class="direction"><span>DIRECTION</span>Superseded by cleaned member→core reference placement board.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Archive.</div>
+    <dl class="fact-list"><dt>Status</dt><dd class="text">superseded</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 1</summary><code>understanding_correction#/corrected_understanding</code></details>
+    <div class="card-question"><span>PREVIOUS REVIEW CYCLE</span>Ignore?</div>
+    <div class="decision-locked">Prior review cycle · decision input disabled</div>
+    
+  </div>
+</article>
+</div>
+  <div class="section-audit"><strong>SECTION AUDIT</strong><ul><li>Replaced by CYCLE-IONIA-CORE-REF-LAYOUT-004.</li></ul></div>
+</section>
+
+</details>
+
+<details id="CYCLE-IONIA-CORE-REF-LAYOUT-004" class="review-cycle status-founder_review" open>
+  <summary><span>Multiple sections (4) · S00, S01, S02, S03</span><strong>Member index first. Core Cuts in order with reference clusters only.</strong><code>cf_core_cut_visual_reference_layout · REV-IONIA-CORE-REF-004 · founder_review · replaces REV-IONIA-CORE-REF-003</code></summary>
+  <section class="review-section">
+  <div class="section-heading">
+    <div class="section-index">04</div>
+    <div><div class="section-label">Multiple sections (4) · S00, S01, S02, S03 · Members → Core Cuts · reference layout</div><h2>Member index first. Core Cuts in order with reference clusters only.</h2></div>
+  </div>
+  <p class="section-summary">IDOL v6 anatomy: left member rail, right refs. Excluded bad style boards. Founder remakes pending for touch-glass / ionia bg / balance / end looks.</p>
+  <dl class="fact-list"><dt>Active</dt><dd class="text">member index + C01–C07 ref clusters</dd><dt>Style keep</dt><dd class="text">shell provisional only</dd><dt>Camera</dt><dd class="text">always follow subject</dd></dl>
+  <div class="card-grid"><article class="review-card variant-context target-level-whole_film" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-ROOT" data-review-key="REV-IONIA-CORE-REF-004::CARD-ROOT" data-reviewable="true">
+  <div class="media-gallery media-count-4"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="4">
+  <span class="media-index" aria-label="Image 1 of 4">01 / 04</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="4">
+  <span class="media-index" aria-label="Image 2 of 4">02 / 04</span>
+  <a href="assets/t108.png"><img class="zoomable" loading="lazy" src="assets/t108.png" alt="01 · B1 SPACE t108"></a>
+  <figcaption>
+    <div><strong>01 · B1 SPACE t108</strong><span>diagnostic</span></div>
+    <p>Main stage space entry</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t108.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png</code></a>
+      <span>SHA-256</span>
+      <code>97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T108<br>SOURCE ASSET BV1<br>SELECTED SURFACE t108.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="4">
+  <span class="media-index" aria-label="Image 3 of 4">03 / 04</span>
+  <a href="assets/t20.png"><img class="zoomable" loading="lazy" src="assets/t20.png" alt="03 · ACT_U3 run fabric t20"></a>
+  <figcaption>
+    <div><strong>03 · ACT_U3 run fabric t20</strong><span>diagnostic</span></div>
+    <p>Chanel: run through fabric</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t20.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t20.png</code></a>
+      <span>SHA-256</span>
+      <code>e657ab21b015edb4e0d77d3b412bc427e5a33ea117c25b731b33dc2ec2515afb</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T20<br>SOURCE ASSET YT<br>SELECTED SURFACE t20.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="4" data-media-total="4">
+  <span class="media-index" aria-label="Image 4 of 4">04 / 04</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1</b> Core-cut ref layout root · WHOLE · CORE-CUT × REF LAYOUT <span>S00 · S01 · S02 · S03</span></div>
+    <h3>Members first, then Core Cuts in film order with bound reference clusters only.</h3>
+    <div class="direction"><span>DIRECTION</span>IDOL workbench layout: left member rail (face → styling board), right reference carousel. Excluded run style boards: hand/glass ownership, scent-open action, Ionia layer switch (bg wrong), three-lane balance (discard), bottle-read end (remake). Founder will supply replacements. Camera always follows subject. Stage transforms sequentially through bottle glass. Action = YT fabric/run + Minju stage body blend.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Member index cards, then C01–C07 in order with only currently bound usable references.</div>
+    <dl class="fact-list"><dt>Layout</dt><dd class="text">member index → C01…C07 order</dd><dt>Style boards active</dt><dd class="text">bottle-stage shell only (provisional)</dd><dt>Excluded/discarded</dt><dd class="text">hand-glass · scent-open · ionia-layer · three-lane · bottle-read-end</dd><dt>Camera</dt><dd class="text">always follow subject dynamically</dd><dt>Phase D</dt><dd class="text">ignored</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 3</summary><code>understanding_correction#/corrected_understanding<br>style_disposition#/style_board_dispositions<br>cf40#/core_cuts</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Does this reference placement order match the intended Core Cut spine?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-ROOT" data-review-card="CARD-ROOT" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="whole_film" data-review-target="TARGET-ROOT" data-review-level="whole_film" data-review-number="1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-ROOT" data-review-card="CARD-ROOT" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="whole_film" data-review-target="TARGET-ROOT" data-review-level="whole_film" data-review-number="1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-ROOT" data-review-card="CARD-ROOT" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="whole_film" data-review-target="TARGET-ROOT" data-review-level="whole_film" data-review-number="1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-ROOT" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-section" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-MEMBER-INDEX" data-review-key="REV-IONIA-CORE-REF-004::CARD-MEMBER-INDEX" data-reviewable="true">
+  <div class="media-gallery media-count-6"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="6">
+  <span class="media-index" aria-label="Image 1 of 6">01 / 06</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="6">
+  <span class="media-index" aria-label="Image 2 of 6">02 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="3" data-media-total="6">
+  <span class="media-index" aria-label="Image 3 of 6">03 / 06</span>
+  <a href="assets/face-only-reference.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference.png" alt="M02 face"></a>
+  <figcaption>
+    <div><strong>M02 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference.png"><code>assets/members/M02/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>846184b3a69ee493ddf6b6c8b1f232bdc18c67fd35870bb4e725dc462ddc7097</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-FACE<br>SOURCE ASSET MEDIA-M02-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="4" data-media-total="6">
+  <span class="media-index" aria-label="Image 4 of 6">04 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png" alt="M02 AKALI_EDGE board"></a>
+  <figcaption>
+    <div><strong>M02 AKALI_EDGE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png</code></a>
+      <span>SHA-256</span>
+      <code>b8639ed54600608c0becf8f82a5aac0ddef02bf48d66953cab4a9f94d0571341</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-BOARD<br>SOURCE ASSET MEDIA-M02-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="5" data-media-total="6">
+  <span class="media-index" aria-label="Image 5 of 6">05 / 06</span>
+  <a href="assets/face-only-reference-80134860.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-80134860.png" alt="M07 face"></a>
+  <figcaption>
+    <div><strong>M07 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-80134860.png"><code>assets/members/M07/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>688983bdab6e18617dba72f8ff73e0f0fda4384ba2d7660f86a3470e1f6280f7</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-FACE<br>SOURCE ASSET MEDIA-M07-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="6" data-media-total="6">
+  <span class="media-index" aria-label="Image 6 of 6">06 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png" alt="M07 IRELIA_BALANCE board"></a>
+  <figcaption>
+    <div><strong>M07 IRELIA_BALANCE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png</code></a>
+      <span>SHA-256</span>
+      <code>39470add64bdce89cc04bd4b5aace3a83e5bc9e5374a8d416c32d0fdd2bf1e9c</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-BOARD<br>SOURCE ASSET MEDIA-M07-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.1</b> Member index · S03 · MEMBERS FIRST <span>S03</span></div>
+    <h3>Member index before Core Cuts (face left, provisional board right-adjacent on rail).</h3>
+    <div class="direction"><span>DIRECTION</span>Read M05 → M02 → M07 first. These are provisional champion-inspired lanes, not final cast locks. Founder may replace boards later.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Three member child cards with face-only + three-view board only. No discarded style boards attached.</div>
+    <dl class="fact-list"><dt>Order</dt><dd class="text">M05 AHRI_SOFT → M02 AKALI_EDGE → M07 IRELIA_BALANCE</dd><dt>Status</dt><dd class="text">provisional · select later after Core ref layout OK</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>character_candidates#/boards<br>founder_seed#/supporting_references</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Member index readable as the left-rail identity set?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-MEMBER-INDEX" data-review-card="CARD-MEMBER-INDEX" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-MEMBER-INDEX" data-review-level="section" data-review-number="1.1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-MEMBER-INDEX" data-review-card="CARD-MEMBER-INDEX" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-MEMBER-INDEX" data-review-level="section" data-review-number="1.1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-MEMBER-INDEX" data-review-card="CARD-MEMBER-INDEX" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-MEMBER-INDEX" data-review-level="section" data-review-number="1.1" data-review-core-cut="" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-MEMBER-INDEX" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M05" data-review-key="REV-IONIA-CORE-REF-004::CARD-M05" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="0" style="--visible-slots:1" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">00 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M05--references" class="core-reference-grid" data-carousel-track tabindex="0"><div class="carousel-empty">No reference or output visual is attached.</div></div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.1.1</b> M05 AHRI_SOFT · M05 · AHRI_SOFT <span>S03</span></div>
+    <h3>M05 · AHRI_SOFT — face + provisional board</h3>
+    <div class="direction"><span>DIRECTION</span>Left rail: face identity then three-view board. No excluded style boards. Use as identity/lane context when reading Core Cuts that call this member.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>M05 face-only + AHRI_SOFT candidate board only.</div>
+    <dl class="fact-list"><dt>Member</dt><dd class="text">M05</dd><dt>Lane</dt><dd class="text">AHRI_SOFT</dd><dt>Bound refs</dt><dd class="text">face-only + provisional board only</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>character_candidates#/boards<br>style_disposition#/board_layout</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Keep M05/AHRI_SOFT on the member index for Core Cut placement?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-M05" data-review-card="CARD-M05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M05" data-review-level="core_cut" data-review-number="1.1.1" data-review-core-cut="C11_MEM_M05" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-M05" data-review-card="CARD-M05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M05" data-review-level="core_cut" data-review-number="1.1.1" data-review-core-cut="C11_MEM_M05" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-M05" data-review-card="CARD-M05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M05" data-review-level="core_cut" data-review-number="1.1.1" data-review-core-cut="C11_MEM_M05" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-M05" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M02" data-review-key="REV-IONIA-CORE-REF-004::CARD-M02" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference.png" alt="M02 face"></a>
+  <figcaption>
+    <div><strong>M02 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference.png"><code>assets/members/M02/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>846184b3a69ee493ddf6b6c8b1f232bdc18c67fd35870bb4e725dc462ddc7097</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-FACE<br>SOURCE ASSET MEDIA-M02-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png" alt="M02 AKALI_EDGE board"></a>
+  <figcaption>
+    <div><strong>M02 AKALI_EDGE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png</code></a>
+      <span>SHA-256</span>
+      <code>b8639ed54600608c0becf8f82a5aac0ddef02bf48d66953cab4a9f94d0571341</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-BOARD<br>SOURCE ASSET MEDIA-M02-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="0" style="--visible-slots:1" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">00 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M02--references" class="core-reference-grid" data-carousel-track tabindex="0"><div class="carousel-empty">No reference or output visual is attached.</div></div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.1.2</b> M02 AKALI_EDGE · M02 · AKALI_EDGE <span>S03</span></div>
+    <h3>M02 · AKALI_EDGE — face + provisional board</h3>
+    <div class="direction"><span>DIRECTION</span>Left rail: face identity then three-view board. No excluded style boards. Use as identity/lane context when reading Core Cuts that call this member.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>M02 face-only + AKALI_EDGE candidate board only.</div>
+    <dl class="fact-list"><dt>Member</dt><dd class="text">M02</dd><dt>Lane</dt><dd class="text">AKALI_EDGE</dd><dt>Bound refs</dt><dd class="text">face-only + provisional board only</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>character_candidates#/boards<br>style_disposition#/board_layout</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Keep M02/AKALI_EDGE on the member index for Core Cut placement?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-M02" data-review-card="CARD-M02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M02" data-review-level="core_cut" data-review-number="1.1.2" data-review-core-cut="C12_MEM_M02" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-M02" data-review-card="CARD-M02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M02" data-review-level="core_cut" data-review-number="1.1.2" data-review-core-cut="C12_MEM_M02" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-M02" data-review-card="CARD-M02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M02" data-review-level="core_cut" data-review-number="1.1.2" data-review-core-cut="C12_MEM_M02" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-M02" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M07" data-review-key="REV-IONIA-CORE-REF-004::CARD-M07" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-80134860.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-80134860.png" alt="M07 face"></a>
+  <figcaption>
+    <div><strong>M07 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-80134860.png"><code>assets/members/M07/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>688983bdab6e18617dba72f8ff73e0f0fda4384ba2d7660f86a3470e1f6280f7</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-FACE<br>SOURCE ASSET MEDIA-M07-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png" alt="M07 IRELIA_BALANCE board"></a>
+  <figcaption>
+    <div><strong>M07 IRELIA_BALANCE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png</code></a>
+      <span>SHA-256</span>
+      <code>39470add64bdce89cc04bd4b5aace3a83e5bc9e5374a8d416c32d0fdd2bf1e9c</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-BOARD<br>SOURCE ASSET MEDIA-M07-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="0" style="--visible-slots:1" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">00 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-M07--references" class="core-reference-grid" data-carousel-track tabindex="0"><div class="carousel-empty">No reference or output visual is attached.</div></div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.1.3</b> M07 IRELIA_BALANCE · M07 · IRELIA_BALANCE <span>S03</span></div>
+    <h3>M07 · IRELIA_BALANCE — face + provisional board</h3>
+    <div class="direction"><span>DIRECTION</span>Left rail: face identity then three-view board. No excluded style boards. Use as identity/lane context when reading Core Cuts that call this member.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>M07 face-only + IRELIA_BALANCE candidate board only.</div>
+    <dl class="fact-list"><dt>Member</dt><dd class="text">M07</dd><dt>Lane</dt><dd class="text">IRELIA_BALANCE</dd><dt>Bound refs</dt><dd class="text">face-only + provisional board only</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>character_candidates#/boards<br>style_disposition#/board_layout</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Keep M07/IRELIA_BALANCE on the member index for Core Cut placement?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-M07" data-review-card="CARD-M07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M07" data-review-level="core_cut" data-review-number="1.1.3" data-review-core-cut="C13_MEM_M07" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-M07" data-review-card="CARD-M07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M07" data-review-level="core_cut" data-review-number="1.1.3" data-review-core-cut="C13_MEM_M07" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-M07" data-review-card="CARD-M07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-M07" data-review-level="core_cut" data-review-number="1.1.3" data-review-core-cut="C13_MEM_M07" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-M07" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-section" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-CORE-SET" data-review-key="REV-IONIA-CORE-REF-004::CARD-CORE-SET" data-reviewable="true">
+  <div class="media-gallery media-count-4"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="4">
+  <span class="media-index" aria-label="Image 1 of 4">01 / 04</span>
+  <a href="assets/t108.png"><img class="zoomable" loading="lazy" src="assets/t108.png" alt="01 · B1 SPACE t108"></a>
+  <figcaption>
+    <div><strong>01 · B1 SPACE t108</strong><span>diagnostic</span></div>
+    <p>Main stage space entry</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t108.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png</code></a>
+      <span>SHA-256</span>
+      <code>97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T108<br>SOURCE ASSET BV1<br>SELECTED SURFACE t108.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="4">
+  <span class="media-index" aria-label="Image 2 of 4">02 / 04</span>
+  <a href="assets/t20.png"><img class="zoomable" loading="lazy" src="assets/t20.png" alt="03 · ACT_U3 run fabric t20"></a>
+  <figcaption>
+    <div><strong>03 · ACT_U3 run fabric t20</strong><span>diagnostic</span></div>
+    <p>Chanel: run through fabric</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t20.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t20.png</code></a>
+      <span>SHA-256</span>
+      <code>e657ab21b015edb4e0d77d3b412bc427e5a33ea117c25b731b33dc2ec2515afb</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T20<br>SOURCE ASSET YT<br>SELECTED SURFACE t20.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="4">
+  <span class="media-index" aria-label="Image 3 of 4">03 / 04</span>
+  <a href="assets/t180.png"><img class="zoomable" loading="lazy" src="assets/t180.png" alt="01 · B5 BODY t180"></a>
+  <figcaption>
+    <div><strong>01 · B5 BODY t180</strong><span>diagnostic</span></div>
+    <p>Minju stage body route</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t180.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t180.png</code></a>
+      <span>SHA-256</span>
+      <code>6d0501c23c67c65d2461ab5c3ef426b460d5bb75a3c2ccc57694e81398bcd6bc</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T180<br>SOURCE ASSET BV1<br>SELECTED SURFACE t180.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="4" data-media-total="4">
+  <span class="media-index" aria-label="Image 4 of 4">04 / 04</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2</b> Core Cut order · S00 · CORE CUTS IN ORDER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>Core Cuts C01–C07 — each card is only the reference cluster for that event.</h3>
+    <div class="direction"><span>DIRECTION</span>Film order. Each Core card: left = member rail when a body is owned; right = stage/action refs only. No hand-glass / scent-open / ionia-layer / three-lane / bottle-read-end style boards. Founder-supplied replacements will be slotted later without reordering Cores.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Seven child Core cards in commercial order.</div>
+    <dl class="fact-list"><dt>Order</dt><dd class="text">C01 shell → C02 own → C03 open blend → C04 stage seq → C05 balance → C06 bottle-read → C07 end</dd><dt>Missing style slots</dt><dd class="text">touch-in-glass / open-action look / ionia bg / balance look / end look — Founder remakes</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>understanding_correction#/corrected_understanding</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>Is Core order and per-Core reference clustering correct enough to select against?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-CORE-SET" data-review-card="CARD-CORE-SET" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-CORE-SET" data-review-level="section" data-review-number="1.2" data-review-core-cut="" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-CORE-SET" data-review-card="CARD-CORE-SET" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-CORE-SET" data-review-level="section" data-review-number="1.2" data-review-core-cut="" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-CORE-SET" data-review-card="CARD-CORE-SET" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="section" data-review-target="TARGET-CORE-SET" data-review-level="section" data-review-number="1.2" data-review-core-cut="" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-CORE-SET" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C01" data-review-key="REV-IONIA-CORE-REF-004::CARD-C01" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><div class="member-visual-empty">No member face or styling visual is attached to this Core-Cut review target.</div></aside>
+  <section class="media-carousel" data-carousel data-count="3" style="--visible-slots:3" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">03 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C01--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="3">
+  <span class="media-index" aria-label="Image 1 of 3">01 / 03</span>
+  <a href="assets/t108.png"><img class="zoomable" loading="lazy" src="assets/t108.png" alt="01 · B1 SPACE t108"></a>
+  <figcaption>
+    <div><strong>01 · B1 SPACE t108</strong><span>diagnostic</span></div>
+    <p>Main stage space entry</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t108.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png</code></a>
+      <span>SHA-256</span>
+      <code>97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T108<br>SOURCE ASSET BV1<br>SELECTED SURFACE t108.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="3">
+  <span class="media-index" aria-label="Image 2 of 3">02 / 03</span>
+  <a href="assets/t120.png"><img class="zoomable" loading="lazy" src="assets/t120.png" alt="02 · B2 OBJECT t120"></a>
+  <figcaption>
+    <div><strong>02 · B2 OBJECT t120</strong><span>diagnostic</span></div>
+    <p>Center object/stage peak</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t120.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t120.png</code></a>
+      <span>SHA-256</span>
+      <code>61bbd9d966639693082e19adeda5002b5f911c42b4ff552c6fcf3ed11110d72e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T120<br>SOURCE ASSET BV1<br>SELECTED SURFACE t120.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="3">
+  <span class="media-index" aria-label="Image 3 of 3">03 / 03</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.1</b> C01_SHELL · C01_SHELL · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C01 · Shell stop-hook</h3>
+    <div class="direction"><span>DIRECTION</span>No face lead. Audience + glass bottle-stage shell. Scent closed. Camera may track light/stage motion.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Shell open · bottle-stage readable</dd><dt>Member rail</dt><dd class="text">none (environment-led)</dd><dt>Refs</dt><dd class="text">BV1 B1 space · B2 object · shell style provisional</dd><dt>Pending</dt><dd class="text">Founder bottle-glass treatment still</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C01" data-review-card="CARD-C01" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C01_SHELL" data-review-level="core_cut" data-review-number="1.2.1" data-review-core-cut="C01_SHELL" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C01" data-review-card="CARD-C01" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C01_SHELL" data-review-level="core_cut" data-review-number="1.2.1" data-review-core-cut="C01_SHELL" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C01" data-review-card="CARD-C01" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C01_SHELL" data-review-level="core_cut" data-review-number="1.2.1" data-review-core-cut="C01_SHELL" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C01" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C02" data-review-key="REV-IONIA-CORE-REF-004::CARD-C02" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="3" style="--visible-slots:3" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">03 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C02--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="3">
+  <span class="media-index" aria-label="Image 1 of 3">01 / 03</span>
+  <a href="assets/t145.png"><img class="zoomable" loading="lazy" src="assets/t145.png" alt="01 · B3 HAND A t145"></a>
+  <figcaption>
+    <div><strong>01 · B3 HAND A t145</strong><span>diagnostic</span></div>
+    <p>Two-hand gather</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t145.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t145.png</code></a>
+      <span>SHA-256</span>
+      <code>60b85dacc398f7ec16c91651697f8c312b160316cb2ed012979969198a3baf93</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T145<br>SOURCE ASSET BV1<br>SELECTED SURFACE t145.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="3">
+  <span class="media-index" aria-label="Image 2 of 3">02 / 03</span>
+  <a href="assets/t152.png"><img class="zoomable" loading="lazy" src="assets/t152.png" alt="02 · B4 HAND B t152"></a>
+  <figcaption>
+    <div><strong>02 · B4 HAND B t152</strong><span>diagnostic</span></div>
+    <p>Free-hand split</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t152.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t152.png</code></a>
+      <span>SHA-256</span>
+      <code>24bb14f89cc6229a1342a6af4ae25bf6aae64edfd00f66041fa402051e504885</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T152<br>SOURCE ASSET BV1<br>SELECTED SURFACE t152.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="3">
+  <span class="media-index" aria-label="Image 3 of 3">03 / 03</span>
+  <a href="assets/t00.png"><img class="zoomable" loading="lazy" src="assets/t00.png" alt="01 · ACT_U1 wrist open t00"></a>
+  <figcaption>
+    <div><strong>01 · ACT_U1 wrist open t00</strong><span>diagnostic</span></div>
+    <p>Chanel: hand/wrist open</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t00.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t00.png</code></a>
+      <span>SHA-256</span>
+      <code>08fe98197a9b118d2ec6ccc00f1b5a474d55bea69673e22b136a4127172fbb35</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T00<br>SOURCE ASSET YT<br>SELECTED SURFACE t00.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.2</b> C02_OWN · C02_OWN · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C02 · Ownership hand/glass (touch inside bottle-stage)</h3>
+    <div class="direction"><span>DIRECTION</span>Hands own glass ridge / touch-inside-bottle-stage feel. Excluded old hand-glass style board — Founder remake pending. Use BV1 hand ownership + optional U1 wrist as action seed only.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Ownership before open</dd><dt>Member rail</dt><dd class="text">M05 primary working · hands</dd><dt>Refs</dt><dd class="text">BV1 B3/B4 hand grammar · YT U1 wrist seed</dd><dt>Excluded</dt><dd class="text">style-hand-glass-ownership (Founder remake)</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C02" data-review-card="CARD-C02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C02_OWN" data-review-level="core_cut" data-review-number="1.2.2" data-review-core-cut="C02_OWN" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C02" data-review-card="CARD-C02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C02_OWN" data-review-level="core_cut" data-review-number="1.2.2" data-review-core-cut="C02_OWN" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C02" data-review-card="CARD-C02" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C02_OWN" data-review-level="core_cut" data-review-number="1.2.2" data-review-core-cut="C02_OWN" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C02" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C03" data-review-key="REV-IONIA-CORE-REF-004::CARD-C03" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="6" style="--visible-slots:4" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">06 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C03--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="6">
+  <span class="media-index" aria-label="Image 1 of 6">01 / 06</span>
+  <a href="assets/t00.png"><img class="zoomable" loading="lazy" src="assets/t00.png" alt="01 · ACT_U1 wrist open t00"></a>
+  <figcaption>
+    <div><strong>01 · ACT_U1 wrist open t00</strong><span>diagnostic</span></div>
+    <p>Chanel: hand/wrist open</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t00.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t00.png</code></a>
+      <span>SHA-256</span>
+      <code>08fe98197a9b118d2ec6ccc00f1b5a474d55bea69673e22b136a4127172fbb35</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T00<br>SOURCE ASSET YT<br>SELECTED SURFACE t00.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="6">
+  <span class="media-index" aria-label="Image 2 of 6">02 / 06</span>
+  <a href="assets/t10.png"><img class="zoomable" loading="lazy" src="assets/t10.png" alt="02 · ACT_U2 fabric rise t10"></a>
+  <figcaption>
+    <div><strong>02 · ACT_U2 fabric rise t10</strong><span>diagnostic</span></div>
+    <p>Chanel: fabric rise</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t10.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t10.png</code></a>
+      <span>SHA-256</span>
+      <code>9bad262d76dce44e985d15bade96b90e0a032f54de77e0a518b6dca1a0e2fb79</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T10<br>SOURCE ASSET YT<br>SELECTED SURFACE t10.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="6">
+  <span class="media-index" aria-label="Image 3 of 6">03 / 06</span>
+  <a href="assets/t20.png"><img class="zoomable" loading="lazy" src="assets/t20.png" alt="03 · ACT_U3 run fabric t20"></a>
+  <figcaption>
+    <div><strong>03 · ACT_U3 run fabric t20</strong><span>diagnostic</span></div>
+    <p>Chanel: run through fabric</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t20.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t20.png</code></a>
+      <span>SHA-256</span>
+      <code>e657ab21b015edb4e0d77d3b412bc427e5a33ea117c25b731b33dc2ec2515afb</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T20<br>SOURCE ASSET YT<br>SELECTED SURFACE t20.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="4" data-media-total="6">
+  <span class="media-index" aria-label="Image 4 of 6">04 / 06</span>
+  <a href="assets/t30.png"><img class="zoomable" loading="lazy" src="assets/t30.png" alt="04 · ACT_U5 arm peak t30"></a>
+  <figcaption>
+    <div><strong>04 · ACT_U5 arm peak t30</strong><span>diagnostic</span></div>
+    <p>Chanel: arm peak + fabric</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t30.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t30.png</code></a>
+      <span>SHA-256</span>
+      <code>91f507717abdfcf590eeaf2940c79239571ddd6f8ddcff28e5d73a01f4549f4a</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T30<br>SOURCE ASSET YT<br>SELECTED SURFACE t30.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="5" data-media-total="6">
+  <span class="media-index" aria-label="Image 5 of 6">05 / 06</span>
+  <a href="assets/t180.png"><img class="zoomable" loading="lazy" src="assets/t180.png" alt="01 · B5 BODY t180"></a>
+  <figcaption>
+    <div><strong>01 · B5 BODY t180</strong><span>diagnostic</span></div>
+    <p>Minju stage body route</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t180.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t180.png</code></a>
+      <span>SHA-256</span>
+      <code>6d0501c23c67c65d2461ab5c3ef426b460d5bb75a3c2ccc57694e81398bcd6bc</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T180<br>SOURCE ASSET BV1<br>SELECTED SURFACE t180.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="6" data-media-total="6">
+  <span class="media-index" aria-label="Image 6 of 6">06 / 06</span>
+  <a href="assets/t192.png"><img class="zoomable" loading="lazy" src="assets/t192.png" alt="02 · B6 PEAK t192"></a>
+  <figcaption>
+    <div><strong>02 · B6 PEAK t192</strong><span>diagnostic</span></div>
+    <p>High hand peak</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t192.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t192.png</code></a>
+      <span>SHA-256</span>
+      <code>27703830ba332990458aa5e4ba8fb8c59b4e493b991ac9ffbdeb6ec63557a21e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T192<br>SOURCE ASSET BV1<br>SELECTED SURFACE t192.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.3</b> C03_OPEN · C03_OPEN · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C03 · Scent-open engine (YT fabric/run + Minju stage)</h3>
+    <div class="direction"><span>DIRECTION</span>Blend: Chanel fabric/run units + Minju stage body/peak. Excluded scent-open style board. Camera rides the motion always.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Body-action scent open</dd><dt>Member rail</dt><dd class="text">M05 primary open</dd><dt>Refs</dt><dd class="text">YT U1/U2/U3/U5 · BV1 B5 body · B6 peak</dd><dt>Excluded</dt><dd class="text">style-scent-open-action</dd><dt>Fail if</dt><dd class="text">world opens without this action</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C03" data-review-card="CARD-C03" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C03_OPEN" data-review-level="core_cut" data-review-number="1.2.3" data-review-core-cut="C03_OPEN" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C03" data-review-card="CARD-C03" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C03_OPEN" data-review-level="core_cut" data-review-number="1.2.3" data-review-core-cut="C03_OPEN" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C03" data-review-card="CARD-C03" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C03_OPEN" data-review-level="core_cut" data-review-number="1.2.3" data-review-core-cut="C03_OPEN" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C03" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C04" data-review-key="REV-IONIA-CORE-REF-004::CARD-C04" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="7" style="--visible-slots:4" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">07 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C04--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="7">
+  <span class="media-index" aria-label="Image 1 of 7">01 / 07</span>
+  <a href="assets/t180.png"><img class="zoomable" loading="lazy" src="assets/t180.png" alt="01 · B5 BODY t180"></a>
+  <figcaption>
+    <div><strong>01 · B5 BODY t180</strong><span>diagnostic</span></div>
+    <p>Minju stage body route</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t180.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t180.png</code></a>
+      <span>SHA-256</span>
+      <code>6d0501c23c67c65d2461ab5c3ef426b460d5bb75a3c2ccc57694e81398bcd6bc</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T180<br>SOURCE ASSET BV1<br>SELECTED SURFACE t180.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="7">
+  <span class="media-index" aria-label="Image 2 of 7">02 / 07</span>
+  <a href="assets/t160.png"><img class="zoomable" loading="lazy" src="assets/t160.png" alt="02 · STAGE FX t160"></a>
+  <figcaption>
+    <div><strong>02 · STAGE FX t160</strong><span>diagnostic</span></div>
+    <p>Sequential stage/floor candidate</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t160.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t160.png</code></a>
+      <span>SHA-256</span>
+      <code>3480577ceb4cd22295bb149f7dcb3be61fc7cea082ded72f235a123144368425</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T160<br>SOURCE ASSET BV1<br>SELECTED SURFACE t160.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="7">
+  <span class="media-index" aria-label="Image 3 of 7">03 / 07</span>
+  <a href="assets/t168.png"><img class="zoomable" loading="lazy" src="assets/t168.png" alt="03 · STAGE FX t168"></a>
+  <figcaption>
+    <div><strong>03 · STAGE FX t168</strong><span>diagnostic</span></div>
+    <p>Sequential stage/screen candidate</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t168.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t168.png</code></a>
+      <span>SHA-256</span>
+      <code>8f69d6cdf5f0c3d666eebdb5ee6ea4d54d8c4242a31cdf7a6cd10d6916ff741a</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T168<br>SOURCE ASSET BV1<br>SELECTED SURFACE t168.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="4" data-media-total="7">
+  <span class="media-index" aria-label="Image 4 of 7">04 / 07</span>
+  <a href="assets/t200.png"><img class="zoomable" loading="lazy" src="assets/t200.png" alt="04 · STAGE FX t200"></a>
+  <figcaption>
+    <div><strong>04 · STAGE FX t200</strong><span>diagnostic</span></div>
+    <p>Late stage change candidate</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t200.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t200.png</code></a>
+      <span>SHA-256</span>
+      <code>c22ed365da91a01dfb944615d620fd8c6976090b8cfc6e2e2cde5174159ae2c0</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T200<br>SOURCE ASSET BV1<br>SELECTED SURFACE t200.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="5" data-media-total="7">
+  <span class="media-index" aria-label="Image 5 of 7">05 / 07</span>
+  <a href="assets/t212.png"><img class="zoomable" loading="lazy" src="assets/t212.png" alt="01 · B7 WIDEN t212"></a>
+  <figcaption>
+    <div><strong>01 · B7 WIDEN t212</strong><span>diagnostic</span></div>
+    <p>Aftermath widen</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t212.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t212.png</code></a>
+      <span>SHA-256</span>
+      <code>62a301b294975615b478ef99fa9d7049cf8f07745c928cca9087a385966349ed</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T212<br>SOURCE ASSET BV1<br>SELECTED SURFACE t212.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="6" data-media-total="7">
+  <span class="media-index" aria-label="Image 6 of 7">06 / 07</span>
+  <a href="assets/t20.png"><img class="zoomable" loading="lazy" src="assets/t20.png" alt="03 · ACT_U3 run fabric t20"></a>
+  <figcaption>
+    <div><strong>03 · ACT_U3 run fabric t20</strong><span>diagnostic</span></div>
+    <p>Chanel: run through fabric</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t20.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t20.png</code></a>
+      <span>SHA-256</span>
+      <code>e657ab21b015edb4e0d77d3b412bc427e5a33ea117c25b731b33dc2ec2515afb</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T20<br>SOURCE ASSET YT<br>SELECTED SURFACE t20.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="7" data-media-total="7">
+  <span class="media-index" aria-label="Image 7 of 7">07 / 07</span>
+  <a href="assets/t45.png"><img class="zoomable" loading="lazy" src="assets/t45.png" alt="05 · ACT_U6 run path t45"></a>
+  <figcaption>
+    <div><strong>05 · ACT_U6 run path t45</strong><span>diagnostic</span></div>
+    <p>Chanel: run path claim</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t45.png"><code>source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t45.png</code></a>
+      <span>SHA-256</span>
+      <code>f72b2c621ddc1980c1f221d72b7af02da5506a77cff7ed89e7b3006edbc4f3fd</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-YT-T45<br>SOURCE ASSET YT<br>SELECTED SURFACE t45.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.4</b> C04_IONIA_SEQ · C04_IONIA_SEQ · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C04 · Sequential stage transform (FX / floor / screen)</h3>
+    <div class="direction"><span>DIRECTION</span>After open: sequential stage FX, floor, rear-screen/world through bottle glass (Ionia 6-step intent). Ionia style board excluded for wrong background — keep BV1 stage-change surfaces + run path only until Founder revises.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Sequential Ionia stage dress after open</dd><dt>Member rail</dt><dd class="text">M05 still in causality</dd><dt>Refs</dt><dd class="text">BV1 body + stage FX t160/t168/t200 + B7 · YT run U3/U6</dd><dt>Excluded</dt><dd class="text">style-ionia-layer-switch (bg wrong · Founder revise)</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C04" data-review-card="CARD-C04" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C04_IONIA_SEQ" data-review-level="core_cut" data-review-number="1.2.4" data-review-core-cut="C04_IONIA_SEQ" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C04" data-review-card="CARD-C04" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C04_IONIA_SEQ" data-review-level="core_cut" data-review-number="1.2.4" data-review-core-cut="C04_IONIA_SEQ" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C04" data-review-card="CARD-C04" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C04_IONIA_SEQ" data-review-level="core_cut" data-review-number="1.2.4" data-review-core-cut="C04_IONIA_SEQ" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C04" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C05" data-review-key="REV-IONIA-CORE-REF-004::CARD-C05" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="6">
+  <span class="media-index" aria-label="Image 1 of 6">01 / 06</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="6">
+  <span class="media-index" aria-label="Image 2 of 6">02 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="3" data-media-total="6">
+  <span class="media-index" aria-label="Image 3 of 6">03 / 06</span>
+  <a href="assets/face-only-reference.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference.png" alt="M02 face"></a>
+  <figcaption>
+    <div><strong>M02 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference.png"><code>assets/members/M02/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>846184b3a69ee493ddf6b6c8b1f232bdc18c67fd35870bb4e725dc462ddc7097</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-FACE<br>SOURCE ASSET MEDIA-M02-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="4" data-media-total="6">
+  <span class="media-index" aria-label="Image 4 of 6">04 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png" alt="M02 AKALI_EDGE board"></a>
+  <figcaption>
+    <div><strong>M02 AKALI_EDGE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png</code></a>
+      <span>SHA-256</span>
+      <code>b8639ed54600608c0becf8f82a5aac0ddef02bf48d66953cab4a9f94d0571341</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M02-BOARD<br>SOURCE ASSET MEDIA-M02-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M02_AKALI_EDGE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="5" data-media-total="6">
+  <span class="media-index" aria-label="Image 5 of 6">05 / 06</span>
+  <a href="assets/face-only-reference-80134860.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-80134860.png" alt="M07 face"></a>
+  <figcaption>
+    <div><strong>M07 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-80134860.png"><code>assets/members/M07/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>688983bdab6e18617dba72f8ff73e0f0fda4384ba2d7660f86a3470e1f6280f7</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-FACE<br>SOURCE ASSET MEDIA-M07-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="6" data-media-total="6">
+  <span class="media-index" aria-label="Image 6 of 6">06 / 06</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png" alt="M07 IRELIA_BALANCE board"></a>
+  <figcaption>
+    <div><strong>M07 IRELIA_BALANCE board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png</code></a>
+      <span>SHA-256</span>
+      <code>39470add64bdce89cc04bd4b5aace3a83e5bc9e5374a8d416c32d0fdd2bf1e9c</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M07-BOARD<br>SOURCE ASSET MEDIA-M07-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M07_IRELIA_BALANCE.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="2" style="--visible-slots:2" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">02 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C05--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/t180.png"><img class="zoomable" loading="lazy" src="assets/t180.png" alt="01 · B5 BODY t180"></a>
+  <figcaption>
+    <div><strong>01 · B5 BODY t180</strong><span>diagnostic</span></div>
+    <p>Minju stage body route</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t180.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t180.png</code></a>
+      <span>SHA-256</span>
+      <code>6d0501c23c67c65d2461ab5c3ef426b460d5bb75a3c2ccc57694e81398bcd6bc</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T180<br>SOURCE ASSET BV1<br>SELECTED SURFACE t180.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/t212.png"><img class="zoomable" loading="lazy" src="assets/t212.png" alt="01 · B7 WIDEN t212"></a>
+  <figcaption>
+    <div><strong>01 · B7 WIDEN t212</strong><span>diagnostic</span></div>
+    <p>Aftermath widen</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t212.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t212.png</code></a>
+      <span>SHA-256</span>
+      <code>62a301b294975615b478ef99fa9d7049cf8f07745c928cca9087a385966349ed</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T212<br>SOURCE ASSET BV1<br>SELECTED SURFACE t212.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.5</b> C05_BALANCE · C05_BALANCE · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C05 · Balance presence (2–3 Loom)</h3>
+    <div class="direction"><span>DIRECTION</span>Multi-member balance on opened air. Relation not fight. Three-lane style discarded. Member boards are the visual lane evidence until Founder remakes balance look.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">2–3 balance presence</dd><dt>Member rail</dt><dd class="text">M05 + M02 + M07</dd><dt>Refs</dt><dd class="text">BV1 B5 body scale · B7 widen</dd><dt>Discarded</dt><dd class="text">style-three-lane-balance</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C05" data-review-card="CARD-C05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C05_BALANCE" data-review-level="core_cut" data-review-number="1.2.5" data-review-core-cut="C05_BALANCE" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C05" data-review-card="CARD-C05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C05_BALANCE" data-review-level="core_cut" data-review-number="1.2.5" data-review-core-cut="C05_BALANCE" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C05" data-review-card="CARD-C05" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C05_BALANCE" data-review-level="core_cut" data-review-number="1.2.5" data-review-core-cut="C05_BALANCE" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C05" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C06" data-review-key="REV-IONIA-CORE-REF-004::CARD-C06" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_face" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/face-only-reference-0cecb40c.png"><img class="zoomable" loading="lazy" src="assets/face-only-reference-0cecb40c.png" alt="M05 face"></a>
+  <figcaption>
+    <div><strong>M05 face</strong><span>member_visual</span></div>
+    <p>Identity only</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/face-only-reference-0cecb40c.png"><code>assets/members/M05/face-only-reference.png</code></a>
+      <span>SHA-256</span>
+      <code>ececb76533d4eb979279479b669c3db9739884c53d87f76be7ed35bb4865d105</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-FACE<br>SOURCE ASSET MEDIA-M05-FACE<br>SELECTED SURFACE face-only-reference.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-member_visual surface-kind-full_image display-lane-member_styling" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><img class="zoomable" loading="lazy" src="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png" alt="M05 AHRI_SOFT board"></a>
+  <figcaption>
+    <div><strong>M05 AHRI_SOFT board</strong><span>member_visual</span></div>
+    <p>Provisional lane · not cast lock</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/review-candidates/character-boards/2026-08-02-v1/IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png</code></a>
+      <span>SHA-256</span>
+      <code>091c30e13d24fe89ce7efc5ec15baaddfb17b044aab4d95130ca77c068d3eaaf</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-M05-BOARD<br>SOURCE ASSET MEDIA-M05-BOARD<br>SELECTED SURFACE IONIA_VEIL_CHARACTER_BOARD_V1_M05_AHRI_SOFT.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</aside>
+  <section class="media-carousel" data-carousel data-count="3" style="--visible-slots:3" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">03 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C06--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="3">
+  <span class="media-index" aria-label="Image 1 of 3">01 / 03</span>
+  <a href="assets/t212.png"><img class="zoomable" loading="lazy" src="assets/t212.png" alt="01 · B7 WIDEN t212"></a>
+  <figcaption>
+    <div><strong>01 · B7 WIDEN t212</strong><span>diagnostic</span></div>
+    <p>Aftermath widen</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t212.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t212.png</code></a>
+      <span>SHA-256</span>
+      <code>62a301b294975615b478ef99fa9d7049cf8f07745c928cca9087a385966349ed</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T212<br>SOURCE ASSET BV1<br>SELECTED SURFACE t212.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="3">
+  <span class="media-index" aria-label="Image 2 of 3">02 / 03</span>
+  <a href="assets/t108.png"><img class="zoomable" loading="lazy" src="assets/t108.png" alt="01 · B1 SPACE t108"></a>
+  <figcaption>
+    <div><strong>01 · B1 SPACE t108</strong><span>diagnostic</span></div>
+    <p>Main stage space entry</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t108.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png</code></a>
+      <span>SHA-256</span>
+      <code>97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T108<br>SOURCE ASSET BV1<br>SELECTED SURFACE t108.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="3" data-media-total="3">
+  <span class="media-index" aria-label="Image 3 of 3">03 / 03</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.6</b> C06_BOTTLE_READ · C06_BOTTLE_READ · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C06 · Bottle-read afterimage</h3>
+    <div class="direction"><span>DIRECTION</span>Stage shell as perfume-bottle memory. bottle-read-end style excluded — Founder remake. Use B7/B1 + provisional shell only.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Stage-as-bottle afterimage</dd><dt>Member rail</dt><dd class="text">optional soft silhouette / M05</dd><dt>Refs</dt><dd class="text">BV1 B7 widen · B1 space · shell provisional</dd><dt>Excluded</dt><dd class="text">style-bottle-read-end (Founder remake)</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C06" data-review-card="CARD-C06" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C06_BOTTLE_READ" data-review-level="core_cut" data-review-number="1.2.6" data-review-core-cut="C06_BOTTLE_READ" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C06" data-review-card="CARD-C06" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C06_BOTTLE_READ" data-review-level="core_cut" data-review-number="1.2.6" data-review-core-cut="C06_BOTTLE_READ" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C06" data-review-card="CARD-C06" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C06_BOTTLE_READ" data-review-level="core_cut" data-review-number="1.2.6" data-review-core-cut="C06_BOTTLE_READ" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C06" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+
+<article class="review-card variant-primary target-level-core_cut" id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C07" data-review-key="REV-IONIA-CORE-REF-004::CARD-C07" data-reviewable="true">
+  <div class="core-visual-layout">
+  <aside class="member-visual-rail" aria-label="Member face and styling visuals"><div class="member-visual-empty">No member face or styling visual is attached to this Core-Cut review target.</div></aside>
+  <section class="media-carousel" data-carousel data-count="2" style="--visible-slots:2" aria-label="CHARACTER / SCENE REFERENCES">
+  <div class="carousel-head"><span>CHARACTER / SCENE REFERENCES</span><span class="carousel-count">02 IMAGES</span></div>
+  <button class="carousel-arrow carousel-prev" type="button" data-carousel-prev aria-label="Previous images">&#8592;</button>
+  <div id="CYCLE-IONIA-CORE-REF-LAYOUT-004--CARD-C07--references" class="core-reference-grid" data-carousel-track tabindex="0"><figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="1" data-media-total="2">
+  <span class="media-index" aria-label="Image 1 of 2">01 / 02</span>
+  <a href="assets/t212.png"><img class="zoomable" loading="lazy" src="assets/t212.png" alt="01 · B7 WIDEN t212"></a>
+  <figcaption>
+    <div><strong>01 · B7 WIDEN t212</strong><span>diagnostic</span></div>
+    <p>Aftermath widen</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/t212.png"><code>source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t212.png</code></a>
+      <span>SHA-256</span>
+      <code>62a301b294975615b478ef99fa9d7049cf8f07745c928cca9087a385966349ed</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-BV1-T212<br>SOURCE ASSET BV1<br>SELECTED SURFACE t212.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+
+<figure class="media-panel role-diagnostic surface-kind-full_image display-lane-reference" data-media-index="2" data-media-total="2">
+  <span class="media-index" aria-label="Image 2 of 2">02 / 02</span>
+  <a href="assets/style-bottle-stage-audience-v1.png"><img class="zoomable" loading="lazy" src="assets/style-bottle-stage-audience-v1.png" alt="Style · bottle-stage shell (provisional)"></a>
+  <figcaption>
+    <div><strong>Style · bottle-stage shell (provisional)</strong><span>diagnostic</span></div>
+    <p>Only remaining style board; glass-touch / ionia bg / end styles pending Founder remake</p>
+    <div class="media-file-binding">
+      <span>FILE</span>
+      <a href="assets/style-bottle-stage-audience-v1.png"><code>cf/runs/CF_LOL_IONIA_PERFUME_001/generations/cf-code/style-boards/style-bottle-stage-audience-v1.png</code></a>
+      <span>SHA-256</span>
+      <code>efa2ffa221e01fab414351a6b4e861c3596c51fca414dc1b1962da04fe80283e</code>
+    </div>
+    <details class="media-provenance"><summary>Asset / selected surface</summary><code>ASSET MEDIA-STYLE-SHELL<br>SOURCE ASSET MEDIA-STYLE-SHELL<br>SELECTED SURFACE style-bottle-stage-audience-v1.png · full_image</code></details>
+    
+  </figcaption>
+</figure>
+</div>
+  <button class="carousel-arrow carousel-next" type="button" data-carousel-next aria-label="Next images">&#8594;</button>
+  <div class="carousel-status" data-carousel-status aria-live="polite"></div>
+</section>
+
+</div>
+
+  <div class="card-copy">
+    <div class="card-eyebrow"><b class="target-number">1.2.7</b> C07_ENDCARD · C07_ENDCARD · REF CLUSTER <span>S00 · S01 · S02 · S03</span></div>
+    <h3>C07 · Concept-collab endcard</h3>
+    <div class="direction"><span>DIRECTION</span>Quiet hold + title space. Fan-made concept collab only. Same shell grammar; no discarded end style.</div>
+    <div class="screen-proof"><span>OBSERVABLE SCREEN PROOF</span>Left: member rail when present. Right: only currently usable stage/action refs for this Core.</div>
+    <dl class="fact-list"><dt>Event</dt><dd class="text">Endcard hold</dd><dt>Member rail</dt><dd class="text">none required</dd><dt>Refs</dt><dd class="text">BV1 B7 · shell provisional</dd><dt>Claim</dt><dd class="text">concept collab only</dd></dl>
+    <details class="field-refs"><summary>Canonical field refs · 2</summary><code>cf40#/core_cuts<br>style_disposition#/style_board_dispositions</code></details>
+    <div class="card-question"><span>FOUNDER DECISION</span>PASS this Core’s reference cluster as placed?</div>
+    <div class="decision-row"><button type="button" class="decision tone-pass" data-review-key="REV-IONIA-CORE-REF-004::CARD-C07" data-review-card="CARD-C07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C07_ENDCARD" data-review-level="core_cut" data-review-number="1.2.7" data-review-core-cut="C07_ENDCARD" data-review-branch-cut="" data-review-choice="pass">PASS</button><button type="button" class="decision tone-hold" data-review-key="REV-IONIA-CORE-REF-004::CARD-C07" data-review-card="CARD-C07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C07_ENDCARD" data-review-level="core_cut" data-review-number="1.2.7" data-review-core-cut="C07_ENDCARD" data-review-branch-cut="" data-review-choice="hold">HOLD</button><button type="button" class="decision tone-reject" data-review-key="REV-IONIA-CORE-REF-004::CARD-C07" data-review-card="CARD-C07" data-review-section="S00" data-review-scope-mode="multi_section" data-review-affected-sections="S00,S01,S02,S03" data-review-stage="cf_core_cut_visual_reference_layout" data-review-revision="REV-IONIA-CORE-REF-004" data-review-scope="creative_selection" data-revision-scope="core_cut" data-review-target="TARGET-C07_ENDCARD" data-review-level="core_cut" data-review-number="1.2.7" data-review-core-cut="C07_ENDCARD" data-review-branch-cut="" data-review-choice="reject">REJECT</button></div>
+    <label class="decision-note">Decision note / targeted annotation<textarea rows="3" data-review-note="REV-IONIA-CORE-REF-004::CARD-C07" placeholder="For HOLD or REJECT, state what must change at this numbered target."></textarea></label>
+  </div>
+</article>
+</div>
+  <div class="section-audit"><strong>SECTION AUDIT</strong><ul><li>Do not attach discarded style boards.</li><li>No MINJU face/mic/LCK marks; no Chanel face/logo.</li><li>No champion face clone on member boards.</li></ul></div>
+</section>
+
+</details>
+
+  </main>
+  <aside class="decision-dock" aria-label="Review decision export">
+    <div><strong>Local review decisions</strong><span id="decisionCount">0 / 0 recorded</span></div>
+    <div class="decision-actions"><button type="button" id="copyDecisions">Copy JSON</button><button type="button" id="downloadDecisions">Save JSON</button></div>
+  </aside>
+  <footer>
+    <p>This HTML is derived review material regenerated from <code>cf/runs/CF_LOL_IONIA_PERFUME_001/review/manifests/founder-workbench.yaml</code>. It is not canonical creative truth, Founder approval, 02B approval, or generation approval.</p>
+    <p>manifest SHA-256 <code>ed4013328dd3f320de90e5afdd398e5eea9d6ed18a0eae6aec2f081decd6701b</code> · source digest <code>7cb30739eaf3ffcd724803731b3e6acfda59526995e20ef5dc2fd62774cf6850</code></p>
+  </footer>
+  <div id="lb" role="dialog" aria-modal="true" aria-label="Image enlargement">
+    <span class="lb-x" id="lb-x" title="Close">×</span>
+    <span class="lb-hint">Click background or press Esc to close</span>
+    <img id="lb-img" src="" alt="Enlarged review media">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+  <script>/* Founder visual review board — shared lightbox. Structure shell only. */
+(function () {
+  function padIndex(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function refreshCarousel(carousel) {
+    const track = carousel.querySelector("[data-carousel-track]");
+    const previous = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    const status = carousel.querySelector("[data-carousel-status]");
+    if (!track || !previous || !next || !status) return;
+
+    const panels = Array.from(track.querySelectorAll(":scope > .media-panel"));
+    const count = panels.length;
+    panels.forEach(function (panel, index) {
+      const badge = panel.querySelector(":scope > .media-index");
+      if (!badge) return;
+      badge.setAttribute("aria-label", `Image ${index + 1} of ${count}`);
+      badge.textContent = `${padIndex(index + 1)} / ${padIndex(count)}`;
+    });
+    const firstPanel = panels[0];
+    const secondPanel = panels[1];
+    const step = firstPanel
+      ? (secondPanel ? secondPanel.offsetLeft - firstPanel.offsetLeft : firstPanel.getBoundingClientRect().width)
+      : track.clientWidth;
+    const declaredSlots = Number.parseInt(
+      window.getComputedStyle(carousel).getPropertyValue("--visible-slots"),
+      10
+    );
+    const visible = Math.max(
+      1,
+      Math.min(count || 1, declaredSlots || Math.floor((track.clientWidth + 1) / Math.max(step, 1)))
+    );
+    const first = count ? Math.min(count - 1, Math.max(0, Math.round(track.scrollLeft / Math.max(step, 1)))) : 0;
+    const last = count ? Math.min(count, first + visible) : 0;
+    const overflow = track.scrollWidth > track.clientWidth + 2;
+
+    previous.hidden = !overflow;
+    next.hidden = !overflow;
+    previous.disabled = !overflow || first <= 0;
+    next.disabled = !overflow || last >= count;
+    status.textContent = count ? `${padIndex(first + 1)}–${padIndex(last)} / ${padIndex(count)}` : "00 / 00";
+
+    if (!carousel.dataset.carouselReady) {
+      const move = function (direction) {
+        track.scrollBy({ left: direction * track.clientWidth, behavior: "smooth" });
+      };
+      previous.addEventListener("click", function () { move(-1); });
+      next.addEventListener("click", function () { move(1); });
+      track.addEventListener("scroll", function () {
+        window.requestAnimationFrame(function () { refreshCarousel(carousel); });
+      }, { passive: true });
+      carousel.dataset.carouselReady = "true";
+    }
+  }
+
+  function refreshCarousels() {
+    document.querySelectorAll("[data-carousel]").forEach(refreshCarousel);
+  }
+
+  window.IDOLFounderWorkbench = Object.assign(window.IDOLFounderWorkbench || {}, {
+    refreshCarousels: refreshCarousels
+  });
+  window.addEventListener("resize", refreshCarousels);
+  window.addEventListener("load", refreshCarousels);
+  refreshCarousels();
+
+  const lb = document.getElementById("lb");
+  const img = document.getElementById("lb-img");
+  const cap = document.getElementById("lb-cap");
+  if (!lb || !img) return;
+
+  let openSrc = "";
+
+  function isOpen() {
+    return lb.classList.contains("open");
+  }
+
+  function openLb(src, caption) {
+    openSrc = src || "";
+    img.src = src;
+    if (cap) cap.textContent = caption || "";
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLb() {
+    lb.classList.remove("open");
+    img.removeAttribute("src");
+    openSrc = "";
+    document.body.style.overflow = "";
+  }
+
+  function toggleFromThumb(src, caption) {
+    if (isOpen() && openSrc && src && (openSrc === src || openSrc.endsWith(src) || src.endsWith(openSrc))) {
+      closeLb();
+      return;
+    }
+    openLb(src, caption);
+  }
+
+  document.addEventListener("click", function (e) {
+    const t = e.target;
+    if (!t) return;
+
+    // Close: any click while open on overlay, X, caption, or the enlarged image itself
+    if (isOpen()) {
+      if (
+        t === lb ||
+        t === img ||
+        t.id === "lb-x" ||
+        t.id === "lb-cap" ||
+        t.classList.contains("lb-cap") ||
+        t.classList.contains("lb-x") ||
+        t.classList.contains("lb-hint") ||
+        (t.closest && t.closest("#lb"))
+      ) {
+        // If click is on a different page thumb while open, switch instead of only close
+        if (t.tagName === "IMG" && t.classList.contains("zoomable") && t.id !== "lb-img") {
+          e.preventDefault();
+          const fig = t.closest("figure");
+          const c =
+            fig && fig.querySelector("figcaption")
+              ? fig.querySelector("figcaption").textContent
+              : t.alt || "";
+          toggleFromThumb(t.currentSrc || t.src, c);
+          return;
+        }
+        e.preventDefault();
+        closeLb();
+        return;
+      }
+    }
+
+    if (t.tagName === "IMG" && t.classList.contains("zoomable") && t.id !== "lb-img") {
+      e.preventDefault();
+      const fig = t.closest("figure");
+      const c =
+        fig && fig.querySelector("figcaption")
+          ? fig.querySelector("figcaption").textContent
+          : t.alt || "";
+      toggleFromThumb(t.currentSrc || t.src, c);
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && isOpen()) closeLb();
+  });
+
+  function placeHashBelowStickyNavigation() {
+    if (!location.hash) return;
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!target) return;
+    const sticky = document.querySelector(".cycle-nav");
+    const offset = (sticky ? sticky.getBoundingClientRect().height : 0) + 16;
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - offset,
+      behavior: "auto"
+    });
+  }
+
+  function stabilizeHashPlacement() {
+    [0, 120, 400, 1000, 1800].forEach(function (delay) {
+      window.setTimeout(placeHashBelowStickyNavigation, delay);
+    });
+  }
+
+  window.addEventListener("hashchange", stabilizeHashPlacement);
+  window.addEventListener("load", function () {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(stabilizeHashPlacement);
+    });
+  });
+})();
+</script>
+  <script>
+    (() => {
+      const options = [{"id":"pass","label":"PASS","tone":"pass"},{"id":"hold","label":"HOLD","tone":"hold"},{"id":"reject","label":"REJECT","tone":"reject"}];
+      const storageKey = "idol-review-board:IONIA-VEIL-CORE-CUT-REF-LAYOUT-V2:r4:ed4013328dd3f320de90e5afdd398e5eea9d6ed18a0eae6aec2f081decd6701b";
+      const state = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      const buttons = [...document.querySelectorAll('[data-review-key][data-review-choice]')];
+      const notes = [...document.querySelectorAll('[data-review-note]')];
+      const activeReviewKeys = new Set(buttons.map((button) => button.dataset.reviewKey));
+      const count = document.getElementById('decisionCount');
+      const entryFor = (key) => {
+        const value = state[key];
+        if (typeof value === 'string') return { decision: value, note: '' };
+        return value || { decision: '', note: '' };
+      };
+      const save = () => localStorage.setItem(storageKey, JSON.stringify(state));
+      const refresh = () => {
+        buttons.forEach((button) => button.classList.toggle('active', entryFor(button.dataset.reviewKey).decision === button.dataset.reviewChoice));
+        notes.forEach((note) => {
+          if (document.activeElement !== note) note.value = entryFor(note.dataset.reviewNote).note || '';
+        });
+        const decided = [...new Set(buttons.map((button) => button.dataset.reviewKey))].filter((key) => entryFor(key).decision).length;
+        const total = new Set(buttons.map((button) => button.dataset.reviewKey)).size;
+        count.textContent = `${decided} / ${total} recorded`;
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const current = entryFor(button.dataset.reviewKey);
+        state[button.dataset.reviewKey] = {
+          ...current,
+          decision: button.dataset.reviewChoice,
+          card_id: button.dataset.reviewCard,
+          section_id: button.dataset.reviewSection,
+          scope_mode: button.dataset.reviewScopeMode,
+          affected_section_ids: button.dataset.reviewAffectedSections.split(',').filter(Boolean),
+          stage_id: button.dataset.reviewStage,
+          revision_id: button.dataset.reviewRevision,
+          decision_scope: button.dataset.reviewScope,
+          revision_scope: button.dataset.revisionScope,
+          review_target_id: button.dataset.reviewTarget,
+          review_target_level: button.dataset.reviewLevel,
+          review_target_number: button.dataset.reviewNumber,
+          core_cut_id: button.dataset.reviewCoreCut || null,
+          branch_cut_id: button.dataset.reviewBranchCut || null
+        };
+        save();
+        refresh();
+      }));
+      notes.forEach((note) => note.addEventListener('input', () => {
+        const current = entryFor(note.dataset.reviewNote);
+        state[note.dataset.reviewNote] = { ...current, note: note.value };
+        save();
+      }));
+      const copyText = async (text) => {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+      };
+      const payload = () => ({
+          schema_version: 'idol-html-review-board.decision-export.v6',
+          board_id: "IONIA-VEIL-CORE-CUT-REF-LAYOUT-V2",
+          board_revision: 4,
+          manifest_path: "cf/runs/CF_LOL_IONIA_PERFUME_001/review/manifests/founder-workbench.yaml",
+          manifest_sha256: "ed4013328dd3f320de90e5afdd398e5eea9d6ed18a0eae6aec2f081decd6701b",
+          decisions: Object.entries(state).map(([review_key, value]) => {
+            const entry = typeof value === 'string' ? { decision: value } : value;
+            return { review_key, ...entry };
+          }).filter((entry) => activeReviewKeys.has(entry.review_key) && (entry.decision || entry.note))
+        });
+      document.getElementById('copyDecisions').addEventListener('click', async (event) => {
+        await copyText(JSON.stringify(payload(), null, 2));
+        event.currentTarget.textContent = 'Copied';
+        setTimeout(() => { event.currentTarget.textContent = 'Copy JSON'; }, 1200);
+      });
+      const download = document.getElementById('downloadDecisions');
+      if (download) download.addEventListener('click', () => {
+        const blob = new Blob([JSON.stringify(payload(), null, 2)], { type: 'application/json' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `IONIA-VEIL-CORE-CUT-REF-LAYOUT-V2-r4-decisions.json`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+      const cycles = [...document.querySelectorAll('details.review-cycle')];
+      document.getElementById('expandAll')?.addEventListener('click', () => cycles.forEach((cycle) => { cycle.open = true; }));
+      document.getElementById('collapseAll')?.addEventListener('click', () => cycles.forEach((cycle) => { cycle.open = false; }));
+      let pendingOnly = false;
+      document.getElementById('showPending')?.addEventListener('click', (event) => {
+        pendingOnly = !pendingOnly;
+        document.querySelectorAll('.review-card').forEach((card) => {
+          card.hidden = pendingOnly && (card.dataset.reviewable !== 'true' || Boolean(entryFor(card.dataset.reviewKey).decision));
+        });
+        event.currentTarget.textContent = pendingOnly ? 'Show all' : 'Show pending only';
+      });
+      refresh();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+schema_version: cf_reference_bridge_record.v4
+cf_id: CF_LOL_IONIA_PERFUME_001
+bridge_registry:
+  path: runs/CF_LOL_IONIA_PERFUME_001/research/phase-a/main-ref-BV1vPndzSEn2-consume-v1.md
+  sha256: 2de2b550eddd64ff10bad62a99ba9bd77c4ad2f0ffc7323d0bfe1adc7a750b29
+record_status: complete
+entries:
+- entry_id: CFREFBR_MAIN_01
+  source_identity_key: bilibili:BV1vPndzSEn2
+  origin_lane: idol_hub
+  canonical_owner: owning_cf_run
+  source:
+    source_path_or_url: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/videos/BV1vPndzSEn2.mp4
+    source_sha256: 9f1af0c76dd306401c1d06a93df11f7c02d50599ce21e9ad33dbb48d9085d164
+    parent_pointer: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/source-manifest.yaml
+  selected_surface:
+    selection_kind: contiguous_sequence_bundle
+    artifact_path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t108.png
+    sha256: 97adc56db5932c4530d8e2fa55e4208910d668eaf9f271e01d5e7d68af69cf51
+    selection_locator: anchor t108.png
+    inspection_action: pixel_inspected
+  interpretation_receipt:
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/first-read-v2.md
+    sha256: 7cf0aaaf9e128ea0432c9b6cfaf96be44f8cdd11784271949778d8140adc6d99
+  cf_commercial_application:
+    commercial_content_job: main_stage_space
+    target_stage: CF50
+    target_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    cf_function: Govern phase order/camera grammar; structure only; no identity transfer
+    disposition: applied
+    direct_screen_grammar_allowed: true
+    reference_authority:
+      authority_role: governing_main
+      governing_main_reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+      supporting_detail_scopes: []
+      may_change_main_flow: false
+      may_override_main_camera_axis: false
+  parent_registration:
+    status: registered
+    target_owner: idol_source_hub
+    registration_request_path: ../source-materials/video-sources/reference-analysis-registry.yaml
+- entry_id: CFREFBR_MAIN_02
+  source_identity_key: bilibili:BV1vPndzSEn2
+  origin_lane: idol_hub
+  canonical_owner: owning_cf_run
+  source:
+    source_path_or_url: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/videos/BV1vPndzSEn2.mp4
+    source_sha256: 9f1af0c76dd306401c1d06a93df11f7c02d50599ce21e9ad33dbb48d9085d164
+    parent_pointer: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/source-manifest.yaml
+  selected_surface:
+    selection_kind: contiguous_sequence_bundle
+    artifact_path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t120.png
+    sha256: 61bbd9d966639693082e19adeda5002b5f911c42b4ff552c6fcf3ed11110d72e
+    selection_locator: anchor t120.png
+    inspection_action: pixel_inspected
+  interpretation_receipt:
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/first-read-v2.md
+    sha256: 7cf0aaaf9e128ea0432c9b6cfaf96be44f8cdd11784271949778d8140adc6d99
+  cf_commercial_application:
+    commercial_content_job: main_object_peak
+    target_stage: CF50
+    target_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    cf_function: Govern phase order/camera grammar; structure only; no identity transfer
+    disposition: applied
+    direct_screen_grammar_allowed: true
+    reference_authority:
+      authority_role: governing_main
+      governing_main_reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+      supporting_detail_scopes: []
+      may_change_main_flow: false
+      may_override_main_camera_axis: false
+  parent_registration:
+    status: registered
+    target_owner: idol_source_hub
+    registration_request_path: ../source-materials/video-sources/reference-analysis-registry.yaml
+- entry_id: CFREFBR_MAIN_03
+  source_identity_key: bilibili:BV1vPndzSEn2
+  origin_lane: idol_hub
+  canonical_owner: owning_cf_run
+  source:
+    source_path_or_url: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/videos/BV1vPndzSEn2.mp4
+    source_sha256: 9f1af0c76dd306401c1d06a93df11f7c02d50599ce21e9ad33dbb48d9085d164
+    parent_pointer: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/source-manifest.yaml
+  selected_surface:
+    selection_kind: contiguous_sequence_bundle
+    artifact_path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/anchors/t145.png
+    sha256: 60b85dacc398f7ec16c91651697f8c312b160316cb2ed012979969198a3baf93
+    selection_locator: anchor t145.png
+    inspection_action: pixel_inspected
+  interpretation_receipt:
+    path: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/analysis/source-scene-reading-v2/first-read-v2.md
+    sha256: 7cf0aaaf9e128ea0432c9b6cfaf96be44f8cdd11784271949778d8140adc6d99
+  cf_commercial_application:
+    commercial_content_job: main_hand_ownership
+    target_stage: CF50
+    target_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    cf_function: Govern phase order/camera grammar; structure only; no identity transfer
+    disposition: applied
+    direct_screen_grammar_allowed: true
+    reference_authority:
+      authority_role: governing_main
+      governing_main_reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+      supporting_detail_scopes: []
+      may_change_main_flow: false
+      may_override_main_camera_axis: false
+  parent_registration:
+    status: registered
+    target_owner: idol_source_hub
+    registration_request_path: ../source-materials/video-sources/reference-analysis-registry.yaml
+- entry_id: CFREFBR_YT_ACTION_01
+  source_identity_key: youtube:2Y2dsNu_-js
+  origin_lane: idol_hub
+  canonical_owner: owning_cf_run
+  source:
+    source_path_or_url: source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/videos/2Y2dsNu_-js.mp4
+    source_sha256: f627d921ba8ea90ebe64c1afc07bd157c6d0b1ec7f8cf415b3529c77bdffa229
+    parent_pointer: source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/source-manifest.yaml
+  selected_surface:
+    selection_kind: contiguous_sequence_bundle
+    artifact_path: source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/anchors/t00.png
+    sha256: 08fe98197a9b118d2ec6ccc00f1b5a474d55bea69673e22b136a4127172fbb35
+    selection_locator: full-res action anchors t00/t10/t20/t25/t30/t45/t50; content-true ACT_U1-U7
+    inspection_action: pixel_inspected
+  interpretation_receipt:
+    path: source-materials/video-sources/youtube/by-source/2Y2dsNu_-js/analysis/source-scene-reading-v1/first-read-v1.md
+    sha256: e449e46b5057b34e7990f89681928c65be9e72b65d77d1140ce8cfac3e55de75
+  cf_commercial_application:
+    commercial_content_job: scent_open_action_function
+    target_stage: CF40
+    target_ids:
+    - CFSUB_YT_ACTION_ONLY
+    - CF_BRANCH_03_01
+    - CF_BRANCH_03_02
+    - CF_BRANCH_03_03
+    cf_function: Action-only body routes ACT_U1_HAND_WRIST_OPEN / ACT_U3_RUN_FABRIC_STREAM / ACT_U5_ARM_PEAK_FABRIC for scent-open engine (full-res corrected 2026-08-02)
+    disposition: combined
+    direct_screen_grammar_allowed: false
+    reference_authority:
+      authority_role: supporting_detail
+      governing_main_reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+      supporting_detail_scopes:
+      - object_behavior_detail
+      - wardrobe_or_styling_detail
+      may_change_main_flow: false
+      may_override_main_camera_axis: false
+  parent_registration:
+    status: registered
+    target_owner: idol_source_hub
+    registration_request_path: ../source-materials/video-sources/reference-analysis-registry.yaml

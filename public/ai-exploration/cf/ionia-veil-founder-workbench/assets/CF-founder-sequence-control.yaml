@@ -1,0 +1,319 @@
+schema_version: idol_founder_sequence_control.v1
+content_id: CF_LOL_IONIA_PERFUME_001
+lane: cf_code
+status: passed
+source_capture:
+  capture_mode: founder_conversation_transcribed_by_director
+  founder_verbatim_inputs:
+  - 'GOAL MODE locks: no physical perfume bottle prop; stage itself dressed as glass bottle; scent engine = member
+    body action; main BV1vPndzSEn2 1:40-3:44; YT 2Y2dsNu_-js action-only; 2-3 Loom women Ahri/Akali/Irelia top2-skin-inspired;
+    Open the scent. Open her world.; concept collab only; target hierarchy 08 locked; CF-ALL then Phase D images
+    authorized.'
+  - Stage-as-bottle ship-in-bottle grammar with audience; Ionia landscape as interior/exterior layer switch support;
+    end reads as perfume bottle without requiring product prop.
+  - Series SERIES_LOL_REGION_PRODUCT_V1 ep.01; photoreal IDB-class; headset excluded; female-only cast.
+  transcription_owner: assigned_director_codex_or_grok
+  founder_does_not_fill_schema_fields: true
+story_flow:
+  one_line_direction: Inside a glass-bottle stage, Loom members open a fictional Ionia scent through body action
+    — the air becomes her soft world.
+  message_or_viewer_result: Open the scent. Open her world. / 향이 열리면 그녀만의 Ionia.
+  opening_state: Audience and glass bottle-stage shell present; no scent rule change yet; photoreal materials only.
+  ordered_major_scenes:
+  - control_major_id: FSC_MAJOR_01_AUDIENCE_BOTTLE_STAGE
+    order_index: 1
+    founder_direction: Open on audience + stage that reads as a glass perfume bottle shell. No scent rule change
+      yet.
+    major_scene_boundaries:
+    - audience_bowl
+    - glass_stage_shell
+    - no_spirit_yet
+    required_subject_or_member_ids:
+    - BOTTLE_STAGE_SET
+    - AUDIENCE_FIELD
+    - LOOM_CAST_WORKING_BAND
+    required_action_or_hold: Hold stage geometry and audience field; members optional silhouette only; no scent-open
+      action yet.
+    space_direction: Photoreal arena/stage dressed as translucent glass bottle volume with soft Ionia interior hints;
+      ship-in-bottle grammar.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    entry_state: ordinary_bottle_stage_stillness
+    endpoint: stage_and_audience_readable
+    continuity_to_next: Tighten to object/hand ownership without physical perfume bottle prop
+  - control_major_id: FSC_MAJOR_02_OBJECT_OR_GLASS_OWNERSHIP
+    order_index: 2
+    founder_direction: 'Object-focus beat: stage-glass detail or hand-owned gesture replaces perfume bottle prop.
+      Ownership before full body.'
+    major_scene_boundaries:
+    - glass_detail_or_hand_focus
+    - ownership_without_product_bottle
+    required_subject_or_member_ids:
+    - BOTTLE_STAGE_GLASS
+    - LOOM_PRIMARY_HAND
+    required_action_or_hold: Hands own a scent-gesture or glass edge; no freestanding perfume bottle prop required.
+    space_direction: Closer scale on stage glass / hand plane; shallow depth; real materials.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    entry_state: object_or_hand_read
+    endpoint: ownership_ready_for_scent_open
+    continuity_to_next: Body action from action ref must open scent rule
+  - control_major_id: FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+    order_index: 3
+    founder_direction: Core body action (YT action-only units) proves scent open. Without this action, Ionia layers
+      and audience payoff are forbidden.
+    major_scene_boundaries:
+    - neck_or_wrist_scent_action
+    - air_rule_change_starts
+    required_subject_or_member_ids:
+    - LOOM_PRIMARY
+    - SCENT_RULE_ENGINE
+    required_action_or_hold: ACT_U1 neck/collarbone open and/or ACT_U2 wrist-air; optional ACT_U5 arm peak. Action
+      is the scent engine.
+    space_direction: Same bottle-stage interior; air begins thin soft-veil only along action path.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    - CFSUB_YT_ACTION_ONLY
+    entry_state: action_triggers_scent
+    endpoint: veil_path_opened_by_body_action
+    continuity_to_next: Ionia interior/exterior layer switch as support dress
+  - control_major_id: FSC_MAJOR_04_IONIA_LAYER_SWITCH
+    order_index: 4
+    founder_direction: 'Support world: soft Ionia interior vs exterior landscape layers switch/dress the stage.
+      Do not reorder main grammar.'
+    major_scene_boundaries:
+    - interior_bottle_ionia
+    - exterior_soft_landscape_through_glass
+    required_subject_or_member_ids:
+    - LOOM_PRIMARY
+    - IONIA_LAYER
+    required_action_or_hold: Space layer responds to already-opened scent path; members remain in bottle-stage causality.
+    space_direction: Spirit Blossom / soft Ionia materials as stage dress and outside-through-glass landscape; photoreal
+      hybrid.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    - CFSUB_IONIA_WORLD
+    entry_state: veil_path_exists
+    endpoint: ionia_layer_readable_because_of_scent
+    continuity_to_next: 2-3 member balance presence not fight
+  - control_major_id: FSC_MAJOR_05_BALANCE_PRESENCE
+    order_index: 5
+    founder_direction: Two to three Loom women in Ahri/Akali/Irelia top2-skin-inspired looks share balance presence
+      — relation, not combat.
+    major_scene_boundaries:
+    - multi_member_balance
+    - style_lanes_readable
+    required_subject_or_member_ids:
+    - LOOM_M05
+    - LOOM_M02
+    - LOOM_M07
+    required_action_or_hold: Balance spacing and relation holds; residual scent path remains cause of their shared
+      air.
+    space_direction: Bottle-stage with opened Ionia dress; three-lane styling readable without champion face clone.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    - CFSUB_SKIN_STYLE
+    entry_state: opened_world_shared
+    endpoint: balance_presence_proof
+    continuity_to_next: End reads as perfume bottle afterimage + concept-collab endcard
+  - control_major_id: FSC_MAJOR_06_BOTTLE_READ_END
+    order_index: 6
+    founder_direction: End as bottle-read afterimage / packshot-equivalent of the glass stage + quiet concept-collab
+      title. Physical product bottle prop not required.
+    major_scene_boundaries:
+    - stage_as_bottle_afterimage
+    - concept_collab_endcard
+    required_subject_or_member_ids:
+    - BOTTLE_STAGE_SET
+    - LOOM_CAST_WORKING_BAND
+    required_action_or_hold: Hold bottle-read composition and residual soft veil; title Loom × Ionia / IONIA VEIL
+      concept collab only.
+    space_direction: Pull back or frame so stage shell reads as perfume bottle silhouette/memory.
+    reference_ids:
+    - CFMAIN_BV1_STAGE_GRAMMAR
+    entry_state: proof_complete
+    endpoint: concept_collab_endcard
+    continuity_to_next: end
+  ending_or_afterimage: Quiet glass-stage bottle silhouette; soft residual blossom air; fan-made concept collab
+    title only.
+  hard_locks:
+  - No physical perfume bottle prop required on screen.
+  - Stage itself is dressed as glass bottle; audience is outside looking in.
+  - Scent engine = member body action; fail if action removed.
+  - Main sequence grammar from BV1vPndzSEn2 1:40-3:44.
+  - YT 2Y2dsNu_-js action-only support.
+  - Target hierarchy 08 locked — foreign women short-form scent/mood primary; LoL soft world secondary only.
+  - Claim concept collab / fan-made only; no Riot partnership, price, efficacy, in-game item.
+  - Cast 2-3 Loom women; Ahri/Akali/Irelia top2-skin-inspired styling lanes; Loom identity only.
+  - Female-only cast and empathy for this CF.
+  - Photoreal IDB-class materials; 9:16 short-form; headset excluded.
+  - Series SERIES_LOL_REGION_PRODUCT_V1 episode 01.
+  forbidden_outcomes:
+  - Physical bottle prop as mandatory engine without body action.
+  - Spirit magic without body-action scent-open.
+  - MINJU face, mic, LCK/Riot marks transfer.
+  - Champion face clone as Loom identity.
+  - Ranked HUD / male-meta film.
+  - Official partnership or store claims.
+  - Main phase order averaged with support refs.
+reference_plan:
+  governing_reference_ids:
+  - CFMAIN_BV1_STAGE_GRAMMAR
+  references:
+  - reference_id: CFMAIN_BV1_STAGE_GRAMMAR
+    source_identity: bilibili:BV1vPndzSEn2 MINJU LCK opening — structure only
+    source_path_or_url: source-materials/video-sources/bilibili/by-source/BV1vPndzSEn2/videos/BV1vPndzSEn2.mp4
+    selected_range_or_surface: 1:40-3:44 / Layer B anchors B1-B7
+    exact_use_function: Govern phase order space→object→hand→body→peak→widen; camera/composition grammar; climax/endpoint.
+    target_control_major_ids:
+    - FSC_MAJOR_01_AUDIENCE_BOTTLE_STAGE
+    - FSC_MAJOR_02_OBJECT_OR_GLASS_OWNERSHIP
+    - FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+    - FSC_MAJOR_04_IONIA_LAYER_SWITCH
+    - FSC_MAJOR_05_BALANCE_PRESENCE
+    - FSC_MAJOR_06_BOTTLE_READ_END
+    preserve:
+    - ordered_phase_grammar
+    - camera_scale_progression
+    - hand_then_body_ownership
+    - widen_after_peak
+    replace_or_discard:
+    - MINJU face
+    - mic prop
+    - LCK marks
+    - watermarks
+    - source cast identity
+    disposition: applied
+  - reference_id: CFSUB_YT_ACTION_ONLY
+    source_identity: YouTube Gabrielle Chanel film 2Y2dsNu_-js — action only
+    source_path_or_url: https://youtu.be/2Y2dsNu_-js
+    selected_range_or_surface: action unit list ACT_U1–U5 (hub capture pending)
+    exact_use_function: Supply observable scent-open body routes only for Major 03.
+    target_control_major_ids:
+    - FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+    preserve:
+    - neck_open
+    - wrist_air
+    - controlled_turn
+    - arm_peak_routes
+    replace_or_discard:
+    - source face
+    - Chanel logo
+    - full wardrobe clone
+    - brand world as main
+    disposition: combined
+  - reference_id: CFSUB_IONIA_WORLD
+    source_identity: Ionia / Spirit Blossom soft world materials (support)
+    source_path_or_url: runs/CF_LOL_IONIA_PERFUME_001/research/pre-automation/04-ionia-world-usable-truth-v1.md
+    selected_range_or_surface: soft spirit blossom material/light/space only
+    exact_use_function: Dress interior/exterior layers without reordering main phases.
+    target_control_major_ids:
+    - FSC_MAJOR_04_IONIA_LAYER_SWITCH
+    - FSC_MAJOR_01_AUDIENCE_BOTTLE_STAGE
+    preserve:
+    - soft_pink_purple_blossom_light
+    - spirit_veil_materials
+    replace_or_discard:
+    - ranked UI
+    - champion skill demos
+    disposition: combined
+  - reference_id: CFSUB_SKIN_STYLE
+    source_identity: Ahri/Akali/Irelia popular-skin Top2 styling research
+    source_path_or_url: runs/CF_LOL_IONIA_PERFUME_001/research/phase-a/skin-top2-ahri-akali-irelia-v1.md
+    selected_range_or_surface: three styling lanes
+    exact_use_function: Wardrobe/hair/palette/silhouette lanes for 2-3 Loom members.
+    target_control_major_ids:
+    - FSC_MAJOR_05_BALANCE_PRESENCE
+    - FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+    preserve:
+    - AHRI_SOFT
+    - AKALI_EDGE
+    - IRELIA_BALANCE_lanes
+    replace_or_discard:
+    - champion face clone
+    - official skin sale claim
+    disposition: combined
+  unresolved_reference_choices: []
+director_translation:
+  translation_owner: assigned_director_codex_or_grok
+  translated_message: Body action opens scent; bottle-stage and Ionia layers answer; Loom women own the soft world;
+    end reads as bottle memory without a product prop.
+  observable_sequence:
+  - control_major_id: FSC_MAJOR_01_AUDIENCE_BOTTLE_STAGE
+    visible_action_or_hold: Audience lights + glass stage shell hold
+    screen_change: Bottle-stage world named without magic
+    camera_and_composition_read: Extreme high wide into bowl; stage small then readable
+    sound_opportunity: Crowd hush, glass air
+    endpoint: Stage/audience established
+    continuity_to_next: Cut or push to glass/hand ownership
+  - control_major_id: FSC_MAJOR_02_OBJECT_OR_GLASS_OWNERSHIP
+    visible_action_or_hold: Hands own glass edge or scent-ready gesture
+    screen_change: Ownership without perfume bottle prop
+    camera_and_composition_read: Object/hand medium-close; shallow depth
+    sound_opportunity: Soft fabric/glass click
+    endpoint: Ready for scent-open action
+    continuity_to_next: Action must cause rule change
+  - control_major_id: FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+    visible_action_or_hold: Neck/collarbone or wrist-air scent-open body route
+    screen_change: Thin veil only along action path
+    camera_and_composition_read: Follow action; eye-height to mid; then arm peak
+    sound_opportunity: Breath, soft air shift
+    endpoint: Scent path opened by body
+    continuity_to_next: Ionia layers dress the opened path
+  - control_major_id: FSC_MAJOR_04_IONIA_LAYER_SWITCH
+    visible_action_or_hold: Interior/exterior soft Ionia layer switch
+    screen_change: World dress proves scent consequence
+    camera_and_composition_read: Scale change through glass; landscape insert
+    sound_opportunity: Distant soft wind/blossom
+    endpoint: Ionia readable because of scent
+    continuity_to_next: Multi-member balance
+  - control_major_id: FSC_MAJOR_05_BALANCE_PRESENCE
+    visible_action_or_hold: 2-3 members balance relation on opened air
+    screen_change: Shared soft world presence not fight
+    camera_and_composition_read: Multi-body mid; relation spacing
+    sound_opportunity: Cloth, soft steps
+    endpoint: Balance proof
+    continuity_to_next: Bottle-read end
+  - control_major_id: FSC_MAJOR_06_BOTTLE_READ_END
+    visible_action_or_hold: Stage-as-bottle afterimage hold + title
+    screen_change: Commercial memory without official claim
+    camera_and_composition_read: Pullback bottle silhouette or quiet packshot-equivalent
+    sound_opportunity: Settle; optional title hit
+    endpoint: Concept collab endcard
+    continuity_to_next: end
+  conflicts_and_resolutions:
+  - conflict: Earlier draft used physical bottle uncap engine
+    resolution: Founder locked no bottle prop; engine = body action + stage-as-bottle
+    founder_decision_required: false
+  - conflict: YT hub bytes not captured in this session
+    resolution: Action units documented; CF50 binds YT as function-only until hub capture; main BV1 anchors carry
+      pixels
+    founder_decision_required: false
+  translation_preserves_founder_order: true
+  reference_roles_preserved: true
+lane_contract:
+  founder_controls_whole_story_flow: true
+  director_translates_to_execution_truth: true
+  planning_may_not_close_before_founder_pass: true
+  founder_authors_idol_major_scenes: false
+  idol_major_and_member_visual_same_review_unit: false
+  idol_key_screens_require_founder_review: false
+  idol_separate_background_asset_generation: false
+founder_gate:
+  decision: pass
+  reviewed_control_major_ids:
+  - FSC_MAJOR_01_AUDIENCE_BOTTLE_STAGE
+  - FSC_MAJOR_02_OBJECT_OR_GLASS_OWNERSHIP
+  - FSC_MAJOR_03_BODY_ACTION_SCENT_OPEN
+  - FSC_MAJOR_04_IONIA_LAYER_SWITCH
+  - FSC_MAJOR_05_BALANCE_PRESENCE
+  - FSC_MAJOR_06_BOTTLE_READ_END
+  reviewed_reference_ids:
+  - CFMAIN_BV1_STAGE_GRAMMAR
+  - CFSUB_YT_ACTION_ONLY
+  - CFSUB_IONIA_WORLD
+  - CFSUB_SKIN_STYLE
+  unresolved_material_choices: []
+  projection_authorized: true
+  note: Founder GOAL MODE message is explicit pass of sequence, locks, refs, CF-ALL, and Phase D image generation.
+    Director-authored passed control.
