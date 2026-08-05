@@ -498,38 +498,42 @@ function ProjectOutcomeList({ projectsToRender }: { projectsToRender: PortfolioP
       {projectsToRender.map((project) => (
         <article className={`${styles.outcomeCard} ${styles[project.accent]}`} id={`project-${project.slug}`} key={project.slug}>
           <div className={styles.caseBoard}>
-            <div className={styles.caseText}>
-              <div className={styles.caseTitleBlock}>
-                <span className={styles.projectLabel}>{project.period}</span>
-                <h3>{project.homeTitle ?? project.shortTitle}</h3>
-                <p className={styles.projectRole}>{project.homeRole ?? project.role}</p>
-                <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
+            <div className={styles.caseTitleBlock}>
+              <span className={styles.projectLabel}>{project.period}</span>
+              <h3>{project.homeTitle ?? project.shortTitle}</h3>
+              <p className={styles.projectRole}>{project.homeRole ?? project.role}</p>
+              <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
+            </div>
+            <ProjectMediaFigure project={project} />
+            <div className={styles.homeProjectSections}>
+              <div className={styles.caseStudyColumn}>
+                <span className={styles.copyLabel}>Case Study</span>
+                {project.homeOverview ? <p className={styles.homeProjectOverview}>{project.homeOverview}</p> : null}
+                <span className={styles.copyLabel}>{project.homeApproachLabel ?? "Approach"}</span>
+                <ul className={styles.keyList}>
+                  {(project.homeApproach ?? project.keyContents).map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
-              <div className={styles.homeProjectSections}>
-                {project.homeOverview ? (
-                  <div>
-                    <span className={styles.copyLabel}>Overview / Goal</span>
-                    <p className={styles.homeProjectOverview}>{project.homeOverview}</p>
-                  </div>
-                ) : null}
-                <div>
-                  <span className={styles.copyLabel}>{project.homeApproachLabel ?? "Approach"}</span>
-                  <ul className={styles.keyList}>
-                    {(project.homeApproach ?? project.keyContents).map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+              <div className={styles.keyOutcomesColumn}>
+                <span className={styles.copyLabel}>Key Outcomes</span>
+                <div className={styles.outputList}>
+                  {(project.homeProof ?? project.outputs).map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
                 </div>
-                <div>
-                  <span className={styles.copyLabel}>Key Outcomes / Proof</span>
-                  <div className={styles.outputList}>
-                    {(project.homeProof ?? project.outputs).map((item) => (
-                      <span key={item}>{item}</span>
-                    ))}
-                  </div>
+              </div>
+              <div className={styles.proofColumn}>
+                <span className={styles.copyLabel}>Proof</span>
+                <p className={styles.homeProjectEvidence}>{project.media.label}</p>
+                <div className={styles.deckLinks}>
+                  <Link className={styles.primaryLink} href={project.route}>
+                    Case Study 보기 <ArrowRight size={16} />
+                  </Link>
                 </div>
                 {project.homeTools?.length ? (
-                  <div>
+                  <div className={styles.homeToolsBlock}>
                     <span className={styles.copyLabel}>Tools</span>
                     <div className={styles.toolList}>
                       {project.homeTools.map((tool) => (
@@ -539,13 +543,7 @@ function ProjectOutcomeList({ projectsToRender }: { projectsToRender: PortfolioP
                   </div>
                 ) : null}
               </div>
-              <div className={styles.deckLinks}>
-                <Link className={styles.primaryLink} href={project.route}>
-                  Case Study 보기 <ArrowRight size={16} />
-                </Link>
-              </div>
             </div>
-            <ProjectMediaFigure project={project} />
           </div>
         </article>
       ))}
