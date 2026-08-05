@@ -135,15 +135,14 @@
 }
 
 .heroHarnessTitle {
-  max-width: 760px;
+  max-width: 1160px;
   color: #f8fbfc;
   font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: clamp(30px, 3.35vw, 46px);
   font-weight: 850;
-  letter-spacing: -0.045em;
-  line-height: 1.01;
-  text-wrap: balance;
-  white-space: pre-line;
+  letter-spacing: 0.012em;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .heroMessageTitle {
@@ -164,13 +163,14 @@
 .heroMessageSupport {
   display: grid;
   gap: 0;
-  max-width: 1050px;
+  max-width: none;
   margin: 6px 0 0;
   color: rgba(232, 242, 246, 0.72);
-  font-size: clamp(15px, 1.35vw, 19px);
+  font-size: clamp(15px, 1.5vw, 21px);
   font-weight: 760;
-  letter-spacing: -0.015em;
-  line-height: 1.48;
+  letter-spacing: -0.035em;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .heroMessageSupport > span {
@@ -1048,6 +1048,24 @@
   align-items: center;
 }
 
+.outcomeBoard {
+  grid-template-areas:
+    "text media"
+    "footer footer";
+}
+
+.outcomeBoard .caseText {
+  grid-area: text;
+}
+
+.outcomeBoard .caseMedia {
+  grid-area: media;
+}
+
+.outcomeBoard .caseFooter {
+  grid-area: footer;
+}
+
 .caseBoard > *,
 .caseText,
 .caseTitleBlock,
@@ -1179,12 +1197,7 @@
 
 .homeProjectSections {
   display: grid;
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.35fr) minmax(200px, 0.8fr) minmax(220px, 0.9fr);
-  align-items: start;
-  gap: clamp(18px, 3vw, 42px);
-  padding-top: var(--space-3);
-  border-top: 1px solid rgba(230, 238, 242, 0.12);
+  gap: 18px;
 }
 
 .homeProjectSections > div {
@@ -1197,19 +1210,6 @@
   color: rgba(239, 244, 247, 0.76);
   font-size: 14px;
   line-height: 1.62;
-}
-
-.homeProjectEvidence {
-  margin: 0;
-  color: rgba(239, 244, 247, 0.68);
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1.5;
-}
-
-.homeToolsBlock {
-  display: grid;
-  gap: 9px;
 }
 
 .harnessFeature .caseHeadline {
@@ -1534,6 +1534,33 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.caseFooter {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.42fr) minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 18px 24px;
+  align-items: start;
+  min-width: 0;
+  padding-top: 18px;
+}
+
+.caseFooter > *,
+.caseFooterTools,
+.caseFooterProof {
+  min-width: 0;
+}
+
+.caseFooterTools,
+.caseFooterProof {
+  display: grid;
+  gap: 9px;
+}
+
+.caseFooter .outputList {
+  flex-wrap: wrap;
+  overflow: visible;
+  white-space: normal;
 }
 
 .socialBlock {
@@ -5517,12 +5544,19 @@
     grid-template-columns: 1fr;
   }
 
-  .hero {
-    gap: var(--space-4);
+  .outcomeBoard {
+    grid-template-areas:
+      "text"
+      "media"
+      "footer";
   }
 
-  .outcomeList .homeProjectSections {
-    grid-template-columns: 1fr;
+  .caseFooter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero {
+    gap: var(--space-4);
   }
 
   .aboutFeature {
@@ -5841,10 +5875,10 @@
     max-width: 100%;
     overflow: visible;
     font-size: clamp(22px, 5.8vw, 30px);
-    letter-spacing: -0.055em;
-    line-height: 1.02;
+    letter-spacing: 0.012em;
+    line-height: 1.1;
     text-overflow: clip;
-    white-space: pre-line;
+    white-space: normal;
   }
 
   .heroMessageTitle {
@@ -5854,8 +5888,10 @@
   }
 
   .heroMessageSupport {
+    max-width: 100%;
     font-size: clamp(13px, 3.8vw, 18px);
     line-height: 1.35;
+    white-space: normal;
   }
 
   .heroSubline {
@@ -5923,6 +5959,10 @@
 
   .harnessFeature {
     padding: var(--space-5) 0;
+  }
+
+  .caseFooter {
+    grid-template-columns: 1fr;
   }
 
   .caseTitleBlock h3 {

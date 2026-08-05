@@ -46,9 +46,9 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "AI Content Planning\n& Production",
+  headline: "AI CONTENT DIRECTION / HARNESS FLOW",
   heroStatementLines: [
-    "I turn messages that target audiences can relate to into image and video, then test and refine the direction through an AI production workflow.",
+    "I define where target audiences stop and what they should remember, then build AI-based MV and CF content through a Workflow Harness.",
   ],
   homeFocus: "AI 콘텐츠 기획·제작 · 메시지 구조 · 제작 워크플로우",
   profile:

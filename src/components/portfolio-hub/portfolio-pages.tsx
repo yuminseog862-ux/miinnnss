@@ -332,7 +332,7 @@ export function MasterHubPage() {
     <Shell wide>
       <section className={`${styles.hero} ${styles.masterHero}`}>
         <div className={styles.heroText}>
-          <span className={styles.heroSystemEyebrow}>AI CONTENT PLANNING / PRODUCTION WORKFLOW</span>
+          <span className={styles.heroSystemEyebrow}>AI CONTENT PRODUCTION / IDOL · CF</span>
           <h1 className={`${styles.heroTitle} ${styles.heroHarnessTitle}`}>
             {resumeProfile.headline}
           </h1>
@@ -497,51 +497,55 @@ function ProjectOutcomeList({ projectsToRender }: { projectsToRender: PortfolioP
     <div className={styles.outcomeList}>
       {projectsToRender.map((project) => (
         <article className={`${styles.outcomeCard} ${styles[project.accent]}`} id={`project-${project.slug}`} key={project.slug}>
-          <div className={styles.caseBoard}>
-            <div className={styles.caseTitleBlock}>
-              <span className={styles.projectLabel}>{project.period}</span>
-              <h3>{project.homeTitle ?? project.shortTitle}</h3>
-              <p className={styles.projectRole}>{project.homeRole ?? project.role}</p>
-              <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
+          <div className={`${styles.caseBoard} ${styles.outcomeBoard}`}>
+            <div className={styles.caseText}>
+              <div className={styles.caseTitleBlock}>
+                <span className={styles.projectLabel}>{project.period}</span>
+                <h3>{project.homeTitle ?? project.shortTitle}</h3>
+                <p className={styles.projectRole}>{project.homeRole ?? project.role}</p>
+                <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
+              </div>
+              <div className={styles.homeProjectSections}>
+                {project.homeOverview ? (
+                  <div>
+                    <span className={styles.copyLabel}>Overview / Goal</span>
+                    <p className={styles.homeProjectOverview}>{project.homeOverview}</p>
+                  </div>
+                ) : null}
+                <div>
+                  <span className={styles.copyLabel}>{project.homeApproachLabel ?? "Approach"}</span>
+                  <ul className={styles.keyList}>
+                    {(project.homeApproach ?? project.keyContents).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
             <ProjectMediaFigure project={project} />
-            <div className={styles.homeProjectSections}>
-              <div className={styles.caseStudyColumn}>
-                <span className={styles.copyLabel}>Case Study</span>
-                {project.homeOverview ? <p className={styles.homeProjectOverview}>{project.homeOverview}</p> : null}
-                <span className={styles.copyLabel}>{project.homeApproachLabel ?? "Approach"}</span>
-                <ul className={styles.keyList}>
-                  {(project.homeApproach ?? project.keyContents).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+            <div className={styles.caseFooter}>
+              <div className={styles.deckLinks}>
+                <Link className={styles.primaryLink} href={project.route}>
+                  {project.slug === "loom" ? "Loom web" : "Case Study 보기"} <ArrowRight size={16} />
+                </Link>
               </div>
-              <div className={styles.keyOutcomesColumn}>
-                <span className={styles.copyLabel}>Key Outcomes</span>
+              {project.homeTools?.length ? (
+                <div className={styles.caseFooterTools}>
+                  <span className={styles.copyLabel}>Tools</span>
+                  <div className={styles.toolList}>
+                    {project.homeTools.map((tool) => (
+                      <span key={tool}>{tool}</span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+              <div className={styles.caseFooterProof}>
+                <span className={styles.copyLabel}>Key Outcomes / Proof</span>
                 <div className={styles.outputList}>
                   {(project.homeProof ?? project.outputs).map((item) => (
                     <span key={item}>{item}</span>
                   ))}
                 </div>
-              </div>
-              <div className={styles.proofColumn}>
-                <span className={styles.copyLabel}>Proof</span>
-                <p className={styles.homeProjectEvidence}>{project.media.label}</p>
-                <div className={styles.deckLinks}>
-                  <Link className={styles.primaryLink} href={project.route}>
-                    Case Study 보기 <ArrowRight size={16} />
-                  </Link>
-                </div>
-                {project.homeTools?.length ? (
-                  <div className={styles.homeToolsBlock}>
-                    <span className={styles.copyLabel}>Tools</span>
-                    <div className={styles.toolList}>
-                      {project.homeTools.map((tool) => (
-                        <span key={tool}>{tool}</span>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
               </div>
             </div>
           </div>
