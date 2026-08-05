@@ -175,7 +175,6 @@ export const adsbSlides = [
       headers: ["Card", "Content", "Decision use"],
       rows: [
         ["Draft Label", "green-screen / generated variants는 final output이 아니라 prompt-movement test로 표시", "not final brand output"],
-        ["Frame Clarity", "첫 프레임에서 dog / ball / object가 바로 읽히는지 확인", "first-frame readability"],
         ["Motion Readiness", "Kling으로 움직임을 붙였을 때 무드가 유지되는지 확인", "image-to-video readiness"],
         ["Selection Criteria", "과한 collage, tone diffusion, weak impact를 제거하고 남길 컷을 선택", "brand-fit selection"],
       ],
