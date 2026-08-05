@@ -602,16 +602,16 @@ export const contentLearningCase: ContentLearningCase = {
     reports: "/content-learning/loom/reports/",
   },
   teaser: {
-    label: "Content Learning Loop",
-    title: "반응 신호의 다음 메시지·컷 설계 연결",
+    label: "Loom Idol / Content Learning",
+    title: "소셜미디어 반응을 다음 메시지·컷 설계로 연결",
     resultLine:
-      "초기 전달형 표현을 훅·메시지 연속 구조로 정렬 보정하는 루프로 고정",
+      "소셜미디어 반응을 다음 훅·메시지·컷 가설을 점검하는 관찰 신호로 정리",
     targetLine: "창작 타깃 · 20대 초반 여성",
     gapLine: "초기 톤·메시지 전개·컷 문법의 30–40대 잔존 간극 정렬 보정",
     connectLine: "조회·좋아요 등 반응 신호의 다음 메시지·컷 구조 가설 환류 루프",
     homeReadout: [
-      { label: "Role", value: "반응 신호 → 메시지·컷 가설 설계" },
-      { label: "Scope", value: "Loom 공개 YT/TT · 반응 신호만" },
+      { label: "Focus", value: "소셜미디어 반응 → 다음 메시지·컷 가설" },
+      { label: "Scope", value: "Loom Idol 소셜미디어 · 반응 신호만" },
       { label: "Output", value: "V1–V3 스테이지 · Learning Loop 페이지" },
     ],
     ctaHref: "/content-performance#learning-loop",

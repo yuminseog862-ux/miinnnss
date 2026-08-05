@@ -145,6 +145,13 @@ const harnessKeyContents = [
   "편집·게시 기록: 영상 프롬프트, 편집 설계, 최종 패키지, 게시 계획과 산출물 등록",
 ] as const;
 
+const harnessProof = [
+  "방향 카드 · 음악 분석 · 메시지 정리 · 동작 타이밍",
+  "MV/안무 설계 · 이미지 생성 계획 · 스토리보드 · 이미지 프롬프트",
+  "준비물 목록 · 실행 전 점검 · 결과 리뷰",
+  "영상 프롬프트 · 편집 설계 · 최종 패키지 · 게시 계획 · 산출물 등록",
+] as const;
+
 /** Hero featured case: Content Learning Loop + top-2 public Shorts by views */
 const featuredLearningClips = [
   {
@@ -182,7 +189,7 @@ function ContentLearningCase() {
         <div className={styles.caseText}>
           <div className={styles.caseTitleBlock}>
             <span className={styles.projectLabel}>{teaser.label}</span>
-            <h3 id="content-learning-title">Content Learning</h3>
+            <h3 id="content-learning-title">Loom Idol Content Learning</h3>
             <p className={styles.caseHeadline}>{teaser.title}</p>
             <p className={styles.caseResult}>{teaser.resultLine}</p>
           </div>
@@ -283,19 +290,27 @@ function HarnessFeature() {
       <div className={styles.caseBoard}>
         <div className={styles.caseText}>
           <div className={styles.caseTitleBlock}>
-            <span className={styles.projectLabel}>Process Portfolio</span>
-            <h2 className={styles.harnessFeatureTitle}>LOOM-IDOL / CF Harness</h2>
-            <p className={styles.caseHeadline}>타깃과 메시지, 호응 가능성이 높은 레퍼런스를 먼저 조사하고, 그 결과를 MV와 Commercial Film 제작 워크플로우로 연결합니다.</p>
-            <p className={styles.caseResult}>방향 정리부터 생성 설계, 실행 게이트, 편집·게시 기록까지 단계별 산출물과 검증 지점을 하나의 제작 구조로 연결합니다.</p>
+            <span className={styles.projectLabel}>Loom Idol / Production Workflow</span>
+            <h2 className={styles.harnessFeatureTitle}>Loom Idol AI Content Workflow</h2>
+            <p className={styles.caseHeadline}>콘텐츠 제작 AI 워크플로우: Harnessing → Graph Engineering</p>
+            <p className={styles.caseResult}>타깃·메시지·레퍼런스를 바탕으로 여러 기획 방향을 비교하고, 본격적인 제작 전에 타깃에게 전달할 메시지와 감정의 방향이 기획 의도에 맞는지 검증합니다.</p>
           </div>
           <div className={styles.outcomeBody}>
             <div>
-              <span className={styles.copyLabel}>Key Contents</span>
+              <span className={styles.copyLabel}>Workflow</span>
               <ul className={styles.keyList}>
                 {harnessKeyContents.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </div>
+            <div>
+              <span className={styles.copyLabel}>Workflow Assets</span>
+              <div className={styles.outputList}>
+                {harnessProof.map((item) => (
+                  <span key={item}>{item}</span>
+                ))}
+              </div>
             </div>
           </div>
           <div className={styles.deckLinks}>
@@ -317,7 +332,7 @@ export function MasterHubPage() {
     <Shell wide>
       <section className={`${styles.hero} ${styles.masterHero}`}>
         <div className={styles.heroText}>
-          <span className={styles.heroSystemEyebrow}>AI CONTENT PRODUCTION / IDOL · CF</span>
+          <span className={styles.heroSystemEyebrow}>AI CONTENT PLANNING / PRODUCTION WORKFLOW</span>
           <h1 className={`${styles.heroTitle} ${styles.heroHarnessTitle}`}>
             {resumeProfile.headline}
           </h1>
@@ -337,7 +352,7 @@ export function MasterHubPage() {
         <div className={styles.sectionHeader}>
           <span className={styles.sectionLabel}>Selected Case Studies</span>
           <h2>대표 프로젝트</h2>
-          <p>역할·범위·결과물만 먼저 읽고, 상세 케이스로 이동할 수 있습니다.</p>
+          <p>기획 의도와 판단, 제작 과정, 결과물을 먼저 확인하고 상세 케이스로 이동할 수 있습니다.</p>
         </div>
         {/*
           Narrative stack (tight caseBoard strip):
@@ -369,9 +384,9 @@ export function MasterHubPage() {
 }
 
 const selectedWorkIndex = [
-  { number: "01", title: "Loom", detail: "AI IP · 3 MV / 3 CF", href: "#project-loom" },
-  { number: "02", title: "Learning", detail: "Signal → next cut", href: "#content-learning" },
-  { number: "03", title: "Harness", detail: "Research → production QA", href: "#harness" },
+  { number: "01", title: "Loom", detail: "AI Idol · 3 MV / 4 CF", href: "#project-loom" },
+  { number: "02", title: "Loom Idol Learning", detail: "Social signal → next cut", href: "#content-learning" },
+  { number: "03", title: "Loom Idol Workflow", detail: "Harnessing → Graph Engineering", href: "#harness" },
   { number: "04", title: "MUSINSA", detail: "30s team ad", href: "#project-musinsa" },
   { number: "05", title: "ADSB", detail: "15s short-form", href: "#project-adsb" },
 ] as const;
@@ -461,8 +476,7 @@ function PortfolioAbout() {
     <section className={styles.aboutFeature} id="about">
       <div>
         <span className={styles.sectionLabel}>About</span>
-        <h2>콘텐츠의 방향을 끝까지 설계합니다.</h2>
-        <p>{resumeProfile.homeAbout}</p>
+        <h2>메시지를 콘텐츠로 구현하고, 제작 흐름을 설계합니다.</h2>
       </div>
       <dl className={styles.aboutReadout}>
         <div>
@@ -471,7 +485,7 @@ function PortfolioAbout() {
         </div>
         <div>
           <dt>Approach</dt>
-          <dd>Target research · Message structure · Scene direction · AI production QA</dd>
+          <dd>타깃 리서치 · 메시지 구조 · 장면 설계 · AI 제작 검수</dd>
         </div>
       </dl>
     </section>
@@ -486,23 +500,44 @@ function ProjectOutcomeList({ projectsToRender }: { projectsToRender: PortfolioP
           <div className={styles.caseBoard}>
             <div className={styles.caseText}>
               <div className={styles.caseTitleBlock}>
-                <span className={styles.projectLabel}>{project.role}</span>
-                <h3>{project.shortTitle}</h3>
+                <span className={styles.projectLabel}>{project.period}</span>
+                <h3>{project.homeTitle ?? project.shortTitle}</h3>
+                <p className={styles.projectRole}>{project.homeRole ?? project.role}</p>
                 <p className={styles.caseHeadline}>{project.homeHeadline ?? project.headline}</p>
               </div>
-              <div className={styles.outcomeBody}>
-                <dl className={styles.projectReadout} aria-label={`${project.shortTitle} project summary`}>
-                  {(project.homeReadout ?? [
-                    { label: "Role", value: project.role },
-                    { label: "Scope", value: project.homeHeadline ?? project.headline },
-                    { label: "Output", value: (project.homeOutputs ?? project.outputs).slice(0, 2).join(" · ") },
-                  ]).map((item) => (
-                    <div key={item.label}>
-                      <dt>{item.label}</dt>
-                      <dd>{item.value}</dd>
+              <div className={styles.homeProjectSections}>
+                {project.homeOverview ? (
+                  <div>
+                    <span className={styles.copyLabel}>Overview / Goal</span>
+                    <p className={styles.homeProjectOverview}>{project.homeOverview}</p>
+                  </div>
+                ) : null}
+                <div>
+                  <span className={styles.copyLabel}>{project.homeApproachLabel ?? "Approach"}</span>
+                  <ul className={styles.keyList}>
+                    {(project.homeApproach ?? project.keyContents).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <span className={styles.copyLabel}>Key Outcomes / Proof</span>
+                  <div className={styles.outputList}>
+                    {(project.homeProof ?? project.outputs).map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </div>
+                {project.homeTools?.length ? (
+                  <div>
+                    <span className={styles.copyLabel}>Tools</span>
+                    <div className={styles.toolList}>
+                      {project.homeTools.map((tool) => (
+                        <span key={tool}>{tool}</span>
+                      ))}
                     </div>
-                  ))}
-                </dl>
+                  </div>
+                ) : null}
               </div>
               <div className={styles.deckLinks}>
                 <Link className={styles.primaryLink} href={project.route}>
