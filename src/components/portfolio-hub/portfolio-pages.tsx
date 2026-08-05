@@ -385,8 +385,8 @@ export function MasterHubPage() {
 
 const selectedWorkIndex = [
   { number: "01", title: "Loom", detail: "AI Idol · 3 MV / 4 CF", href: "#project-loom" },
-  { number: "02", title: "Loom Idol Learning", detail: "Social signal → next cut", href: "#content-learning" },
-  { number: "03", title: "Loom Idol Workflow", detail: "Harnessing → Graph Engineering", href: "#harness" },
+  { number: "02", title: "Loom Learning", detail: "Signal → next cut", href: "#content-learning" },
+  { number: "03", title: "Loom Workflow", detail: "Harness → Graph", href: "#harness" },
   { number: "04", title: "MUSINSA", detail: "30s team ad", href: "#project-musinsa" },
   { number: "05", title: "ADSB", detail: "15s short-form", href: "#project-adsb" },
 ] as const;
