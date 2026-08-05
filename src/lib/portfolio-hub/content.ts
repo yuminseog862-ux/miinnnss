@@ -258,7 +258,7 @@ export const projects: PortfolioProject[] = [
     title: "AHEYA First-Signal Service Prototype",
     shortTitle: "AHEYA",
     role: "AI Creative, First-signal Flow, Service Prototype",
-    period: "2025.09-2026.04",
+    period: "2026.02-2026.04",
     route: "/deck/aheya",
     accent: "aqua",
     headline: "AI builder의 공개 아이디어를 후원·피드백·공유·저장으로 이어지는 초기 반응 흐름으로 구조화한 프로젝트",

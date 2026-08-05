@@ -49,11 +49,11 @@ export const aheyaSlides = [
     table: {
       headers: ["시점", "변화", "포트폴리오 의미"],
       rows: [
-        ["2025-12~01", "Smart contract / Solana deploy까지 고려한 큰 온체인 기획", ""],
-        ["2026-02", "소액 후원 + Good/Improve UX로 첫 행동을 좁힘", ""],
-        ["2026-02~03", "mainnet-compatible support flow design + Privy wallet entry 정리", ""],
-        ["2026-03~04", "Public idea와 wallet-signed receipt로 설명 축소", ""],
-        ["2026-04", "Direct-send verify와 feedback record를 분리", ""],
+        ["2026.02", "소액 후원 + Good/Improve UX로 첫 행동을 좁힘", ""],
+        ["2026.02~03", "mainnet-compatible support flow design + Privy wallet entry 정리", ""],
+        ["2026.03~04", "Public idea와 wallet-signed receipt로 설명 축소", ""],
+        ["2026.04", "Direct-send verify와 feedback record를 분리", ""],
+        ["4.12", "단순 링크 포스팅: https://aheyabaraya.xyz/", "마지막 공개 링크"],
       ],
     },
   },
@@ -638,7 +638,7 @@ export const aheyaSlides = [
     ],
     gallery: [
       {
-        alt: "AHEYA public X post screenshot from 2026-03-17",
+        alt: "AHEYA public X post screenshot from 2026.03",
         label: "Representative high-signal post",
         href: "https://x.com/minnns_aheya/status/2033738008516825288",
         embedUrl: "https://x.com/minnns_aheya/status/2033738008516825288",
@@ -646,7 +646,7 @@ export const aheyaSlides = [
         caption: "Public attention cue, not traction proof",
       },
       {
-        alt: "AHEYA public X post screenshot from 2026-03-27",
+        alt: "AHEYA public X post screenshot from 2026.03",
         label: "Cleaner response copy",
         href: "https://x.com/minnns_aheya/status/2037465808524460467",
         embedUrl: "https://x.com/minnns_aheya/status/2037465808524460467",
@@ -654,7 +654,7 @@ export const aheyaSlides = [
         caption: "donation / feedback language",
       },
       {
-        alt: "AHEYA public X post screenshot from 2026-04-10",
+        alt: "AHEYA public X post screenshot from 2026.04",
         label: "Builder start copy",
         href: "https://x.com/minnns_aheya/status/2042684370486727146",
         embedUrl: "https://x.com/minnns_aheya/status/2042684370486727146",
@@ -707,7 +707,7 @@ export const aheyaSlides = [
     ],
     gallery: [
       {
-        alt: "AHEYA public X embed from 2026-04-01",
+        alt: "AHEYA public X embed from 2026.04",
         label: "Live demo CTA",
         href: "https://x.com/minnns_aheya/status/2039382534354870308",
         embedUrl: "https://x.com/minnns_aheya/status/2039382534354870308",
@@ -716,14 +716,14 @@ export const aheyaSlides = [
       },
       {
         src: "/aheya/ppt/x-cards/aheya-reply-2026-03-19.png",
-        alt: "AHEYA public reply screenshot from 2026-03-19",
+        alt: "AHEYA public reply screenshot from 2026.03",
         label: "Relevant segment reply",
         href: "https://x.com/minnns_aheya/status/2034680247053164585",
         caption: "AI-native creator segment",
       },
       {
         src: "/aheya/ppt/x-cards/aheya-reply-2026-04-02.png",
-        alt: "AHEYA public reply screenshot from 2026-04-02",
+        alt: "AHEYA public reply screenshot from 2026.04",
         label: "High-fit builder hypothesis reply",
         href: "https://x.com/minnns_aheya/status/2039543700045656099",
         caption: "founder-first response",
