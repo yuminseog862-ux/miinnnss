@@ -991,7 +991,7 @@
 .harnessFeatureTitle {
   overflow: visible;
   text-overflow: clip;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .projectCard h3 {
@@ -1149,8 +1149,54 @@
   gap: 16px;
 }
 
+.outcomeList .caseBoard {
+  align-items: start;
+}
+
 .outcomeList .caseTitleBlock {
   gap: 8px;
+}
+
+.outcomeList .caseTitleBlock h3 {
+  white-space: normal;
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1.08;
+}
+
+.learningCase .caseTitleBlock h3 {
+  white-space: normal;
+  font-size: clamp(28px, 3vw, 40px);
+}
+
+.projectRole {
+  margin: 0;
+  color: var(--project-accent, var(--loom-cyan));
+  font-size: 12px;
+  font-weight: 840;
+  line-height: 1.45;
+}
+
+.homeProjectSections {
+  display: grid;
+  gap: 18px;
+}
+
+.homeProjectSections > div {
+  display: grid;
+  gap: 9px;
+}
+
+.homeProjectOverview {
+  margin: 0;
+  color: rgba(239, 244, 247, 0.76);
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.harnessFeature .caseHeadline {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .caseMedia {
@@ -2455,6 +2501,13 @@
   white-space: nowrap;
 }
 
+.homeProjectSections .outputList,
+.harnessFeature .outputList {
+  flex-wrap: wrap;
+  overflow: visible;
+  white-space: normal;
+}
+
 .outputList span {
   flex: 0 0 auto;
   display: inline-flex;
@@ -2472,6 +2525,26 @@
 .outcomeList .outputList span {
   min-height: 30px;
   font-size: 11px;
+}
+
+.toolList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.toolList span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 9px;
+  border: 1px solid rgba(230, 238, 242, 0.14);
+  border-radius: 999px;
+  color: rgba(239, 244, 247, 0.76);
+  background: rgba(230, 238, 242, 0.04);
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 800;
 }
 
 /* —— Content Learning Loop —— */
