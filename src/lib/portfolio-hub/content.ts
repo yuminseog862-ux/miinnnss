@@ -46,10 +46,9 @@ export type PortfolioProject = {
 };
 
 export const resumeProfile = {
-  headline: "AI 콘텐츠 기획·제작 | 워크플로우 설계",
+  headline: "AI Content Planning\n& Production",
   heroStatementLines: [
-    "타깃이 공감할 메시지를 이미지·영상으로 구현하고,",
-    "AI 제작 워크플로우로 기획과 결과를 계속 검증·개선합니다.",
+    "I turn messages that target audiences can relate to into image and video, then test and refine the direction through an AI production workflow.",
   ],
   homeFocus: "AI 콘텐츠 기획·제작 · 메시지 구조 · 제작 워크플로우",
   profile:
@@ -292,7 +291,16 @@ export const projects: PortfolioProject[] = [
       "후원·Good/Improve 피드백·선택적 공유·참여 기록 흐름을 Next.js 웹 프로토타입으로 구현",
     ],
     homeProof: ["Next.js 웹 프로토타입 · 랜딩 페이지 · X 홍보 콘텐츠", "후원·Good/Improve 피드백·선택적 공유·참여 기록 흐름"],
-    homeTools: ["Next.js · React", "Codex", "Grok Imagine"],
+    homeTools: [
+      "Next.js · React",
+      "Supabase · Prisma",
+      "Privy · RainbowKit",
+      "Wagmi · Viem",
+      "Base / EVM",
+      "Solana · Anchor",
+      "Codex",
+      "Grok Imagine",
+    ],
     abstract:
       "AHEYA에서 AI builder가 공개 아이디어를 제시하고 사용자가 소액 후원, Good/Improve 피드백, 외부 공유, 저장 기록을 남기는 흐름을 콘텐츠형 서비스 프로토타입으로 설계. 성과 검증보다 공개 메시지와 초기 반응 흐름을 점검한 first-signal 시도로 배치",
     finalResult:
