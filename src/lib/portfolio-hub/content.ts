@@ -139,7 +139,7 @@ export const projects: PortfolioProject[] = [
     route: "/deck/aheya",
     accent: "aqua",
     homeTitle: "AHEYA Service · Content Prototype",
-    homeRole: "서비스·GTM 메시지 · AI 콘텐츠 기획·제작 · 참여 루프 구현",
+    homeRole: "서비스·GTM 메시지 · KPI·이벤트 설계 · AI 콘텐츠 기획·제작 · 참여 루프 구현",
     homeHeadline: "창작자의 공개 아이디어를 첫 참여 흐름으로 연결",
     homeOverview:
       "AI-native 창작자가 프로토타입을 올리고, 사용자가 소액 후원·구조화된 피드백·선택적 공유·참여 기록으로 첫 시그널을 만드는 서비스·콘텐츠 기획 및 구현 사례입니다. 캐릭터·세계관 기반 이미지와 짧은 영상, 랜딩 페이지, X 홍보 콘텐츠를 통해 ‘왜 참여하는지 / 어떻게 쓰는지’를 전달하는 GTM 실험을 함께 진행했습니다.",
@@ -149,8 +149,9 @@ export const projects: PortfolioProject[] = [
       "캐릭터·세계관 기반 이미지와 짧은 영상 시리즈 제작",
       "랜딩 페이지와 X 홍보 콘텐츠로 서비스 가치와 참여 방법 전달",
       "후원·Good/Improve 피드백·선택적 공유·참여 기록 흐름을 Next.js 웹 프로토타입으로 구현",
+      "사용자 행동 KPI와 read-only snapshot을 분리해 설명·CTA·운영 상태를 재확인하는 기준 설계",
     ],
-    homeProof: ["Next.js 웹 프로토타입 · 랜딩 페이지 · X 홍보 콘텐츠", "후원·Good/Improve 피드백·선택적 공유·참여 기록 흐름"],
+    homeProof: ["Next.js 웹 프로토타입 · 랜딩 페이지 · X 홍보 콘텐츠", "후원·Good/Improve 피드백·선택적 공유·참여 기록 · KPI 이벤트 설계"],
     homeTools: [
       "Next.js · React",
       "Supabase · Prisma",

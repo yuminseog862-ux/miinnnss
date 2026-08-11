@@ -959,12 +959,18 @@ function AheyaKpiBoard({ slide }: { slide: Slide }) {
   return (
     <section className={styles.kpiBoardCanvas}>
       <div className={styles.kpiRail}>
-        {steps.map((step, index) => (
-          <article key={`${slide.no}-${step}`} className={styles.kpiRailStep}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{step}</strong>
-          </article>
-        ))}
+        {steps.map((step, index) => {
+          const [stage, ...eventParts] = step.split("|");
+          const event = eventParts.join("|").trim();
+
+          return (
+            <article key={`${slide.no}-${step}`} className={styles.kpiRailStep}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{stage.trim()}</strong>
+              {event ? <p>{event}</p> : null}
+            </article>
+          );
+        })}
       </div>
       <div className={styles.kpiBoardGrid}>
         {rows.map((row) => (
